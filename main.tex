@@ -1,0 +1,45 @@
+\documentclass[promaster,eversion]{thesis-guet} 
+% eversion:电子版 pversion:打印版 master:学硕 promaster:专硕 doctor:博士 texdoc lshort-zh
+% \usepackage{showframe}
+\usepackage{color, framed} % 高亮显示
+\definecolor{shadecolor}{RGB}{255,204,75}
+\secrets{}
+\title{基于嵌入式散热模块的微流道散热技术及传热特性研究}{Research on microfluidic heat dissipation technology and heat transfer characteristics based on embedded heat dissipation module}
+\author{焱铭}
+\advisor{Spring Water 教授}
+\school{机电工程学院}
+\major{机械工程}
+\studentnumber{2020XXXXX}
+\degreecategories{工学硕士}
+\datereply{\today}
+\graphicspath{{./picture/},{./picture/Chapter1/},{./picture/Chapter2/},{./picture/Chapter3/},{./picture/Chapter4/},{./picture/Chapter5/}} % 图片所在位置
+
+
+%%全文开始
+\begin{document}
+    \makecover % 封面
+    % \bindpdfcover{PDF文件} % 可使用封面PDF文件
+    \originalitydeclaration % 独创性声明
+    % \signatureofdeclaration{PDF文件} % 可使用独创性声明定义PDF文件
+    \input{Chapter/Abstract}% 摘要
+    \thesisfigurelist % 插图目录
+    \thesistablelist % 插表目录
+    \thesissymbollist %符号说明表
+    \thesistableofcontents % 目录
+
+    \input{Chapter/Symbol}% 符号定义文件
+    % 引用各个章节的文件
+    \input{Chapter/Chapter1}
+    \input{Chapter/Chapter2}
+    \input{Chapter/Chapter3}
+    \input{Chapter/Chapter4}
+    \input{Chapter/Chapter5}
+    \input{Chapter/Conclusion}
+
+    \bibliographystyle{thesis-guet} % 参考文献样式
+    \bibliography{reference} % 参考文献库
+    \thesisacknowledgement % 致谢
+    \thesisaccomplish
+
+    
+\end{document}

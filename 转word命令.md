@@ -1,0 +1,2 @@
+# 配置好pandoc，在CMD中输入以下命令即可得到main.docx文件。
+pandoc main.tex  -o main.docx --reference-doc model.docx --extract-media=\picture --filter pandoc-crossref --bibliography=reference.bib --citeproc --csl china-national-standard-gb-t-7714-2015-numeric.csl -M autoEqnLabels -M tableEqns -t docx+native_numbering --number-sections
