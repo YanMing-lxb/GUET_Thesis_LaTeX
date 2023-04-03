@@ -2,12 +2,11 @@
 \ProvidesClass{thesis-guet}
 
 \LoadClass[12pt,a4paper, openany, twoside]{book} % openright,openany
-
 \RequirePackage{ifxetex} %需要ifxetex，在LaTeX类和包文件中使用另一个包文件：ifxetex
 \RequireXeTeX %需要使用XeLatex编译tex文件，不然会报错。
 \RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \RequirePackage{graphicx} % 图片
-\RequirePackage[font={onehalfspacing, small}, labelsep=space, skip=6pt]{caption}
+\RequirePackage[font={onehalfspacing, small}, labelsep=space, skip=6pt, figurewithin=none, tablewithin=none]{caption} % figurewithin=none, tablewithin=none 将book 类中向figure of list 添加 10pt间距的命令取消
 \RequirePackage{array}
 \RequirePackage{booktabs}
 \RequirePackage[absolute,overlay]{textpos} % 设置密级用的文本框，overlay绝对坐标。可以随意控制文本框位置
@@ -371,8 +370,10 @@
   \pdfbookmark{目录}{toc}
 }{}{}
 
+
 % ====================插图索引格式设置====================
 \newcommand{\thesisfigurelist}{\listoffigures} % 自定义调用\listoffigures的命令
+
 \pretocmd{\listoffigures}{ % 图目录是存放在.lof目录的文件下
   \newpage  %新建一页
   \fancyhf{} %初始化页码页脚布局
@@ -381,10 +382,11 @@
   \addtolength{\cftfignumwidth}{12pt} %设置长度命令，使命令\cftfignumwidth的长度设置为12pt，条目编号与条目内容之间占用的宽度, 例如：图 1-2 [\cftfignumwidth] 电子战飞机
   \renewcommand{\cftfigpresnum}{图} %条目编号前内容  
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %将目录深度设置为0 就会在目录中显示
-}{\renewcommand{\addvspace}[1]{}}{} % \renewcommand{\addvspace}[1]{} 去掉插图列表中章与章之间的额外距离
+}{}{} 
 
 % ====================插表索引格式设置====================
 \newcommand{\thesistablelist}{\listoftables}
+
 \pretocmd{\listoftables}{ % 表目录是存放在.lot目录的文件下
   \newpage
   \fancyhf{}
@@ -393,11 +395,11 @@
   \addtolength{\cfttabnumwidth}{12pt} %条目编号占用宽度，条目编号与条目内容之间占用的宽度, 例如：表1-1 [\cftfignumwidth] 参数设置
   \renewcommand{\cfttabpresnum}{表} %条目编号前内容
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %将目录深度设置为-1，目录中只显示一级标题 0 为chapter
-}{\renewcommand{\addvspace}[1]{}}{}
+}{}{}
 
 
 % ====================符号说明页面设置====================
-\newcommand{\thesissymbollist}{
+\newcommand{\thesissymbollist}{ 
   \newpage 
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 符号说明}
@@ -441,8 +443,7 @@
     }
   \itemsep\nomitemsep% 应用上面设置的术语垂直行间距
 }
-\makenomenclature % 应用符号表
-
+\makenomenclature% 应用符号表
 
 % ====================算法栏====================
 \SetAlgorithmName{算法}{算法}{算法列表}
