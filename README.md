@@ -1,0 +1,2 @@
+# Guet_LATEX_Thesis_Template
+桂林电子科技大学硕博学位论文LATEX模板
