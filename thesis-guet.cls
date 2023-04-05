@@ -6,7 +6,7 @@
 \RequireXeTeX %需要使用XeLatex编译tex文件，不然会报错。
 \RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \RequirePackage{graphicx} % 图片
-\RequirePackage[font={onehalfspacing, small}, labelsep=space, skip=6pt, figurewithin=none, tablewithin=none]{caption} % figurewithin=none, tablewithin=none 将book 类中向figure of list 添加 10pt间距的命令取消
+\RequirePackage[font={onehalfspacing, small}, labelsep=space, skip=6pt, figurewithin=none, tablewithin=none]{caption} % figurewithin=none, tablewithin=none 将book 类中向figure of list 添加 10pt间距的命令取消，但也会使得图表章与章之间连续编号，因此需要设置对应计数器每章重置
 \RequirePackage{array}
 \RequirePackage{booktabs}
 \RequirePackage[absolute,overlay]{textpos} % 设置密级用的文本框，overlay绝对坐标。可以随意控制文本框位置
@@ -144,6 +144,8 @@
 % ===============设置标题格式===============  
 \renewcommand\thechapter{第\zhnumber{\arabic{chapter}}章} %\zhnumber{计数器}，使计数器值输出为汉字格式。
 \renewcommand\thesection{\S\arabic{chapter}.\arabic{section}} %\the计数器，显示计数器的值，该命令只使用于序号计数器，例如\thepage显示当前页码。\value{计数器}调用计数器的值，无论计数器的计数形式如何都被转换成对应的阿拉伯数字。 \S 标题前加特数符号
+\counterwithin{figure}{chapter} % 设置对应计数器每章重置
+\counterwithin{table}{chapter} % 设置对应计数器每章重置
 \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}} %显示公式编号，其格式x-x
 \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}} %显示表格编号，其格式x-x
 \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}} %显示插图编号，其格式x-x
