@@ -343,7 +343,7 @@
 
 
 % ===============图表公式引用设置=============== cleveref
-\crefformat{equation}{式#1} %公式引用标签中去掉括号
+% \crefformat{equation}{式#1} %公式引用标签中去掉括号
 \crefname{figure}{图}{图} % 更改引用前缀 参数二为单独引用
 \crefname{table}{表}{表} % 参数三为多个引用
 \crefname{equation}{式}{式}
@@ -408,7 +408,7 @@
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}}
   \renewcommand{\nomname}{符号说明} %修改符号说明标题的名称。
   \begin{small} %\footnotesize % 设置字体大小
-    \printnomenclature[2 cm]%设置术语与描述之间的距离 
+    \printnomenclature[1.5 cm]%设置术语与描述之间的距离 
   \end{small}
   \addcontentsline{toc}{chapter}{\heiti 符号说明} % 设置在目录显示符号说明
   \ifOptionPrintVersion
@@ -431,17 +431,17 @@
 % 更改术语之间的垂直行间距
 \newlength{\nomitemorigsep}
 \setlength{\nomitemorigsep}{\nomitemsep}
-\setlength{\nomitemsep}{-1.5\parsep} % Baseline skip between items
+\setlength{\nomitemsep}{-1\parsep} % Baseline skip between items
 
 % 创建符号说明分组
 \renewcommand{\nomgroup}[1]{%
   \ifthenelse
     {\equal{#1}{A}}
-    {\vspace{6pt} \item[\textbf{希腊字符}]}
+    {\vspace{9pt} \item[\textbf{希腊字符}]}
     {\ifthenelse
         {\equal{#1}{B}}
-        {\vspace{6pt} \item[\textbf{下标}]}
-        {\ifthenelse{\equal{#1}{C}}{\vspace{6pt} \item[\textbf{缩略语}]}{}}
+        {\vspace{9pt} \item[\textbf{下标}]}
+        {\ifthenelse{\equal{#1}{C}}{\vspace{9pt} \item[\textbf{缩略语}]}{}}
     }
   \itemsep\nomitemsep% 应用上面设置的术语垂直行间距
 }
@@ -563,40 +563,63 @@
   \begin{thebibliography}{lo}
     \interlinepenalty=10000
     \begin{spacing}{1.667}
-    \thispagestyle{fancy}
-    \small
-}{
-    \end{spacing}
-  \end{thebibliography}
-}
+      \thispagestyle{fancy}
+      \small
+  }{
+      \end{spacing}
+    \end{thebibliography}
+  }
 
-\pretocmd{\bibliography}{
-  \newpage
-  \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 参考文献}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
-  \interlinepenalty=10000
+  \pretocmd{\bibliography}{
+    \newpage
+    \fancyhf{}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 参考文献}
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+    \interlinepenalty=10000
   \begin{spacing}{1.667}
 }{}{}
 
 \apptocmd{\bibliography}{
   \end{spacing}
 }{}{}
+\setlength{\bibsep}{0pt} % 消除参考文献条目间的额外行间距
 
 \newcommand{\bstlabelmark}{lo}
 \newcommand{\thesisloadbibliography}[2][]{
+  \small
   \ifthenelse{ %\ifthenelse{判断条件}{肯定结构}{否定结构}
     \equal{#1}{large} %\equal{#1}{nocite} %判断#1是否等于notice
   }{
     \setlength{\labelsep}{3pt}
     \renewcommand{\bstlabelmark}{loo}
-    \bibliographystyle{thesis-guet}
+    \bibliographystyle{thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
     \bibliography{#2}
     \setlength{\labelsep}{6pt}
   }{
-    \bibliographystyle{thesis-guet} %插入参考文献的样式.bst文件
+    \bibliographystyle{thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
     \bibliography{#2} %参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib
   }
+}
+
+\AtBeginDocument{               % 该代码用以解决： multibib 的 resetlabels 功能的 bug
+  \def\thebibliography#1{%
+    \@isnumber{#1}{%
+      \ifnum\mb@biblabelwidth=0
+        % \@tempcnta\c@NAT@ctr %% changed here to c@NAT@ctr
+        \@tempcnta=#1\relax
+        \ifcontinuouslabels
+          \advance\@tempcnta\c@NAT@ctr
+          % \advance\@tempcnta#1%
+        \fi
+        \std@thebibliography{\@arabic\@tempcnta}%
+      \else
+        \std@thebibliography{\@arabic\mb@biblabelwidth}%
+        \global\mb@biblabelwidth 0
+      \fi
+    }{%
+      \std@thebibliography{#1}%
+    }%
+  }%
 }
 
 
