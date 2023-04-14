@@ -5,11 +5,12 @@ Guet_LATEX_Thesis_Template
 
 参考文献格式".bst"文件根据 GB/T 7714-2015 BibTeX Style 宏包配置参数进行自定义样式而来，符合桂林电子科技大学学位论文对参考文献格式的要求。
 在修改参考文献格式的过程中，感谢GB/T 7714-2015 BibTeX Style项目的Zeping Lee大佬对我的帮助。
+
 GB/T 7714-2015 BibTeX Style主页：https://github.com/zepinglee/gbt7714-bibtex-style
 
 # Visual Code Studio 中使用该模板
 1. Visual Code Studio 中安装LaTeX Workshop 插件；
-2. 所需的配置设置请看[[Visual Code Studio 中LaTeX Workshop的设置说明]]
+2. 所需的配置设置请看[[Visual_Code_Studio_中LaTeX_Workshop的设置说明]]
 
 # 编译
 使用latexmk编译前，需在系统盘下创建名为latexmk的文件夹，并将LatexMK文件放入该文件夹下。
