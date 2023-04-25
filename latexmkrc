@@ -17,17 +17,19 @@ $pdf_mode = 5;
 # 1.5: 只有 bib 文件存在才使用 bibtex 或 biber；当 bib 文件存在时会清空 bbl，否则不会清空
 # 2: 有必要更新bbl文件时，运行 bibtex 或 biber，无需测试 bib 文件存在与否；清空删除 bbl
 $bibtex_use = 1.5;
-
 # 设置 latex 文件输出的目录
 # $out_dir = "Build";
 
 # 设置预览模式，相当于 -pv 选项，在编译结束会开启预览
+$preview_mode = 0; # 0不开启，1开启，由于使用latex workshop因此选为0
 # $view 设置预览的文件格式
-$preview_mode = 0;
 $view = "pdf";
+
+  
 
 # 设置 latexmk 编译的文件，和不需要编译的文件，可以时多个
 # @default_files = ("main.tex");
 # @default_excluded_files = ();
-#$"latexmk -c"
+
+#$"latexmk -c" # 由于使用latex workshop进行后清理，因此注销该命令
 
