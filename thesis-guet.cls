@@ -879,7 +879,7 @@
 % ================设置LOGO
   \begin{center}
     \vspace{-1.9mm}
-    \includegraphics[width=0.9 \textwidth]{Guet-logo.jpg}
+    \includegraphics[width=0.9 \textwidth]{Guet-logo.pdf}
     \vspace{1cm}
 
     \ifpromaster{
