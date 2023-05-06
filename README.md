@@ -1,6 +1,8 @@
 # GUET-LATEX-Thesis-Template-桂林电子科技大学毕业论文模板
 ---
-此为桂林电子科技大学Latex硕博模板。该模板由机电C323 Li师兄主编，Liang师兄参与，参考UESTC模板和XDU模板，该模板符合桂林电子科技大学研究生学位论文的基本要求与书写格式-2022.2.23。
+[![](https://img.shields.io/badge/license-LPPL-blue)](https://www.latex-project.org/lppl/) [![](https://img.shields.io/github/last-commit/YanMing-lxb/Guet_LATEX_Thesis_Template)](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/zipball/master) [![](https://img.shields.io/github/issues/YanMing-lxb/Guet_LATEX_Thesis_Template)](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/issues)
+
+此项目提供用于排版桂林电子科技大学毕业论文的LaTeX模板类，旨在帮助桂林电子科技大学的毕业生高效地完成毕业论文的写作。该模板由机电C323 李雪斌主编，梁锟参与，参考电子科大王稳师兄所编写的[ThesisUESTC-电子科技大学毕业论文模板](https://github.com/bdebye/thesisuestc)，该模板符合桂林电子科技大学研究生学位论文的基本要求与书写格式-2022.2.23。
 
 
 参考文献格式".bst"文件根据 GB/T 7714-2015 BibTeX Style 宏包配置参数进行自定义样式而来，符合桂林电子科技大学学位论文对参考文献格式的要求。
@@ -10,7 +12,7 @@ GB/T 7714-2015 BibTeX Style主页：https://github.com/zepinglee/gbt7714-bibtex-
 
 ## 使用方法
 ### 基本环境
-使用模板需要系统安装任意一种TeX环境，如TeXLive、MacTeX和MiKTeX（都自动带有XeLaTeX引擎，但是不推荐CTeX），安装有 SimSun 和 SimHei 字体（其实就是宋体和黑体）以及 Times New Roman 英文字体。
+使用模板需要系统安装任意一种TeX环境，如[TeXLive](http://mirror.ctan.org/systems/texlive/Images/)、[MacTeX](https://www.tug.org/mactex/mactex-download.html)和[MiKTeX](https://miktex.org/download)（都自动带有XeLaTeX引擎，但是不推荐CTeX），安装有 SimSun 和 SimHei 字体（其实就是宋体和黑体）以及 Times New Roman 英文字体。在 MacOS 系统下编译会自动识别操作系统，使用 Songti SC 和 STHeiti 字体，但需要启用`--shell-escape`编译选项。Linux 使用者可以下载[字体文件包](https://gitlab.com/Xmagus/fonts/-/archive/thesis/fonts-thesis.zip)解压到文档根目录。
 
 #### 样式参数
 |    命令   |  功能  |
