@@ -64,3 +64,8 @@ GB/T 7714-2015 BibTeX Style主页：https://github.com/zepinglee/gbt7714-bibtex-
 
 中英文摘要应包含在`chineseabstract`和`englishabstract`环境中，对应的关键字使用`\chinesekeyword`和`\englishkeyword`命令添加，并包含在相应的环境中。
 
+## 写作工具
+- 画表神器 https://www.tablesgenerator.com/
+- 写公式神器 https://mathpix.com/
+- 文献 bib 整理神器 https://dblp.uni-trier.de/
+- Latex 画图画表常用命令 https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Tip
