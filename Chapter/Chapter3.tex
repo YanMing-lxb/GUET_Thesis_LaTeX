@@ -1,9 +1,54 @@
 % !Mode:: "TeX:UTF-8"
 
 \chapter{基于嵌入式散热模块的微通道流动与传热性能研究}\label{ch:3}
-\section{概述}
-本章研究了三种嵌入式散热模块的结构对LTCC基板的流动性能和传热性能的影响，并在此基础上确立了核心散热结构。
 
-\section{嵌入式散热模块结构设计}\label{sec:embed}
+\section{公式示例}
+在本次研究中应用到计算流体动力学（Computational Fluid Dynamics，CFD）对研究对象进……。
 
-\section{本章小节}
+
+\subsection{普通带序号公式}
+\begin{equation}
+    \frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial v}{\partial z}=0
+\end{equation}
+u，v，w 分别是 x，y，z 方向的速度分量。
+
+
+\subsection{需要对齐的多个带序号的公式}
+\&号为对其对齐标记
+\begin{align}% 式中的&为对齐的位置标记
+    u & \frac{\partial u}{\partial x}+v \frac{\partial u}{\partial y}+w \frac{\partial u}{\partial z}=-\frac{1}{\rho_{f}} \frac{\partial p}{\partial x}+\frac{\mu_{f}}{\rho_{f}}\left(\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}+\frac{\partial^{2} u}{\partial z^{2}}\right) \\
+    u & \frac{\partial v}{\partial x}+v \frac{\partial v}{\partial y}+w \frac{\partial v}{\partial z}=-\frac{1}{\rho_{f}} \frac{\partial p}{\partial y}+\frac{\mu_{f}}{\rho_{f}}\left(\frac{\partial^{2} v}{\partial x^{2}}+\frac{\partial^{2} v}{\partial y^{3}}+\frac{\partial^{2} v}{\partial z^{3}}\right) \\
+    u & \frac{\partial w}{\partial x}+v \frac{\partial w}{\partial y}+w \frac{\partial w}{\partial z}=-\frac{1}{\rho_{f}} \frac{\partial p}{\partial z}+\frac{\mu_{f}}{\rho_{f}}\left(\frac{\partial^{2} w}{\partial x^{2}}+\frac{\partial^{2} w}{\partial y^{2}}+\frac{\partial^{2} w}{\partial z^{2}}\right)
+\end{align}
+$\rho_{f}$ 和 $\mu_{f}$ 分别是冷却剂的密度和动态粘度，p 是冷却剂压力。
+
+
+\subsection{需要换行对齐的长公式}
+
+\&号为对其对齐标记最好放置在计算符号之前，如=、+、-之前。
+\backslash\backslash 表示换行。
+
+\begin{equation}\label{eq:P}
+    \begin{split}
+        f_3 & = 6.272 + 3.02 H_{rib} + 6.08 H_{pf} + 0.0368 N_{pf} - 0.8848 N_{ac} + 0.04381 N_{ac}^2\\
+        & + 6.35 H_{rib} \times H_{pf} - 0.3602 H_{rib}\times N_{ac} - 0.5497 H_{pf}\times N_{ac}
+    \end{split}
+\end{equation}
+
+\subsection{其他公式示例}
+\begin{equation}
+    \begin{aligned}
+    \left\{
+        \begin{array}{l}
+        \text {find}\enspace H_{rib},H_{rib},N_{pf},N_{ac} \\
+        \text {min} \enspace F(H_{rib},H_{rib},N_{pf},N_{ac})= min\{f_1,f_2,f_3\} \\
+
+            \text{s.t.\enspace}\enspace 0.2 \leqslant H_{rib} \leqslant 0.8                    \\
+            \hspace{2.2em} 0.2 \leqslant H_{pf} \leqslant 0.8                     \\
+            \hspace{2.2em} 6 \leqslant N_{pf} \leqslant 22,\ N_{pf}\in \mathbb{O} \\
+            \hspace{2.2em} 0 \leqslant N_{ac} \leqslant 16,\ N_{ac}\in \mathbb{E}
+        \end{array}
+    \right. 
+    \end{aligned}
+    \label{eq:MO}
+\end{equation}
