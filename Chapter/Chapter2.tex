@@ -3,100 +3,87 @@
 %\chapter、\section、\subsection、\subsubsection分别对应一二三四级标题
 \chapter{相关理论基础及散热结构设计方案}\label{ch:2}
 
-\section{算法示例}
+\section{表格示例}
+可使用excel绘制表格，然后粘贴到以下网站中生成latex表格代码。
 
-\noindent 算法示例如下：
+推荐网站如下：
+https://www.tablesgenerator.com/
 
-\begin{algorithm}[H]
-    \KwData{this text}
-    \KwResult{how to write algorithm with \LaTeX2e}
-    initialization\;
-    \While{not at end of this document}{
-        read current\;
-        \eIf{understand}{
-            go to next section\;
-            current section becomes this one\;
-        }{
-            go back to the beginning of current section\;
-        }
-    }
-    \caption{How to wirte an algorithm.}
-\end{algorithm}
+https://www.latex-tables.com/
 
-
-
-
-\section{公式示例}
-在本次研究中应用到计算流体动力学（Computational Fluid Dynamics，CFD）对研究对象进……。
-
-
-\subsection{普通带序号公式}
-\begin{equation}
-    \frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial v}{\partial z}=0
-\end{equation}
-u，v，w 分别是 x，y，z 方向的速度分量。
+\subsection{普通三线表示例}
+普遍学者认为，微通道指的是水力直径在 $10\ \rm{\mu m}$ 到 $1000\ \rm{\mu m}$ 范围内的通道（也有观点认为是 $1\ \rm{\mu m}$ 到 $100\ \rm{\mu m}$）所构成的换热器。
+以下是较为常见的微通道尺寸分类，可以参见\cref{tab:division-of-microchannels}。
+\begin{table}[htbp]
+    \caption[微通道的划分]{微通道的划分\cite{LuSiHong_2021}}
+    \setlength{\tabcolsep}{14mm}{ % 因表格过窄，手动设置宽度为7mm
+        \begin{tabular}{lc}
+            \toprule
+            通道种类    & 水力直径$\mu m$   \\
+            \midrule
+            分子纳米通道  & $\le 0.1$     \\
+            过渡性纳米通道 & $0.1\sim 1$   \\
+            过渡性微通道  & $1\sim 10$    \\
+            微通道     & $10\sim 1000$ \\
+            常规通道    & $>1000$       \\
+            \bottomrule
+        \end{tabular}}
+    \label{tab:division-of-microchannels}
+\end{table}
 
 
-\subsection{需要对齐的多个带序号的公式}
-\&号为对其对齐标记
-\begin{align}% 式中的&为对齐的位置标记
-    u & \frac{\partial u}{\partial x}+v \frac{\partial u}{\partial y}+w \frac{\partial u}{\partial z}=-\frac{1}{\rho_{f}} \frac{\partial p}{\partial x}+\frac{\mu_{f}}{\rho_{f}}\left(\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}+\frac{\partial^{2} u}{\partial z^{2}}\right) \\
-    u & \frac{\partial v}{\partial x}+v \frac{\partial v}{\partial y}+w \frac{\partial v}{\partial z}=-\frac{1}{\rho_{f}} \frac{\partial p}{\partial y}+\frac{\mu_{f}}{\rho_{f}}\left(\frac{\partial^{2} v}{\partial x^{2}}+\frac{\partial^{2} v}{\partial y^{3}}+\frac{\partial^{2} v}{\partial z^{3}}\right) \\
-    u & \frac{\partial w}{\partial x}+v \frac{\partial w}{\partial y}+w \frac{\partial w}{\partial z}=-\frac{1}{\rho_{f}} \frac{\partial p}{\partial z}+\frac{\mu_{f}}{\rho_{f}}\left(\frac{\partial^{2} w}{\partial x^{2}}+\frac{\partial^{2} w}{\partial y^{2}}+\frac{\partial^{2} w}{\partial z^{2}}\right)
-\end{align}
-$\rho_{f}$ 和 $\mu_{f}$ 分别是冷却剂的密度和动态粘度，p 是冷却剂压力。
 
+\subsection{跨页表格示例}
 
-\subsection{需要换行对齐的长公式}
-
-\&号为对其对齐标记最好放置在计算符号之前，如=、+、-之前。
-\backslash\backslash 表示换行。
-
-\begin{equation}\label{eq:P}
-    \begin{split}
-        f_3 & = 6.272 + 3.02 H_{rib} + 6.08 H_{pf} + 0.0368 N_{pf} - 0.8848 N_{ac} + 0.04381 N_{ac}^2\\
-        & + 6.35 H_{rib} \times H_{pf} - 0.3602 H_{rib}\times N_{ac} - 0.5497 H_{pf}\times N_{ac}
-    \end{split}
-\end{equation}
-
-
-\section{列表示例}
-
-\subsection{普通列表示例}
-\begin{enumerate}
-    \item 在基板内部进行微通道散热以缩短传热路径，见\cref{fig:LTCC-Microchannels}；
-    \item 在基板内嵌入散热模块减少整体热阻，提高热传导效率，见\cref{fig:Embedded-cooling-module}；
-    \item 在嵌入式散热模块上制作针鳍或肋增强对流传热，以进一步减小热阻，见\cref{fig:Rib-pin-fin}。
-\end{enumerate}
-
-\subsection{标号为阿拉伯数字的列表}
-
-\begin{enumerate}[label =(\arabic*)]
-
-    \item 基于嵌入式散热模块的微通道流动与传热性能研究。
-          将三种带有嵌入式散热模块的微通道：带有针鳍……
-          最终选用MC-RPF作为核心散热结构；
-    \item 分析几何参数对带有针鳍-肋嵌入式散热模块微通道流动与传热的影响。
-          主要研究……；
-    \item 对采用针鳍-肋嵌入式散热模块的微通道进行多目标优化。
-          采用响应面分析法（Response Surface Methodology，RSM）与……；
-    \item 基于MC-RPF的多热源散热结构设计分析。
-          为解决在多热源应……；
-    \item 基于MC-RPF的多热源散热结构压降优化。
-          以压降损失相关理论为指导依据，……。
-
-\end{enumerate}
-
-\subsection{自定义列表标号}
-\noindent NSGA-Ⅱ具体操作步骤如下：
-\begin{enumerate}[leftmargin = 6em, labelsep = 0em]
-    \item[步骤一、] 随机生成初始化种群，设置代数$Gen = 0$;
-    \item[步骤二、] 判断是否生成第一代种群，如已生成则令其代数$Gen = 2$，否则进行快速非支配排序、选择、SBX、PM生成第一代子群，并设置代数$Gen = 2$；
-    \item[步骤三、] 将父代与子代的种群进行合并形成新的父代种群；
-    \item[步骤四、] 判断是否生成新的父代种群，如果未生成则进行快速非支配排序、拥挤度计算、精英策略选择操作以生成新的父代；
-    \item[步骤五、] 对新生成的父代进行选择、SBX、PM操作生成新子群；
-    \item[步骤六、] 判断当前代数是否小于设置的最大代数，若小于设置的最大代数则返回步骤三进行循环，否则，NSGA-Ⅱ结束运行。
-\end{enumerate}
+\begin{longtable}{@{\extracolsep{\fill}}cccccc@{}}  \\
+    \caption{RSM仿真实验规划表}
+    \label{tab:Experimental-Planning}  \\
+    \toprule
+    标准序 & 运行序 & $H_{rib}\ \rm{(mm)}$ & $H_{pf}\ \rm{(mm)}$ & $N_{pf}$ & $N_{ac}$ \\ \midrule
+    \endfirsthead
+    %
+    \multicolumn{6}{c}%
+    {{表 \thetable\ RSM仿真实验规划表 (续)}} \\
+    \toprule
+    标准序 & 运行序 & $H_{rib}\ \rm{(mm)}$ & $H_{pf}\ \rm{(mm)}$ & $N_{pf}$ & $N_{ac}$ \\ \midrule
+    \endhead
+    %
+    \bottomrule
+    \endfoot
+    %
+    \endlastfoot
+    %
+    11  & 1   & 0.16            & 0.8            & 6        & 16       \\
+    13  & 2   & 0.16            & 0.16           & 22       & 16       \\
+    15  & 3   & 0.16            & 0.8            & 22       & 16       \\
+    12  & 4   & 0.8             & 0.8            & 6        & 16       \\
+    10  & 5   & 0.8             & 0.16           & 6        & 16       \\
+    2   & 6   & 0.8             & 0.16           & 6        & 0        \\
+    19  & 7   & 0.48            & 0.48           & 14       & 8        \\
+    1   & 8   & 0.16            & 0.16           & 6        & 0        \\
+    20  & 9   & 0.48            & 0.48           & 14       & 8        \\
+    18  & 10  & 0.48            & 0.48           & 14       & 8        \\
+    8   & 11  & 0.8             & 0.8            & 22       & 0        \\
+    14  & 12  & 0.8             & 0.16           & 22       & 16       \\
+    6   & 13  & 0.8             & 0.16           & 22       & 0        \\
+    17  & 14  & 0.48            & 0.48           & 14       & 8        \\
+    7   & 15  & 0.16            & 0.8            & 22       & 0        \\
+    16  & 16  & 0.8             & 0.8            & 22       & 16       \\
+    4   & 17  & 0.8             & 0.8            & 6        & 0        \\
+    9   & 18  & 0.16            & 0.16           & 6        & 16       \\
+    5   & 19  & 0.16            & 0.16           & 22       & 0        \\
+    3   & 20  & 0.16            & 0.8            & 6        & 0        \\
+    25  & 21  & 0.48            & 0.48           & 6        & 8        \\
+    22  & 22  & 0.8             & 0.48           & 14       & 8        \\
+    23  & 23  & 0.48            & 0.16           & 14       & 8        \\
+    29  & 24  & 0.48            & 0.48           & 14       & 8        \\
+    28  & 25  & 0.48            & 0.48           & 14       & 16       \\
+    30  & 26  & 0.48            & 0.48           & 14       & 8        \\
+    26  & 27  & 0.48            & 0.48           & 22       & 8        \\
+    27  & 28  & 0.48            & 0.48           & 14       & 0        \\
+    21  & 29  & 0.16            & 0.48           & 14       & 8        \\
+    24  & 30  & 0.48            & 0.8            & 14       & 8        \\ \bottomrule
+\end{longtable}
 
 \section{本章小节}
 本章介绍了基于嵌入式散热模块的微通道散热技术所涉及的基……
