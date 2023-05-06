@@ -37,6 +37,8 @@ GB/T 7714-2015 BibTeX Style主页：https://github.com/zepinglee/gbt7714-bibtex-
 请看[[转word命令]]，目前尚且存在转换后，图片不存在的问题（由于pandoc不支持读取多个文件夹图片的原因）。
 
 ## 写作指南
+### 注意事项
+- 在具有多个子图的情况时，子图与子图之间要留有一定的空间，不要占满，否则会发生自动换行；
 ### 论文封面
 论文封面和扉页由\makecover命令添加，可以显示论文题目，作者，指导老师等，也可使用`\bindpdfcover{cover.pdf}`命令添加封面.独创性声明可以由\originalitydeclaration命令生成，添加扫描版签名后的声明使用`\signatureofdeclaration{signature.pdf}`命令。
 
