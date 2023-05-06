@@ -899,12 +899,12 @@
       \centering
       \bfseries\fontsize{14bp}{26bp}\selectfont \zh@thetitle
       } \\ \cline{2-2}
+      & \\ \cline{2-2}
       \bfseries\fontsize{14bp}{14bp}\selectfont (英文) &\multirow[t]{2}{4.8in}
       {
       \centering
       \bfseries\fontsize{14bp}{26bp}\selectfont \en@thetitle
       } \\ \cline{2-2}
-      & \\ \cline{2-2}
       & \\ \cline{2-2}
     \end{tabular}\hspace*{\fill} \\[\baselineskip]
     \vspace{0.5cm}
