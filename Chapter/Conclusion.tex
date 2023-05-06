@@ -3,6 +3,55 @@
 \chapter{全文总结与展望}\label{ch:6}
 
 \section{全文总结}
+\section{空白符号}
+    % 空行分段，多个空行等同于一个
+    % 自动缩进，绝对不能使用空行代替
+    % 英文中多个空格处理为一个空格，中文中空格会被忽略
+    % 汉字与其他字符的间距会自动有XeLaTeX处理
+    % 禁止使用中文全角空格
+ 
+    % 1em(当前字体中M的宽度)
+    1em: a\quad b
+ 
+    % 2em
+    2em: a\qquad b
+ 
+    % 约为1/6个em
+    1/6个em: a\,b 或 a\thinspace b
+ 
+    % 0.5个em
+    0.5个em: a\enspace b
+ 
+    % 空格
+    空格: a\ b
+ 
+    % 硬空格，即不能分割的空格
+    硬空格: a~b
+ 
+    % 1pc=12pt=4.218mm
+    指定宽度1pc: a\kern 1pc b
+ 
+    指定宽度-1em: a\kern -1em b
+ 
+    指定宽度1em: a\hskip 1em b
+ 
+    指定宽度35pt: a\hspace{35pt}b
+ 
+    % 占位宽度
+    占位宽度为xyz: a\hphantom{xyz}b
+ 
+    % 弹性长度hfill命令用于撑满整个空间
+    弹性长度: a\hfill b
+
+\section{\LaTeX 控制符}
+\#              % 输出井号
+\$              % 输出美元符号
+\{ \}           % 输出大括号
+\~{}            % 输出波浪
+\_{}            % 输出下划线
+\^{}            % 输出尖角
+\textbackslash  % 输出反斜杠
+\&              % 输出与符号
 
 
 \section{后续工作展望}
