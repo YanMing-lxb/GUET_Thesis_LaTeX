@@ -1,34 +1,46 @@
 % !Mode:: "TeX:UTF-8"
 
-\chapter{多级嵌入式散热装置系统级性能分析及优化}
+\chapter{基于嵌入式散热模块的微通道多目标结构优化}\label{ch:4}
 
-根据\cref{sec:embed}中，对MC-RPF的几个关键几何参数的流动与传热性能的分析，本次研究所种选取的四个因子分别为：肋高、针鳍高、针鳍数目、辅流道数目。
+\section{概述}
+本章在\cref{ch:3}完成基……。
 
-\begin{table}[h]
-    \caption{计算$2m\times 2m$理想导体平板时域感应电流采用的三种存储方式的存储量比较。}
-    \begin{tabular}{cccc}
-        \toprule
-        \multirow{2}{*}{时间步长} & \multicolumn{3}{c}{存储方式} \\
-        \cmidrule{2-4}
-        & 非压缩存储方式 & 完全压缩存储方式 & 基权函数压缩存储方式 \\
-        \midrule
-        0.4ns & 5.59 MB & 6.78 MB & 6.78 MB\\
-        0.5ns & 10.17 MB & 5.58 MB & 5.58 MB \\
-        0.6ns & 8.38MB & 4.98 MB & 4.98 MB \\
-        \bottomrule
-        \end{tabular}
-    \label{tablea}
-    \end{table}
+\section{列表示例}\label{sec:enumerate}
 
-\begin{theorem}
-如果时域混合场积分方程是时域电场积分方程与时域磁场积分方程的线性组合。
-\end{theorem}
-\begin{proof}
-由于时域混合场积分方程是时域电场积分方程与时域磁场积分方程的线性组合，因此时域混合场积分方程时间步进算法的阻抗矩阵特征与时域电场积分方程时间步进算法的阻抗矩阵特征相同。
-\end{proof}
-\begin{corollary}
-时域积分方程方法的研究近几年发展迅速，在本文研究工作的基础上，仍有以下方向值得进一步研究。
-\end{corollary}
-\begin{lemma}
-因此时域混合场积分方程时间步进算法的阻抗矩阵特征与时域电场积分方程时间步进算法的阻抗矩阵特征相同。
-\end{lemma}
+\subsection{普通列表示例}
+\begin{enumerate}
+    \item 在基板内部进行微通道散热以缩短传热路径，见\cref{fig:LTCC-Microchannels}；
+    \item 在基板内嵌入散热模块减少整体热阻，提高热传导效率，见\cref{fig:Embedded-cooling-module}；
+    \item 在嵌入式散热模块上制作针鳍或肋增强对流传热，以进一步减小热阻，见\cref{fig:Rib-pin-fin}。
+\end{enumerate}
+
+\subsection{标号为阿拉伯数字的列表}
+
+\begin{enumerate}[label =(\arabic*)]
+
+    \item 基于嵌入式散热模块的微通道流动与传热性能研究。
+          将三种带有嵌入式散热模块的微通道：带有针鳍……
+          最终选用MC-RPF作为核心散热结构；
+    \item 分析几何参数对带有针鳍-肋嵌入式散热模块微通道流动与传热的影响。
+          主要研究……；
+    \item 对采用针鳍-肋嵌入式散热模块的微通道进行多目标优化。
+          采用响应面分析法（Response Surface Methodology，RSM）与……；
+    \item 基于MC-RPF的多热源散热结构设计分析。
+          为解决在多热源应……；
+    \item 基于MC-RPF的多热源散热结构压降优化。
+          以压降损失相关理论为指导依据，……。
+
+\end{enumerate}
+
+\subsection{自定义列表标号}
+\noindent NSGA-Ⅱ具体操作步骤如下：
+\begin{enumerate}[leftmargin = 6em, labelsep = 0em]
+    \item[步骤一、] 随机生成初始化种群，设置代数$Gen = 0$;
+    \item[步骤二、] 判断是否生成第一代种群，如已生成则令其代数$Gen = 2$，否则进行快速非支配排序、选择、SBX、PM生成第一代子群，并设置代数$Gen = 2$；
+    \item[步骤三、] 将父代与子代的种群进行合并形成新的父代种群；
+    \item[步骤四、] 判断是否生成新的父代种群，如果未生成则进行快速非支配排序、拥挤度计算、精英策略选择操作以生成新的父代；
+    \item[步骤五、] 对新生成的父代进行选择、SBX、PM操作生成新子群；
+    \item[步骤六、] 判断当前代数是否小于设置的最大代数，若小于设置的最大代数则返回步骤三进行循环，否则，NSGA-Ⅱ结束运行。
+\end{enumerate}
+
+\section{本章小节}
