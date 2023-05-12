@@ -2,13 +2,12 @@
 [![](https://img.shields.io/badge/license-LPPL-blue)](https://www.latex-project.org/lppl/) [![](https://img.shields.io/github/last-commit/YanMing-lxb/Guet_LATEX_Thesis_Template)](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/zipball/master) [![](https://img.shields.io/github/issues/YanMing-lxb/Guet_LATEX_Thesis_Template)](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/issues)
 
 此项目提供用于排版桂林电子科技大学毕业论文的LaTeX模板类，旨在帮助桂林电子科技大学的毕业生高效地完成毕业论文的写作。该模板由机电C323 李雪斌主编，梁锟参与，参考电子科大王稳师兄所编写的[ThesisUESTC-电子科技大学毕业论文模板](https://github.com/bdebye/thesisuestc)，希望日后能有师弟参与并维护该项目。
-该模板符合桂林电子科技大学研究生学位论文的基本要求与书写格式-2022.2.23。
+该模板符合桂林电子科技大学研究生学位论文的基本要求与书写格式-2022.02.23。
 
 
-参考文献格式".bst"文件根据 GB/T 7714-2015 BibTeX Style 宏包配置参数进行自定义样式而来，符合桂林电子科技大学学位论文对参考文献格式的要求。
-在修改参考文献格式的过程中，感谢GB/T 7714-2015 BibTeX Style项目的Zeping Lee大佬对我的帮助。
+参考文献格式".bst"文件根据 GB/T 7714-2015 BibTeX Style 宏包配置参数进行自定义样式而来，符合桂林电子科技大学学位论文对参考文献格式的要求。在修改参考文献格式的过程中，感谢[GB/T 7714-2015 BibTeX Style项目](https://github.com/zepinglee/gbt7714-bibtex-style)的Zeping Lee大佬对我的帮助。
 
-GB/T 7714-2015 BibTeX Style主页：https://github.com/zepinglee/gbt7714-bibtex-style
+桂林电子科技大学Beamer模板：[Guet Beamer Theme](https://github.com/YanMing-lxb/Guet_Beamer_Theme)
 
 ## 使用方法
 ### 基本环境
