@@ -33,7 +33,7 @@ GB/T 7714-2015 BibTeX Style主页：https://github.com/zepinglee/gbt7714-bibtex-
 ### 编辑器
 推荐使用 Visual Code Studio 编辑器。
 1. Visual Code Studio 中安装LaTeX Workshop 插件；
-2. 所需的配置设置请看[[Visual_Code_Studio_中LaTeX_Workshop的设置说明]]
+2. 所需的配置设置请看[Visual_Code_Studio_中LaTeX_Workshop的设置说明](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/blob/main/Visual_Code_Studio_%E4%B8%ADLaTeX_Workshop%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E.md)
 
 ### 转word格式
 请看[[转word命令]]，目前尚且存在转换后，图片不存在的问题（由于pandoc不支持读取多个文件夹图片的原因）。
