@@ -25,7 +25,7 @@ GB/T 7714-2015 BibTeX Style主页：https://github.com/zepinglee/gbt7714-bibtex-
 
 
 ### latexmk编译
-编译文档请使用XeLaTeX引擎。模版提供latexmk设置文件用于自动编译。latexmk可自动调用相关程序进行编译，处理各种文件依赖并自动预览。可在终端执行latexmk -c命令清理所有缓存文件。
+编译文档请使用XeLaTeX引擎。模版提供latexmk设置文件用于自动编译。latexmk可自动调用相关程序进行编译，处理各种文件依赖并自动预览。可在终端执行`latexmk -c`命令清理所有缓存文件。
 使用latexmk编译前，需在系统盘下创建名为latexmk的文件夹，并将LatexMK文件放入该文件夹下。请勿删掉latexmkrc文件。
 **<font color="#d83931">注意</font>**：如果在Windows平台下使用MiKTeX还需要安装[Perl语言解释器](http://strawberryperl.com/)，方可使用latexmk进行编译。
 编译时只需使用latexmk即可完成编译。
@@ -33,16 +33,19 @@ GB/T 7714-2015 BibTeX Style主页：https://github.com/zepinglee/gbt7714-bibtex-
 ### 编辑器
 推荐使用 Visual Code Studio 编辑器。
 1. Visual Code Studio 中安装LaTeX Workshop 插件；
-2. 所需的配置设置请看[Visual_Code_Studio_中LaTeX_Workshop的设置说明](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/blob/main/Visual_Code_Studio_%E4%B8%ADLaTeX_Workshop%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E.md)
+2. 所需的配置设置请看：[Visual_Code_Studio_中LaTeX_Workshop的设置说明](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/blob/main/Visual_Code_Studio_%E4%B8%ADLaTeX_Workshop%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E.md)
 
 ### 转word格式
-请看[转word命令](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/blob/main/%E8%BD%ACword%E5%91%BD%E4%BB%A4.md)，目前尚且存在转换后，图片不存在的问题（由于pandoc不支持读取多个文件夹图片的原因）。
+请看：[转word命令](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/blob/main/%E8%BD%ACword%E5%91%BD%E4%BB%A4.md)
+注意：
+- 使用LaTeX转Word是通过Pandoc来实现，因此需要配置好Pandoc；
+- 目前尚且存在转换后，图片不存在的问题（由于pandoc不支持读取多个文件夹图片的原因）。
 
 ## 写作指南
 ### 注意事项
 - 在具有多个子图的情况时，子图与子图之间要留有一定的空间，不要占满，否则会发生自动换行；
 ### 论文封面
-论文封面和扉页由\makecover命令添加，可以显示论文题目，作者，指导老师等，也可使用`\bindpdfcover{cover.pdf}`命令添加封面.独创性声明可以由\originalitydeclaration命令生成，添加扫描版签名后的声明使用`\signatureofdeclaration{signature.pdf}`命令。
+论文封面和扉页由`\makecover`命令添加，可以显示论文题目，作者，指导老师等，也可使用`\bindpdfcover{cover.pdf}`命令添加封面.独创性声明可以由`\originalitydeclaration`命令生成，添加扫描版签名后的声明使用`\signatureofdeclaration{signature.pdf}`命令。
 
 封面显示的信息可以使用一系列命令进行设置，包括标题、作者、学院等：
 
