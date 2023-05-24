@@ -778,6 +778,9 @@
 \newcommand{\thedate}{\chinesespace} % 日期
 \newcommand{\theschool}{\chinesespace} % 学校
 \newcommand{\themajor}{\chinesespace}
+%本科
+\newcommand{\theintitle}{\chinesespace} %本科指导教师职称
+\newcommand{\theinstructor}{\chinesespace} %本科指导教师
 \newcommand{\theadvisor}{\chinesespace}
 \newcommand{\thesecrets}{\chinesespace}
 \newcommand{\thestudentnumber}{\chinesespace}
@@ -795,6 +798,8 @@
 \renewcommand{\date}[1]{\renewcommand{\thedate}{#1}}
 \newcommand{\major}[1]{\renewcommand{\themajor}{#1}}
 \newcommand{\school}[1]{\renewcommand{\theschool}{#1}}
+\newcommand{\instructor}[1]{\renewcommand{\theinstructor}{#1}}
+\newcommand{\intitle}[1]{\renewcommand{\theintitle}{#1}}
 \newcommand{\advisor}[1]{\renewcommand{\theadvisor}{#1}}
 \newcommand{\studentnumber}[1]{\renewcommand{\thestudentnumber}{#1}}
 \newcommand{\degreecategories}[1]{\renewcommand{\thedegreecategories}{#1}}
@@ -816,8 +821,8 @@
 %\DeclareOption{选项}{代码}其中的选项就是选项的名称，而代码就是选项要执行的指令集。
 \DeclareOption{bachelor}{
   \def\degreename{本科}
-  \def\booktitle{学士学位论文}
-  \def\displayheader{电子科技大学学士学位论文}
+  \def\booktitle{本科毕业设计（论文）}
+  \def\displayheader{桂林电子科技大学本科生学位论文}
 }
 \DeclareOption{master}{
   \def\degreename{硕士}
@@ -849,6 +854,8 @@
 % ===============封面制作===============
 % 新定义判断变量，如果学位名是专业硕士则执行#1命令，否执行#2命令
 \newcommand{\ifpromaster}[2]{ \ifthenelse{\equal{\degreename}{专业硕士}}{#1}{#2}}
+% 新定义判断变量，如果学位名是本科则执行#1命令，否执行#2命令
+\newcommand{\ifbachelor}[2]{ \ifthenelse{\equal{\degreename}{本科}}{#1}{#2}}
 
 \newcommand{\makecover}{
   \thispagestyle{empty} %没有页眉页脚，空白页
@@ -857,6 +864,8 @@
 
   % ================设置密级格式
   % % 设定textblock尺寸单位
+  \ifbachelor{
+  }{
   \setlength{\TPHorizModule}{10mm}
   \setlength{\TPVertModule}{10mm}
 
@@ -873,15 +882,23 @@
         \end{tabular}
       \end{flushright}
       \end{table*}
-  \end{textblock}
+  \end{textblock}}
+  
   ~\\
 
 % ================设置LOGO
   \begin{center}
+    \ifbachelor{
+    \vspace{-2.2cm}
+     \includegraphics[width=0.9 \textwidth]{Guet-logo.pdf}
+     
+     \vspace{2cm}%本科的题目不用英文所以比较居中 
+    }{
     \vspace{-1.9mm}
     \includegraphics[width=0.9 \textwidth]{Guet-logo.pdf}
     \vspace{1cm}
-
+    
+    }
     \ifpromaster{
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
       \fontsize{20pt}{26pt}\selectfont{\bfseries（全日制专业学位硕士）}\\
@@ -891,7 +908,24 @@
       \vspace{1cm}
     }
 
-  % ================设置题目格式 
+  % ================设置题目格式
+  \ifbachelor{ %如果是本科生
+  \vspace{1cm}
+  
+  \renewcommand{\arraystretch}{1.3}
+
+  \begin{tabular}{m{0.57in}<{\centering}m{4.3in}<{\centering}}
+    \bfseries\fontsize{16pt}{16pt}\selectfont 题目: &\multirow[t]{2}{4in}
+    {
+    \centering
+    \linespread{2.0}
+    \bfseries\fontsize{16pt}{16pt}\selectfont\zh@thetitle
+    } \\ \cline{2-2}
+    & \\ \cline{2-2}
+  \end{tabular}
+  \vspace{2.2cm}
+  
+  }{
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{m{0.55in}<{\centering}m{4.8in}<{\centering}}
       \bfseries\fontsize{16bp}{16bp}\selectfont 题目 &\multirow[t]{2}{4.8in}
@@ -907,13 +941,38 @@
       } \\ \cline{2-2}
       & \\ \cline{2-2}
     \end{tabular}\hspace*{\fill} \\[\baselineskip]
-    \vspace{0.5cm}
+    \vspace{0.5cm}}
     % & \\ \cline{2-2} % 标题有几行就添加几行这段代码
 
 
     % ================设置信息格式
     \renewcommand\arraystretch{1.3}
-
+    
+    \ifbachelor{%如果是本科生
+      \begin{tabular}
+        {>{\bfseries\fontsize{15pt}{15pt}\selectfont}m{1.5in}
+          >{\centering\arraybackslash\fontsize{15pt}{15pt}\selectfont}
+          p{3in} b{18pt}}
+  
+        学\hspace{0.36cm} \quad \quad \quad \quad 号: & \thestudentnumber &\\
+        \cline{2-2} 
+        姓\hspace{0.36cm} \quad \quad \quad \quad 名: & \theauthor & \\
+        \cline{2-2}
+        学\hspace{0.36cm} \quad \quad \quad \quad 院: & \theschool &\\
+        \cline{2-2}
+        专\quad \hspace{0.36cm} \quad \quad \quad 业: & \themajor &\\
+        \cline{2-2}
+        指\hspace{0.38cm} 导\hspace{0.38cm} 教\hspace{0.38cm} 师: & \theinstructor &\\
+        \cline{2-2}
+        指\hspace{0.1pt} 导\hspace{0.1pt} 教\hspace{0.1pt} 师\hspace{0.1pt} 职\hspace{0.1pt} 称: & \theintitle &\\
+        \cline{2-2}
+      \end{tabular}
+      
+      \vspace{3cm}
+      \fontsize{16pt}{16pt}\selectfont \thedatereply
+      
+    }
+    {
     \begin{tabular}
       {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
         >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
@@ -932,8 +991,9 @@
       论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
       \cline{2-2}
     \end{tabular}
+    }
+    
   \end{center}
-
     \setcounter{page}{1}
     \setlength{\extrarowheight}{2pt}
     
