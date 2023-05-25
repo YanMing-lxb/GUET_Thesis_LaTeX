@@ -176,19 +176,6 @@
 %标题设置\captionsetup
 
 
-% ===============定义中文符号===============
-\newcommand{\chinesecolon}{\char"FF1A} % 中文冒号
-\newcommand{\chinesespace}{\char"3000} % 中文空格
-\newcommand{\chineseperiod}{\char"3002}
-\newcommand{\chinesequestion}{\char"FF1F}
-\newcommand{\chineseexclamation}{\char"FF01}
-\newcommand{\chinesecomma}{\char"FF0C}
-\newcommand{\chinesesemicolon}{\char"FF1B}
-\newcommand{\chineseleftparenthesis}{\char"FF08}
-\newcommand{\chineserightparenthesis}{\char"FF09}
-
-
-
 % ===============章节和目录深度设置===============
 \setcounter{secnumdepth}{3} %设置章节深度
 \setcounter{tocdepth}{2} %设置目录深度
@@ -260,7 +247,7 @@
 \newcommand{\chinesekeyword}[1]{
 \vspace{\baselineskip}
 \noindent %无缩进
-\@hangfrom{\makebox[48pt][l]{\textbf{关键词\chinesecolon}}}#1
+\@hangfrom{\makebox[48pt][l]{\textbf{关键词：}}}#1
 }
 
 %=========================英文摘要
@@ -772,19 +759,19 @@
 
 
 % ===============封面信息变量定义===============
-\newcommand{\zh@thetitle}{\chinesespace} % 标题
-\newcommand{\en@thetitle}{\chinesespace}
-\newcommand{\theauthor}{\chinesespace} % 作者
-\newcommand{\thedate}{\chinesespace} % 日期
-\newcommand{\theschool}{\chinesespace} % 学校
-\newcommand{\themajor}{\chinesespace}
+\newcommand{\zh@thetitle}{\quad} % 标题
+\newcommand{\en@thetitle}{\quad}
+\newcommand{\theauthor}{\quad} % 作者
+\newcommand{\thedate}{\quad} % 日期
+\newcommand{\theschool}{\quad} % 学校
+\newcommand{\themajor}{\quad}
 %本科
-\newcommand{\theadvisor}{\chinesespace} % 导师姓名
-\newcommand{\theprotitle}{\chinesespace} % 导师职称
-\newcommand{\thesecrets}{\chinesespace}
-\newcommand{\thestudentnumber}{\chinesespace}
-\newcommand{\thedegreecategories}{\chinesespace}
-\newcommand{\thedatereply}{\chinesespace}
+\newcommand{\theadvisor}{\quad} % 导师姓名
+\newcommand{\theprotitle}{\quad} % 导师职称
+\newcommand{\thesecrets}{\quad}
+\newcommand{\thestudentnumber}{\quad}
+\newcommand{\thedegreecategories}{\quad}
+\newcommand{\thedatereply}{\quad}
 
 % ===============封面信息获取===============
 \renewcommand{\title}[2]{
@@ -806,7 +793,7 @@
 
 \newcommand{\thedateoral}{}
 \newcommand{\thedatesubmit}{}
-\newcommand{\thedateconfer}{年\chinesespace 月}
+\newcommand{\thedateconfer}{年\quad 月}
 
 \newcommand{\setdate}[2][]{ 
 \ifthenelse{\equal{#1}{oral}}{\renewcommand{\thedateoral}{#2}}{}
