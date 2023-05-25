@@ -671,7 +671,7 @@
 \pretocmd{\tableofcontents}{
   \newpage
   \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要}
+  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 目\quad 录}
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}}
   \pdfbookmark{目录}{toc}
 }{}{}
