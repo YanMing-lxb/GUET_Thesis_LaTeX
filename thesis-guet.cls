@@ -779,9 +779,8 @@
 \newcommand{\theschool}{\chinesespace} % 学校
 \newcommand{\themajor}{\chinesespace}
 %本科
-\newcommand{\theintitle}{\chinesespace} %本科指导教师职称
-\newcommand{\theinstructor}{\chinesespace} %本科指导教师
-\newcommand{\theadvisor}{\chinesespace}
+\newcommand{\theadvisor}{\chinesespace} % 导师姓名
+\newcommand{\theprotitle}{\chinesespace} % 导师职称
 \newcommand{\thesecrets}{\chinesespace}
 \newcommand{\thestudentnumber}{\chinesespace}
 \newcommand{\thedegreecategories}{\chinesespace}
@@ -798,9 +797,8 @@
 \renewcommand{\date}[1]{\renewcommand{\thedate}{#1}}
 \newcommand{\major}[1]{\renewcommand{\themajor}{#1}}
 \newcommand{\school}[1]{\renewcommand{\theschool}{#1}}
-\newcommand{\instructor}[1]{\renewcommand{\theinstructor}{#1}}
-\newcommand{\intitle}[1]{\renewcommand{\theintitle}{#1}}
-\newcommand{\advisor}[1]{\renewcommand{\theadvisor}{#1}}
+\newcommand{\advisor}[1]{\renewcommand{\theadvisor}{#1}} % 导师姓名
+\newcommand{\protitle}[1]{\renewcommand{\theprotitle}{#1}} % 导师职称
 \newcommand{\studentnumber}[1]{\renewcommand{\thestudentnumber}{#1}}
 \newcommand{\degreecategories}[1]{\renewcommand{\thedegreecategories}{#1}}
 \newcommand{\datereply}[1]{\renewcommand{\thedatereply}{#1}}
@@ -864,41 +862,40 @@
 
   % ================设置密级格式
   % % 设定textblock尺寸单位
-  \ifbachelor{
-  }{
-  \setlength{\TPHorizModule}{10mm}
-  \setlength{\TPVertModule}{10mm}
+  \ifbachelor{}{
+    \setlength{\TPHorizModule}{10mm}
+    \setlength{\TPVertModule}{10mm}
 
-  \begin{textblock}{5}(13.5,2.1)
-    % \textblockcolour{red!30}% 设置背景颜色
-    \begin{table*}
-      \begin{flushright}
-        \begin{tabular}%{ccp{6em}}
-        {>{\fontsize{12pt}{12pt}\selectfont}l
-          >{\centering\arraybackslash\fontsize{12pt}{12pt}\selectfont}
-          b{1in} b{12pt}}
-        密\ \ 级 & \thesecrets \\\specialrule{0em}{0pt}{0pt}
-        \cline{2-2} % 设置表格下框线显示
-        \end{tabular}
-      \end{flushright}
-      \end{table*}
-  \end{textblock}}
-  
+    \begin{textblock}{5}(13.5,2.1)
+      % \textblockcolour{red!30}% 设置背景颜色
+      \begin{table*}
+        \begin{flushright}
+          \begin{tabular}%{ccp{6em}}
+          {>{\fontsize{12pt}{12pt}\selectfont}l
+            >{\centering\arraybackslash\fontsize{12pt}{12pt}\selectfont}
+            b{1in} b{12pt}}
+          密\ \ 级 & \thesecrets \\\specialrule{0em}{0pt}{0pt}
+          \cline{2-2} % 设置表格下框线显示
+          \end{tabular}
+        \end{flushright}
+        \end{table*}
+    \end{textblock}
+  }
   ~\\
 
 % ================设置LOGO
   \begin{center}
     \ifbachelor{
-    \vspace{-2.2cm}
-     \includegraphics[width=0.9 \textwidth]{Guet-logo.pdf}
-     
-     \vspace{2cm}%本科的题目不用英文所以比较居中 
+      \vspace{-2.2cm}
+      \includegraphics[width=0.9 \textwidth]{Guet-logo.pdf}
+      
+      \vspace{2cm}%本科的题目不用英文所以比较居中 
     }{
-    \vspace{-1.9mm}
-    \includegraphics[width=0.9 \textwidth]{Guet-logo.pdf}
-    \vspace{1cm}
-    
+      \vspace{-1.9mm}
+      \includegraphics[width=0.9 \textwidth]{Guet-logo.pdf}
+      \vspace{1cm} 
     }
+
     \ifpromaster{
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
       \fontsize{20pt}{26pt}\selectfont{\bfseries（全日制专业学位硕士）}\\
@@ -910,20 +907,20 @@
 
   % ================设置题目格式
   \ifbachelor{ %如果是本科生
-  \vspace{1cm}
-  
-  \renewcommand{\arraystretch}{1.3}
+    \vspace{1cm}
+    
+    \renewcommand{\arraystretch}{1.3}
 
-  \begin{tabular}{m{0.57in}<{\centering}m{4.3in}<{\centering}}
-    \bfseries\fontsize{16pt}{16pt}\selectfont 题目: &\multirow[t]{2}{4in}
-    {
-    \centering
-    \linespread{2.0}
-    \bfseries\fontsize{16pt}{16pt}\selectfont\zh@thetitle
-    } \\ \cline{2-2}
-    & \\ \cline{2-2}
-  \end{tabular}
-  \vspace{2.2cm}
+    \begin{tabular}{m{0.57in}<{\centering}m{4.3in}<{\centering}}
+      \bfseries\fontsize{16pt}{16pt}\selectfont 题目: &\multirow[t]{2}{4in}
+      {
+      \centering
+      \linespread{2.0}
+      \bfseries\fontsize{16pt}{16pt}\selectfont\zh@thetitle
+      } \\ \cline{2-2}
+      & \\ \cline{2-2}
+    \end{tabular}
+    \vspace{2.2cm}
   
   }{
     \renewcommand{\arraystretch}{1.3}
@@ -941,7 +938,8 @@
       } \\ \cline{2-2}
       & \\ \cline{2-2}
     \end{tabular}\hspace*{\fill} \\[\baselineskip]
-    \vspace{0.5cm}}
+    \vspace{0.5cm}
+  }
     % & \\ \cline{2-2} % 标题有几行就添加几行这段代码
 
 
@@ -954,17 +952,17 @@
           >{\centering\arraybackslash\fontsize{15pt}{15pt}\selectfont}
           p{3in} b{18pt}}
   
-        学\hspace{0.36cm} \quad \quad \quad \quad 号: & \thestudentnumber &\\
+        学\hspace{0.36cm} \qquad \qquad 号: & \thestudentnumber &\\
         \cline{2-2} 
-        姓\hspace{0.36cm} \quad \quad \quad \quad 名: & \theauthor & \\
+        姓\hspace{0.36cm} \qquad \qquad 名: & \theauthor & \\
         \cline{2-2}
-        学\hspace{0.36cm} \quad \quad \quad \quad 院: & \theschool &\\
+        学\hspace{0.36cm} \qquad \qquad 院: & \theschool &\\
         \cline{2-2}
-        专\quad \hspace{0.36cm} \quad \quad \quad 业: & \themajor &\\
+        专\quad \hspace{0.36cm} \qquad \quad 业: & \themajor &\\
         \cline{2-2}
-        指\hspace{0.38cm} 导\hspace{0.38cm} 教\hspace{0.38cm} 师: & \theinstructor &\\
+        指\hspace{0.38cm} 导\hspace{0.38cm} 教\hspace{0.38cm} 师: & \theadvisor &\\
         \cline{2-2}
-        指\hspace{0.1pt} 导\hspace{0.1pt} 教\hspace{0.1pt} 师\hspace{0.1pt} 职\hspace{0.1pt} 称: & \theintitle &\\
+        指\hspace{0.1pt} 导\hspace{0.1pt} 教\hspace{0.1pt} 师\hspace{0.1pt} 职\hspace{0.1pt} 称: & \theprotitle &\\
         \cline{2-2}
       \end{tabular}
       
@@ -982,7 +980,7 @@
       \cline{2-2} 
       研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
       \cline{2-2}
-      指导老师姓名、职称: & \theadvisor &\\
+      指导老师姓名、职称: & \theadvisor \enspace \theprotitle &\\
       \cline{2-2}
       申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories &\\
       \cline{2-2}
