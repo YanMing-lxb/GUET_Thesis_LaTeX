@@ -56,6 +56,32 @@
 \geometry{a4paper,inner=2.5cm, outer=2.5cm, top=3cm, bottom=2cm,bindingoffset=0cm} 
 % \geometry{a4paper,inner=3cm, outer=2.5cm, top=3cm, bottom=2cm,bindingoffset=0cm}
 
+% ===============定义打印版还是电子版===============
+\newif\ifOptionPrintVersion 
+\OptionPrintVersiontrue
+\DeclareOption{eversion}{\OptionPrintVersiontrue}%true为电子版，false为打印版。
+\DeclareOption{pversion}{\OptionPrintVersionfalse}
+
+% ================页边距设置===============
+\ifOptionPrintVersion
+  {}
+\else
+  {\geometry{inner=2cm, outer=2cm,bindingoffset=0.5cm}}
+\fi
+
+% ===============定义空白页命令=============== 
+\newcommand\blankpage{% 定义添加空白页
+\newpage
+\thispagestyle{empty}%没有页眉页脚，空白页
+\null
+% \addtocounter{page}{-1} %\addtocounter{计数器}{数值}将数值与该计数器原有值相加，数值可以是正整数，也可以是负整数。
+\newpage
+}
+
+% ===============定义带页眉页脚空白页命令=============== 
+\newcommand\blankpage@number{\newpage\null\newpage}
+
+
 % ===============设置时间格式===============
 \renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
 
@@ -97,27 +123,12 @@
 \DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
 \newcommand{\bm}{\mathbf}
 
-% ===============定义打印版还是电子版===============
-\newif\ifOptionPrintVersion 
-\OptionPrintVersiontrue
-\DeclareOption{eversion}{\OptionPrintVersiontrue}%true为电子版，false为打印版。
-\DeclareOption{pversion}{\OptionPrintVersionfalse}
-
-% ================页边距设置===============
-\ifOptionPrintVersion
-  {}
-\else
-  {\geometry{inner=2cm, outer=2cm,bindingoffset=0.5cm}}
-\fi
-
 % ===============不清楚===============
 \renewcommand{\thesubfigure}{(\alph{subfigure})} %设置子图标题序号
 \newcommand{\floatcontinue}{\end{figure}\clearpage\begin{figure}[tb]\ContinuedFloat}
 
 \urlstyle{rm}
 \raggedbottom %顶部对齐
-
-
 
 % ===============设置页眉双线===============
 \newdimen\doublelineskip % 两横线间的距离
@@ -205,18 +216,6 @@
 % \setcounter{pseudopage}{0} %pseudopage新计数器清零
 % \AddToHook {shipout/background}{\stepcounter{pseudopage}} 
 %\stepcounter{计数器}，将计数器的值加1，如果计数器是层次标题的序号计数器，还将比其低一层计数器清零。例如\stepcounter{chapter},将chapter序号计数器加1，同时将section以及低于section的序号计数器归零。
-
-% ===============定义空白页命令=============== 
-  \newcommand\blankpage{% 定义添加空白页
-  \newpage
-  \thispagestyle{empty}%没有页眉页脚，空白页
-  \null
-  % \addtocounter{page}{-1} %\addtocounter{计数器}{数值}将数值与该计数器原有值相加，数值可以是正整数，也可以是负整数。
-  \newpage
-  }
-
-% ===============定义带页眉页脚空白页命令=============== 
-\newcommand\blankpage@number{\newpage\null\newpage}
 
 
 %=========================中文摘要
@@ -760,16 +759,16 @@
 
 % ===============封面信息变量定义===============
 \newcommand{\zh@thetitle}{\quad} % 标题
-\newcommand{\en@thetitle}{\quad}
+\newcommand{\en@thetitle}{\quad} % 英文标题
 \newcommand{\theauthor}{\quad} % 作者
 \newcommand{\thedate}{\quad} % 日期
-\newcommand{\theschool}{\quad} % 学校
-\newcommand{\themajor}{\quad}
+\newcommand{\theschool}{\quad} % 学院
+\newcommand{\themajor}{\quad} % 专业
 %本科
 \newcommand{\theadvisor}{\quad} % 导师姓名
 \newcommand{\theprotitle}{\quad} % 导师职称
-\newcommand{\thesecrets}{\quad}
-\newcommand{\thestudentnumber}{\quad}
+\newcommand{\thesecrets}{\quad} % 密级
+\newcommand{\thestudentnumber}{\quad} % 学号
 \newcommand{\thedegreecategories}{\quad}
 \newcommand{\thedatereply}{\quad}
 
