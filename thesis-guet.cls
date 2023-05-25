@@ -52,6 +52,7 @@
 \RequirePackage{geometry} % 页面布局宏
 \RequirePackage{ifthen}
 \RequirePackage[capitalize]{cleveref} % 要在 hyperref后引用 noabbrev 引用前缀为缩写
+\RequirePackage{lastpage}%统计总页数
 % bindingoffset为内边距加长2.5cm
 \geometry{a4paper,inner=2.5cm, outer=2.5cm, top=3cm, bottom=2cm,bindingoffset=0cm} 
 % \geometry{a4paper,inner=3cm, outer=2.5cm, top=3cm, bottom=2cm,bindingoffset=0cm}
@@ -337,7 +338,41 @@
   \begin{spacing}{1.5}
     \pdfbookmark{独创性（或创新性）声明}{originalitydeclaration}
     \noindent
+    \ifbachelor{%添加本科独创性声名
+      \begin{center} % \noindent无缩进
+        \fontsize{14pt}{20pt}\selectfont\bfseries 本科生毕业设计（论文）独创性声名
+      \end{center}
+  
+      \par{\fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}% % \noindent无缩进
+      本人声明所呈交的毕业设计（论文）是我个人在指导老师指导下进行的工作及取得的成果。尽我所知，除了文中特别加以标注和致谢中所罗列的内容以外，文中不包含其他人或其它机构已经发表或撰写过的成果；也不包含为获得桂林电子科技大学或其他教育机构的学位或证书而使用过的材料。其他同志对本工作的启发和所做的任何贡献均已在毕业设计（论文）中做了明确的说明并表示了谢意。}
+      \\
+      \vspace{-1cm}
+      \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{15pt} % \noindent无缩进
+      毕业设计（论文）若有不实之处，本人承担一切相关责任。
+      \\
 
+      \vspace{2cm}
+      \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{27pt}本人签名：\hspace{84pt}%
+      日期： \\
+    \vspace{2cm}
+    \noindent
+    \begin{center} % \noindent无缩进
+      \fontsize{14pt}{24pt}\selectfont\bfseries 本科生毕业设计（论文）使用授权说明
+    \end{center}
+
+    \par{\fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}%
+    桂林电子科技大学有权保留并向国家有关部门或机构送交毕业设计说明书（论文）的复印件，允许毕业设计（论文）被查阅和借阅。本人授权桂林电子科技大学可以公布毕业设计（论文）的全部或部分内容，可以采用影印、缩印或其它复制手段保存、汇编毕业设计（论文）}
+    \\
+
+    \vspace{1.5cm}
+    \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}作者签名：   
+    \hspace{84pt}%
+    日期： \\ \\
+
+    \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}导师签名：         
+    \hspace{84pt}%
+    日期： \\
+    }{
     \begin{center} % \noindent无缩进
       \fontsize{14pt}{20pt}\selectfont\bfseries 独创性声明
     \end{center}
@@ -371,7 +406,7 @@
     \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}导师签名：         
     \hspace{84pt}%
     日期： \\
-
+}
   \end{spacing}
     \ifOptionPrintVersion
       {}
@@ -392,6 +427,7 @@
 
 
 % ===============字体设置===============
+\newCJKfontfamily{\kaiti}[AutoFakeBold=true]{GB2312.ttf} %楷体
 \ifwindows
   \setCJKmainfont[AutoFakeBold=true]{SimSun} %设置xeCJK 中文主字体
   \newCJKfontfamily{\heiti}[AutoFakeBold=true]{SimHei} 
@@ -438,12 +474,21 @@
 \raggedbottom %顶部对齐
 
 % ===============设置页眉双线===============
+\ifbachelor{%本科一条横线
+\newdimen\singlelineskip 
+	\setlength\singlelineskip{2pt} 
+	\renewcommand\headrule{% 
+		\hrule height\headrulewidth width\headwidth% 
+		\vskip 1.2\singlelineskip% 
+		}
+	}{
 \newdimen\doublelineskip % 两横线间的距离
 \setlength\doublelineskip{1pt}
 \renewcommand\headrule{%
-  \hrule height\headrulewidth width\headwidth%
-  \vskip 1.2\doublelineskip%
-  \hrule height\headrulewidth width\headwidth}
+	\hrule height\headrulewidth width\headwidth%
+	\vskip 1.2\doublelineskip%
+	\hrule height\headrulewidth width\headwidth}
+}
 
   % ===============设置段落格式===============
 \setlength{\headheight}{17pt} % 原先设置是15pt
@@ -460,10 +505,13 @@
 
 
 % ===============设置标题格式===============  
-\renewcommand\thechapter{第\zhnumber{\arabic{chapter}}章} %\zhnumber{计数器}，使计数器值输出为汉字格式。
-\ifbachelor{ % 本科小节编号格式
+
+%\zhnumber{计数器}，使计数器值输出为汉字格式。
+\ifbachelor{ % 本科标题编号格式
+\renewcommand\thechapter{\arabic{chapter}}
   \renewcommand\thesection{\arabic{chapter}.\arabic{section}} 
-}{ % 硕博小节编号格式
+}{ % 硕博标题编号格式
+  \renewcommand\thechapter{第\zhnumber{\arabic{chapter}}章}
   \renewcommand\thesection{\S\arabic{chapter}.\arabic{section}} 
 }
 %\the计数器，显示计数器的值，该命令只使用于序号计数器，例如\thepage显示当前页码。\value{计数器}调用计数器的值，无论计数器的计数形式如何都被转换成对应的阿拉伯数字。 \S 标题前加特数符号
@@ -512,7 +560,27 @@
 
 
 % ===============设置标题字体=============== 
-\titleformat{\chapter}[block]
+\ifbachelor{ %本科的页面标题都是左对齐（除了谢辞、目录和摘要）
+\newcommand{\bachelorchapterformat}{\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}}
+  \titleformat{\chapter}[block]
+  {\bachelorchapterformat}%本科chapter格式
+  {\thechapter}{20pt}{} % \thispagestyle{fancy} 需要使用fancyhdr包，并提供了奇偶页不同的风格
+
+\titleformat{\section}[block]
+  {\fontsize{14pt}{14pt}\selectfont} %\heiti 设置为粗体
+  {\thesection}{10pt}{}
+
+\titleformat{\subsection}[block]
+  {\fontsize{14pt}{14pt}\selectfont\kaiti}
+  {\thesubsection}{0pt}{}
+
+%本科样式不包括第4级标题
+\titleformat{\subsubsection}[block]
+  {\fontsize{12pt}{12pt}\selectfont}
+  {\thesubsubsection}{0pt}{}
+  \renewcommand{\thesubsubsection}{\arabic{subsubsection}.} %四级标题格式设置为 1.
+}{
+  \titleformat{\chapter}[block]
   {\centering\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}}
   {\thechapter}{7.5pt}{} % \thispagestyle{fancy} 需要使用fancyhdr包，并提供了奇偶页不同的风格
 
@@ -528,6 +596,7 @@
   {\fontsize{12pt}{12pt}\selectfont}
   {\thesubsubsection}{6pt}{}
   \renewcommand{\thesubsubsection}{\arabic{subsubsection}.} %四级标题格式设置为 1.
+  }
   
 % ===============定义计数器=============== 
 % \newcounter{pseudopage} %自定义一个名字pseudopage新计数器
@@ -540,7 +609,10 @@
 \newenvironment{chineseabstract}{
   \chapter*{摘\quad 要}
   \setcounter{page}{1} % 定义为第一页
+  \ifbachelor{%本科不用添加摘要到目录
+  }{
   \addcontentsline{toc}{chapter}{\heiti 摘\quad 要} % 设置在目录显示摘要
+  }
   \pagenumbering{Roman} % 设置页码显示为罗马数字
   \markright{\centering 摘\quad 要} %手动设置页眉
   \fancyhf{} %初始化页码页脚布局
@@ -570,7 +642,10 @@
 %=========================英文摘要
 \newenvironment{englishabstract}{
 \chapter*{\bfseries ABSTRACT}
+\ifbachelor{%本科不用添加摘要到目录
+  }{
 \addcontentsline{toc}{chapter}{\bfseries ABSTRACT} % 设置在目录显示
+  }
 \markright{\centering\rm ABSTRACT} %手动设置页眉
 \fancyhf{} 
 \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT}
@@ -622,24 +697,51 @@
 \setlength{\cftbeforechapskip}{0pt}
 
 \addtolength{\cftchapnumwidth}{25pt}
-
+%设置目录缩进
+\ifbachelor{
+%本科目录论文格式需要的是20磅行间距，但对比下来word有出入
+\setlength{\cftbeforechapskip}{10pt}
+\setlength{\cftbeforesecskip}{10pt}
+\setlength{\cftbeforesubsecskip}{10pt}
+%本科目录字体大小
+\cftsetindents{chapter}{0pt}{20pt} %一个空格约为5磅
+\cftsetindents{section}{0pt}{25pt}
+\cftsetindents{subsection}{0pt}{30pt}
+\cftsetindents{subsubsection}{0pt}{41pt}
+\renewcommand\cftchapfont{\fontsize{15pt}{15pt}\selectfont\heiti}
+\renewcommand\cftsecfont{\fontsize{14pt}{14pt}\selectfont\heiti}
+\renewcommand\cftsubsecfont{\fontsize{14pt}{14pt}\selectfont\kaiti}
+}{
 \cftsetindents{section}{21pt}{22pt}
 \cftsetindents{subsection}{44pt}{31pt}
 \cftsetindents{subsubsection}{76pt}{41pt}
 
 \renewcommand{\cfttoctitlefont}{\fontsize{15pt}{15pt}\selectfont\heiti}
 \renewcommand\cftchapfont{\heiti}
+}
+
+
 
 
 
 
 % ====================正文页眉设置====================
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter\hspace{5.25pt}#1}{}} %修改页眉章节显示内容 %\markboth{<左面页眉>}{<右面页眉>}
+
+\ifbachelor{
+  \newcommand{\standardheader}{
+  \fancyhf{}
+  \fancyhead[CE,CO]{\fontsize{10.5pt}{12.6pt}\selectfont 桂林电子科技大学毕业设计（论文）}
+  \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref {LastPage} 页 }
+  
+}
+}{
 \newcommand{\standardheader}{
   \fancyhf{}
   \fancyhead[CE]{\fontsize{10.5pt}{12.6pt}\selectfont\zh@thetitle}
   \fancyhead[CO]{\fontsize{10.5pt}{12.6pt}\selectfont\leftmark} %奇数页页眉使用标题
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+}
 }
 
 
@@ -676,7 +778,12 @@
   \pdfbookmark{目录}{toc}
 }{}{}
 
-
+\ifbachelor{
+  %本科暂无以下页面模板
+  \newcommand{\thesisfigurelist}{}
+  \newcommand{\thesistablelist}{}
+  \newcommand{\thesissymbollist}{}
+}{
 % ====================插图索引格式设置====================
 \newcommand{\thesisfigurelist}{\listoffigures} % 自定义调用\listoffigures的命令
 
@@ -726,7 +833,7 @@
     \fi
   \fi
 }
-
+}
 % ====================符号表格式设置====================
 % 设置符号说明为双栏显示
 \renewcommand*\nompreamble{\begin{multicols}{2}}
@@ -767,13 +874,18 @@
 \newcommand{\thesisacknowledgement}{
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %只显示一级标题
   \setcounter{section}{0} %section计数器清零 
-
-  \chapter*{致\hspace{12pt}谢}
+  \ifbachelor{%本科谢辞
+  \chapter*{谢\quad 辞}
+  \addcontentsline{toc}{chapter}{谢\quad 辞}
+  }
+  {\chapter*{致\hspace{12pt}谢}
   \addcontentsline{toc}{chapter}{致\hspace{12pt}谢}
+  }
   % \markboth{致谢}{致谢} %\markboth{<左面页眉>}{<右面页眉>}
+  \ifbachelor{}{%本科的页眉都一样
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 致\hspace{12pt}谢}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}}
   \thispagestyle{fancy}
   \input{Chapter/Thanks.tex} %% 致谢文档位置
 }
@@ -818,6 +930,10 @@
   \renewcommand{\thelemma}{\alph{chapter}.\arabic{lemma}}
   \renewcommand{\thedefinition}{\alph{chapter}.\arabic{definition}}
   \renewcommand{\theexample}{\alph{chapter}.\arabic{example}}
+  \ifbachelor{%本科的附录
+  \addcontentsline{toc}{chapter}{\heiti 附\quad 录}
+  \input{Chapter/Appendix.tex}
+  }{}
 }
 
 \newcommand{\thesissingleappendix}{
@@ -876,9 +992,10 @@
 
   \pretocmd{\bibliography}{
     \newpage
+    \ifbachelor{}{%本科的页眉都一样
     \fancyhf{}
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 参考文献}
-    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}}
     \interlinepenalty=10000
   \begin{spacing}{1.667}
 }{}{}
@@ -987,6 +1104,10 @@
 %   \fi
 % }
 
+\ifbachelor{%攻读学位期间取得的成果（本科没有该模板）
+  \newcommand{\thesisaccomplish}{}
+  }
+{
 \newcommand{\thesisaccomplish}{
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %只显示一级标题
   \setcounter{section}{0} %section计数器清零 
@@ -998,6 +1119,7 @@
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   \thispagestyle{fancy}
   \input{Chapter/Accomplish.tex} %% 学术成果文档位置
+}
 }
 {
   \ifOptionPrintVersion

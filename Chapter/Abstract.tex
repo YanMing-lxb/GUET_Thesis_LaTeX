@@ -1,6 +1,7 @@
 % !Mode:: "TeX:UTF-8"
-
-
+\ifbachelor{
+%本科简介页面标题格式转换居中
+\renewcommand{\bachelorchapterformat}{\centering\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}}}{}
 \begin{chineseabstract}
     随着人工智能和第五代移动通信技术的发展，推动着电子芯片向着小型化和高集成化的方向快速发展的同时也导致电子芯片的发热问题日益严重。
     电子器件55\%的故障是由温度引起，而在温度引起的故障问题中有很大一部分是由温度分布不均而引起的。
@@ -16,3 +17,6 @@
 
 \englishkeyword{Microchannel; embedded heat dissipation module; Multi-objective optimization; NSGA-Ⅱ; Multi-heat source heat dissipation}
 \end{englishabstract}
+\ifbachelor{
+%本科章节标题格式重新转换为左顶格
+\renewcommand{\bachelorchapterformat}{\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}}}{}
