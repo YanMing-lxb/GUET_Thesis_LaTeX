@@ -29,7 +29,7 @@
 \RequirePackage{zhnumber} % 大写中文数字
 \RequirePackage{pifont}
 \RequirePackage[hyphens]{xurl}
-\RequirePackage[bookmarks=true,hyperfootnotes=false,bookmarksnumbered=true,bookmarksdepth=4]{hyperref} % 书签设置宏包 citecolor链接颜色设置% linkcolor引用颜色设置 urlcolor网址颜色
+\RequirePackage[unicode,pdfencoding=auto,bookmarks=true,hyperfootnotes=false,bookmarksnumbered=true,bookmarksdepth=4]{hyperref} % 书签设置宏包 citecolor链接颜色设置% linkcolor引用颜色设置 urlcolor网址颜色 unicode,pdfencoding=auto 用来解决PDF警告
 \hypersetup{colorlinks=true,citecolor=black, linkcolor=black, urlcolor=black}
 \RequirePackage{indentfirst}
 \RequirePackage{float}
@@ -634,7 +634,7 @@
 
 
 % ====================正文页眉设置====================
-\renewcommand{\chaptermark}[1]{\markboth{\thechapter\hspace{5.25pt}#1}{}} %修改页眉章节显示内容 %\markboth{<左面页眉>}{<右面页眉>}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\hspace*{5.25pt}#1}{}} %修改页眉章节显示内容 %\markboth{<左面页眉>}{<右面页眉>}
 \newcommand{\standardheader}{
   \fancyhf{}
   \fancyhead[CE]{\fontsize{10.5pt}{12.6pt}\selectfont\zh@thetitle}
@@ -768,11 +768,11 @@
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %只显示一级标题
   \setcounter{section}{0} %section计数器清零 
 
-  \chapter*{致\hspace{12pt}谢}
-  \addcontentsline{toc}{chapter}{致\hspace{12pt}谢}
+  \chapter*{致\quad 谢}
+  \addcontentsline{toc}{chapter}{致\quad 谢}
   % \markboth{致谢}{致谢} %\markboth{<左面页眉>}{<右面页眉>}
   \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 致\hspace{12pt}谢}
+  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 致\quad 谢}
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   \thispagestyle{fancy}
   \input{Chapter/Thanks.tex} %% 致谢文档位置
@@ -826,8 +826,8 @@
   \interlinepenalty=0
   \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
   \titleformat{\chapter}[block]
-    {\centering\fontsize{15pt}{15pt}\selectfont\heiti\thispagestyle{fancy}}{附\hspace{12pt}录}{7.5pt}{}
-  %\renewcommand{\thechapter}{附\hspace{12pt}录}
+    {\centering\fontsize{15pt}{15pt}\selectfont\heiti\thispagestyle{fancy}}{附\quad 录}{7.5pt}{}
+  %\renewcommand{\thechapter}{附\quad 录}
 
   \renewcommand{\appendixname}{附录}
 
@@ -844,7 +844,7 @@
   \renewcommand{\theexample}{a.\arabic{example}}
   
 
-  \chapter*{附\hspace{12pt}录}
+  \chapter*{附\quad 录}
   \addcontentsline{toc}{chapter}{附录}
   \markboth{附录}{附录}
 
