@@ -1051,6 +1051,7 @@
 % }
 
 \newcommand{\thesisaccomplish}{
+  \normalsize % 设置字体大小为小四
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %只显示一级标题
   \setcounter{section}{0} %section计数器清零 
 
