@@ -838,6 +838,7 @@
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 致\quad 谢}
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   \thispagestyle{fancy}
+  \normalsize % 设置字体为小四
   \input{Chapter/Thanks.tex} %% 致谢文档位置
 }
 
@@ -1051,7 +1052,6 @@
 % }
 
 \newcommand{\thesisaccomplish}{
-  \normalsize % 设置字体大小为小四
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %只显示一级标题
   \setcounter{section}{0} %section计数器清零 
 
@@ -1061,6 +1061,7 @@
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\degreename{}学位期间取得的成果}
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   \thispagestyle{fancy}
+  \normalsize % 设置字体为小四
   \input{Chapter/Accomplish.tex} %% 学术成果文档位置
 }
 {
