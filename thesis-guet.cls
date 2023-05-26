@@ -63,9 +63,6 @@
 \DeclareOption{eversion}{\OptionPrintVersiontrue}%true为电子版，false为打印版。
 \DeclareOption{pversion}{\OptionPrintVersionfalse}
 
-% ===============设置封面时间格式===============
-\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
-
 % ================页边距设置===============
 \ifOptionPrintVersion
   {}
@@ -90,7 +87,8 @@
 
 % ++++++++++++++++++++++++++++++++++++++++++++++++++ 封面设置相关 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
+% ===============设置封面时间格式===============
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
 % ===============封面信息变量定义===============
 \newcommand{\zh@thetitle}{\quad} % 标题
 \newcommand{\en@thetitle}{\quad} % 英文标题
@@ -1064,17 +1062,20 @@
   \normalsize % 设置字体为小四
   \input{Chapter/Accomplish.tex} %% 学术成果文档位置
 }
-{
-  \ifOptionPrintVersion
-    {}
-  \else
-    \checkoddpage
-    \ifoddpage
-      \blankpage
-    \else
-      \newpage
-    \fi
-  \fi
+{ % 该处先注释掉了，不知道为什么总是报错提示没定义
+  % 猜测最后一页报错可能是由于某些机制导致的，希望能有大神来解决。
+  % 不过想了想，就算最后一页是奇数，不加空白页也没什么影响，
+  % 打印出来的效果依然是背面空白。
+  % \ifOptionPrintVersion
+  %   {}
+  % \else
+  %   \checkoddpage
+  %     \ifoddpage
+  %       \blankpage
+  %     \else
+  %       \newpage
+  %     \fi
+  % \fi
 }
 
 
