@@ -425,7 +425,7 @@
 
 
 % ===============字体设置===============
-\newCJKfontfamily{\kaiti}[AutoFakeBold=true]{GB2312.ttf} %楷体
+\newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path = ./fonts/]{GB2312.ttf}%楷体
 \ifwindows
   \setCJKmainfont[AutoFakeBold=true]{SimSun} %设置xeCJK 中文主字体
   \newCJKfontfamily{\heiti}[AutoFakeBold=true]{SimHei} 
@@ -438,13 +438,14 @@
   \newfontfamily{\heiti@letter}{STHeiti}
   \setallmainfonts{Times New Roman}
 \else
-  \setCJKmainfont[AutoFakeBold=true]{fzsong.ttf}
-  \newCJKfontfamily{\heiti}[AutoFakeBold=true]{fzhei.ttf}
-  \newfontfamily{\heiti@letter}{fzhei.ttf}
+  \setCJKmainfont[AutoFakeBold=true,Path = ./fonts/]{fzsong.ttf}
+  \newCJKfontfamily{\heiti}[AutoFakeBold=true,Path = ./fonts/]{fzhei.ttf}
+  \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./fonts/]
   \setallmainfonts[
     BoldFont=timesbd.ttf,
     ItalicFont=timesi.ttf,
     BoldItalicFont=timesbi.ttf,
+    Path = ./fonts/
   ]{times.ttf}
 \fi
 \fi
@@ -960,11 +961,11 @@
   }{
     \setlength{\labelsep}{3pt}
     \renewcommand{\bstlabelmark}{loo}
-    \bibliographystyle{thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
+    \bibliographystyle{./reference/thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
     \bibliography{#2}
     \setlength{\labelsep}{6pt}
   }{
-    \bibliographystyle{thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
+    \bibliographystyle{./reference/thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
     \bibliography{#2} %参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib
   }
 }
