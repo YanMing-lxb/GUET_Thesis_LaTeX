@@ -207,12 +207,12 @@
   \begin{center}
     \ifbachelor{ % 本科LOGO👇
       \vspace{-2.2cm}
-      \includegraphics[width=0.9 \textwidth]{Guet-logo.pdf}
+      \includegraphics[width=0.9 \textwidth]{./picture/Guet-logo.pdf}
       
       \vspace{2cm}%本科的题目不用英文所以比较居中 
     }{ % 硕博LOGO👇
       \vspace{-1.9mm}
-      \includegraphics[width=0.9 \textwidth]{Guet-logo.pdf}
+      \includegraphics[width=0.9 \textwidth]{./picture/Guet-logo.pdf}
       \vspace{1cm} 
     }
 
