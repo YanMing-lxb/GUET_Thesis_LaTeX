@@ -200,18 +200,19 @@
       
       \vspace{2cm}%本科的题目不用英文所以比较居中 
     }{ % 硕博LOGO👇
-      \vspace{-1.9mm}
+      \vspace{-0.4cm}
       \includegraphics[width=0.9 \textwidth]{./picture/Guet-logo.pdf}
-      \vspace{1cm} 
     }
 
     \ifpromaster{ % 专硕👇
+      \vspace{0.6cm} 
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
       \fontsize{20pt}{26pt}\selectfont{\bfseries（全日制专业学位硕士）}\\
-      \vspace{1cm}
+      \vspace{0.8cm}
     }{ % 学硕及博士👇
+      \vspace{0.7cm} 
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
-      \vspace{1cm}
+      \vspace{1.5cm}
     }
 
   % ================设置题目格式
@@ -247,7 +248,6 @@
       } \\ \cline{2-2}
       & \\ \cline{2-2}
     \end{tabular}\hspace*{\fill} \\[\baselineskip]
-    \vspace{0.5cm}
   }
     % & \\ \cline{2-2} % 标题有几行就添加几行这段代码
 
@@ -275,30 +275,33 @@
         \cline{2-2}
       \end{tabular}
       
-      \vspace{3cm}
+      % \vspace{3cm}
       \fontsize{16pt}{16pt}\selectfont \thedatereply
       
     }{ % 硕博封面信息 👇
-    \begin{tabular}
-      {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
-        >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
-        b{3in} b{15pt}}
-
-      研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
-      \cline{2-2} 
-      研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
-      \cline{2-2}
-      指导老师姓名、职称: & \theadvisor \enspace \theprotitle &\\
-      \cline{2-2}
-      申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories &\\
-      \cline{2-2}
-      学\qquad 科、专\qquad 业: & \themajor &\\
-      \cline{2-2}
-      论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
-      \cline{2-2}
-    \end{tabular}
+    \begin{table}[!b]
+      \begin{tabular}
+        {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
+          >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
+          b{3in} b{15pt}}
+  
+        研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
+        \cline{2-2} 
+        研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
+        \cline{2-2}
+        指导老师姓名、职称: & \theadvisor \enspace \theprotitle &\\
+        \cline{2-2}
+        申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories &\\
+        \cline{2-2}
+        学\qquad 科、专\qquad 业: & \themajor &\\
+        \cline{2-2}
+        论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
+        \cline{2-2}
+      \end{tabular}
+      \vspace{3.5cm}
+    \end{table}
     }
-    
+
   \end{center}
     \setcounter{page}{1}
     \setlength{\extrarowheight}{2pt}
