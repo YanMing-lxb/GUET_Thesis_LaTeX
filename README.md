@@ -24,7 +24,10 @@
 |  bachelor |  本科  |
 |   master  |  学硕  |
 | promaster |  专硕  |
+| ojmaster  |  在职硕士  |
+| ptomaster |  非全专硕  |
 |   doctor  |  博士  |
+
 
 
 ### latexmk编译
