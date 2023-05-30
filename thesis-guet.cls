@@ -154,7 +154,7 @@
   \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
   \def\displayheader{桂林电子科技大学硕士学位论文}
 }
-\DeclareOption{ptpromaster}{
+\DeclareOption{ptmaster}{
   \def\degreename{非全专业硕士}
   \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
   \def\displayheader{桂林电子科技大学硕士学位论文}
