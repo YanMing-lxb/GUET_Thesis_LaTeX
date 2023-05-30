@@ -279,27 +279,51 @@
       \fontsize{16pt}{16pt}\selectfont \thedatereply
       
     }{ % 硕博封面信息 👇
-    \begin{table}[!b]
-      \begin{tabular}
-        {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
-          >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
-          b{3in} b{15pt}}
-  
-        研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
-        \cline{2-2} 
-        研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
-        \cline{2-2}
-        指导老师姓名、职称: & \theadvisor \enspace \theprotitle &\\
-        \cline{2-2}
-        申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories &\\
-        \cline{2-2}
-        学\qquad 科、专\qquad 业: & \themajor &\\
-        \cline{2-2}
-        论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
-        \cline{2-2}
-      \end{tabular}
-      \vspace{3.5cm}
-    \end{table}
+      \ifpromaster{ % 专硕👇
+        \begin{table}[!b]
+          \begin{tabular}
+            {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
+              >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
+              b{3in} b{15pt}}
+      
+            研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
+            \cline{2-2} 
+            研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
+            \cline{2-2}
+            指导教师姓名、职称: & \theadvisor \enspace \theprotitle &\\
+            \cline{2-2}
+            申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \thedegreecategories &\\
+            \cline{2-2}
+            领\hspace{7em}域: & \themajor &\\
+            \cline{2-2}
+            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
+            \cline{2-2}
+          \end{tabular}
+          \vspace{3.5cm}
+        \end{table}
+      }{ % 学硕、博士👇
+        \begin{table}[!b]
+          \begin{tabular}
+            {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
+              >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
+              b{3in} b{15pt}}
+      
+            研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
+            \cline{2-2} 
+            研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
+            \cline{2-2}
+            指导教师姓名、职称: & \theadvisor \enspace \theprotitle &\\
+            \cline{2-2}
+            申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories &\\
+            \cline{2-2}
+            学\qquad 科、专\qquad 业: & \themajor &\\
+            \cline{2-2}
+            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
+            \cline{2-2}
+          \end{tabular}
+          \vspace{3.5cm}
+        \end{table}
+    }
     }
 
   \end{center}
