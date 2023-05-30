@@ -219,6 +219,19 @@
       \fontsize{20pt}{26pt}\selectfont{\bfseries（全日制专业学位硕士）}\\
       \vspace{0.8cm}
     }
+    \ifojmaster{ % 在职学硕👇
+      \vspace{0.6cm} 
+      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
+      \fontsize{20pt}{26pt}\selectfont{\bfseries（在职研究生）}\\
+      \vspace{0.8cm}
+    }
+    \ifptmaster{ % 非全专硕👇
+      \vspace{0.6cm} 
+      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
+      \fontsize{20pt}{26pt}\selectfont{\bfseries（非全日制专业学位硕士）}\\
+      \vspace{0.8cm}
+    }
+
     \ifmaster{ % 学硕及博士👇
       \vspace{0.7cm} 
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
