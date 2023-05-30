@@ -174,10 +174,11 @@
 % ===============封面制作===============
 % 新定义判断变量，如果学位名是专业硕士则执行#1命令，否执行#2命令
 \newcommand{\ifbachelor}[2]{ \ifthenelse{\equal{\degreename}{本科}}{#1}{#2}}
-\newcommand{\ifpromaster}[1]{ \ifthenelse{\equal{\degreename}{专业硕士}}{#1}}
-\newcommand{\ifmaster}[1]{ \ifthenelse{\equal{\degreename}{硕士}}{#1}}
-\newcommand{\ifojmaster}[1]{ \ifthenelse{\equal{\degreename}{在职硕士}}{#1}}
-\newcommand{\ifptmaster}[1]{ \ifthenelse{\equal{\degreename}{非全硕士}}{#1}}
+\newcommand{\ifpromaster}[1]{ \ifthenelse{\equal{\degreename}{专业硕士}}{#1}{}}
+\newcommand{\ifmaster}[1]{ \ifthenelse{\equal{\degreename}{硕士}}{#1}{}}
+\newcommand{\ifojmaster}[1]{ \ifthenelse{\equal{\degreename}{在职硕士}}{#1}{}}
+\newcommand{\ifptmaster}[1]{ \ifthenelse{\equal{\degreename}{非全硕士}}{#1}{}}
+\newcommand{\ifdoctor}[1]{ \ifthenelse{\equal{\degreename}{博士}}{#1}{}}
 
 \newcommand{\makecover}{
   \thispagestyle{empty} %没有页眉页脚，空白页
@@ -232,7 +233,12 @@
       \vspace{0.8cm}
     }
 
-    \ifmaster{ % 学硕及博士👇
+    \ifmaster{ % 学硕👇
+      \vspace{0.7cm} 
+      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
+      \vspace{1.5cm}
+    }
+    \ifdoctor{ % 博士👇
       \vspace{0.7cm} 
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
       \vspace{1.5cm}
@@ -298,7 +304,7 @@
         \cline{2-2}
       \end{tabular}
       
-      % \vspace{3cm}
+      \vspace{3cm}
       \fontsize{16pt}{16pt}\selectfont \thedatereply
       
     }{ % 硕博封面信息 👇
@@ -325,7 +331,99 @@
           \vspace{3.5cm}
         \end{table}
       }
-      \ifmaster{ % 学硕、博士👇
+      \ifptmaster{ % 非全专硕👇
+        \begin{table}[!b]
+          \begin{tabular}
+            {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
+              >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
+              b{3in} b{15pt}}
+      
+            研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
+            \cline{2-2} 
+            研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
+            \cline{2-2}
+            指导教师姓名、职称: & \theadvisor \enspace \theprotitle &\\
+            \cline{2-2}
+            申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \thedegreecategories &\\
+            \cline{2-2}
+            领\hspace{7em}域: & \themajor &\\
+            \cline{2-2}
+            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
+            \cline{2-2}
+          \end{tabular}
+          \vspace{3.5cm}
+        \end{table}
+      }
+      \ifmaster{ % 学硕👇
+        \begin{table}[!b]
+          \begin{tabular}
+            {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
+              >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
+              b{3in} b{15pt}}
+      
+            研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
+            \cline{2-2} 
+            研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
+            \cline{2-2}
+            指导教师姓名、职称: & \theadvisor \enspace \theprotitle &\\
+            \cline{2-2}
+            申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories &\\
+            \cline{2-2}
+            学\qquad 科、专\qquad 业: & \themajor &\\
+            \cline{2-2}
+            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
+            \cline{2-2}
+          \end{tabular}
+          \vspace{3.5cm}
+        \end{table}
+      }
+      \ifojmaster{ % 在职硕士👇
+        \begin{table}[!b]
+          \begin{tabular}
+            {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
+              >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
+              b{3in} b{15pt}}
+      
+            研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
+            \cline{2-2} 
+            研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
+            \cline{2-2}
+            指导教师姓名、职称: & \theadvisor \enspace \theprotitle &\\
+            \cline{2-2}
+            申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories &\\
+            \cline{2-2}
+            学\qquad 科、专\qquad 业: & \themajor &\\
+            \cline{2-2}
+            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
+            \cline{2-2}
+          \end{tabular}
+          \vspace{3.5cm}
+        \end{table}
+      }
+      \ifdoctor{ % 在职硕士👇
+        \begin{table}[!b]
+          \begin{tabular}
+            {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
+              >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
+              b{3in} b{15pt}}
+      
+            研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
+            \cline{2-2} 
+            研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
+            \cline{2-2}
+            指导教师姓名、职称: & \theadvisor \enspace \theprotitle &\\
+            \cline{2-2}
+            申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories &\\
+            \cline{2-2}
+            学\qquad 科、专\qquad 业: & \themajor &\\
+            \cline{2-2}
+            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
+            \cline{2-2}
+          \end{tabular}
+          \vspace{3.5cm}
+        \end{table}
+      }
+      \ifdoctor{ % 博士👇
         \begin{table}[!b]
           \begin{tabular}
             {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
