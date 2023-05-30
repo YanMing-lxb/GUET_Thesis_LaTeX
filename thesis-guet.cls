@@ -96,10 +96,9 @@
 \newcommand{\thedate}{\quad} % 日期
 \newcommand{\theschool}{\quad} % 学院
 \newcommand{\themajor}{\quad} % 专业
-%本科
 \newcommand{\theadvisor}{\quad} % 导师姓名
 \newcommand{\theprotitle}{\quad} % 导师职称
-\newcommand{\thesecrets}{\quad} % 密级
+\newcommand{\thesecrets}{\qquad} % 密级
 \newcommand{\thestudentnumber}{\quad} % 学号
 \newcommand{\thedegreecategories}{\quad}
 \newcommand{\thedatereply}{\quad}
@@ -184,19 +183,11 @@
     \setlength{\TPHorizModule}{10mm}
     \setlength{\TPVertModule}{10mm}
 
-    \begin{textblock}{5}(13.5,2.1)
+    \begin{textblock}{5}(12,2.1)
       % \textblockcolour{red!30}% 设置背景颜色
-      \begin{table*}
-        \begin{flushright}
-          \begin{tabular}%{ccp{6em}}
-          {>{\fontsize{12pt}{12pt}\selectfont}l
-            >{\centering\arraybackslash\fontsize{12pt}{12pt}\selectfont}
-            b{1in} b{12pt}}
-          密\ \ 级 & \thesecrets \\\specialrule{0em}{0pt}{0pt}
-          \cline{2-2} % 设置表格下框线显示
-          \end{tabular}
-        \end{flushright}
-        \end{table*}
+      \begin{flushright}
+        密\enspace 级 \underline{\hspace*{2.5em}\thesecrets\hspace*{2.5em}}
+      \end{flushright}
     \end{textblock}
   }
   ~\\
