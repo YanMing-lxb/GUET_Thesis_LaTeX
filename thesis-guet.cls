@@ -173,7 +173,8 @@
 
 % ===============封面制作===============
 % 新定义判断变量，如果学位名是专业硕士则执行#1命令，否执行#2命令
-\newcommand{\ifpromaster}[2]{ \ifthenelse{\equal{\degreename}{专业硕士}}{#1}{#2}}
+\newcommand{\ifmaster}[1]{ \ifthenelse{\equal{\degreename}{硕士}}{#1}}
+\newcommand{\ifpromaster}[1]{ \ifthenelse{\equal{\degreename}{专业硕士}}{#1}}
 % 新定义判断变量，如果学位名是本科则执行#1命令，否执行#2命令
 \newcommand{\ifbachelor}[2]{ \ifthenelse{\equal{\degreename}{本科}}{#1}{#2}}
 
@@ -214,7 +215,8 @@
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
       \fontsize{20pt}{26pt}\selectfont{\bfseries（全日制专业学位硕士）}\\
       \vspace{0.8cm}
-    }{ % 学硕及博士👇
+    }
+    \ifmaster{ % 学硕及博士👇
       \vspace{0.7cm} 
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
       \vspace{1.5cm}
@@ -306,7 +308,8 @@
           \end{tabular}
           \vspace{3.5cm}
         \end{table}
-      }{ % 学硕、博士👇
+      }
+      \ifmaster{ % 学硕、博士👇
         \begin{table}[!b]
           \begin{tabular}
             {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
