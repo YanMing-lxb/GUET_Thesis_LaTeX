@@ -144,18 +144,23 @@
   \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
   \def\displayheader{桂林电子科技大学硕士学位论文}
 }
+\DeclareOption{ojmaster}{
+  \def\degreename{在职硕士}
+  \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
+  \def\displayheader{桂林电子科技大学硕士学位论文}
+}
 \DeclareOption{promaster}{
   \def\degreename{专业硕士}
   \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
   \def\displayheader{桂林电子科技大学硕士学位论文}
 }
+\DeclareOption{ptpromaster}{
+  \def\degreename{非全专业硕士}
+  \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
+  \def\displayheader{桂林电子科技大学硕士学位论文}
+}
 \DeclareOption{doctor}{
   \def\degreename{博士}
-  \def\booktitle{博\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
-  \def\displayheader{桂林电子科技大学博士学位论文}
-}
-\DeclareOption{engdoctor}{
-  \def\degreename{工程博士}
   \def\booktitle{博\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
   \def\displayheader{桂林电子科技大学博士学位论文}
 }
@@ -323,7 +328,7 @@
           \end{tabular}
           \vspace{3.5cm}
         \end{table}
-    }
+      }
     }
 
   \end{center}
