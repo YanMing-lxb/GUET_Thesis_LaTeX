@@ -155,7 +155,7 @@
   \def\displayheader{桂林电子科技大学硕士学位论文}
 }
 \DeclareOption{ptmaster}{
-  \def\degreename{非全专业硕士}
+  \def\degreename{非全硕士}
   \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
   \def\displayheader{桂林电子科技大学硕士学位论文}
 }
@@ -173,10 +173,11 @@
 
 % ===============封面制作===============
 % 新定义判断变量，如果学位名是专业硕士则执行#1命令，否执行#2命令
-\newcommand{\ifmaster}[1]{ \ifthenelse{\equal{\degreename}{硕士}}{#1}}
-\newcommand{\ifpromaster}[1]{ \ifthenelse{\equal{\degreename}{专业硕士}}{#1}}
-% 新定义判断变量，如果学位名是本科则执行#1命令，否执行#2命令
 \newcommand{\ifbachelor}[2]{ \ifthenelse{\equal{\degreename}{本科}}{#1}{#2}}
+\newcommand{\ifpromaster}[1]{ \ifthenelse{\equal{\degreename}{专业硕士}}{#1}}
+\newcommand{\ifmaster}[1]{ \ifthenelse{\equal{\degreename}{硕士}}{#1}}
+\newcommand{\ifojmaster}[1]{ \ifthenelse{\equal{\degreename}{在职硕士}}{#1}}
+\newcommand{\ifptmaster}[1]{ \ifthenelse{\equal{\degreename}{非全硕士}}{#1}}
 
 \newcommand{\makecover}{
   \thispagestyle{empty} %没有页眉页脚，空白页
@@ -185,7 +186,9 @@
 
   % ================设置密级格式
   % % 设定textblock尺寸单位
-  \ifbachelor{}{ % 硕博密级👇
+  \ifbachelor{ % 本科无密级👇
+
+  }{ % 硕博密级👇
     \setlength{\TPHorizModule}{10mm}
     \setlength{\TPVertModule}{10mm}
 
