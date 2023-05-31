@@ -178,8 +178,8 @@
 
 \hypersetup{ % 文中链接以及PDF信息相关设置
               pdfauthor = {\theauthor},           % 设置作者名称；
-              pdftitle = {\zh@thetitle},            % 设置文档的标题；
-              pdfsubject = {\displayheader},          % 设置文档主题；
+              pdftitle = {\zh@thetitle},          % 设置文档的标题；
+              pdfsubject = {\displayheader},      % 设置文档主题；
               % pdfkeywords = {},         % 设置文档中关键词；
               colorlinks=true,          % 指定是否给链接添加颜色；
               citecolor=black,          % citecolor链接颜色设置；
@@ -211,7 +211,7 @@
     \setlength{\TPHorizModule}{10mm}
     \setlength{\TPVertModule}{10mm}
 
-    \begin{textblock}{5}(12,2.1)
+    \begin{textblock}{5}(12.6,2.1)
       % \textblockcolour{red!30}% 设置背景颜色
       \begin{flushright}
         密\enspace 级 \underline{\hspace*{2.5em}\thesecrets\hspace*{2.5em}}
