@@ -8,7 +8,7 @@
 \RequirePackage{graphicx} % 图片
 \RequirePackage[font={onehalfspacing, small}, labelsep=space, skip=6pt, figurewithin=none, tablewithin=none]{caption} % figurewithin=none, tablewithin=none 将book 类中向figure of list 添加 10pt间距的命令取消，但也会使得图表章与章之间连续编号，因此需要设置对应计数器每章重置
 \RequirePackage{array}
-\RequirePackage{booktabs}
+\RequirePackage{booktabs} % 三线表
 \RequirePackage[absolute,overlay]{textpos} % 设置密级用的文本框，overlay绝对坐标。可以随意控制文本框位置
 \RequirePackage{setspace}
 \RequirePackage{multirow}
@@ -29,8 +29,16 @@
 \RequirePackage{zhnumber} % 大写中文数字
 \RequirePackage{pifont}
 \RequirePackage[hyphens]{xurl}
-\RequirePackage[unicode,pdfencoding=auto,bookmarks=true,hyperfootnotes=false,bookmarksnumbered=true,bookmarksdepth=4]{hyperref} % 书签设置宏包 citecolor链接颜色设置% linkcolor引用颜色设置 urlcolor网址颜色 unicode,pdfencoding=auto 用来解决PDF警告
-\hypersetup{colorlinks=true,citecolor=black, linkcolor=black, urlcolor=black}
+\RequirePackage[
+                  unicode,                  % unicode设置是否使用unicode字符集
+                  pdfencoding=auto,         % unicode,pdfencoding=auto 用来解决PDF警告 
+                  bookmarks=true,           % 设置pdf文件是否有书签；
+                  hyperfootnotes=false,     % 设置是否在脚注中生成链接；
+                  bookmarksnumbered=true,   % 设置PDF书签是否带编号；
+                  bookmarksdepth=4          % 设置书签深度；
+                  backref = true,           % 在参考文献中添加反向链接；
+                ]{hyperref} % 书签设置宏包 
+
 \RequirePackage{indentfirst}
 \RequirePackage{float}
 \RequirePackage{fancyvrb}
@@ -52,9 +60,9 @@
 \RequirePackage{geometry} % 页面布局宏
 \RequirePackage{ifthen}
 \RequirePackage[capitalize]{cleveref} % 要在 hyperref后引用 noabbrev 引用前缀为缩写
-% bindingoffset为内边距加长2.5cm
 \RequirePackage{lastpage} % 统计总页数宏
-\geometry{a4paper,inner=2.5cm, outer=2.5cm, top=3cm, bottom=2cm,bindingoffset=0cm} 
+
+\geometry{a4paper,inner=2.5cm, outer=2.5cm, top=3cm, bottom=2cm,bindingoffset=0cm} % bindingoffset为内边距加长2.5cm
 
 
 % ===============定义打印版还是电子版===============
@@ -168,6 +176,17 @@
 \ProcessOptions\relax
 
 
+
+\hypersetup{ % 文中链接以及PDF信息相关设置
+              pdfauthor = {\theauthor},           % 设置作者名称；
+              pdftitle = {\zh@thetitle},            % 设置文档的标题；
+              pdfsubject = {\displayheader},          % 设置文档主题；
+              % pdfkeywords = {},         % 设置文档中关键词；
+              colorlinks=true,          % 指定是否给链接添加颜色；
+              citecolor=black,          % citecolor链接颜色设置；
+              linkcolor=black,          % linkcolor引用颜色设置；
+              urlcolor=black            % urlcolor网址颜色；
+            } 
 
 
 
@@ -1292,6 +1311,7 @@
   \setlength{\belowdisplayshortskip}{8pt}
   \setlength{\abovedisplayshortskip}{8pt}
 }
+
 
 
 
