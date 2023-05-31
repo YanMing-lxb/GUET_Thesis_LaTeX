@@ -567,7 +567,7 @@
 
 
 % ===============字体设置===============
-\newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path = ./fonts/]{GB2312.ttf}%楷体
+\newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path = ./Fonts/]{GB2312.ttf}%楷体
 \ifwindows
   \setCJKmainfont[AutoFakeBold=true]{SimSun} %设置xeCJK 中文主字体
   \newCJKfontfamily{\heiti}[AutoFakeBold=true]{SimHei} 
@@ -580,14 +580,14 @@
   \newfontfamily{\heiti@letter}{STHeiti}
   \setallmainfonts{Times New Roman}
 \else
-  \setCJKmainfont[AutoFakeBold=true,Path = ./fonts/]{fzsong.ttf}
-  \newCJKfontfamily{\heiti}[AutoFakeBold=true,Path = ./fonts/]{fzhei.ttf}
-  \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./fonts/]
+  \setCJKmainfont[AutoFakeBold=true,Path = ./Fonts/]{fzsong.ttf}
+  \newCJKfontfamily{\heiti}[AutoFakeBold=true,Path = ./Fonts/]{fzhei.ttf}
+  \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./Fonts/]
   \setallmainfonts[
     BoldFont=timesbd.ttf,
     ItalicFont=timesi.ttf,
     BoldItalicFont=timesbi.ttf,
-    Path = ./fonts/
+    Path = ./Fonts/
   ]{times.ttf}
 \fi
 \fi
@@ -988,7 +988,7 @@
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   \thispagestyle{fancy}
   \normalsize % 设置字体为小四
-  \input{Chapter/Thanks.tex} %% 致谢文档位置
+  \input{Chapters/Thanks.tex} %% 致谢文档位置
 }
 
 \newcommand{\thesiscontent}{
@@ -1109,11 +1109,11 @@
   }{
     \setlength{\labelsep}{3pt}
     \renewcommand{\bstlabelmark}{loo}
-    \bibliographystyle{./Reference/thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
+    \bibliographystyle{./References/thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
     \bibliography{#2}
     \setlength{\labelsep}{6pt}
   }{
-    \bibliographystyle{./Reference/thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
+    \bibliographystyle{./References/thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
     \bibliography{#2} %参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib
   }
 }
@@ -1213,7 +1213,7 @@
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   \thispagestyle{fancy}
   \normalsize % 设置字体为小四
-  \input{Chapter/Accomplish.tex} %% 学术成果文档位置
+  \input{Chapters/Accomplish.tex} %% 学术成果文档位置
 }
 { % 该处先注释掉了，不知道为什么总是报错提示没定义
   % 猜测最后一页报错可能是由于某些机制导致的，希望能有大神来解决。
