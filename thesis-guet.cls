@@ -206,15 +206,15 @@
   \begin{center}
     \ifbachelor{ % 本科LOGO👇
       \vspace{-2.2cm}
-      \includegraphics[width=0.9 \textwidth]{./Picture/Guet-logo.pdf}
+      \includegraphics[width=0.9 \textwidth]{./Pictures/Guet-logo.pdf}
       
       \vspace{2cm}%本科的题目不用英文所以比较居中 
     }{ % 硕博LOGO👇
       \vspace{-0.4cm}
       \ifOptionPrintVersion
-        {\includegraphics[width=0.9 \textwidth]{./Picture/Guet-logo-black.pdf}}
+        {\includegraphics[width=0.9 \textwidth]{./Pictures/Guet-logo-black.pdf}}
       \else
-        {\includegraphics[width=0.9 \textwidth]{./Picture/Guet-logo.pdf}}
+        {\includegraphics[width=0.9 \textwidth]{./Pictures/Guet-logo.pdf}}
       \fi
     }
 
