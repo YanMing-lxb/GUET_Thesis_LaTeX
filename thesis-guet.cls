@@ -36,7 +36,6 @@
                   hyperfootnotes=false,     % 设置是否在脚注中生成链接；
                   bookmarksnumbered=true,   % 设置PDF书签是否带编号；
                   bookmarksdepth=4          % 设置书签深度；
-                  backref = true,           % 在参考文献中添加反向链接；
                 ]{hyperref} % 书签设置宏包 
 
 \RequirePackage{indentfirst}
