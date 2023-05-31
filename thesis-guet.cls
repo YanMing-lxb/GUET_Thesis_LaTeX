@@ -206,12 +206,16 @@
   \begin{center}
     \ifbachelor{ % 本科LOGO👇
       \vspace{-2.2cm}
-      \includegraphics[width=0.9 \textwidth]{./picture/Guet-logo.pdf}
+      \includegraphics[width=0.9 \textwidth]{./Picture/Guet-logo.pdf}
       
       \vspace{2cm}%本科的题目不用英文所以比较居中 
     }{ % 硕博LOGO👇
       \vspace{-0.4cm}
-      \includegraphics[width=0.9 \textwidth]{./picture/Guet-logo.pdf}
+      \ifOptionPrintVersion
+        {\includegraphics[width=0.9 \textwidth]{./Picture/Guet-logo-black.pdf}}
+      \else
+        {\includegraphics[width=0.9 \textwidth]{./Picture/Guet-logo.pdf}}
+      \fi
     }
 
     \ifpromaster{ % 专硕👇
@@ -1099,11 +1103,11 @@
   }{
     \setlength{\labelsep}{3pt}
     \renewcommand{\bstlabelmark}{loo}
-    \bibliographystyle{./reference/thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
+    \bibliographystyle{./Reference/thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
     \bibliography{#2}
     \setlength{\labelsep}{6pt}
   }{
-    \bibliographystyle{./reference/thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
+    \bibliographystyle{./Reference/thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
     \bibliography{#2} %参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib
   }
 }
