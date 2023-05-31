@@ -60,14 +60,14 @@
 % ===============定义打印版还是电子版===============
 \newif\ifOptionPrintVersion 
 \OptionPrintVersiontrue
-\DeclareOption{eversion}{\OptionPrintVersiontrue}%true为电子版，false为打印版。
-\DeclareOption{pversion}{\OptionPrintVersionfalse}
+\DeclareOption{eversion}{\OptionPrintVersionfalse}%true为电子版，false为打印版。
+\DeclareOption{pversion}{\OptionPrintVersiontrue}
 
 % ================页边距设置===============
 \ifOptionPrintVersion
-  {}
-\else
   {\geometry{inner=2cm, outer=2cm,bindingoffset=0.5cm}}
+\else
+  {}
 \fi
 
 % ===============定义空白页命令=============== 
@@ -458,9 +458,9 @@
     
     %判断是否为电子版。true为电子版，false为打印版。
     \ifOptionPrintVersion
-      {}
-    \else
       {\blankpage}
+    \else
+      {}
     \fi
   }
   
@@ -549,9 +549,9 @@
   }
   \end{spacing}
     \ifOptionPrintVersion
-      {}
-    \else
       {\blankpage}
+    \else
+      {}
     \fi
 }
 
@@ -735,14 +735,16 @@
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}} % 罗马页码居中显示
 }{
   \ifOptionPrintVersion
-    {}
+    {
+      \checkoddpage
+      \ifoddpage
+        \blankpage@number
+      \else
+        \newpage
+      \fi
+    }
   \else
-    \checkoddpage
-    \ifoddpage
-      \blankpage@number
-    \else
-      \newpage
-    \fi
+    {}
   \fi
 
 }
@@ -764,14 +766,16 @@
 \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}}
 }{
   \ifOptionPrintVersion
-    {}
+    {
+      \checkoddpage
+      \ifoddpage
+        \blankpage@number
+      \else
+        \newpage
+      \fi
+    }
   \else
-    \checkoddpage
-    \ifoddpage
-      \blankpage@number
-    \else
-      \newpage
-    \fi
+    {}
   \fi
   }
   
@@ -922,14 +926,16 @@
   \end{small}
   \addcontentsline{toc}{chapter}{\heiti 符号说明} % 设置在目录显示符号说明
   \ifOptionPrintVersion
-    {}
+    {
+      \checkoddpage
+      \ifoddpage
+        \blankpage@number
+      \else
+        \newpage
+      \fi
+    }
   \else
-    \checkoddpage
-    \ifoddpage
-      \blankpage@number
-    \else
-      \newpage
-    \fi
+    {}
   \fi
 }
 
@@ -1183,14 +1189,16 @@
 %   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
 % }{
 %   \ifOptionPrintVersion
-%     {}
+%     {
+%       \checkoddpage
+%       \ifoddpage
+%         \blankpage
+%       \else
+%         \newpage
+%       \fi
+%     }
 %   \else
-%     \checkoddpage
-%     \ifoddpage
-%       \blankpage
-%     \else
-%       \newpage
-%     \fi
+%     {}
 %   \fi
 % }
 
@@ -1212,14 +1220,16 @@
   % 不过想了想，就算最后一页是奇数，不加空白页也没什么影响，
   % 打印出来的效果依然是背面空白。
   % \ifOptionPrintVersion
-  %   {}
-  % \else
-  %   \checkoddpage
+  %   {
+  %     \checkoddpage
   %     \ifoddpage
   %       \blankpage
   %     \else
   %       \newpage
   %     \fi
+  %   }
+  % \else
+  %   {}
   % \fi
 }
 
