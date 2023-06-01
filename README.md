@@ -15,6 +15,11 @@
 
 参考文献格式".bst"文件根据 GB/T 7714-2015 BibTeX Style 宏包配置参数进行自定义样式而来，符合桂林电子科技大学学位论文对参考文献格式的要求。在修改参考文献格式的过程中，感谢[GB/T 7714-2015 BibTeX Style 项目](https://github.com/zepinglee/gbt7714-bibtex-style)的 Zeping Lee 大佬对我的帮助。
 
+## 下载
+[国内Gitee仓库链接](https://gitee.com/metaljack666/Guet_LATEX_Thesis_Template)
+[国外Github仓库链接](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template)
+
+## 相关项目
 桂林电子科技大学 Beamer 模板：[Guet Beamer Theme](https://github.com/YanMing-lxb/Guet_Beamer_Theme)
 
 ## 使用方法
