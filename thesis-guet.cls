@@ -109,6 +109,7 @@
 \newcommand{\thedegreecategories}{\quad}
 \newcommand{\thedatereply}{\quad}
 
+
 % ===============封面信息获取===============
 \renewcommand{\title}[2]{
   \renewcommand{\zh@thetitle}{#1}
@@ -197,7 +198,8 @@
 \newcommand{\ifptmaster}[1]{ \ifthenelse{\equal{\degreename}{非全硕士}}{#1}{}}
 \newcommand{\ifdoctor}[1]{ \ifthenelse{\equal{\degreename}{博士}}{#1}{}}
 
-\newcommand{\makecover}{
+\newcommand{\makecover}
+{
   \thispagestyle{empty} %没有页眉页脚，空白页
   \setlength{\extrarowheight}{9pt}
   \pdfbookmark{封面}{cover}
@@ -234,7 +236,7 @@
         {\includegraphics[width=0.9 \textwidth]{./Pictures/Guet-logo.pdf}}
       \fi
     }
-
+  % ================设置大题目
     \ifpromaster{ % 专硕👇
       \vspace{0.6cm} 
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
@@ -255,203 +257,205 @@
     }
 
     \ifmaster{ % 学硕👇
-      \vspace{0.7cm} 
+      \vspace{0.6cm} 
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
       \vspace{1.5cm}
     }
     \ifdoctor{ % 博士👇
-      \vspace{0.7cm} 
+      \vspace{0.6cm} 
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
       \vspace{1.5cm}
     }
 
-  % ================设置题目格式
-  \ifbachelor{ % 本科题目 👇
-    \vspace{1cm}
+    % ================设置题目
+    \ifbachelor{ % 本科题目 👇
+      \vspace{1cm}
+      
+      \renewcommand{\arraystretch}{1.3}
+
+      \begin{tabular}{m{0.55in}<{\centering}m{4.8in}<{\centering}}
+        \bfseries\fontsize{16pt}{16pt}\selectfont 题目: &\multirow[t]{2}{12.5cm}
+        {
+        \centering
+        \linespread{2.0}
+        \bfseries\fontsize{16pt}{16pt}\selectfont\zh@thetitle
+        } \\ \cline{2-2}
+        \\ \cline{2-2}
+      \end{tabular}
+      \vspace{2.2cm}
     
-    \renewcommand{\arraystretch}{1.3}
-
-    \begin{tabular}{m{0.57in}<{\centering}m{4.3in}<{\centering}}
-      \bfseries\fontsize{16pt}{16pt}\selectfont 题目: &\multirow[t]{2}{4in}
-      {
-      \centering
-      \linespread{2.0}
-      \bfseries\fontsize{16pt}{16pt}\selectfont\zh@thetitle
-      } \\ \cline{2-2}
-      & \\ \cline{2-2}
-    \end{tabular}
-    \vspace{2.2cm}
-  
-  }{ % 硕博题目👇
-    \renewcommand{\arraystretch}{1.3}
-    \begin{tabular}{m{0.55in}<{\centering}m{4.8in}<{\centering}}
-      \bfseries\fontsize{16bp}{16bp}\selectfont 题目 &\multirow[t]{2}{4.8in}
-      {
-      \centering
-      \bfseries\fontsize{14bp}{26bp}\selectfont \zh@thetitle
-      } \\ \cline{2-2}
-      & \\ \cline{2-2}
-      \bfseries\fontsize{14bp}{14bp}\selectfont (英文) &\multirow[t]{2}{4.8in}
-      {
-      \centering
-      \bfseries\fontsize{14bp}{26bp}\selectfont \en@thetitle
-      } \\ \cline{2-2}
-      & \\ \cline{2-2}
-    \end{tabular}\hspace*{\fill} \\[\baselineskip]
-  }
-    % & \\ \cline{2-2} % 标题有几行就添加几行这段代码
-
-
-    % ================设置信息格式
-    \renewcommand\arraystretch{1.3}
-    
-    \ifbachelor{ % 本科封面信息 👇
+    }{ % 硕博题目👇
+      \renewcommand{\arraystretch}{1.3}
       \begin{tabular}
-        {>{\bfseries\fontsize{15pt}{15pt}\selectfont}m{1.5in}
-          >{\centering\arraybackslash\fontsize{15pt}{15pt}\selectfont}
-          p{3in} b{18pt}}
-  
-        学\hspace{0.36cm} \qquad \qquad 号: & \thestudentnumber &\\
-        \cline{2-2} 
-        姓\hspace{0.36cm} \qquad \qquad 名: & \theauthor & \\
+        {
+          m{1.4cm}<{\vspace{-0.8\baselineskip}\centering}
+          m{12.2cm}<{\vspace{-0.8\baselineskip}\centering}
+        }
+
+        \bfseries\fontsize{16bp}{16bp}\selectfont 题目   & \multirow[t]{2}{12.2cm}{\centering\bfseries\fontsize{14bp}{26bp}\selectfont \zh@thetitle} \\
+        \cline{2-2}\\
         \cline{2-2}
-        学\hspace{0.36cm} \qquad \qquad 院: & \theschool &\\
-        \cline{2-2}
-        专\quad \hspace{0.36cm} \qquad \quad 业: & \themajor &\\
-        \cline{2-2}
-        指\hspace{0.38cm} 导\hspace{0.38cm} 教\hspace{0.38cm} 师: & \theadvisor &\\
-        \cline{2-2}
-        指\hspace{0.1pt} 导\hspace{0.1pt} 教\hspace{0.1pt} 师\hspace{0.1pt} 职\hspace{0.1pt} 称: & \theprotitle &\\
+        \bfseries\fontsize{14bp}{14bp}\selectfont (英文) & \multirow[t]{2}{12.2cm}{\centering\bfseries\fontsize{14bp}{26bp}\selectfont \en@thetitle} \\      
+        \cline{2-2}\\
         \cline{2-2}
       \end{tabular}
-      
-      \vspace{3cm}
-      \fontsize{16pt}{16pt}\selectfont \thedatereply
-      
-    }{ % 硕博封面信息 👇
-      \ifpromaster{ % 专硕👇
-        \begin{table}[!b]
-          \begin{textblock}{15}(3,18)
-            {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
-              >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
-              b{3in} b{15pt}}
-      
-            研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
-            \cline{2-2} 
-            研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
-            \cline{2-2}
-            指导教师姓名、职称: & \theadvisor \enspace \theprotitle &\\
-            \cline{2-2}
-            申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \thedegreecategories &\\
-            \cline{2-2}
-            领\hspace{7em}域: & \themajor &\\
-            \cline{2-2}
-            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
-            \cline{2-2}
-          \end{tabular}
-        \end{textblock}
-      }
-      \ifptmaster{ % 非全专硕👇
-        \begin{textblock}{15}(3,18)
-          \begin{tabular}
-            {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
-              >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
-              b{3in} b{15pt}}
-  
-            研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
-            \cline{2-2} 
-            研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
-            \cline{2-2}
-            指导教师姓名、职称: & \theadvisor \enspace \theprotitle &\\
-            \cline{2-2}
-            申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \thedegreecategories &\\
-            \cline{2-2}
-            领\hspace{7em}域: & \themajor &\\
-            \cline{2-2}
-            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
-            \cline{2-2}
-          \end{tabular}
-        \end{textblock}
-      }
-      \ifmaster{ % 学硕👇
-        \begin{textblock}{15}(3,18)
-          \begin{tabular}
-            {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
-              >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
-              b{3in} b{15pt}}
-      
-            研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
-            \cline{2-2} 
-            研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
-            \cline{2-2}
-            指导教师姓名、职称: & \theadvisor \enspace \theprotitle &\\
-            \cline{2-2}
-            申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories &\\
-            \cline{2-2}
-            学\qquad 科、专\qquad 业: & \themajor &\\
-            \cline{2-2}
-            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
-            \cline{2-2}
-          \end{tabular}
-        \end{textblock}
-      }
-      \ifojmaster{ % 在职硕士👇
-        \begin{textblock}{15}(3,18)
-          \begin{tabular}
-            {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
-              >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
-              b{3in} b{15pt}}
-      
-            研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
-            \cline{2-2} 
-            研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
-            \cline{2-2}
-            指导教师姓名、职称: & \theadvisor \enspace \theprotitle &\\
-            \cline{2-2}
-            申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories &\\
-            \cline{2-2}
-            学\qquad 科、专\qquad 业: & \themajor &\\
-            \cline{2-2}
-            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
-            \cline{2-2}
-          \end{tabular}
-        \end{textblock}
-      }
-      \ifdoctor{ % 博士👇
-        \begin{textblock}{15}(3,18)
-          \begin{tabular}
-            {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
-              >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
-              b{3in} b{15pt}}
-      
-            研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
-            \cline{2-2} 
-            研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
-            \cline{2-2}
-            指导教师姓名、职称: & \theadvisor \enspace \theprotitle &\\
-            \cline{2-2}
-            申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories &\\
-            \cline{2-2}
-            学\qquad 科、专\qquad 业: & \themajor &\\
-            \cline{2-2}
-            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
-            \cline{2-2}
-          \end{tabular}
-        \end{textblock}
-      }
     }
-
+      % \\ \cline{2-2} % 标题有几行就添加几行这段代码
   \end{center}
-    \setcounter{page}{1}
-    \setlength{\extrarowheight}{2pt}
+
+  
+  % ================设置信息格式
+  \renewcommand\arraystretch{1.3}
+  
+  \ifbachelor{ % 本科封面信息 👇
+    \begin{tabular}
+      {>{\bfseries\fontsize{15pt}{15pt}\selectfont}m{1.5in}>{\centering\arraybackslash\fontsize{15pt}{15pt}\selectfont} p{3in} b{18pt}}
+
+      学\hspace{0.36cm} \qquad \qquad 号: & \thestudentnumber \\
+      \cline{2-2} 
+      姓\hspace{0.36cm} \qquad \qquad 名: & \theauthor \\
+      \cline{2-2}
+      学\hspace{0.36cm} \qquad \qquad 院: & \theschool \\
+      \cline{2-2}
+      专\quad \hspace{0.36cm} \qquad \quad 业: & \themajor \\
+      \cline{2-2}
+      指\hspace{0.38cm} 导\hspace{0.38cm} 教\hspace{0.38cm} 师: & \theadvisor \\
+      \cline{2-2}
+      指\hspace{0.1pt} 导\hspace{0.1pt} 教\hspace{0.1pt} 师\hspace{0.1pt} 职\hspace{0.1pt} 称: & \theprotitle \\
+      \cline{2-2}
+    \end{tabular}
     
-    %判断是否为电子版。true为电子版，false为打印版。
-    \ifOptionPrintVersion
-      {\blankpage}
-    \else
-      {}
-    \fi
+    \vspace{3cm}
+    \fontsize{16pt}{16pt}\selectfont \thedatereply
+    
+  }{ % 硕博封面信息 👇
+    \ifpromaster{ % 专硕👇
+      \begin{textblock}{15}(3,18)
+        \begin{tabular}
+          {
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6cm}
+          }
+
+          研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                     & \thestudentnumber\vspace{-0.6\baselineskip} \\
+          \cline{2-2} 
+          研\quad 究\quad 生\quad 姓\quad 名:\vspace{-0.6\baselineskip}                     & \theauthor\vspace{-0.6\baselineskip} \\
+          \cline{2-2}
+          指导教师姓名、职称:\vspace{-0.6\baselineskip}                                      & \theadvisor \enspace \theprotitle\vspace{-0.6\baselineskip} \\
+          \cline{2-2}
+          申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别:\vspace{-0.6\baselineskip} & \thedegreecategories\vspace{-0.6\baselineskip} \\
+          \cline{2-2}
+          领\hspace{7em}域:\vspace{-0.6\baselineskip}                                       & \themajor\vspace{-0.6\baselineskip} \\
+          \cline{2-2}
+          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\
+          \cline{2-2}
+        \end{tabular}
+      \end{textblock}
+    }
+    \ifptmaster{ % 非全专硕👇
+      \begin{textblock}{15}(3,18)
+        \begin{tabular}
+          {
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6cm}
+          }
+
+          研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                     & \thestudentnumber\vspace{-0.6\baselineskip} \\
+          \cline{2-2} 
+          研\quad 究\quad 生\quad 姓\quad 名:\vspace{-0.6\baselineskip}                     & \theauthor\vspace{-0.6\baselineskip} \\
+          \cline{2-2}
+          指导教师姓名、职称:\vspace{-0.6\baselineskip}                                      & \theadvisor \enspace \theprotitle\vspace{-0.6\baselineskip} \\
+          \cline{2-2}
+          申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别:\vspace{-0.6\baselineskip} & \thedegreecategories\vspace{-0.6\baselineskip} \\
+          \cline{2-2}
+          领\hspace{7em}域:\vspace{-0.6\baselineskip}                                       & \themajor\vspace{-0.6\baselineskip} \\
+          \cline{2-2}
+          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\
+          \cline{2-2}
+        \end{tabular}
+      \end{textblock}
+    }
+    \ifmaster{ % 学硕👇
+      \begin{textblock}{15}(3,18)
+        \begin{tabular}
+          {
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6cm}
+          }
+    
+          研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                    & \thestudentnumber\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2} 
+          研\quad 究\quad 生\quad 姓\quad 名:\vspace{-0.6\baselineskip}                    & \theauthor\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+          指导教师姓名、职称:\vspace{-0.6\baselineskip}                                     & \theadvisor \enspace \theprotitle\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+          申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类:\vspace{-0.6\baselineskip} & \thedegreecategories\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+          学\qquad 科、专\qquad 业:\vspace{-0.6\baselineskip}                               & \themajor\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+        \end{tabular}
+      \end{textblock}
+    }
+    \ifojmaster{ % 在职硕士👇
+      \begin{textblock}{15}(3,18)
+        \begin{tabular}
+          {
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6cm}
+          }
+    
+          研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                    & \thestudentnumber\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2} 
+          研\quad 究\quad 生\quad 姓\quad 名:\vspace{-0.6\baselineskip}                    & \theauthor\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+          指导教师姓名、职称:\vspace{-0.6\baselineskip}                                     & \theadvisor \enspace \theprotitle\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+          申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类:\vspace{-0.6\baselineskip} & \thedegreecategories\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+          学\qquad 科、专\qquad 业:\vspace{-0.6\baselineskip}                               & \themajor\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+        \end{tabular}
+      \end{textblock}
+    }
+    \ifdoctor{ % 博士👇
+      \begin{textblock}{15}(3,18)
+        \begin{tabular}
+          {
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6cm}
+          }
+    
+          研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                    & \thestudentnumber\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2} 
+          研\quad 究\quad 生\quad 姓\quad 名:\vspace{-0.6\baselineskip}                    & \theauthor\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+          指导教师姓名、职称:\vspace{-0.6\baselineskip}                                     & \theadvisor \enspace \theprotitle\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+          申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类:\vspace{-0.6\baselineskip} & \thedegreecategories\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+          学\qquad 科、专\qquad 业:\vspace{-0.6\baselineskip}                               & \themajor\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\ 
+          \cline{2-2}
+        \end{tabular}
+      \end{textblock}
+    }
   }
+
+  \setcounter{page}{1}
+  \setlength{\extrarowheight}{2pt}
+  
+  %判断是否为电子版。true为电子版，false为打印版。
+  \ifOptionPrintVersion
+    {\blankpage}
+  \else
+    {}
+  \fi
+}
   
 % ====================导入封面PDF文件设置====================
 \newcommand{\bindpdfcover}[1]{
