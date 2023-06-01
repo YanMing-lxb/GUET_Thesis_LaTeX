@@ -61,20 +61,19 @@
 \RequirePackage[capitalize]{cleveref} % 要在 hyperref后引用 noabbrev 引用前缀为缩写
 \RequirePackage{lastpage} % 统计总页数宏
 
-\geometry{a4paper,inner=2.5cm, outer=2.5cm, top=3cm, bottom=2cm,bindingoffset=0cm} % bindingoffset为内边距加长2.5cm
 
-
-% ===============定义打印版还是电子版===============
-\newif\ifOptionPrintVersion 
-\OptionPrintVersiontrue
-\DeclareOption{eversion}{\OptionPrintVersionfalse}%true为电子版，false为打印版。
-\DeclareOption{pversion}{\OptionPrintVersiontrue}
+% ===============定义 eversion/pversion 选项===============
+\newif\ifOptionPrintVersion % 定义逻辑变量 OptionPrintVersion
+\OptionPrintVersionfalse % 默认为false 也就是电子版
+\DeclareOption{eversion}{\OptionPrintVersionfalse} % false为电子版
+\DeclareOption{pversion}{\OptionPrintVersiontrue} % true为打印版
+\ProcessOptions\relax % 处理选项
 
 % ================页边距设置===============
-\ifOptionPrintVersion
-  {\geometry{inner=2cm, outer=2cm,bindingoffset=0.5cm}}
+\ifOptionPrintVersion % 根据eversion/pversion 选项设置页边距
+  \geometry{inner=3cm, outer=2cm, top=3cm, bottom=2cm} % bindingoffset为内边距加长2.5cm
 \else
-  {}
+  \geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=2cm}
 \fi
 
 % ===============定义空白页命令=============== 
@@ -204,12 +203,12 @@
   \pdfbookmark{封面}{cover}
 
   % ================设置密级格式
-  % % 设定textblock尺寸单位
   \ifbachelor{ % 本科无密级👇
 
   }{ % 硕博密级👇
-    \setlength{\TPHorizModule}{10mm}
-    \setlength{\TPVertModule}{10mm}
+
+    \setlength{\TPHorizModule}{1cm} % 设置textblock环境的水平单位
+    \setlength{\TPVertModule}{1cm} % 设置textblock环境的垂直单位
 
     \begin{textblock}{5}(12.6,2.1)
       % \textblockcolour{red!30}% 设置背景颜色
@@ -332,7 +331,7 @@
     }{ % 硕博封面信息 👇
       \ifpromaster{ % 专硕👇
         \begin{table}[!b]
-          \begin{tabular}
+          \begin{textblock}{15}(3,18)
             {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
               >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
               b{3in} b{15pt}}
@@ -350,16 +349,15 @@
             论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
             \cline{2-2}
           \end{tabular}
-          \vspace{3.5cm}
-        \end{table}
+        \end{textblock}
       }
       \ifptmaster{ % 非全专硕👇
-        \begin{table}[!b]
+        \begin{textblock}{15}(3,18)
           \begin{tabular}
             {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
               >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
               b{3in} b{15pt}}
-      
+  
             研\quad 究\quad 生\quad 学\quad 号: & \thestudentnumber &\\
             \cline{2-2} 
             研\quad 究\quad 生\quad 姓\quad 名: & \theauthor & \\
@@ -373,11 +371,10 @@
             论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
             \cline{2-2}
           \end{tabular}
-          \vspace{3.5cm}
-        \end{table}
+        \end{textblock}
       }
       \ifmaster{ % 学硕👇
-        \begin{table}[!b]
+        \begin{textblock}{15}(3,18)
           \begin{tabular}
             {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
               >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
@@ -396,11 +393,10 @@
             论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
             \cline{2-2}
           \end{tabular}
-          \vspace{3.5cm}
-        \end{table}
+        \end{textblock}
       }
       \ifojmaster{ % 在职硕士👇
-        \begin{table}[!b]
+        \begin{textblock}{15}(3,18)
           \begin{tabular}
             {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
               >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
@@ -419,11 +415,10 @@
             论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
             \cline{2-2}
           \end{tabular}
-          \vspace{3.5cm}
-        \end{table}
+        \end{textblock}
       }
       \ifdoctor{ % 博士👇
-        \begin{table}[!b]
+        \begin{textblock}{15}(3,18)
           \begin{tabular}
             {>{\bfseries\fontsize{15pt}{15pt}\selectfont}l
               >{\centering\arraybackslash\bfseries\fontsize{15pt}{15pt}\selectfont}
@@ -442,8 +437,7 @@
             论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply &\\
             \cline{2-2}
           \end{tabular}
-          \vspace{3.5cm}
-        \end{table}
+        \end{textblock}
       }
     }
 
