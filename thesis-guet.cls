@@ -554,6 +554,11 @@
 \newcommand{\signatureofdeclaration}[1]{
   \includepdf[pages=-]{#1}
   \newpage\setcounter{page}{0}
+  \ifOptionPrintVersion 
+      {\blankpage}
+    \else
+      {}
+    \fi
 }
 
 % ++++++++++++++++++++++++++++++++++++++++++++++++ 封面设置相关结束 ++++++++++++++++++++++++++++++++++++++++++++++++
