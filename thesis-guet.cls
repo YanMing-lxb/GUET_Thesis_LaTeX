@@ -229,43 +229,37 @@
       
       \vspace{2cm}%本科的题目不用英文所以比较居中 
     }{ % 硕博LOGO👇
-      \vspace{-0.4cm}
-      \ifOptionPrintVersion
-        {\includegraphics[width=0.9 \textwidth]{./Pictures/Guet-logo-black.pdf}}
-      \else
-        {\includegraphics[width=0.9 \textwidth]{./Pictures/Guet-logo.pdf}}
-      \fi
+      \begin{textblock}{15}(3.4,4.5)
+        \ifOptionPrintVersion
+          {\includegraphics[width=0.9 \textwidth]{./Pictures/Guet-logo-black.pdf}}
+        \else
+          {\includegraphics[width=0.9 \textwidth]{./Pictures/Guet-logo.pdf}}
+        \fi
+      \end{textblock}
     }
+  
   % ================设置大题目
+  \begin{textblock}{10}(5.5,7.8)
     \ifpromaster{ % 专硕👇
-      \vspace{0.6cm} 
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
       \fontsize{20pt}{26pt}\selectfont{\bfseries（全日制专业学位硕士）}\\
-      \vspace{0.8cm}
     }
     \ifojmaster{ % 在职学硕👇
-      \vspace{0.6cm} 
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
       \fontsize{20pt}{26pt}\selectfont{\bfseries（在职研究生）}\\
-      \vspace{0.8cm}
     }
     \ifptmaster{ % 非全专硕👇
-      \vspace{0.6cm} 
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
       \fontsize{20pt}{26pt}\selectfont{\bfseries（非全日制专业学位硕士）}\\
-      \vspace{0.8cm}
     }
 
     \ifmaster{ % 学硕👇
-      \vspace{0.6cm} 
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
-      \vspace{1.5cm}
     }
     \ifdoctor{ % 博士👇
-      \vspace{0.6cm} 
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
-      \vspace{1.5cm}
     }
+  \end{textblock}
 
     % ================设置题目
     \ifbachelor{ % 本科题目 👇
@@ -285,22 +279,35 @@
       \vspace{2.2cm}
     
     }{ % 硕博题目👇
-      \renewcommand{\arraystretch}{1.3}
-      \begin{tabular}
-        {
-          m{1.4cm}<{\vspace{-0.8\baselineskip}\centering}
-          m{12.2cm}<{\vspace{-0.8\baselineskip}\centering}
+      
+      \begin{textblock}{15}(2.8,9.6)
+        \ifpromaster{ % 专硕👇
+        \vspace{0.9cm}
+        }
+        \ifojmaster{ % 在职学硕👇
+        \vspace{0.9cm}
+        }
+        \ifptmaster{ % 非全专硕👇
+        \vspace{0.9cm}
         }
 
-        \bfseries\fontsize{16bp}{16bp}\selectfont 题目   & \multirow[t]{2}{12.2cm}{\centering\bfseries\fontsize{14bp}{26bp}\selectfont \zh@thetitle} \\
-        \cline{2-2}\\
-        \cline{2-2}
-        \bfseries\fontsize{14bp}{14bp}\selectfont (英文) & \multirow[t]{2}{12.2cm}{\centering\bfseries\fontsize{14bp}{26bp}\selectfont \en@thetitle} \\      
-        \cline{2-2}\\
-        \cline{2-2}
-      \end{tabular}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}
+          {
+            m{1.4cm}<{\vspace{-0.8\baselineskip}\centering}
+            m{12.2cm}<{\vspace{-0.8\baselineskip}\centering}
+          }
+  
+          \bfseries\fontsize{16bp}{16bp}\selectfont 题目   & \multirow[t]{2}{12.2cm}{\centering\bfseries\fontsize{14bp}{26bp}\selectfont \zh@thetitle} 
+          \\ \cline{2-2}
+          % \\ \cline{2-2} % \\ \cline{2-2} % 标题有几行就添加几行这段代码
+          \bfseries\fontsize{14bp}{14bp}\selectfont (英文) & \multirow[t]{2}{12.2cm}{\centering\bfseries\fontsize{14bp}{26bp}\selectfont \en@thetitle} 
+          \\ \cline{2-2}
+          \\ \cline{2-2}
+        \end{tabular}
+      \end{textblock}
     }
-      % \\ \cline{2-2} % 标题有几行就添加几行这段代码
+      
   \end{center}
 
   
@@ -329,12 +336,12 @@
     \fontsize{16pt}{16pt}\selectfont \thedatereply
     
   }{ % 硕博封面信息 👇
-    \ifpromaster{ % 专硕👇
-      \begin{textblock}{15}(3,18)
+    \begin{textblock}{15}(3.4,16.3) %
+      \ifpromaster{ % 专硕👇
         \begin{tabular}
           {
             >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6cm}
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6.5cm}
           }
 
           研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                     & \thestudentnumber\vspace{-0.6\baselineskip} \\
@@ -350,14 +357,12 @@
           论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\
           \cline{2-2}
         \end{tabular}
-      \end{textblock}
-    }
-    \ifptmaster{ % 非全专硕👇
-      \begin{textblock}{15}(3,18)
+      }
+      \ifptmaster{ % 非全专硕👇
         \begin{tabular}
           {
             >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6cm}
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6.5cm}
           }
 
           研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                     & \thestudentnumber\vspace{-0.6\baselineskip} \\
@@ -373,14 +378,12 @@
           论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\
           \cline{2-2}
         \end{tabular}
-      \end{textblock}
-    }
-    \ifmaster{ % 学硕👇
-      \begin{textblock}{15}(3,18)
+      }
+      \ifmaster{ % 学硕👇
         \begin{tabular}
           {
             >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6cm}
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6.5cm}
           }
     
           研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                    & \thestudentnumber\vspace{-0.6\baselineskip} \\ 
@@ -396,14 +399,12 @@
           论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\ 
           \cline{2-2}
         \end{tabular}
-      \end{textblock}
-    }
-    \ifojmaster{ % 在职硕士👇
-      \begin{textblock}{15}(3,18)
+      }
+      \ifojmaster{ % 在职硕士👇
         \begin{tabular}
           {
             >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6cm}
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6.5cm}
           }
     
           研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                    & \thestudentnumber\vspace{-0.6\baselineskip} \\ 
@@ -419,14 +420,12 @@
           论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\ 
           \cline{2-2}
         \end{tabular}
-      \end{textblock}
-    }
-    \ifdoctor{ % 博士👇
-      \begin{textblock}{15}(3,18)
+      }
+      \ifdoctor{ % 博士👇
         \begin{tabular}
           {
             >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6cm}
+            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6.5cm}
           }
     
           研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                    & \thestudentnumber\vspace{-0.6\baselineskip} \\ 
@@ -442,8 +441,9 @@
           论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\ 
           \cline{2-2}
         \end{tabular}
-      \end{textblock}
-    }
+        
+      }
+    \end{textblock}
   }
 
   \setcounter{page}{1}
