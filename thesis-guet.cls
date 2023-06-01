@@ -51,7 +51,7 @@
 \RequirePackage{etoolbox}
 \RequirePackage{newfloat}
 \RequirePackage[resetlabels]{multibib}
-\RequirePackage[nottoc]{tocbibind}
+\RequirePackage[nottoc]{tocbibind} % 快速插入目录
 \RequirePackage{ifoddpage} % 判断是否为奇数
 \RequirePackage{pdfpages}
 \RequirePackage[titles]{tocloft} % 目录设置宏包
