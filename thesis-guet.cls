@@ -333,7 +333,9 @@
     \end{tabular}
     
     \vspace{3cm}
-    \fontsize{16pt}{16pt}\selectfont \thedatereply
+    \begin{center}
+      \fontsize{16pt}{16pt}\selectfont \thedatereply
+    \end{center}
     
   }{ % 硕博封面信息 👇
     \begin{textblock}{15}(3.4,16.3) %
@@ -697,23 +699,42 @@
 
 
 % ===============设置标题字体=============== 
+\ifbachelor{%本科标题顶格左对齐
+  \newcommand{\bachelorchapterformat}{}%默认本科所有章节左对齐(也就是不用加/centering)
+  \titleformat{\chapter}[block]
+  {\bachelorchapterformat\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}}%本科chapter格式
+  {\thechapter}{20pt}{} % \thispagestyle{fancy} 需要使用fancyhdr包，并提供了奇偶页不同的风格
+  
+  \titleformat{\section}[block]
+  {\fontsize{14pt}{14pt}\selectfont\heiti} %\heiti 设置为粗体
+  {\thesection}{10pt}{}
+
+  \titleformat{\subsection}[block]
+  {\fontsize{14pt}{14pt}\selectfont\kaiti}
+  {\thesubsection}{0pt}{}
+
+  \titleformat{\subsubsection}[block]
+  {\fontsize{12pt}{12pt}\selectfont}
+  {\thesubsubsection}{6pt}{}
+  \renewcommand{\thesubsubsection}{\arabic{subsubsection}.} %四级标题格式设置为 1.
+}{
 \titleformat{\chapter}[block]
   {\centering\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}}
   {\thechapter}{7.5pt}{} % \thispagestyle{fancy} 需要使用fancyhdr包，并提供了奇偶页不同的风格
 
-\titleformat{\section}[block]
+  \titleformat{\section}[block]
   {\centering\fontsize{14pt}{14pt}\selectfont} %\heiti 设置为粗体
   {\thesection}{7pt}{}
 
-\titleformat{\subsection}[block]
+  \titleformat{\subsection}[block]
   {\fontsize{14pt}{14pt}\selectfont}
   {\thesubsection}{7pt}{}
 
-\titleformat{\subsubsection}[block]
+  \titleformat{\subsubsection}[block]
   {\fontsize{12pt}{12pt}\selectfont}
   {\thesubsubsection}{6pt}{}
   \renewcommand{\thesubsubsection}{\arabic{subsubsection}.} %四级标题格式设置为 1.
-  
+}
 % ===============定义计数器=============== 
 % \newcounter{pseudopage} %自定义一个名字pseudopage新计数器
 % \setcounter{pseudopage}{0} %pseudopage新计数器清零
@@ -723,9 +744,16 @@
 
 %=========================中文摘要
 \newenvironment{chineseabstract}{
-  \chapter*{摘\quad 要}
-  \setcounter{page}{1} % 定义为第一页
-  \addcontentsline{toc}{chapter}{\heiti 摘\quad 要} % 设置在目录显示摘要
+  \ifbachelor{%本科目录不用显示摘要👇
+    \renewcommand{\bachelorchapterformat}{\centering}
+    \chapter*{摘\quad 要}
+    \renewcommand{\bachelorchapterformat}{}
+    \setcounter{page}{1} % 定义为第一页
+   }{
+    \chapter*{摘\quad 要}
+    \setcounter{page}{1} % 定义为第一页
+    \addcontentsline{toc}{chapter}{\heiti 摘\quad 要} % 设置在目录显示摘要
+  }
   \pagenumbering{Roman} % 设置页码显示为罗马数字
   \markright{\centering 摘\quad 要} %手动设置页眉
   \fancyhf{} %初始化页码页脚布局
@@ -756,8 +784,14 @@
 
 %=========================英文摘要
 \newenvironment{englishabstract}{
-\chapter*{\bfseries ABSTRACT}
-\addcontentsline{toc}{chapter}{\bfseries ABSTRACT} % 设置在目录显示
+  \ifbachelor{%本科目录不用显示摘要👇
+  \renewcommand{\bachelorchapterformat}{\centering}
+  \chapter*{\bfseries ABSTRACT}
+  \renewcommand{\bachelorchapterformat}{}
+}{
+  \chapter*{\bfseries ABSTRACT}
+  \addcontentsline{toc}{chapter}{\bfseries ABSTRACT} % 设置在目录显示
+}
 \markright{\centering\rm ABSTRACT} %手动设置页眉
 \fancyhf{} 
 \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT}
@@ -810,7 +844,7 @@
 \setlength{\cftaftertoctitleskip}{18pt}
 \setlength{\cftbeforechapskip}{0pt}
 \ifbachelor{ % 本科目录格式 👇
-  \linespread{1.389} %本科目录20磅行间距
+  \linespread{2} %本科目录20磅行间距，2倍行间距
   
   \cftsetindents{chapter}{0pt}{20pt} %一个空格约为5磅
   \cftsetindents{section}{0pt}{25pt}
@@ -874,8 +908,16 @@
 
 
 % ====================目录设置====================
-
-\newcommand{\thesistableofcontents}{\tableofcontents}
+\ifbachelor{ % 本科目录标题使其居中 👇
+\newcommand{
+  \thesistableofcontents}{\renewcommand{\bachelorchapterformat}{\centering}
+  \tableofcontents
+  \renewcommand{\bachelorchapterformat}{}
+  }
+}{% 硕博目录标题统一居中无需更改 👇
+  \newcommand{
+  \thesistableofcontents}{\tableofcontents}
+}
 \pretocmd{\tableofcontents}{
   \newpage
   \fancyhf{}
@@ -975,10 +1017,16 @@
 
 % ====================致谢设置====================
 \newcommand{\thesisacknowledgement}{
-  \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %只显示一级标题
-  \setcounter{section}{0} %section计数器清零 
-
-  \chapter*{致\quad 谢}
+  \ifbachelor{ %本科致谢居中
+    \renewcommand{\bachelorchapterformat}{\centering}
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %只显示一级标题
+    \setcounter{section}{0} %section计数器清零 
+    \chapter*{谢\quad 辞}
+}{
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %只显示一级标题
+    \setcounter{section}{0} %section计数器清零 
+    \chapter*{致\quad 谢}
+  }
   \addcontentsline{toc}{chapter}{致\quad 谢}
   % \markboth{致谢}{致谢} %\markboth{<左面页眉>}{<右面页眉>}
   \fancyhf{}
@@ -987,6 +1035,9 @@
   \thispagestyle{fancy}
   \normalsize % 设置字体为小四
   \input{Chapters/Thanks.tex} %% 致谢文档位置
+  \ifbachelor{ %本科致谢居中
+    \renewcommand{\bachelorchapterformat}{}
+}{}
 }
 
 \newcommand{\thesiscontent}{
