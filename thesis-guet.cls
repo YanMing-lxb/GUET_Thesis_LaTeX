@@ -77,9 +77,9 @@
 \fi
 
 % ===============定义空白页命令=============== 
-\newcommand\blankpage{% 定义添加空白页
+\newcommand\blankpage{ % 定义添加空白页
 \newpage
-\thispagestyle{empty}%没有页眉页脚，空白页
+\thispagestyle{empty} %没有页眉页脚，空白页
 \null
 % \addtocounter{page}{-1} %\addtocounter{计数器}{数值}将数值与该计数器原有值相加，数值可以是正整数，也可以是负整数。
 \newpage
@@ -213,7 +213,7 @@
     \setlength{\TPVertModule}{1cm} % 设置textblock环境的垂直单位
 
     \begin{textblock}{5}(12.6,2.1)
-      % \textblockcolour{red!30}% 设置背景颜色
+      % \textblockcolour{red!30} % 设置背景颜色
       \begin{flushright}
         密\enspace 级 \underline{\hspace*{2.5em}\thesecrets\hspace*{2.5em}}
       \end{flushright}
@@ -227,7 +227,7 @@
       \vspace{-2.2cm}
       \includegraphics[width=0.9 \textwidth]{./Pictures/Guet-logo.pdf}
       
-      \vspace{2cm}%本科的题目不用英文所以比较居中 
+      \vspace{2cm} %本科的题目不用英文所以比较居中 
     }{ % 硕博LOGO👇
       \begin{textblock}{15}(3.4,4.5)
         \ifOptionPrintVersion
@@ -478,7 +478,7 @@
         \fontsize{14pt}{20pt}\selectfont\bfseries 本科生毕业设计（论文）独创性声名
       \end{center}
 
-      \par{\fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}% % \noindent无缩进
+      \par{\fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt} % % \noindent无缩进
       本人声明所呈交的毕业设计（论文）是我个人在指导老师指导下进行的工作及取得的成果。尽我所知，除了文中特别加以标注和致谢中所罗列的内容以外，文中不包含其他人或其它机构已经发表或撰写过的成果；也不包含为获得桂林电子科技大学或其他教育机构的学位或证书而使用过的材料。其他同志对本工作的启发和所做的任何贡献均已在毕业设计（论文）中做了明确的说明并表示了谢意。}
       \\
       \vspace{-1cm}
@@ -487,7 +487,7 @@
       \\
 
       \vspace{2cm}
-      \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{27pt}本人签名：\hspace{84pt}%
+      \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{27pt}本人签名：\hspace{84pt} %
       日期： \\
       \vspace{2cm}
       \noindent
@@ -495,24 +495,24 @@
         \fontsize{14pt}{24pt}\selectfont\bfseries 本科生毕业设计（论文）使用授权说明
       \end{center}
 
-      \par{\fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}%
+      \par{\fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt} %
       桂林电子科技大学有权保留并向国家有关部门或机构送交毕业设计说明书（论文）的复印件，允许毕业设计（论文）被查阅和借阅。本人授权桂林电子科技大学可以公布毕业设计（论文）的全部或部分内容，可以采用影印、缩印或其它复制手段保存、汇编毕业设计（论文）}
       \\
 
       \vspace{1.5cm}
       \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}作者签名：   
-      \hspace{84pt}%
+      \hspace{84pt} %
       日期： \\ \\
 
       \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}导师签名：         
-      \hspace{84pt}%
+      \hspace{84pt} %
       日期： \\
   }{ % 硕博独创性声名👇
     \begin{center} % \noindent无缩进
       \fontsize{14pt}{20pt}\selectfont\bfseries 独创性声明
     \end{center}
 
-    \par{\fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}% % \noindent无缩进
+    \par{\fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt} % % \noindent无缩进
     本人声明所呈交的论文是我个人在导师指导下进行的研究工作及取得的研究成果。尽我所知，除了文中特别加以标注和致谢中所罗列的内容以外，论文中不包含其他人已经发表或撰写过的研究成果；也不包含为获得桂林电子科技大学或其它教育机构的学位或证书而使用过的材料。与我一同工作的同志对本研究所做的任何贡献均已在论文中做了明确的说明并表示了谢意。}
     \\
 
@@ -520,7 +520,7 @@
     申请学位论文与资料若有不实之处，本人承担一切相关责任。%
     \\
 
-    \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}本人签名：\hspace{84pt}%
+    \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}本人签名：\hspace{84pt} %
     日期： \\
 
     \vspace{1cm}
@@ -529,17 +529,17 @@
       \fontsize{14pt}{20pt}\selectfont\bfseries 关于论文使用授权的说明
     \end{center}
 
-    \par{\fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}%
+    \par{\fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt} %
     本人完全了解桂林电子科技大学有关保留和使用学位论文的规定，即：研究生在校攻读学位期间论文工作的知识产权单位属桂林电子科技大学。本人保证毕业离校后，结合学位论文研究成果完成的论文、发明专利等成果，署名单位仍然为桂林电子科技大学。学校有权保留送交论文的复印件，允许查阅和借阅论文；学校可以公布论文的全部或部分内容，可以允许采用影印、缩印或其它复制手段保存论文。（保密的论文在解密后遵守此规定）}\\
 
     \vspace{1cm}
 
     \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}作者签名：   
-    \hspace{84pt}%
+    \hspace{84pt} %
     日期： \\
 
     \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}导师签名：         
-    \hspace{84pt}%
+    \hspace{84pt} %
     日期： \\
   }
   \end{spacing}
@@ -567,7 +567,7 @@
 
 
 % ===============字体设置===============
-\newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path = ./Fonts/]{GB2312.ttf}%楷体
+\newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path = ./Fonts/]{GB2312.ttf} %楷体
 \ifwindows
   \setCJKmainfont[AutoFakeBold=true]{SimSun} %设置xeCJK 中文主字体
   \newCJKfontfamily{\heiti}[AutoFakeBold=true]{SimHei} 
@@ -617,15 +617,15 @@
 % ===============设置页眉双线===============
 %本科页眉是一条横线
 \ifbachelor{ % 本科页眉 👇
-\newdimen\singlelineskip 
+  \newdimen\singlelineskip 
 	\setlength\singlelineskip{2pt} 
-	\renewcommand\headrule{% 
-		\hrule height\headrulewidth width\headwidth% 
+	\renewcommand\headrule{ %
+		\hrule height\headrulewidth width\headwidth%
 		\vskip 1.2\singlelineskip}
 }{ % 硕博页眉 👇
   \newdimen\doublelineskip % 两横线间的距离
   \setlength\doublelineskip{1pt}
-  \renewcommand\headrule{%
+  \renewcommand\headrule{ %
     \hrule height\headrulewidth width\headwidth%
     \vskip 1.2\doublelineskip%
     \hrule height\headrulewidth width\headwidth}
@@ -634,7 +634,7 @@
 \setlength{\headheight}{17pt} % 原先设置是15pt
 \pagestyle{fancy} % 设置风格为fancy
 \linespread{1.389} % 字号大小为12bp，基本行距为12×1.2=14.4bp，欲设置行距为20bp，则因子为20/14.4=1.389
-\setlength\parindent{24pt} % % 设置缩进长度 两个小四 pt：磅，bp：大点，pc：pica 
+\setlength\parindent{24pt} % 设置缩进长度 两个小四 pt：磅，bp：大点，pc：pica 
 
 % ===============设置标题段落===============  
 \titlespacing{\chapter}{0pt}{0pt}{18pt} 
@@ -657,20 +657,20 @@
 \counterwithin{figure}{chapter} % 设置对应计数器每章重置
 \counterwithin{table}{chapter} % 设置对应计数器每章重置
 \ifbachelor{ % 本科图表公式题注编号格式 👇
-  \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}} %显示公式编号，其格式x-x
-  \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}} %显示表格编号，其格式x-x
-  \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}} %显示插图编号，其格式x-x
+  \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}} % 显示公式编号，其格式x-x
+  \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}} % 显示表格编号，其格式x-x
+  \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}} % 显示插图编号，其格式x-x
 }{ % 硕博图表公式题注编号格式 👇
-  \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}} %显示公式编号，其格式x-x
-  \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}} %显示表格编号，其格式x-x
-  \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}} %显示插图编号，其格式x-x
+  \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}} % 显示公式编号，其格式x-x
+  \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}} % 显示表格编号，其格式x-x
+  \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}} % 显示插图编号，其格式x-x
 }
 %chapter章序号计数器，section节序号计数器，subsection小节序号计数器，subsubsection小小节序号计数器，paragraph段序号计数器，figure插图序号计数器，table表格序号计数器，page页码序号计数器，equation公式序号计数器
 
 
 % ===============设置图表格式===============  
-\captionsetup{width=\textwidth - 60pt}%84pt
-\captionsetup[subfigure]{aboveskip=2pt, belowskip=2pt}% , width=36pt 设置子图标题的宽度 
+\captionsetup{width=\textwidth - 60pt} 
+\captionsetup[subfigure]{aboveskip=2pt, belowskip=2pt} % width=36pt 设置子图标题的宽度 
 \captionsetup[subfoat]{aboveskip=2pt, belowskip=2pt}
 \captionsetup[figure]{aboveskip=3pt, belowskip=0pt} %设置标题与插图或表格之间的垂直距离，设置标题与下文之间的附加垂直距离, 如果标题在插图或表格之下;或标题与上文之间的附加垂直距离, 如果标题在插图或表格之上。该参数的默认值是0pt。为6pt，下面为0pt
 \captionsetup[table]{aboveskip=0pt, belowskip=6pt}
@@ -680,14 +680,14 @@
 
 
 \AtBeginEnvironment{figure}{ %让图环境的内容居中
-  \def\@floatboxreset{\centering}%
+  \def\@floatboxreset{\centering} %
 }
 \AtBeginEnvironment{table}{ %让表格环境的内容居中
-  \def\@floatboxreset{\centering}%
+  \def\@floatboxreset{\centering} %
 }
-\AtBeginEnvironment{tabular}{\small}%表格字体小五
-\AtBeginEnvironment{tabular*}{\small}%表格字体小五
-\AtBeginEnvironment{longtable}{\small}%跨页表格字体小五
+\AtBeginEnvironment{tabular}{\small} %表格字体小五
+\AtBeginEnvironment{tabular*}{\small} %表格字体小五
+\AtBeginEnvironment{longtable}{\small} %跨页表格字体小五
 %\captionsetup{format=hang} %caption工具包在加载时可以修改标题的很多方面，也可以通过 captionsetup命令也可以在工具包选项中修改。\captionsetup[浮动体类型]{参数1=选项, 参数2=选项,…}其中可选参数浮动体类型的选项可以是figure或table,如果省略该参数, 则表示这两种浮动体都适用。format：plain默认值,将标题作为普通段落排版。hang将标题从第二行起悬挂缩进排版，缩进宽度等于标题标志加分隔符的宽度。indention设置从标题第二行起的附加缩进宽度, 例如indention=5mm,其默认值是0pt。
 %标题设置\captionsetup
 
@@ -699,14 +699,15 @@
 
 
 % ===============设置标题字体=============== 
-\ifbachelor{%本科标题顶格左对齐
-  \newcommand{\bachelorchapterformat}{}%默认本科所有章节左对齐(也就是不用加/centering)
+\ifbachelor{ % 本科标题格式设置 👇
+  \newcommand{\bachelorchapterformat}{} % 定义\bachelorchapterformat命令，用于修改本科一级标题格式
+
   \titleformat{\chapter}[block]
-  {\bachelorchapterformat\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}}%本科chapter格式
+  {\bachelorchapterformat\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}} % 本科chapter格式
   {\thechapter}{20pt}{} % \thispagestyle{fancy} 需要使用fancyhdr包，并提供了奇偶页不同的风格
   
   \titleformat{\section}[block]
-  {\fontsize{14pt}{14pt}\selectfont\heiti} %\heiti 设置为粗体
+  {\fontsize{14pt}{14pt}\selectfont\heiti} % \heiti 设置为粗体
   {\thesection}{10pt}{}
 
   \titleformat{\subsection}[block]
@@ -716,14 +717,14 @@
   \titleformat{\subsubsection}[block]
   {\fontsize{12pt}{12pt}\selectfont}
   {\thesubsubsection}{6pt}{}
-  \renewcommand{\thesubsubsection}{\arabic{subsubsection}.} %四级标题格式设置为 1.
+  \renewcommand{\thesubsubsection}{\arabic{subsubsection}.} % 四级标题格式设置为 1.
 }{
-\titleformat{\chapter}[block]
+\titleformat{\chapter}[block] % 硕博标题格式设置 👇
   {\centering\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}}
-  {\thechapter}{7.5pt}{} % \thispagestyle{fancy} 需要使用fancyhdr包，并提供了奇偶页不同的风格
+  {\thechapter}{7.5pt}{}
 
   \titleformat{\section}[block]
-  {\centering\fontsize{14pt}{14pt}\selectfont} %\heiti 设置为粗体
+  {\centering\fontsize{14pt}{14pt}\selectfont}
   {\thesection}{7pt}{}
 
   \titleformat{\subsection}[block]
@@ -744,20 +745,20 @@
 
 %=========================中文摘要
 \newenvironment{chineseabstract}{
-  \ifbachelor{%本科目录不用显示摘要👇
+  \ifbachelor{ % 本科摘要格式设置 👇
     \renewcommand{\bachelorchapterformat}{\centering}
     \chapter*{摘\quad 要}
     \renewcommand{\bachelorchapterformat}{}
     \setcounter{page}{1} % 定义为第一页
    }{
     \chapter*{摘\quad 要}
-    \setcounter{page}{1} % 定义为第一页
+    \setcounter{page}{1}
     \addcontentsline{toc}{chapter}{\heiti 摘\quad 要} % 设置在目录显示摘要
   }
   \pagenumbering{Roman} % 设置页码显示为罗马数字
-  \markright{\centering 摘\quad 要} %手动设置页眉
-  \fancyhf{} %初始化页码页脚布局
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要} %设置页眉
+  \markright{\centering 摘\quad 要} % 手动设置页眉
+  \fancyhf{} % 初始化页码页脚布局
+  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要} % 设置页眉
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}} % 罗马页码居中显示
 }{
   \ifOptionPrintVersion
@@ -783,19 +784,20 @@
 }
 
 %=========================英文摘要
-\newenvironment{englishabstract}{
-  \ifbachelor{%本科目录不用显示摘要👇
+\newenvironment{englishabstract}
+{
+  \ifbachelor{ % 本科英文摘要格式设置 👇
   \renewcommand{\bachelorchapterformat}{\centering}
   \chapter*{\bfseries ABSTRACT}
   \renewcommand{\bachelorchapterformat}{}
-}{
-  \chapter*{\bfseries ABSTRACT}
-  \addcontentsline{toc}{chapter}{\bfseries ABSTRACT} % 设置在目录显示
-}
-\markright{\centering\rm ABSTRACT} %手动设置页眉
-\fancyhf{} 
-\fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT}
-\fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}}
+  }{ % 硕博英文摘要格式设置 👇
+    \chapter*{\bfseries ABSTRACT}
+    \addcontentsline{toc}{chapter}{\bfseries ABSTRACT} % 设置在目录显示
+  }
+  \markright{\centering\rm ABSTRACT} % 手动设置页眉
+  \fancyhf{} 
+  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT}
+  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}}
 }{
   \ifOptionPrintVersion
     {
@@ -809,19 +811,20 @@
   \else
     {}
   \fi
-  }
+}
   
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%英文关键字
-\newcommand{\englishkeyword}[1]{
+\newcommand{\englishkeyword}[1]
+{
   \vspace{\baselineskip}
-  \noindent %无缩进
+  \noindent % 无缩进
   \@hangfrom{\makebox[2.1cm][l]{\textbf{Keywords:}}}#1
 }
 
 
-%定义加入目录的词语
-%\addtocontents{扩展名} {文本}它可以将任意文本和相关格式命令写入目录或在创建目录时（如果是命令）则被执行,但它不会将命令写入目录。 文本可以是任意字符或\vspace、\newpage等调整某一条目格式的命令,一般在命令前加\protect。
+% 定义加入目录的词语
+% \addtocontents{扩展名} {文本}它可以将任意文本和相关格式命令写入目录或在创建目录时（如果是命令）则被执行,但它不会将命令写入目录。 文本可以是任意字符或\vspace、\newpage等调整某一条目格式的命令,一般在命令前加\protect。
 \AddToHook {shipout/background}{\addtocontents{toc}{
   \protect\cftsetpnumwidth{\widthof{\thepage}-1pt}
 }}
@@ -834,8 +837,8 @@
   \protect\cftsetpnumwidth{\widthof{\thepage}-1pt}
 }}
 
-%设置奇数和偶数页页眉栏文字%使用计数器
-\tocloftpagestyle{fancy} %用户自定义的奇页眉使用桂林电子科技大学xxx，偶数使用标题，页脚页眉居中
+% 设置奇数和偶数页页眉栏文字%使用计数器
+\tocloftpagestyle{fancy} % 用户自定义的奇页眉使用桂林电子科技大学xxx，偶数使用标题，页脚页眉居中
 \renewcommand{\cftchappagefont}{\normalfont}
 \renewcommand\cftchapleader{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftdotsep}{0.4}
@@ -844,13 +847,13 @@
 \setlength{\cftaftertoctitleskip}{18pt}
 \setlength{\cftbeforechapskip}{0pt}
 \ifbachelor{ % 本科目录格式 👇
-  \linespread{2} %本科目录20磅行间距，2倍行间距
+  \linespread{2} % 本科目录20磅行间距，2倍行间距
   
-  \cftsetindents{chapter}{0pt}{20pt} %一个空格约为5磅
+  \cftsetindents{chapter}{0pt}{20pt} % 一个空格约为5磅
   \cftsetindents{section}{0pt}{25pt}
   \cftsetindents{subsection}{0pt}{30pt}
   \cftsetindents{subsubsection}{0pt}{41pt}
-  %本科目录字体大小
+  % 本科目录字体大小
   \renewcommand\cftchapfont{\fontsize{15pt}{15pt}\selectfont\heiti}
   \renewcommand\cftsecfont{\fontsize{14pt}{14pt}\selectfont\heiti}
   \renewcommand\cftsubsecfont{\fontsize{14pt}{15pt}\selectfont\kaiti}
@@ -868,12 +871,12 @@
 
 
 % ====================正文页眉设置====================
-\renewcommand{\chaptermark}[1]{\markboth{\thechapter\hspace*{5.25pt}#1}{}} %修改页眉章节显示内容 %\markboth{<左面页眉>}{<右面页眉>}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\hspace*{5.25pt}#1}{}} % 修改页眉章节显示内容 %\markboth{<左面页眉>}{<右面页眉>}
 \ifbachelor{ % 本科页眉文字 👇
   \newcommand{\standardheader}{
-  \fancyhf{}
-  \fancyhead[CE,CO]{\fontsize{10.5pt}{12.6pt}\selectfont 桂林电子科技大学毕业设计（论文）}
-  \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref {LastPage} 页 }
+    \fancyhf{}
+    \fancyhead[CE,CO]{\fontsize{10.5pt}{12.6pt}\selectfont 桂林电子科技大学毕业设计（论文）}
+    \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref {LastPage} 页 }
   }
 }{ % 硕博页眉文字 👇
   \newcommand{\standardheader}{
@@ -909,14 +912,14 @@
 
 % ====================目录设置====================
 \ifbachelor{ % 本科目录标题使其居中 👇
-\newcommand{
-  \thesistableofcontents}{\renewcommand{\bachelorchapterformat}{\centering}
-  \tableofcontents
-  \renewcommand{\bachelorchapterformat}{}
-  }
-}{% 硕博目录标题统一居中无需更改 👇
-  \newcommand{
-  \thesistableofcontents}{\tableofcontents}
+  \newcommand{\thesistableofcontents}
+    {
+      \renewcommand{\bachelorchapterformat}{\centering}
+      \tableofcontents
+      \renewcommand{\bachelorchapterformat}{}
+    }
+}{ % 硕博目录标题统一居中无需更改 👇
+  \newcommand{\thesistableofcontents}{\tableofcontents}
 }
 \pretocmd{\tableofcontents}{
   \newpage
@@ -930,27 +933,29 @@
 % ====================插图索引格式设置====================
 \newcommand{\thesisfigurelist}{\listoffigures} % 自定义调用\listoffigures的命令
 
-\pretocmd{\listoffigures}{ % 图目录是存放在.lof目录的文件下
-  \newpage  %新建一页
-  \fancyhf{} %初始化页码页脚布局
+\pretocmd{\listoffigures}
+{ % 图目录是存放在.lof目录的文件下
+  \newpage  % 新建一页
+  \fancyhf{} % 初始化页码页脚布局
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{插图索引}}
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}} % 罗马页码居中显示
-  \addtolength{\cftfignumwidth}{12pt} %设置长度命令，使命令\cftfignumwidth的长度设置为12pt，条目编号与条目内容之间占用的宽度, 例如：图 1-2 [\cftfignumwidth] 电子战飞机
-  \renewcommand{\cftfigpresnum}{图} %条目编号前内容  
-  \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %将目录深度设置为0 就会在目录中显示
+  \addtolength{\cftfignumwidth}{12pt} % 设置长度命令，使命令\cftfignumwidth的长度设置为12pt，条目编号与条目内容之间占用的宽度, 例如：图 1-2 [\cftfignumwidth] 电子战飞机
+  \renewcommand{\cftfigpresnum}{图} % 条目编号前内容  
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为0 就会在目录中显示
 }{}{} 
 
 % ====================插表索引格式设置====================
 \newcommand{\thesistablelist}{\listoftables}
 
-\pretocmd{\listoftables}{ % 表目录是存放在.lot目录的文件下
+\pretocmd{\listoftables}
+{ % 表目录是存放在.lot目录的文件下
   \newpage
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont {插表索引}}
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}}
-  \addtolength{\cfttabnumwidth}{12pt} %条目编号占用宽度，条目编号与条目内容之间占用的宽度, 例如：表1-1 [\cftfignumwidth] 参数设置
-  \renewcommand{\cfttabpresnum}{表} %条目编号前内容
-  \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %将目录深度设置为-1，目录中只显示一级标题 0 为chapter
+  \addtolength{\cfttabnumwidth}{12pt} % 条目编号占用宽度，条目编号与条目内容之间占用的宽度, 例如：表1-1 [\cftfignumwidth] 参数设置
+  \renewcommand{\cfttabpresnum}{表} % 条目编号前内容
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为-1，目录中只显示一级标题 0 为chapter
 }{}{}
 
 
@@ -960,9 +965,9 @@
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 符号说明}
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}}
-  \renewcommand{\nomname}{符号说明} %修改符号说明标题的名称。
-  \begin{small} %\footnotesize % 设置字体大小
-    \printnomenclature[1.5 cm]%设置术语与描述之间的距离 
+  \renewcommand{\nomname}{符号说明} % 修改符号说明标题的名称。
+  \begin{small}
+    \printnomenclature[1.5 cm] % 设置术语与描述之间的距离 
   \end{small}
   \addcontentsline{toc}{chapter}{\heiti 符号说明} % 设置在目录显示符号说明
   \ifOptionPrintVersion
@@ -990,7 +995,8 @@
 \setlength{\nomitemsep}{-1\parsep} % Baseline skip between items
 
 % 创建符号说明分组
-\renewcommand{\nomgroup}[1]{%
+\renewcommand{\nomgroup}[1]
+{
   \ifthenelse
     {\equal{#1}{A}}
     {\vspace{9pt} \item[\textbf{希腊字符}]}
@@ -999,7 +1005,7 @@
         {\vspace{9pt} \item[\textbf{下标}]}
         {\ifthenelse{\equal{#1}{C}}{\vspace{9pt} \item[\textbf{缩略语}]}{}}
     }
-  \itemsep\nomitemsep% 应用上面设置的术语垂直行间距
+  \itemsep\nomitemsep % 应用上面设置的术语垂直行间距
 }
 \makenomenclature% 应用符号表
 
@@ -1016,17 +1022,19 @@
 
 
 % ====================致谢设置====================
-\newcommand{\thesisacknowledgement}{
-  \ifbachelor{ %本科致谢居中
-    \renewcommand{\bachelorchapterformat}{\centering}
-    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %只显示一级标题
-    \setcounter{section}{0} %section计数器清零 
+\newcommand{\thesisacknowledgement}
+{
+  \ifbachelor{ % 本科致谢设置 👇
+    \renewcommand{\bachelorchapterformat}{\centering} % 通过修改\bachelorchapterformat命令让致谢居中
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
+    \setcounter{section}{0} % section计数器清零 
     \chapter*{谢\quad 辞}
-}{
-    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %只显示一级标题
-    \setcounter{section}{0} %section计数器清零 
+  }{ % 硕博致谢设置 👇
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
+    \setcounter{section}{0} % section计数器清零 
     \chapter*{致\quad 谢}
   }
+
   \addcontentsline{toc}{chapter}{致\quad 谢}
   % \markboth{致谢}{致谢} %\markboth{<左面页眉>}{<右面页眉>}
   \fancyhf{}
@@ -1034,13 +1042,14 @@
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   \thispagestyle{fancy}
   \normalsize % 设置字体为小四
-  \input{Chapters/Thanks.tex} %% 致谢文档位置
-  \ifbachelor{ %本科致谢居中
+  \input{Chapters/Thanks.tex} % 致谢文档位置
+  \ifbachelor{ %本科致谢居中 👇
     \renewcommand{\bachelorchapterformat}{}
-}{}
+  }{}
 }
 
-\newcommand{\thesiscontent}{
+\newcommand{\thesiscontent}
+{
   \newpage
   \clearpage{\thispagestyle{empty}\cleardoublepage}
   \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
@@ -1048,7 +1057,8 @@
   \pagenumbering{arabic}
 }
 
-\pretocmd{\@chapter}{
+\pretocmd{\@chapter}
+{
   \ifdefined\@BODY
   \else
   \ifnum\value{chapter}=0
@@ -1058,7 +1068,8 @@
 }{}{}
 
 % ====================附录设置====================
-\newcommand{\thesisappendix}{ %附录格式设置
+\newcommand{\thesisappendix}
+{ %附录格式设置 👇
   \newpage
   \appendix
   \interlinepenalty=0
@@ -1082,7 +1093,8 @@
   \renewcommand{\theexample}{\alph{chapter}.\arabic{example}}
 }
 
-\newcommand{\thesissingleappendix}{
+\newcommand{\thesissingleappendix}
+{
   \newpage
   \appendix
   \interlinepenalty=0
@@ -1168,8 +1180,8 @@
 }
 
 \AtBeginDocument{               % 该代码用以解决： multibib 的 resetlabels 功能的 bug
-  \def\thebibliography#1{%
-    \@isnumber{#1}{%
+  \def\thebibliography#1{ %
+    \@isnumber{#1}{ %
       \ifnum\mb@biblabelwidth=0
         % \@tempcnta\c@NAT@ctr %% changed here to c@NAT@ctr
         \@tempcnta=#1\relax
@@ -1177,15 +1189,15 @@
           \advance\@tempcnta\c@NAT@ctr
           % \advance\@tempcnta#1%
         \fi
-        \std@thebibliography{\@arabic\@tempcnta}%
+        \std@thebibliography{\@arabic\@tempcnta} %
       \else
-        \std@thebibliography{\@arabic\mb@biblabelwidth}%
+        \std@thebibliography{\@arabic\mb@biblabelwidth} %
         \global\mb@biblabelwidth 0
       \fi
-    }{%
-      \std@thebibliography{#1}%
-    }%
-  }%
+    }{ %
+      \std@thebibliography{#1} %
+    } %
+  } %
 }
 
 
@@ -1216,7 +1228,7 @@
 %   \renewcommand{\bstlabelmark}{lo}
 %   \thispagestyle{fancy} %该页含有页眉和页脚
 %   \begin{spacing}{1.667}
-%   \bibliographystyleaccomplish{thesis-guet} %插入参考文献的样式.bst文件  \bibliographyaccomplish{#1}%参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib  \end{spacing}
+%   \bibliographystyleaccomplish{thesis-guet} %插入参考文献的样式.bst文件  \bibliographyaccomplish{#1} %参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib  \end{spacing}
 %   \bibliographyaccomplish{#1}
 %   \end{spacing}
 %   \renewcommand{\bibname}{参考文献}
@@ -1285,7 +1297,7 @@
 
 % ===============定理设置===============
 \newtheoremstyle{dotless}{0pt}{0pt}{\normalfont}{24pt}{\heiti}{}{ }{}
-\theoremstyle{dotless}%plain（默认样式）：定理名称是正体，定理内容是斜体。definition：定理名称和定理内容都是正体。remark： 定理名称是斜体，定理内容是正体
+\theoremstyle{dotless} %plain（默认样式）：定理名称是正体，定理内容是斜体。definition：定理名称和定理内容都是正体。remark： 定理名称是斜体，定理内容是正体
 %\renewcommand\@upn{\selectfont\heiti@letter}
 
 
@@ -1323,13 +1335,13 @@
   \item[\hskip5\labelsep
     \heiti
   #1\@addpunct{:}]\ignorespaces %\proofname后面:
-}%开始部分定义
+} %开始部分定义
 {
   \popQED\endtrivlist\@endpefalse
-}%结束部分定义
+} %结束部分定义
 
 %\newcommand{\citing}[1]{\textsuperscript{\cite{#1}}} %\textsuperscript{}文字上标
-\setlist{noitemsep}%条目之间无附加的垂直距离
+\setlist{noitemsep} %条目之间无附加的垂直距离
 \setlist{nolistsep}
 
 %\noindent表示proof没有缩进，\it表示proof斜体
