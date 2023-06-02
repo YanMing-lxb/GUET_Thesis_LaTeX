@@ -239,6 +239,11 @@
     }
   
   % ================设置大题目
+  \ifbachelor{% 本科👇
+    \begin{textblock}{7}(4.5,3.6)
+      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
+    \end{textblock}
+    }{}
   \begin{textblock}{10}(5.5,7.8)
     \ifpromaster{ % 专硕👇
       \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
@@ -263,7 +268,7 @@
 
     % ================设置题目
     \ifbachelor{ % 本科题目 👇
-      \vspace{1cm}
+      \vspace{2cm}
       
       \renewcommand{\arraystretch}{1.3}
 
@@ -333,9 +338,10 @@
     \end{tabular}
     
     \vspace{3cm}
-    \begin{center}
+
+    \begin{textblock}{4}(6,14) %日期居中
       \fontsize{16pt}{16pt}\selectfont \thedatereply
-    \end{center}
+    \end{textblock}
     
   }{ % 硕博封面信息 👇
     \begin{textblock}{15}(3.4,16.3) %
@@ -847,7 +853,7 @@
 \setlength{\cftaftertoctitleskip}{18pt}
 \setlength{\cftbeforechapskip}{0pt}
 \ifbachelor{ % 本科目录格式 👇
-  \linespread{2} % 本科目录20磅行间距，2倍行间距
+
   
   \cftsetindents{chapter}{0pt}{20pt} % 一个空格约为5磅
   \cftsetindents{section}{0pt}{25pt}
@@ -915,7 +921,9 @@
   \newcommand{\thesistableofcontents}
     {
       \renewcommand{\bachelorchapterformat}{\centering}
+      \begin{spacing}{2}%本科目录两倍行距
       \tableofcontents
+      \end{spacing}
       \renewcommand{\bachelorchapterformat}{}
     }
 }{ % 硕博目录标题统一居中无需更改 👇
