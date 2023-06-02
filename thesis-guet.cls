@@ -445,7 +445,7 @@
       }
     \end{textblock}
   }
-
+  \renewcommand{\arraystretch}{1} % 将表格行间距改回1倍
   \setcounter{page}{1}
   \setlength{\extrarowheight}{2pt}
   
