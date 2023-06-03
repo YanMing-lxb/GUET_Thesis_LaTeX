@@ -11,7 +11,7 @@
 \RequirePackage{booktabs} % 三线表
 \RequirePackage{makecell} % 设置封面表格部分横线的宽度
 \RequirePackage[absolute,overlay]{textpos} % 设置密级用的文本框，overlay绝对坐标。可以随意控制文本框位置
-\RequirePackage{setspace}
+\RequirePackage{setspace} % 调整行距宏包，提供\setstretch命令和spacing环境
 \RequirePackage{multirow}
 \RequirePackage[tbtags]{amsmath}
 \RequirePackage{amssymb}
@@ -937,9 +937,9 @@
     {
       \renewcommand{\bachelorchapterformat}{\centering}
       \begin{spacing}{2}%本科目录两倍行距
-      \tableofcontents
+        \tableofcontents
       \end{spacing}
-      \renewcommand{\bachelorchapterformat}{}
+      \renewcommand{\bachelorchapterformat}{} % 还原初始设置
     }
 }{ % 硕博目录标题统一居中无需更改 👇
   \newcommand{\thesistableofcontents}{\tableofcontents}
@@ -954,7 +954,18 @@
 
 
 % ====================插图索引格式设置====================
-\newcommand{\thesisfigurelist}{\listoffigures} % 自定义调用\listoffigures的命令
+\ifbachelor{ % 定义本科插图索引 👇
+  \newcommand{\thesisfigurelist}
+  {
+    \renewcommand{\bachelorchapterformat}{\centering} % 设置标题居中
+    \setstretch{2.0} % 设置二倍行距
+    \listoffigures
+    \setstretch{1.389} % 行距设置回20磅
+    \renewcommand{\bachelorchapterformat}{} % 还原初始设置：左对齐
+  }
+}{ % 定义硕博插图索引命令 👇
+  \newcommand{\thesisfigurelist}{\listoffigures} % 自定义调用\listoffigures的命令
+}
 
 \pretocmd{\listoffigures}
 { % 图目录是存放在.lof目录的文件下
@@ -968,7 +979,18 @@
 }{}{} 
 
 % ====================插表索引格式设置====================
-\newcommand{\thesistablelist}{\listoftables}
+\ifbachelor{ % 定义本科插表索引 👇
+  \newcommand{\thesistablelist}
+  {
+    \renewcommand{\bachelorchapterformat}{\centering} % 设置标题居中
+    \setstretch{2.0} % 设置二倍行距
+    \listoftables
+    \setstretch{1.389} % 行距设置回20磅
+    \renewcommand{\bachelorchapterformat}{} % 还原初始设置：左对齐
+  }
+}{ % 定义硕博插表索引命令 👇
+  \newcommand{\thesistablelist}{\listoftables} % 自定义\thesistablelist命令
+}
 
 \pretocmd{\listoftables}
 { % 表目录是存放在.lot目录的文件下
@@ -1066,7 +1088,7 @@
   \thispagestyle{fancy}
   \normalsize % 设置字体为小四
   \input{Chapters/Thanks.tex} % 致谢文档位置
-  \ifbachelor{ %本科致谢居中 👇
+  \ifbachelor{ % 一级标题还原默认设置 👇
     \renewcommand{\bachelorchapterformat}{}
   }{}
 }
