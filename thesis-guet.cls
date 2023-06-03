@@ -1006,6 +1006,11 @@
 
 % ====================符号说明页面设置====================
 \newcommand{\thesissymbollist}{ 
+  \ifbachelor{ % 设置本科插表索引标题 👇
+    \renewcommand{\bachelorchapterformat}{\centering} % 设置标题居中
+    \setstretch{2.0} % 设置二倍行距
+  }{}
+
   \newpage 
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 符号说明}
@@ -1015,7 +1020,13 @@
     \printnomenclature[1.5 cm] % 设置术语与描述之间的距离 
   \end{small}
   \addcontentsline{toc}{chapter}{\heiti 符号说明} % 设置在目录显示符号说明
-  \ifOptionPrintVersion
+
+  \ifbachelor{ % 设置本科插表索引标题 👇
+    \renewcommand{\bachelorchapterformat}{} % 还原初始设置：左对齐
+    \setstretch{1.389} % 行距设置回20磅
+  }{}
+
+  \ifOptionPrintVersion % 打印版本切换
     {
       \checkoddpage
       \ifoddpage
@@ -1052,7 +1063,7 @@
     }
   \itemsep\nomitemsep % 应用上面设置的术语垂直行间距
 }
-\makenomenclature% 应用符号表
+\makenomenclature % 应用符号表
 
 % ====================算法栏====================
 \SetAlgorithmName{算法}{算法}{算法列表}
