@@ -738,8 +738,8 @@
   {\fontsize{12pt}{12pt}\selectfont}
   {\thesubsubsection}{6pt}{}
   \renewcommand{\thesubsubsection}{\arabic{subsubsection}.} % 四级标题格式设置为 1.
-}{
-\titleformat{\chapter}[block] % 硕博标题格式设置 👇
+}{ % 硕博标题格式设置 👇
+  \titleformat{\chapter}[block] 
   {\centering\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}}
   {\thechapter}{7.5pt}{}
 
@@ -770,16 +770,18 @@
     \chapter*{摘\quad 要}
     \renewcommand{\bachelorchapterformat}{}
     \setcounter{page}{1} % 定义为第一页
-   }{
+  }{ % 硕博摘要格式设置 👇
     \chapter*{摘\quad 要}
     \setcounter{page}{1}
     \addcontentsline{toc}{chapter}{\heiti 摘\quad 要} % 设置在目录显示摘要
   }
+
   \pagenumbering{Roman} % 设置页码显示为罗马数字
   \markright{\centering 摘\quad 要} % 手动设置页眉
   \fancyhf{} % 初始化页码页脚布局
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要} % 设置页眉
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}} % 罗马页码居中显示
+  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage} % 罗马页码居中显示
+
 }{
   \ifOptionPrintVersion
     {
@@ -814,10 +816,10 @@
     \chapter*{\bfseries ABSTRACT}
     \addcontentsline{toc}{chapter}{\bfseries ABSTRACT} % 设置在目录显示
   }
-  \markright{\centering\rm ABSTRACT} % 手动设置页眉
+  \markright{\centering\normalfont ABSTRACT} % 手动设置页眉
   \fancyhf{} 
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}}
+  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
 }{
   \ifOptionPrintVersion
     {
@@ -947,7 +949,7 @@
   \newpage
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 目\quad 录}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}}
+  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   \pdfbookmark{目录}{toc}
 }{}{}
 
@@ -971,7 +973,7 @@
   \newpage  % 新建一页
   \fancyhf{} % 初始化页码页脚布局
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{插图索引}}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}} % 罗马页码居中显示
+  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage} % 罗马页码居中显示
   \addtolength{\cftfignumwidth}{12pt} % 设置长度命令，使命令\cftfignumwidth的长度设置为12pt，条目编号与条目内容之间占用的宽度, 例如：图 1-2 [\cftfignumwidth] 电子战飞机
   \renewcommand{\cftfigpresnum}{图} % 条目编号前内容  
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为0 就会在目录中显示
@@ -996,7 +998,7 @@
   \newpage
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont {插表索引}}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}}
+  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   \addtolength{\cfttabnumwidth}{12pt} % 条目编号占用宽度，条目编号与条目内容之间占用的宽度, 例如：表1-1 [\cftfignumwidth] 参数设置
   \renewcommand{\cfttabpresnum}{表} % 条目编号前内容
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为-1，目录中只显示一级标题 0 为chapter
@@ -1013,7 +1015,7 @@
   \newpage 
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 符号说明}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\Roman{page}}
+  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   \renewcommand{\nomname}{符号说明} % 修改符号说明标题的名称。
   \begin{small}
     \printnomenclature[1.5 cm] % 设置术语与描述之间的距离 
