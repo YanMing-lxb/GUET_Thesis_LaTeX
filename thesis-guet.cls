@@ -635,15 +635,14 @@
 \urlstyle{rm}
 \raggedbottom %顶部对齐
 
-% ===============设置页眉双线===============
-%本科页眉是一条横线
-\ifbachelor{ % 本科页眉 👇
+% ===============设置页眉线===============
+\ifbachelor{ % 本科页眉单线 👇
   \newdimen\singlelineskip 
 	\setlength\singlelineskip{2pt} 
 	\renewcommand\headrule{ %
 		\hrule height\headrulewidth width\headwidth%
 		\vskip 1.2\singlelineskip}
-}{ % 硕博页眉 👇
+}{ % 硕博页眉双线 👇
   \newdimen\doublelineskip % 两横线间的距离
   \setlength\doublelineskip{1pt}
   \renewcommand\headrule{ %
