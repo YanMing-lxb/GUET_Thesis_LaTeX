@@ -288,6 +288,7 @@
         \multirow[t]{2}{11.4cm}{\centering\bfseries\fontsize{16pt}{16pt}\selectfont\zh@thetitle} 
         \\ \cline{2-2}
         \\ \cline{2-2}
+         % \\ \cline{2-2} % 标题有几行就添加几行这段代码
       \end{tabular}
     \end{textblock}
   
