@@ -777,18 +777,15 @@
   }
 
   \pagenumbering{Roman} % 设置页码显示为罗马数字
-  % \fancyhf{} % 初始化页码页脚布局
+
+  \fancyhf{} % 初始化页码页脚布局
   \ifbachelor{ % 本科摘要页眉页码设置 👇
-    \markright{\centering 摘\quad 要} % 先居中凑合
-    % \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要} % 设置页眉
-    % \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref 页}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要} % 设置页眉
+    \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref 页}
   }{ % 硕博摘要页眉页码设置 👇
-    \markright{\centering 摘\quad 要}
-    % fancyhead和fancyfoot命令失效，不知道为什么
-    % \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要} % 设置页眉
-    % \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage} % 罗马页码居中显示
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要} % 设置页眉
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage} % 罗马页码居中显示
   }
-  % \thispagestyle{fancy}
 }{
   \ifOptionPrintVersion
     {
@@ -800,7 +797,7 @@
       \fi
     }
   \else
-    {}
+    \newpage
   \fi
 
 }
@@ -824,17 +821,14 @@
     \addcontentsline{toc}{chapter}{\bfseries ABSTRACT} % 设置在目录显示
   }
 
-  % \fancyhf{} 
+  \fancyhf{} 
   \ifbachelor{ % 本科英文摘要页眉页码设置 👇
-    \markright{\centering\normalfont ABSTRACT} % 手动设置页眉
-    % \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT} % 设置页眉
-    % \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref 页}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT} % 设置页眉
+    \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref 页}
   }{ % 硕博英文摘要页眉页码设置 👇
-    \markright{\centering\normalfont ABSTRACT} % 手动设置页眉
-    % \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT}
-    % \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT}
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   }
-  % \thispagestyle{fancy}
 
 }{
   \ifOptionPrintVersion
@@ -847,7 +841,7 @@
       \fi
     }
   \else
-    {}
+    \newpage
   \fi
 }
   
