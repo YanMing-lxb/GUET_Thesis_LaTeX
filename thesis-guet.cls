@@ -769,19 +769,18 @@
     \renewcommand{\bachelorchapterformat}{\centering}
     \chapter*{摘\quad 要}
     \renewcommand{\bachelorchapterformat}{}
-    \setcounter{page}{1} % 定义为第一页
   }{ % 硕博摘要格式设置 👇
     \chapter*{摘\quad 要}
-    \setcounter{page}{1}
     \addcontentsline{toc}{chapter}{\heiti 摘\quad 要} % 设置在目录显示摘要
   }
-
+  
+  \setcounter{page}{1} % 定义为第一页
   \pagenumbering{Roman} % 设置页码显示为罗马数字
 
   \fancyhf{} % 初始化页码页脚布局
   \ifbachelor{ % 本科摘要页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要} % 设置页眉
-    \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref 页}
+    \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
   }{ % 硕博摘要页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要} % 设置页眉
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage} % 罗马页码居中显示
@@ -824,7 +823,7 @@
   \fancyhf{} 
   \ifbachelor{ % 本科英文摘要页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT} % 设置页眉
-    \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref 页}
+    \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
   }{ % 硕博英文摘要页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
@@ -951,15 +950,24 @@
         \tableofcontents
       \end{spacing}
       \renewcommand{\bachelorchapterformat}{} % 还原初始设置
+      \label{page:tableofcontents} % 设置pageref获取页码数的标记
     }
 }{ % 硕博目录标题统一居中无需更改 👇
   \newcommand{\thesistableofcontents}{\tableofcontents}
 }
+
+
 \pretocmd{\tableofcontents}{
   \newpage
   \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 目\quad 录}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+
+  \ifbachelor{ % 本科目录页眉页码设置 👇
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 目\quad 录}
+    \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
+  }{ % 硕博目录页眉页码设置 👇
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 目\quad 录}
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+  }
   \pdfbookmark{目录}{toc}
 }{}{}
 
@@ -982,8 +990,13 @@
 { % 图目录是存放在.lof目录的文件下
   \newpage  % 新建一页
   \fancyhf{} % 初始化页码页脚布局
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{插图索引}}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage} % 罗马页码居中显示
+  \ifbachelor{ % 本科插图索引页眉页码设置 👇
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{插图索引}}
+    \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
+  }{ % 硕博插图索引页眉页码设置 👇
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{插图索引}}
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage} 
+  }
   \addtolength{\cftfignumwidth}{12pt} % 设置长度命令，使命令\cftfignumwidth的长度设置为12pt，条目编号与条目内容之间占用的宽度, 例如：图 1-2 [\cftfignumwidth] 电子战飞机
   \renewcommand{\cftfigpresnum}{图} % 条目编号前内容  
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为0 就会在目录中显示
@@ -1007,8 +1020,13 @@
 { % 表目录是存放在.lot目录的文件下
   \newpage
   \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont {插表索引}}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+  \ifbachelor{ % 本科插表索引页眉页码设置 👇
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{插表索引}}
+    \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
+  }{ % 硕博插表索引页眉页码设置 👇
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{插表索引}}
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage} 
+  }
   \addtolength{\cfttabnumwidth}{12pt} % 条目编号占用宽度，条目编号与条目内容之间占用的宽度, 例如：表1-1 [\cftfignumwidth] 参数设置
   \renewcommand{\cfttabpresnum}{表} % 条目编号前内容
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为-1，目录中只显示一级标题 0 为chapter
@@ -1024,8 +1042,13 @@
 
   \newpage 
   \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 符号说明}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+  \ifbachelor{ % 本科符号说明页眉页码设置 👇
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{符号说明}}
+    \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
+  }{ % 硕博符号说明页眉页码设置 👇
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{符号说明}}
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage} 
+  }
   \renewcommand{\nomname}{符号说明} % 修改符号说明标题的名称。
   \begin{small}
     \printnomenclature[1.5 cm] % 设置术语与描述之间的距离 
