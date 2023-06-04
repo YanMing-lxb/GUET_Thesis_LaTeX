@@ -7,6 +7,7 @@
 ***点个⭐支持一下！***
 
 此项目提供用于排版桂林电子科技大学本硕博毕业论文的 LaTeX 模板类，旨在帮助桂林电子科技大学的毕业生高效地完成毕业论文的写作。该模板由机电 C323 李雪斌主编，梁锟参与，参考电子科大王稳师兄所编写的[ThesisUESTC-电子科技大学毕业论文模板](https://github.com/bdebye/thesisuestc)。参考文献格式".bst"文件根据 GB/T 7714-2015 BibTeX Style 宏包配置参数进行自定义样式而来，符合桂林电子科技大学学位论文对参考文献格式的要求。在修改参考文献格式的过程中，感谢[GB/T 7714-2015 BibTeX Style 项目](https://github.com/zepinglee/gbt7714-bibtex-style)的 Zeping Lee 大佬对我的帮助。
+
 *该模板符合桂林电子科技大学研究生学位论文的基本要求与书写格式-2022.02.23。*
 
 希望该项目能够继续发展，解决各位同学毕业论文写作中的困难。
@@ -51,6 +52,7 @@ git clone https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template.git
 ### TeXPage 在线写作
 
 点击[🔗链接](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818)即可直接使用。
+
 **<font color="#d83931">注意</font>**：==在线写作平台默认使用 pdflatex 编译，您需要设置使用 XeLaTeX 编译器==。
 
 ### 本地部署写作
@@ -62,7 +64,9 @@ git clone https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template.git
 #### latexmk 编译
 
 编译文档请使用 XeLaTeX 引擎。模版提供 latexmk 设置文件用于自动编译。latexmk 可自动调用相关程序进行编译，处理各种文件依赖并自动预览。可在终端执行`latexmk -c`命令清理所有缓存文件。
+
 使用 latexmk 编译前，需在系统盘下创建名为 latexmk 的文件夹，并将 LatexMK 文件放入该文件夹下。请勿删掉 latexmkrc 文件。
+
 **<font color="#d83931">注意</font>**：==如果在 Windows 平台下使用 MiKTeX 还需要安装[Perl 语言解释器](http://strawberryperl.com/)，方可使用 latexmk 进行编译==。
 
 编译时只需使用 latexmk 即可完成编译。
@@ -77,7 +81,8 @@ git clone https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template.git
 #### 转 word 格式
 
 请看：[转 word 命令](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/blob/main/Docs/%E8%BD%ACword%E5%91%BD%E4%BB%A4.md)
-注意：
+
+**注意：**
 
 - 使用 LaTeX 转 Word 是通过 Pandoc 来实现，因此需要配置好 Pandoc；
 - 目前尚且存在转换后，图片不存在的问题（由于 pandoc 不支持读取多个文件夹图片的原因）。
