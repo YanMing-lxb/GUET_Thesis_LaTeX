@@ -12,7 +12,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex
-          compiler: latexmk_use_xelatex
+          latexmk_use_xelatex: true
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
