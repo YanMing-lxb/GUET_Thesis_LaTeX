@@ -768,7 +768,7 @@
 \newenvironment{chineseabstract}{
   \ifbachelor{ % 本科摘要格式设置 👇
     \renewcommand{\bachelorchapterformat}{\centering}
-    \chapter*{摘\quad 要}
+    \chapter*{\textbf{摘\quad 要}}% 本科摘要标题是黑体三号加粗
     \renewcommand{\bachelorchapterformat}{}
   }{ % 硕博摘要格式设置 👇
     \chapter*{摘\quad 要}
@@ -780,7 +780,7 @@
 
   \fancyhf{} % 初始化页码页脚布局
   \ifbachelor{ % 本科摘要页眉页码设置 👇
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要} % 设置页眉
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 桂林电子科技大学毕业设计（论文）} % 设置页眉
     \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
   }{ % 硕博摘要页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要} % 设置页眉
@@ -814,7 +814,7 @@
 {
   \ifbachelor{ % 本科英文摘要格式设置 👇
   \renewcommand{\bachelorchapterformat}{\centering}
-  \chapter*{\bfseries ABSTRACT}
+  \chapter*{\bfseries\selectfont\heiti Abstract} % 本科英文摘要标题首字母大写
   \renewcommand{\bachelorchapterformat}{}
   }{ % 硕博英文摘要格式设置 👇
     \chapter*{\bfseries ABSTRACT}
@@ -823,7 +823,7 @@
 
   \fancyhf{} 
   \ifbachelor{ % 本科英文摘要页眉页码设置 👇
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT} % 设置页眉
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 桂林电子科技大学毕业设计（论文）} % 设置页眉
     \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
   }{ % 硕博英文摘要页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT}
@@ -963,7 +963,7 @@
   \fancyhf{}
 
   \ifbachelor{ % 本科目录页眉页码设置 👇
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 目\quad 录}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 桂林电子科技大学毕业设计（论文）}
     \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
   }{ % 硕博目录页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 目\quad 录}
@@ -992,7 +992,7 @@
   \newpage  % 新建一页
   \fancyhf{} % 初始化页码页脚布局
   \ifbachelor{ % 本科插图索引页眉页码设置 👇
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{插图索引}}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{桂林电子科技大学毕业设计（论文）}}
     \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
   }{ % 硕博插图索引页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{插图索引}}
@@ -1022,7 +1022,7 @@
   \newpage
   \fancyhf{}
   \ifbachelor{ % 本科插表索引页眉页码设置 👇
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{插表索引}}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{桂林电子科技大学毕业设计（论文）}}
     \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
   }{ % 硕博插表索引页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{插表索引}}
@@ -1044,7 +1044,7 @@
   \newpage 
   \fancyhf{}
   \ifbachelor{ % 本科符号说明页眉页码设置 👇
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{符号说明}}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{桂林电子科技大学毕业设计（论文）}}
     \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
   }{ % 硕博符号说明页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{符号说明}}
