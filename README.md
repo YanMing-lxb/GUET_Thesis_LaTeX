@@ -47,6 +47,12 @@ git clone https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template.git
 
 ## 使用方法
 
+### Overleaf 在线写作
+
+点击[🔗链接](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp)即可直接使用。
+
+**<font color="#d83931">注意</font>**：==在线写作平台默认使用 pdflatex 编译，您需要设置使用 XeLaTeX 编译器==。
+
 ### TeXPage 在线写作
 
 点击[🔗链接](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818)即可直接使用。
