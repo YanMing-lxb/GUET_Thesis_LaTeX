@@ -114,6 +114,7 @@ git clone https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template.git
 
 - 在具有多个子图的情况时，子图与子图之间要留有一定的空间，不要占满，否则会发生自动换行；
 - 标题中`\texorpdfstring` 命令包装数学公式，并提供一个无公式的备选项，如：`\section{\texorpdfstring{$E=mc^2$}{E=mc2}} ` 否则会有警告。
+- 使用`\caption[]{}`命令时，如果不需要设置缩写目录的内容，一定要删掉`[]`，否则插图插表索引将不会显示该图\表的目录。
 
 ### 论文封面
 
