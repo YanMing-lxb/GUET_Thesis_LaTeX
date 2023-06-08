@@ -143,9 +143,10 @@ git clone https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template.git
 ## 写作工具
 
 - 画表神器 https://www.tablesgenerator.com/
+- $\LaTeX$公式手册 https://www.cnblogs.com/1024th/p/11623258.html
 - 写公式神器 https://mathpix.com/
 - 文献 bib 整理神器 https://dblp.uni-trier.de/
-- Latex 画图画表常用命令 https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Tip
+- $\LaTeX$画图画表常用命令 https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Tip
 
 ## 反馈与贡献
 
