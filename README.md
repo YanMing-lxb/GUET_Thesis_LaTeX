@@ -1,4 +1,4 @@
-# Guet_LATEX_Thesis_Template(GLTT) 桂林电子科技大学毕业论文模板
+# Guet_LATEX_Thesis_Template(GLTT) 桂林电子科技大学毕业论文模板 <img src="./Docs/GTUG-logo-w.png" width="90" height="90" align="right">
 
 [![](https://img.shields.io/badge/license-LPPL-blue)](https://www.latex-project.org/lppl/) [![](https://img.shields.io/github/last-commit/YanMing-lxb/Guet_LATEX_Thesis_Template)](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/zipball/master) [![](https://img.shields.io/github/issues/YanMing-lxb/Guet_LATEX_Thesis_Template)](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/issues)  ![Downloads latest release](https://img.shields.io/github/downloads/YanMing-lxb/Guet_LATEX_Thesis_Template/latest/total?color=blueviolet)
 
@@ -24,7 +24,7 @@
 
 ### 下载模板
 
-普通用户可以直接 `clone` 或者下载最新发行版 [Guet_LATEX_Thesis_Template.zip](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/releases/latest/download/asset-name.zip)。
+普通用户可以直接 `clone` 或者下载最新发行版 [Guet_LATEX_Thesis_Template.zip](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/archive/refs/heads/main.zip)。
 
 ```
 git clone https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template.git
