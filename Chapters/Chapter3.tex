@@ -1,55 +1,85 @@
 % !Mode:: "TeX:UTF-8"
 
-\chapter{数学公式示例}\label{ch:3}
+\chapter{表格示例}\label{ch:3}
+可使用excel绘制表格，然后粘贴到以下网站中生成latex表格代码，然后再在网站中进行详细调整
 
-\section{公式示例}
-在本次研究中应用到计算流体动力学（Computational Fluid Dynamics，CFD）对研究对象进……。
+推荐网站如下：
 
+https://www.tablesgenerator.com/
 
-\subsection{普通带序号公式}
-\begin{equation}
-    \frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial v}{\partial z}=0
-\end{equation}
-u，v，w 分别是 x，y，z 方向的速度分量。
+https://www.latex-tables.com/
 
 
-\subsection{需要对齐的多个带序号的公式}
+\section{普通三线表示例}
+普遍学者认为，微通道指的是水力直径在 $10\ \rm{\mu m}$ 到 $1000\ \rm{\mu m}$ 范围内的通道（也有观点认为是 $1\ \rm{\mu m}$ 到 $100\ \rm{\mu m}$）所构成的换热器。
+以下是较为常见的微通道尺寸分类，可以参见\cref{tab:division-of-microchannels}。
+\begin{table}[htbp]
+    \caption[微通道的划分]{微通道的划分\cite{LuSiHong_2021}}
+    \setlength{\tabcolsep}{14mm}{ % 因表格过窄，手动设置宽度为7mm
+        \begin{tabular}{lc}
+            \toprule
+            通道种类    & 水力直径$\mu m$   \\
+            \midrule
+            分子纳米通道  & $\le 0.1$     \\
+            过渡性纳米通道 & $0.1\sim 1$   \\
+            过渡性微通道  & $1\sim 10$    \\
+            微通道     & $10\sim 1000$ \\
+            常规通道    & $>1000$       \\
+            \bottomrule
+        \end{tabular}}
+    \label{tab:division-of-microchannels}
+\end{table}
 
-\&号为对其对齐标记最好放置在计算符号之前，如=、+、-之前；
-
-\textbackslash\textbackslash 表示换行。
-
-\begin{align}% 式中的&为对齐的位置标记
-    u & \frac{\partial u}{\partial x}+v \frac{\partial u}{\partial y}+w \frac{\partial u}{\partial z}=-\frac{1}{\rho_{f}} \frac{\partial p}{\partial x}+\frac{\mu_{f}}{\rho_{f}}\left(\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}+\frac{\partial^{2} u}{\partial z^{2}}\right) \\
-    u & \frac{\partial v}{\partial x}+v \frac{\partial v}{\partial y}+w \frac{\partial v}{\partial z}=-\frac{1}{\rho_{f}} \frac{\partial p}{\partial y}+\frac{\mu_{f}}{\rho_{f}}\left(\frac{\partial^{2} v}{\partial x^{2}}+\frac{\partial^{2} v}{\partial y^{3}}+\frac{\partial^{2} v}{\partial z^{3}}\right) \\
-    u & \frac{\partial w}{\partial x}+v \frac{\partial w}{\partial y}+w \frac{\partial w}{\partial z}=-\frac{1}{\rho_{f}} \frac{\partial p}{\partial z}+\frac{\mu_{f}}{\rho_{f}}\left(\frac{\partial^{2} w}{\partial x^{2}}+\frac{\partial^{2} w}{\partial y^{2}}+\frac{\partial^{2} w}{\partial z^{2}}\right)
-\end{align}
-$\rho_{f}$ 和 $\mu_{f}$ 分别是冷却剂的密度和动态粘度，p 是冷却剂压力。
 
 
-\subsection{需要换行对齐的长公式}
+\section{跨页表格示例}
 
-\begin{equation}\label{eq:P}
-    \begin{split}
-        f_3 & = 6.272 + 3.02 H_{rib} + 6.08 H_{pf} + 0.0368 N_{pf} - 0.8848 N_{ac} + 0.04381 N_{ac}^2\\
-        & + 6.35 H_{rib} \times H_{pf} - 0.3602 H_{rib}\times N_{ac} - 0.5497 H_{pf}\times N_{ac}
-    \end{split}
-\end{equation}
-
-\subsection{其他公式示例}
-\begin{equation}
-    \begin{aligned}
-    \left\{
-        \begin{array}{l}
-        \text {find}\enspace H_{rib},H_{rib},N_{pf},N_{ac} \\
-        \text {min} \enspace F(H_{rib},H_{rib},N_{pf},N_{ac})= min\{f_1,f_2,f_3\} \\
-
-            \text{s.t.\enspace}\enspace 0.2 \leqslant H_{rib} \leqslant 0.8    \\
-            \hspace{2.2em} 0.2 \leqslant H_{pf} \leqslant 0.8                     \\
-            \hspace{2.2em} 6 \leqslant N_{pf} \leqslant 22,\ N_{pf}\in \mathbb{O} \\
-            \hspace{2.2em} 0 \leqslant N_{ac} \leqslant 16,\ N_{ac}\in \mathbb{E}
-        \end{array}
-    \right. 
-    \end{aligned}
-    \label{eq:MO}
-\end{equation}
+\begin{longtable}{@{\extracolsep{\fill}}cccccc@{}}  \\ % @{\extracolsep{\fill}}cccccc@{}命令表格整体宽度为页面宽
+    \caption{RSM仿真实验规划表}
+    \label{tab:Experimental-Planning}  \\
+    \toprule
+    标准序 & 运行序 & $H_{rib}\ \rm{(mm)}$ & $H_{pf}\ \rm{(mm)}$ & $N_{pf}$ & $N_{ac}$ \\ \midrule
+    \endfirsthead
+    %
+    \multicolumn{6}{c}%
+    {{表 \thetable\ RSM仿真实验规划表 (续)}} \\
+    \toprule
+    标准序 & 运行序 & $H_{rib}\ \rm{(mm)}$ & $H_{pf}\ \rm{(mm)}$ & $N_{pf}$ & $N_{ac}$ \\ \midrule
+    \endhead
+    %
+    \bottomrule
+    \endfoot
+    %
+    \endlastfoot
+    %
+    11  & 1   & 0.16            & 0.8            & 6        & 16       \\
+    13  & 2   & 0.16            & 0.16           & 22       & 16       \\
+    15  & 3   & 0.16            & 0.8            & 22       & 16       \\
+    12  & 4   & 0.8             & 0.8            & 6        & 16       \\
+    10  & 5   & 0.8             & 0.16           & 6        & 16       \\
+    2   & 6   & 0.8             & 0.16           & 6        & 0        \\
+    19  & 7   & 0.48            & 0.48           & 14       & 8        \\
+    1   & 8   & 0.16            & 0.16           & 6        & 0        \\
+    20  & 9   & 0.48            & 0.48           & 14       & 8        \\
+    18  & 10  & 0.48            & 0.48           & 14       & 8        \\
+    8   & 11  & 0.8             & 0.8            & 22       & 0        \\
+    14  & 12  & 0.8             & 0.16           & 22       & 16       \\
+    6   & 13  & 0.8             & 0.16           & 22       & 0        \\
+    17  & 14  & 0.48            & 0.48           & 14       & 8        \\
+    7   & 15  & 0.16            & 0.8            & 22       & 0        \\
+    16  & 16  & 0.8             & 0.8            & 22       & 16       \\
+    4   & 17  & 0.8             & 0.8            & 6        & 0        \\
+    9   & 18  & 0.16            & 0.16           & 6        & 16       \\
+    5   & 19  & 0.16            & 0.16           & 22       & 0        \\
+    3   & 20  & 0.16            & 0.8            & 6        & 0        \\
+    25  & 21  & 0.48            & 0.48           & 6        & 8        \\
+    22  & 22  & 0.8             & 0.48           & 14       & 8        \\
+    23  & 23  & 0.48            & 0.16           & 14       & 8        \\
+    29  & 24  & 0.48            & 0.48           & 14       & 8        \\
+    28  & 25  & 0.48            & 0.48           & 14       & 16       \\
+    30  & 26  & 0.48            & 0.48           & 14       & 8        \\
+    26  & 27  & 0.48            & 0.48           & 22       & 8        \\
+    27  & 28  & 0.48            & 0.48           & 14       & 0        \\
+    21  & 29  & 0.16            & 0.48           & 14       & 8        \\
+    24  & 30  & 0.48            & 0.8            & 14       & 8        \\ \bottomrule
+\end{longtable}

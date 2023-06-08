@@ -1,89 +1,42 @@
 % !Mode:: "TeX:UTF-8"
 %此为章节二模板
 %\chapter、\section、\subsection、\subsubsection分别对应一二三四级标题
-\chapter{表格示例}\label{ch:2}
+\chapter{图片示例}\label{ch:2}
 
-可使用excel绘制表格，然后粘贴到以下网站中生成latex表格代码。
+\section{图片排版示例}
 
-推荐网站如下：
+\subsection{单图排版示例}
 
-https://www.tablesgenerator.com/
+\begin{figure}[htb]
+    \includegraphics[width=0.8 \textwidth]{50-years-processor-trend.png}
+    \caption[处理器发展]{近50年微处理器发展趋势} % 中括号中内容为插图索引中显示内容，可在题注内容过长时使用
+    \label{fig:processor-trend}
+\end{figure}
 
-https://www.latex-tables.com/
+\subsection{多图排版示例}
+同一行中的子图之间要留有空间，不要占满！否则会自动换行！
 
-\section{普通三线表示例}
-普遍学者认为，微通道指的是水力直径在 $10\ \rm{\mu m}$ 到 $1000\ \rm{\mu m}$ 范围内的通道（也有观点认为是 $1\ \rm{\mu m}$ 到 $100\ \rm{\mu m}$）所构成的换热器。
-以下是较为常见的微通道尺寸分类，可以参见\cref{tab:division-of-microchannels}。
-\begin{table}[htbp]
-    \caption[微通道的划分]{微通道的划分\cite{LuSiHong_2021}}
-    \setlength{\tabcolsep}{14mm}{ % 因表格过窄，手动设置宽度为7mm
-        \begin{tabular}{lc}
-            \toprule
-            通道种类    & 水力直径$\mu m$   \\
-            \midrule
-            分子纳米通道  & $\le 0.1$     \\
-            过渡性纳米通道 & $0.1\sim 1$   \\
-            过渡性微通道  & $1\sim 10$    \\
-            微通道     & $10\sim 1000$ \\
-            常规通道    & $>1000$       \\
-            \bottomrule
-        \end{tabular}}
-    \label{tab:division-of-microchannels}
-\end{table}
+子图之间空一行表示换行。
 
+插入子图请使用\textbackslash subfloat\{\}命令。
 
+\begin{figure}[htb]
+    \subfloat[改进前的结构]{
+        \label{fig:Unimproved-cooling-structure}
+        \includegraphics[width=0.45\linewidth]{Unimproved-cooling-structure.png}}
+    \subfloat[基板内进行微通道散热]{
+        \label{fig:LTCC-Microchannels}
+        \includegraphics[width=0.45\linewidth]{LTCC-Microchannels.png}}
 
-\section{跨页表格示例}
-
-\begin{longtable}{@{\extracolsep{\fill}}cccccc@{}}  \\
-    \caption{RSM仿真实验规划表}
-    \label{tab:Experimental-Planning}  \\
-    \toprule
-    标准序 & 运行序 & $H_{rib}\ \rm{(mm)}$ & $H_{pf}\ \rm{(mm)}$ & $N_{pf}$ & $N_{ac}$ \\ \midrule
-    \endfirsthead
-    %
-    \multicolumn{6}{c}%
-    {{表 \thetable\ RSM仿真实验规划表 (续)}} \\
-    \toprule
-    标准序 & 运行序 & $H_{rib}\ \rm{(mm)}$ & $H_{pf}\ \rm{(mm)}$ & $N_{pf}$ & $N_{ac}$ \\ \midrule
-    \endhead
-    %
-    \bottomrule
-    \endfoot
-    %
-    \endlastfoot
-    %
-    11  & 1   & 0.16            & 0.8            & 6        & 16       \\
-    13  & 2   & 0.16            & 0.16           & 22       & 16       \\
-    15  & 3   & 0.16            & 0.8            & 22       & 16       \\
-    12  & 4   & 0.8             & 0.8            & 6        & 16       \\
-    10  & 5   & 0.8             & 0.16           & 6        & 16       \\
-    2   & 6   & 0.8             & 0.16           & 6        & 0        \\
-    19  & 7   & 0.48            & 0.48           & 14       & 8        \\
-    1   & 8   & 0.16            & 0.16           & 6        & 0        \\
-    20  & 9   & 0.48            & 0.48           & 14       & 8        \\
-    18  & 10  & 0.48            & 0.48           & 14       & 8        \\
-    8   & 11  & 0.8             & 0.8            & 22       & 0        \\
-    14  & 12  & 0.8             & 0.16           & 22       & 16       \\
-    6   & 13  & 0.8             & 0.16           & 22       & 0        \\
-    17  & 14  & 0.48            & 0.48           & 14       & 8        \\
-    7   & 15  & 0.16            & 0.8            & 22       & 0        \\
-    16  & 16  & 0.8             & 0.8            & 22       & 16       \\
-    4   & 17  & 0.8             & 0.8            & 6        & 0        \\
-    9   & 18  & 0.16            & 0.16           & 6        & 16       \\
-    5   & 19  & 0.16            & 0.16           & 22       & 0        \\
-    3   & 20  & 0.16            & 0.8            & 6        & 0        \\
-    25  & 21  & 0.48            & 0.48           & 6        & 8        \\
-    22  & 22  & 0.8             & 0.48           & 14       & 8        \\
-    23  & 23  & 0.48            & 0.16           & 14       & 8        \\
-    29  & 24  & 0.48            & 0.48           & 14       & 8        \\
-    28  & 25  & 0.48            & 0.48           & 14       & 16       \\
-    30  & 26  & 0.48            & 0.48           & 14       & 8        \\
-    26  & 27  & 0.48            & 0.48           & 22       & 8        \\
-    27  & 28  & 0.48            & 0.48           & 14       & 0        \\
-    21  & 29  & 0.16            & 0.48           & 14       & 8        \\
-    24  & 30  & 0.48            & 0.8            & 14       & 8        \\ \bottomrule
-\end{longtable}
+    \subfloat[嵌入散热模块]{
+        \label{fig:Embedded-cooling-module}
+        \includegraphics[width=0.45\linewidth]{Embedded-cooling-module.png}}
+    \subfloat[带针鳍或肋的嵌入式散热模块]{
+        \label{fig:Rib-pin-fin}
+        \includegraphics[width=0.45\linewidth]{Rib-pin-fin.png}}
+    \caption{三种强化传热途径示意图}
+    \label{fig:Three-enhanced-heat-transfer-paths}
+\end{figure}
 
 \section{本章小节}
 本章介绍了基于嵌入式散热模块的微通道散热技术所涉及的基……
