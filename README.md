@@ -6,7 +6,7 @@
 
 ***点个⭐支持一下！***
 
-此项目提供用于排版桂林电子科技大学本硕博毕业论文的 LaTeX 模板类，旨在帮助桂林电子科技大学的毕业生高效地完成毕业论文的写作。该模板由机电 C323 李雪斌主编，梁锟参与，参考电子科大王稳师兄所编写的[ThesisUESTC-电子科技大学毕业论文模板](https://github.com/bdebye/thesisuestc)。参考文献格式".bst"文件根据 GB/T 7714-2015 BibTeX Style 宏包配置参数进行自定义样式而来，符合桂林电子科技大学学位论文对参考文献格式的要求。在修改参考文献格式的过程中，感谢[GB/T 7714-2015 BibTeX Style 项目](https://github.com/zepinglee/gbt7714-bibtex-style)的 Zeping Lee 大佬对我的帮助。
+此项目提供用于排版桂林电子科技大学本硕博毕业论文的 LaTeX 模板类，旨在帮助桂林电子科技大学的毕业生高效地完成毕业论文的写作。该模板由机电 C323 李雪斌发起，参考电子科大王稳师兄所编写的[ThesisUESTC-电子科技大学毕业论文模板](https://github.com/bdebye/thesisuestc)。参考文献格式".bst"文件根据 GB/T 7714-2015 BibTeX Style 宏包配置参数进行自定义样式而来，符合桂林电子科技大学学位论文对参考文献格式的要求。在修改参考文献格式的过程中，感谢[GB/T 7714-2015 BibTeX Style 项目](https://github.com/zepinglee/gbt7714-bibtex-style)的 Zeping Lee 大佬对我的帮助。
 
 *该模板符合桂林电子科技大学研究生学位论文的基本要求与书写格式-2022.02.23。*
 
