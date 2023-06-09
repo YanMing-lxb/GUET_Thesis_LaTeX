@@ -1,4 +1,4 @@
-# Guet_LATEX_Thesis_Template(GLT) 桂林电子科技大学毕业论文模板 <img src="./Docs/GTUG-logo-w.png" width="90" height="90" align="right">
+# Guet_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 <img src="./Docs/GTUG-logo-w.png" width="90" height="90" align="right">
 
 [![](https://img.shields.io/badge/license-LPPL-blue)](https://www.latex-project.org/lppl/) [![](https://img.shields.io/github/last-commit/YanMing-lxb/Guet_LATEX_Thesis_Template)](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/zipball/master) [![](https://img.shields.io/github/issues/YanMing-lxb/Guet_LATEX_Thesis_Template)](https://github.com/YanMing-lxb/Guet_LATEX_Thesis_Template/issues)  ![Downloads latest release](https://img.shields.io/github/downloads/YanMing-lxb/Guet_LATEX_Thesis_Template/latest/total?color=blueviolet)
 
