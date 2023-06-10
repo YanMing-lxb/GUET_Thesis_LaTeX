@@ -6,7 +6,7 @@
 
 ***点个⭐支持一下！***
 
-此项目提供用于排版桂林电子科技大学本硕博毕业论文的 LaTeX 模板类，旨在帮助桂林电子科技大学的毕业生高效地完成毕业论文的写作。该模板由机电 C323 李雪斌发起，参考电子科大王稳师兄所编写的[ThesisUESTC-电子科技大学毕业论文模板](https://github.com/bdebye/thesisuestc)。参考文献格式".bst"文件根据 GB/T 7714-2015 BibTeX Style 宏包配置参数进行自定义样式而来，符合桂林电子科技大学学位论文对参考文献格式的要求。在修改参考文献格式的过程中，感谢[GB/T 7714-2015 BibTeX Style 项目](https://github.com/zepinglee/gbt7714-bibtex-style)的 Zeping Lee 大佬对我的帮助。
+此项目提供用于排版桂林电子科技大学本硕博毕业论文的 $\LaTeX$ 模板类，旨在帮助桂林电子科技大学的毕业生高效地完成毕业论文的写作。该模板由机电 C323 李雪斌发起，参考电子科大王稳师兄所编写的[ThesisUESTC-电子科技大学毕业论文模板](https://github.com/bdebye/thesisuestc)。参考文献格式".bst"文件根据 GB/T 7714-2015 BibTeX Style 宏包配置参数进行自定义样式而来，符合桂林电子科技大学学位论文对参考文献格式的要求。在修改参考文献格式的过程中，感谢[GB/T 7714-2015 BibTeX Style 项目](https://github.com/zepinglee/gbt7714-bibtex-style)的 Zeping Lee 大佬对我的帮助。
 
 *该模板符合桂林电子科技大学研究生学位论文的基本要求与书写格式-2022.02.23。*
 
@@ -17,6 +17,12 @@
 **本科毕业论文格式大部分功能已调整完，但细节有待完善，欢迎各位同学参与该项目！**
 
 > PS：目前已调整 cls 样式文件的代码，可以使用`\ifbachelor{}{}`命令修改本科样式。
+
+## 待完善功能
+- 封面目录的单双行切换（预测通过LaTeX3实现）；
+- 盲审版本切换：
+  - 盲审封面制作及版本切换；
+  - 攻读学位期间取得成果的盲审版本切换。
 
 
 
@@ -88,7 +94,7 @@ git clone https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX.git
 
 **注意：**
 
-- 使用 LaTeX 转 Word 是通过 Pandoc 来实现，因此需要配置好 Pandoc；
+- 使用 $\LaTeX$ 转 Word 是通过 Pandoc 来实现，因此需要配置好 Pandoc；
 - 目前尚且存在转换后，图片不存在的问题（由于 pandoc 不支持读取多个文件夹图片的原因）。
 
 >PS: 目前该命令存在一些问题，欢迎有志之士来补充！
