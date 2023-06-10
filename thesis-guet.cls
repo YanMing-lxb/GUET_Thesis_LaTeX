@@ -20,7 +20,7 @@
 \RequirePackage[nopostdot]{glossaries} %不显示description后的英文标点符号
 \RequirePackage{mathspec}
 \RequirePackage{xeCJK} % 对全局字体进行设置
-\RequirePackage{datetime}
+\RequirePackage{datetime} % 提供 \today 命令
 \RequirePackage{ifplatform}
 % ===============符号说明相关宏===============
 \RequirePackage{framed} % Framing content
@@ -37,6 +37,10 @@
                   hyperfootnotes=false,     % 设置是否在脚注中生成链接；
                   bookmarksnumbered=true,   % 设置PDF书签是否带编号；
                   bookmarksdepth=4          % 设置书签深度；
+                  colorlinks=true,          % 指定是否给链接添加颜色；
+                  citecolor=black,          % citecolor链接颜色设置；
+                  linkcolor=black,          % linkcolor引用颜色设置；
+                  urlcolor=black            % urlcolor网址颜色；
                 ]{hyperref} % 书签设置宏包 
 
 \RequirePackage{indentfirst}
@@ -58,9 +62,10 @@
 \RequirePackage[titles]{tocloft} % 目录设置宏包
 \RequirePackage[labelformat=simple]{subcaption}
 \RequirePackage{geometry} % 页面布局宏
-\RequirePackage{ifthen}
+\RequirePackage{ifthen} % 提供\ifthenelse命令
 \RequirePackage[capitalize]{cleveref} % 要在 hyperref后引用 noabbrev 引用前缀为缩写
 \RequirePackage{lastpage} % 统计总页数宏
+
 
 
 % ===============定义 eversion/pversion 选项===============
@@ -174,20 +179,6 @@
 }
 \ExecuteOptions{master} % 默认值为硕士
 \ProcessOptions\relax
-
-
-
-\hypersetup{ % 文中链接以及PDF信息相关设置
-              pdfauthor = {\theauthor},           % 设置作者名称；
-              pdftitle = {\zh@thetitle},          % 设置文档的标题；
-              pdfsubject = {\displayheader},      % 设置文档主题；
-              % pdfkeywords = {},         % 设置文档中关键词；
-              colorlinks=true,          % 指定是否给链接添加颜色；
-              citecolor=black,          % citecolor链接颜色设置；
-              linkcolor=black,          % linkcolor引用颜色设置；
-              urlcolor=black            % urlcolor网址颜色；
-            } 
-
 
 
 % ===============封面制作===============
