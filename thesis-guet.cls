@@ -94,7 +94,36 @@
 % ===============定义带页眉页脚空白页命令=============== 
 \newcommand\blankpage@number{\newpage\null\newpage}
 
+% ===============字体设置===============
+\newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path = ./Fonts/]{GB2312.ttf} %楷体
+\ifwindows
+  \setCJKmainfont[AutoFakeBold=true]{SimSun} %设置xeCJK 中文主字体
+  \newCJKfontfamily{\heiti}[AutoFakeBold=true]{SimHei} 
+  \newfontfamily{\heiti@letter}{SimHei}
+  \setallmainfonts{Times New Roman} %设置英文字体
+\else
+\ifmacosx
+  \setCJKmainfont[AutoFakeBold=true]{Songti SC}
+  \newCJKfontfamily{\heiti}[AutoFakeBold=true]{STHeiti}
+  \newfontfamily{\heiti@letter}{STHeiti}
+  \setallmainfonts{Times New Roman}
+\else
+  \setCJKmainfont[AutoFakeBold=true,Path = ./Fonts/]{fzsong.ttf}
+  \newCJKfontfamily{\heiti}[AutoFakeBold=true,Path = ./Fonts/]{fzhei.ttf}
+  \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./Fonts/]
+  \setallmainfonts[
+    BoldFont=timesbd.ttf,
+    ItalicFont=timesi.ttf,
+    BoldItalicFont=timesbi.ttf,
+    Path = ./Fonts/
+  ]{times.ttf}
+\fi
+\fi
 
+% ===============设置数学字体===============
+\DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
+\DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
+\newcommand{\bm}{\mathbf}
 
 
 % ++++++++++++++++++++++++++++++++++++++++++++++++++ 封面设置相关 ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -576,39 +605,6 @@
 
 % ++++++++++++++++++++++++++++++++++++++++++++++++ 封面设置相关结束 ++++++++++++++++++++++++++++++++++++++++++++++++
 
-
-
-
-% ===============字体设置===============
-\newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path = ./Fonts/]{GB2312.ttf} %楷体
-\ifwindows
-  \setCJKmainfont[AutoFakeBold=true]{SimSun} %设置xeCJK 中文主字体
-  \newCJKfontfamily{\heiti}[AutoFakeBold=true]{SimHei} 
-  \newfontfamily{\heiti@letter}{SimHei}
-  \setallmainfonts{Times New Roman} %设置英文字体
-\else
-\ifmacosx
-  \setCJKmainfont[AutoFakeBold=true]{Songti SC}
-  \newCJKfontfamily{\heiti}[AutoFakeBold=true]{STHeiti}
-  \newfontfamily{\heiti@letter}{STHeiti}
-  \setallmainfonts{Times New Roman}
-\else
-  \setCJKmainfont[AutoFakeBold=true,Path = ./Fonts/]{fzsong.ttf}
-  \newCJKfontfamily{\heiti}[AutoFakeBold=true,Path = ./Fonts/]{fzhei.ttf}
-  \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./Fonts/]
-  \setallmainfonts[
-    BoldFont=timesbd.ttf,
-    ItalicFont=timesi.ttf,
-    BoldItalicFont=timesbi.ttf,
-    Path = ./Fonts/
-  ]{times.ttf}
-\fi
-\fi
-
-% ===============设置数学字体===============
-\DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
-\DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
-\newcommand{\bm}{\mathbf}
 
 % ===============定义相关线宽===============
 \setlength{\heavyrulewidth}{0.9pt}
