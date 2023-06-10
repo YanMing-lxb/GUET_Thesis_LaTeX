@@ -37,10 +37,6 @@
                   hyperfootnotes=false,     % 设置是否在脚注中生成链接；
                   bookmarksnumbered=true,   % 设置PDF书签是否带编号；
                   bookmarksdepth=4          % 设置书签深度；
-                  colorlinks=true,          % 指定是否给链接添加颜色；
-                  citecolor=black,          % citecolor链接颜色设置；
-                  linkcolor=black,          % linkcolor引用颜色设置；
-                  urlcolor=black            % urlcolor网址颜色；
                 ]{hyperref} % 书签设置宏包 
 
 \RequirePackage{indentfirst}
@@ -66,6 +62,16 @@
 \RequirePackage[capitalize]{cleveref} % 要在 hyperref后引用 noabbrev 引用前缀为缩写
 \RequirePackage{lastpage} % 统计总页数宏
 
+\hypersetup{ % 文中链接设置
+  % pdfauthor = {\theauthor},           % 设置作者名称；
+  % pdftitle = {\zh@thetitle},          % 设置文档的标题；
+  % pdfsubject = {\displayheader},      % 设置文档主题；
+  % pdfkeywords = {},                   % 设置文档中关键词
+  colorlinks=true,                      % 指定是否给链接添加颜色；
+  citecolor=black,                      % citecolor链接颜色设置；
+  linkcolor=black,                      % linkcolor引用颜色设置；
+  urlcolor=black                        % urlcolor网址颜色；
+}
 
 
 % ===============定义 eversion/pversion 选项===============
