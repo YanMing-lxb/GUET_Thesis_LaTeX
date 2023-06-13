@@ -8,6 +8,7 @@
 \RequirePackage{graphicx} % 图片
 \RequirePackage[font={onehalfspacing, small}, labelsep=space, skip=6pt, figurewithin=none, tablewithin=none]{caption} % figurewithin=none, tablewithin=none 将book 类中向figure of list 添加 10pt间距的命令取消，但也会使得图表章与章之间连续编号，因此需要设置对应计数器每章重置
 \RequirePackage{array}
+\RequirePackage{tabularray} 
 \RequirePackage{booktabs} % 三线表
 \RequirePackage{makecell} % 设置封面表格部分横线的宽度
 \RequirePackage[absolute,overlay]{textpos} % 设置密级用的文本框，overlay绝对坐标。可以随意控制文本框位置
@@ -307,22 +308,23 @@
   }
 \end{textblock}
 
+
   % ================设置题目
+  \NewExpandableDocumentCommand\zh@thetitle@tb{}{\zh@thetitle} % 创建外部参数，导入题目表格中
+  \NewExpandableDocumentCommand\en@thetitle@tb{}{\en@thetitle}
   \ifbachelor{ % 本科题目 👇
     \begin{textblock}{15}(2.8,11.3)
       \centering
-      \renewcommand{\arraystretch}{0.75} % 调整表格行间距
-      \begin{tabular}
-        {
-          m{1.4cm}<{\vspace{-0.3\baselineskip}\centering}
-          m{11.4cm}<{\vspace{-0.3\baselineskip}\centering}
-        }
-        \bfseries\fontsize{16pt}{16pt}\selectfont 题目: &
-        \multirow[t]{2}{11.4cm}{\centering\bfseries\fontsize{16pt}{16pt}\selectfont\zh@thetitle} 
-        \\ \cline{2-2}
-        \\ \cline{2-2}
-         % \\ \cline{2-2} % 标题有几行就添加几行这段代码
-      \end{tabular}
+      \begin{tblr}[expand=\expanded]{
+        stretch=1.2, % 单元格文本行距拉伸系数
+        colspec = {c c}, % 设置列对齐方式
+        column{1} = {1.4cm}, % 设置第一列宽度
+        column{2} = {11.4cm,font =\bfseries\fontsize{16pt}{16pt}\selectfont}, % 设置第二列的宽度、字体大小粗细
+        hline{2-Z} = {2}{1pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
+        belowsep = {-4pt} % 单元格底线向上偏移4pt
+      }
+        \bfseries\fontsize{16bp}{16bp}\selectfont 题目: & \expanded{\zh@thetitle@tb{}}
+      \end{tblr}
     \end{textblock}
   
   }{ % 硕博题目👇
@@ -339,20 +341,17 @@
       \vspace{0.9cm}
       }
 
-      \renewcommand{\arraystretch}{1.3}
-      \begin{tabular}
-        {
-          m{1.4cm}<{\vspace{-0.8\baselineskip}\centering}
-          m{12.6cm}<{\vspace{-0.8\baselineskip}\centering}
-        }
-
-        \bfseries\fontsize{16bp}{16bp}\selectfont 题目   & \multirow[t]{2}{12.6cm}{\centering\bfseries\fontsize{14bp}{26bp}\selectfont \zh@thetitle} 
-        \\ \Xcline{2-2}{1.25pt} % 设置横线宽度 makecell宏包
-        % \\ \Xcline{2-2}{1.25pt} % 标题有几行就添加几行这段代码
-        \bfseries\fontsize{14bp}{14bp}\selectfont (英文) & \multirow[t]{2}{12.6cm}{\centering\bfseries\fontsize{14bp}{26bp}\selectfont \en@thetitle} 
-        \\ \Xcline{2-2}{1.25pt}
-        \\ \Xcline{2-2}{1.25pt}
-      \end{tabular}
+      \begin{tblr}[expand=\expanded]{
+        stretch=2, % 单元格文本行距拉伸系数
+        colspec = {c c}, % 设置列对齐方式
+        column{1} = {1.5cm}, % 设置第一列宽度
+        column{2} = {12.6cm,font =\bfseries\fontsize{14bp}{26bp}\selectfont}, % 设置第二列的宽度、字体大小粗细
+        hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
+        belowsep = {-8pt} % 单元格底线向上偏移8pt
+      }
+        \bfseries\fontsize{16bp}{16bp}\selectfont 题目 & \expanded{\zh@thetitle@tb{}} \\
+        \bfseries\fontsize{14bp}{14bp}\selectfont (英文) & \expanded{\en@thetitle@tb{}}
+      \end{tblr}
     \end{textblock}
   }
     
