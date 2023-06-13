@@ -10,7 +10,6 @@
 \RequirePackage{array}
 \RequirePackage{tabularray} 
 \RequirePackage{booktabs} % 三线表
-\RequirePackage{makecell} % 设置封面表格部分横线的宽度
 \RequirePackage[absolute,overlay]{textpos} % 设置密级用的文本框，overlay绝对坐标。可以随意控制文本框位置
 \RequirePackage{setspace} % 调整行距宏包，提供\setstretch命令和spacing环境
 \RequirePackage{multirow}
@@ -363,27 +362,22 @@
   \ifbachelor{ % 本科封面信息 👇
     \begin{textblock}{16}(2.4,16.9)
       \centering
-      \renewcommand{\arraystretch}{1.2}
-      \begin{tabular}
-        {
-          >{\bfseries\fontsize{15pt}{15pt}\selectfont}m{3.8cm}
-          >{\centering\arraybackslash\fontsize{15pt}{15pt}\selectfont} p{9.6cm}}
-  
-        学\hspace{0.36cm} \qquad \qquad 号: & \thestudentnumber \\
-        \cline{2-2} 
-        姓\hspace{0.36cm} \qquad \qquad 名: & \theauthor \\
-        \cline{2-2}
-        学\hspace{0.36cm} \qquad \qquad 院: & \theschool \\
-        \cline{2-2}
-        专\quad \hspace{0.36cm} \qquad \quad 业: & \themajor \\
-        \cline{2-2}
-        指\hspace{0.38cm} 导\hspace{0.38cm} 教\hspace{0.38cm} 师: & \theadvisor \\
-        \cline{2-2}
-        指\hspace{0.1pt} 导\hspace{0.1pt} 教\hspace{0.1pt} 师\hspace{0.1pt} 职\hspace{0.1pt} 称: & \theprotitle \\
-        \cline{2-2}
-      \end{tabular}
+      \begin{tblr}{
+        stretch=1.9, % 单元格文本行距拉伸系数
+        colspec = {c c}, % 设置列对齐方式
+        column{1} = {4cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第一列宽度
+        column{2} = {9.6cm, font = \fontsize{14bp}{26bp}\selectfont}, % 设置第二列的宽度、字体大小粗细
+        hline{2-Z} = {2}{1pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
+        belowsep = {-7pt} % 单元格底线向上偏移7pt
+        }
+          学\hspace{0.36cm} \qquad \qquad 号: & \thestudentnumber \\
+          姓\hspace{0.36cm} \qquad \qquad 名: & \theauthor \\
+          学\hspace{0.36cm} \qquad \qquad 院: & \theschool \\
+          专\quad \hspace{0.36cm} \qquad \quad 业: & \themajor \\
+          指\hspace{0.38cm} 导\hspace{0.38cm} 教\hspace{0.38cm} 师: & \theadvisor \\
+          指\hspace{0.1pt} 导\hspace{0.1pt} 教\hspace{0.1pt} 师\hspace{0.1pt} 职\hspace{0.1pt} 称: & \theprotitle 
+      \end{tblr}
     \end{textblock}
-    
 
     \begin{textblock}{8}(6,26.9) %日期居中
       \centering
@@ -393,47 +387,38 @@
   }{ % 硕博封面信息 👇
     \begin{textblock}{15}(2.9,16.3) %
       \centering
-      \renewcommand{\arraystretch}{1.3}
       \ifpro{ % 专硕或非全专硕的封面信息 👇
-        \begin{tabular}
-          {
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6.5cm}
+        \begin{tblr}{
+          stretch=2.2, % 单元格文本行距拉伸系数
+          colspec = {c c}, % 设置列对齐方式
+          column{1} = {5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第一列宽度
+          column{2} = {6.5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第二列的宽度、字体大小粗细
+          hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
+          belowsep = {-11pt} % 单元格底线向上偏移11pt
           }
-
-          研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                     & \thestudentnumber\vspace{-0.6\baselineskip} \\
-          \Xcline{2-2}{1.25pt} 
-          研\quad 究\quad 生\quad 姓\quad 名:\vspace{-0.6\baselineskip}                     & \theauthor\vspace{-0.6\baselineskip} \\
-          \Xcline{2-2}{1.25pt}
-          指导教师姓名、职称:\vspace{-0.6\baselineskip}                                      & \theadvisor \enspace \theprotitle\vspace{-0.6\baselineskip} \\
-          \Xcline{2-2}{1.25pt}
-          申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别:\vspace{-0.6\baselineskip} & \thedegreecategories\vspace{-0.6\baselineskip} \\
-          \Xcline{2-2}{1.25pt}
-          领\hspace{7em}域:\vspace{-0.6\baselineskip}                                       & \themajor\vspace{-0.6\baselineskip} \\
-          \Xcline{2-2}{1.25pt}
-          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\
-          \Xcline{2-2}{1.25pt}
-        \end{tabular}
+          研\quad 究\quad 生\quad 学\quad 号:                     & \thestudentnumber \\
+          研\quad 究\quad 生\quad 姓\quad 名:                     & \theauthor \\
+          指导教师姓名、职称:                                      & \theadvisor \enspace \theprotitle \\
+          申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \thedegreecategories \\
+          领\hspace{7em}域:                                      & \themajor \\
+          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply 
+        \end{tblr}
       }{ % 博士、学硕、在职硕士的封面信息 👇
-        \begin{tabular}
-          {
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6.5cm}
+        \begin{tblr}{
+          stretch=2.2, % 单元格文本行距拉伸系数
+          colspec = {c c}, % 设置列对齐方式
+          column{1} = {5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第一列宽度
+          column{2} = {6.5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第二列的宽度、字体大小粗细
+          hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
+          belowsep = {-11pt} % 单元格底线向上偏移11pt
           }
-    
-          研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                    & \thestudentnumber\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt} % 设置横线宽度 makecell宏包
-          研\quad 究\quad 生\quad 姓\quad 名:\vspace{-0.6\baselineskip}                    & \theauthor\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-          指导教师姓名、职称:\vspace{-0.6\baselineskip}                                     & \theadvisor \enspace \theprotitle\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-          申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类:\vspace{-0.6\baselineskip} & \thedegreecategories\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-          学\qquad 科、专\qquad 业:\vspace{-0.6\baselineskip}                               & \themajor\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-        \end{tabular}
+          研\quad 究\quad 生\quad 学\quad 号:                    & \thestudentnumber \\ 
+          研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor \\ 
+          指导教师姓名、职称:                                     & \theadvisor \enspace \theprotitle \\ 
+          申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories \\ 
+          学\qquad 科、专\qquad 业:                               & \themajor \\ 
+          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply
+        \end{tblr}
       }
     \end{textblock}
   }
