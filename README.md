@@ -153,7 +153,8 @@ git clone https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX.git
 
 - 画表神器 https://www.tablesgenerator.com/
 - $\LaTeX$公式手册 https://www.cnblogs.com/1024th/p/11623258.html
-- 写公式神器 https://mathpix.com/
+- 识别公式神器 https://mathpix.com/
+- $LaTeX$公式编辑器 https://www.latexlive.com/home
 - 文献 bib 整理神器 https://dblp.uni-trier.de/
 - $\LaTeX$画图画表常用命令 https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Tip
 

@@ -224,6 +224,13 @@
 \newcommand{\ifojmaster}[1]{ \ifthenelse{\equal{\degreename}{在职硕士}}{#1}{}}
 \newcommand{\ifptmaster}[1]{ \ifthenelse{\equal{\degreename}{非全硕士}}{#1}{}}
 \newcommand{\ifdoctor}[1]{ \ifthenelse{\equal{\degreename}{博士}}{#1}{}}
+\newcommand{\ifpro}[2]{ % 判断是否是专业硕士或非全硕士
+  \ifthenelse{
+    \equal{\degreename}{专业硕士}
+    \or
+    \equal{\degreename}{非全硕士}
+    }{#1}{#2}}
+
 
 \newcommand{\makecover}
 {
@@ -383,12 +390,12 @@
       \centering
       \fontsize{16pt}{16pt}\selectfont \thedatereply
     \end{textblock}
-    
+
   }{ % 硕博封面信息 👇
     \begin{textblock}{15}(2.9,16.3) %
       \centering
       \renewcommand{\arraystretch}{1.3}
-      \ifpromaster{ % 专硕👇
+      \ifpro{ % 专硕或非全专硕的封面信息 👇
         \begin{tabular}
           {
             >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
@@ -408,29 +415,7 @@
           论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\
           \Xcline{2-2}{1.25pt}
         \end{tabular}
-      }
-      \ifptmaster{ % 非全专硕👇
-        \begin{tabular}
-          {
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6.5cm}
-          }
-
-          研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                     & \thestudentnumber\vspace{-0.6\baselineskip} \\
-          \Xcline{2-2}{1.25pt} 
-          研\quad 究\quad 生\quad 姓\quad 名:\vspace{-0.6\baselineskip}                     & \theauthor\vspace{-0.6\baselineskip} \\
-          \Xcline{2-2}{1.25pt}
-          指导教师姓名、职称:\vspace{-0.6\baselineskip}                                      & \theadvisor \enspace \theprotitle\vspace{-0.6\baselineskip} \\
-          \Xcline{2-2}{1.25pt}
-          申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别:\vspace{-0.6\baselineskip} & \thedegreecategories\vspace{-0.6\baselineskip} \\
-          \Xcline{2-2}{1.25pt}
-          领\hspace{7em}域:\vspace{-0.6\baselineskip}                                       & \themajor\vspace{-0.6\baselineskip} \\
-          \Xcline{2-2}{1.25pt}
-          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\
-          \Xcline{2-2}{1.25pt}
-        \end{tabular}
-      }
-      \ifmaster{ % 学硕👇
+      }{ % 博士、学硕、在职硕士的封面信息 👇
         \begin{tabular}
           {
             >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
@@ -450,49 +435,6 @@
           论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\ 
           \Xcline{2-2}{1.25pt}
         \end{tabular}
-      }
-      \ifojmaster{ % 在职硕士👇
-        \begin{tabular}
-          {
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6.5cm}
-          }
-    
-          研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                    & \thestudentnumber\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt} 
-          研\quad 究\quad 生\quad 姓\quad 名:\vspace{-0.6\baselineskip}                    & \theauthor\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-          指导教师姓名、职称:\vspace{-0.6\baselineskip}                                     & \theadvisor \enspace \theprotitle\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-          申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类:\vspace{-0.6\baselineskip} & \thedegreecategories\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-          学\qquad 科、专\qquad 业:\vspace{-0.6\baselineskip}                               & \themajor\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-        \end{tabular}
-      }
-      \ifdoctor{ % 博士👇
-        \begin{tabular}
-          {
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\raggedright}b{5cm}
-            >{\bfseries\fontsize{15pt}{15pt}\selectfont\centering\arraybackslash}b{6.5cm}
-          }
-    
-          研\quad 究\quad 生\quad 学\quad 号:\vspace{-0.6\baselineskip}                    & \thestudentnumber\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt} 
-          研\quad 究\quad 生\quad 姓\quad 名:\vspace{-0.6\baselineskip}                    & \theauthor\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-          指导教师姓名、职称:\vspace{-0.6\baselineskip}                                     & \theadvisor \enspace \theprotitle\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-          申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类:\vspace{-0.6\baselineskip} & \thedegreecategories\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-          学\qquad 科、专\qquad 业:\vspace{-0.6\baselineskip}                               & \themajor\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:\vspace{-0.6\baselineskip} & \thedatereply\vspace{-0.6\baselineskip} \\ 
-          \Xcline{2-2}{1.25pt}
-        \end{tabular}
-        
       }
     \end{textblock}
   }
