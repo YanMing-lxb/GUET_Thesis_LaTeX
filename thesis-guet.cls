@@ -1308,7 +1308,6 @@
 % ===============定理设置===============
 \newtheoremstyle{dotless}{0pt}{0pt}{\normalfont}{24pt}{\heiti}{}{ }{}
 \theoremstyle{dotless} %plain（默认样式）：定理名称是正体，定理内容是斜体。definition：定理名称和定理内容都是正体。remark： 定理名称是斜体，定理内容是正体
-%\renewcommand\@upn{\selectfont\heiti@letter}
 
 
   \newtheorem{theorem}{定理}[chapter] 
@@ -1364,9 +1363,12 @@
   \setlength{\abovedisplayshortskip}{8pt}
 }
 
-
-
-
+% =============== 自定义三线表格式 ===============
+\NewTblrEnviron{threetab}
+\SetTblrInner[threetab]{
+  hline{1,Z} = {-}{1.5pt}, % 设置头线和尾线为1.5pt
+  hline{2} = {-}{0.5pt}, % 设置中线 0.5pt
+}
 
 
 \endinput
