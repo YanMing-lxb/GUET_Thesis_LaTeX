@@ -30,15 +30,19 @@ https://www.latex-tables.com/
     \label{tab:division-of-microchannels}
 \end{table}
 
-\begin{table}
+\begin{table}[htbp]
     \centering
-    \caption{三线表示例(tabularray自定义宏包)}
-        \begin{threetab}{cc}
+    \caption{三线表示例(tabularray自定义环境)}
+    \begin{threetab}{
+        colspec = {cc}, 
+        column{1} = {4cm}, % 设置第一列宽度
+        column{2} = {5cm}, % 设置第二列宽度
+        }
         表头1  & 表头2 \\
         内容1  & 内容2 \\
         内容3  & 内容4 \\
-        \end{threetab}
-    \end{table}
+    \end{threetab}
+\end{table}
 
 \section{跨页表格示例}
 
