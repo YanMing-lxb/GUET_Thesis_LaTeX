@@ -23,6 +23,9 @@
 - 盲审版本切换：
   - 盲审封面制作及版本切换；
   - 攻读学位期间取得成果的盲审版本切换。
+- 去除所有其他表格宏包，完全使用Tabularray宏包制表
+  - [ ] 自定义长三线表环境(要求可跨页，跨页后自带 “题注(续)” )
+  - [x] 自定义普通三线表环境`threetab`
 
 
 
@@ -118,12 +121,30 @@ git clone https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX.git
 
 ### 注意事项
 
-
 - 标题中`\texorpdfstring` 命令包装数学公式，并提供一个无公式的备选项，如：`\section{\texorpdfstring{$E=mc^2$}{E=mc2}} ` 否则会有警告；
 - 在具有多个子图的情况时，子图与子图之间要留有一定的空间，不要占满，否则会发生自动换行；
 - 子图请用`\subfloat[<子题注>]{\includegraphics[width=0.45\linewidth]{<图片文件名>}}}`命令加入；
 - 使用`\caption[]{}`命令时，如果不需要设置缩写目录的内容，一定要删掉`[]`，否则插图插表索引将不会显示该图\表的目录；
 - 表、图、公式、算法、章节、节的引用请用`\cref{<label>}`命令。
+
+### 表格制作
+
+推荐使用tabularray 宏包进行表格的制作，模板中已自定义三线表环境`threetab`，示例如下所示。
+作者暂无精力完成长表环境格式自定义，有待完善。
+
+```tex
+\begin{table}
+  \centering
+  \caption{三线表示例(tabularray自定义宏包)}
+  \begin{threetab}{cc}
+    表头1  & 表头2 \\
+    内容1  & 内容2 \\
+    内容3  & 内容4 \\
+  \end{threetab}
+\end{table}
+```
+
+Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_nan/tabularray-doc-zh-cn](https://gitee.com/nwafu_nan/tabularray-doc-zh-cn)
 
 ### 论文封面
 
