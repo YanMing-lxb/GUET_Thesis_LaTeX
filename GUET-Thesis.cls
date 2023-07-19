@@ -1,5 +1,5 @@
 %此文件为全局设置
-\ProvidesClass{thesis-guet}
+\ProvidesClass{GUET-Thesis}
 
 \LoadClass[12pt,a4paper, openany, twoside]{book} % openright,openany
 \RequirePackage{ifxetex} %需要ifxetex，在LaTeX类和包文件中使用另一个包文件：ifxetex
@@ -1180,11 +1180,11 @@
   }{
     \setlength{\labelsep}{3pt}
     \renewcommand{\bstlabelmark}{loo}
-    \bibliographystyle{./References/thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
+    \bibliographystyle{./References/GUET-Thesis(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
     \bibliography{#2}
     \setlength{\labelsep}{6pt}
   }{
-    \bibliographystyle{./References/thesis-guet(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
+    \bibliographystyle{./References/GUET-Thesis(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
     \bibliography{#2} %参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib
   }
 }
@@ -1238,7 +1238,7 @@
 %   \renewcommand{\bstlabelmark}{lo}
 %   \thispagestyle{fancy} %该页含有页眉和页脚
 %   \begin{spacing}{1.667}
-%   \bibliographystyleaccomplish{thesis-guet} %插入参考文献的样式.bst文件  \bibliographyaccomplish{#1} %参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib  \end{spacing}
+%   \bibliographystyleaccomplish{GUET-Thesis} %插入参考文献的样式.bst文件  \bibliographyaccomplish{#1} %参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib  \end{spacing}
 %   \bibliographyaccomplish{#1}
 %   \end{spacing}
 %   \renewcommand{\bibname}{参考文献}
