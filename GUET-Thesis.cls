@@ -775,11 +775,11 @@
 \newenvironment{chineseabstract}{
   \ifbachelor{ % 本科摘要格式设置 👇
     \renewcommand{\bachelorchapterformat}{\centering}
-    \chapter*{\textbf{摘\quad 要}}% 本科摘要标题是黑体三号加粗
+    \chapter*{\texorpdfstring{\textbf{摘\quad 要}}{摘 要}}% 本科摘要标题是黑体三号加粗
     \renewcommand{\bachelorchapterformat}{}
   }{ % 硕博摘要格式设置 👇
-    \chapter*{摘\quad 要}
-    \addcontentsline{toc}{chapter}{\heiti 摘\quad 要} % 设置在目录显示摘要
+    \chapter*{\texorpdfstring{\heiti 摘\quad 要}{摘 要}}
+    \addcontentsline{toc}{chapter}{\texorpdfstring{摘\quad 要}{摘 要}} % 设置在目录显示摘要
   }
 
   \setcounter{page}{1} % 定义为第一页
@@ -1062,8 +1062,8 @@
   { \small % 设置符号说明字体大小为五号
     \printnomenclature[1.5 cm] % 设置术语与描述之间的距离 
   }
-  
-  \addcontentsline{toc}{chapter}{\heiti 符号说明} % 设置在目录显示符号说明
+
+  \addcontentsline{toc}{chapter}{\texorpdfstring{\heiti 符号说明}{符号说明}} % 设置在目录显示符号说明
 
   \ifbachelor{ % 设置本科插表索引标题 👇
     \renewcommand{\bachelorchapterformat}{} % 还原初始设置：左对齐
@@ -1128,14 +1128,15 @@
     \renewcommand{\bachelorchapterformat}{\centering} % 通过修改\bachelorchapterformat命令让致谢居中
     \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
     \setcounter{section}{0} % section计数器清零 
-    \chapter*{谢\quad 辞}
+    \chapter*{\texorpdfstring{谢\quad 辞}{谢 辞}}
+    \addcontentsline{toc}{chapter}{\texorpdfstring{谢\quad 辞}{谢 辞}}
   }{ % 硕博致谢设置 👇
     \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
     \setcounter{section}{0} % section计数器清零 
-    \chapter*{致\quad 谢}
+    \chapter*{\texorpdfstring{致\quad 谢}{致 谢}}
+    \addcontentsline{toc}{chapter}{\texorpdfstring{致\quad 谢}{致 谢}}
   }
 
-  \addcontentsline{toc}{chapter}{致\quad 谢}
   % \markboth{致谢}{致谢} %\markboth{<左面页眉>}{<右面页眉>}
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 致\quad 谢}
