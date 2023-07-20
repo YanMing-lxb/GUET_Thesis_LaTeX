@@ -1058,9 +1058,11 @@
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   }
   \renewcommand{\nomname}{符号说明} % 修改符号说明标题的名称。
-  \begin{small}
+
+  { \small % 设置符号说明字体大小为五号
     \printnomenclature[1.5 cm] % 设置术语与描述之间的距离 
-  \end{small}
+  }
+  
   \addcontentsline{toc}{chapter}{\heiti 符号说明} % 设置在目录显示符号说明
 
   \ifbachelor{ % 设置本科插表索引标题 👇
