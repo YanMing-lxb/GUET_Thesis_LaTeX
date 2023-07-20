@@ -1,143 +1,231 @@
+<!--
+ *  =======================================================================
+ *  ····Y88b···d88P················888b·····d888·d8b·······················
+ *  ·····Y88b·d88P·················8888b···d8888·Y8P·······················
+ *  ······Y88o88P··················88888b·d88888···························
+ *  ·······Y888P··8888b···88888b···888Y88888P888·888·88888b·····d88b·······
+ *  ········888······"88b·888·"88b·888·Y888P·888·888·888·"88b·d88P"88b·····
+ *  ········888···d888888·888··888·888··Y8P··888·888·888··888·888··888·····
+ *  ········888··888··888·888··888·888···"···888·888·888··888·Y88b·888·····
+ *  ········888··"Y888888·888··888·888·······888·888·888··888··"Y88888·····
+ *  ·······························································888·····
+ *  ··························································Y8b·d88P·····
+ *  ···························································"Y88P"······
+ *  =======================================================================
+ * 
+ *  -----------------------------------------------------------------------
+ * Author       : 焱铭
+ * Date         : 2023-07-19 13:15:53 +0800
+ * LastEditTime : 2023-07-20 21:58:42 +0800
+ * Github       : https://github.com/YanMing-lxb/
+ * FilePath     : \GUET_Thesis_LaTeX\Docs\Visual_Code_Studio_中LaTeX_Workshop的设置说明.md
+ * Description  : 
+ *  -----------------------------------------------------------------------
+ -->
+
 将下列代码复制到VSCode的settings.json里, 具体操作请百度。
 
 # LaTex Workshop 配置
 ---
+==使用该配置时请将以下几个代码框中的代码粘贴到 settings.json 的{}中。==
+
+`编译工具和命令` 和 `编译链配置` 中的部分命令已注释，可根据需要自行解除注释。
+推荐通过`XeLaTeXmk`、`PdfLaTeXmk`、`LuaLaTeXmk`这三个编译链使用LaTeXmk进行编译。
+
 ## 编译工具和命令
 ```
 //------------------------------LaTeX 配置----------------------------------
-  // 编译工具和命令 
+
+  // 编译工具和命令
   "latex-workshop.latex.tools": [
+    // {
+    //   "name": "latexmk",
+    //   "command": "latexmk",
+    //   "args": [
+    //     "%DOC%"
+    //   ]
+    // },
     {
-      "name": "latexmk",
+      "name": "xelatexmk",
       "command": "latexmk",
       "args": [
-        "-shell-escape",
-        "%DOCFILE%"
+        "-xelatex",
+        "%DOC%"
       ]
     },
     {
-      "name": "xelatex",
-      "command": "xelatex",
+      "name": "pdflatexmk",
+      "command": "latexmk",
       "args": [
-      "-synctex=1",
-      "-interaction=nonstopmode",
-      "-file-line-error",
-      "%DOC%"
-        ]
-    },          
-    {
-      "name": "pdflatex",
-      "command": "pdflatex",
-      "args": [
-      "-synctex=1",
-      "-interaction=nonstopmode",
-      "-file-line-error",
-      "%DOC%"
+        "-pdflatex",
+        "%DOC%"
       ]
     },
     {
-      "name": "lualatex",
-      "command": "lualatex",
+      "name": "lualatexmk",
+      "command": "latexmk",
       "args": [
-      "-synctex=1",
-      "-interaction=nonstopmode",
-      "-file-line-error",
-      "%DOC%"
-        ]
-    },   
-    {
-      "name": "makeglossaries",
-      "command": "makeglossaries",
-      "args": [
-      "%DOCFILE%"
+        "-lualatex",
+        "%DOC%"
       ]
     },
-    {
-      "name": "makeindex",
-      "command": "makeindex",
-      "args": [
-      "%DOCFILE%.nlo",
-      "-s",
-      "nomencl.ist",
-      "-o",
-      "%DOCFILE%.nls"
-      ]
-    },
-    {
-      "name": "bibtex",
-      "command": "bibtex",
-      "args": [
-      "%DOCFILE%"
-      ]
-    },
-    {
-      "name": "biber",
-      "command": "biber -l zh__pinyin --output-safechars %O %S",
-      "args": [
-      "%DOCFILE%"
-      ]
-    }
+    // {
+    //   "name": "xelatex",
+    //   "command": "xelatex",
+    //   "args": [
+    //   "-synctex=1",
+    //   "-interaction=nonstopmode",
+    //   "-file-line-error",
+    //   "%DOC%"
+    //     ]
+    // },          
+    // {
+    //   "name": "pdflatex",
+    //   "command": "pdflatex",
+    //   "args": [
+    //   "-synctex=1",
+    //   "-interaction=nonstopmode",
+    //   "-file-line-error",
+    //   "%DOC%"
+    //   ]
+    // },
+    // {
+    //   "name": "lualatex",
+    //   "command": "lualatex",
+    //   "args": [
+    //   "-lualatex",
+    //   "-dvi",
+    //   "-synctex=1",
+    //   "-interaction=nonstopmode",
+    //   "-file-line-error",
+    //   "%DOC%"
+    //     ]
+    // },   
+    // {
+    //   "name": "makeglossaries",
+    //   "command": "makeglossaries",
+    //   "args": [
+    //   "%DOCFILE%"
+    //   ]
+    // },
+    // {
+    //   "name": "makeindex",
+    //   "command": "makeindex",
+    //   "args": [
+    //   "%DOCFILE%.nlo",
+    //   "-s",
+    //   "nomencl.ist",
+    //   "-o",
+    //   "%DOCFILE%.nls"
+    //   ]
+    // },
+    // {
+    //   "name": "bibtex",
+    //   "command": "bibtex",
+    //   "args": [
+    //   "%DOCFILE%"
+    //   ]
+    // },
+    // {
+    //   "name": "biber",
+    //   "command": "biber -l zh__pinyin --output-safechars %O %S",
+    //   "args": [
+    //   "%DOCFILE%"
+    //   ]
+    // }
   ],
 ```
 
 ## 编译链配置
 ```
-  // 编译链配置
 "latex-workshop.latex.recipes": [
+    // {
+    //   "name": "LaTeXmk",
+    //   "tools": [
+    //   "latexmk"
+    //               ]
+    // },
     {
-      "name": "latexmk",
+      "name": "XeLaTeXmk",
       "tools": [
-      "latexmk"
-                  ]
+        "xelatexmk",
+        // "-interaction=batchmode", // 批处理模式，会编译提速但不会报错
+      ]
     },
     {
-      "name": "xelatex",
+      "name": "PdfLaTeXmk",
       "tools": [
-      "xelatex"
-                  ]
-            },
-    {
-      "name": "pdflatex",
-      "tools": [
-      "pdflatex"
-                  ]
-            },
-    {
-      "name": "lualatex",
-      "tools": [
-      "lualatex"
-                  ]
+        "pdflatexmk",
+      ]
     },
     {
-      "name": "bibtex",
+      "name": "LuaLaTeXmk",
       "tools": [
-      "bibtex"
-                  ]
+        "lualatexmk",
+      ]
     },
-    {
-      "name": "biber",
-      "tools": [
-      "biber"
-                  ]
-    },
-    {
-      "name": "X-bibtex-XX",
-      "tools": [
-      "xelatex",
-      "bibtex",
-      "xelatex",
-      "xelatex"
-                  ]
-    },
-    {
-        "name": "P-bibtex-PP",
-        "tools": [
-            "pdflatex",
-            "bibtex",
-            "pdflatex",
-            "pdflatex"
-        ]
-    },
+    // {
+    //   "name": "LaTeXmk-DVIPDFMx",
+    //   "tools": [
+    //     "LaTeXmk-DVIPDFMx",
+    //   ]
+    // },
+    // {
+    //   "name": "upLaTeXmk-DVIPDFMx",
+    //   "tools": [
+    //     "upLaTeXmk-DVIPDFMx",
+    //   ]
+    // },
+
+    
+    // {
+    //   "name": "xelatex",
+    //   "tools": [
+    //   "xelatex"
+    //               ]
+    //         },
+    // {
+    //   "name": "pdflatex",
+    //   "tools": [
+    //   "pdflatex"
+    //               ]
+    //         },
+    // {
+    //   "name": "lualatex",
+    //   "tools": [
+    //   "lualatex"
+    //               ]
+    // },
+    // {
+    //   "name": "bibtex",
+    //   "tools": [
+    //   "bibtex"
+    //               ]
+    // },
+    // {
+    //   "name": "biber",
+    //   "tools": [
+    //   "biber"
+    //               ]
+    // },
+    // {
+    //   "name": "X-bibtex-XX",
+    //   "tools": [
+    //   "xelatex",
+    //   "bibtex",
+    //   "xelatex",
+    //   "xelatex"
+    //               ]
+    // },
+    // {
+    //     "name": "P-bibtex-PP",
+    //     "tools": [
+    //         "pdflatex",
+    //         "bibtex",
+    //         "pdflatex",
+    //         "pdflatex"
+    //     ]
+    // },
 
   ],
 
@@ -145,7 +233,10 @@
 
 ## 配置文件清理
 ```
-  //文件清理：此属性必须是字符串数组 // "*.bbl",
+//文件清理。子文件夹中递归删除辅助文件
+"latex-workshop.latex.clean.subfolder.enabled": true,
+
+//文件清理。此属性必须是字符串数组 // "*.bbl",
 "latex-workshop.latex.clean.fileTypes": [
     "*.aux",
     "*.bbl",
@@ -178,19 +269,23 @@
     "*/*.aux",
     "*.ttt",
     "*.fff",
-    
-],
+    "*.nav",
+    "*.snm",
+    "*.vrb",
+],  
 ```
 
 ## 配置其他操作
 ```
-  // 配置其他操作
     // 编译错误后是否尝试重新编译
     "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
     // 设置是否自动编译
     "latex-workshop.latex.autoBuild.run":"never",
+    // 自动编译时间间隔
+    // "latex-workshop.latex.autoBuild.interval": 1000,
+
     //右键菜单
-    "latex-workshop.showContextMenu":true,
+    "latex-workshop.showContextMenu":false,
     //从使用的包中自动补全命令和环境
     "latex-workshop.intellisense.package.enabled": true,
     //编译出错时设置是否弹出气泡设置
@@ -203,10 +298,23 @@
     "latex-workshop.latex.recipe.default": "lastUsed",
     // 用于反向同步的内部查看器的键绑定。ctrl/cmd +点击(默认)或双击
     "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
-    // 设置VScode内部查看生成的pdf文件 tab browser external
-    "latex-workshop.view.pdf.viewer": "tab",
-    // PDF查看器用于在\ref上的[View on PDF]链接 auto tabOrBrowser external
-    "latex-workshop.view.pdf.ref.viewer":"auto",
+    // 用于实时预览图片
+    "latex-workshop.hover.preview.enabled": true,
+    // 实时显示引文信息
+    "latex-workshop.hover.citation.enabled": true,
+    // 实时显示参考信息
+    "latex-workshop.hover.ref.enabled": true,
+    // 实时显示命令所属文档
+    "latex-workshop.hover.command.enabled": true,
+
+    // 大纲隐藏题注
+    // "latex-workshop.view.outline.floats.caption.enabled": false,
+    // 大纲中隐藏label
+    // "latex-workshop.view.outline.commands": [],
+    // 大纲隐藏浮动体数字序号
+    // "latex-workshop.view.outline.floats.number.enabled": false,
+    // 大纲隐藏浮动体
+    // "latex-workshop.view.outline.floats.enabled": false,
 ```
 
 ## 配置 SumatraPDF
