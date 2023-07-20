@@ -57,10 +57,11 @@
 % ===============字体相关宏包===============    
 \RequirePackage{lmodern}                              % 导入 lmodern 宏包，使用 Latin Modern 字体，提供更好的字体支持
 \RequirePackage{xeCJK}                                % 导入 xeCJK 宏包，用于设置全局的中日韩文字体
+\RequirePackage{xeCJKfntef}                           % 导入 xeCJKfntef 宏包，用于提供更多的字体效果设置选项，兼容ulem宏包
+% \RequirePackage[normalem]{ulem}                       % 导入 ulem 宏包，提供了各种下划线和删除线的命令
 \RequirePackage{zhnumber}                             % 导入 zhnumber 宏包，用于将数字转换为大写中文数字的表示
 \RequirePackage{pifont}                               % 导入 pifont 宏包，提供了许多符号和图标的命令
 \RequirePackage{datetime}                             % 导入 datetime 宏包，提供日期和时间格式控制功能，包括 \today 命令
-\RequirePackage[normalem]{ulem}                       % 导入 ulem 宏包，提供了各种下划线和删除线的命令
 
 % ===============链接相关宏包===============    
 \RequirePackage[hyphens]{xurl}                        % 导入 xurl 宏包，允许在长网址中断行，避免超出边界
@@ -128,6 +129,9 @@
 
 
 
+% ================定义高亮命令设置===============
+\newcommand{\hl}{\CJKsout*[thickness=2.5ex,format=\color{yellow}]} % 新定义高亮命令\gl 用来高亮显示中文
+
 % ===============定义 eversion/pversion 选项===============
 \newif\ifOptionPrintVersion % 定义逻辑变量 OptionPrintVersion
 \OptionPrintVersionfalse % 默认为false 也就是电子版
@@ -157,19 +161,19 @@
 % ===============字体设置===============
 \newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path = ./Fonts/]{GB2312.ttf}     % 设置楷体字体为GB2312.ttf，并指定字体文件路径为./Fonts/
 \ifwindows
-  \setCJKmainfont[AutoFakeBold=true]{SimSun}                                 % 在Windows平台上设置中文字体为SimSun
-  \newCJKfontfamily{\heiti}[AutoFakeBold=true]{SimHei}                       % 设置黑体字体为SimHei
+  \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true]{SimSun}                                 % 在Windows平台上设置中文字体为SimSun
+  \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true]{SimHei}                       % 设置黑体字体为SimHei
   \newfontfamily{\heiti@letter}{SimHei}                                      % 设置字母的黑体字体为SimHei
   \setallmainfonts{Times New Roman}                                          % 设置英文字体为Times New Roman
 \else  
   \ifmacosx  
-    \setCJKmainfont[AutoFakeBold=true]{Songti SC}                             % 在macOS平台上设置中文字体为Songti SC
-    \newCJKfontfamily{\heiti}[AutoFakeBold=true]{STHeiti}                     % 设置黑体字体为STHeiti
+    \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true]{Songti SC}                             % 在macOS平台上设置中文字体为Songti SC
+    \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true]{STHeiti}                     % 设置黑体字体为STHeiti
     \newfontfamily{\heiti@letter}{STHeiti}                                    % 设置字母的黑体字体为STHeiti
     \setallmainfonts{Times New Roman}                                         % 设置英文字体为Times New Roman
   \else 
-    \setCJKmainfont[AutoFakeBold=true,Path = ./Fonts/]{fzsong.ttf}            % 在其他平台上设置中文字体为fzsong.ttf，并指定字体文件路径为./Fonts/
-    \newCJKfontfamily{\heiti}[AutoFakeBold=true,Path = ./Fonts/]{fzhei.ttf}   % 设置黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
+    \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true,Path = ./Fonts/]{fzsong.ttf}            % 在其他平台上设置中文字体为fzsong.ttf，并指定字体文件路径为./Fonts/
+    \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true,Path = ./Fonts/]{fzhei.ttf}   % 设置黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
     \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./Fonts/]                 % 设置字母的黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
     \setallmainfonts[
       BoldFont=timesbd.ttf,                                                   % 粗体字体为timesbd.ttf
