@@ -39,7 +39,7 @@
 
 
 % ===============公式相关宏包===============    
-\RequirePackage{amsmath}                      % 导入 amsmath 宏包，提供数学公式环境和命令
+\RequirePackage{amsmath}                              % 导入 amsmath 宏包，提供数学公式环境和命令
 \RequirePackage{amssymb}                              % 导入 amssymb 宏包，提供额外的数学符号
 \RequirePackage{amsthm}                               % 导入 amsthm 宏包，用于定义和排版定理、引理等数学定理结构
 \RequirePackage{mathspec}                             % 导入 mathspec 宏包，用于在数学环境中选择自定义的字体
@@ -155,28 +155,28 @@
 \newcommand\blankpage@number{\newpage\null\newpage}
 
 % ===============字体设置===============
-\newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path = ./Fonts/]{GB2312.ttf} % 设置楷体字体为GB2312.ttf，并指定字体文件路径为./Fonts/
+\newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path = ./Fonts/]{GB2312.ttf}     % 设置楷体字体为GB2312.ttf，并指定字体文件路径为./Fonts/
 \ifwindows
-  \setCJKmainfont[AutoFakeBold=true]{SimSun}            % 在Windows平台上设置中文字体为SimSun
-  \newCJKfontfamily{\heiti}[AutoFakeBold=true]{SimHei}  % 设置黑体字体为SimHei
-  \newfontfamily{\heiti@letter}{SimHei}                 % 设置字母的黑体字体为SimHei
-  \setallmainfonts{Times New Roman}                     % 设置英文字体为Times New Roman
-\else
-  \ifmacosx
-    \setCJKmainfont[AutoFakeBold=true]{Songti SC}         % 在macOS平台上设置中文字体为Songti SC
-    \newCJKfontfamily{\heiti}[AutoFakeBold=true]{STHeiti} % 设置黑体字体为STHeiti
-    \newfontfamily{\heiti@letter}{STHeiti}                % 设置字母的黑体字体为STHeiti
-    \setallmainfonts{Times New Roman}                     % 设置英文字体为Times New Roman
-  \else
-    \setCJKmainfont[AutoFakeBold=true,Path = ./Fonts/]{fzsong.ttf}          % 在其他平台上设置中文字体为fzsong.ttf，并指定字体文件路径为./Fonts/
-    \newCJKfontfamily{\heiti}[AutoFakeBold=true,Path = ./Fonts/]{fzhei.ttf} % 设置黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
-    \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./Fonts/]               % 设置字母的黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
+  \setCJKmainfont[AutoFakeBold=true]{SimSun}                                 % 在Windows平台上设置中文字体为SimSun
+  \newCJKfontfamily{\heiti}[AutoFakeBold=true]{SimHei}                       % 设置黑体字体为SimHei
+  \newfontfamily{\heiti@letter}{SimHei}                                      % 设置字母的黑体字体为SimHei
+  \setallmainfonts{Times New Roman}                                          % 设置英文字体为Times New Roman
+\else  
+  \ifmacosx  
+    \setCJKmainfont[AutoFakeBold=true]{Songti SC}                             % 在macOS平台上设置中文字体为Songti SC
+    \newCJKfontfamily{\heiti}[AutoFakeBold=true]{STHeiti}                     % 设置黑体字体为STHeiti
+    \newfontfamily{\heiti@letter}{STHeiti}                                    % 设置字母的黑体字体为STHeiti
+    \setallmainfonts{Times New Roman}                                         % 设置英文字体为Times New Roman
+  \else 
+    \setCJKmainfont[AutoFakeBold=true,Path = ./Fonts/]{fzsong.ttf}            % 在其他平台上设置中文字体为fzsong.ttf，并指定字体文件路径为./Fonts/
+    \newCJKfontfamily{\heiti}[AutoFakeBold=true,Path = ./Fonts/]{fzhei.ttf}   % 设置黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
+    \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./Fonts/]                 % 设置字母的黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
     \setallmainfonts[
-      BoldFont=timesbd.ttf,       % 粗体字体为timesbd.ttf
-      ItalicFont=timesi.ttf,      % 斜体字体为timesi.ttf
-      BoldItalicFont=timesbi.ttf, % 粗斜体字体为timesbi.ttf
-      Path=./Fonts/               % 指定字体文件路径为./Fonts/
-    ]{times.ttf}                % 设置英文字体为times.ttf
+      BoldFont=timesbd.ttf,                                                   % 粗体字体为timesbd.ttf
+      ItalicFont=timesi.ttf,                                                  % 斜体字体为timesi.ttf
+      BoldItalicFont=timesbi.ttf,                                             % 粗斜体字体为timesbi.ttf
+      Path=./Fonts/                                                           % 指定字体文件路径为./Fonts/
+    ]{times.ttf}                                                              % 设置英文字体为times.ttf
   \fi
 \fi
 
