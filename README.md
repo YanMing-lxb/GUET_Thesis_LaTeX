@@ -79,7 +79,7 @@ git clone https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX.git
 
 编译文档请使用 XeLaTeX 引擎。模版提供 latexmk 设置文件用于自动编译。latexmk 可自动调用相关程序进行编译，处理各种文件依赖并自动预览。可在终端执行`latexmk -c`命令清理所有缓存文件。
 
-使用 latexmk 编译前，需在系统盘下创建名为 latexmk 的文件夹，并将 LatexMK 文件放入该文件夹下。请勿删掉 latexmkrc 文件。
+使用 latexmk 编译前，需在系统盘下创建名为 latexmk 的文件夹，并将放在本项目Docs文件夹下的 LatexMK 文件放入该文件夹下。请勿删掉 latexmkrc 文件。
 
 **<font color="#d83931">注意</font>**：==如果在 Windows 平台下使用 MiKTeX 还需要安装[Perl 语言解释器](http://strawberryperl.com/)，方可使用 latexmk 进行编译==。
 
