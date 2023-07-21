@@ -1,4 +1,4 @@
-# Guet_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 <img src="./Docs/GTUG-logo-w.png" width="90" height="90" align="right">
+# GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 <img src="./Docs/GTUG-logo-w.png" width="90" height="90" align="right">
 
 [![](https://img.shields.io/badge/license-LPPL-blue)](https://www.latex-project.org/lppl/) [![](https://img.shields.io/github/last-commit/GUET-TeX-Users-Group/Guet_Thesis_LaTeX)](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/zipball/master) [![](https://img.shields.io/github/issues/GUET-TeX-Users-Group/Guet_Thesis_LaTeX)](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/issues)  ![Downloads latest release](https://img.shields.io/github/downloads/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/latest/total?color=blueviolet)
 
@@ -19,14 +19,14 @@
 > PS：目前已调整 cls 样式文件的代码，可以使用`\ifbachelor{}{}`命令修改本科样式。
 
 ## 待完善功能
-- 封面目录的单双行切换（预测可以通过LaTeX3实现）；
-- 盲审版本切换：
-  - 盲审封面制作及版本切换；
-  - 攻读学位期间取得成果的盲审版本切换。
+- [ ] 封面目录的单双行切换（预测可以通过LaTeX3实现）；
+- [ ] 盲审版本切换：
+  - [ ] 盲审封面制作及版本切换；
+  - [ ] 攻读学位期间取得成果的盲审版本切换。
 - 去除所有其他表格宏包，完全使用Tabularray宏包制表
   - [ ] 自定义长三线表环境`lthreetab`(要求可跨页，跨页后自带 “题注(续)” )
   - [x] 自定义普通三线表环境`threetab`
-- 使用文学编程重构项目
+- [ ] 使用文学编程重构项目
 
 
 
