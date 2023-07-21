@@ -90,7 +90,7 @@ git clone https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX.git
 推荐使用 Visual Code Studio 编辑器。
 
 1. Visual Code Studio 中安装 LaTeX Workshop 插件；
-2. 所需的配置设置请看：[Visual*Code_Studio*中 LaTeX_Workshop 的设置说明](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/blob/main/Docs/Visual_Code_Studio_%E4%B8%ADLaTeX_Workshop%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E.md)
+2. 所需的配置设置请看：[Visual_Code_Studio_中LaTeX_Workshop的设置说明](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/blob/main/Docs/Visual_Code_Studio_%E4%B8%ADLaTeX_Workshop%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E.md)
 
 #### 转 word 格式
 
