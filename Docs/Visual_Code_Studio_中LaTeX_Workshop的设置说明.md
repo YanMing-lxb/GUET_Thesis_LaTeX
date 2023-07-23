@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-19 13:15:53 +0800
- * LastEditTime : 2023-07-22 19:55:01 +0800
+ * LastEditTime : 2023-07-22 22:13:12 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \GUET_Thesis_LaTeX\Docs\Visual_Code_Studio_中LaTeX_Workshop的设置说明.md
  * Description  : 
@@ -43,7 +43,6 @@
     //   "command": "latexmk",
     //   "args": [
     //     "-xelatex",
-    //     "-outdir=%OUTDIR%",
     //     "%DOC%"
     //   ]
     // },
@@ -52,7 +51,6 @@
       "command": "latexmk",
       "args": [
         "-xelatex",
-        "-outdir=%OUTDIR%",
         "%DOC%"
       ]
     },
@@ -61,7 +59,6 @@
       "command": "latexmk",
       "args": [
         "-pdflatex",
-        "-outdir=%OUTDIR%",
         "%DOC%"
       ]
     },
@@ -70,7 +67,6 @@
       "command": "latexmk",
       "args": [
         "-lualatex",
-        "-outdir=%OUTDIR%",
         "%DOC%"
       ]
     },
@@ -241,10 +237,6 @@
 // 辅助文件清理配置
   // 文件清理。子文件夹中递归删除辅助文件
   "latex-workshop.latex.clean.subfolder.enabled": true,
-  // 删除全局文件夹中的辅助文件
-  "latex-workshop.latex.clean.method":"glob",
-  // 清理所用的命令
-  "latex-workshop.latex.clean.command": "latexmk",
   //文件清理。此属性必须是字符串数组 "*.bbl",
   "latex-workshop.latex.clean.fileTypes": [
     "*.aux",
@@ -275,20 +267,15 @@
     "*.glsdefs",
     "*.fdb_latexmk",
     "*.fdb_latexmk,",
+    "*.synctex(busy)", 
+    "*.synctex.gz(busy)",
     "*/*.aux",
     "*.ttt",
     "*.fff",
     "*.nav",
     "*.snm",
     "*.vrb",
-  ],  
-  // 将latexindent.pl的输出信息输出到temp/indent.log文件中
-  "latex-workshop.latexindent.args": [
-    "-g",
-    "./%OUTDIR%/indent.log",
-    "%TMPFILE%",
-    "-y=defaultIndent: '%INDENT%'"
-  ],
+  ], 
 ```
 
 ## 编译操作配置
@@ -300,8 +287,6 @@
   "latex-workshop.latex.autoBuild.interval": 1000,
   // 编译错误后是否尝试重新编译
   "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
-  // 编译结果输出到特定路径
-  "latex-workshop.latex.outDir": "./temp",
   // 编译完成后关于清除辅助文件的操作设置
   "latex-workshop.latex.autoClean.run": "onBuilt", 
   // 使用上次的recipe编译组合

@@ -6,6 +6,7 @@
 # %O 代表选项，%S 代表对应命令的源文件
 $pdflatex = "pdflatex -shell-escape -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1 %O %S";
 $xelatex = "xelatex -shell-escape -file-line-error -halt-on-error -interaction=nonstopmode -no-pdf -synctex=1 %O %S";
+$lualatex = "lualatex -shell-escape -file-line-error -halt-on-error -interaction=nonstopmode  -no-pdf -synctex=1 %O %S";
 $bibtex = "bibtex %O %S";
 $biber = "biber %O %S";
 $xdvipdfmx = "xdvipdfmx -E -o %D %O %S";
