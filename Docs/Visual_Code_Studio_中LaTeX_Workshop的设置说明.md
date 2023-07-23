@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-19 13:15:53 +0800
- * LastEditTime : 2023-07-22 22:13:12 +0800
+ * LastEditTime : 2023-07-23 18:25:42 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \GUET_Thesis_LaTeX\Docs\Visual_Code_Studio_中LaTeX_Workshop的设置说明.md
  * Description  : 
@@ -43,6 +43,8 @@
     //   "command": "latexmk",
     //   "args": [
     //     "-xelatex",
+    //     "-outdir=%OUTDIR%",
+    //     "-auxdir=%OUTDIR%/Temp",
     //     "%DOC%"
     //   ]
     // },
@@ -51,6 +53,8 @@
       "command": "latexmk",
       "args": [
         "-xelatex",
+        "-outdir=%OUTDIR%",
+        "-auxdir=%OUTDIR%/Temp",
         "%DOC%"
       ]
     },
@@ -59,6 +63,8 @@
       "command": "latexmk",
       "args": [
         "-pdflatex",
+        "-outdir=%OUTDIR%",
+        "-auxdir=%OUTDIR%/Temp",
         "%DOC%"
       ]
     },
@@ -67,6 +73,8 @@
       "command": "latexmk",
       "args": [
         "-lualatex",
+        "-outdir=%OUTDIR%",
+        "-auxdir=%OUTDIR%/Temp",
         "%DOC%"
       ]
     },
@@ -285,6 +293,8 @@
   "latex-workshop.latex.autoBuild.run":"never",
   // 自动编译时间间隔(设置不自动编译时,该命令失效)
   "latex-workshop.latex.autoBuild.interval": 1000,
+  // 编译结果输出到特定路径
+  "latex-workshop.latex.outDir": "./Build",
   // 编译错误后是否尝试重新编译
   "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
   // 编译完成后关于清除辅助文件的操作设置

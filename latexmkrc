@@ -25,7 +25,7 @@ $preview_mode = 0; # 0不开启，1开启，由于使用latex workshop因此选�
 # $view 设置预览的文件格式
 $view = "pdf";
 
-  
+
 
 # 设置 latexmk 编译的文件，和不需要编译的文件，可以时多个
 # @default_files = ("main.tex");
