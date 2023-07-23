@@ -91,6 +91,7 @@ git clone https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX.git
 
 1. Visual Code Studio 中安装 LaTeX Workshop 插件；
 2. 所需的配置设置请看：[Visual_Code_Studio_中LaTeX_Workshop的设置说明](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/blob/main/Docs/Visual_Code_Studio_%E4%B8%ADLaTeX_Workshop%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E.md)
+3. 根据[Visual_Code_Studio_中LaTeX_Workshop的设置说明](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/blob/main/Docs/Visual_Code_Studio_%E4%B8%ADLaTeX_Workshop%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E.md)中的配置所生成的PDF将统一放置Build文件夹中，使用该配置时将根据LatexMK文件中的命令自动删除辅助文件所在的文件夹`Build/Temp`
 
 #### 转 word 格式
 
