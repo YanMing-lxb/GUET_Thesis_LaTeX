@@ -45,7 +45,7 @@ $pdf_previewer = 'start "D:\\Application\\SumatraPDF\\SumatraPDF.exe" %O %S';
 $clean_ext = "blg idx ind lof lot out toc acn acr alg glg glo gls ist fls log spl dtx nlo nls ilg glsdefs fdb_latexmk";
 
 
-# 编译结束后自动删除Build下的所有文件夹
+# 编译结束后自动删除Build下的所有子文件夹
 END {
     use strict;
     use warnings;
