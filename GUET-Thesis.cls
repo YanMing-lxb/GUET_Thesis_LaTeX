@@ -156,23 +156,25 @@
 }
 
 % ===============定义带页眉页脚空白页命令=============== 
-\newcommand\blankpage@number{\newpage\null\newpage}
+% \newcommand\blankpage@number{\newpage\null\newpage}
 
 % ===============字体设置===============
-\newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path = ./Fonts/]{GB2312.ttf}     % 设置楷体字体为GB2312.ttf，并指定字体文件路径为./Fonts/
 \ifwindows
   \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true]{SimSun}                                 % 在Windows平台上设置中文字体为SimSun
+  \newCJKfontfamily{\kaiti}[AutoFakeBold=true]{KaiTi}                                            % 设置楷体字体为KaiTi 
   \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true]{SimHei}                       % 设置黑体字体为SimHei
   \newfontfamily{\heiti@letter}{SimHei}                                      % 设置字母的黑体字体为SimHei
   \setallmainfonts{Times New Roman}                                          % 设置英文字体为Times New Roman
 \else  
   \ifmacosx  
     \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true]{Songti SC}                             % 在macOS平台上设置中文字体为Songti SC
+    \newCJKfontfamily{\kaiti}[AutoFakeBold=true]{KaiTi}                                           % 设置楷体字体为KaiTi
     \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true]{STHeiti}                     % 设置黑体字体为STHeiti
     \newfontfamily{\heiti@letter}{STHeiti}                                    % 设置字母的黑体字体为STHeiti
     \setallmainfonts{Times New Roman}                                         % 设置英文字体为Times New Roman
   \else 
     \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true,Path = ./Fonts/]{fzsong.ttf}            % 在其他平台上设置中文字体为fzsong.ttf，并指定字体文件路径为./Fonts/
+    \newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path=./Fonts/]{fzkaiti.ttf}                       % 设置楷体字体为fzkaiti.ttf，并指定字体文件路径为./Fonts/
     \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true,Path = ./Fonts/]{fzhei.ttf}   % 设置黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
     \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./Fonts/]                 % 设置字母的黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
     \setallmainfonts[
