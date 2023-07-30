@@ -19,7 +19,7 @@
 > PS：目前已调整 cls 样式文件的代码，可以使用`\ifbachelor{}{}`命令修改本科样式。
 
 ## 待完善功能
-- [ ] 封面目录的单双行切换（预测可以通过LaTeX3实现）；
+- [x] 封面目录的单双行切换（使用Tabularray宏包解决，但在标题中需要添加`\\&`命令进行换行）；
 - [ ] 盲审版本切换：
   - [ ] 盲审封面制作及版本切换；
   - [ ] 攻读学位期间取得成果的盲审版本切换。
@@ -71,38 +71,10 @@ git clone https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX.git
 
 ### 本地部署写作
 
-#### 基本环境
+1. 编译该模板请使用 XeLaTeX 引擎。
 
-使用模板需要系统安装任意一种 TeX 环境，如[TeXLive](http://mirror.ctan.org/systems/texlive/Images/)、[MacTeX](https://www.tug.org/mactex/mactex-download.html)和[MiKTeX](https://miktex.org/download)（都自动带有 XeLaTeX 引擎，但是不推荐 CTeX），安装有 SimSun 和 SimHei 字体（其实就是宋体和黑体）以及 Times New Roman 英文字体。在 MacOS 系统下编译会自动识别操作系统，使用 Songti SC 和 STHeiti 字体，但需要启用`--shell-escape`编译选项。
+2. 本地部署LaTeX环境请转到[YM VSCode Configurations for LaTeX](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX)项目
 
-#### latexmk 编译
-
-编译文档请使用 XeLaTeX 引擎。模版提供 latexmk 设置文件用于自动编译。latexmk 可自动调用相关程序进行编译，处理各种文件依赖并自动预览。可在终端执行`latexmk -c`命令清理所有缓存文件。
-
-使用 latexmk 编译前，需在系统盘下创建名为 latexmk 的文件夹，并将放在本项目Docs文件夹下的 LatexMK 文件放入该文件夹下。请勿删掉 latexmkrc 文件。
-
-**<font color="#d83931">注意</font>**：==如果在 Windows 平台下使用 MiKTeX 还需要安装[Perl 语言解释器](http://strawberryperl.com/)，方可使用 latexmk 进行编译==。
-
-编译时只需使用 latexmk 即可完成编译。
-
-#### 编辑器
-
-推荐使用 Visual Code Studio 编辑器。
-
-1. Visual Code Studio 中安装 LaTeX Workshop 插件；
-2. 所需的配置设置请看：[Visual_Code_Studio_中LaTeX_Workshop的设置说明](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/blob/main/Docs/Visual_Code_Studio_%E4%B8%ADLaTeX_Workshop%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E.md)
-3. 根据[Visual_Code_Studio_中LaTeX_Workshop的设置说明](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/blob/main/Docs/Visual_Code_Studio_%E4%B8%ADLaTeX_Workshop%E7%9A%84%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E.md)中的配置所生成的PDF将统一放置Build文件夹中，使用该配置时将根据LatexMK文件中的命令自动删除辅助文件所在的文件夹`Build/Temp`
-
-#### 转 word 格式
-
-请看：[转 word 命令](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/blob/main/Docs/%E8%BD%ACword%E5%91%BD%E4%BB%A4.md)
-
-**注意：**
-
-- 使用 $\LaTeX$ 转 Word 是通过 Pandoc 来实现，因此需要配置好 Pandoc；
-- 目前尚且存在转换后，图片不存在的问题（由于 pandoc 不支持读取多个文件夹图片的原因）。
-
->PS: 目前该命令存在一些问题，欢迎有志之士来补充！
 
 ## 模板说明
 
