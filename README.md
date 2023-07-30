@@ -1,6 +1,6 @@
 # GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 <img src="https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">
 
-[![](https://img.shields.io/badge/license-LPPL-blue)](https://www.latex-project.org/lppl/) [![](https://img.shields.io/github/last-commit/GUET-TeX-Users-Group/Guet_Thesis_LaTeX)](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/zipball/master) [![](https://img.shields.io/github/issues/GUET-TeX-Users-Group/Guet_Thesis_LaTeX)](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/issues)  ![Downloads latest release](https://img.shields.io/github/downloads/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/latest/total?color=blueviolet)
+[![](https://img.shields.io/badge/license-LPPL-blue)](https://www.latex-project.org/lppl/) [![](https://img.shields.io/github/last-commit/GUET-TeX-Users-Group/GUET_Thesis_LaTeX)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/zipball/master) [![](https://img.shields.io/github/issues/GUET-TeX-Users-Group/GUET_Thesis_LaTeX)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/issues)  ![Downloads latest release](https://img.shields.io/github/downloads/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/latest/total?color=blueviolet)
 
 ## 欢迎使用桂林电子科技大学毕业论文模板
 
@@ -34,24 +34,24 @@
 
 ### 下载模板
 
-普通用户可以直接 `clone` 或者下载最新发行版 [Guet_Thesis_LaTeX.zip](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/archive/refs/heads/main.zip)。
+普通用户可以直接 `clone` 或者下载最新发行版 [GUET_Thesis_LaTeX.zip](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/archive/refs/heads/main.zip)。
 
 ```
-git clone https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX.git
+git clone https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.git
 ```
 
 ### 项目地址
 
 考虑到网络问题，国内下载可用Gitee项目镜像。
 
-[Gitee项目地址](https://gitee.com/metaljack666/Guet_Thesis_LaTeX)
+[Gitee项目地址](https://gitee.com/metaljack666/GUET_Thesis_LaTeX)
 
-[Github项目地址](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX)
+[Github项目地址](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX)
 
 模版更新频繁，且只维护最新版。如有问题，可以先尝试升级模版，而后进行反馈。
 
 ### 相关项目
-桂林电子科技大学 Beamer 模板：[Guet Beamer Theme](https://github.com/GUET-TeX-Users-Group/Guet_Beamer)
+桂林电子科技大学 Beamer 模板：[GUET Beamer Theme](https://github.com/GUET-TeX-Users-Group/GUET_Beamer)
 
 
 
@@ -91,7 +91,7 @@ git clone https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX.git
 | ojmaster  | 在职硕士 |
 | ptomaster | 非全专硕 |
 
-> 根据学校要求打印版硕士学位论文封面桂电 logo 为黑色(其他的硕博的打印版桂电 logo 也都顺便设置成黑色的)，对与其他几种封面的相关要求可以在[**issues**](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/issues)中提出并补充。
+> 根据学校要求打印版硕士学位论文封面桂电 logo 为黑色(其他的硕博的打印版桂电 logo 也都顺便设置成黑色的)，对与其他几种封面的相关要求可以在[**issues**](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/issues)中提出并补充。
 
 ### 注意事项
 
@@ -159,8 +159,8 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 ### 反馈问题
 如果在使用上有任何问题，建议通过以下方式进行反馈（按推荐顺序排序）：
 
-- 如遇不会使用、编译错误等问题，请至 [**在 GitHub 项目讨论区提问**](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/discussions) (推荐)
-- 如遇模版 BUG，或有新的需求，请至  [**在 GitHub 项目中提issues**](https://github.com/GUET-TeX-Users-Group/Guet_Thesis_LaTeX/issues)
+- 如遇不会使用、编译错误等问题，请至 [**在 GitHub 项目讨论区提问**](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/discussions) (推荐)
+- 如遇模版 BUG，或有新的需求，请至  [**在 GitHub 项目中提issues**](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/issues)
 
 ### 成为贡献者
 这个仓库是面向用户的示例模版，如果你有很好的排版示例，可以提交到此仓库与大家分享。
@@ -169,7 +169,7 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 - 帮助我们解答同学们的问题，这些问题你也可能遇到过并且知道如何解决；
 - 与我们一起维护项目的 Wiki 文档，Wiki 任何人都可以直接编辑；
-- 向周围同学安利 Guet_Thesis_LaTeX(GTL)，让更多的同学使用我们维护的模板；
+- 向周围同学安利 GUET_Thesis_LaTeX(GTL)，让更多的同学使用我们维护的模板；
 - 在我们的讨论组中分享你的使用体验，以及吐槽。如果你也想成为项目的长期维护者，也可以通过讨论组告诉我们。:-)
 
 ## 软件许可证
