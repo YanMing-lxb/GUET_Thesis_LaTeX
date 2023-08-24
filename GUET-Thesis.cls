@@ -156,7 +156,7 @@
 }
 
 % ===============定义带页眉页脚空白页命令=============== 
-% \newcommand\blankpage@number{\newpage\null\newpage}
+\newcommand\blankpage@number{\newpage\null\newpage}
 
 % ===============字体设置===============
 \ifwindows
