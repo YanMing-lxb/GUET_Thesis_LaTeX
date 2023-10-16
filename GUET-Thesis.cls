@@ -143,7 +143,7 @@
 \ifOptionPrintVersion % 根据eversion/pversion 选项设置页边距
   \geometry{inner=3cm, outer=2cm, top=3cm, bottom=2cm} % bindingoffset为内边距加长2.5cm
 \else
-  \geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=2cm, headsep=0.4cm, footskip=0.7cm}
+  \geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=2cm, headsep=0.3cm, footskip=0.7cm}
 \fi
 
 % ===============定义空白页命令=============== 
@@ -659,6 +659,7 @@
     \hrule height\headrulewidth width\headwidth%
     \vskip 1.2\doublelineskip%
     \hrule height\headrulewidth width\headwidth}
+  \renewcommand{\headrulewidth}{1pt} % 设置页眉线宽度
 }
 % ===============设置段落格式===============
 \setlength{\headheight}{17pt} % 原先设置是15pt
