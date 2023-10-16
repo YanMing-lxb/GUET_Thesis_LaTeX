@@ -143,7 +143,7 @@
 \ifOptionPrintVersion % 根据eversion/pversion 选项设置页边距
   \geometry{inner=3cm, outer=2cm, top=3cm, bottom=2cm} % bindingoffset为内边距加长2.5cm
 \else
-  \geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=2cm}
+  \geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=2cm, headsep=0.4cm, footskip=0.7cm}
 \fi
 
 % ===============定义空白页命令=============== 
