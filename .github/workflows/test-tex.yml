@@ -1,4 +1,4 @@
-name: Build LaTeX document
+name: Build_LaTeX
 on:
     push:
       branches: [ main ]
