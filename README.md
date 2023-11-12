@@ -1,6 +1,6 @@
 # GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 <img src="https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">
 
-[![GTL](https://img.shields.io/badge/GTL-LaTeX-blue.svg)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX) [![License](https://img.shields.io/badge/license-LPPL-aff)](https://www.latex-project.org/lppl/) ![OS](https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg) [![GitHub release](https://img.shields.io/github/release/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.svg?color=blueviolet&label=version&style=popout)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/releases/latest) [![Last Commit](https://img.shields.io/github/last-commit/GUET-TeX-Users-Group/GUET_Thesis_LaTeX)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/zipball/master) [![Issues](https://img.shields.io/github/issues/GUET-TeX-Users-Group/GUET_Thesis_LaTeX)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/issues) [![Github Action](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/workflows/Build%20Tests/badge.svg)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/actions) [![Downloads](https://img.shields.io/github/downloads/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/total.svg?color=000000&style=popout)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/releases/latest)
+[![GitHub](https://img.shields.io/badge/Github-GTL-000000.svg)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX) [![TeXPage](https://img.shields.io/badge/TeXPage-GTL-495A80.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818) [![Overleaf](https://img.shields.io/badge/Overleaf-GTL-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp) [![License](https://img.shields.io/badge/license-LPPL-aff)](https://www.latex-project.org/lppl/) ![OS](https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg) [![GitHub release](https://img.shields.io/github/release/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.svg?color=blueviolet&label=version&style=popout)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/releases/latest) [![Last Commit](https://img.shields.io/github/last-commit/GUET-TeX-Users-Group/GUET_Thesis_LaTeX)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/zipball/master) [![Issues](https://img.shields.io/github/issues/GUET-TeX-Users-Group/GUET_Thesis_LaTeX)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/issues) [![Github Action](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/workflows/Build%20Tests/badge.svg)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/actions) [![Downloads](https://img.shields.io/github/downloads/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/total.svg?color=blue&style=popout)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/releases/latest)
 
 ## 欢迎使用桂林电子科技大学毕业论文模板
 
@@ -48,7 +48,7 @@ git clone https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.git
 
 [Github项目地址](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX)
 
-模版更新频繁，且只维护最新版。如有问题，可以先尝试升级模版，而后进行反馈。
+>模版更新频繁，且只维护最新版。如有问题，可以先尝试升级模版，而后进行反馈。
 
 ### 相关项目
 桂林电子科技大学 Beamer 模板：[GUET Beamer Theme](https://github.com/GUET-TeX-Users-Group/GUET_Beamer)
@@ -56,26 +56,25 @@ git clone https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.git
 
 
 ## 使用方法
+有两种使用方法：一是使用在线平台，在网页中进行在线写作；二是在本地部署$\LaTeX$ 环境,在VSCove中进行写作。请根据自己的需求酌情选择。
+### 在线写作
+可以直接使用我们已经上传好的TeXPage或Overleaf在线模板：
 
-### Overleaf 在线写作
-[![Overleaf](https://img.shields.io/badge/Overleaf-GUETReport-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp)
+[![TeXPage](https://img.shields.io/badge/TeXPage-GTL-495A80.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818) [![Overleaf](https://img.shields.io/badge/Overleaf-GTL-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp)
 
-点击徽标即可直接使用。
+> 点击对应徽标即可跳转到对应平台直接使用，推荐使用国产的TeXPage进行在线写作。
 
-**<font color="#d83931">注意</font>**：==在线写作平台默认使用 pdflatex 编译，您需要设置使用 XeLaTeX 编译器==。
+**<font color="#d83931">注意</font>**：
 
-### TeXPage 在线写作（国产）
-[![Texpage](https://img.shields.io/badge/Texpage-GUETReport-green.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818)
+1. 在线写作平台默认使用 $pdf\LaTeX$ 编译，您需要设置使用 $Xe\LaTeX$ 编译器。
+2. 由于上传模板需要审核周期，更新频繁时候建议 GitHub下载
 
-
-
-**<font color="#d83931">注意</font>**：==在线写作平台默认使用 pdflatex 编译，您需要设置使用 XeLaTeX 编译器==。
 
 ### 本地部署写作
 
-1. 编译该模板请使用 XeLaTeX 引擎。
+1. 编译该模板请使用 $Xe\LaTeX$ 引擎。
 
-2. 本地部署LaTeX环境请转到[YM VSCode Configurations for LaTeX](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX)项目
+2. 本地部署$\LaTeX$环境请转到[YM VSCode Configurations for LaTeX](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX)项目
 
 
 ## 模板说明
