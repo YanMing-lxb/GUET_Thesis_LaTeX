@@ -58,14 +58,16 @@ git clone https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.git
 ## 使用方法
 
 ### Overleaf 在线写作
+[![Overleaf](https://img.shields.io/badge/Overleaf-GUETReport-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp)
 
-点击[🔗链接](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp)即可直接使用。
+点击徽标即可直接使用。
 
 **<font color="#d83931">注意</font>**：==在线写作平台默认使用 pdflatex 编译，您需要设置使用 XeLaTeX 编译器==。
 
-### TeXPage 在线写作
+### TeXPage 在线写作（国产）
+[![Texpage](https://img.shields.io/badge/Texpage-GUETReport-green.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818)
 
-点击[🔗链接](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818)即可直接使用。
+
 
 **<font color="#d83931">注意</font>**：==在线写作平台默认使用 pdflatex 编译，您需要设置使用 XeLaTeX 编译器==。
 
