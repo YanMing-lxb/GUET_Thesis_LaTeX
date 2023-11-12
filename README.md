@@ -74,7 +74,7 @@ git clone https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.git
 
 1. 编译该模板请使用 $Xe\LaTeX$ 引擎。
 
-2. 本地部署$\LaTeX$环境请转到[YM VSCode Configurations for LaTeX](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX)项目
+2. 本地部署 $\LaTeX$ 环境请转到[YM VSCode Configurations for LaTeX](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX)项目
 
 
 ## 模板说明
