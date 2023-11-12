@@ -56,7 +56,7 @@ git clone https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.git
 
 
 ## 使用方法
-有两种使用方法：一是使用在线平台，在网页中进行在线写作；二是在本地部署$\LaTeX$ 环境,在VSCove中进行写作。请根据自己的需求酌情选择。
+有两种使用方法：一是使用在线平台，在网页中进行在线写作；二是在本地部署 $\LaTeX$ 环境, 在VSCove中进行写作。请根据自己的需求酌情选择。
 ### 在线写作
 可以直接使用我们已经上传好的TeXPage或Overleaf在线模板：
 
