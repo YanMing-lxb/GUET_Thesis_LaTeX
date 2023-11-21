@@ -9,7 +9,6 @@
 ]{book}                                               % 使用book文档类
 
 \RequirePackage[
-  usenames,                                           % 允许使用16种基本颜色名称，例如Red、Blue等
   dvipsnames,                                         % 允许使用64种扩展颜色名称，例如RoyalBlue、OliveGreen等
   svgnames,                                           % 允许使用150种SVG命名颜色，例如DarkOrange、MediumPurple等
   table                                               % 允许在表格中使用颜色
@@ -132,19 +131,22 @@
 % ================定义高亮命令设置===============
 \newcommand{\hl}{\CJKsout*[thickness=2.5ex,format=\color{yellow}]} % 新定义高亮命令\gl 用来高亮显示中文
 
-% ===============定义 eversion/pversion 选项===============
-\newif\ifOptionPrintVersion % 定义逻辑变量 OptionPrintVersion
-\OptionPrintVersionfalse % 默认为false 也就是电子版
-\DeclareOption{eversion}{\OptionPrintVersionfalse} % false为电子版
-\DeclareOption{pversion}{\OptionPrintVersiontrue} % true为打印版
-\ProcessOptions\relax % 处理选项
+% ===============定义打印版选项===============
+\newboolean{@pversion}                                       % 新定义一个名为 @pversion 的布尔值
+\setboolean{@pversion}{false}                                % 设定布尔值的默认值为 false
+\DeclareOption{pversion}{\setboolean{@pversion}{true}}       % 当设定选项为pversion时 @pversion 为 true
+\ProcessOptions\relax
+
+\newcommand{\ifpversion}[2]{ \ifthenelse{\boolean{@pversion}}{#1}{#2}} 
+% 新定义一个命令 \ifpversion 如果 @pversion 为true 则执行 #1 否则 执行 #2
 
 % ================页边距设置===============
-\ifOptionPrintVersion % 根据eversion/pversion 选项设置页边距
-  \geometry{inner=3cm, outer=2cm, top=3cm, bottom=2cm} % bindingoffset为内边距加长2.5cm
-\else
+\ifpversion{ % 打印版，内侧页边距大，外侧小👇
+  \geometry{inner=3cm, outer=2cm, top=3cm, bottom=2cm}
+}{ % 电子版页边距相同👇
   \geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=2cm, headsep=0.3cm, footskip=0.7cm}
-\fi
+} 
+
 
 % ===============定义空白页命令=============== 
 \newcommand\blankpage{ % 定义添加空白页
@@ -339,20 +341,20 @@
   \ifbachelor{ % 本科LOGO👇
     \begin{textblock}{15}(3,3.2)
       \centering
-      \ifOptionPrintVersion
-      {\includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo-black.pdf}}
-      \else
-      {\includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo.pdf}}
-      \fi
+      \ifpversion{
+        \includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo-black.pdf}
+      }{
+        \includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo.pdf}
+      }
     \end{textblock}
   }{ % 硕博LOGO👇
     \begin{textblock}{15}(3,4.4)
       \centering
-      \ifOptionPrintVersion
-      {\includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo-black.pdf}}
-      \else
-      {\includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo.pdf}}
-      \fi
+      \ifpversion{
+        \includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo-black.pdf}
+      }{
+        \includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo.pdf}
+      }
     \end{textblock}
   }
 
@@ -521,11 +523,7 @@
   \setlength{\extrarowheight}{2pt}
 
   %判断是否为电子版。true为电子版，false为打印版。
-  \ifOptionPrintVersion
-    {\blankpage}
-  \else
-    {}
-  \fi
+  \ifpversion{\blankpage}{}
 }
 
 % % ====================导入封面PDF文件设置====================
@@ -619,22 +617,14 @@
       日期： \\
     }
   \end{spacing}
-  \ifOptionPrintVersion
-    {\blankpage}
-  \else
-    {}
-  \fi
+  \ifpversion{\blankpage}{}
 }
 
 % ====================导入独创性声明定义PDF文件设置====================
 \newcommand{\signatureofdeclaration}[1]{
   \includepdf[pages=-]{#1}
   \newpage\setcounter{page}{0}
-  \ifOptionPrintVersion
-    {\blankpage}
-  \else
-    {}
-  \fi
+  \ifpversion{\blankpage}{}
 }
 
 % ++++++++++++++++++++++++++++++++++++++++++++++++ 封面设置相关结束 ++++++++++++++++++++++++++++++++++++++++++++++++
@@ -809,18 +799,17 @@
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage} % 罗马页码居中显示
   }
 }{
-  \ifOptionPrintVersion
-    {
+  \ifpversion{
     \checkoddpage
     \ifoddpage
       \blankpage@number
     \else
       \newpage
     \fi
+    }{
+      \newpage
     }
-  \else
-    \newpage
-  \fi
+    
 
 }
 
@@ -853,18 +842,16 @@
   }
 
 }{
-  \ifOptionPrintVersion
-    {
+  \ifpversion{
     \checkoddpage
     \ifoddpage
       \blankpage@number
     \else
       \newpage
     \fi
+    }{
+      \newpage
     }
-  \else
-    \newpage
-  \fi
 }
 
 
@@ -1085,18 +1072,14 @@
     \setstretch{1.389} % 行距设置回20磅
   }{}
 
-  \ifOptionPrintVersion % 打印版本切换
-    {
+  \ifpversion{ % 打印版本切换
     \checkoddpage
     \ifoddpage
       \blankpage@number
     \else
       \newpage
     \fi
-    }
-  \else
-    {}
-  \fi
+    }{}
 }
 
 % ====================符号表格式设置====================
@@ -1368,19 +1351,6 @@
 %   \fancyhf{} %初始化页码页脚布局
 %   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\degreename{}学位期间取得的成果}
 %   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
-% }{
-%   \ifOptionPrintVersion
-%     {
-%       \checkoddpage
-%       \ifoddpage
-%         \blankpage
-%       \else
-%         \newpage
-%       \fi
-%     }
-%   \else
-%     {}
-%   \fi
 % }
 
 \newcommand{\thesisaccomplish}{
@@ -1400,23 +1370,6 @@
     \input{Chapters/Accomplish.tex}
   }
    
-}
-{ % 该处先注释掉了，不知道为什么总是报错提示没定义
-  % 猜测最后一页报错可能是由于某些机制导致的，希望能有大神来解决。
-  % 不过想了想，就算最后一页是奇数，不加空白页也没什么影响，
-  % 打印出来的效果依然是背面空白。
-  % \ifOptionPrintVersion
-  %   {
-  %     \checkoddpage
-  %     \ifoddpage
-  %       \blankpage
-  %     \else
-  %       \newpage
-  %     \fi
-  %   }
-  % \else
-  %   {}
-  % \fi
 }
 
 

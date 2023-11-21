@@ -81,17 +81,16 @@ git clone https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.git
 
 ### 样式参数
 
-|   命令    |   功能   |默认参数|
-| :-------: | :------: |:-:|
-| eversion  |  电子版  |⭐|
-| pversion  |  打印版  |  |
-| bversion  |  盲审版  |  |
-| bachelor  |   本科   |  |
-|  master   |   学硕   |⭐|
-| promaster |   专硕   |  |
-|  doctor   |   博士   |  |
-| ojmaster  | 在职硕士 |  |
-| ptomaster | 非全专硕 |  |
+|   命令    |   功能   |
+| :-------: | :------: |
+| pversion  |  打印版  |
+| bversion  |  盲审版  |
+| bachelor  |   本科   |
+|  master   |   学硕   |
+| promaster |   专硕   |
+|  doctor   |   博士   |
+| ojmaster  | 在职硕士 |
+| ptomaster | 非全专硕 |
 
 
 > 根据学校要求打印版硕士学位论文封面桂电 logo 为黑色(其他的硕博的打印版桂电 logo 也都顺便设置成黑色的)，对与其他几种封面的相关要求可以在[**issues**](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/issues)中提出并补充。
