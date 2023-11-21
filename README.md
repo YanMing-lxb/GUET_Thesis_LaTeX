@@ -141,7 +141,7 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 | \researchdirection{#1}| 研究领域     | 无       |
 | \studentnumber{#1}    | 学号         | 无       |
 | \degreecategories{#1} | 申请学位门类 | 无       |
-| \datereply{#1}        | 论文答辩日期 | 无       |
+| \date{#1}             | 论文答辩日期 | 无       |
 
 
 ### 中英文摘要
