@@ -533,7 +533,7 @@
 %   \pdfbookmark{封面}{cover}
 %   \includepdf[pages=-]{#1}
 %   \newpage\setcounter{page}{0}
-}
+% }
 
 % ====================独创性（或创新性）声明设置====================
 \newcommand{\originalitydeclaration}{
