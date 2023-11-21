@@ -20,13 +20,13 @@
 
 ## 待完善功能
 - [x] 封面目录的单双行切换（使用Tabularray宏包解决，但在标题中需要添加`\\&`命令进行换行）；
-- [ ] 盲审版本切换：
-  - [ ] 盲审封面制作及版本切换；
-  - [ ] 攻读学位期间取得成果的盲审版本切换。
-- 去除所有其他表格宏包，完全使用Tabularray宏包制表
+- [x] 盲审版本切换：
+  - [x] 盲审封面制作及版本切换；
+  - [x] 攻读学位期间取得成果的盲审版本切换。
+- [ ] 去除所有其他表格宏包，完全使用Tabularray宏包制表
   - [ ] 自定义长三线表环境`lthreetab`(要求可跨页，跨页后自带 “题注(续)” )
   - [x] 自定义普通三线表环境`threetab`
-- [ ] 使用文学编程重构项目
+- [ ] ~~使用文学编程重构项目~~
 
 
 
@@ -81,18 +81,21 @@ git clone https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.git
 
 ### 样式参数
 
-|   命令    |   功能   |
-| :-------: | :------: |
-| eversion  |  电子版  |
-| pversion  |  打印版  |
-| bachelor  |   本科   |
-|  master   |   学硕   |
-| promaster |   专硕   |
-|  doctor   |   博士   |
-| ojmaster  | 在职硕士 |
-| ptomaster | 非全专硕 |
+|   命令    |   功能   |默认参数|
+| :-------: | :------: |:-:|
+| eversion  |  电子版  |⭐|
+| pversion  |  打印版  |  |
+| bversion  |  盲审版  |  |
+| bachelor  |   本科   |  |
+|  master   |   学硕   |⭐|
+| promaster |   专硕   |  |
+|  doctor   |   博士   |  |
+| ojmaster  | 在职硕士 |  |
+| ptomaster | 非全专硕 |  |
+
 
 > 根据学校要求打印版硕士学位论文封面桂电 logo 为黑色(其他的硕博的打印版桂电 logo 也都顺便设置成黑色的)，对与其他几种封面的相关要求可以在[**issues**](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/issues)中提出并补充。
+>启用盲审样式时，封面自动替换为对应的盲审封面、致谢命令失效、攻读学位期间取得成果自动替换为 Accomplish-bversion.tex 文件中的内容
 
 ### 注意事项
 
@@ -135,11 +138,11 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 | \protitle{#1}         | 导师职称     | 无       |
 | \school{#1}           | 学院名       | 无       |
 | \major{#1}            | 专业名       | 无       |
+| \researchdirection{#1}| 研究领域     | 无       |
 | \studentnumber{#1}    | 学号         | 无       |
 | \degreecategories{#1} | 申请学位门类 | 无       |
 | \datereply{#1}        | 论文答辩日期 | 无       |
 
-如果想使用自己定义的封面，可以用`\bindpdfcover`命令添加已经做好的 PDF 格式的封面，如`\bindpdfcover{cover.pdf}`。
 
 ### 中英文摘要
 

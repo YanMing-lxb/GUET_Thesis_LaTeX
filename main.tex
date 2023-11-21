@@ -29,7 +29,7 @@
 % ------------------------------------------------------------------------------------------
 %     前言区域
 % ------------------------------------------------------------------------------------------
-\documentclass[master,eversion]{GUET-Thesis} 
+\documentclass[master,eversion,bversion]{GUET-Thesis} 
 % eversion:电子版 pversion:打印版 bachelor:本科 master:学硕 promaster:专硕 doctor:博士 ojmaster 在职硕士 ptmaster 非全专硕
                                                                              % latex基础教程 lshort-zh 
 % \usepackage{showframe}                                                     % 显示排版框架
@@ -49,8 +49,9 @@
 \school{机电工程学院}                                                        % 所在学院
 \major{机械工程}                                                            % 学科专业或领域
 \studentnumber{2020XXX}                                                    % 学号
+\researchdirection{电子器件散热}                                            % 研究领域（盲审用）
 \degreecategories{工学硕士}                                                 % 申请学位门类或类别
-\datereply{\today}                                                         % 可更换为具体日期如：\datereply{2023年5月28日}
+\date{\today}                                                              % 可更换为具体日期如：\date{2023年5月28日}
 
 
 % ------------------------------------------------------------------------------------------
@@ -58,7 +59,6 @@
 % ------------------------------------------------------------------------------------------
 \begin{document}
     \makecover % 封面
-    % \bindpdfcover{./Chapters/盲审学位论文封面(示例).pdf}                   % 可使用PDF文件作为封面，如盲审封面
     \originalitydeclaration % 独创性声明
     % \signatureofdeclaration{./Chapters/独创性声明(示例).pdf}              % 可使用已签字的独创性声明PDF文件
     \input{Chapters/Abstract}                                              % 摘要

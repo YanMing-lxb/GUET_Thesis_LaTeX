@@ -219,18 +219,18 @@
 \renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
 
 % ===============封面信息变量定义===============
-\newcommand{\zh@thetitle}{\quad}        % 标题
-\newcommand{\en@thetitle}{\quad}        % 英文标题
-\newcommand{\theauthor}{\quad}          % 作者
-\newcommand{\thedate}{\quad}            % 日期
-\newcommand{\theschool}{\quad}          % 学院
-\newcommand{\themajor}{\quad}           % 专业
-\newcommand{\theadvisor}{\quad}         % 导师姓名
-\newcommand{\theprotitle}{\quad}        % 导师职称
-\newcommand{\thesecrets}{\qquad}        % 密级
-\newcommand{\thestudentnumber}{\quad}   % 学号
-\newcommand{\thedegreecategories}{\quad}% 学位类别
-\newcommand{\thedatereply}{\quad}       % 答辩日期
+\newcommand{\zh@thetitle}{\quad}         % 标题
+\newcommand{\en@thetitle}{\quad}         % 英文标题
+\newcommand{\theauthor}{\quad}           % 作者
+\newcommand{\thedate}{\quad}             % 日期
+\newcommand{\theschool}{\quad}           % 学院
+\newcommand{\themajor}{\quad}            % 专业
+\newcommand{\theresearchdirection}{\quad}% 研究方向
+\newcommand{\theadvisor}{\quad}          % 导师姓名
+\newcommand{\theprotitle}{\quad}         % 导师职称
+\newcommand{\thesecrets}{\qquad}         % 密级
+\newcommand{\thestudentnumber}{\quad}    % 学号
+\newcommand{\thedegreecategories}{\quad} % 学位类别
 
 
 % ===============封面信息获取===============
@@ -239,28 +239,16 @@
   \renewcommand{\en@thetitle}{#2}        % 英文标题
 }
 
-\newcommand{\secrets}[1]{\renewcommand{\thesecrets}{#1}}                % 密级
-\renewcommand{\author}[1]{\renewcommand{\theauthor}{#1}}                % 作者
-\renewcommand{\date}[1]{\renewcommand{\thedate}{#1}}                    % 日期
-\newcommand{\major}[1]{\renewcommand{\themajor}{#1}}                    % 专业
-\newcommand{\school}[1]{\renewcommand{\theschool}{#1}}                  % 学院
-\newcommand{\advisor}[1]{\renewcommand{\theadvisor}{#1}}                % 导师姓名
-\newcommand{\protitle}[1]{\renewcommand{\theprotitle}{#1}}              % 导师职称
-\newcommand{\studentnumber}[1]{\renewcommand{\thestudentnumber}{#1}}    % 学号
-\newcommand{\degreecategories}[1]{\renewcommand{\thedegreecategories}{#1}} % 学位类别
-\newcommand{\datereply}[1]{\renewcommand{\thedatereply}{#1}}            % 答辩日期
-
-% 格式为"oral"、"submit"、"confer"的日期命令
-\newcommand{\thedateoral}{}
-\newcommand{\thedatesubmit}{}
-\newcommand{\thedateconfer}{年\quad 月}
-
-% 设置特定类型日期的命令
-\newcommand{\setdate}[2][]{
-  \ifthenelse{\equal{#1}{oral}}{\renewcommand{\thedateoral}{#2}}{}        % 口试日期
-  \ifthenelse{\equal{#1}{submit}}{\renewcommand{\thedatesubmit}{#2}}{}    % 提交日期
-  \ifthenelse{\equal{#1}{confer}}{\renewcommand{\thedateconfer}{#2}}{}    % 答辩日期
-}
+\newcommand{\secrets}[1]{\renewcommand{\thesecrets}{#1}}                      % 密级
+\renewcommand{\author}[1]{\renewcommand{\theauthor}{#1}}                      % 作者
+\renewcommand{\date}[1]{\renewcommand{\thedate}{#1}}                          % 日期
+\newcommand{\major}[1]{\renewcommand{\themajor}{#1}}                          % 专业
+\newcommand{\researchdirection}[1]{\renewcommand{\theresearchdirection}{#1}}  % 研究方向
+\newcommand{\school}[1]{\renewcommand{\theschool}{#1}}                        % 学院
+\newcommand{\advisor}[1]{\renewcommand{\theadvisor}{#1}}                      % 导师姓名
+\newcommand{\protitle}[1]{\renewcommand{\theprotitle}{#1}}                    % 导师职称
+\newcommand{\studentnumber}[1]{\renewcommand{\thestudentnumber}{#1}}          % 学号
+\newcommand{\degreecategories}[1]{\renewcommand{\thedegreecategories}{#1}}    % 学位类别
 
 
 % ====================本硕博选项声明====================
@@ -299,6 +287,7 @@
 \ProcessOptions\relax
 
 
+
 % ===============封面制作===============
 % 新定义判断变量，如果学位名是专业硕士则执行#1命令，否执行#2命令
 \newcommand{\ifbachelor}[2]{ \ifthenelse{\equal{\degreename}{本科}}{#1}{#2}}
@@ -313,6 +302,15 @@
     \or
     \equal{\degreename}{非全硕士}
   }{#1}{#2}}
+
+% ==============盲审选项设置===============
+\newboolean{@bversion}                                       % 新定义一个名为 @bversion 的布尔值
+\setboolean{@bversion}{false}                                % 设定布尔值的默认值为 false
+\DeclareOption{bversion}{\setboolean{@bversion}{true}}       % 当设定选项为bversion时 @bversion 为 true
+\ProcessOptions\relax
+
+\newcommand{\ifbversion}[2]{ \ifthenelse{\boolean{@bversion}}{#1}{#2}} 
+% 新定义一个命令 \ifbversion 如果 @bversion 为true 则执行 #1 否则 执行 #2
 
 
 \newcommand{\makecover}
@@ -410,31 +408,34 @@
     \end{textblock}
 
   }{ % 硕博题目👇
-
-    \begin{textblock}{18}(1.4,9.6)
-      \centering
-      \ifpromaster{ % 专硕👇
-        \vspace{0.9cm}
-      }
-      \ifojmaster{ % 在职学硕👇
-        \vspace{0.9cm}
-      }
-      \ifptmaster{ % 非全专硕👇
-        \vspace{0.9cm}
-      }
-
-      \begin{tblr}[expand=\expanded]{
-          stretch=2, % 单元格文本行距拉伸系数
-          colspec = {c c}, % 设置列对齐方式
-          column{1} = {1.5cm}, % 设置第一列宽度
-          column{2} = {12.6cm,font =\bfseries\fontsize{14bp}{26bp}\selectfont}, % 设置第二列的宽度、字体大小粗细
-          hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
-          belowsep = {-8pt} % 单元格底线向上偏移8pt
-        }
-        \bfseries\fontsize{16bp}{16bp}\selectfont 题目   & \expanded{\zh@thetitle@tb{}} \\
-        \bfseries\fontsize{14bp}{14bp}\selectfont (英文) & \expanded{\en@thetitle@tb{}}
-      \end{tblr}
-    \end{textblock}
+    \ifbversion{ % 盲审封面👇
+    
+    }{ % 非盲审封面👇
+        \begin{textblock}{18}(1.4,9.6)
+          \centering
+          \ifpromaster{ % 专硕👇
+            \vspace{0.9cm}
+          }
+          \ifojmaster{ % 在职学硕👇
+            \vspace{0.9cm}
+          }
+          \ifptmaster{ % 非全专硕👇
+            \vspace{0.9cm}
+          }
+    
+          \begin{tblr}[expand=\expanded]{
+              stretch=2, % 单元格文本行距拉伸系数
+              colspec = {c c}, % 设置列对齐方式
+              column{1} = {1.5cm}, % 设置第一列宽度
+              column{2} = {12.6cm,font =\bfseries\fontsize{14bp}{26bp}\selectfont}, % 设置第二列的宽度、字体大小粗细
+              hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
+              belowsep = {-8pt} % 单元格底线向上偏移8pt
+            }
+            \bfseries\fontsize{16bp}{16bp}\selectfont 题目   & \expanded{\zh@thetitle@tb{}} \\
+            \bfseries\fontsize{14bp}{14bp}\selectfont (英文) & \expanded{\en@thetitle@tb{}}
+          \end{tblr}
+        \end{textblock}
+    }
   }
 
 
@@ -464,46 +465,57 @@
 
     \begin{textblock}{8}(6,26.9) %日期居中
       \centering
-      \fontsize{16pt}{16pt}\selectfont \thedatereply
+      \fontsize{16pt}{16pt}\selectfont \thedate
     \end{textblock}
 
   }{ % 硕博封面信息 👇
-    \begin{textblock}{15}(2.9,16.3) %
-      \centering
-      \ifpro{ % 专硕或非全专硕的封面信息 👇
-        \begin{tblr}{
-            stretch=2.2, % 单元格文本行距拉伸系数
-            colspec = {c c}, % 设置列对齐方式
-            column{1} = {5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第一列宽度
-            column{2} = {6.5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第二列的宽度、字体大小粗细
-            hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
-            belowsep = {-11pt} % 单元格底线向上偏移11pt
+    \ifbversion{ % 盲审封面👇
+        \begin{textblock}{16}(2.4,14.8)
+                \bfseries\fontsize{16pt}{32pt}\selectfont % 设置字体为三号，2倍行距
+                题\qquad 目：\zh@thetitle
+                
+                专\qquad 业：\themajor 
+                
+                研究方向：\theresearchdirection
+        \end{textblock}
+    }{ % 非盲审封面👇
+        \begin{textblock}{15}(2.9,16.3) %
+          \centering
+          \ifpro{ % 专硕或非全专硕的封面信息 👇
+            \begin{tblr}{
+                stretch=2.2, % 单元格文本行距拉伸系数
+                colspec = {c c}, % 设置列对齐方式
+                column{1} = {5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第一列宽度
+                column{2} = {6.5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第二列的宽度、字体大小粗细
+                hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
+                belowsep = {-11pt} % 单元格底线向上偏移11pt
+              }
+              研\quad 究\quad 生\quad 学\quad 号:                    & \thestudentnumber                 \\
+              研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor                        \\
+              指导教师姓名、职称:                                        & \theadvisor \enspace \theprotitle \\
+              申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \thedegreecategories              \\
+              领\hspace{7em}域:                                   & \themajor                         \\
+              论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedate
+            \end{tblr}
+          }{ % 博士、学硕、在职硕士的封面信息 👇
+            \begin{tblr}{
+                stretch=2.2, % 单元格文本行距拉伸系数
+                colspec = {c c}, % 设置列对齐方式
+                column{1} = {5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第一列宽度
+                column{2} = {6.5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第二列的宽度、字体大小粗细
+                hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
+                belowsep = {-11pt} % 单元格底线向上偏移11pt
+              }
+              研\quad 究\quad 生\quad 学\quad 号:                    & \thestudentnumber                 \\
+              研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor                        \\
+              指导教师姓名、职称:                                        & \theadvisor \enspace \theprotitle \\
+              申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories              \\
+              学\qquad 科、专\qquad 业:                              & \themajor                         \\
+              论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedate
+            \end{tblr}
           }
-          研\quad 究\quad 生\quad 学\quad 号:                    & \thestudentnumber                 \\
-          研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor                        \\
-          指导教师姓名、职称:                                        & \theadvisor \enspace \theprotitle \\
-          申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \thedegreecategories              \\
-          领\hspace{7em}域:                                   & \themajor                         \\
-          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply
-        \end{tblr}
-      }{ % 博士、学硕、在职硕士的封面信息 👇
-        \begin{tblr}{
-            stretch=2.2, % 单元格文本行距拉伸系数
-            colspec = {c c}, % 设置列对齐方式
-            column{1} = {5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第一列宽度
-            column{2} = {6.5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第二列的宽度、字体大小粗细
-            hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
-            belowsep = {-11pt} % 单元格底线向上偏移11pt
-          }
-          研\quad 究\quad 生\quad 学\quad 号:                    & \thestudentnumber                 \\
-          研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor                        \\
-          指导教师姓名、职称:                                        & \theadvisor \enspace \theprotitle \\
-          申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories              \\
-          学\qquad 科、专\qquad 业:                              & \themajor                         \\
-          论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedatereply
-        \end{tblr}
-      }
-    \end{textblock}
+        \end{textblock}
+    }
   }
   \setcounter{page}{1}
   \setlength{\extrarowheight}{2pt}
@@ -516,11 +528,11 @@
   \fi
 }
 
-% ====================导入封面PDF文件设置====================
-\newcommand{\bindpdfcover}[1]{
-  \pdfbookmark{封面}{cover}
-  \includepdf[pages=-]{#1}
-  \newpage\setcounter{page}{0}
+% % ====================导入封面PDF文件设置====================
+% \newcommand{\bindpdfcover}[1]{
+%   \pdfbookmark{封面}{cover}
+%   \includepdf[pages=-]{#1}
+%   \newpage\setcounter{page}{0}
 }
 
 % ====================独创性（或创新性）声明设置====================
@@ -1127,29 +1139,33 @@
 % ====================致谢设置====================
 \newcommand{\thesisacknowledgement}
 {
-  \ifbachelor{ % 本科致谢设置 👇
-    \renewcommand{\bachelorchapterformat}{\centering} % 通过修改\bachelorchapterformat命令让致谢居中
-    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
-    \setcounter{section}{0} % section计数器清零 
-    \chapter*{\texorpdfstring{谢\quad 辞}{谢 辞}}
-    \addcontentsline{toc}{chapter}{\texorpdfstring{谢\quad 辞}{谢 辞}}
-  }{ % 硕博致谢设置 👇
-    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
-    \setcounter{section}{0} % section计数器清零 
-    \chapter*{\texorpdfstring{致\quad 谢}{致 谢}}
-    \addcontentsline{toc}{chapter}{\texorpdfstring{致\quad 谢}{致 谢}}
-  }
+  \ifbversion{ % 盲审 则致谢命令为空
 
-  % \markboth{致谢}{致谢} %\markboth{<左面页眉>}{<右面页眉>}
-  \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 致\quad 谢}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
-  \thispagestyle{fancy}
-  \normalsize % 设置字体为小四
-  \input{Chapters/Thanks.tex} % 致谢文档位置
-  \ifbachelor{ % 一级标题还原默认设置 👇
-    \renewcommand{\bachelorchapterformat}{}
-  }{}
+  }{ % 非盲审则存在致谢
+    \ifbachelor{ % 本科致谢设置 👇
+      \renewcommand{\bachelorchapterformat}{\centering} % 通过修改\bachelorchapterformat命令让致谢居中
+      \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
+      \setcounter{section}{0} % section计数器清零 
+      \chapter*{\texorpdfstring{谢\quad 辞}{谢 辞}}
+      \addcontentsline{toc}{chapter}{\texorpdfstring{谢\quad 辞}{谢 辞}}
+    }{ % 硕博致谢设置 👇
+      \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
+      \setcounter{section}{0} % section计数器清零 
+      \chapter*{\texorpdfstring{致\quad 谢}{致 谢}}
+      \addcontentsline{toc}{chapter}{\texorpdfstring{致\quad 谢}{致 谢}}
+    }
+
+    % \markboth{致谢}{致谢} %\markboth{<左面页眉>}{<右面页眉>}
+    \fancyhf{}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 致\quad 谢}
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+    \thispagestyle{fancy}
+    \normalsize % 设置字体为小四
+    \input{Chapters/Thanks.tex} % 致谢文档位置
+    \ifbachelor{ % 一级标题还原默认设置 👇
+      \renewcommand{\bachelorchapterformat}{}
+    }{}
+  }
 }
 
 \newcommand{\thesiscontent}
@@ -1378,7 +1394,12 @@
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   \thispagestyle{fancy}
   \normalsize % 设置字体为小四
-  \input{Chapters/Accomplish.tex} %% 学术成果文档位置
+  \ifbversion{ % 盲审版学术成果👇
+    \input{Chapters/Accomplish-bversion.tex} % 学术成果文档位置
+  }{ % 非盲审版学术成果👇
+    \input{Chapters/Accomplish.tex}
+  }
+   
 }
 { % 该处先注释掉了，不知道为什么总是报错提示没定义
   % 猜测最后一页报错可能是由于某些机制导致的，希望能有大神来解决。
