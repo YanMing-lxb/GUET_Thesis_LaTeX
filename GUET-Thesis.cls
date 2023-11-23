@@ -160,22 +160,22 @@
 
 % ===============字体设置===============
 \ifwindows
-  \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true]{SimSun}             % 在Windows平台上设置中文字体为SimSun
-  \newCJKfontfamily{\kaiti}[AutoFakeBold=true]{KaiTi}                        % 设置楷体字体为KaiTi 
-  \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true]{SimHei}   % 设置黑体字体为SimHei
-  \newfontfamily{\heiti@letter}{SimHei}                                      % 设置字母的黑体字体为SimHei
-  \setallmainfonts{Times New Roman}                                          % 设置英文字体为Times New Roman
+  \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}                                  % 在Windows平台上设置中文字体为SimSun
+  \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                             % 设置楷体字体为KaiTi 
+  \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimHei}                        % 设置黑体字体为SimHei
+  \newfontfamily{\heiti@letter}{SimHei}                                                           % 设置字母的黑体字体为SimHei
+  \setallmainfonts{Times New Roman}                                                               % 设置英文字体为Times New Roman
 \else
   \ifmacosx
-    \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true]{Songti SC}         % 在macOS平台上设置中文字体为Songti SC
-    \newCJKfontfamily{\kaiti}[AutoFakeBold=true]{KaiTi}                       % 设置楷体字体为KaiTi
-    \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true]{STHeiti} % 设置黑体字体为STHeiti
-    \newfontfamily{\heiti@letter}{STHeiti}                                    % 设置字母的黑体字体为STHeiti
-    \setallmainfonts{Times New Roman}                                         % 设置英文字体为Times New Roman
+    \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}                             % 在macOS平台上设置中文字体为Songti SC
+    \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                           % 设置楷体字体为KaiTi
+    \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{STHeiti}                     % 设置黑体字体为STHeiti
+    \newfontfamily{\heiti@letter}{STHeiti}                                                        % 设置字母的黑体字体为STHeiti
+    \setallmainfonts{Times New Roman}                                                             % 设置英文字体为Times New Roman
   \else
-    \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true,Path = ./Fonts/]{fzsong.ttf}            % 在其他平台上设置中文字体为fzsong.ttf，并指定字体文件路径为./Fonts/
-    \newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path=./Fonts/]{fzkaiti.ttf}                       % 设置楷体字体为fzkaiti.ttf，并指定字体文件路径为./Fonts/
-    \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true,Path = ./Fonts/]{fzhei.ttf}   % 设置黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
+    \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true,Path = ./Fonts/]{fzsong.ttf}            % 在其他平台上设置中文字体为fzsong.ttf，并指定字体文件路径为./Fonts/
+    \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5,Path=./Fonts/]{fzkaiti.ttf}                       % 设置楷体字体为fzkaiti.ttf，并指定字体文件路径为./Fonts/
+    \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true,Path = ./Fonts/]{fzhei.ttf}   % 设置黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
     \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./Fonts/]                                     % 设置字母的黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
     \setallmainfonts[
                       BoldFont=timesbd.ttf,         % 粗体字体为timesbd.ttf
@@ -791,7 +791,7 @@
 \newcommand{\chinesekeyword}[1]{
   \vspace{\baselineskip}
   \noindent\
-  @hangfrom{\makebox[48pt][l]{\textbf{关键词：}}}#1
+  \@hangfrom{\makebox[48pt][l]{\textbf{关键词：}}}#1
 }
 
 %=========================英文摘要
