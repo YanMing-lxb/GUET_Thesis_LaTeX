@@ -2,29 +2,29 @@
 \ProvidesClass{GUET-Thesis}
 
 \LoadClass[ % 加载文档类并设置选项
-  12pt,                                               % 字号为12pt
-  a4paper,                                            % 纸张大小为A4
-  openany,                                            % 允许在任意页面开始新的章节
-  twoside                                             % 设置为双面打印模式
-]{book}                                               % 使用book文档类
+            12pt,                                     % 字号为12pt
+            a4paper,                                  % 纸张大小为A4
+            openany,                                  % 允许在任意页面开始新的章节
+            twoside                                   % 设置为双面打印模式
+          ]{book}                                     % 使用book文档类    
 
 \RequirePackage[
-  dvipsnames,                                         % 允许使用64种扩展颜色名称，例如RoyalBlue、OliveGreen等
-  svgnames,                                           % 允许使用150种SVG命名颜色，例如DarkOrange、MediumPurple等
-  table                                               % 允许在表格中使用颜色
-]{xcolor}                                             % 使用xcolor宏包，并加载颜色选项
+                  dvipsnames,                         % 允许使用64种扩展颜色名称，例如RoyalBlue、OliveGreen等
+                  svgnames,                           % 允许使用150种SVG命名颜色，例如DarkOrange、MediumPurple等
+                  table                               % 允许在表格中使用颜色
+                ]{xcolor}                             % 使用xcolor宏包，并加载颜色选项
 
 % ===============图片相关宏包===============                  
 \RequirePackage{graphicx}                             % 导入 graphicx 宏包，用于插入图片
 \RequirePackage[
-  font={onehalfspacing, small},                       % 设置字体为onehalfspacing（1.5倍行距）和small（小号字体）
-  labelsep=space,                                     % 设置标签和标题之间的间距为一个空格
-  skip=6pt,                                           % 设置标题与上下文之间的间距为6pt
-  figurewithin=none,                                  % 禁止图表编号受章节影响
-  tablewithin=none                                    % 禁止表格编号受章节影响
-]{caption}                                            % 导入 caption宏包，用于自定义浮动环境（如图表）的标题格式和样式
-  % figurewithin=none 和 tablewithin=none 取消书籍类中对图表目录所添加的 10pt 间距命令，使得图表目录中的章节编号连续
-  % 需要在对应的计数器中进行每章重置以保证连续编号
+                  font={onehalfspacing, small},       % 设置字体为onehalfspacing（1.5倍行距）和small（小号字体）
+                  labelsep=space,                     % 设置标签和标题之间的间距为一个空格
+                  skip=6pt,                           % 设置标题与上下文之间的间距为6pt
+                  figurewithin=none,                  % 禁止图表编号受章节影响
+                  tablewithin=none                    % 禁止表格编号受章节影响
+                ]{caption}                            % 导入 caption宏包，用于自定义浮动环境（如图表）的标题格式和样式
+% figurewithin=none 和 tablewithin=none 取消书籍类中对图表目录所添加的 10pt 间距命令，使得图表目录中的章节编号连续
+% 需要在对应的计数器中进行每章重置以保证连续编号
 \RequirePackage[labelformat=simple]{subcaption}       % 导入 subcaption 宏包，用于生成子图表和子标题
 % labelformat=simple 表示子标题的标签格式为简单的形式
 
@@ -65,13 +65,13 @@
 % ===============链接相关宏包===============    
 \RequirePackage[hyphens]{xurl}                        % 导入 xurl 宏包，允许在长网址中断行，避免超出边界
 \RequirePackage[
-  unicode,                                            % 设置是否使用 Unicode 字符集
-  pdfencoding=auto,                                   % 设置 PDF 编码格式
-  bookmarks=true,                                     % 设置 PDF 文件是否生成书签
-  hyperfootnotes=false,                               % 设置是否给脚注添加链接
-  bookmarksnumbered=true,                             % 设置 PDF 书签是否带编号
-  bookmarksdepth=4                                    % 设置书签的深度
-]{hyperref}                                           % 导入 hyperref 宏包，用于设置书签和超链接
+                  unicode,                            % 设置是否使用 Unicode 字符集
+                  pdfencoding=auto,                   % 设置 PDF 编码格式
+                  bookmarks=true,                     % 设置 PDF 文件是否生成书签
+                  hyperfootnotes=false,               % 设置是否给脚注添加链接
+                  bookmarksnumbered=true,             % 设置 PDF 书签是否带编号
+                  bookmarksdepth=4                    % 设置书签的深度
+                ]{hyperref}                           % 导入 hyperref 宏包，用于设置书签和超链接
 
 % ===============排版相关宏包===============
 \RequirePackage{setspace}                             % 导入 setspace 宏包，提供调整行距的命令和环境
@@ -83,23 +83,22 @@
 \RequirePackage{appendix}                             % 导入 appendix 宏包，用于生成附录并对附录标题进行格式设置
 \RequirePackage{enumitem}                             % 导入 enumitem 宏包，用于定制列表环境的样式和标签
 \RequirePackage[
-  numbers,                                            % 引用的标号为数字
-  sort&compress,                                      % 引用的标号按顺序排序并压缩
-  super,                                              % 引用的上标样式
-  square                                              % 引用的标号以方括号包围
-]{natbib}                                             % 导入 natbib 宏包，用于设置参考文献引用的格式
+                  numbers,                            % 引用的标号为数字
+                  sort&compress,                      % 引用的标号按顺序排序并压缩
+                  super,                              % 引用的上标样式
+                  square                              % 引用的标号以方括号包围
+                ]{natbib}                             % 导入 natbib 宏包，用于设置参考文献引用的格式
 
 \RequirePackage[
-  algochapter,                                        % 将算法放在章节中，并以章节编号
-  boxruled,                                           % 给算法添加边框
-  linesnumbered                                       % 给算法添加行号
-]{algorithm2e}                                        % 导入 algorithm2e 宏包，用于排版算法和伪代码
+                  algochapter,                        % 将算法放在章节中，并以章节编号
+                  boxruled,                           % 给算法添加边框
+                  linesnumbered                       % 给算法添加行号
+                ]{algorithm2e}                        % 导入 algorithm2e 宏包，用于排版算法和伪代码
 
 \RequirePackage{enumitem}                             % 导入 enumitem 宏包，用于定制列表环境的样式和标签
 \RequirePackage{etoolbox}                             % 导入 etoolbox 宏包，提供处理 TeX 和 LaTeX 代码的工具
 
 
-\RequirePackage[resetlabels]{multibib}                % 导入 multibib 宏包，用于生成多个参考文献列表，并重置标签计数器
 \RequirePackage[nottoc]{tocbibind}                    % 导入 tocbibind 宏包，用于将参考文献列表快速插入目录中 
 % nottoc 表示不将参考文献列表本身添加到目录中
 
@@ -116,15 +115,15 @@
 
 
 \hypersetup{                                          % 文中链接设置
-  % pdfauthor = {\theauthor},                         % 设置作者名称；
-  % pdftitle = {\zh@thetitle},                        % 设置文档的标题；
-  % pdfsubject = {\displayheader},                    % 设置文档主题；
-  % pdfkeywords = {},                                 % 设置文档中关键词
-  colorlinks=true,                                    % 指定是否给链接添加颜色；
-  citecolor=black,                                    % citecolor链接颜色设置；
-  linkcolor=black,                                    % linkcolor引用颜色设置；
-  urlcolor=black                                      % urlcolor网址颜色；
-}
+              % pdfauthor = {\theauthor},             % 设置作者名称；
+              % pdftitle = {\zh@thetitle},            % 设置文档的标题；
+              % pdfsubject = {\displayheader},        % 设置文档主题；
+              % pdfkeywords = {},                     % 设置文档中关键词
+              colorlinks=true,                        % 指定是否给链接添加颜色；
+              citecolor=black,                        % citecolor链接颜色设置；
+              linkcolor=black,                        % linkcolor引用颜色设置；
+              urlcolor=black                          % urlcolor网址颜色；
+            }
 
 
 
@@ -132,59 +131,58 @@
 \newcommand{\hl}{\CJKsout*[thickness=2.5ex,format=\color{yellow}]} % 新定义高亮命令\gl 用来高亮显示中文
 
 % ===============定义打印版选项===============
-\newboolean{@pversion}                                       % 新定义一个名为 @pversion 的布尔值
-\setboolean{@pversion}{false}                                % 设定布尔值的默认值为 false
-\DeclareOption{pversion}{\setboolean{@pversion}{true}}       % 当设定选项为pversion时 @pversion 为 true
+\newboolean{@pversion}                                             % 新定义一个名为 @pversion 的布尔值
+\setboolean{@pversion}{false}                                      % 设定布尔值的默认值为 false
+\DeclareOption{pversion}{\setboolean{@pversion}{true}}             % 当设定选项为pversion时 @pversion 为 true
 \ProcessOptions\relax
 
-\newcommand{\ifpversion}[2]{ \ifthenelse{\boolean{@pversion}}{#1}{#2}} 
+\newcommand{\ifpversion}[2]{ \ifthenelse{\boolean{@pversion}}{#1}{#2}}
 % 新定义一个命令 \ifpversion 如果 @pversion 为true 则执行 #1 否则 执行 #2
 
 % ================页边距设置===============
 \ifpversion{ % 打印版，内侧页边距大，外侧小👇
-  \geometry{inner=3cm, outer=2cm, top=3cm, bottom=2cm}
-}{ % 电子版页边距相同👇
-  \geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=2cm, headsep=0.3cm, footskip=0.7cm}
-} 
+              \geometry{inner=3cm, outer=2cm, top=3cm, bottom=2cm}
+            }{ % 电子版页边距相同👇
+              \geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=2cm, headsep=0.3cm, footskip=0.7cm}
+            }
 
 
 % ===============定义空白页命令=============== 
 \newcommand\blankpage{ % 定义添加空白页
-  \newpage
-  \thispagestyle{empty} %没有页眉页脚，空白页
-  \null
-  % \addtocounter{page}{-1} %\addtocounter{计数器}{数值}将数值与该计数器原有值相加，数值可以是正整数，也可以是负整数。
-  \newpage
-}
+                        \newpage
+                        \thispagestyle{empty} %没有页眉页脚，空白页
+                        \null
+                        \newpage
+                      }
 
 % ===============定义带页眉页脚空白页命令=============== 
 \newcommand\blankpage@number{\newpage\null\newpage}
 
 % ===============字体设置===============
 \ifwindows
-  \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true]{SimSun}                                 % 在Windows平台上设置中文字体为SimSun
-  \newCJKfontfamily{\kaiti}[AutoFakeBold=true]{KaiTi}                                            % 设置楷体字体为KaiTi 
-  \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true]{SimHei}                       % 设置黑体字体为SimHei
+  \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true]{SimSun}             % 在Windows平台上设置中文字体为SimSun
+  \newCJKfontfamily{\kaiti}[AutoFakeBold=true]{KaiTi}                        % 设置楷体字体为KaiTi 
+  \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true]{SimHei}   % 设置黑体字体为SimHei
   \newfontfamily{\heiti@letter}{SimHei}                                      % 设置字母的黑体字体为SimHei
   \setallmainfonts{Times New Roman}                                          % 设置英文字体为Times New Roman
-\else  
-  \ifmacosx  
-    \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true]{Songti SC}                             % 在macOS平台上设置中文字体为Songti SC
-    \newCJKfontfamily{\kaiti}[AutoFakeBold=true]{KaiTi}                                           % 设置楷体字体为KaiTi
-    \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true]{STHeiti}                     % 设置黑体字体为STHeiti
+\else
+  \ifmacosx
+    \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true]{Songti SC}         % 在macOS平台上设置中文字体为Songti SC
+    \newCJKfontfamily{\kaiti}[AutoFakeBold=true]{KaiTi}                       % 设置楷体字体为KaiTi
+    \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true]{STHeiti} % 设置黑体字体为STHeiti
     \newfontfamily{\heiti@letter}{STHeiti}                                    % 设置字母的黑体字体为STHeiti
     \setallmainfonts{Times New Roman}                                         % 设置英文字体为Times New Roman
-  \else 
+  \else
     \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true,Path = ./Fonts/]{fzsong.ttf}            % 在其他平台上设置中文字体为fzsong.ttf，并指定字体文件路径为./Fonts/
     \newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path=./Fonts/]{fzkaiti.ttf}                       % 设置楷体字体为fzkaiti.ttf，并指定字体文件路径为./Fonts/
     \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true,Path = ./Fonts/]{fzhei.ttf}   % 设置黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
-    \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./Fonts/]                 % 设置字母的黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
+    \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./Fonts/]                                     % 设置字母的黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
     \setallmainfonts[
-      BoldFont=timesbd.ttf,                                                   % 粗体字体为timesbd.ttf
-      ItalicFont=timesi.ttf,                                                  % 斜体字体为timesi.ttf
-      BoldItalicFont=timesbi.ttf,                                             % 粗斜体字体为timesbi.ttf
-      Path=./Fonts/                                                           % 指定字体文件路径为./Fonts/
-    ]{times.ttf}                                                              % 设置英文字体为times.ttf
+                      BoldFont=timesbd.ttf,         % 粗体字体为timesbd.ttf
+                      ItalicFont=timesi.ttf,        % 斜体字体为timesi.ttf
+                      BoldItalicFont=timesbi.ttf,   % 粗斜体字体为timesbi.ttf
+                      Path=./Fonts/                 % 指定字体文件路径为./Fonts/
+                    ]{times.ttf}                    % 设置英文字体为times.ttf
   \fi
 \fi
 
@@ -237,9 +235,9 @@
 
 % ===============封面信息获取===============
 \renewcommand{\title}[2]{
-  \renewcommand{\zh@thetitle}{#1}        % 标题
-  \renewcommand{\en@thetitle}{#2}        % 英文标题
-}
+                          \renewcommand{\zh@thetitle}{#1}                     % 标题
+                          \renewcommand{\en@thetitle}{#2}                     % 英文标题
+                        }
 
 \newcommand{\secrets}[1]{\renewcommand{\thesecrets}{#1}}                      % 密级
 \renewcommand{\author}[1]{\renewcommand{\theauthor}{#1}}                      % 作者
@@ -256,35 +254,35 @@
 % ====================本硕博选项声明====================
 %\DeclareOption{选项}{代码}其中的选项就是选项的名称，而代码就是选项要执行的指令集。
 \DeclareOption{bachelor}{
-  \def\degreename{本科}
-  \def\booktitle{本科毕业设计（论文）}
-  \def\displayheader{桂林电子科技大学本科生学位论文}
-}
+                          \def\degreename{本科}
+                          \def\booktitle{本科毕业设计（论文）}
+                          \def\displayheader{桂林电子科技大学本科生学位论文}
+                        }
 \DeclareOption{master}{
-  \def\degreename{硕士}
-  \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
-  \def\displayheader{桂林电子科技大学硕士学位论文}
-}
+                          \def\degreename{硕士}
+                          \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
+                          \def\displayheader{桂林电子科技大学硕士学位论文}
+                        }
 \DeclareOption{promaster}{
-  \def\degreename{专业硕士}
-  \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
-  \def\displayheader{桂林电子科技大学硕士学位论文}
-}
+                            \def\degreename{专业硕士}
+                            \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
+                            \def\displayheader{桂林电子科技大学硕士学位论文}
+                          }
 \DeclareOption{ojmaster}{
-  \def\degreename{在职硕士}
-  \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
-  \def\displayheader{桂林电子科技大学硕士学位论文}
-}
+                          \def\degreename{在职硕士}
+                          \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
+                          \def\displayheader{桂林电子科技大学硕士学位论文}
+                        }
 \DeclareOption{ptmaster}{
-  \def\degreename{非全硕士}
-  \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
-  \def\displayheader{桂林电子科技大学硕士学位论文}
-}
+                          \def\degreename{非全硕士}
+                          \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
+                          \def\displayheader{桂林电子科技大学硕士学位论文}
+                        }
 \DeclareOption{doctor}{
-  \def\degreename{博士}
-  \def\booktitle{博\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
-  \def\displayheader{桂林电子科技大学博士学位论文}
-}
+                        \def\degreename{博士}
+                        \def\booktitle{博\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
+                        \def\displayheader{桂林电子科技大学博士学位论文}
+                      }
 \ExecuteOptions{master} % 默认值为硕士
 \ProcessOptions\relax
 
@@ -298,21 +296,15 @@
 \newcommand{\ifojmaster}[1]{ \ifthenelse{\equal{\degreename}{在职硕士}}{#1}{}}
 \newcommand{\ifptmaster}[1]{ \ifthenelse{\equal{\degreename}{非全硕士}}{#1}{}}
 \newcommand{\ifdoctor}[1]{ \ifthenelse{\equal{\degreename}{博士}}{#1}{}}
-\newcommand{\ifpro}[2]{ % 判断是否是专业硕士或非全硕士
-  \ifthenelse{
-    \equal{\degreename}{专业硕士}
-    \or
-    \equal{\degreename}{非全硕士}
-  }{#1}{#2}}
+\newcommand{\ifpro}[2]{\ifthenelse{\equal{\degreename}{专业硕士} \or \equal{\degreename}{非全硕士}}{#1}{#2}} % 判断是否是专业硕士或非全硕士
+
 
 % ==============盲审选项设置===============
-\newboolean{@bversion}                                       % 新定义一个名为 @bversion 的布尔值
-\setboolean{@bversion}{false}                                % 设定布尔值的默认值为 false
-\DeclareOption{bversion}{\setboolean{@bversion}{true}}       % 当设定选项为bversion时 @bversion 为 true
+\newboolean{@bversion}                                                 % 新定义一个名为 @bversion 的布尔值
+\setboolean{@bversion}{false}                                          % 设定布尔值的默认值为 false
+\DeclareOption{bversion}{\setboolean{@bversion}{true}}                 % 当设定选项为bversion时 @bversion 为 true
 \ProcessOptions\relax
-
-\newcommand{\ifbversion}[2]{ \ifthenelse{\boolean{@bversion}}{#1}{#2}} 
-% 新定义一个命令 \ifbversion 如果 @bversion 为true 则执行 #1 否则 执行 #2
+\newcommand{\ifbversion}[2]{ \ifthenelse{\boolean{@bversion}}{#1}{#2}} % 新定义一个命令 \ifbversion 如果 @bversion 为true 则执行 #1 否则 执行 #2
 
 
 \newcommand{\makecover}
@@ -326,7 +318,6 @@
 
   % ================设置密级格式
   \ifbachelor{ % 本科无密级👇
-
   }{ % 硕博密级👇
     \begin{textblock}{5}(12.6,2.1)
       % \textblockcolour{red!30} % 设置背景颜色
@@ -342,19 +333,19 @@
     \begin{textblock}{15}(3,3.2)
       \centering
       \ifpversion{
-        \includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo-black.pdf}
-      }{
-        \includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo.pdf}
-      }
+          \includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo-black.pdf}
+        }{
+          \includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo.pdf}
+        }
     \end{textblock}
   }{ % 硕博LOGO👇
     \begin{textblock}{15}(3,4.4)
       \centering
       \ifpversion{
-        \includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo-black.pdf}
-      }{
-        \includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo.pdf}
-      }
+          \includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo-black.pdf}
+        }{
+          \includegraphics[width=0.95 \textwidth]{./Pictures/Guet-logo.pdf}
+        }
     \end{textblock}
   }
 
@@ -397,7 +388,8 @@
   \ifbachelor{ % 本科题目 👇
     \begin{textblock}{15}(2.8,11.3)
       \centering
-      \begin{tblr}[expand=\expanded]{
+      \begin{tblr}[expand=\expanded]
+        {
           stretch=1.2, % 单元格文本行距拉伸系数
           colspec = {c c}, % 设置列对齐方式
           column{1} = {1.4cm}, % 设置第一列宽度
@@ -411,32 +403,25 @@
 
   }{ % 硕博题目👇
     \ifbversion{ % 盲审封面👇
-    
     }{ % 非盲审封面👇
-        \begin{textblock}{18}(1.4,9.6)
-          \centering
-          \ifpromaster{ % 专硕👇
-            \vspace{0.9cm}
+      \begin{textblock}{18}(1.4,9.6)
+        \centering
+        \ifpromaster{\vspace{0.9cm}}             % 专硕👇
+        \ifojmaster{\vspace{0.9cm}}              % 在职学硕👇
+        \ifptmaster{\vspace{0.9cm}}              % 非全专硕👇
+        \begin{tblr}[expand=\expanded]
+          {
+            stretch=2,                                                            % 单元格文本行距拉伸系数
+            colspec = {c c},                                                      % 设置列对齐方式
+            column{1} = {1.5cm},                                                  % 设置第一列宽度
+            column{2} = {12.6cm,font =\bfseries\fontsize{14bp}{26bp}\selectfont}, % 设置第二列的宽度、字体大小粗细
+            hline{2-Z} = {2}{1.25pt},                                             % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
+            belowsep = {-8pt}                                                     % 单元格底线向上偏移8pt
           }
-          \ifojmaster{ % 在职学硕👇
-            \vspace{0.9cm}
-          }
-          \ifptmaster{ % 非全专硕👇
-            \vspace{0.9cm}
-          }
-    
-          \begin{tblr}[expand=\expanded]{
-              stretch=2, % 单元格文本行距拉伸系数
-              colspec = {c c}, % 设置列对齐方式
-              column{1} = {1.5cm}, % 设置第一列宽度
-              column{2} = {12.6cm,font =\bfseries\fontsize{14bp}{26bp}\selectfont}, % 设置第二列的宽度、字体大小粗细
-              hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
-              belowsep = {-8pt} % 单元格底线向上偏移8pt
-            }
-            \bfseries\fontsize{16bp}{16bp}\selectfont 题目   & \expanded{\zh@thetitle@tb{}} \\
-            \bfseries\fontsize{14bp}{14bp}\selectfont (英文) & \expanded{\en@thetitle@tb{}}
-          \end{tblr}
-        \end{textblock}
+          \bfseries\fontsize{16bp}{16bp}\selectfont 题目   & \expanded{\zh@thetitle@tb{}} \\
+          \bfseries\fontsize{14bp}{14bp}\selectfont (英文) & \expanded{\en@thetitle@tb{}}
+        \end{tblr}
+      \end{textblock}
     }
   }
 
@@ -448,13 +433,14 @@
   \ifbachelor{ % 本科封面信息 👇
     \begin{textblock}{16}(2.4,16.9)
       \centering
-      \begin{tblr}{
-          stretch=1.9, % 单元格文本行距拉伸系数
-          colspec = {c c}, % 设置列对齐方式
+      \begin{tblr}
+        {
+          stretch=1.9,                                                         % 单元格文本行距拉伸系数
+          colspec = {c c},                                                     % 设置列对齐方式
           column{1} = {4cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第一列宽度
-          column{2} = {9.6cm, font = \fontsize{14bp}{26bp}\selectfont}, % 设置第二列的宽度、字体大小粗细
-          hline{2-Z} = {2}{1pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
-          belowsep = {-7pt} % 单元格底线向上偏移7pt
+          column{2} = {9.6cm, font = \fontsize{14bp}{26bp}\selectfont},        % 设置第二列的宽度、字体大小粗细
+          hline{2-Z} = {2}{1pt},                                               % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
+          belowsep = {-7pt}                                                    % 单元格底线向上偏移7pt
         }
         学\hspace{0.36cm} \qquad \qquad 号:                                                  & \thestudentnumber \\
         姓\hspace{0.36cm} \qquad \qquad 名:                                                  & \theauthor        \\
@@ -466,63 +452,64 @@
     \end{textblock}
 
     \begin{textblock}{8}(6,26.9) %日期居中
-      \centering
-      \fontsize{16pt}{16pt}\selectfont \thedate
+      \centering\fontsize{16pt}{16pt}\selectfont \thedate
     \end{textblock}
 
   }{ % 硕博封面信息 👇
     \ifbversion{ % 盲审封面👇
-        \begin{textblock}{16}(2.4,14.8)
-                \bfseries\fontsize{16pt}{32pt}\selectfont % 设置字体为三号，2倍行距
-                题\qquad 目：\zh@thetitle
-                
-                专\qquad 业：\themajor 
-                
-                研究方向：\theresearchdirection
-        \end{textblock}
+      \begin{textblock}{16}(2.4,14.8)
+        \bfseries\fontsize{16pt}{32pt}\selectfont % 设置字体为三号，2倍行距
+        题\qquad 目：\zh@thetitle
+
+        专\qquad 业：\themajor
+
+        研究方向：\theresearchdirection
+      \end{textblock}
     }{ % 非盲审封面👇
-        \begin{textblock}{15}(2.9,16.3) %
-          \centering
-          \ifpro{ % 专硕或非全专硕的封面信息 👇
-            \begin{tblr}{
-                stretch=2.2, % 单元格文本行距拉伸系数
-                colspec = {c c}, % 设置列对齐方式
-                column{1} = {5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第一列宽度
-                column{2} = {6.5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第二列的宽度、字体大小粗细
-                hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
-                belowsep = {-11pt} % 单元格底线向上偏移11pt
-              }
-              研\quad 究\quad 生\quad 学\quad 号:                    & \thestudentnumber                 \\
-              研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor                        \\
-              指导教师姓名、职称:                                        & \theadvisor \enspace \theprotitle \\
-              申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \thedegreecategories              \\
-              领\hspace{7em}域:                                   & \themajor                         \\
-              论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedate
-            \end{tblr}
-          }{ % 博士、学硕、在职硕士的封面信息 👇
-            \begin{tblr}{
-                stretch=2.2, % 单元格文本行距拉伸系数
-                colspec = {c c}, % 设置列对齐方式
-                column{1} = {5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第一列宽度
-                column{2} = {6.5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第二列的宽度、字体大小粗细
-                hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
-                belowsep = {-11pt} % 单元格底线向上偏移11pt
-              }
-              研\quad 究\quad 生\quad 学\quad 号:                    & \thestudentnumber                 \\
-              研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor                        \\
-              指导教师姓名、职称:                                        & \theadvisor \enspace \theprotitle \\
-              申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories              \\
-              学\qquad 科、专\qquad 业:                              & \themajor                         \\
-              论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedate
-            \end{tblr}
-          }
-        \end{textblock}
+      \begin{textblock}{15}(2.9,16.3) %
+        \centering
+        \ifpro{ % 专硕或非全专硕的封面信息 👇
+          \begin{tblr}
+            {
+              stretch=2.2, % 单元格文本行距拉伸系数
+              colspec = {c c}, % 设置列对齐方式
+              column{1} = {5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第一列宽度
+              column{2} = {6.5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第二列的宽度、字体大小粗细
+              hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
+              belowsep = {-11pt} % 单元格底线向上偏移11pt
+            }
+            研\quad 究\quad 生\quad 学\quad 号:                    & \thestudentnumber                 \\
+            研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor                        \\
+            指导教师姓名、职称:                                        & \theadvisor \enspace \theprotitle \\
+            申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \thedegreecategories              \\
+            领\hspace{7em}域:                                   & \themajor                         \\
+            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedate
+          \end{tblr}
+        }{ % 博士、学硕、在职硕士的封面信息 👇
+          \begin{tblr}
+            {
+              stretch=2.2, % 单元格文本行距拉伸系数
+              colspec = {c c}, % 设置列对齐方式
+              column{1} = {5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第一列宽度
+              column{2} = {6.5cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第二列的宽度、字体大小粗细
+              hline{2-Z} = {2}{1.25pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
+              belowsep = {-11pt} % 单元格底线向上偏移11pt
+            }
+            研\quad 究\quad 生\quad 学\quad 号:                    & \thestudentnumber                 \\
+            研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor                        \\
+            指导教师姓名、职称:                                        & \theadvisor \enspace \theprotitle \\
+            申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories              \\
+            学\qquad 科、专\qquad 业:                              & \themajor                         \\
+            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedate
+          \end{tblr}
+        }
+      \end{textblock}
     }
   }
   \setcounter{page}{1}
   \setlength{\extrarowheight}{2pt}
 
-  %判断是否为电子版。true为电子版，false为打印版。
+  %判断是否为打印
   \ifpversion{\blankpage}{}
 }
 
@@ -540,8 +527,8 @@
   \begin{spacing}{1.5}
     \pdfbookmark{独创性（或创新性）声明}{originalitydeclaration}
     \noindent
-    \ifbachelor{ % 本科独创性声名👇
-      \begin{center} % \noindent无缩进
+    \ifbachelor{     % 本科独创性声名👇
+      \begin{center}
         \fontsize{14pt}{20pt}\selectfont\bfseries 本科生毕业设计（论文）独创性声名
       \end{center}
 
@@ -621,7 +608,8 @@
 }
 
 % ====================导入独创性声明定义PDF文件设置====================
-\newcommand{\signatureofdeclaration}[1]{
+\newcommand{\signatureofdeclaration}[1]
+{
   \includepdf[pages=-]{#1}
   \newpage\setcounter{page}{0}
   \ifpversion{\blankpage}{}
@@ -638,36 +626,32 @@
 
 % ===============enumitem环境设置===============
 \AddEnumerateCounter*{\chinese}{\zhnumber}{\arabic} % enumitem 中文编号设置
-
-
-% ===============不清楚===============
-\renewcommand{\thesubfigure}{(\alph{subfigure})} %设置子图标题序号
-\newcommand{\floatcontinue}{\end{figure}\clearpage\begin{figure}[tb]\ContinuedFloat}
-
 \urlstyle{rm}
-\raggedbottom %顶部对齐
+\raggedbottom % 将当前页面的底部对齐方式设置为“不齐平”
 
 % ===============设置页眉线===============
 \ifbachelor{ % 本科页眉单线 👇
   \newdimen\singlelineskip
   \setlength\singlelineskip{2pt}
-  \renewcommand\headrule{ %
+  \renewcommand\headrule{
     \hrule height\headrulewidth width\headwidth%
     \vskip 1.2\singlelineskip}
 }{ % 硕博页眉双线 👇
   \newdimen\doublelineskip % 两横线间的距离
   \setlength\doublelineskip{1pt}
-  \renewcommand\headrule{ %
+  \renewcommand\headrule{ 
     \hrule height\headrulewidth width\headwidth%
-    \vskip 1.2\doublelineskip%
-    \hrule height\headrulewidth width\headwidth}
+    \vskip 1.2\doublelineskip
+    \hrule height\headrulewidth width\headwidth
+  }
   \renewcommand{\headrulewidth}{1pt} % 设置页眉线宽度
 }
+
 % ===============设置段落格式===============
-\setlength{\headheight}{17pt} % 原先设置是15pt
-\pagestyle{fancy} % 设置风格为fancy
-\linespread{1.389} % 字号大小为12bp，基本行距为12×1.2=14.4bp，欲设置行距为20bp，则因子为20/14.4=1.389
-\setlength\parindent{24pt} % 设置缩进长度 两个小四 pt：磅，bp：大点，pc：pica 
+\setlength{\headheight}{17pt} % 高17pt
+\pagestyle{fancy}             % 设置风格为fancy
+\linespread{1.389}            % 字号大小为12bp，基本行距为12×1.2=14.4bp，欲设置行距为20bp，则因子为20/14.4=1.389
+\setlength\parindent{24pt}    % 设置缩进长度 两个小四 pt：磅，bp：大点，pc：pica 
 
 % ===============设置标题段落===============  
 \titlespacing{\chapter}{0pt}{0pt}{18pt}
@@ -687,47 +671,43 @@
   \renewcommand\thesection{\S\arabic{chapter}.\arabic{section}}
 }
 %\the计数器，显示计数器的值，该命令只使用于序号计数器，例如\thepage显示当前页码。\value{计数器}调用计数器的值，无论计数器的计数形式如何都被转换成对应的阿拉伯数字。 \S 标题前加特数符号
-\counterwithin{figure}{chapter} % 设置对应计数器每章重置
-\counterwithin{table}{chapter} % 设置对应计数器每章重置
+\counterwithin{figure}{chapter}  % 设置对应计数器每章重置
+\counterwithin{table}{chapter}   % 设置对应计数器每章重置
 \ifbachelor{ % 本科图表公式题注编号格式 👇
   \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}} % 显示公式编号，其格式x-x
-  \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}} % 显示表格编号，其格式x-x
-  \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}} % 显示插图编号，其格式x-x
+  \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}       % 显示表格编号，其格式x-x
+  \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}     % 显示插图编号，其格式x-x
 }{ % 硕博图表公式题注编号格式 👇
   \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}} % 显示公式编号，其格式x-x
-  \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}} % 显示表格编号，其格式x-x
-  \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}} % 显示插图编号，其格式x-x
+  \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}       % 显示表格编号，其格式x-x
+  \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}     % 显示插图编号，其格式x-x
 }
 %chapter章序号计数器，section节序号计数器，subsection小节序号计数器，subsubsection小小节序号计数器，paragraph段序号计数器，figure插图序号计数器，table表格序号计数器，page页码序号计数器，equation公式序号计数器
 
 
-% ===============设置图表格式===============  
+% ===============设置图表格式===============
 \captionsetup{width=\textwidth - 60pt}
 \captionsetup[subfigure]{aboveskip=2pt, belowskip=2pt} % width=36pt 设置子图标题的宽度 
 \captionsetup[subfoat]{aboveskip=2pt, belowskip=2pt}
-\captionsetup[figure]{aboveskip=3pt, belowskip=0pt} %设置标题与插图或表格之间的垂直距离，设置标题与下文之间的附加垂直距离, 如果标题在插图或表格之下;或标题与上文之间的附加垂直距离, 如果标题在插图或表格之上。该参数的默认值是0pt。为6pt，下面为0pt
+\captionsetup[figure]{aboveskip=3pt, belowskip=0pt} %设置标题与插图或表格之间的垂直距离，设置标题与下文之间的附加垂直距离, 如果标题在插图或表格之下;或标题与上文之间的附加垂直距离, 如果标题在插图或表格之上。
 \captionsetup[table]{aboveskip=0pt, belowskip=6pt}
 \captionsetup[longtable]{aboveskip=0pt, belowskip=6pt}
 \setlength{\intextsep}{9pt} % 控制出现在页⾯中间的浮动体（如使⽤了h 选项的浮动体）与上下方文本之间的垂直距离
 % \setlength{\textfloatsep}{6pt} % 控制出现在页⾯的顶部或底部的浮动体与⽂本之间的垂直距离
 
 
-\AtBeginEnvironment{figure}{ %让图环境的内容居中
-  \def\@floatboxreset{\centering} %
-}
-\AtBeginEnvironment{table}{ %让表格环境的内容居中
-  \def\@floatboxreset{\centering} %
-}
-\AtBeginEnvironment{tabular}{\small} %表格字体小五
-\AtBeginEnvironment{tabular*}{\small} %表格字体小五
-\AtBeginEnvironment{longtable}{\small} %跨页表格字体小五
+\AtBeginEnvironment{figure}{\def\@floatboxreset{\centering}} % 让图环境的内容居中
+\AtBeginEnvironment{table}{\def\@floatboxreset{\centering}}  % 让表格环境的内容居中
+\AtBeginEnvironment{tabular}{\small}                         % 表格字体小五
+\AtBeginEnvironment{tabular*}{\small}                        % 表格字体小五
+\AtBeginEnvironment{longtable}{\small}                       % 跨页表格字体小五
 %\captionsetup{format=hang} %caption工具包在加载时可以修改标题的很多方面，也可以通过 captionsetup命令也可以在工具包选项中修改。\captionsetup[浮动体类型]{参数1=选项, 参数2=选项,…}其中可选参数浮动体类型的选项可以是figure或table,如果省略该参数, 则表示这两种浮动体都适用。format：plain默认值,将标题作为普通段落排版。hang将标题从第二行起悬挂缩进排版，缩进宽度等于标题标志加分隔符的宽度。indention设置从标题第二行起的附加缩进宽度, 例如indention=5mm,其默认值是0pt。
 %标题设置\captionsetup
 
 
 % ===============章节和目录深度设置===============
-\setcounter{secnumdepth}{3} %设置章节深度
-\setcounter{tocdepth}{2} %设置目录深度
+\setcounter{secnumdepth}{3} % 设置章节深度
+\setcounter{tocdepth}{2}    % 设置目录深度
 
 
 
@@ -737,7 +717,7 @@
 
   \titleformat{\chapter}[block]
   {\bachelorchapterformat\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}} % 本科chapter格式
-  {\thechapter}{20pt}{} % \thispagestyle{fancy} 需要使用fancyhdr包，并提供了奇偶页不同的风格
+  {\thechapter}{20pt}{}
 
   \titleformat{\section}[block]
   {\fontsize{14pt}{14pt}\selectfont\heiti} % \heiti 设置为粗体
@@ -767,14 +747,8 @@
   \titleformat{\subsubsection}[block]
   {\fontsize{12pt}{12pt}\selectfont}
   {\thesubsubsection}{6pt}{}
-  \renewcommand{\thesubsubsection}{\arabic{subsubsection}.} %四级标题格式设置为 1.
+  \renewcommand{\thesubsubsection}{\arabic{subsubsection}.} % 四级标题格式设置为 1.
 }
-% ===============定义计数器=============== 
-% \newcounter{pseudopage} %自定义一个名字pseudopage新计数器
-% \setcounter{pseudopage}{0} %pseudopage新计数器清零
-% \AddToHook {shipout/background}{\stepcounter{pseudopage}} 
-%\stepcounter{计数器}，将计数器的值加1，如果计数器是层次标题的序号计数器，还将比其低一层计数器清零。例如\stepcounter{chapter},将chapter序号计数器加1，同时将section以及低于section的序号计数器归零。
-
 
 %=========================中文摘要
 \newenvironment{chineseabstract}{
@@ -787,16 +761,16 @@
     \addcontentsline{toc}{chapter}{\texorpdfstring{摘\quad 要}{摘 要}} % 设置在目录显示摘要
   }
 
-  \setcounter{page}{1} % 定义为第一页
+  \setcounter{page}{1}  % 定义为第一页
   \pagenumbering{Roman} % 设置页码显示为罗马数字
 
-  \fancyhf{} % 初始化页码页脚布局
+  \fancyhf{}   % 初始化页码页脚布局
   \ifbachelor{ % 本科摘要页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 桂林电子科技大学毕业设计（论文）} % 设置页眉
     \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
   }{ % 硕博摘要页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要} % 设置页眉
-    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage} % 罗马页码居中显示
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}  % 罗马页码居中显示
   }
 }{
   \ifpversion{
@@ -806,18 +780,18 @@
     \else
       \newpage
     \fi
-    }{
-      \newpage
-    }
-    
+  }{
+    \newpage
+  }
+
 
 }
 
 %=========================中文关键字
 \newcommand{\chinesekeyword}[1]{
   \vspace{\baselineskip}
-  \noindent %无缩进
-  \@hangfrom{\makebox[48pt][l]{\textbf{关键词：}}}#1
+  \noindent\
+  @hangfrom{\makebox[48pt][l]{\textbf{关键词：}}}#1
 }
 
 %=========================英文摘要
@@ -834,7 +808,7 @@
 
   \fancyhf{}
   \ifbachelor{ % 本科英文摘要页眉页码设置 👇
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 桂林电子科技大学毕业设计（论文）} % 设置页眉
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 桂林电子科技大学毕业设计（论文）} 
     \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
   }{ % 硕博英文摘要页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont ABSTRACT}
@@ -849,9 +823,9 @@
     \else
       \newpage
     \fi
-    }{
-      \newpage
-    }
+  }{
+    \newpage
+  }
 }
 
 
@@ -859,24 +833,18 @@
 \newcommand{\englishkeyword}[1]
 {
   \vspace{\baselineskip}
-  \noindent % 无缩进
+  \noindent
   \@hangfrom{\makebox[2.1cm][l]{\textbf{Keywords:}}}#1
 }
 
 
 % 定义加入目录的词语
 % \addtocontents{扩展名} {文本}它可以将任意文本和相关格式命令写入目录或在创建目录时（如果是命令）则被执行,但它不会将命令写入目录。 文本可以是任意字符或\vspace、\newpage等调整某一条目格式的命令,一般在命令前加\protect。
-\AddToHook {shipout/background}{\addtocontents{toc}{
-    \protect\cftsetpnumwidth{\widthof{\thepage}-1pt}
-  }}
+\AddToHook {shipout/background}{\addtocontents{toc}{\protect\cftsetpnumwidth{\widthof{\thepage}-1pt}}}
 
-\AddToHook {shipout/background}{\addtocontents{lof}{
-    \protect\cftsetpnumwidth{\widthof{\thepage}-1pt}
-  }}
+\AddToHook {shipout/background}{\addtocontents{lof}{\protect\cftsetpnumwidth{\widthof{\thepage}-1pt}}}
 
-\AddToHook {shipout/background}{\addtocontents{lot}{
-    \protect\cftsetpnumwidth{\widthof{\thepage}-1pt}
-  }}
+\AddToHook {shipout/background}{\addtocontents{lot}{\protect\cftsetpnumwidth{\widthof{\thepage}-1pt}}}
 
 % 设置奇数和偶数页页眉栏文字%使用计数器
 \tocloftpagestyle{fancy} % 用户自定义的奇页眉使用桂林电子科技大学xxx，偶数使用标题，页脚页眉居中
@@ -888,8 +856,6 @@
 \setlength{\cftaftertoctitleskip}{18pt}
 \setlength{\cftbeforechapskip}{0pt}
 \ifbachelor{ % 本科目录格式 👇
-
-
   \cftsetindents{chapter}{0pt}{20pt} % 一个空格约为5磅
   \cftsetindents{section}{0pt}{25pt}
   \cftsetindents{subsection}{0pt}{30pt}
@@ -923,7 +889,7 @@
   \newcommand{\standardheader}{
     \fancyhf{}
     \fancyhead[CE]{\fontsize{10.5pt}{12.6pt}\selectfont\zh@thetitle}
-    \fancyhead[CO]{\fontsize{10.5pt}{12.6pt}\selectfont\leftmark} %奇数页页眉使用标题
+    \fancyhead[CO]{\fontsize{10.5pt}{12.6pt}\selectfont\leftmark} % 奇数页页眉使用标题
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   }
 }
@@ -935,19 +901,19 @@
 % ===============图表公式引用设置=============== cleveref
 % \crefformat{equation}{式#1} %公式引用标签中去掉括号
 \crefname{figure}{图}{图} % 更改引用前缀 参数二为单独引用
-\crefname{table}{表}{表} % 参数三为多个引用
+\crefname{table}{表}{表}  % 参数三为多个引用
 \crefname{equation}{式}{式}
 \crefname{algorithm}{算法}{算法}
 \crefname{chapter}{}{}
 \crefname{section}{}{}
 \crefname{subsection}{}{}
-\renewcommand{\contentsname}{目\quad 录} %使默认的Contents改为目 录显示
-\renewcommand{\bibname}{参考文献} %使默认的参考文献名字改为参考文献显示
-\renewcommand{\figurename}{图} %使默认的图名字改为图显示
-\renewcommand{\tablename}{表} %使默认的表名字改为表显示
+\renewcommand{\contentsname}{目\quad 录}          % 使默认的Contents改为目 录显示
+\renewcommand{\bibname}{参考文献}                 % 使默认的参考文献名字改为参考文献显示
+\renewcommand{\figurename}{图}                    % 使默认的图名字改为图显示
+\renewcommand{\tablename}{表}                     % 使默认的表名字改为表显示
 \renewcommand{\listfigurename}{插图索引}
 \renewcommand{\listtablename}{插表索引}
-
+\renewcommand{\thesubfigure}{(\alph{subfigure})} % 设置子图标题序号  
 \setlength{\extrarowheight}{2pt} % 行距
 
 
@@ -956,7 +922,7 @@
   \newcommand{\thesistableofcontents}
   {
     \renewcommand{\bachelorchapterformat}{\centering}
-    \begin{spacing}{2}%本科目录两倍行距
+    \begin{spacing}{2} % 本科目录两倍行距
       \tableofcontents
     \end{spacing}
     \renewcommand{\bachelorchapterformat}{} % 还原初始设置
@@ -987,18 +953,18 @@
   \newcommand{\thesisfigurelist}
   {
     \renewcommand{\bachelorchapterformat}{\centering} % 设置标题居中
-    \setstretch{2.0} % 设置二倍行距
+    \setstretch{2.0}                                  % 设置二倍行距
     \listoffigures
-    \setstretch{1.389} % 行距设置回20磅
-    \renewcommand{\bachelorchapterformat}{} % 还原初始设置：左对齐
+    \setstretch{1.389}                                % 行距设置回20磅
+    \renewcommand{\bachelorchapterformat}{}           % 还原初始设置：左对齐
   }
 }{ % 定义硕博插图索引命令 👇
-  \newcommand{\thesisfigurelist}{\listoffigures} % 自定义调用\listoffigures的命令
+  \newcommand{\thesisfigurelist}{\listoffigures}      % 自定义调用\listoffigures的命令
 }
 
 \pretocmd{\listoffigures}
-{ % 图目录是存放在.lof目录的文件下
-  \newpage  % 新建一页
+{  % 图目录是存放在.lof目录的文件下
+  \newpage % 新建一页
   \fancyhf{} % 初始化页码页脚布局
   \ifbachelor{ % 本科插图索引页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{桂林电子科技大学毕业设计（论文）}}
@@ -1017,13 +983,13 @@
   \newcommand{\thesistablelist}
   {
     \renewcommand{\bachelorchapterformat}{\centering} % 设置标题居中
-    \setstretch{2.0} % 设置二倍行距
+    \setstretch{2.0}                                  % 设置二倍行距
     \listoftables
-    \setstretch{1.389} % 行距设置回20磅
-    \renewcommand{\bachelorchapterformat}{} % 还原初始设置：左对齐
+    \setstretch{1.389}                                % 行距设置回20磅
+    \renewcommand{\bachelorchapterformat}{}           % 还原初始设置：左对齐
   }
 }{ % 定义硕博插表索引命令 👇
-  \newcommand{\thesistablelist}{\listoftables} % 自定义\thesistablelist命令
+  \newcommand{\thesistablelist}{\listoftables}        % 自定义\thesistablelist命令
 }
 
 \pretocmd{\listoftables}
@@ -1059,9 +1025,10 @@
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{符号说明}}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   }
+
   \renewcommand{\nomname}{符号说明} % 修改符号说明标题的名称。
 
-  { \small % 设置符号说明字体大小为五号
+  { \small                     % 设置符号说明字体大小为五号
     \printnomenclature[1.5 cm] % 设置术语与描述之间的距离 
   }
 
@@ -1069,7 +1036,7 @@
 
   \ifbachelor{ % 设置本科插表索引标题 👇
     \renewcommand{\bachelorchapterformat}{} % 还原初始设置：左对齐
-    \setstretch{1.389} % 行距设置回20磅
+    \setstretch{1.389}                      % 行距设置回20磅
   }{}
 
   \ifpversion{ % 打印版本切换
@@ -1079,13 +1046,13 @@
     \else
       \newpage
     \fi
-    }{}
+  }{}
 }
 
 % ====================符号表格式设置====================
 % 设置符号说明为双栏显示
 \renewcommand*\nompreamble{\begin{multicols}{2}}
-    \renewcommand*\nompostamble{\end{multicols}}
+\renewcommand*\nompostamble{\end{multicols}}
 
 % 更改术语之间的垂直行间距
 \newlength{\nomitemorigsep}
@@ -1126,25 +1093,24 @@
 
   }{ % 非盲审则存在致谢
     \ifbachelor{ % 本科致谢设置 👇
-      \renewcommand{\bachelorchapterformat}{\centering} % 通过修改\bachelorchapterformat命令让致谢居中
+      \renewcommand{\bachelorchapterformat}{\centering}     % 通过修改\bachelorchapterformat命令让致谢居中
       \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
-      \setcounter{section}{0} % section计数器清零 
+      \setcounter{section}{0}                               % section计数器清零 
       \chapter*{\texorpdfstring{谢\quad 辞}{谢 辞}}
       \addcontentsline{toc}{chapter}{\texorpdfstring{谢\quad 辞}{谢 辞}}
     }{ % 硕博致谢设置 👇
       \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
-      \setcounter{section}{0} % section计数器清零 
+      \setcounter{section}{0}                               % section计数器清零 
       \chapter*{\texorpdfstring{致\quad 谢}{致 谢}}
       \addcontentsline{toc}{chapter}{\texorpdfstring{致\quad 谢}{致 谢}}
     }
 
-    % \markboth{致谢}{致谢} %\markboth{<左面页眉>}{<右面页眉>}
     \fancyhf{}
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 致\quad 谢}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
     \thispagestyle{fancy}
-    \normalsize % 设置字体为小四
-    \input{Chapters/Thanks.tex} % 致谢文档位置
+    \normalsize                                             % 设置字体为小四
+    \input{Chapters/Thanks.tex}                             % 致谢文档位置
     \ifbachelor{ % 一级标题还原默认设置 👇
       \renewcommand{\bachelorchapterformat}{}
     }{}
@@ -1227,12 +1193,6 @@
 
 }
 
-%章节目录中的条目是由\chapter和\section等章节命令生成的,插图或表格目录中的条目是由在浮动环境figure或table中的图表标题命令\caption生成的; 而带星号的章节命令和图表标题命令以及摘要! 参考文献等环境创建的无序号标题, 则不能进入目录。如果希望某个无序号标题也能被排入目录, 可在该标题或环境命令之后使用附加条目命令:
-%\addcontentsline{扩展名} {条目类型} {条目文本}
-%扩展名 标题记录文件的扩展名, 如果所附加条目的是章节目录,扩展名为toc;如果是插图目录, 则为lof; 如果是表格目录则为lot。
-%条目类型 所附加条目的格式类型,如果扩展名为toc, 那条目类型可以是chapter、section等不带反斜杠的章节命令名; 如果为lof, 则是figure; 如果为lot, 则是table。
-%条目文本可以是带星号命令或摘要等环境生成的无序号标题, 也可以是其他需要向目录添加的文字符号
-
 
 
 % ====================参考文献设置====================
@@ -1240,7 +1200,8 @@
 \renewcommand{\bibname}{参考文献}
 \renewcommand{\@biblabel}[1]{[#1]\hfill}
 
-\newenvironment{thesisthebibliography}{
+\newenvironment{thesisthebibliography}
+{
   \begin{thebibliography}{lo}
     \interlinepenalty=10000
     \begin{spacing}{1.667}
@@ -1251,18 +1212,21 @@
   \end{thebibliography}
 }
 
-\pretocmd{\bibliography}{
+\pretocmd{\bibliography} % 设置页眉页脚行间距
+{
   \newpage
   \fancyhf{}
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 参考文献}
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   \interlinepenalty=10000
   \begin{spacing}{1.667}
-    }{}{}
+}{}{}
 
-    \apptocmd{\bibliography}{
+\apptocmd{\bibliography}
+{
   \end{spacing}
 }{}{}
+
 \setlength{\bibsep}{0pt} % 消除参考文献条目间的额外行间距
 
 \newcommand{\bstlabelmark}{lo}
@@ -1273,89 +1237,20 @@
   }{
     \setlength{\labelsep}{3pt}
     \renewcommand{\bstlabelmark}{loo}
-    \bibliographystyle{./References/GUET-Thesis(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
+    \bibliographystyle{./References/GUET-Thesis(base-gbt7714-numerical).bst} % 插入参考文献的样式.bst文件
     \bibliography{#2}
     \setlength{\labelsep}{6pt}
   }{
-    \bibliographystyle{./References/GUET-Thesis(base-gbt7714-numerical).bst} %插入参考文献的样式.bst文件
-    \bibliography{#2} %参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib
+    \bibliographystyle{./References/GUET-Thesis(base-gbt7714-numerical).bst} % 插入参考文献的样式.bst文件
+    \bibliography{#2} % 参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib
   }
 }
 
-\AtBeginDocument{               % 该代码用以解决： multibib 的 resetlabels 功能的 bug
-  \def\thebibliography#1{ %
-    \@isnumber{#1}{ %
-      \ifnum\mb@biblabelwidth=0
-        % \@tempcnta\c@NAT@ctr %% changed here to c@NAT@ctr
-        \@tempcnta=#1\relax
-        \ifcontinuouslabels
-          \advance\@tempcnta\c@NAT@ctr
-          % \advance\@tempcnta#1%
-        \fi
-        \std@thebibliography{\@arabic\@tempcnta} %
-      \else
-        \std@thebibliography{\@arabic\mb@biblabelwidth} %
-        \global\mb@biblabelwidth 0
-      \fi
-    }{ %
-      \std@thebibliography{#1} %
-    } %
-  } %
-}
-
-
-% \newcites{accomplish}{攻读\degreename{}学位期间取得的成果} 
-
-% \newenvironment{thesistheaccomplish}{ %设置thesisaccomplish环境格式
-%   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-%   \renewcommand\thesection{\arabic{section}}
-%   \setcounter{section}{0} %section计数器清零
-%   \nociteaccomplish{*}
-%   \renewcommand{\bibname}{攻读\degreename{}学位期间取得的成果}
-%   \begin{thebibliography}{lo}
-%     \interlinepenalty=10000
-%     \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
-%     \begin{spacing}{1.667}
-%       \thispagestyle{fancy}
-%       \small
-%     }{
-%     \end{spacing}
-%   \end{thebibliography}
-%   \renewcommand{\bibname}{参考文献}
-% }
-
-
-% \newcommand{\thesisloadaccomplish}[1]{
-%   \nociteaccomplish{*}
-%   \renewcommand{\bibname}{攻读\degreename{}学位期间取得的成果}
-%   \renewcommand{\bstlabelmark}{lo}
-%   \thispagestyle{fancy} %该页含有页眉和页脚
-%   \begin{spacing}{1.667}
-%   \bibliographystyleaccomplish{GUET-Thesis} %插入参考文献的样式.bst文件  \bibliographyaccomplish{#1} %参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib  \end{spacing}
-%   \bibliographyaccomplish{#1}
-%   \end{spacing}
-%   \renewcommand{\bibname}{参考文献}
-% }
-
-% \newcommand{\thesisaccomplish}{\thesisloadaccomplish}
-
-
 
 % ====================攻读学位期间取得成果====================
-% \newenvironment{accomplish}{
-%   \protect\setcounter{tocdepth}{0}
-%   \setcounter{section}{0} %section计数器清零
-%   \chapter*{攻读\degreename{}学位期间取得的成果}
-%   \addcontentsline{toc}{chapter}{攻读\degreename{}学位期间取得的成果} 
-%   % \markboth{\centering 攻读\degreename{}学位期间取得的成果} %手动设置页眉
-%   \fancyhf{} %初始化页码页脚布局
-%   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\degreename{}学位期间取得的成果}
-%   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
-% }
-
 \newcommand{\thesisaccomplish}{
-  \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %只显示一级标题
-  \setcounter{section}{0} %section计数器清零 
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
+  \setcounter{section}{0} % section计数器清零 
 
   \chapter*{攻读\degreename{}学位期间取得的成果}
   \addcontentsline{toc}{chapter}{攻读\degreename{}学位期间取得的成果}
@@ -1363,19 +1258,19 @@
   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\degreename{}学位期间取得的成果}
   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   \thispagestyle{fancy}
-  \normalsize % 设置字体为小四
+  \normalsize  % 设置字体为小四
   \ifbversion{ % 盲审版学术成果👇
     \input{Chapters/Accomplish-bversion.tex} % 学术成果文档位置
   }{ % 非盲审版学术成果👇
     \input{Chapters/Accomplish.tex}
   }
-   
+
 }
 
 
 % ===============定理设置===============
 \newtheoremstyle{dotless}{0pt}{0pt}{\normalfont}{24pt}{\heiti}{}{ }{}
-\theoremstyle{dotless} %plain（默认样式）：定理名称是正体，定理内容是斜体。definition：定理名称和定理内容都是正体。remark： 定理名称是斜体，定理内容是正体
+\theoremstyle{dotless} % plain（默认样式）：定理名称是正体，定理内容是斜体。definition：定理名称和定理内容都是正体。remark： 定理名称是斜体，定理内容是正体
 
 
 \newtheorem{theorem}{定理}[chapter]
@@ -1386,11 +1281,11 @@
 \newtheorem{example}[theorem]{例子}
 \newtheorem{proposition}[theorem]{命题}
 
-%\newtheorem{环境名} [计数器名] {标题} [排序单位]
-%环境名 给所定义的定理类环境起的名称, 它不得与现有环境重名, 否则系统将提示出错。每定义一个环境名, 系统就会自动创建一个同名的计数器, 用于为所定义的定理类环境排序。
-%计数器名 可选参数, 如果希望所定义的定理类环境与已定义的某个定理类环境混合排序,就可在其中填写该环境的计数器名, 也就是该定理类环境的环境名;如果省略这个可选参数, 则表示本定理类环境单独排序。
-%标题 用于设置定理类表达式的标题, 如theorem定理， 证明和引理等。
-%排序单位 可选参数, 用于设定排序单位, 如果是chapter, 则每一新章开始时所定义定理类环境的计数器清零; 该可选参数的默认值是以全文为排序单位
+% \newtheorem{环境名} [计数器名] {标题} [排序单位]
+% 环境名 给所定义的定理类环境起的名称, 它不得与现有环境重名, 否则系统将提示出错。每定义一个环境名, 系统就会自动创建一个同名的计数器, 用于为所定义的定理类环境排序。
+% 计数器名 可选参数, 如果希望所定义的定理类环境与已定义的某个定理类环境混合排序,就可在其中填写该环境的计数器名, 也就是该定理类环境的环境名;如果省略这个可选参数, 则表示本定理类环境单独排序。
+% 标题 用于设置定理类表达式的标题, 如theorem定理， 证明和引理等。
+% 排序单位 可选参数, 用于设定排序单位, 如果是chapter, 则每一新章开始时所定义定理类环境的计数器清零; 该可选参数的默认值是以全文为排序单位
 
 \renewcommand{\thetheorem}{\arabic{chapter}.\arabic{theorem}}
 \renewcommand{\theaxiom}{\arabic{chapter}.\arabic{axiom}}
@@ -1398,31 +1293,31 @@
 \renewcommand{\thelemma}{\arabic{chapter}.\arabic{lemma}}
 \renewcommand{\thedefinition}{\arabic{chapter}.\arabic{definition}}
 \renewcommand{\theexample}{\arabic{chapter}.\arabic{example}}
-%\renewcommand{\qedsymbol}{$\blacksquare$} %结束符，\blacksquare实心方框，\square空心方框
+% \renewcommand{\qedsymbol}{$\blacksquare$} %结束符，\blacksquare实心方框，\square空心方框
 
 \renewcommand{\proofname}{证明}
-%定义该模板的证明环境格式
+% 定义该模板的证明环境格式
 
-%\renewenvironment{新环境名称}[参数个数][参数默认值]{开始部分定义}{结束部分定义}
+% \renewenvironment{新环境名称}[参数个数][参数默认值]{开始部分定义}{结束部分定义}
 \renewenvironment{proof}[1][\proofname]{\par
-  \pushQED{\qed} %这里 \pushQED{\qed} 把 \qed 压入了 QED 这个堆栈，然后在环境结束的地方，通过 \popQED把压入堆栈的最后一个元素弹出来。
-  \normalfont %正体
+  \pushQED{\qed} % 这里 \pushQED{\qed} 把 \qed 压入了 QED 这个堆栈，然后在环境结束的地方，通过 \popQED把压入堆栈的最后一个元素弹出来。
+  \normalfont % 正体
   \topsep0pt \partopsep0pt
   \trivlist
   \item[\hskip5\labelsep
               \heiti
-              #1\@addpunct{:}]\ignorespaces %\proofname后面:
-} %开始部分定义
+              #1\@addpunct{:}]\ignorespaces % \proofname后面:
+} % 开始部分定义
 {
   \popQED\endtrivlist\@endpefalse
-} %结束部分定义
+} % 结束部分定义
 
-%\newcommand{\citing}[1]{\textsuperscript{\cite{#1}}} %\textsuperscript{}文字上标
-\setlist{noitemsep} %条目之间无附加的垂直距离
+% \newcommand{\citing}[1]{\textsuperscript{\cite{#1}}} %\textsuperscript{}文字上标
+\setlist{noitemsep} % 条目之间无附加的垂直距离
 \setlist{nolistsep}
 
-%\noindent表示proof没有缩进，\it表示proof斜体
-%\quad表示\proofname后面空四个空格，\hfill表示右对齐，\square表示方框，\par表示结尾空一段.
+% \noindent表示proof没有缩进，\it表示proof斜体
+% \quad表示\proofname后面空四个空格，\hfill表示右对齐，\square表示方框，\par表示结尾空一段.
 
 \AtBeginDocument{
   \setlength{\abovedisplayskip}{8pt}
@@ -1430,6 +1325,7 @@
   \setlength{\belowdisplayshortskip}{8pt}
   \setlength{\abovedisplayshortskip}{8pt}
 }
+
 
 % =============== 自定义三线表格式 ===============
 \NewTblrEnviron{threetab}
