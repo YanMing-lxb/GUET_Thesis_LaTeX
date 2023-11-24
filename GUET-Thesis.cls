@@ -160,22 +160,22 @@
 
 % ===============字体设置===============
 \ifwindows
-  \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true]{SimSun}             % 在Windows平台上设置中文字体为SimSun
-  \newCJKfontfamily{\kaiti}[AutoFakeBold=true]{KaiTi}                        % 设置楷体字体为KaiTi 
-  \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true]{SimHei}   % 设置黑体字体为SimHei
-  \newfontfamily{\heiti@letter}{SimHei}                                      % 设置字母的黑体字体为SimHei
-  \setallmainfonts{Times New Roman}                                          % 设置英文字体为Times New Roman
+  \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}                                  % 在Windows平台上设置中文字体为SimSun
+  \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                             % 设置楷体字体为KaiTi 
+  \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimHei}                        % 设置黑体字体为SimHei
+  \newfontfamily{\heiti@letter}{SimHei}                                                           % 设置字母的黑体字体为SimHei
+  \setallmainfonts{Times New Roman}                                                               % 设置英文字体为Times New Roman
 \else
   \ifmacosx
-    \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true]{Songti SC}         % 在macOS平台上设置中文字体为Songti SC
-    \newCJKfontfamily{\kaiti}[AutoFakeBold=true]{KaiTi}                       % 设置楷体字体为KaiTi
-    \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true]{STHeiti} % 设置黑体字体为STHeiti
-    \newfontfamily{\heiti@letter}{STHeiti}                                    % 设置字母的黑体字体为STHeiti
-    \setallmainfonts{Times New Roman}                                         % 设置英文字体为Times New Roman
+    \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}                             % 在macOS平台上设置中文字体为Songti SC
+    \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                           % 设置楷体字体为KaiTi
+    \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{STHeiti}                     % 设置黑体字体为STHeiti
+    \newfontfamily{\heiti@letter}{STHeiti}                                                        % 设置字母的黑体字体为STHeiti
+    \setallmainfonts{Times New Roman}                                                             % 设置英文字体为Times New Roman
   \else
-    \setCJKmainfont[AutoFakeBold=true,AutoFakeSlant =true,Path = ./Fonts/]{fzsong.ttf}            % 在其他平台上设置中文字体为fzsong.ttf，并指定字体文件路径为./Fonts/
-    \newCJKfontfamily{\kaiti}[AutoFakeBold=true,Path=./Fonts/]{fzkaiti.ttf}                       % 设置楷体字体为fzkaiti.ttf，并指定字体文件路径为./Fonts/
-    \newCJKfontfamily{\heiti}[AutoFakeBold=true,AutoFakeSlant =true,Path = ./Fonts/]{fzhei.ttf}   % 设置黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
+    \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true,Path = ./Fonts/]{fzsong.ttf}            % 在其他平台上设置中文字体为fzsong.ttf，并指定字体文件路径为./Fonts/
+    \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5,Path=./Fonts/]{fzkaiti.ttf}                       % 设置楷体字体为fzkaiti.ttf，并指定字体文件路径为./Fonts/
+    \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true,Path = ./Fonts/]{fzhei.ttf}   % 设置黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
     \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./Fonts/]                                     % 设置字母的黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
     \setallmainfonts[
                       BoldFont=timesbd.ttf,         % 粗体字体为timesbd.ttf
@@ -442,10 +442,10 @@
           hline{2-Z} = {2}{1pt},                                               % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
           belowsep = {-7pt}                                                    % 单元格底线向上偏移7pt
         }
-        学\hspace{0.36cm} \qquad \qquad 号:                                                  & \thestudentnumber \\
-        姓\hspace{0.36cm} \qquad \qquad 名:                                                  & \theauthor        \\
-        学\hspace{0.36cm} \qquad \qquad 院:                                                  & \theschool        \\
-        专\quad \hspace{0.36cm} \qquad \quad 业:                                             & \themajor         \\
+        学\hspace{0.36cm} \qquad \qquad 号:                                                    & \thestudentnumber \\
+        姓\hspace{0.36cm} \qquad \qquad 名:                                                    & \theauthor        \\
+        学\hspace{0.36cm} \qquad \qquad 院:                                                    & \theschool        \\
+        专\quad \hspace{0.36cm} \qquad \quad 业:                                               & \themajor         \\
         指\hspace{0.38cm} 导\hspace{0.38cm} 教\hspace{0.38cm} 师:                              & \theadvisor       \\
         指\hspace{0.1pt} 导\hspace{0.1pt} 教\hspace{0.1pt} 师\hspace{0.1pt} 职\hspace{0.1pt} 称: & \theprotitle
       \end{tblr}
@@ -480,9 +480,9 @@
             }
             研\quad 究\quad 生\quad 学\quad 号:                    & \thestudentnumber                 \\
             研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor                        \\
-            指导教师姓名、职称:                                        & \theadvisor \enspace \theprotitle \\
+            指导教师姓名、职称:                                     & \theadvisor \enspace \theprotitle \\
             申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \thedegreecategories              \\
-            领\hspace{7em}域:                                   & \themajor                         \\
+            领\hspace{7em}域:                                      & \themajor                         \\
             论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedate
           \end{tblr}
         }{ % 博士、学硕、在职硕士的封面信息 👇
@@ -497,7 +497,7 @@
             }
             研\quad 究\quad 生\quad 学\quad 号:                    & \thestudentnumber                 \\
             研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor                        \\
-            指导教师姓名、职称:                                        & \theadvisor \enspace \theprotitle \\
+            指导教师姓名、职称:                                     & \theadvisor \enspace \theprotitle \\
             申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories              \\
             学\qquad 科、专\qquad 业:                              & \themajor                         \\
             论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedate
@@ -791,7 +791,7 @@
 \newcommand{\chinesekeyword}[1]{
   \vspace{\baselineskip}
   \noindent\
-  @hangfrom{\makebox[48pt][l]{\textbf{关键词：}}}#1
+  \@hangfrom{\makebox[48pt][l]{\textbf{关键词：}}}#1
 }
 
 %=========================英文摘要
@@ -964,8 +964,8 @@
 
 \pretocmd{\listoffigures}
 {  % 图目录是存放在.lof目录的文件下
-  \newpage % 新建一页
-  \fancyhf{} % 初始化页码页脚布局
+  \newpage     % 新建一页
+  \fancyhf{}   % 初始化页码页脚布局
   \ifbachelor{ % 本科插图索引页眉页码设置 👇
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{桂林电子科技大学毕业设计（论文）}}
     \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页}
@@ -974,7 +974,7 @@
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   }
   \addtolength{\cftfignumwidth}{12pt} % 设置长度命令，使命令\cftfignumwidth的长度设置为12pt，条目编号与条目内容之间占用的宽度, 例如：图 1-2 [\cftfignumwidth] 电子战飞机
-  \renewcommand{\cftfigpresnum}{图} % 条目编号前内容  
+  \renewcommand{\cftfigpresnum}{图}   % 条目编号前内容  
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为0 就会在目录中显示
 }{}{}
 
@@ -1003,8 +1003,8 @@
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{插表索引}}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   }
-  \addtolength{\cfttabnumwidth}{12pt} % 条目编号占用宽度，条目编号与条目内容之间占用的宽度, 例如：表1-1 [\cftfignumwidth] 参数设置
-  \renewcommand{\cfttabpresnum}{表} % 条目编号前内容
+  \addtolength{\cfttabnumwidth}{12pt}                   % 条目编号占用宽度，条目编号与条目内容之间占用的宽度, 例如：表1-1 [\cftfignumwidth] 参数设置
+  \renewcommand{\cfttabpresnum}{表}                     % 条目编号前内容
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为-1，目录中只显示一级标题 0 为chapter
 }{}{}
 
@@ -1013,7 +1013,7 @@
 \newcommand{\thesissymbollist}{
   \ifbachelor{ % 设置本科插表索引标题 👇
     \renewcommand{\bachelorchapterformat}{\centering} % 设置标题居中
-    \setstretch{2.0} % 设置二倍行距
+    \setstretch{2.0}                                  % 设置二倍行距
   }{}
 
   \newpage
@@ -1028,8 +1028,8 @@
 
   \renewcommand{\nomname}{符号说明} % 修改符号说明标题的名称。
 
-  { \small                     % 设置符号说明字体大小为五号
-    \printnomenclature[1.5 cm] % 设置术语与描述之间的距离 
+  { \small                         % 设置符号说明字体大小为五号
+    \printnomenclature[1.5 cm]     % 设置术语与描述之间的距离 
   }
 
   \addcontentsline{toc}{chapter}{\texorpdfstring{\heiti 符号说明}{符号说明}} % 设置在目录显示符号说明
