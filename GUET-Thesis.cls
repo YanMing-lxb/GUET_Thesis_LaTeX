@@ -871,7 +871,7 @@
 
 
 % ====================插图索引标题内容设置====================
-\renewcommand{\listfigurename}{插图索引}          % 修改插图索引名称
+\renewcommand{\listfigurename}{插图索引}                 % 修改插图索引名称
 
 
 % =========================插图索引内页码宽度设置=========================
@@ -1044,7 +1044,7 @@
   \newcommand{\standardheader}{
     \fancyhf{}
     \fancyhead[CE]{\fontsize{10.5pt}{12.6pt}\selectfont\zh@thetitle} % 偶数页眉内容为中文标题
-    \fancyhead[CO]{\fontsize{10.5pt}{12.6pt}\selectfont\leftmark} % 奇数页页眉使用标题
+    \fancyhead[CO]{\fontsize{10.5pt}{12.6pt}\selectfont\leftmark}    % 奇数页页眉使用标题
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   }
 }
@@ -1114,9 +1114,6 @@
 % \the计数器，显示计数器的值，该命令只使用于序号计数器，例如\thepage显示当前页码。
 % \value{计数器}调用计数器的值，无论计数器的计数形式如何都被转换成对应的阿拉伯数字。 \S 标题前加特数符号
 
-\counterwithin{figure}{chapter}  % 设置对应计数器每章重置
-\counterwithin{table}{chapter}   % 设置对应计数器每章重置
-
 \ifbachelor{ % 本科图表公式题注编号格式 👇
   \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}} % 显示公式编号，其格式x.x
   \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}       % 显示表格编号，其格式x.x
@@ -1140,15 +1137,22 @@
 
 % //////////////////////////////////////// 图标公式设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+% ===============图表题注样式设置=============== 
+\renewcommand{\figurename}{图}                          % 使默认的图名字改为图显示
+\renewcommand{\tablename}{表}                           % 使默认的表名字改为表显示
+\renewcommand{\thesubfigure}{(\alph{subfigure})}        % 设置子图标题序号 
+\counterwithin{figure}{chapter}                         % 设置figure计数器每章重置
+\counterwithin{table}{chapter}                          % 设置table计数器每章重置
+
+
 % ===============图表题注格式=============== caption 与 subcaption 宏包
 \captionsetup{width=\textwidth - 60pt}                  % 设置图表标题的宽度为页面文本宽度减去 60pt
-
-% 设置标题与插图或表格之间的垂直距离，子图环境可加 width=36pt 设置子图标题的宽度 
 \captionsetup[table]{aboveskip=0pt, belowskip=6pt}      % 设置 table 环境
 \captionsetup[figure]{aboveskip=3pt, belowskip=0pt}     % 设置 figure 环境
 \captionsetup[subfoat]{aboveskip=2pt, belowskip=2pt}    % 设置 subfoat 环境
 \captionsetup[longtable]{aboveskip=0pt, belowskip=6pt}  % 设置 longtable 环境
 \captionsetup[subfigure]{aboveskip=2pt, belowskip=2pt}  % 设置 subfigure 环境
+                                                        % 设置标题与插图或表格之间的垂直距离，子图环境可加 width=36pt 设置子图标题的宽度 
 
 \setlength{\intextsep}{9pt} % 控制出现在页⾯中间的浮动体与上下方文本之间的垂直距离
 % \setlength{\textfloatsep}{6pt} % 控制出现在页⾯的顶部或底部的浮动体与⽂本之间的垂直距离
@@ -1179,26 +1183,20 @@
 \crefname{algorithm}{算法}{算法}
 
 
-% ===============图表题注样式设置=============== 
-\renewcommand{\figurename}{图}                    % 使默认的图名字改为图显示
-\renewcommand{\tablename}{表}                     % 使默认的表名字改为表显示
-\renewcommand{\thesubfigure}{(\alph{subfigure})}  % 设置子图标题序号 
-
-
 % ===============表格中的线宽间距设置===============
-\setlength{\heavyrulewidth}{0.9pt} % 设置booktab宏包中 \toprule 和 \bottomrule 的粗细
-\setlength{\lightrulewidth}{0.5pt} % 设置表格中 \midrule 的粗细，
-\setlength{\arrayrulewidth}{0.5pt} % 设置表格中垂直线的粗细
-\setlength{\cmidrulewidth}{0.5pt}  % 设置booktab宏包中 \cmidrule 的粗细
-\setlength{\extrarowheight}{2pt}   % 设置表格中每一行的额外高度 array 宏包
+\setlength{\heavyrulewidth}{0.9pt}                % 设置booktab宏包中 \toprule 和 \bottomrule 的粗细
+\setlength{\lightrulewidth}{0.5pt}                % 设置表格中 \midrule 的粗细，
+\setlength{\arrayrulewidth}{0.5pt}                % 设置表格中垂直线的粗细
+\setlength{\cmidrulewidth}{0.5pt}                 % 设置booktab宏包中 \cmidrule 的粗细
+\setlength{\extrarowheight}{2pt}                  % 设置表格中每一行的额外高度 array 宏包
 
 
 % =============== 自定义三线表格式 ===============
-\NewTblrEnviron{threetab}
+\NewTblrEnviron{threetab} % 自定义三线表环境 threetab
 \SetTblrInner[threetab]{
-hline{1,Z} = {-}{1.5pt}, % 设置头线和尾线为1.5pt
-    hline{2} = {-}{0.5pt}, % 设置中线 0.5pt
-  }
+  hline{1,Z} = {-}{0.9pt}, % 设置头线和尾线为1.5pt
+  hline{2} = {-}{0.5pt}, % 设置中线 0.5pt
+}
 
 
 
@@ -1473,6 +1471,7 @@ hline{1,Z} = {-}{1.5pt}, % 设置头线和尾线为1.5pt
   \markboth{附录}{附录}
 
 }
+
 
 
 
