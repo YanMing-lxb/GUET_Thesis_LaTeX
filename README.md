@@ -12,24 +12,6 @@
 
 希望该项目能够继续发展，解决各位同学毕业论文写作中的困难。
 
-## 当前状态
-
-**本科毕业论文格式大部分功能已调整完，但细节有待完善，欢迎各位同学参与该项目！**
-
-> PS：目前已调整 cls 样式文件的代码，可以使用`\ifbachelor{}{}`命令修改本科样式。
-
-## 待完善功能
-- [x] 封面目录的单双行切换（使用Tabularray宏包解决，但在标题中需要添加`\\&`命令进行换行）；
-- [x] 盲审版本切换：
-  - [x] 盲审封面制作及版本切换；
-  - [x] 攻读学位期间取得成果的盲审版本切换。
-- [ ] 去除所有其他表格宏包，完全使用Tabularray宏包制表
-  - [ ] 自定义长三线表环境`lthreetab`(要求可跨页，跨页后自带 “题注(续)” )
-  - [x] 自定义普通三线表环境`threetab`
-- [ ] ~~使用文学编程重构项目~~
-
-
-
 ## 获取模板
 
 ### 下载模板
@@ -149,12 +131,40 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 ## 写作工具
 
-- 画表神器 https://www.tablesgenerator.com/
-- $\LaTeX$公式手册 https://www.cnblogs.com/1024th/p/11623258.html
-- 识别公式神器 https://mathpix.com/
-- $LaTeX$公式编辑器 https://www.latexlive.com/home
-- 文献 bib 整理神器 https://dblp.uni-trier.de/
-- $\LaTeX$画图画表常用命令 https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Tip
+- [画表神器](https://www.tablesgenerator.com/)
+- [$\LaTeX$ 公式手册](https://www.cnblogs.com/1024th/p/11623258.html)
+- [$\LaTeX$ 公式手册 wiki](https://zh.wikipedia.org/wiki/Help:%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F)
+- [识别公式神器 Simple $\TeX$](https://simpletex.cn/)
+- [$\LaTeX$ 公式编辑器](https://www.latexlive.com/home)
+- [文献 bib 整理神器](https://dblp.uni-trier.de/)
+- [$\LaTeX$ 画图画表常用命令](https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Tip)
+- [离线OCR软件：Umi-OCR 文字识别工具](https://github.com/hiroi-sora/Umi-OCR)
+- [Tabularray 中文文档](https://gitee.com/nwafu_nan/tabularray-doc-zh-cn)
+- [一个 $\LaTeX$ 入门讲义](https://gitee.com/fpeng1985_admin/latexlecture)
+
+
+## 当前状态
+
+**本科毕业论文格式大部分功能已调整完，但细节有待完善，欢迎各位同学使用并提出建议！**
+
+> PS：目前已调整 cls 样式文件的代码，可以使用`\ifbachelor{}{}`命令修改本科样式。
+
+## 未来工作方向
+- [x] 封面目录的单双行切换（使用Tabularray宏包解决，但在标题中需要添加`\\&`命令进行换行）；
+- [x] 盲审版本切换：
+  - [x] 盲审封面制作及版本切换
+  - [x] 攻读学位期间取得成果的盲审版本切换
+- [ ] 去除所有其他表格宏包，完全使用Tabularray宏包制表
+  - [ ] 自定义长三线表环境`lthreetab`(要求可跨页，跨页后自带 “题注(续)” )
+  - [x] 自定义普通三线表环境`threetab`
+- [ ] ~~使用文学编程重构项目~~
+- [ ] 采用 biblatex 编译参考文献，替换掉 bibtex：
+  - [ ] biblatex 下实现参考文献的编译
+  - [ ] biblatex 下实现攻读学位期间取得成果的自动编译
+  - [ ] biblatex 下实现攻读学位期间取得成果的盲审版本切换
+  - [ ] biblatex 下实现对攻读学位期间取得成果中作者的粗体显示
+
+
 
 ## 反馈与贡献
 
