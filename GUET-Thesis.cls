@@ -1237,11 +1237,11 @@
   }{
     \setlength{\labelsep}{3pt}
     \renewcommand{\bstlabelmark}{loo}
-    \bibliographystyle{./References/GUET-Thesis(base-gbt7714-numerical)} % 插入参考文献的样式.bst文件
+    \bibliographystyle{References/GUET-Thesis(base-gbt7714-numerical)} % 插入参考文献的样式.bst文件
     \bibliography{#2}
     \setlength{\labelsep}{6pt}
   }{
-    \bibliographystyle{./References/GUET-Thesis(base-gbt7714-numerical)} % 插入参考文献的样式.bst文件
+    \bibliographystyle{References/GUET-Thesis(base-gbt7714-numerical)} % 插入参考文献的样式.bst文件
     \bibliography{#2} % 参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib
   }
 }
