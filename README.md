@@ -84,7 +84,8 @@ git clone https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.git
 - 在具有多个子图的情况时，子图与子图之间要留有一定的空间，不要占满，否则会发生自动换行；
 - 子图请用`\subfloat[<子题注>]{\includegraphics[width=0.45\linewidth]{<图片文件名>}}}`命令加入；
 - 使用`\caption[]{}`命令时，如果不需要设置缩写目录的内容，一定要删掉`[]`，否则插图插表索引将不会显示该图\表的目录；
-- 表、图、公式、算法、章节、节的引用请用`\cref{<label>}`命令。
+- 表、图、公式、算法、章节、节的引用请用`\cref{<label>}`命令；
+- 本模板的 `figure` 和 `table` 环境已默认设置 `\centering` 命令，因此使用过程中无需设置 `\centering`。
 
 ### 表格制作
 
@@ -93,7 +94,6 @@ git clone https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.git
 
 ```tex
 \begin{table}
-  \centering
   \caption{三线表示例(tabularray自定义宏包)}
   \begin{threetab}{cc}
     表头1  & 表头2 \\
