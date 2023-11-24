@@ -1145,7 +1145,7 @@
 \counterwithin{table}{chapter}                          % 设置table计数器每章重置
 
 
-% ===============图表题注格式=============== caption 与 subcaption 宏包
+% ===============图表题注格式设置=============== caption 与 subcaption 宏包
 \captionsetup{width=\textwidth - 60pt}                  % 设置图表标题的宽度为页面文本宽度减去 60pt
 \captionsetup[table]{aboveskip=0pt, belowskip=6pt}      % 设置 table 环境
 \captionsetup[figure]{aboveskip=3pt, belowskip=0pt}     % 设置 figure 环境
@@ -1165,6 +1165,13 @@
 % indention 设置从标题第二行起的附加缩进宽度, 例如indention=5mm,其默认值是0pt。
 
 
+% ===============图表公式算法引用样式设置=============== cleveref 宏包
+\crefname{figure}{图}{图} 
+\crefname{table}{表}{表}  
+\crefname{equation}{式}{式}
+\crefname{algorithm}{算法}{算法}
+
+
 % ===============图表字体设置===============
 \AtBeginEnvironment{tabular}{\small}                         % 表格字体小五
 \AtBeginEnvironment{tabular*}{\small}                        % 表格字体小五
@@ -1174,13 +1181,6 @@
 % ===============图表浮动体设置===============
 \AtBeginEnvironment{figure}{\def\@floatboxreset{\centering}} % 让图环境的内容居中
 \AtBeginEnvironment{table}{\def\@floatboxreset{\centering}}  % 让表格环境的内容居中
-
-
-% ===============图表公式算法引用样式设置=============== cleveref 宏包
-\crefname{figure}{图}{图} 
-\crefname{table}{表}{表}  
-\crefname{equation}{式}{式}
-\crefname{algorithm}{算法}{算法}
 
 
 % ===============表格中的线宽间距设置===============
