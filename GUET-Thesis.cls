@@ -123,16 +123,17 @@
             }
 
 
+
+
 % //////////////////////////////////////// 打印与盲审定义 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 % ===============打印选项设置===============
-\newboolean{@pversion}                                             % 新定义一个名为 @pversion 的布尔值
-\setboolean{@pversion}{false}                                      % 设定布尔值的默认值为 false
-\DeclareOption{pversion}{\setboolean{@pversion}{true}}             % 当设定选项为pversion时 @pversion 为 true
-\ProcessOptions\relax
+\newboolean{@pversion}                                                 % 新定义一个名为 @pversion 的布尔值
+\setboolean{@pversion}{false}                                          % 设定布尔值的默认值为 false
+\DeclareOption{pversion}{\setboolean{@pversion}{true}}                 % 当设定选项为pversion时 @pversion 为 true
+\ProcessOptions\relax                                                  % 通常放在类或包文件的可选项声明和处理部分的最后，用来执行用户提供的可选项对应的代码
 
-\newcommand{\ifpversion}[2]{ \ifthenelse{\boolean{@pversion}}{#1}{#2}}
-% 新定义一个命令 \ifpversion 如果 @pversion 为true 则执行 #1 否则 执行 #2
+\newcommand{\ifpversion}[2]{ \ifthenelse{\boolean{@pversion}}{#1}{#2}} % 定义命令 \ifpversion 如果 @pversion 为true 则执行 #1 否则 执行 #2
 
 
 % ==============盲审选项设置===============
@@ -146,7 +147,7 @@
 % ===============定义空白页命令=============== 
 \newcommand\blankpage{ % 定义添加空白页
                         \newpage
-                        \thispagestyle{empty} %没有页眉页脚，空白页
+                        \thispagestyle{empty} % 没有页眉页脚，空白页
                         \null
                         \newpage
                       }
@@ -171,29 +172,29 @@
 
 % //////////////////////////////////////// 字体设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ifwindows
-  \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}                                  % 在Windows平台上设置中文字体为SimSun
-  \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                             % 设置楷体字体为KaiTi 
-  \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimHei}                        % 设置黑体字体为SimHei
+  \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}                                   % 在Windows平台上设置中文字体为SimSun
+  \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                              % 设置楷体字体为KaiTi 
+  \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimHei}                         % 设置黑体字体为SimHei
   \newfontfamily{\heiti@letter}{SimHei}                                                           % 设置字母的黑体字体为SimHei
   \setallmainfonts{Times New Roman}                                                               % 设置英文字体为Times New Roman
 \else
   \ifmacosx
-    \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}                             % 在macOS平台上设置中文字体为Songti SC
-    \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                           % 设置楷体字体为KaiTi
-    \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{STHeiti}                     % 设置黑体字体为STHeiti
+    \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}                              % 在macOS平台上设置中文字体为Songti SC
+    \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                            % 设置楷体字体为KaiTi
+    \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{STHeiti}                      % 设置黑体字体为STHeiti
     \newfontfamily{\heiti@letter}{STHeiti}                                                        % 设置字母的黑体字体为STHeiti
     \setallmainfonts{Times New Roman}                                                             % 设置英文字体为Times New Roman
   \else
-    \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true,Path = ./Fonts/]{fzsong.ttf}            % 在其他平台上设置中文字体为fzsong.ttf，并指定字体文件路径为./Fonts/
-    \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5,Path=./Fonts/]{fzkaiti.ttf}                       % 设置楷体字体为fzkaiti.ttf，并指定字体文件路径为./Fonts/
-    \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true,Path = ./Fonts/]{fzhei.ttf}   % 设置黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
+    \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true,Path = ./Fonts/]{fzsong.ttf}             % 在其他平台上设置中文字体为fzsong.ttf，并指定字体文件路径为./Fonts/
+    \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5,Path=./Fonts/]{fzkaiti.ttf}                        % 设置楷体字体为fzkaiti.ttf，并指定字体文件路径为./Fonts/
+    \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true,Path = ./Fonts/]{fzhei.ttf}    % 设置黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
     \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./Fonts/]                                     % 设置字母的黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
-    \setallmainfonts[
-                      BoldFont=timesbd.ttf,         % 粗体字体为timesbd.ttf
-                      ItalicFont=timesi.ttf,        % 斜体字体为timesi.ttf
-                      BoldItalicFont=timesbi.ttf,   % 粗斜体字体为timesbi.ttf
-                      Path=./Fonts/                 % 指定字体文件路径为./Fonts/
-                    ]{times.ttf}                    % 设置英文字体为times.ttf
+    \setallmainfonts[                                                                             % 英文字体设置
+                      BoldFont=timesbd.ttf,                                                       % 粗体字体为timesbd.ttf
+                      ItalicFont=timesi.ttf,                                                      % 斜体字体为timesi.ttf
+                      BoldItalicFont=timesbi.ttf,                                                 % 粗斜体字体为timesbi.ttf
+                      Path=./Fonts/                                                               % 指定字体文件路径为./Fonts/
+                    ]{times.ttf}                                                                  % 设置英文字体为times.ttf
   \fi
 \fi
 
@@ -236,7 +237,7 @@
 \renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
 
 
-% ===============封面信息变量定义===============
+% ===============封面信息引用定义===============
 \newcommand{\zh@thetitle}{\quad}         % 标题
 \newcommand{\en@thetitle}{\quad}         % 英文标题
 \newcommand{\theauthor}{\quad}           % 作者
@@ -251,12 +252,11 @@
 \newcommand{\thedegreecategories}{\quad} % 学位类别
 
 
-% ===============封面信息获取===============
+% ===============封面信息定义===============
 \renewcommand{\title}[2]{
-                          \renewcommand{\zh@thetitle}{#1}                     % 标题
+                          \renewcommand{\zh@thetitle}{#1}                     % 中文标题
                           \renewcommand{\en@thetitle}{#2}                     % 英文标题
                         }
-
 \newcommand{\secrets}[1]{\renewcommand{\thesecrets}{#1}}                      % 密级
 \renewcommand{\author}[1]{\renewcommand{\theauthor}{#1}}                      % 作者
 \renewcommand{\date}[1]{\renewcommand{\thedate}{#1}}                          % 日期
@@ -305,14 +305,13 @@
 \ProcessOptions\relax
 
 
-% ===============封面制作===============
-% 新定义判断变量，如果学位名是专业硕士则执行#1命令，否执行#2命令
-\newcommand{\ifbachelor}[2]{ \ifthenelse{\equal{\degreename}{本科}}{#1}{#2}}
-\newcommand{\ifpromaster}[1]{ \ifthenelse{\equal{\degreename}{专业硕士}}{#1}{}}
-\newcommand{\ifmaster}[1]{ \ifthenelse{\equal{\degreename}{硕士}}{#1}{}}
-\newcommand{\ifojmaster}[1]{ \ifthenelse{\equal{\degreename}{在职硕士}}{#1}{}}
-\newcommand{\ifptmaster}[1]{ \ifthenelse{\equal{\degreename}{非全硕士}}{#1}{}}
-\newcommand{\ifdoctor}[1]{ \ifthenelse{\equal{\degreename}{博士}}{#1}{}}
+% ===============判断学位类别的命令定义===============
+\newcommand{\ifbachelor}[2]{\ifthenelse{\equal{\degreename}{本科}}{#1}{#2}}                                % 如果学位名是本科则执行#1命令，否执行#2命令
+\newcommand{\ifpromaster}[1]{\ifthenelse{\equal{\degreename}{专业硕士}}{#1}{}}                              % 如果学位名是专业硕士则执行#1命令
+\newcommand{\ifmaster}[1]{\ifthenelse{\equal{\degreename}{硕士}}{#1}{}}                                     % 如果学位名是硕士则执行#1命令
+\newcommand{\ifojmaster}[1]{\ifthenelse{\equal{\degreename}{在职硕士}}{#1}{}}                               % 如果学位名是在职硕士则执行#1命令
+\newcommand{\ifptmaster}[1]{\ifthenelse{\equal{\degreename}{非全硕士}}{#1}{}}                               % 如果学位名是非全硕士则执行#1命令
+\newcommand{\ifdoctor}[1]{\ifthenelse{\equal{\degreename}{博士}}{#1}{}}                                     % 如果学位名是博士则执行#1命令
 \newcommand{\ifpro}[2]{\ifthenelse{\equal{\degreename}{专业硕士} \or \equal{\degreename}{非全硕士}}{#1}{#2}} % 判断是否是专业硕士或非全硕士
 
 
@@ -337,8 +336,6 @@
       \end{flushright}
     \end{textblock}
   }
-  ~\\
-
 
   % ================设置LOGO================
   \ifbachelor{ % 本科LOGO👇
@@ -362,7 +359,7 @@
   }
 
 
-  % ================设置大题目================
+  % ================设置学位类别================
   \begin{textblock}{10}(5.5,7.85)
     \centering
     \ifbachelor{% 本科👇
@@ -402,12 +399,12 @@
       \centering
       \begin{tblr}[expand=\expanded]
         {
-          stretch=1.2, % 单元格文本行距拉伸系数
-          colspec = {c c}, % 设置列对齐方式
-          column{1} = {1.4cm}, % 设置第一列宽度
+          stretch=1.2,                                                          % 单元格文本行距拉伸系数
+          colspec = {c c},                                                      % 设置列对齐方式
+          column{1} = {1.4cm},                                                  % 设置第一列宽度
           column{2} = {11.4cm,font =\bfseries\fontsize{16pt}{16pt}\selectfont}, % 设置第二列的宽度、字体大小粗细
-          hline{2-Z} = {2}{1pt}, % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
-          belowsep = {-4pt} % 单元格底线向上偏移4pt
+          hline{2-Z} = {2}{1pt},                                                % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
+          belowsep = {-4pt}                                                     % 单元格底线向上偏移4pt
         }
         \bfseries\fontsize{16bp}{16bp}\selectfont 题目: & \expanded{\zh@thetitle@tb{}}
       \end{tblr}
@@ -418,9 +415,9 @@
     }{ % 非盲审封面👇
       \begin{textblock}{18}(1.4,9.6)
         \centering
-        \ifpromaster{\vspace{0.9cm}}             % 专硕👇
-        \ifojmaster{\vspace{0.9cm}}              % 在职学硕👇
-        \ifptmaster{\vspace{0.9cm}}              % 非全专硕👇
+        \ifpromaster{\vspace{0.9cm}} % 专硕
+        \ifojmaster{\vspace{0.9cm}}  % 在职学硕
+        \ifptmaster{\vspace{0.9cm}}  % 非全专硕
         \begin{tblr}[expand=\expanded]
           {
             stretch=2,                                                            % 单元格文本行距拉伸系数
@@ -452,11 +449,11 @@
           hline{2-Z} = {2}{1pt},                                               % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
           belowsep = {-7pt}                                                    % 单元格底线向上偏移7pt
         }
-        学\hspace{0.36cm} \qquad \qquad 号:                                                    & \thestudentnumber \\
-        姓\hspace{0.36cm} \qquad \qquad 名:                                                    & \theauthor        \\
-        学\hspace{0.36cm} \qquad \qquad 院:                                                    & \theschool        \\
-        专\quad \hspace{0.36cm} \qquad \quad 业:                                               & \themajor         \\
-        指\hspace{0.38cm} 导\hspace{0.38cm} 教\hspace{0.38cm} 师:                              & \theadvisor       \\
+        学\hspace{0.36cm} \qquad \qquad 号:                                                     & \thestudentnumber \\
+        姓\hspace{0.36cm} \qquad \qquad 名:                                                     & \theauthor        \\
+        学\hspace{0.36cm} \qquad \qquad 院:                                                     & \theschool        \\
+        专\quad \hspace{0.36cm} \qquad \quad 业:                                                & \themajor         \\
+        指\hspace{0.38cm} 导\hspace{0.38cm} 教\hspace{0.38cm} 师:                               & \theadvisor       \\
         指\hspace{0.1pt} 导\hspace{0.1pt} 教\hspace{0.1pt} 师\hspace{0.1pt} 职\hspace{0.1pt} 称: & \theprotitle
       \end{tblr}
     \end{textblock}
@@ -473,7 +470,7 @@
 
         专\qquad 业：\themajor
 
-        研究方向：\theresearchdirection
+        研究方向：   \theresearchdirection
       \end{textblock}
     }{ % 非盲审封面👇
       \begin{textblock}{15}(2.9,16.3) %
@@ -488,9 +485,9 @@
               hline{2-Z} = {2}{1.25pt},                                              % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
               belowsep = {-11pt}                                                     % 单元格底线向上偏移11pt
             }
-            研\quad 究\quad 生\quad 学\quad 号:                    & \thestudentnumber                 \\
-            研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor                        \\
-            指导教师姓名、职称:                                     & \theadvisor \enspace \theprotitle \\
+            研\quad 究\quad 生\quad 学\quad 号:                     & \thestudentnumber                 \\
+            研\quad 究\quad 生\quad 姓\quad 名:                     & \theauthor                        \\
+            指导教师姓名、职称:                                      & \theadvisor \enspace \theprotitle \\
             申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \thedegreecategories              \\
             领\hspace{7em}域:                                      & \themajor                         \\
             论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedate
@@ -509,13 +506,15 @@
             研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor                        \\
             指导教师姓名、职称:                                     & \theadvisor \enspace \theprotitle \\
             申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories              \\
-            学\qquad 科、专\qquad 业:                              & \themajor                         \\
+            学\qquad 科、专\qquad 业:                               & \themajor                         \\
             论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedate
           \end{tblr}
         }
       \end{textblock}
     }
   }
+  ~\\ % 在当前位置插入一个不可断行的空格，并开始新的一行
+
   \setcounter{page}{1}
   \setlength{\extrarowheight}{2pt}
 
@@ -523,15 +522,14 @@
   \ifpversion{\blankpage}{}
 }
 
-
-% % ====================导入封面PDF文件设置==================== 
-%%%% 由于已经开发了盲审封面，该功能暂时没有用处，所以注释掉 %%%%
-% \newcommand{\bindpdfcover}[1]{
-%   \pdfbookmark{封面}{cover}
-%   \includepdf[pages=-]{#1}
-%   \newpage\setcounter{page}{0}
-% }
-
+% ------ 由于已经开发了盲审封面，该功能暂时没有用处，所以注释掉 ------
+% % ====================导入封面PDF文件设置====================   |
+% \newcommand{\bindpdfcover}[1]{                                 |
+%   \pdfbookmark{封面}{cover}                                    |
+%   \includepdf[pages=-]{#1}                                     |
+%   \newpage\setcounter{page}{0}                                 |
+% }                                                              |
+% ---------------------------------------------------------------
 
 
 
@@ -627,6 +625,7 @@
       日期： \\
     }
   \end{spacing}
+  
   \ifpversion{\blankpage}{}
 }
 
@@ -670,11 +669,11 @@
   \pagenumbering{Roman}                                               % 设置页码显示为罗马数字
  
   \ifbachelor{ % 本科摘要页眉页码设置 👇
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 桂林电子科技大学毕业设计（论文）} % 设置页眉
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 桂林电子科技大学毕业设计（论文）}                                 % 设置页眉
     \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref{page:tableofcontents} 页} % 设置页脚
   }{ % 硕博摘要页眉页码设置 👇
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要} % 设置页眉
-    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}  % 罗马页码居中显示
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 摘\quad 要}                                                     % 设置页眉
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}                                                       % 罗马页码居中显示
   }
 }{
   \ifpversion{
@@ -711,7 +710,6 @@
     \addcontentsline{toc}{chapter}{\bfseries ABSTRACT} % 设置在目录显示
   }
 
-  % 设置页眉页脚
   \fancyhf{}
 
   \ifbachelor{ % 本科英文摘要页眉页码设置 👇
@@ -754,11 +752,11 @@
   \newcommand{\thesistableofcontents}
   {
     \renewcommand{\bachelorchapterformat}{\centering} % 目录标题居中
-    \begin{spacing}{2} % 本科目录两倍行距
+    \begin{spacing}{2}                                % 本科目录两倍行距
       \tableofcontents
     \end{spacing}
-    \renewcommand{\bachelorchapterformat}{} % 还原初始设置
-    \label{page:tableofcontents} % 设置pageref获取页码数的标记
+    \renewcommand{\bachelorchapterformat}{}           % 还原初始设置
+    \label{page:tableofcontents}                      % 设置pageref获取页码数的标记
   }
 }{ % 硕博目录标题统一居中无需更改 👇
   \newcommand{\thesistableofcontents}{\tableofcontents}
@@ -786,7 +784,7 @@
 
 
 % ====================目录深度设置====================
-\setcounter{tocdepth}{2}                   % 设置目录深度
+\setcounter{tocdepth}{2}                             % 设置目录深度
 
 
 % =========================目录样式设置=========================
@@ -803,7 +801,7 @@
 
 % =========================目录缩进设置=========================
 \ifbachelor{ % 本科目录格式 👇
-  \cftsetindents{chapter}{0pt}{20pt} % 一个空格约为5磅
+  \cftsetindents{chapter}{0pt}{20pt} % 一个中文空格约为5磅
   \cftsetindents{section}{0pt}{25pt}
   \cftsetindents{subsection}{0pt}{30pt}
   \cftsetindents{subsubsection}{0pt}{41pt}
@@ -861,8 +859,8 @@
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{插图索引}}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   }
-  \addtolength{\cftfignumwidth}{12pt} % 设置长度命令，使命令\cftfignumwidth的长度设置为12pt，条目编号与条目内容之间占用的宽度, 例如：图 1-2 [\cftfignumwidth] 电子战飞机
-  \renewcommand{\cftfigpresnum}{图}   % 条目编号前内容  
+  \addtolength{\cftfignumwidth}{12pt}                   % 设置长度命令，使命令\cftfignumwidth的长度设置为12pt，条目编号与条目内容之间占用的宽度, 例如：图 1-2 [\cftfignumwidth] 电子战飞机
+  \renewcommand{\cftfigpresnum}{图}                     % 条目编号前内容  
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为0 就会在目录中显示
 }{}{}
 
@@ -914,7 +912,7 @@
 
 
 % ====================插表索引标题内容设置====================
-\renewcommand{\listtablename}{插表索引}           % 修改插表索引名称 
+\renewcommand{\listtablename}{插表索引} % 修改插表索引名称 
 
 
 % =========================插表索引内页码宽度设置=========================
@@ -929,7 +927,7 @@
 % ====================符号说明页面设置==================== 定义符号说明命令
 \newcommand{\thesissymbollist}
 {
-  \renewcommand{\nomname}{符号说明} % 修改符号说明标题的名称。
+  \renewcommand{\nomname}{符号说明}                                         % 修改符号说明标题的名称。
   \addcontentsline{toc}{chapter}{\texorpdfstring{\heiti 符号说明}{符号说明}} % 设置在目录显示符号说明
 
   \ifbachelor{ % 设置本科插表索引标题 👇
@@ -991,7 +989,7 @@
   }
   \itemsep\nomitemsep % 应用上面设置的术语垂直行间距
 }
-\makenomenclature % 应用符号表
+\makenomenclature     % 应用符号表
 
 
 
@@ -1017,10 +1015,10 @@
     \hrule height\headrulewidth width\headwidth%
     \vskip 1.2\singlelineskip}
 }{ % 硕博页眉双线 👇
-  \newdimen\doublelineskip % 两横线间的距离
+  \newdimen\doublelineskip           % 两横线间的距离
   \setlength\doublelineskip{1pt}
   \renewcommand\headrule{ 
-    \hrule height\headrulewidth width\headwidth%
+    \hrule height\headrulewidth width\headwidth
     \vskip 1.2\doublelineskip
     \hrule height\headrulewidth width\headwidth
   }
@@ -1029,7 +1027,7 @@
 
 
 % ====================正文页眉设置====================
-\renewcommand{\chaptermark}[1]{\markboth{\thechapter\hspace*{5.25pt}#1}{}} % 修改页眉章节显示内容 %\markboth{<左面页眉>}{<右面页眉>}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\hspace*{5.25pt}#1}{}} % 修改页眉章节显示内容 \markboth{<左面页眉>}{<右面页眉>}
 
 \ifbachelor{ % 本科页眉文字 👇
   \newcommand{\standardheader}{
@@ -1105,7 +1103,7 @@
   \renewcommand\thechapter{\arabic{chapter}}
   \renewcommand\thesection{\arabic{chapter}.\arabic{section}}
 }{ % 硕博小节编号格式 👇
-  \renewcommand\thechapter{第\zhnumber{\arabic{chapter}}章} % \zhnumber{计数器}，使计数器值输出为汉字格式。
+  \renewcommand\thechapter{第\zhnumber{\arabic{chapter}}章}       % \zhnumber{计数器}，使计数器值输出为汉字格式。
   \renewcommand\thesection{\S\arabic{chapter}.\arabic{section}}
 }
 % \the计数器，显示计数器的值，该命令只使用于序号计数器，例如\thepage显示当前页码。
@@ -1189,10 +1187,10 @@
 
 
 % =============== 自定义三线表格式 ===============
-\NewTblrEnviron{threetab} % 自定义三线表环境 threetab
+\NewTblrEnviron{threetab}  % 自定义三线表环境 threetab
 \SetTblrInner[threetab]{
   hline{1,Z} = {-}{0.9pt}, % 设置头线和尾线为1.5pt
-  hline{2} = {-}{0.5pt}, % 设置中线 0.5pt
+  hline{2} = {-}{0.5pt},   % 设置中线 0.5pt
 }
 
 

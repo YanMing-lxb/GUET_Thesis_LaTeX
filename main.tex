@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-18 08:50:38 +0800
-% LastEditTime : 2023-11-24 23:08:11 +0800
+% LastEditTime : 2023-11-26 14:03:16 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\main.tex
 % Description  : Version 1.8 更新请关注 https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX
@@ -29,7 +29,7 @@
 % ------------------------------------------------------------------------------------------
 %     前言区域
 % ------------------------------------------------------------------------------------------
-\documentclass[master,pversion]{GUET-Thesis} 
+\documentclass[master]{GUET-Thesis} 
 % pversion:打印版 bversion:盲审版 
 % bachelor:本科 master:学硕 promaster:专硕 doctor:博士 ojmaster 在职硕士 ptmaster 非全专硕
 
@@ -39,23 +39,32 @@
 % \usepackage{showframe}                                                     % 显示排版框架
 % \TPshowboxestrue                                                           % 显示textblock 框架，方便调整位置
 \usepackage[l2tabu, orthodox]{nag}                                           % 检查是否有已被淘汰或过时的宏包
-\graphicspath{{./Pictures/},{./Pictures/Chapter1/},{./Pictures/Chapter2/},{./Pictures/Chapter3/},{./Pictures/Chapter4/},{./Pictures/Chapter5/}} % 图片所在位置
+
+\graphicspath{
+        {./Pictures/},
+        {./Pictures/Chapter1/},
+        {./Pictures/Chapter2/},
+        {./Pictures/Chapter3/},
+        {./Pictures/Chapter4/},
+        {./Pictures/Chapter5/}
+}                                                                           % 图片所在位置，根据需求进行修改
 
 
 % ------------------------------------------------------------------------------------------
 %     封面信息
 % ------------------------------------------------------------------------------------------
 % \secrets{绝密}                                                            % 不涉密请注释该命令，不要空着
-\title{基于嵌入式散热模块的微通道散热技术研究}{Research on microchannel heat dissipation technology \\& based on embedded heat dissipation module} % 题目{中文}{英文}  在标题中插入“\\&”命令进行换行
+\title{基于嵌入式散热模块的微通道散热技术研究}{Research on microchannel heat dissipation technology \\& based on embedded heat dissipation module} 
+                                                                            % 题目{中文}{英文}  在标题中插入“\\&”命令进行换行
 \author{焱铭}
 \advisor{焱铭}                                                              % 导师姓名
 \protitle{教授}                                                             % 导师职称.
 \school{机电工程学院}                                                        % 所在学院
-\major{机械工程}                                                            % 学科专业或领域
-\studentnumber{2020XXX}                                                    % 学号
-\researchdirection{电子器件散热}                                            % 研究领域（盲审用）
-\degreecategories{工学硕士}                                                 % 申请学位门类或类别
-\date{\today}                                                              % 可更换为具体日期如：\date{2023年5月28日}
+\major{机械工程}                                                             % 学科专业或领域
+\studentnumber{2020XXX}                                                     % 学号
+\researchdirection{电子器件散热}                                             % 研究领域（盲审用）
+\degreecategories{工学硕士}                                                  % 申请学位门类或类别
+\date{\today}                                                               % 可更换为具体日期如：\date{2023年5月28日}
 
 
 % ------------------------------------------------------------------------------------------
@@ -82,7 +91,7 @@
 
     \input{Chapters/Conclusion}                                            % 总结与展望
 % ------------------------------------------------------------------------------------------
-    \thesisbibliography{References/reference.bib}                        % 参考文献
+    \thesisbibliography{References/reference.bib}                          % 参考文献
     % 默认调用 GUET-Thesis(base-gbt7714-numerical) 参考文献样式，当参考文献数目超过100时，可以使用large选项调整编号
     % 如\thesisbibliography{large}{References/reference.bib} 
 
