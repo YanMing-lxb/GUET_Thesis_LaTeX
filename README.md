@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2023-11-26 21:11:01 +0800
+ * LastEditTime : 2023-11-26 21:13:25 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \GUET_Thesis_LaTeX\README.md
  * Description  : README文档
@@ -193,7 +193,7 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
   - [ ] biblatex 下实现攻读学位期间取得成果的自动编译
   - [ ] biblatex 下实现攻读学位期间取得成果的盲审版本切换
   - [ ] biblatex 下实现对攻读学位期间取得成果中作者的粗体显示
-- [] `biblatex-gb7714-2015` 宏包存在学位论文显示url的bug，而条目没有url参数时则显示 In collab. with 字样，目前以用临时方案解决
+- [ ] `biblatex-gb7714-2015` 宏包存在学位论文显示url的bug，而条目没有url参数时则显示 In collab. with 字样，目前以用临时方案解决
 
 
 
