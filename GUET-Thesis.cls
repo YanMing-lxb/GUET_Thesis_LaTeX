@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-11-26 22:35:49 +0800
+% LastEditTime : 2023-11-26 23:11:28 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : 
@@ -1398,12 +1398,12 @@
 
 % //////////////////////////////////////// 攻读学位期间取得成果设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-\defbibheading{BibHeadStyle}[\bibname]{\noindent\normalsize #1} % 自定义title样式
+\defbibheading{BibHeadStyle}[\bibname]{\noindent\normalsize #1}                            % 自定义title样式
 
 % ====================取得成果设置==================== 定义攻读学位期间取得成果命令
 \newcommand{\thesisaccomplish}[1]{
-    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %只显示一级标题
-    \setcounter{section}{0} %section计数器清零 
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}                                  % 只显示一级标题
+    \setcounter{section}{0}                                                                % section计数器清零 
     
     \chapter*{攻读\degreename{}学位期间取得的成果}
     \addcontentsline{toc}{chapter}{攻读\degreename{}学位期间取得的成果}
@@ -1412,23 +1412,23 @@
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
     \thispagestyle{fancy}
     
-    \renewcommand{\bibfont}{\normalsize} % 设置参考文献字体小四
+    \renewcommand{\bibfont}{\normalsize}                                                   % 设置参考文献字体小四
     \begin{refsection}[#1]
         \nocite{*}
-        \settoggle{bbx:gbtype}{false} % 局部设置不输出文献类型和载体标识符
-        \settoggle{bbx:gbannote}{true} % 局部设置输出附加的annote/annotation信息
-        \settoggle{bbx:gbpub}{false} % 局部设置不输出出版信息
+        \settoggle{bbx:gbtype}{false}                                                      % 局部设置不输出文献类型和载体标识符
+        \settoggle{bbx:gbannote}{true}                                                     % 局部设置输出附加的annote/annotation信息
+        \settoggle{bbx:gbpub}{false}                                                       % 局部设置不输出出版信息
         \printbibliography[heading=BibHeadStyle,type=report ,title=参与项目：]
     \end{refsection}
     \begin{refsection}[#1]
         \nocite{*}
-        \def\blx@maxbibnames{5} % 局部调整作者数量
+        \def\blx@maxbibnames{5}                                                            % 局部调整作者数量
         \settoggle{bbx:gbannote}{true}
         \printbibliography[heading=BibHeadStyle,type=article,title=发表论文：]
     \end{refsection}
     \begin{refsection}[#1]
         \nocite{*}
-        \def\blx@maxbibnames{5} % 局部调整作者数量
+        \def\blx@maxbibnames{5}
         \settoggle{bbx:gbannote}{true}
         \printbibliography[heading=BibHeadStyle,type=patent,title=发明专利：]
     \end{refsection}
