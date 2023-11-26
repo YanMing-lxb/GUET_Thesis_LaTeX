@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-11-26 23:11:28 +0800
+% LastEditTime : 2023-11-26 23:38:00 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : 
@@ -1444,6 +1444,16 @@
         \printbibliography[heading=BibHeadStyle,type=misc,title=科研竞赛获奖：]
     \end{refsection}
 }
+
+
+% ====================盲审版去作者信息设置==================== 
+\ifbversion{ % 盲审版则去掉取得成果的作者信息
+    \AtEveryBibitem{                            % 清除指定refsection环境中的作者姓名
+        \ifnumgreater{\value{refsection}}{1}    % 判断 当前refsection序号是否大于1
+           {\clearname{author}}                 % 是则清除作者信息
+           {}                                   % 否则不执行操作
+    }
+}{}
 
 % \newcommand{\thesisaccomplish}{
 %   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
