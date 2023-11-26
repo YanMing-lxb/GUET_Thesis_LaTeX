@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2023-11-26 14:21:09 +0800
+ * LastEditTime : 2023-11-26 21:11:01 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \GUET_Thesis_LaTeX\README.md
  * Description  : README文档
@@ -31,7 +31,7 @@
 
 ***点个⭐支持一下！***
 
-此项目提供用于排版桂林电子科技大学本硕博毕业论文的 $\LaTeX$ 模板类，旨在帮助桂林电子科技大学的毕业生高效地完成毕业论文的写作。该模板由机电 C323 李雪斌发起，参考电子科大王稳师兄所编写的[ThesisUESTC-电子科技大学毕业论文模板](https://github.com/bdebye/thesisuestc)。参考文献格式".bst"文件根据 GB/T 7714-2015 BibTeX Style 宏包配置参数进行自定义样式而来，符合桂林电子科技大学学位论文对参考文献格式的要求。在修改参考文献格式的过程中，感谢[GB/T 7714-2015 BibTeX Style 项目](https://github.com/zepinglee/gbt7714-bibtex-style)的 Zeping Lee 大佬对我的帮助。
+此项目提供用于排版桂林电子科技大学本硕博毕业论文的 $\LaTeX$ 模板类，旨在帮助桂林电子科技大学的毕业生高效地完成毕业论文的写作。该模板由机电 C323 李雪斌发起，参考电子科大王稳师兄所编写的[ThesisUESTC-电子科技大学毕业论文模板](https://github.com/bdebye/thesisuestc)。参考文献格式符合桂林电子科技大学学位论文对参考文献格式的要求。
 
 *该模板符合桂林电子科技大学研究生学位论文的基本要求与书写格式-2022.02.23。*
 
@@ -154,6 +154,11 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 中英文摘要应包含在`chineseabstract`和`englishabstract`环境中，对应的关键字使用`\chinesekeyword`和`\englishkeyword`命令添加，并包含在相应的环境中。
 
+### 参考文献
+参考文献使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出参考文献时，导出类型要选择 `biblatex`。
+
+注意：使用该模板时，`biblatex` 和 `biblatex-gb7714-2015` 宏包均要更新到最新版本，否则会报错。
+
 ## 写作工具
 
 - [画表神器](https://www.tablesgenerator.com/)
@@ -184,10 +189,11 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
   - [x] 自定义普通三线表环境`threetab`
 - [ ] ~~使用文学编程重构项目~~
 - [ ] 采用 biblatex 编译参考文献，替换掉 bibtex：
-  - [ ] biblatex 下实现参考文献的编译
+  - [X] biblatex 下实现参考文献的编译
   - [ ] biblatex 下实现攻读学位期间取得成果的自动编译
   - [ ] biblatex 下实现攻读学位期间取得成果的盲审版本切换
   - [ ] biblatex 下实现对攻读学位期间取得成果中作者的粗体显示
+- [] `biblatex-gb7714-2015` 宏包存在学位论文显示url的bug，而条目没有url参数时则显示 In collab. with 字样，目前以用临时方案解决
 
 
 

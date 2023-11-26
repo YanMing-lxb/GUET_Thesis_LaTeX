@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-11-26 14:20:36 +0800
+% LastEditTime : 2023-11-26 20:57:18 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -120,12 +120,16 @@
 
 % ===============参考文献相关宏包===============
 \RequirePackage[
-                  numbers,                            % 引用的标号为数字
-                  sort&compress,                      % 引用的标号按顺序排序并压缩
-                  super,                              % 引用的上标样式
-                  square                              % 引用的标号以方括号包围
-                ]{natbib}                             % 用于设置参考文献引用的格式
-\RequirePackage[nottoc]{tocbibind}                    % 用于将参考文献列表快速插入目录中，nottoc 表示不将参考文献列表本身添加到目录中
+                  backend=biber,                        % 设置后端程序为biber
+                  doi=false,                            % 不显示doi
+                  url=false,                            % 不显示url
+                  style=gb7714-2015,                    % 引用和参考文献样式
+                  gbmedium=false,                       % 载体标识符不显示OL
+                  % gbpub=true,                           % 显示出版信息
+                  % gbnamefmt=lowercase,                  % 姓名小写
+                  % gbpunctin=false,                      % 关闭inbook,incollection,inproceedings中析出来源文献前//符号
+                  gbalign=left,                         % 标签左对齐
+                ]{biblatex}
 
 % ===============条件判断宏包宏包===============
 \RequirePackage{ifxetex}                              % 判断是否使用 XeLaTeX 编译，以决定后续的包和设置的使用
@@ -1303,55 +1307,11 @@
 % //////////////////////////////////////// 参考文献设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 % ====================参考文献设置====================      
-\renewcommand{\bibname}{参考文献} % 使默认的参考文献名字改为参考文献显示     
-\newcommand{\thesisbibliography}{\thesisloadbibliography}
-\renewcommand{\@biblabel}[1]{[#1]\hfill}
-
-\newenvironment{thesisthebibliography}
-{
-  \begin{thebibliography}{lo}
-    \interlinepenalty=10000
-    \begin{spacing}{1.667}
-      \thispagestyle{fancy}
-      \small
-      }{
-    \end{spacing}
-  \end{thebibliography}
-}
-
-\pretocmd{\bibliography} % 设置页眉页脚行间距
-{
-  \newpage
-  \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 参考文献}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
-  \interlinepenalty=10000
-  \begin{spacing}{1.667}
-}{}{}
-
-\apptocmd{\bibliography}
-{
-  \end{spacing}
-}{}{}
-
-\setlength{\bibsep}{0pt} % 消除参考文献条目间的额外行间距
-
-\newcommand{\bstlabelmark}{lo}
-\newcommand{\thesisloadbibliography}[2][]{
-  \small
-  \ifthenelse{ % \ifthenelse{判断条件}{肯定结构}{否定结构}
-    \equal{#1}{large} % \equal{#1}{nocite} %判断#1是否等于notice
-  }{
-    \setlength{\labelsep}{3pt}
-    \renewcommand{\bstlabelmark}{loo}
-    \bibliographystyle{References/GUET-Thesis(base-gbt7714-numerical)} % 插入参考文献的样式.bst文件
-    \bibliography{#2}
-    \setlength{\labelsep}{6pt}
-  }{
-    \bibliographystyle{References/GUET-Thesis(base-gbt7714-numerical)} % 插入参考文献的样式.bst文件
-    \bibliography{#2} % 参考文献格式，用于指定排版参考文献所使用的文献格式文件名.bib
-  }
-}
+\setcounter{gbrefcompress}{3}                                                         % 参考文献引用从第三篇开始压缩
+\renewcommand{\bibfont}{\small}                                                       % 设置参考文献字体小五
+\setlength{\bibitemsep}{0pt}                                                          % 每一条参考文献之间的间隔
+\AtEveryBibitem{\clearfield{url}}                                                     % 清除url信息 用以解决 url=false 命令在thesis中失效的Bug
+\newcommand{\thesisbibliography}{\printbibliography[heading=bibintoc,title=参考文献]}  % 自定义参考文献命令，bibintoc 目录中显示参考文献
 
 
 

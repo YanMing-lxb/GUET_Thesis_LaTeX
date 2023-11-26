@@ -16,10 +16,10 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-18 08:50:38 +0800
-% LastEditTime : 2023-11-26 14:18:38 +0800
+% LastEditTime : 2023-11-26 18:20:15 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\main.tex
-% Description  : Version 1.9 更新请关注 https://github.com/YanMing-lxb/GUET_Thesis_LaTeX
+% Description  : Version 2.0 更新请关注 https://github.com/YanMing-lxb/GUET_Thesis_LaTeX
 %  -----------------------------------------------------------------------
 %
 
@@ -48,7 +48,7 @@
         {./Pictures/Chapter4/},
         {./Pictures/Chapter5/}
 }                                                                           % 图片所在位置，根据需求进行修改
-
+\addbibresource[location=local]{./References/reference.bib}                 % biblatex 宏包的参考文献数据源加载方式
 
 % ------------------------------------------------------------------------------------------
 %     封面信息
@@ -71,8 +71,8 @@
 %     正文
 % ------------------------------------------------------------------------------------------
 \begin{document}
-    \makecover % 封面
-    \originalitydeclaration % 独创性声明
+    \makecover                                                             % 封面
+    \originalitydeclaration                                                % 独创性声明
     % \signatureofdeclaration{./Chapters/独创性声明(示例).pdf}              % 可使用已签字的独创性声明PDF文件
     \input{Chapters/Abstract}                                              % 摘要
 % ------------------------------------------------------------------------------------------   
@@ -91,14 +91,7 @@
 
     \input{Chapters/Conclusion}                                            % 总结与展望
 % ------------------------------------------------------------------------------------------
-    \thesisbibliography{References/reference.bib}                          % 参考文献
-    % 默认调用 GUET-Thesis(base-gbt7714-numerical) 参考文献样式，当参考文献数目超过100时，可以使用large选项调整编号
-    % 如\thesisbibliography{large}{References/reference.bib} 
-
-% ------------------------------------------------------------------------------------------
-    % 此处一般不用，除非要自定义参考文献样式，更换参考文献样式文件
-    % \bibliographystyle{GUET-Thesis(base-gbt7714-numerical)}              % 自定义参考文献样式
-    % \bibliography{reference} % 参考文献库
+    \thesisbibliography                                                    % 参考文献
 % ------------------------------------------------------------------------------------------
     \thesisacknowledgement                                                 % 致谢
     \thesisaccomplish                                                      % 攻读专业硕士学位期间取得的成果
