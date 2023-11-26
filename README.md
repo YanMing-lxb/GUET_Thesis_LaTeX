@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2023-11-26 23:01:00 +0800
+ * LastEditTime : 2023-11-26 23:08:27 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \GUET_Thesis_LaTeX\README.md
  * Description  : README文档
@@ -170,8 +170,6 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 | 发明专利     | 专利            | patent           |
 | 软件著作权   | 软件            | software         |
 | 科研竞赛获奖 | 文档            | misc             |
-
-<!-- 对于参与项目，在 Zotero 的 `系列标题` 项或 bib 文件的 `annotation` 中输入 -->
 
 在 Zotero 的 `其他` 项或 bib 文件的 `annotation` 中输入附加信息，如期刊论文分区，作者排名，科研竞赛排名等。
 
