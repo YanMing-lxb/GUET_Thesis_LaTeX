@@ -16,7 +16,32 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-11-26 20:57:18 +0800
+% LastEditTime : 2023-11-26 22:35:49 +0800
+% Github       : https://github.com/YanMing-lxb/
+% FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
+% Description  : 
+%  -----------------------------------------------------------------------
+%
+
+%
+%  =======================================================================
+%  ····Y88b···d88P················888b·····d888·d8b·······················
+%  ·····Y88b·d88P·················8888b···d8888·Y8P·······················
+%  ······Y88o88P··················88888b·d88888···························
+%  ·······Y888P··8888b···88888b···888Y88888P888·888·88888b·····d88b·······
+%  ········888······"88b·888·"88b·888·Y888P·888·888·888·"88b·d88P"88b·····
+%  ········888···d888888·888··888·888··Y8P··888·888·888··888·888··888·····
+%  ········888··888··888·888··888·888···"···888·888·888··888·Y88b·888·····
+%  ········888··"Y888888·888··888·888·······888·888·888··888··"Y88888·····
+%  ·······························································888·····
+%  ··························································Y8b·d88P·····
+%  ···························································"Y88P"······
+%  =======================================================================
+% 
+%  -----------------------------------------------------------------------
+% Author       : 焱铭
+% Date         : 2023-07-30 15:13:12 +0800
+% LastEditTime : 2023-11-26 22:34:44 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -123,6 +148,7 @@
                   backend=biber,                        % 设置后端程序为biber
                   doi=false,                            % 不显示doi
                   url=false,                            % 不显示url
+                  defernumbers=true,                    % 解决refsection环境中 \printbibliography 筛选和 notice* 一起使用导致的编号错乱
                   style=gb7714-2015,                    % 引用和参考文献样式
                   gbmedium=false,                       % 载体标识符不显示OL
                   % gbpub=true,                           % 显示出版信息
@@ -1372,24 +1398,71 @@
 
 % //////////////////////////////////////// 攻读学位期间取得成果设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-\newcommand{\thesisaccomplish}{
-  \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
-  \setcounter{section}{0} % section计数器清零 
+\defbibheading{BibHeadStyle}[\bibname]{\noindent\normalsize #1} % 自定义title样式
 
-  \chapter*{攻读\degreename{}学位期间取得的成果}
-  \addcontentsline{toc}{chapter}{攻读\degreename{}学位期间取得的成果}
-  \fancyhf{}
-  \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\degreename{}学位期间取得的成果}
-  \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
-  \thispagestyle{fancy}
-  \normalsize  % 设置字体为小四
-  \ifbversion{ % 盲审版学术成果👇
-    \input{Chapters/Accomplish-bversion.tex} % 学术成果文档位置
-  }{ % 非盲审版学术成果👇
-    \input{Chapters/Accomplish.tex}
-  }
-
+% ====================取得成果设置==================== 定义攻读学位期间取得成果命令
+\newcommand{\thesisaccomplish}[1]{
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %只显示一级标题
+    \setcounter{section}{0} %section计数器清零 
+    
+    \chapter*{攻读\degreename{}学位期间取得的成果}
+    \addcontentsline{toc}{chapter}{攻读\degreename{}学位期间取得的成果}
+    \fancyhf{}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\degreename{}学位期间取得的成果}
+    \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+    \thispagestyle{fancy}
+    
+    \renewcommand{\bibfont}{\normalsize} % 设置参考文献字体小四
+    \begin{refsection}[#1]
+        \nocite{*}
+        \settoggle{bbx:gbtype}{false} % 局部设置不输出文献类型和载体标识符
+        \settoggle{bbx:gbannote}{true} % 局部设置输出附加的annote/annotation信息
+        \settoggle{bbx:gbpub}{false} % 局部设置不输出出版信息
+        \printbibliography[heading=BibHeadStyle,type=report ,title=参与项目：]
+    \end{refsection}
+    \begin{refsection}[#1]
+        \nocite{*}
+        \def\blx@maxbibnames{5} % 局部调整作者数量
+        \settoggle{bbx:gbannote}{true}
+        \printbibliography[heading=BibHeadStyle,type=article,title=发表论文：]
+    \end{refsection}
+    \begin{refsection}[#1]
+        \nocite{*}
+        \def\blx@maxbibnames{5} % 局部调整作者数量
+        \settoggle{bbx:gbannote}{true}
+        \printbibliography[heading=BibHeadStyle,type=patent,title=发明专利：]
+    \end{refsection}
+    \begin{refsection}[#1]
+        \nocite{*}
+        \settoggle{bbx:gbannote}{true}
+        \printbibliography[heading=BibHeadStyle,type=software,title=软件著作权：]
+    \end{refsection}
+    \begin{refsection}[#1]
+        \nocite{*}
+        \settoggle{bbx:gbtype}{false}
+        \settoggle{bbx:gbannote}{true}
+        \printbibliography[heading=BibHeadStyle,type=misc,title=科研竞赛获奖：]
+    \end{refsection}
 }
+
+% \newcommand{\thesisaccomplish}{
+%   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
+%   \setcounter{section}{0} % section计数器清零 
+
+%   \chapter*{攻读\degreename{}学位期间取得的成果}
+%   \addcontentsline{toc}{chapter}{攻读\degreename{}学位期间取得的成果}
+%   \fancyhf{}
+%   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\degreename{}学位期间取得的成果}
+%   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+%   \thispagestyle{fancy}
+%   \normalsize  % 设置字体为小四
+%   \ifbversion{ % 盲审版学术成果👇
+%     \input{Chapters/Accomplish-bversion.tex} % 学术成果文档位置
+%   }{ % 非盲审版学术成果👇
+%     \input{Chapters/Accomplish.tex}
+%   }
+
+% }
 
 
 

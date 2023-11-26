@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2023-11-26 21:13:25 +0800
+ * LastEditTime : 2023-11-26 23:01:00 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \GUET_Thesis_LaTeX\README.md
  * Description  : README文档
@@ -159,6 +159,22 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 注意：使用该模板时，`biblatex` 和 `biblatex-gb7714-2015` 宏包均要更新到最新版本，否则会报错。
 
+### 攻读学位期间取得成果
+攻读学位期间取得成果使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出攻读学位期间取得成果时，导出类型要选择 `biblatex`。
+建议将成果保存到 Zotero 中，关于成果在 Zotero 和 bib 文件中的类型设置如下表所示：
+
+| 成果类型     | Zotero 中的类型 | bib 文件中的类型 |
+| :----------- | :-------------: | :--------------: |
+| 参与项目     | 报告            | report           |
+| 发表论文     | 期刊文章        | article          |
+| 发明专利     | 专利            | patent           |
+| 软件著作权   | 软件            | software         |
+| 科研竞赛获奖 | 文档            | misc             |
+
+<!-- 对于参与项目，在 Zotero 的 `系列标题` 项或 bib 文件的 `annotation` 中输入 -->
+
+在 Zotero 的 `其他` 项或 bib 文件的 `annotation` 中输入附加信息，如期刊论文分区，作者排名，科研竞赛排名等。
+
 ## 写作工具
 
 - [画表神器](https://www.tablesgenerator.com/)
@@ -190,7 +206,7 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 - [ ] ~~使用文学编程重构项目~~
 - [ ] 采用 biblatex 编译参考文献，替换掉 bibtex：
   - [X] biblatex 下实现参考文献的编译
-  - [ ] biblatex 下实现攻读学位期间取得成果的自动编译
+  - [X] biblatex 下实现攻读学位期间取得成果的自动编译
   - [ ] biblatex 下实现攻读学位期间取得成果的盲审版本切换
   - [ ] biblatex 下实现对攻读学位期间取得成果中作者的粗体显示
 - [ ] `biblatex-gb7714-2015` 宏包存在学位论文显示url的bug，而条目没有url参数时则显示 In collab. with 字样，目前以用临时方案解决
