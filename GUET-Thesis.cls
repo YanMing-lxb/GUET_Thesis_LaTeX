@@ -15,55 +15,50 @@
                 ]{xcolor}                             % 使用xcolor宏包，并加载颜色选项
 
 % ===============图片相关宏包===============                  
-\RequirePackage{graphicx}                             % 导入 graphicx 宏包，用于插入图片
+\RequirePackage{graphicx}                             % 用于插入图片
+\RequirePackage{float}                                % 提供浮动环境和浮动对象的控制
+\RequirePackage[labelformat=simple]{subcaption}       % 用于生成子图表和子标题，labelformat=simple 表示子标题的标签格式为简单的形式
 \RequirePackage[
                   font={onehalfspacing, small},       % 设置字体为onehalfspacing（1.5倍行距）和small（小号字体）
                   labelsep=space,                     % 设置标签和标题之间的间距为一个空格
                   skip=6pt,                           % 设置标题与上下文之间的间距为6pt
                   figurewithin=none,                  % 禁止图表编号受章节影响
                   tablewithin=none                    % 禁止表格编号受章节影响
-                ]{caption}                            % 导入 caption宏包，用于自定义浮动环境（如图表）的标题格式和样式
+                ]{caption}                            % 用于自定义浮动环境（如图表）的标题格式和样式
 % figurewithin=none 和 tablewithin=none 取消书籍类中对图表目录所添加的 10pt 间距命令，使得图表目录中的章节编号连续
 % 需要在对应的计数器中进行每章重置以保证连续编号
-\RequirePackage[labelformat=simple]{subcaption}       % 导入 subcaption 宏包，用于生成子图表和子标题
-% labelformat=simple 表示子标题的标签格式为简单的形式
 
 % ===============表格相关宏包===============
-\RequirePackage{array}                                % 导入 array 宏包，用于增强表格的功能和格式
-\RequirePackage{tabularray}                           % 导入 tabularray 宏包，提供更灵活和功能强大的表格环境
-\RequirePackage{booktabs}                             % 导入 booktabs 宏包，用于生成漂亮的三线表格样式
-\RequirePackage{longtable}                            % 导入 longtable 宏包，提供了一个可分页的长表格环境，用于跨页显示表格内容
-\RequirePackage{multirow}                             % 导入 multirow 宏包，允许在表格中合并多行
-\RequirePackage[absolute,overlay]{textpos}            % 导入 textpos 宏包，用于绝对定位文本框，用于设置密级等信息
-
+\RequirePackage{array}                                % 用于增强表格的功能和格式
+\RequirePackage{tabularray}                           % 提供更灵活和功能强大的表格环境
+\RequirePackage{booktabs}                             % 用于生成漂亮的三线表格样式
+\RequirePackage{longtable}                            % 提供了一个可分页的长表格环境，用于跨页显示表格内容
+\RequirePackage{multirow}                             % 允许在表格中合并多行
 
 % ===============公式相关宏包===============    
-\RequirePackage{amsmath}                              % 导入 amsmath 宏包，提供数学公式环境和命令
-\RequirePackage{amssymb}                              % 导入 amssymb 宏包，提供额外的数学符号
-\RequirePackage{amsthm}                               % 导入 amsthm 宏包，用于定义和排版定理、引理等数学定理结构
-\RequirePackage{mathspec}                             % 导入 mathspec 宏包，用于在数学环境中选择自定义的字体
-
+\RequirePackage{amsmath}                              % 提供数学公式环境和命令
+\RequirePackage{amssymb}                              % 提供额外的数学符号
+\RequirePackage{amsthm}                               % 用于定义和排版定理、引理等数学定理结构
+\RequirePackage{mathspec}                             % 用于在数学环境中选择自定义的字体
 
 % ===============目录相关宏包===============
-\RequirePackage[titles]{tocloft}                      % 导入 tocloft 宏包，用于设置目录的样式和格式
-% titles 表示目录中的章节标题也包含在目录中   
+\RequirePackage[titles]{tocloft}                      % 用于设置目录、图表目录和表格目录的格式，titles 表示可以让 tocloft 宏包不改变章节标题的格式，而只改变目录中的格式 
 
 % ===============符号说明相关宏===============    
-\RequirePackage{framed}                               % 导入 framed 宏包，用于给内容添加框架效果
-\RequirePackage{multicol}                             % 导入 multicol 宏包，提供多栏环境
-\RequirePackage[]{nomencl}                            % 导入 nomencl 宏包，用于生成符号说明
+\RequirePackage{framed}                               % 用于给内容添加框架效果
+\RequirePackage{multicol}                             % 提供多栏环境
+\RequirePackage{nomencl}                            % 用于生成符号说明
 
 % ===============字体相关宏包===============    
-\RequirePackage{lmodern}                              % 导入 lmodern 宏包，使用 Latin Modern 字体，提供更好的字体支持
-\RequirePackage{xeCJK}                                % 导入 xeCJK 宏包，用于设置全局的中日韩文字体
-\RequirePackage{xeCJKfntef}                           % 导入 xeCJKfntef 宏包，用于提供更多的字体效果设置选项，兼容ulem宏包
-% \RequirePackage[normalem]{ulem}                       % 导入 ulem 宏包，提供了各种下划线和删除线的命令
-\RequirePackage{zhnumber}                             % 导入 zhnumber 宏包，用于将数字转换为大写中文数字的表示
-\RequirePackage{pifont}                               % 导入 pifont 宏包，提供了许多符号和图标的命令
-\RequirePackage{datetime}                             % 导入 datetime 宏包，提供日期和时间格式控制功能，包括 \today 命令
+\RequirePackage{lmodern}                              % 使用 Latin Modern 字体，提供更好的字体支持
+\RequirePackage{xeCJK}                                % 用于设置全局的中日韩文字体
+\RequirePackage{xeCJKfntef}                           % 用于提供更多的字体效果设置选项，兼容ulem宏包
+\RequirePackage{zhnumber}                             % 用于将数字转换为大写中文数字的表示
+\RequirePackage{pifont}                               % 提供了许多符号和图标的命令
+\RequirePackage{datetime}                             % 提供日期和时间格式控制功能，包括 \today 命令
 
 % ===============链接相关宏包===============    
-\RequirePackage[hyphens]{xurl}                        % 导入 xurl 宏包，允许在长网址中断行，避免超出边界
+\RequirePackage[hyphens]{xurl}                        % 允许在长网址中断行，避免超出边界
 \RequirePackage[
                   unicode,                            % 设置是否使用 Unicode 字符集
                   pdfencoding=auto,                   % 设置 PDF 编码格式
@@ -71,26 +66,33 @@
                   hyperfootnotes=false,               % 设置是否给脚注添加链接
                   bookmarksnumbered=true,             % 设置 PDF 书签是否带编号
                   bookmarksdepth=4                    % 设置书签的深度
-                ]{hyperref}                           % 导入 hyperref 宏包，用于设置书签和超链接
+                ]{hyperref}                           % 用于设置书签和超链接
+
+\RequirePackage{cleveref}                             % 用于引用和交叉引用的格式设置（需要放在hyperref后面）
 
 % ===============排版相关宏包===============
-\RequirePackage{setspace}                             % 导入 setspace 宏包，提供调整行距的命令和环境
-\RequirePackage{indentfirst}                          % 导入 indentfirst 宏包，用于在章节标题后自动缩进第一段落
-\RequirePackage{float}                                % 导入 float 宏包，提供浮动环境和浮动对象的控制
-\RequirePackage{fancyvrb}                             % 导入 fancyvrb 宏包，提供了更灵活的抄录环境和定制选项
-\RequirePackage{fancyhdr}                             % 导入 fancyhdr 宏包，用于设置页眉和页脚的样式
-\RequirePackage{titlesec}                             % 导入 titlesec 宏包，用于自定义章节标题的样式
-\RequirePackage{appendix}                             % 导入 appendix 宏包，用于生成附录并对附录标题进行格式设置
-\RequirePackage{enumitem}                             % 导入 enumitem 宏包，用于定制列表环境的样式和标签
+\RequirePackage{geometry}                             % 用于设置页面尺寸和布局
+\RequirePackage{setspace}                             % 提供调整行距的命令和环境
+\RequirePackage{fancyvrb}                             % 提供了更灵活的抄录环境和定制选项
+\RequirePackage{fancyhdr}                             % 用于设置页眉和页脚的样式
+\RequirePackage{titlesec}                             % 用于自定义章节标题的样式
+\RequirePackage{indentfirst}                          % 用于在章节标题后自动缩进第一段落
+\RequirePackage{appendix}                             % 用于生成附录并对附录标题进行格式设置
+\RequirePackage{lastpage}                             % 用于统计总页数（本科页码中使用）
+\RequirePackage{ifoddpage}                            % 用于判断页码是否为奇数（用于判断打印版中空白页的添加）
+\RequirePackage{pdfpages}                             % 用于插入外部 PDF 文档的页面，已签名的独创性声明
+\RequirePackage[absolute,overlay]{textpos}            % 用于绝对定位文本框，用于排版封面
+\RequirePackage{etoolbox}                             % 提供逻辑判断、列表循环遍历、patch、hook、计数器、布尔变量等操作
 
+% ===============算法相关宏包===============
 \RequirePackage[
                   algochapter,                        % 将算法放在章节中，并以章节编号
                   boxruled,                           % 给算法添加边框
                   linesnumbered                       % 给算法添加行号
-                ]{algorithm2e}                        % 导入 algorithm2e 宏包，用于排版算法和伪代码
+                ]{algorithm2e}                        % 用于排版算法和伪代码
 
-\RequirePackage{enumitem}                             % 导入 enumitem 宏包，用于定制列表环境的样式和标签
-\RequirePackage{etoolbox}                             % 导入 etoolbox 宏包，提供处理 TeX 和 LaTeX 代码的工具
+% ===============列表相关宏包===============
+\RequirePackage{enumitem}                             % 用于定制列表环境的样式和标签
 
 % ===============参考文献相关宏包===============
 \RequirePackage[
@@ -98,22 +100,17 @@
                   sort&compress,                      % 引用的标号按顺序排序并压缩
                   super,                              % 引用的上标样式
                   square                              % 引用的标号以方括号包围
-                ]{natbib}                             % 导入 natbib 宏包，用于设置参考文献引用的格式
-\RequirePackage[nottoc]{tocbibind}                    % 导入 tocbibind 宏包，用于将参考文献列表快速插入目录中，nottoc 表示不将参考文献列表本身添加到目录中
+                ]{natbib}                             % 用于设置参考文献引用的格式
+\RequirePackage[nottoc]{tocbibind}                    % 用于将参考文献列表快速插入目录中，nottoc 表示不将参考文献列表本身添加到目录中
 
-% ===============页码相关宏包===============
-\RequirePackage{lastpage}                             % 导入 lastpage 宏包，用于统计总页数
-\RequirePackage{ifoddpage}                            % 导入 ifoddpage 宏包，用于判断页码是否为奇数
-\RequirePackage{pdfpages}                             % 导入 pdfpages 宏包，用于插入外部 PDF 文档的页面
-\RequirePackage{geometry}                             % 导入 geometry 宏包，用于设置页面尺寸和布局
-\RequirePackage{ifxetex}                              % 导入 ifxetex 宏包，判断是否使用 XeLaTeX 编译，以决定后续的包和设置的使用
-\RequirePackage{ifplatform}                           % 导入 ifplatform 宏包，用于判断当前的操作系统平台
-\RequirePackage{ifthen}                               % 导入 ifthen 宏包，提供了 \ifthenelse 命令，用于条件判断和分支控制
-\RequirePackage{cleveref}                             % 导入 cleveref 宏包，用于引用和交叉引用的格式设置
+% ===============条件判断宏包宏包===============
+\RequirePackage{ifxetex}                              % 判断是否使用 XeLaTeX 编译，以决定后续的包和设置的使用
+\RequirePackage{ifplatform}                           % 用于判断当前的操作系统平台
+\RequirePackage{ifthen}                               % 提供了 \ifthenelse 命令，用于条件判断和分支控制
 
 \RequireXeTeX                                         % 指定必须用 XeTeX 引擎进行编译
 
-
+% ===============PDF文件相关宏包===============
 \hypersetup{                                          % 文中链接设置
               % pdfauthor = {\theauthor},             % 设置作者名称；
               % pdftitle = {\zh@thetitle},            % 设置文档的标题；
