@@ -1,6 +1,31 @@
-# GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 <img src="https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">
+<!--
+ *  =======================================================================
+ *  ····Y88b···d88P················888b·····d888·d8b·······················
+ *  ·····Y88b·d88P·················8888b···d8888·Y8P·······················
+ *  ······Y88o88P··················88888b·d88888···························
+ *  ·······Y888P··8888b···88888b···888Y88888P888·888·88888b·····d88b·······
+ *  ········888······"88b·888·"88b·888·Y888P·888·888·888·"88b·d88P"88b·····
+ *  ········888···d888888·888··888·888··Y8P··888·888·888··888·888··888·····
+ *  ········888··888··888·888··888·888···"···888·888·888··888·Y88b·888·····
+ *  ········888··"Y888888·888··888·888·······888·888·888··888··"Y88888·····
+ *  ·······························································888·····
+ *  ··························································Y8b·d88P·····
+ *  ···························································"Y88P"······
+ *  =======================================================================
+ * 
+ *  -----------------------------------------------------------------------
+ * Author       : 焱铭
+ * Date         : 2023-07-30 15:13:12 +0800
+ * LastEditTime : 2023-11-26 14:21:09 +0800
+ * Github       : https://github.com/YanMing-lxb/
+ * FilePath     : \GUET_Thesis_LaTeX\README.md
+ * Description  : README文档
+ *  -----------------------------------------------------------------------
+ -->
 
-[![GitHub](https://img.shields.io/badge/Github-GTL-000000.svg)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX) [![TeXPage](https://img.shields.io/badge/TeXPage-GTL-495A80.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818) [![Overleaf](https://img.shields.io/badge/Overleaf-GTL-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp) [![License](https://img.shields.io/badge/license-LPPL-aff)](https://www.latex-project.org/lppl/) ![OS](https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg) [![GitHub release](https://img.shields.io/github/release/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.svg?color=blueviolet&label=version&style=popout)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/releases/latest) [![Last Commit](https://img.shields.io/github/last-commit/GUET-TeX-Users-Group/GUET_Thesis_LaTeX)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/zipball/master) [![Issues](https://img.shields.io/github/issues/GUET-TeX-Users-Group/GUET_Thesis_LaTeX)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/issues) [![Github Action](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/workflows/Build%20Tests/badge.svg)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/actions) [![Downloads](https://img.shields.io/github/downloads/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/total.svg?color=blue&style=popout)](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/releases/latest)
+# GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 <img src="https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">
+
+[![GitHub](https://img.shields.io/badge/Github-GTL-000000.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX) [![TeXPage](https://img.shields.io/badge/TeXPage-GTL-495A80.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818) [![Overleaf](https://img.shields.io/badge/Overleaf-GTL-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp) [![License](https://img.shields.io/badge/license-LPPL-aff)](https://www.latex-project.org/lppl/) ![OS](https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg) [![GitHub release](https://img.shields.io/github/release/YanMing-lxb/GUET_Thesis_LaTeX.svg?color=blueviolet&label=version&style=popout)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/releases/latest) [![Last Commit](https://img.shields.io/github/last-commit/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/zipball/master) [![Issues](https://img.shields.io/github/issues/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues) [![Github Action](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/workflows/Build%20Tests/badge.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/actions) [![Downloads](https://img.shields.io/github/downloads/YanMing-lxb/GUET_Thesis_LaTeX/total.svg?color=blue&style=popout)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/releases/latest)
 
 ## 欢迎使用桂林电子科技大学毕业论文模板
 
@@ -16,10 +41,10 @@
 
 ### 下载模板
 
-普通用户可以直接 `clone` 或者下载最新发行版 [GUET_Thesis_LaTeX.zip](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/archive/refs/heads/main.zip)。
+普通用户可以直接 `clone` 或者下载最新发行版 [GUET_Thesis_LaTeX.zip](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/archive/refs/heads/main.zip)。
 
 ```
-git clone https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.git
+git clone https://github.com/YanMing-lxb/GUET_Thesis_LaTeX.git
 ```
 
 ### 项目地址
@@ -28,12 +53,12 @@ git clone https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.git
 
 [Gitee项目地址](https://gitee.com/metaljack666/GUET_Thesis_LaTeX)
 
-[Github项目地址](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX)
+[Github项目地址](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX)
 
 >模版更新频繁，且只维护最新版。如有问题，可以先尝试升级模版，而后进行反馈。
 
 ### 相关项目
-桂林电子科技大学 Beamer 模板：[GUET Beamer Theme](https://github.com/GUET-TeX-Users-Group/GUET_Beamer)
+桂林电子科技大学 Beamer 模板：[GUET Beamer Theme](https://github.com/YanMing-lxb/GUET_Beamer)
 
 
 
@@ -75,7 +100,7 @@ git clone https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX.git
 | ptomaster | 非全专硕 |
 
 
-> 根据学校要求打印版硕士学位论文封面桂电 logo 为黑色(其他的硕博的打印版桂电 logo 也都顺便设置成黑色的)，对与其他几种封面的相关要求可以在[**issues**](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/issues)中提出并补充。
+> 根据学校要求打印版硕士学位论文封面桂电 logo 为黑色(其他的硕博的打印版桂电 logo 也都顺便设置成黑色的)，对与其他几种封面的相关要求可以在[**issues**](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues)中提出并补充。
 >启用盲审样式时，封面自动替换为对应的盲审封面、致谢命令失效、攻读学位期间取得成果自动替换为 Accomplish-bversion.tex 文件中的内容
 
 ### 注意事项
@@ -172,8 +197,8 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 ### 反馈问题
 如果在使用上有任何问题，建议通过以下方式进行反馈（按推荐顺序排序）：
 
-- 如遇不会使用、编译错误等问题，请至 [**在 GitHub 项目讨论区提问**](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/discussions) (推荐)
-- 如遇模版 BUG，或有新的需求，请至  [**在 GitHub 项目中提issues**](https://github.com/GUET-TeX-Users-Group/GUET_Thesis_LaTeX/issues)
+- 如遇不会使用、编译错误等问题，请至 [**在 GitHub 项目讨论区提问**](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/discussions) (推荐)
+- 如遇模版 BUG，或有新的需求，请至  [**在 GitHub 项目中提issues**](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues)
 
 ### 成为贡献者
 这个仓库是面向用户的示例模版，如果你有很好的排版示例，可以提交到此仓库与大家分享。
