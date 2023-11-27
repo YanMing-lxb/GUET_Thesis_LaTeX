@@ -16,32 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-11-26 23:38:00 +0800
-% Github       : https://github.com/YanMing-lxb/
-% FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
-% Description  : 
-%  -----------------------------------------------------------------------
-%
-
-%
-%  =======================================================================
-%  ····Y88b···d88P················888b·····d888·d8b·······················
-%  ·····Y88b·d88P·················8888b···d8888·Y8P·······················
-%  ······Y88o88P··················88888b·d88888···························
-%  ·······Y888P··8888b···88888b···888Y88888P888·888·88888b·····d88b·······
-%  ········888······"88b·888·"88b·888·Y888P·888·888·888·"88b·d88P"88b·····
-%  ········888···d888888·888··888·888··Y8P··888·888·888··888·888··888·····
-%  ········888··888··888·888··888·888···"···888·888·888··888·Y88b·888·····
-%  ········888··"Y888888·888··888·888·······888·888·888··888··"Y88888·····
-%  ·······························································888·····
-%  ··························································Y8b·d88P·····
-%  ···························································"Y88P"······
-%  =======================================================================
-% 
-%  -----------------------------------------------------------------------
-% Author       : 焱铭
-% Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-11-26 22:34:44 +0800
+% LastEditTime : 2023-11-27 18:19:42 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -166,9 +141,9 @@
 
 % ===============PDF文件相关宏包===============
 \hypersetup{                                          % 文中链接设置
-              % pdfauthor = {\theauthor},             % 设置作者名称；
-              % pdftitle = {\zh@thetitle},            % 设置文档的标题；
-              % pdfsubject = {\displayheader},        % 设置文档主题；
+              % pdfauthor = {\TheAuthor},             % 设置作者名称；
+              % pdftitle = {\zh@TheTitle},            % 设置文档的标题；
+              % pdfsubject = {\DisplayHeader},        % 设置文档主题；
               % pdfkeywords = {},                     % 设置文档中关键词
               colorlinks=true,                        % 指定是否给链接添加颜色；
               citecolor=black,                        % citecolor链接颜色设置；
@@ -199,16 +174,8 @@
 
 
 % ===============定义空白页命令=============== 
-\newcommand\blankpage{ % 定义添加空白页
-                        \newpage
-                        \thispagestyle{empty} % 没有页眉页脚，空白页
-                        \null
-                        \newpage
-                      }
-
-
-% ===============定义带页眉页脚空白页命令=============== 
-\newcommand\blankpage@number{\newpage\null\newpage}
+\newcommand{\blankpage@number}{\newpage\null\newpage}               % 带页眉页脚
+\newcommand{\blankpage}{\newpage\thispagestyle{empty}\null\newpage} % 没有页眉页脚
 
 
 
@@ -287,90 +254,90 @@
 
 % //////////////////////////////////////// 封面设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-% ===============设置封面时间格式===============
+% ===============设置时间格式===============
 \renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
 
 
 % ===============封面信息引用定义===============
-\newcommand{\zh@thetitle}{\quad}         % 标题
-\newcommand{\en@thetitle}{\quad}         % 英文标题
-\newcommand{\theauthor}{\quad}           % 作者
-\newcommand{\thedate}{\quad}             % 日期
-\newcommand{\theschool}{\quad}           % 学院
-\newcommand{\themajor}{\quad}            % 专业
-\newcommand{\theresearchdirection}{\quad}% 研究方向
-\newcommand{\theadvisor}{\quad}          % 导师姓名
-\newcommand{\theprotitle}{\quad}         % 导师职称
-\newcommand{\thesecrets}{\qquad}         % 密级
-\newcommand{\thestudentnumber}{\quad}    % 学号
-\newcommand{\thedegreecategories}{\quad} % 学位类别
+\newcommand{\zh@TheTitle}{\quad}          % 标题
+\newcommand{\en@TheTitle}{\quad}          % 英文标题
+\newcommand{\TheAuthor}{\quad}            % 作者
+\newcommand{\TheDate}{\quad}              % 日期
+\newcommand{\TheSchool}{\quad}            % 学院
+\newcommand{\TheMajor}{\quad}             % 专业
+\newcommand{\TheResearchDirection}{\quad} % 研究方向
+\newcommand{\TheAdvisor}{\quad}           % 导师姓名
+\newcommand{\TheProtitle}{\quad}          % 导师职称
+\newcommand{\TheSecrets}{\qquad}          % 密级
+\newcommand{\TheStudentNumber}{\quad}     % 学号
+\newcommand{\TheDegreeCategories}{\quad}  % 学位类别
 
 
 % ===============封面信息定义===============
-\renewcommand{\title}[2]{
-                          \renewcommand{\zh@thetitle}{#1}                     % 中文标题
-                          \renewcommand{\en@thetitle}{#2}                     % 英文标题
+\newcommand{\Title}[2]{
+                          \renewcommand{\zh@TheTitle}{#1}                     % 中文标题
+                          \renewcommand{\en@TheTitle}{#2}                     % 英文标题
                         }
-\newcommand{\secrets}[1]{\renewcommand{\thesecrets}{#1}}                      % 密级
-\renewcommand{\author}[1]{\renewcommand{\theauthor}{#1}}                      % 作者
-\renewcommand{\date}[1]{\renewcommand{\thedate}{#1}}                          % 日期
-\newcommand{\major}[1]{\renewcommand{\themajor}{#1}}                          % 专业
-\newcommand{\researchdirection}[1]{\renewcommand{\theresearchdirection}{#1}}  % 研究方向
-\newcommand{\school}[1]{\renewcommand{\theschool}{#1}}                        % 学院
-\newcommand{\advisor}[1]{\renewcommand{\theadvisor}{#1}}                      % 导师姓名
-\newcommand{\protitle}[1]{\renewcommand{\theprotitle}{#1}}                    % 导师职称
-\newcommand{\studentnumber}[1]{\renewcommand{\thestudentnumber}{#1}}          % 学号
-\newcommand{\degreecategories}[1]{\renewcommand{\thedegreecategories}{#1}}    % 学位类别
+\newcommand{\Secrets}[1]{\renewcommand{\TheSecrets}{#1}}                      % 密级
+\newcommand{\Author}[1]{\renewcommand{\TheAuthor}{#1}}                        % 作者
+\newcommand{\Date}[1]{\renewcommand{\TheDate}{#1}}                            % 日期
+\newcommand{\Major}[1]{\renewcommand{\TheMajor}{#1}}                          % 专业
+\newcommand{\ResearchDirection}[1]{\renewcommand{\TheResearchDirection}{#1}}  % 研究方向
+\newcommand{\School}[1]{\renewcommand{\TheSchool}{#1}}                        % 学院
+\newcommand{\Advisor}[1]{\renewcommand{\TheAdvisor}{#1}}                      % 导师姓名
+\newcommand{\Protitle}[1]{\renewcommand{\TheProtitle}{#1}}                    % 导师职称
+\newcommand{\StudentNumber}[1]{\renewcommand{\TheStudentNumber}{#1}}          % 学号
+\newcommand{\DegreeCategories}[1]{\renewcommand{\TheDegreeCategories}{#1}}    % 学位类别
 
 
 % ====================本硕博选项声明====================
 %\DeclareOption{选项}{代码}其中的选项就是选项的名称，而代码就是选项要执行的指令集。
 \DeclareOption{bachelor}{
-                          \def\degreename{本科}
-                          \def\booktitle{本科毕业设计（论文）}
-                          \def\displayheader{桂林电子科技大学本科生学位论文}
+                          \def\DegreeName{本科}
+                          \def\BookTitle{本科毕业设计（论文）}
+                          \def\DisplayHeader{桂林电子科技大学本科生学位论文}
                         }
 \DeclareOption{master}{
-                          \def\degreename{硕士}
-                          \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
-                          \def\displayheader{桂林电子科技大学硕士学位论文}
+                          \def\DegreeName{硕士}
+                          \def\BookTitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
+                          \def\DisplayHeader{桂林电子科技大学硕士学位论文}
                         }
 \DeclareOption{promaster}{
-                            \def\degreename{专业硕士}
-                            \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
-                            \def\displayheader{桂林电子科技大学硕士学位论文}
+                            \def\DegreeName{专业硕士}
+                            \def\BookTitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
+                            \def\DisplayHeader{桂林电子科技大学硕士学位论文}
                           }
 \DeclareOption{ojmaster}{
-                          \def\degreename{在职硕士}
-                          \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
-                          \def\displayheader{桂林电子科技大学硕士学位论文}
+                          \def\DegreeName{在职硕士}
+                          \def\BookTitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
+                          \def\DisplayHeader{桂林电子科技大学硕士学位论文}
                         }
 \DeclareOption{ptmaster}{
-                          \def\degreename{非全硕士}
-                          \def\booktitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
-                          \def\displayheader{桂林电子科技大学硕士学位论文}
+                          \def\DegreeName{非全硕士}
+                          \def\BookTitle{硕\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
+                          \def\DisplayHeader{桂林电子科技大学硕士学位论文}
                         }
 \DeclareOption{doctor}{
-                        \def\degreename{博士}
-                        \def\booktitle{博\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
-                        \def\displayheader{桂林电子科技大学博士学位论文}
+                        \def\DegreeName{博士}
+                        \def\BookTitle{博\enspace 士\enspace 学\enspace 位\enspace 论\enspace 文}
+                        \def\DisplayHeader{桂林电子科技大学博士学位论文}
                       }
 \ExecuteOptions{master} % 默认值为硕士
 \ProcessOptions\relax
 
 
 % ===============判断学位类别的命令定义===============
-\newcommand{\ifbachelor}[2]{\ifthenelse{\equal{\degreename}{本科}}{#1}{#2}}                                % 如果学位名是本科则执行#1命令，否执行#2命令
-\newcommand{\ifpromaster}[1]{\ifthenelse{\equal{\degreename}{专业硕士}}{#1}{}}                              % 如果学位名是专业硕士则执行#1命令
-\newcommand{\ifmaster}[1]{\ifthenelse{\equal{\degreename}{硕士}}{#1}{}}                                     % 如果学位名是硕士则执行#1命令
-\newcommand{\ifojmaster}[1]{\ifthenelse{\equal{\degreename}{在职硕士}}{#1}{}}                               % 如果学位名是在职硕士则执行#1命令
-\newcommand{\ifptmaster}[1]{\ifthenelse{\equal{\degreename}{非全硕士}}{#1}{}}                               % 如果学位名是非全硕士则执行#1命令
-\newcommand{\ifdoctor}[1]{\ifthenelse{\equal{\degreename}{博士}}{#1}{}}                                     % 如果学位名是博士则执行#1命令
-\newcommand{\ifpro}[2]{\ifthenelse{\equal{\degreename}{专业硕士} \or \equal{\degreename}{非全硕士}}{#1}{#2}} % 判断是否是专业硕士或非全硕士
+\newcommand{\ifbachelor}[2]{\ifthenelse{\equal{\DegreeName}{本科}}{#1}{#2}}                                % 如果学位名是本科则执行#1命令，否执行#2命令
+\newcommand{\ifpromaster}[1]{\ifthenelse{\equal{\DegreeName}{专业硕士}}{#1}{}}                              % 如果学位名是专业硕士则执行#1命令
+\newcommand{\ifmaster}[1]{\ifthenelse{\equal{\DegreeName}{硕士}}{#1}{}}                                     % 如果学位名是硕士则执行#1命令
+\newcommand{\ifojmaster}[1]{\ifthenelse{\equal{\DegreeName}{在职硕士}}{#1}{}}                               % 如果学位名是在职硕士则执行#1命令
+\newcommand{\ifptmaster}[1]{\ifthenelse{\equal{\DegreeName}{非全硕士}}{#1}{}}                               % 如果学位名是非全硕士则执行#1命令
+\newcommand{\ifdoctor}[1]{\ifthenelse{\equal{\DegreeName}{博士}}{#1}{}}                                     % 如果学位名是博士则执行#1命令
+\newcommand{\ifpro}[2]{\ifthenelse{\equal{\DegreeName}{专业硕士} \or \equal{\DegreeName}{非全硕士}}{#1}{#2}} % 判断是否是专业硕士或非全硕士
 
 
 % ==============封面设置=============== 定义封面命令
-\newcommand{\makecover}
+\newcommand{\MakeCover}
 {
   \thispagestyle{empty}                                     % 没有页眉页脚，空白页
   \setlength{\extrarowheight}{9pt}
@@ -386,7 +353,7 @@
     \begin{textblock}{5}(12.6,2.1)
       % \textblockcolour{red!30} % 设置背景颜色
       \begin{flushright}
-        密\enspace 级 \underline{\hspace*{2.5em}\thesecrets\hspace*{2.5em}}
+        密\enspace 级 \underline{\hspace*{2.5em}\TheSecrets\hspace*{2.5em}}
       \end{flushright}
     \end{textblock}
   }
@@ -417,37 +384,37 @@
   \begin{textblock}{10}(5.5,7.85)
     \centering
     \ifbachelor{% 本科👇
-      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle}\\
+      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\BookTitle}\\
     }{}
   \end{textblock}
 
   \begin{textblock}{10}(5.5,7.85)
     \centering
     \ifpromaster{ % 专硕👇
-      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
+      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\BookTitle} \\
       \fontsize{20pt}{26pt}\selectfont{\bfseries（全日制专业学位硕士）}\\
     }
     \ifojmaster{ % 在职学硕👇
-      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
+      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\BookTitle} \\
       \fontsize{20pt}{26pt}\selectfont{\bfseries（在职研究生）}\\
     }
     \ifptmaster{ % 非全专硕👇
-      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle} \\
+      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\BookTitle} \\
       \fontsize{20pt}{26pt}\selectfont{\bfseries（非全日制专业学位硕士）}\\
     }
 
     \ifmaster{ % 学硕👇
-      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle}\\
+      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\BookTitle}\\
     }
     \ifdoctor{ % 博士👇
-      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\booktitle}\\
+      \fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\BookTitle}\\
     }
   \end{textblock}
 
 
   % ================设置题目================
-  \NewExpandableDocumentCommand\zh@thetitle@tb{}{\zh@thetitle} % 创建外部参数，导入题目表格中
-  \NewExpandableDocumentCommand\en@thetitle@tb{}{\en@thetitle}
+  \NewExpandableDocumentCommand\zh@TheTitle@tb{}{\zh@TheTitle} % 创建外部参数，导入题目表格中
+  \NewExpandableDocumentCommand\en@TheTitle@tb{}{\en@TheTitle}
   \ifbachelor{ % 本科题目 👇
     \begin{textblock}{15}(2.8,11.3)
       \centering
@@ -460,7 +427,7 @@
           hline{2-Z} = {2}{1pt},                                                % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
           belowsep = {-4pt}                                                     % 单元格底线向上偏移4pt
         }
-        \bfseries\fontsize{16bp}{16bp}\selectfont 题目: & \expanded{\zh@thetitle@tb{}}
+        \bfseries\fontsize{16bp}{16bp}\selectfont 题目: & \expanded{\zh@TheTitle@tb{}}
       \end{tblr}
     \end{textblock}
 
@@ -481,8 +448,8 @@
             hline{2-Z} = {2}{1.25pt},                                             % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
             belowsep = {-8pt}                                                     % 单元格底线向上偏移8pt
           }
-          \bfseries\fontsize{16bp}{16bp}\selectfont 题目   & \expanded{\zh@thetitle@tb{}} \\
-          \bfseries\fontsize{14bp}{14bp}\selectfont (英文) & \expanded{\en@thetitle@tb{}}
+          \bfseries\fontsize{16bp}{16bp}\selectfont 题目   & \expanded{\zh@TheTitle@tb{}} \\
+          \bfseries\fontsize{14bp}{14bp}\selectfont (英文) & \expanded{\en@TheTitle@tb{}}
         \end{tblr}
       \end{textblock}
     }
@@ -503,28 +470,28 @@
           hline{2-Z} = {2}{1pt},                                               % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
           belowsep = {-7pt}                                                    % 单元格底线向上偏移7pt
         }
-        学\hspace{0.36cm} \qquad \qquad 号:                                                     & \thestudentnumber \\
-        姓\hspace{0.36cm} \qquad \qquad 名:                                                     & \theauthor        \\
-        学\hspace{0.36cm} \qquad \qquad 院:                                                     & \theschool        \\
-        专\quad \hspace{0.36cm} \qquad \quad 业:                                                & \themajor         \\
-        指\hspace{0.38cm} 导\hspace{0.38cm} 教\hspace{0.38cm} 师:                               & \theadvisor       \\
-        指\hspace{0.1pt} 导\hspace{0.1pt} 教\hspace{0.1pt} 师\hspace{0.1pt} 职\hspace{0.1pt} 称: & \theprotitle
+        学\hspace{0.36cm} \qquad \qquad 号:                                                     & \TheStudentNumber \\
+        姓\hspace{0.36cm} \qquad \qquad 名:                                                     & \TheAuthor        \\
+        学\hspace{0.36cm} \qquad \qquad 院:                                                     & \TheSchool        \\
+        专\quad \hspace{0.36cm} \qquad \quad 业:                                                & \TheMajor         \\
+        指\hspace{0.38cm} 导\hspace{0.38cm} 教\hspace{0.38cm} 师:                               & \TheAdvisor       \\
+        指\hspace{0.1pt} 导\hspace{0.1pt} 教\hspace{0.1pt} 师\hspace{0.1pt} 职\hspace{0.1pt} 称: & \TheProtitle
       \end{tblr}
     \end{textblock}
 
     \begin{textblock}{8}(6,26.9) % 日期居中
-      \centering\fontsize{16pt}{16pt}\selectfont \thedate
+      \centering\fontsize{16pt}{16pt}\selectfont \TheDate
     \end{textblock}
 
   }{ % 硕博封面信息 👇
     \ifbversion{ % 盲审封面👇
       \begin{textblock}{16}(2.4,14.8)
         \bfseries\fontsize{16pt}{32pt}\selectfont % 设置字体为三号，2倍行距
-        题\qquad 目：\zh@thetitle
+        题\qquad 目：\zh@TheTitle
 
-        专\qquad 业：\themajor
+        专\qquad 业：\TheMajor
 
-        研究方向：   \theresearchdirection
+        研究方向：   \TheResearchDirection
       \end{textblock}
     }{ % 非盲审封面👇
       \begin{textblock}{15}(2.9,16.3) %
@@ -539,12 +506,12 @@
               hline{2-Z} = {2}{1.25pt},                                              % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
               belowsep = {-11pt}                                                     % 单元格底线向上偏移11pt
             }
-            研\quad 究\quad 生\quad 学\quad 号:                     & \thestudentnumber                 \\
-            研\quad 究\quad 生\quad 姓\quad 名:                     & \theauthor                        \\
-            指导教师姓名、职称:                                      & \theadvisor \enspace \theprotitle \\
-            申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \thedegreecategories              \\
-            领\hspace{7em}域:                                      & \themajor                         \\
-            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedate
+            研\quad 究\quad 生\quad 学\quad 号:                     & \TheStudentNumber                 \\
+            研\quad 究\quad 生\quad 姓\quad 名:                     & \TheAuthor                        \\
+            指导教师姓名、职称:                                      & \TheAdvisor \enspace \TheProtitle \\
+            申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \TheDegreeCategories              \\
+            领\hspace{7em}域:                                      & \TheMajor                         \\
+            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \TheDate
           \end{tblr}
         }{ % 博士、学硕、在职硕士的封面信息 👇
           \begin{tblr}
@@ -556,12 +523,12 @@
               hline{2-Z} = {2}{1.25pt},
               belowsep = {-11pt} 
             }
-            研\quad 究\quad 生\quad 学\quad 号:                    & \thestudentnumber                 \\
-            研\quad 究\quad 生\quad 姓\quad 名:                    & \theauthor                        \\
-            指导教师姓名、职称:                                     & \theadvisor \enspace \theprotitle \\
-            申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \thedegreecategories              \\
-            学\qquad 科、专\qquad 业:                               & \themajor                         \\
-            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \thedate
+            研\quad 究\quad 生\quad 学\quad 号:                    & \TheStudentNumber                 \\
+            研\quad 究\quad 生\quad 姓\quad 名:                    & \TheAuthor                        \\
+            指导教师姓名、职称:                                     & \TheAdvisor \enspace \TheProtitle \\
+            申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \TheDegreeCategories              \\
+            学\qquad 科、专\qquad 业:                               & \TheMajor                         \\
+            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \TheDate
           \end{tblr}
         }
       \end{textblock}
@@ -589,11 +556,11 @@
 
 % //////////////////////////////////////// 独创性（或创新性）声明设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-\newcommand{\originalitydeclaration}{
+\newcommand{\OriginalityDeclaration}{
   \newpage
   \thispagestyle{empty} %没有页眉页脚，空白页
   \begin{spacing}{1.5}
-    \pdfbookmark{独创性（或创新性）声明}{originalitydeclaration}
+    \pdfbookmark{独创性（或创新性）声明}{OriginalityDeclaration}
     \noindent
     \ifbachelor{ % 本科独创性声名👇
       \begin{center}
@@ -685,7 +652,7 @@
 
 
 % ====================导入独创性声明定义PDF文件设置====================
-\newcommand{\signatureofdeclaration}[1]
+\newcommand{\SignatureDeclaration}[1]
 {
   \includepdf[pages=-]{#1}
   \newpage\setcounter{page}{0}
@@ -705,13 +672,13 @@
 % //////////////////////////////////////// 摘要关键词设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 %=========================中文摘要环境定义=========================
-\newenvironment{chineseabstract}
+\newenvironment{ChineseAbstract}
 {
   % 设置目录和标题内容
   \ifbachelor{ % 本科摘要格式设置 👇
-    \renewcommand{\bachelorchapterformat}{\centering}                 % 标题临时居中，因本科摘要标题要求居中
+    \renewcommand{\BachelorChapterFormat}{\centering}                 % 标题临时居中，因本科摘要标题要求居中
     \chapter*{\texorpdfstring{\textbf{摘\quad 要}}{摘 要}}             % 本科摘要标题加粗
-    \renewcommand{\bachelorchapterformat}{}                           % 标题恢复全局设置
+    \renewcommand{\BachelorChapterFormat}{}                           % 标题恢复全局设置
   }{ % 硕博摘要格式设置 👇
     \chapter*{\texorpdfstring{\heiti 摘\quad 要}{摘 要}}               % 硕博摘要标题黑体
     \addcontentsline{toc}{chapter}{\texorpdfstring{摘\quad 要}{摘 要}} % 设置在目录显示摘要
@@ -744,7 +711,7 @@
 
 
 %=========================中文关键字=========================
-\newcommand{\chinesekeyword}[1]{
+\newcommand{\ChineseKeyword}[1]{
   \vspace{\baselineskip}
   \noindent\
   \@hangfrom{\makebox[48pt][l]{\textbf{关键词：}}}#1
@@ -752,13 +719,13 @@
 
 
 %=========================英文摘要环境定义=========================
-\newenvironment{englishabstract}
+\newenvironment{EnglishAbstract}
 {
   % 设置目录和标题内容
   \ifbachelor{ % 本科英文摘要格式设置 👇
-    \renewcommand{\bachelorchapterformat}{\centering}
+    \renewcommand{\BachelorChapterFormat}{\centering}
     \chapter*{\bfseries\selectfont\heiti Abstract} % 本科英文摘要标题首字母大写
-    \renewcommand{\bachelorchapterformat}{}
+    \renewcommand{\BachelorChapterFormat}{}
   }{ % 硕博英文摘要格式设置 👇
     \chapter*{\bfseries ABSTRACT}
     \addcontentsline{toc}{chapter}{\bfseries ABSTRACT} % 设置在目录显示
@@ -789,7 +756,7 @@
 
 
 %=========================英文关键字=========================
-\newcommand{\englishkeyword}[1]
+\newcommand{\EnglishKeyword}[1]
 {
   \vspace{\baselineskip}
   \noindent
@@ -803,17 +770,17 @@
 
 % ====================目录标题格式设置==================== 定义插入目录命令
 \ifbachelor{ % 本科目录标题使其居中 👇
-  \newcommand{\thesistableofcontents}
+  \newcommand{\ThesisContents}
   {
-    \renewcommand{\bachelorchapterformat}{\centering} % 目录标题居中
+    \renewcommand{\BachelorChapterFormat}{\centering} % 目录标题居中
     \begin{spacing}{2}                                % 本科目录两倍行距
       \tableofcontents
     \end{spacing}
-    \renewcommand{\bachelorchapterformat}{}           % 还原初始设置
+    \renewcommand{\BachelorChapterFormat}{}           % 还原初始设置
     \label{page:tableofcontents}                      % 设置pageref获取页码数的标记
   }
 }{ % 硕博目录标题统一居中无需更改 👇
-  \newcommand{\thesistableofcontents}{\tableofcontents}
+  \newcommand{\ThesisContents}{\tableofcontents}
 }
 
 
@@ -887,16 +854,16 @@
 
 % =========================插图索引标题格式设置========================= 定义插图索引命令
 \ifbachelor{ % 定义本科插图索引 👇
-  \newcommand{\thesisfigurelist}
+  \newcommand{\ThesisFigureList}
   {
-    \renewcommand{\bachelorchapterformat}{\centering} % 设置标题居中
+    \renewcommand{\BachelorChapterFormat}{\centering} % 设置标题居中
     \setstretch{2.0}                                  % 设置二倍行距
     \listoffigures
     \setstretch{1.389}                                % 行距设置回20磅
-    \renewcommand{\bachelorchapterformat}{}           % 还原初始设置：左对齐
+    \renewcommand{\BachelorChapterFormat}{}           % 还原初始设置：左对齐
   }
 }{ % 定义硕博插图索引命令 👇
-  \newcommand{\thesisfigurelist}{\listoffigures}      % 自定义调用\listoffigures的命令
+  \newcommand{\ThesisFigureList}{\listoffigures}      % 自定义调用\listoffigures的命令
 }
 
 
@@ -933,16 +900,16 @@
 
 % ====================插表索引格式设置==================== 定义插表索引命令
 \ifbachelor{ % 定义本科插表索引 👇
-  \newcommand{\thesistablelist}
+  \newcommand{\ThesisTableList}
   {
-    \renewcommand{\bachelorchapterformat}{\centering} % 设置标题居中
+    \renewcommand{\BachelorChapterFormat}{\centering} % 设置标题居中
     \setstretch{2.0}                                  % 设置二倍行距
     \listoftables
     \setstretch{1.389}                                % 行距设置回20磅
-    \renewcommand{\bachelorchapterformat}{}           % 还原初始设置：左对齐
+    \renewcommand{\BachelorChapterFormat}{}           % 还原初始设置：左对齐
   }
 }{ % 定义硕博插表索引命令 👇
-  \newcommand{\thesistablelist}{\listoftables}        % 自定义\thesistablelist命令
+  \newcommand{\ThesisTableList}{\listoftables}        % 自定义\ThesisTableList命令
 }
 
 
@@ -979,13 +946,13 @@
 % //////////////////////////////////////// 符号说明设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 % ====================符号说明页面设置==================== 定义符号说明命令
-\newcommand{\thesissymbollist}
+\newcommand{\ThesisSymbolList}
 {
   \renewcommand{\nomname}{符号说明}                                         % 修改符号说明标题的名称。
   \addcontentsline{toc}{chapter}{\texorpdfstring{\heiti 符号说明}{符号说明}} % 设置在目录显示符号说明
 
   \ifbachelor{ % 设置本科插表索引标题 👇
-    \renewcommand{\bachelorchapterformat}{\centering} % 设置标题居中
+    \renewcommand{\BachelorChapterFormat}{\centering} % 设置标题居中
     \setstretch{2.0}                                  % 设置二倍行距
   }{}
 
@@ -1005,7 +972,7 @@
   }
 
   \ifbachelor{ % 设置本科插表索引标题格式 👇
-    \renewcommand{\bachelorchapterformat}{} % 还原初始设置：左对齐
+    \renewcommand{\BachelorChapterFormat}{} % 还原初始设置：左对齐
     \setstretch{1.389}                      % 行距设置回20磅
   }{}
 
@@ -1084,15 +1051,15 @@
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter\hspace*{5.25pt}#1}{}} % 修改页眉章节显示内容 \markboth{<左面页眉>}{<右面页眉>}
 
 \ifbachelor{ % 本科页眉文字 👇
-  \newcommand{\standardheader}{
+  \newcommand{\StandardHeader}{
     \fancyhf{}
     \fancyhead[CE,CO]{\fontsize{10.5pt}{12.6pt}\selectfont 桂林电子科技大学毕业设计（论文）}
     \fancyhead[RE,RO]{\fontsize{10.5pt}{12.6pt}\selectfont 第\thepage 页\enspace 共 \pageref {LastPage} 页 }
   }
 }{ % 硕博页眉文字 👇
-  \newcommand{\standardheader}{
+  \newcommand{\StandardHeader}{
     \fancyhf{}
-    \fancyhead[CE]{\fontsize{10.5pt}{12.6pt}\selectfont\zh@thetitle} % 偶数页眉内容为中文标题
+    \fancyhead[CE]{\fontsize{10.5pt}{12.6pt}\selectfont\zh@TheTitle} % 偶数页眉内容为中文标题
     \fancyhead[CO]{\fontsize{10.5pt}{12.6pt}\selectfont\leftmark}    % 奇数页页眉使用标题
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   }
@@ -1114,10 +1081,10 @@
 
 % ===============标题字体设置=============== 
 \ifbachelor{ % 本科标题格式设置 👇
-  \newcommand{\bachelorchapterformat}{} % 定义\bachelorchapterformat命令，用于修改本科一级标题格式
+  \newcommand{\BachelorChapterFormat}{} % 定义\BachelorChapterFormat命令，用于修改本科一级标题格式
 
   \titleformat{\chapter}[block]
-  {\bachelorchapterformat\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}} % 本科chapter格式
+  {\BachelorChapterFormat\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}} % 本科chapter格式
   {\thechapter}{20pt}{}
 
   \titleformat{\section}[block]
@@ -1162,16 +1129,6 @@
 }
 % \the计数器，显示计数器的值，该命令只使用于序号计数器，例如\thepage显示当前页码。
 % \value{计数器}调用计数器的值，无论计数器的计数形式如何都被转换成对应的阿拉伯数字。 \S 标题前加特数符号
-
-\ifbachelor{ % 本科图表公式题注编号格式 👇
-  \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}} % 显示公式编号，其格式x.x
-  \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}       % 显示表格编号，其格式x.x
-  \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}     % 显示插图编号，其格式x.x
-}{ % 硕博图表公式题注编号格式 👇
-  \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}} % 显示公式编号，其格式x-x
-  \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}       % 显示表格编号，其格式x-x
-  \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}     % 显示插图编号，其格式x-x
-}
 % chapter章序号计数器，section节序号计数器，subsection小节序号计数器，subsubsection小小节序号计数器，paragraph段序号计数器，figure插图序号计数器，table表格序号计数器，page页码序号计数器，equation公式序号计数器
 
 
@@ -1184,7 +1141,7 @@
 
 
 
-% //////////////////////////////////////// 图标公式设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+% //////////////////////////////////////// 图表公式设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 % ===============图表题注样式设置=============== 
 \renewcommand{\figurename}{图}                          % 使默认的图名字改为图显示
@@ -1192,6 +1149,16 @@
 \renewcommand{\thesubfigure}{(\alph{subfigure})}        % 设置子图标题序号 
 \counterwithin{figure}{chapter}                         % 设置figure计数器每章重置
 \counterwithin{table}{chapter}                          % 设置table计数器每章重置
+
+\ifbachelor{ % 本科图表公式题注编号格式 👇
+  \renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}} % 显示公式编号，其格式x.x
+  \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}       % 显示表格编号，其格式x.x
+  \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}     % 显示插图编号，其格式x.x
+}{ % 硕博图表公式题注编号格式 👇
+  \renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}} % 显示公式编号，其格式x-x
+  \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}       % 显示表格编号，其格式x-x
+  \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}     % 显示插图编号，其格式x-x
+}
 
 
 % ===============图表题注格式设置=============== caption 与 subcaption 宏包
@@ -1332,25 +1299,26 @@
 
 % //////////////////////////////////////// 参考文献设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-% ====================参考文献设置====================      
+% ====================参考文献设置====================
+\newcommand{\ThesisBibResource}[1]{\addbibresource[location=local]{#1}}               % 定义 \ThesisBibResource 命令用于加载参考文献源
 \setcounter{gbrefcompress}{3}                                                         % 参考文献引用从第三篇开始压缩
 \renewcommand{\bibfont}{\small}                                                       % 设置参考文献字体小五
 \setlength{\bibitemsep}{0pt}                                                          % 每一条参考文献之间的间隔
 \AtEveryBibitem{\clearfield{url}}                                                     % 清除url信息 用以解决 url=false 命令在thesis中失效的Bug
-\newcommand{\thesisbibliography}{\printbibliography[heading=bibintoc,title=参考文献]}  % 自定义参考文献命令，bibintoc 目录中显示参考文献
+\newcommand{\ThesisBibliography}{\printbibliography[heading=bibintoc,title=参考文献]}  % 自定义参考文献命令，bibintoc 目录中显示参考文献
 
 
 
 
 % //////////////////////////////////////// 致谢设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-\newcommand{\thesisacknowledgement}
+\newcommand{\ThesisAcknowledgement}
 {
   \ifbversion{ % 盲审 则致谢命令为空
 
   }{ % 非盲审则存在致谢
     \ifbachelor{ % 本科致谢设置 👇
-      \renewcommand{\bachelorchapterformat}{\centering}     % 通过修改\bachelorchapterformat命令让致谢居中
+      \renewcommand{\BachelorChapterFormat}{\centering}     % 通过修改\BachelorChapterFormat命令让致谢居中
       \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
       \setcounter{section}{0}                               % section计数器清零 
       \chapter*{\texorpdfstring{谢\quad 辞}{谢 辞}}
@@ -1369,17 +1337,17 @@
     \normalsize                                             % 设置字体为小四
     \input{Chapters/Thanks.tex}                             % 致谢文档位置
     \ifbachelor{ % 一级标题还原默认设置 👇
-      \renewcommand{\bachelorchapterformat}{}
+      \renewcommand{\BachelorChapterFormat}{}
     }{}
   }
 }
 
-\newcommand{\thesiscontent}
+\newcommand{\ThesisContent}
 {
   \newpage
   \clearpage{\thispagestyle{empty}\cleardoublepage}
   \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
-  \standardheader
+  \StandardHeader
   \pagenumbering{arabic}
 }
 
@@ -1388,7 +1356,7 @@
   \ifdefined\@BODY
   \else
     \ifnum\value{chapter}=0
-      \thesiscontent
+      \ThesisContent
     \fi
   \fi
 }{}{}
@@ -1398,50 +1366,52 @@
 
 % //////////////////////////////////////// 攻读学位期间取得成果设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-\defbibheading{BibHeadStyle}[\bibname]{\noindent\normalsize #1}                            % 自定义title样式
+\newcommand{\AchResource}{\quad}                                                             % 定义cls中引用成果源命令
+\newcommand{\ThesisAchResource}[1]{\renewcommand{\AchResource}{#1}}                          % 定义添加成果源命令
+\defbibheading{AchHeadStyle}[\bibname]{\noindent\normalsize #1}                              % 自定义title样式
 
 % ====================取得成果设置==================== 定义攻读学位期间取得成果命令
-\newcommand{\thesisaccomplish}[1]{
+\newcommand{\ThesisAchievement}{
     \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}                                  % 只显示一级标题
     \setcounter{section}{0}                                                                % section计数器清零 
     
-    \chapter*{攻读\degreename{}学位期间取得的成果}
-    \addcontentsline{toc}{chapter}{攻读\degreename{}学位期间取得的成果}
+    \chapter*{攻读\DegreeName{}学位期间取得的成果}
+    \addcontentsline{toc}{chapter}{攻读\DegreeName{}学位期间取得的成果}
     \fancyhf{}
-    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\degreename{}学位期间取得的成果}
+    \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\DegreeName{}学位期间取得的成果}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
     \thispagestyle{fancy}
     
     \renewcommand{\bibfont}{\normalsize}                                                   % 设置参考文献字体小四
-    \begin{refsection}[#1]
+    \begin{refsection}[\AchResource]
         \nocite{*}
         \settoggle{bbx:gbtype}{false}                                                      % 局部设置不输出文献类型和载体标识符
         \settoggle{bbx:gbannote}{true}                                                     % 局部设置输出附加的annote/annotation信息
         \settoggle{bbx:gbpub}{false}                                                       % 局部设置不输出出版信息
-        \printbibliography[heading=BibHeadStyle,type=report ,title=参与项目：]
+        \printbibliography[heading=AchHeadStyle,type=report ,title=参与项目：]
     \end{refsection}
-    \begin{refsection}[#1]
+    \begin{refsection}[\AchResource]
         \nocite{*}
         \def\blx@maxbibnames{5}                                                            % 局部调整作者数量
         \settoggle{bbx:gbannote}{true}
-        \printbibliography[heading=BibHeadStyle,type=article,title=发表论文：]
+        \printbibliography[heading=AchHeadStyle,type=article,title=发表论文：]
     \end{refsection}
-    \begin{refsection}[#1]
+    \begin{refsection}[\AchResource]
         \nocite{*}
         \def\blx@maxbibnames{5}
         \settoggle{bbx:gbannote}{true}
-        \printbibliography[heading=BibHeadStyle,type=patent,title=发明专利：]
+        \printbibliography[heading=AchHeadStyle,type=patent,title=发明专利：]
     \end{refsection}
-    \begin{refsection}[#1]
+    \begin{refsection}[\AchResource]
         \nocite{*}
         \settoggle{bbx:gbannote}{true}
-        \printbibliography[heading=BibHeadStyle,type=software,title=软件著作权：]
+        \printbibliography[heading=AchHeadStyle,type=software,title=软件著作权：]
     \end{refsection}
-    \begin{refsection}[#1]
+    \begin{refsection}[\AchResource]
         \nocite{*}
         \settoggle{bbx:gbtype}{false}
         \settoggle{bbx:gbannote}{true}
-        \printbibliography[heading=BibHeadStyle,type=misc,title=科研竞赛获奖：]
+        \printbibliography[heading=AchHeadStyle,type=misc,title=科研竞赛获奖：]
     \end{refsection}
 }
 
@@ -1455,14 +1425,14 @@
     }
 }{}
 
-% \newcommand{\thesisaccomplish}{
+% \newcommand{\ThesisAchievement}{
 %   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
 %   \setcounter{section}{0} % section计数器清零 
 
-%   \chapter*{攻读\degreename{}学位期间取得的成果}
-%   \addcontentsline{toc}{chapter}{攻读\degreename{}学位期间取得的成果}
+%   \chapter*{攻读\DegreeName{}学位期间取得的成果}
+%   \addcontentsline{toc}{chapter}{攻读\DegreeName{}学位期间取得的成果}
 %   \fancyhf{}
-%   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\degreename{}学位期间取得的成果}
+%   \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\DegreeName{}学位期间取得的成果}
 %   \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
 %   \thispagestyle{fancy}
 %   \normalsize  % 设置字体为小四
@@ -1478,7 +1448,7 @@
 
 
 % //////////////////////////////////////// 附录设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-\newcommand{\thesisappendix}
+\newcommand{\ThesisAppendix}
 { %附录格式设置 👇
   \newpage
   \appendix
@@ -1503,7 +1473,7 @@
   \renewcommand{\theexample}{\alph{chapter}.\arabic{example}}
 }
 
-\newcommand{\thesissingleappendix}
+\newcommand{\ThesisSingleAppendix}
 {
   \newpage
   \appendix
