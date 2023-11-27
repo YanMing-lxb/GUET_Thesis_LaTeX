@@ -357,7 +357,7 @@
     \begin{textblock}{5}(12.6,2.1)
       % \textblockcolour{red!30} % 设置背景颜色
       \begin{flushright}
-        密\enspace 级 \underline{\hspace*{2.5em}\TheSecrets\hspace*{2.5em}}
+        密\enspace 级 \underline{\makebox[7em][c]{\TheSecrets}}
       \end{flushright}
     \end{textblock}
   }
