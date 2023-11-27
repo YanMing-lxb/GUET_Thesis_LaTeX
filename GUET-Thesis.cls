@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-11-27 21:26:29 +0800
+% LastEditTime : 2023-11-27 23:02:35 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -132,7 +132,7 @@
                   % gbnamefmt=lowercase,                  % 姓名小写
                   % gbpunctin=false,                      % 关闭inbook,incollection,inproceedings中析出来源文献前//符号
                   gbstrict=true,                        % 避免输出 bib 文件中多余的域信息
-                  gbalign=left,                         % 标签左对齐
+                  gbalign=center,                       % 标签中括号对齐
                 ]{biblatex}
 
 % ===============条件判断宏包宏包===============
