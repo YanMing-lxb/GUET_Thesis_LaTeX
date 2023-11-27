@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-11-27 18:47:04 +0800
+% LastEditTime : 2023-11-27 19:45:40 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -331,7 +331,7 @@
 
 
 % ===============判断学位类别的命令定义===============
-\newcommand{\ifbachelor}[2]{\ifthenelse{\equal{\DegreeName}{本科}}{#1}{#2}}                                % 如果学位名是本科则执行#1命令，否执行#2命令
+\newcommand{\ifbachelor}[2]{\ifthenelse{\equal{\DegreeName}{本科}}{#1}{#2}}                                 % 如果学位名是本科则执行#1命令，否执行#2命令
 \newcommand{\ifpromaster}[1]{\ifthenelse{\equal{\DegreeName}{专业硕士}}{#1}{}}                              % 如果学位名是专业硕士则执行#1命令
 \newcommand{\ifmaster}[1]{\ifthenelse{\equal{\DegreeName}{硕士}}{#1}{}}                                     % 如果学位名是硕士则执行#1命令
 \newcommand{\ifojmaster}[1]{\ifthenelse{\equal{\DegreeName}{在职硕士}}{#1}{}}                               % 如果学位名是在职硕士则执行#1命令
@@ -1420,6 +1420,20 @@
 }
 
 
+% ====================隐藏参与项目、软件著作权和科研竞赛姓名====================
+\AtEveryBibitem{                                % 清除指定refsection环境中的作者姓名
+    \ifnumequal{\value{refsection}}{1}          % 判断 当前refsection序号是否是为1
+       {\clearname{author}}                     % 是则清除作者信息
+       {}                                       % 否则不执行操作
+    \ifnumequal{\value{refsection}}{4}          % 判断 当前refsection序号是否是为4
+       {\clearname{author}}                     % 是则清除作者信息
+       {}                                       % 否则不执行操作
+    \ifnumequal{\value{refsection}}{5}          % 判断 当前refsection序号是否是为5
+       {\clearname{author}}                     % 是则清除作者信息
+       {}                                       % 否则不执行操作
+}
+
+
 % ====================盲审版去作者信息设置==================== 
 \ifbversion{ % 盲审版则去掉取得成果的作者信息
     \AtEveryBibitem{                            % 清除指定refsection环境中的作者姓名
@@ -1428,6 +1442,7 @@
            {}                                   % 否则不执行操作
     }
 }{}
+
 
 % \newcommand{\ThesisAchievement}{
 %   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
