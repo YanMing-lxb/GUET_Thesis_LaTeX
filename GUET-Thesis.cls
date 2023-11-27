@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-11-27 19:45:40 +0800
+% LastEditTime : 2023-11-27 20:42:56 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -131,6 +131,7 @@
                   % gbpub=true,                           % 显示出版信息
                   % gbnamefmt=lowercase,                  % 姓名小写
                   % gbpunctin=false,                      % 关闭inbook,incollection,inproceedings中析出来源文献前//符号
+                  gbstrict=true,                        % 避免输出 bib 文件中多余的域信息
                   gbalign=left,                         % 标签左对齐
                 ]{biblatex}
 
@@ -1303,6 +1304,19 @@
 
 % //////////////////////////////////////// 参考文献设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+% ====================解决学位论文显示url的问题====================
+\DeclareStyleSourcemap{
+  \maps[datatype=bibtex]{
+    \map[overwrite]{
+      \pertype{thesis}
+      \step[fieldset=editora,null]
+      \step[fieldset=editoratype,null]
+    }
+  }
+}
+% thesis 没有地址又有url会识别为online，所以false会失效，所以用上述代码补上。这样的话就都有url了，就不会因为没有url而显示 “In collab. with” 的问题了。
+
+
 % ====================参考文献设置====================
 \newcommand{\ThesisBibResource}[1]{\addbibresource[location=local]{#1}}               % 定义 \ThesisBibResource 命令用于加载参考文献源
 \setcounter{gbrefcompress}{3}                                                         % 参考文献引用从第三篇开始压缩
@@ -1370,11 +1384,25 @@
 
 % //////////////////////////////////////// 攻读学位期间取得成果设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+% ====================解决专利显示patent的问题====================
+\DeclareStyleSourcemap{
+  \maps[datatype=bibtex]{
+    \map[overwrite]{
+      \pertype{patent}
+      \step[fieldset=holder,null]                                                            % holder设置为 null
+      \step[fieldset=type,null]                                                              % 类型设置为 null
+      \step[fieldset=institution,null]                                                       % 机构设置为 null
+      \step[fieldset=location, fieldvalue={}]                                                % 地点设置为 {} ，null有问题
+    }
+  }
+}
+
+
+% ====================取得成果设置==================== 定义攻读学位期间取得成果命令
 \newcommand{\AchResource}{\quad}                                                             % 定义cls中引用成果源命令
 \newcommand{\ThesisAchResource}[1]{\renewcommand{\AchResource}{#1}}                          % 定义添加成果源命令
 \defbibheading{AchHeadStyle}[\bibname]{\noindent\normalsize #1}                              % 自定义title样式
 
-% ====================取得成果设置==================== 定义攻读学位期间取得成果命令
 \newcommand{\ThesisAchievement}{
     \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}                                  % 只显示一级标题
     \setcounter{section}{0}                                                                % section计数器清零 

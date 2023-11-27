@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2023-11-27 18:59:31 +0800
+ * LastEditTime : 2023-11-27 20:48:27 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \GUET_Thesis_LaTeX\README.md
  * Description  : README文档
@@ -107,14 +107,14 @@ git clone https://github.com/YanMing-lxb/GUET_Thesis_LaTeX.git
 
 - 标题中`\texorpdfstring` 命令包装数学公式，并提供一个无公式的备选项，如：`\section{\texorpdfstring{$E=mc^2$}{E=mc2}} ` 否则会有警告；
 - 在具有多个子图的情况时，子图与子图之间要留有一定的空间，不要占满，否则会发生自动换行；
-- 子图请用`\subfloat[<子题注>]{\includegraphics[width=0.45\linewidth]{<图片文件名>}}}`命令加入；
-- 使用`\caption[]{}`命令时，如果不需要设置缩写目录的内容，一定要删掉`[]`，否则插图插表索引将不会显示该图\表的目录；
-- 表、图、公式、算法、章节、节的引用请用`\cref{<label>}`命令；
+- 子图请用 `\subfloat[<子题注>]{\includegraphics[width=0.45\linewidth]{<图片文件名>}}}` 命令加入；
+- 使用 `\caption[]{}` 命令时，如果不需要设置缩写目录的内容，一定要删掉 `[]`，否则插图插表索引将不会显示该图\表的目录；
+- 表、图、公式、算法、章节、节的引用请用 `\cref{<label>}` 命令；
 - 本模板的 `figure` 和 `table` 环境已默认设置 `\centering` 命令，因此使用过程中无需设置 `\centering`。
 
 ### 表格制作
 
-推荐使用tabularray 宏包进行表格的制作，模板中已自定义三线表环境`threetab`，示例如下所示。
+推荐使用tabularray 宏包进行表格的制作，模板中已自定义三线表环境 `threetab`，示例如下所示。
 作者暂无精力完成长表环境格式自定义，有待完善。
 
 ```tex
@@ -132,8 +132,8 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 ### 论文封面
 
-论文封面和扉页由`\MakeCover`命令添加，可以显示论文题目，作者，指导老师等。当启用盲审版时，封面将会自动切换成对应的盲审封面。（由于不知道本科的盲审封面是什么样的，所以没有制作本科的盲审封面，如果有通过需要，请在 [**Issue**](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues) 中提出需求，并提供带有盲审封面样式的 word 文档。）
-独创性声明可以由`\OriginalityDeclaration`命令生成，添加扫描版签名后的声明使用`\SignatureDeclaration{signature.pdf}`命令。
+论文封面和扉页由 `\MakeCover` 命令添加，可以显示论文题目，作者，指导老师等。当启用盲审版时，封面将会自动切换成对应的盲审封面。（由于不知道本科的盲审封面是什么样的，所以没有制作本科的盲审封面，如果有通过需要，请在 [**Issue**](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues) 中提出需求，并提供带有盲审封面样式的 word 文档。）
+独创性声明可以由 `\OriginalityDeclaration` 命令生成，添加扫描版签名后的声明使用 `\SignatureDeclaration{signature.pdf}` 命令。
 
 封面显示的信息可以使用一系列命令进行设置，包括标题、作者、学院等：
 
@@ -154,7 +154,7 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 ### 中英文摘要
 
-中英文摘要应包含在`ChineseAbstract`和`EnglishAbstract`环境中，对应的关键字使用`\ChineseKeyword`和`\EnglishKeyword`命令添加，并包含在相应的环境中。
+中英文摘要应包含在 `ChineseAbstract` 和 `EnglishAbstract` 环境中，对应的关键字使用 `\ChineseKeyword` 和 `\EnglishKeyword` 命令添加，并包含在相应的环境中。
 
 ### 参考文献
 参考文献使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出参考文献时，导出类型要选择 `biblatex`。在 `\ThesisBibResource` 命令中输入参考文献源文件位置。
@@ -193,23 +193,23 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 **本科毕业论文格式大部分功能已调整完，但细节有待完善，欢迎各位同学使用并提出建议！**
 
-> PS：目前已调整 cls 样式文件的代码，可以使用`\ifbachelor{}{}`命令修改本科样式。
+> PS：目前已调整 cls 样式文件的代码，可以使用 `\ifbachelor{}{}` 命令修改本科样式。
 
 ## 未来工作方向
-- [x] 封面目录的单双行切换（使用Tabularray宏包解决，但在标题中需要添加`\\&`命令进行换行）；
+- [x] 封面目录的单双行切换（使用 Tabularray 宏包解决，但在标题中需要添加 `\\&` 命令进行换行）；
 - [x] 盲审版本切换：
   - [x] 盲审封面制作及版本切换
   - [x] 攻读学位期间取得成果的盲审版本切换
-- [ ] 去除所有其他表格宏包，完全使用Tabularray宏包制表
-  - [ ] 自定义长三线表环境`lthreetab`(要求可跨页，跨页后自带 “题注(续)” )
-  - [x] 自定义普通三线表环境`threetab`
+- [ ] 去除所有其他表格宏包，完全使用 Tabularray 宏包制表
+  - [ ] 自定义长三线表环境 `lthreetab` (要求可跨页，跨页后自带 “题注(续)” )
+  - [x] 自定义普通三线表环境 `threetab`
 - [ ] ~~使用文学编程重构项目~~
 - [ ] 采用 biblatex 编译参考文献，替换掉 bibtex：
   - [X] biblatex 下实现参考文献的编译
   - [X] biblatex 下实现攻读学位期间取得成果的自动编译
   - [X] biblatex 下实现攻读学位期间取得成果的盲审版本切换
   - [ ] biblatex 下实现对攻读学位期间取得成果中作者的粗体显示
-- [ ] `biblatex-gb7714-2015` 宏包存在学位论文显示url的bug，而条目没有url参数时则显示 In collab. with 字样，目前以用临时方案解决
+- [X] 当学位论文条目存在 url 时，显示 url，而条目没有 url 参数时，则显示 In collab. with 字样，以及专利显示 "patent" 的问题：感谢 [**hushidong**](https://github.com/hushidong/biblatex-gb7714-2015/issues/178) 给出完美的解决方案
 
 
 
