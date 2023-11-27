@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-11-27 20:42:56 +0800
+% LastEditTime : 2023-11-27 21:26:29 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -1398,10 +1398,18 @@
 }
 
 
+
+
 % ====================取得成果设置==================== 定义攻读学位期间取得成果命令
 \newcommand{\AchResource}{\quad}                                                             % 定义cls中引用成果源命令
+\newcounter{NunAchType}                                                                      % 定义新计数器 NunAchType
 \newcommand{\ThesisAchResource}[1]{\renewcommand{\AchResource}{#1}}                          % 定义添加成果源命令
-\defbibheading{AchHeadStyle}[\bibname]{\noindent\normalsize #1}                              % 自定义title样式
+\defbibheading{AchHeadStyle}[\bibname]{                                                      % 自定义title样式
+  \noindent                                                                                  % 无缩进
+  \normalsize                                                                                % 字体小四
+  \stepcounter{NunAchType}                                                                   % 计数器累加
+  \zhnumber{\arabic{NunAchType}}、#1                                                         % 应用计数器，显示为：汉字数字、标题
+  }                                               
 
 \newcommand{\ThesisAchievement}{
     \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}                                  % 只显示一级标题
