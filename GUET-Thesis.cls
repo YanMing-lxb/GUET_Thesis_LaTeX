@@ -105,8 +105,10 @@
 \RequirePackage{lastpage}                             % 用于统计总页数（本科页码中使用）
 \RequirePackage{ifoddpage}                            % 用于判断页码是否为奇数（用于判断打印版中空白页的添加）
 \RequirePackage{pdfpages}                             % 用于插入外部 PDF 文档的页面，已签名的独创性声明
-\RequirePackage[absolute,overlay]{textpos}            % 用于绝对定位文本框，用于排版封面
 \RequirePackage{etoolbox}                             % 提供逻辑判断、列表循环遍历、patch、hook、计数器、布尔变量等操作
+\RequirePackage[absolute,overlay]{textpos}            % 用于绝对定位文本框，用于排版封面
+% \RequirePackage{showframe}                          % 显示排版框架
+% \TPshowboxestrue                                    % 显示textblock 框架，方便调整位置
 
 % ===============算法相关宏包===============
 \RequirePackage[
@@ -138,6 +140,8 @@
 \RequirePackage{ifthen}                               % 提供了 \ifthenelse 命令，用于条件判断和分支控制
 
 \RequireXeTeX                                         % 指定必须用 XeTeX 引擎进行编译
+
+\RequirePackage[l2tabu, orthodox]{nag}                % 检查是否有已被淘汰或过时的宏包
 
 % ===============PDF文件相关宏包===============
 \hypersetup{                                          % 文中链接设置

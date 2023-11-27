@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-18 08:50:38 +0800
-% LastEditTime : 2023-11-27 18:23:26 +0800
+% LastEditTime : 2023-11-27 19:13:28 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\main.tex
 % Description  : Version 2.3 更新请关注 https://github.com/YanMing-lxb/GUET_Thesis_LaTeX
@@ -26,9 +26,11 @@
 \special{dvipdfmx:config z 0}                                                % XeLaTeX取消PDF压缩，加快编译速度，但会增加PDF体积
 % \pdfcompresslevel=0                                                          % PdfLaTeX取消PDF压缩，加快编译速度，但会增加PDF体积
 % \pdfobjcompresslevel=0                                                       % LuaLaTeX取消PDF压缩，加快编译速度，但会增加PDF体积
+
 % ------------------------------------------------------------------------------------------
 %     前言区域
 % ------------------------------------------------------------------------------------------
+
 \documentclass[master]{GUET-Thesis} 
 % pversion:打印版 bversion:盲审版 
 % bachelor:本科 master:学硕 promaster:专硕 doctor:博士 ojmaster 在职硕士 ptmaster 非全专硕
@@ -36,9 +38,9 @@
 % \documentclass[master,bversion]{GUET-Thesis} % 盲审版
 % \documentclass[master,pversion]{GUET-Thesis} % 打印版
 
-% \usepackage{showframe}                                                     % 显示排版框架
-% \TPshowboxestrue                                                           % 显示textblock 框架，方便调整位置
-\usepackage[l2tabu, orthodox]{nag}                                           % 检查是否有已被淘汰或过时的宏包
+% ------------------------------------------------------------------------------------------
+%     资源路径
+% ------------------------------------------------------------------------------------------
 
 \graphicspath{
         {./Pictures/},
@@ -50,12 +52,16 @@
 }                                                                           % 图片所在位置，根据需求进行修改
 \ThesisBibResource{./References/reference.bib}                              % 参考文献数据源加载
 \ThesisAchResource{./References/accomplish.bib}                             % 攻读学位期间取得成果数据源加载
+
 % ------------------------------------------------------------------------------------------
 %     封面信息
 % ------------------------------------------------------------------------------------------
-% \secrets{绝密}                                                            % 不涉密请注释该命令，不要空着
-\Title{基于嵌入式散热模块的微通道散热技术研究}{Research on microchannel heat dissipation technology \\& based on embedded heat dissipation module} 
-                                                                            % 题目{中文}{英文}  在标题中插入“\\&”命令进行换行
+
+\Title{                                                                     % 题目{中文}{英文}  
+    基于嵌入式散热模块的微通道散热技术研究
+}{
+    Research on microchannel heat dissipation technology \\& based on embedded heat dissipation module
+    }                                                                       % 标题中插入“\\&”命令进行换行
 \Author{焱铭}                                                               % 作者姓名
 \Advisor{李某某}                                                             % 导师姓名
 \Protitle{教授}                                                              % 导师职称
@@ -64,23 +70,29 @@
 \ResearchDirection{电子器件散热}                                             % 研究领域（盲审用）
 \DegreeCategories{工学硕士}                                                  % 申请学位门类或类别
 \StudentNumber{2020XXX}                                                     % 学号
+% \secrets{绝密}                                                            % 不涉密请注释该命令，不要空着
 \Date{\today}                                                               % 可更换为具体日期如：\date{2023年5月28日}
-
 
 % ------------------------------------------------------------------------------------------
 %     正文
 % ------------------------------------------------------------------------------------------
+
 \begin{document}
     \MakeCover                                                             % 封面
     \OriginalityDeclaration                                                % 独创性声明
     % \SignatureDeclaration{./Chapters/独创性声明(示例).pdf}                % 可使用已签字的独创性声明PDF文件
+
     \input{Chapters/Abstract}                                              % 摘要
-% ------------------------------------------------------------------------------------------   
+
+% ------------------------------------------------------------------------------------------ 
+
     \ThesisFigureList                                                      % 插图目录
     \ThesisTableList                                                       % 插表目录
     \ThesisSymbolList                                                      % 符号说明表
     \ThesisContents                                                        % 目录
+
 % ------------------------------------------------------------------------------------------
+
     \input{Chapters/Symbol}                                                % 符号定义文件
 
     \input{Chapters/Chapter1}
@@ -90,10 +102,12 @@
     \input{Chapters/Chapter5}                                              % 可根据需求自行添加章节数
 
     \input{Chapters/Conclusion}                                            % 总结与展望
+    
 % ------------------------------------------------------------------------------------------
+
     \ThesisBibliography                                                    % 参考文献
-% ------------------------------------------------------------------------------------------
     \ThesisAcknowledgement                                                 % 致谢
     \ThesisAchievement                                                     % 攻读专业硕士学位期间取得的成果
-    
+
+% ------------------------------------------------------------------------------------------    
 \end{document} 
