@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2023-11-26 23:38:18 +0800
+ * LastEditTime : 2023-11-27 18:59:31 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \GUET_Thesis_LaTeX\README.md
  * Description  : README文档
@@ -132,35 +132,37 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 ### 论文封面
 
-论文封面和扉页由`\makecover`命令添加，可以显示论文题目，作者，指导老师等，也可使用`\bindpdfcover{cover.pdf}`命令添加封面.独创性声明可以由`\originalitydeclaration`命令生成，添加扫描版签名后的声明使用`\signatureofdeclaration{signature.pdf}`命令。
+论文封面和扉页由`\MakeCover`命令添加，可以显示论文题目，作者，指导老师等。当启用盲审版时，封面将会自动切换成对应的盲审封面。（由于不知道本科的盲审封面是什么样的，所以没有制作本科的盲审封面，如果有通过需要，请在 [**Issue**](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues) 中提出需求，并提供带有盲审封面样式的 word 文档。）
+独创性声明可以由`\OriginalityDeclaration`命令生成，添加扫描版签名后的声明使用`\SignatureDeclaration{signature.pdf}`命令。
 
 封面显示的信息可以使用一系列命令进行设置，包括标题、作者、学院等：
 
-| 命令名称              | 参数#1       | 参数#2   |
-| --------------------- | ------------ | -------- |
-| \title{#1}{#2}        | 中文标题     | 英语标题 |
-| \author{#1}           | 作者名       | 无       |
-| \advisor{#1}          | 导师名       | 无       |
-| \protitle{#1}         | 导师职称     | 无       |
-| \school{#1}           | 学院名       | 无       |
-| \major{#1}            | 专业名       | 无       |
-| \researchdirection{#1}| 研究领域     | 无       |
-| \studentnumber{#1}    | 学号         | 无       |
-| \degreecategories{#1} | 申请学位门类 | 无       |
-| \date{#1}             | 论文答辩日期 | 无       |
+| 命令名称               | 参数#1       | 参数#2   | 适用     |
+| ---------------------- | ------------ | -------- | -------- |
+| \Title{#1}{#2}         | 中文标题     | 英语标题 | 通用     |
+| \Author{#1}            | 作者         | 无       | 通用     |
+| \Advisor{#1}           | 导师         | 无       | 通用     |
+| \Protitle{#1}          | 导师职称     | 无       | 通用     |
+| \School{#1}            | 学院         | 无       | 本科     |
+| \Major{#1}             | 专业         | 无       | 通用     |
+| \ResearchDirection{#1} | 研究领域     | 无       | 硕博盲审 |
+| \DegreeCategories{#1}  | 申请学位门类 | 无       | 硕博     |
+| \StudentNumber{#1}     | 学号         | 无       | 通用     |
+| \StudentNumber{#1}     | 密级         | 无       | 硕博     |
+| \Date{#1}              | 论文答辩日期 | 无       | 通用     |
 
 
 ### 中英文摘要
 
-中英文摘要应包含在`chineseabstract`和`englishabstract`环境中，对应的关键字使用`\chinesekeyword`和`\englishkeyword`命令添加，并包含在相应的环境中。
+中英文摘要应包含在`ChineseAbstract`和`EnglishAbstract`环境中，对应的关键字使用`\ChineseKeyword`和`\EnglishKeyword`命令添加，并包含在相应的环境中。
 
 ### 参考文献
-参考文献使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出参考文献时，导出类型要选择 `biblatex`。
+参考文献使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出参考文献时，导出类型要选择 `biblatex`。在 `\ThesisBibResource` 命令中输入参考文献源文件位置。
 
 注意：使用该模板时，`biblatex` 和 `biblatex-gb7714-2015` 宏包均要更新到最新版本，否则会报错。
 
 ### 攻读学位期间取得成果
-攻读学位期间取得成果使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出攻读学位期间取得成果时，导出类型要选择 `biblatex`。
+攻读学位期间取得成果使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出攻读学位期间取得成果时，导出类型要选择 `biblatex`。在 `\ThesisAchResource` 命令中输入成果源文件位置。
 建议将成果保存到 Zotero 中，关于成果在 Zotero 和 bib 文件中的类型设置如下表所示：
 
 | 成果类型     | Zotero 中的类型 | bib 文件中的类型 |

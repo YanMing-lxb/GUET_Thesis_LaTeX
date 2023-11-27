@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-11-27 18:19:42 +0800
+% LastEditTime : 2023-11-27 18:47:04 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -259,18 +259,18 @@
 
 
 % ===============封面信息引用定义===============
-\newcommand{\zh@TheTitle}{\quad}          % 标题
+\newcommand{\zh@TheTitle}{\quad}          % 中文标题
 \newcommand{\en@TheTitle}{\quad}          % 英文标题
 \newcommand{\TheAuthor}{\quad}            % 作者
-\newcommand{\TheDate}{\quad}              % 日期
-\newcommand{\TheSchool}{\quad}            % 学院
-\newcommand{\TheMajor}{\quad}             % 专业
-\newcommand{\TheResearchDirection}{\quad} % 研究方向
 \newcommand{\TheAdvisor}{\quad}           % 导师姓名
 \newcommand{\TheProtitle}{\quad}          % 导师职称
-\newcommand{\TheSecrets}{\qquad}          % 密级
+\newcommand{\TheSchool}{\quad}            % 学院
+\newcommand{\TheMajor}{\quad}             % 专业
+\newcommand{\TheResearchDirection}{\quad} % 研究领域
+\newcommand{\TheDegreeCategories}{\quad}  % 申请学位门类
 \newcommand{\TheStudentNumber}{\quad}     % 学号
-\newcommand{\TheDegreeCategories}{\quad}  % 学位类别
+\newcommand{\TheSecrets}{\qquad}          % 密级
+\newcommand{\TheDate}{\quad}              % 论文答辩日期
 
 
 % ===============封面信息定义===============
@@ -278,16 +278,16 @@
                           \renewcommand{\zh@TheTitle}{#1}                     % 中文标题
                           \renewcommand{\en@TheTitle}{#2}                     % 英文标题
                         }
-\newcommand{\Secrets}[1]{\renewcommand{\TheSecrets}{#1}}                      % 密级
 \newcommand{\Author}[1]{\renewcommand{\TheAuthor}{#1}}                        % 作者
-\newcommand{\Date}[1]{\renewcommand{\TheDate}{#1}}                            % 日期
-\newcommand{\Major}[1]{\renewcommand{\TheMajor}{#1}}                          % 专业
-\newcommand{\ResearchDirection}[1]{\renewcommand{\TheResearchDirection}{#1}}  % 研究方向
-\newcommand{\School}[1]{\renewcommand{\TheSchool}{#1}}                        % 学院
-\newcommand{\Advisor}[1]{\renewcommand{\TheAdvisor}{#1}}                      % 导师姓名
+\newcommand{\Advisor}[1]{\renewcommand{\TheAdvisor}{#1}}                      % 导师
 \newcommand{\Protitle}[1]{\renewcommand{\TheProtitle}{#1}}                    % 导师职称
+\newcommand{\School}[1]{\renewcommand{\TheSchool}{#1}}                        % 学院
+\newcommand{\Major}[1]{\renewcommand{\TheMajor}{#1}}                          % 专业
+\newcommand{\ResearchDirection}[1]{\renewcommand{\TheResearchDirection}{#1}}  % 研究领域
+\newcommand{\DegreeCategories}[1]{\renewcommand{\TheDegreeCategories}{#1}}    % 申请学位门类
 \newcommand{\StudentNumber}[1]{\renewcommand{\TheStudentNumber}{#1}}          % 学号
-\newcommand{\DegreeCategories}[1]{\renewcommand{\TheDegreeCategories}{#1}}    % 学位类别
+\newcommand{\Secrets}[1]{\renewcommand{\TheSecrets}{#1}}                      % 密级
+\newcommand{\Date}[1]{\renewcommand{\TheDate}{#1}}                            % 论文答辩日期
 
 
 % ====================本硕博选项声明====================
