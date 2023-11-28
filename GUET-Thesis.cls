@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-11-27 23:02:35 +0800
+% LastEditTime : 2023-11-28 14:35:43 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -1384,6 +1384,18 @@
 
 % //////////////////////////////////////// 攻读学位期间取得成果设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+% % ====================设置作者粗体标识====================
+% \renewcommand*{\mkbibnamefamily}[1]{ % 设置姓氏
+% \ifitemannotation{thesisauthor}
+% {\textcolor{red}{\textbf{#1}}}
+% {#1}}
+
+% \renewcommand*{\mkbibnamegiven}[1]{ % 设置名字
+% \ifitemannotation{thesisauthor}
+% {\textcolor{red}{\textbf{#1}}}
+% {#1}}
+
+
 % ====================解决专利显示patent的问题====================
 \DeclareStyleSourcemap{
   \maps[datatype=bibtex]{
@@ -1396,8 +1408,6 @@
     }
   }
 }
-
-
 
 
 % ====================取得成果设置==================== 定义攻读学位期间取得成果命令

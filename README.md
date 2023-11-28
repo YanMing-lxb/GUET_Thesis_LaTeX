@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2023-11-27 20:48:27 +0800
+ * LastEditTime : 2023-11-28 15:26:10 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \GUET_Thesis_LaTeX\README.md
  * Description  : README文档
@@ -209,9 +209,10 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
   - [X] biblatex 下实现攻读学位期间取得成果的自动编译
   - [X] biblatex 下实现攻读学位期间取得成果的盲审版本切换
   - [ ] biblatex 下实现对攻读学位期间取得成果中作者的粗体显示
+  - [ ] 实现攻读学位期间取得成果整体缩进两字符
 - [X] 当学位论文条目存在 url 时，显示 url，而条目没有 url 参数时，则显示 In collab. with 字样，以及专利显示 "patent" 的问题：感谢 [**hushidong**](https://github.com/hushidong/biblatex-gb7714-2015/issues/178) 给出完美的解决方案
 
-
+*攻读学位期间取得成果中作者的粗体显示* 功能已实现，但是存在作者粗体显示后，所有参考文献的缩进错乱的问题，故暂且注释该功能的代码，留待日后解决。
 
 ## 反馈与贡献
 
