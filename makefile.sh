@@ -17,9 +17,9 @@
  #  -----------------------------------------------------------------------
  # Author       : 焱铭
  # Date         : 2023-12-03 16:42:32 +0800
- # LastEditTime : 2023-12-03 18:01:33 +0800
+ # LastEditTime : 2023-12-03 19:17:49 +0800
  # Github       : https://github.com/YanMing-lxb/
- # FilePath     : /YM-Beamer-Metropolis/makefile.sh
+ # FilePath     : /GUET_Thesis_LaTeX/makefile.sh
  # Description  : 
  #  -----------------------------------------------------------------------
 ###
@@ -29,7 +29,7 @@
 # 基本设置
 File_Name="main"
 TeX_Name="xelatex"
-Bib_Name="biber"
+Bib_Name="bibtex"
 
 # 计算开始时间
 Start_Time=$(date +%T)
@@ -81,10 +81,10 @@ elif [[ -f "$File_Name.nlo" ]]; then
     makeindex -s nomencl.ist -o $File_Name.nls $File_Name.nlo
     Catalogs="采用 nomencl 宏包生成符号说明表"
 # 判断是否存在 .idx 文件，判断是否需要生成索引
-elif [[ -f "$File_Name.toc" ]]; then
+elif [[ -f "$File_Name.xdv" ]]; then
     # 执行 makeindex 命令
-    makeindex -s gind.ist -o $File_Name
-    Catalogs="没有符号说明表"
+    makeindex "$File_Name.xdv"
+    Catalogs="有目录但没符号说明表"
 else
     # 打印该文章没有插入任何索引
     Catalogs="没有插入任何索引"
