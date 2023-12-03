@@ -17,7 +17,7 @@
  #  -----------------------------------------------------------------------
  # Author       : 焱铭
  # Date         : 2023-12-03 16:42:32 +0800
- # LastEditTime : 2023-12-03 23:02:23 +0800
+ # LastEditTime : 2023-12-03 23:04:19 +0800
  # Github       : https://github.com/YanMing-lxb/
  # FilePath     : /GUET_Thesis_LaTeX/makefile.sh
  # Description  : 
@@ -192,4 +192,4 @@ echo "编译时长为：$Hours 小时 $Minutes 分 $Seconds 秒 (($Run_Time)s to
 echo ""
 
 # 延时关闭 5s
-sleep 5
+# sleep 5
