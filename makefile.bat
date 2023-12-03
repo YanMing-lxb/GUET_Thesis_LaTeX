@@ -1,3 +1,28 @@
+/*
+ *  =======================================================================
+ *  ····Y88b···d88P················888b·····d888·d8b·······················
+ *  ·····Y88b·d88P·················8888b···d8888·Y8P·······················
+ *  ······Y88o88P··················88888b·d88888···························
+ *  ·······Y888P··8888b···88888b···888Y88888P888·888·88888b·····d88b·······
+ *  ········888······"88b·888·"88b·888·Y888P·888·888·888·"88b·d88P"88b·····
+ *  ········888···d888888·888··888·888··Y8P··888·888·888··888·888··888·····
+ *  ········888··888··888·888··888·888···"···888·888·888··888·Y88b·888·····
+ *  ········888··"Y888888·888··888·888·······888·888·888··888··"Y88888·····
+ *  ·······························································888·····
+ *  ··························································Y8b·d88P·····
+ *  ···························································"Y88P"······
+ *  =======================================================================
+ * 
+ *  -----------------------------------------------------------------------
+ * Author       : 焱铭
+ * Date         : 2023-12-03 18:03:23 +0800
+ * LastEditTime : 2023-12-03 18:03:25 +0800
+ * Github       : https://github.com/YanMing-lxb/
+ * FilePath     : /GUET_Thesis_LaTeX/makefile.bat
+ * Description  : 
+ *  -----------------------------------------------------------------------
+ */
+
 :: 设置编码为utf-8，解决中文显示问题
 chcp 65001
 
@@ -29,8 +54,8 @@ echo XXXXXXXXXXXXXXXXXXXXXXXXXXXX 开始一次 %TeX_Name% 编译 XXXXXXXXXXXXXXX
 echo ================================================================================
 echo.
 echo.
-:: compile the tex file batchmode nonstopmode
-%TeX_Name%.exe -shell-escape -file-line-error -halt-on-error -interaction=batchmode -no-pdf --synctex=-1 %File_Name%.tex
+:: compile the tex file nonstopmode batchmode 批处理运行模式，无日志显示，利于提速
+%TeX_Name%.exe -no-pdf -shell-escape -file-line-error -halt-on-error -interaction=batchmode --synctex=-1 %File_Name%.tex
 echo.
 echo.
 echo ================================================================================
@@ -80,7 +105,7 @@ echo ===========================================================================
 echo.
 echo.
 :: compile the tex file batchmode nonstopmode
-%TeX_Name%.exe -shell-escape -file-line-error -halt-on-error -interaction=batchmode -no-pdf --synctex=-1 %File_Name%.tex
+%TeX_Name%.exe -no-pdf -shell-escape -file-line-error -halt-on-error -interaction=batchmode --synctex=-1 %File_Name%.tex
 echo.
 echo.
 echo ================================================================================
