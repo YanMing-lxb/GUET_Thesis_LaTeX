@@ -17,7 +17,7 @@
  #  -----------------------------------------------------------------------
  # Author       : 焱铭
  # Date         : 2023-12-03 16:42:32 +0800
- # LastEditTime : 2023-12-03 19:17:49 +0800
+ # LastEditTime : 2023-12-03 23:02:23 +0800
  # Github       : https://github.com/YanMing-lxb/
  # FilePath     : /GUET_Thesis_LaTeX/makefile.sh
  # Description  : 
@@ -29,11 +29,13 @@
 # 基本设置
 File_Name="main"
 TeX_Name="xelatex"
-Bib_Name="bibtex"
+Bib_Name="biber"
 
 # 计算开始时间
-Start_Time=$(date +%T)
+Start_Time=$(date +"%s")
 #==========================================================================
+echo ""
+echo ""
 echo ================================================================================
 echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 清除辅助文件 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 echo ================================================================================
@@ -46,12 +48,13 @@ rm -r $File_Name.pdf $File_Name.synctex *.aux *.bbl *.blg *.log *.out *.toc *.bc
 echo ""
 echo ""
 echo ================================================================================
-echo XXXXXXXXXXXXXXXXXXXXXXXXXXXX 开始一次 %TeX_Name% 编译 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+echo XXXXXXXXXXXXXXXXXXXXXXXXXXXX 开始一次 $TeX_Name 编译 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 echo ================================================================================
 echo ""
 echo ""
 # 编译 Tex 文件 nonstopmode batchmode 批处理运行模式，无日志显示，利于提速
 $TeX_Name -no-pdf -shell-escape -file-line-error -halt-on-error -interaction=batchmode --synctex=-1 $File_Name.tex
+
 echo ""
 echo ""
 echo ================================================================================
@@ -84,38 +87,44 @@ elif [[ -f "$File_Name.nlo" ]]; then
 elif [[ -f "$File_Name.xdv" ]]; then
     # 执行 makeindex 命令
     makeindex "$File_Name.xdv"
-    Catalogs="有目录但没符号说明表"
+    Catalogs="有目录 没符号说明表"
 else
     # 打印该文章没有插入任何索引
     Catalogs="没有插入任何索引"
 fi
+
 echo ""
 echo ""
 echo ================================================================================
-echo XXXXXXXXXXXXXXXXXXXXXXXXXXXX 开始二次 %TeX_Name% 编译 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+echo XXXXXXXXXXXXXXXXXXXXXXXXXXXX 开始二次 $TeX_Name 编译 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 echo ================================================================================
 echo ""
 echo ""
 # 编译 Tex 文件
 $TeX_Name -no-pdf -shell-escape -file-line-error -halt-on-error -interaction=batchmode --synctex=-1 $File_Name.tex
+
 echo ""
 echo ""
 echo ================================================================================
-echo XXXXXXXXXXXXXXXXXXXXXXXXXXXX 开始三次 %TeX_Name% 编译 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+echo XXXXXXXXXXXXXXXXXXXXXXXXXXXX 开始三次 $TeX_Name 编译 XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 echo ================================================================================
 echo ""
 echo ""
 # 编译 Tex 文件
 $TeX_Name -shell-escape -file-line-error -halt-on-error -interaction=batchmode --synctex=-1 $File_Name.tex
+
 echo ""
 echo ""
 echo ================================================================================
-echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 完成所有编译 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+echo ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 完成所有编译 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 echo ================================================================================
 echo ""
 echo ""
 
 #==========================================================================
+
+echo ""
+echo ""
 echo ================================================================================
 echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 清除辅助文件 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 echo ================================================================================
@@ -125,6 +134,9 @@ echo ""
 rm -r *.aux *.bbl *.blg *.log *.out *.toc *.bcf *.xml *.nlo *.nls *.bak *.ind *.idx *.ilg *.lof *.lot *.ent-x *.tmp *.ltx *.los *.lol *.loc *.listing *.gz *.userbak *.nav *.snm *.vrb *.fls *.xdv *.fdb_latexmk
 
 #==========================================================================
+
+echo ""
+echo ""
 echo ================================================================================
 echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 清除已有结果文件 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 echo ================================================================================
@@ -158,41 +170,26 @@ else
 fi
 echo ""
 echo ""
+echo ================================================================================
+echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 目录生成情况 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+echo ================================================================================
+echo $Catalogs
+echo ""
+echo ""
 #==========================================================================
 echo ================================================================================
 echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 统计编译时长 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 echo ================================================================================
 # 计算结束时间
-End_Time=$(date +%T)
-# 格式化时间
-start_h=$(echo $Start_Time | awk -F":" '{print $1}')
-start_m=$(echo $Start_Time | awk -F":" '{print $2}')
-start_s=$(echo $Start_Time | awk -F":" '{print $3}')
-end_h=$(echo $End_Time | awk -F":" '{print $1}')
-end_m=$(echo $End_Time | awk -F":" '{print $2}')
-end_s=$(echo $End_Time | awk -F":" '{print $3}')
-hours=$(($end_h-$start_h))
-mins=$(($end_m-$start_m))
-secs=$(($end_s-$start_s))
-ms=0
-if [ $secs -lt 0 ]; then
-    mins=$(($mins-1))
-    secs=$(($secs+60))
-fi
-if [ $mins -lt 0 ]; then
-    hours=$(($hours-1))
-    mins=$(($mins+60))
-fi
-if [ $hours -lt 0 ]; then
-    hours=$(($hours+24))
-fi
-totalsecs=$(($hours*3600+$mins*60+$secs))
-echo "编译时长为：$hours 小时 $mins 分 $secs 秒 $ms 毫秒 ($totalsecs.$ms ms total)"
+End_Time=$(date +"%s")
+# 计算运行时长
+Run_Time=$(($End_Time - $Start_Time))
+Hours=$((Run_Time / 3600))
+Minutes=$(((Run_Time % 3600)/60))
+Seconds=$((Run_Time % 60))
+
+echo "编译时长为：$Hours 小时 $Minutes 分 $Seconds 秒 (($Run_Time)s total)"
 echo ""
-echo ""
-echo ================================================================================
-echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 目录生成情况 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-echo ================================================================================
-echo $Catalogs
+
 # 延时关闭 5s
 sleep 5
