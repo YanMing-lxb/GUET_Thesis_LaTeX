@@ -1,4 +1,3 @@
-
 ###
  #  =======================================================================
  #  ····Y88b···d88P················888b·····d888·d8b·······················
@@ -17,7 +16,7 @@
  #  -----------------------------------------------------------------------
  # Author       : 焱铭
  # Date         : 2023-12-03 16:42:32 +0800
- # LastEditTime : 2023-12-03 23:04:19 +0800
+ # LastEditTime : 2023-12-06 22:03:55 +0800
  # Github       : https://github.com/YanMing-lxb/
  # FilePath     : /GUET_Thesis_LaTeX/makefile.sh
  # Description  : 
@@ -29,7 +28,7 @@
 # 基本设置
 File_Name="main"
 TeX_Name="xelatex"
-Bib_Name="biber"
+Bib_Name="bibtex"
 
 # 计算开始时间
 Start_Time=$(date +"%s")
@@ -42,7 +41,8 @@ echo ===========================================================================
 echo ""
 echo ""
 # 清除辅助文件
-rm -r $File_Name.pdf $File_Name.synctex *.aux *.bbl *.blg *.log *.out *.toc *.bcf *.xml *.synctex *.nlo *.nls *.bak *.ind *.idx *.ilg *.lof *.lot *.ent-x *.tmp *.ltx *.los *.lol *.loc *.listing *.gz *.userbak *.nav *.snm *.vrb *.fls *.xdv *.fdb_latexmk
+rm -rf $File_Name.pdf $File_Name.synctex *.aux *.bbl *.blg *.log *.out *.toc *.bcf *.xml *.synctex *.nlo *.nls *.bak *.ind *.idx *.ilg *.lof *.lot *.ent-x *.tmp *.ltx *.los *.lol *.loc *.listing *.gz *.userbak *.nav *.snm *.vrb *.fls *.xdv *.fdb_latexmk
+echo "已清除完辅助文件"
 
 #==========================================================================
 echo ""
@@ -131,7 +131,8 @@ echo ===========================================================================
 echo ""
 echo ""
 # 清除辅助文件
-rm -r *.aux *.bbl *.blg *.log *.out *.toc *.bcf *.xml *.nlo *.nls *.bak *.ind *.idx *.ilg *.lof *.lot *.ent-x *.tmp *.ltx *.los *.lol *.loc *.listing *.gz *.userbak *.nav *.snm *.vrb *.fls *.xdv *.fdb_latexmk
+rm -rf *.aux *.bbl *.blg *.log *.out *.toc *.bcf *.xml *.nlo *.nls *.bak *.ind *.idx *.ilg *.lof *.lot *.ent-x *.tmp *.ltx *.los *.lol *.loc *.listing *.gz *.userbak *.nav *.snm *.vrb *.fls *.xdv *.fdb_latexmk
+echo "已清除完辅助文件"
 
 #==========================================================================
 
@@ -188,8 +189,8 @@ Hours=$((Run_Time / 3600))
 Minutes=$(((Run_Time % 3600)/60))
 Seconds=$((Run_Time % 60))
 
-echo "编译时长为：$Hours 小时 $Minutes 分 $Seconds 秒 (($Run_Time)s total)"
+echo "编译时长为：$Hours 小时 $Minutes 分 $Seconds 秒 ($Run_Time s total)"
 echo ""
 
 # 延时关闭 5s
-# sleep 5
+sleep 5
