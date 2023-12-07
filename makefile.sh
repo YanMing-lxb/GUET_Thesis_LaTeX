@@ -16,7 +16,7 @@
  #  -----------------------------------------------------------------------
  # Author       : 焱铭
  # Date         : 2023-12-03 16:42:32 +0800
- # LastEditTime : 2023-12-06 22:03:55 +0800
+ # LastEditTime : 2023-12-07 21:54:55 +0800
  # Github       : https://github.com/YanMing-lxb/
  # FilePath     : /GUET_Thesis_LaTeX/makefile.sh
  # Description  : 
@@ -153,6 +153,25 @@ if [[ -d "$Build_Path" ]]; then
 else
     # 不存在 ./Build/ 文件夹，则创建
     mkdir $Build_Path
+    echo "创建 Build 文件夹"
+fi
+# 处理上次生成的结果文件
+Build_Path="./Build/"
+# 检查是否存在 ./Build/ 文件夹
+if [[ -d "$Build_Path" ]]; then
+    # 存在 ./Build/ 文件夹
+    files_count=$(ls -A "$Build_Path" | wc -l)
+
+    if [[ $files_count -gt 0 ]]; then
+        # 存在文件或文件夹，删除所有内容
+        rm -rf "$Build_Path"/*
+        echo "删除上次生成的结果文件"
+    else
+        echo "已存在空Build文件夹"
+    fi
+else
+    # 不存在 ./Build/ 文件夹，则创建
+    mkdir "$Build_Path"
     echo "创建 Build 文件夹"
 fi
 echo ""
