@@ -113,17 +113,22 @@ echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 清除已有结果文件 XXXXXXXXXXXXXXXXXX
 echo ================================================================================
 :: 处理上次生成的结果文件
 set Build_Path="./Build/"
-:: 检查是否存在./Build/文件夹
+:: 检查 Build 文件夹是否存在
 if exist %Build_Path% (
-  :: 存在./Build/文件夹，则删除
-  rd /s /q %Build_Path%
-  echo 删除上次生成的结果文件
-  mkdir %Build_Path%
-  echo 创建 Build 文件夹
+    :: 检查 Build 文件夹中是否有文件或子文件夹
+    dir /b /a:-d %Build_Path% >nul 2>nul
+    if errorlevel 1 (
+        :: 没有文件或子文件夹，打印消息
+        echo 已存在空的 Build 文件夹。
+    ) else (
+        :: 文件或子文件夹存在，删除所有内容
+        rd /s /q %Build_Path%
+        echo 删除 Build 文件夹中的所有文件和子文件夹。
+    )
 ) else (
-  :: 不存在./Build/文件夹，则创建
-  mkdir %Build_Path%
-  echo 创建 Build 文件夹
+    :: Build 文件夹不存在，创建它
+    mkdir %Build_Path%
+    echo 创建 Build 文件夹。
 )
 echo.
 echo.
