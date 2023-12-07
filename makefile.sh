@@ -16,7 +16,7 @@
  #  -----------------------------------------------------------------------
  # Author       : 焱铭
  # Date         : 2023-12-03 16:42:32 +0800
- # LastEditTime : 2023-12-07 22:00:34 +0800
+ # LastEditTime : 2023-12-07 22:01:42 +0800
  # Github       : https://github.com/YanMing-lxb/
  # FilePath     : /GUET_Thesis_LaTeX/makefile.sh
  # Description  : 
@@ -28,7 +28,7 @@
 # 基本设置
 File_Name="main"
 TeX_Name="xelatex"
-Bib_Name="bibtex"
+Bib_Name="biber"
 
 # 计算开始时间
 Start_Time=$(date +"%s")
