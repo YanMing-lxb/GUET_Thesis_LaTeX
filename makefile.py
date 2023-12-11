@@ -92,7 +92,7 @@ elif os.path.exists(f"{file_name}.xdv"):
     catalogs_print = "有目录 没符号说明表"
 else:
     catalogs_print = "没有插入任何索引"
-
+print(catalogs_print)
 
 # --------------------------------------------------------------------------------
 # 开始二次编译
