@@ -16,7 +16,7 @@
  -----------------------------------------------------------------------
 Author       : 焱铭
 Date         : 2023-12-11 14:02:31 +0800
-LastEditTime : 2023-12-11 14:02:33 +0800
+LastEditTime : 2023-12-11 15:19:49 +0800
 Github       : https://github.com/YanMing-lxb/
 FilePath     : /GUET_Thesis_LaTeX/makefile.py
 Description  : 
@@ -24,6 +24,7 @@ Description  :
 '''
 
 import os
+import re
 import subprocess
 import shutil
 from datetime import datetime
@@ -57,25 +58,37 @@ def compile_tex(pdf=True):
         options.insert(0, "-no-pdf")
     subprocess.run([tex_name] + options + [f"{file_name}.tex"])
 
+# 清除辅助文件
+remove_aux()
+
 # 开始一次编译
 print("\n\n" + "=" * 80+"\n"+
       "X" * 28 + f" 开始一次 {tex_name} 编译 " + "X" * 28 + "\n" + 
       "=" * 80 + "\n\n")
 compile_tex(False)
 
-# 清除辅助文件
-remove_aux()
-
 # 开始文献编译
 print("\n\n" + "=" * 80+"\n"+
       "X" * 33 + " 开始文献编译 " + "X" * 33 + "\n" + 
       "=" * 80 + "\n\n")
-bib_name = "biber" if os.path.exists(f"{file_name}.bcf") else "bibtex"
-if os.path.exists(f"{file_name}.bib"):
-    subprocess.run([bib_name, file_name])
-    bib_print = f"采用 {bib_name} 编译参考文献"
-else:
+
+def bib_judge(file_path):
     bib_print = "文档没有参考文献"
+    with open(file_path, 'r', encoding='utf-8') as aux_file:
+        aux_content = aux_file.read()
+    # Check if Biber is used
+    if re.search(r'\\abx@aux@refcontext', aux_content):
+        bib_name = 'biber'
+        subprocess.run([bib_name, file_name])
+        bib_print = f"采用 {bib_name} 编译参考文献"
+    # Check if BibTeX is used
+    if re.search(r'\\bibdata', aux_content):
+        bib_name = 'bibteX'
+        subprocess.run([bib_name, file_name])
+        bib_print = f"采用 {bib_name} 编译参考文献"
+    return bib_print
+bib_print = bib_judge(f"{file_name}.aux")
+
 
 # 开始目录编译
 print("\n\n" + "=" * 80+"\n"+
