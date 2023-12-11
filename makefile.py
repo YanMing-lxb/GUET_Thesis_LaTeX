@@ -4,7 +4,6 @@ import subprocess
 import shutil
 from datetime import datetime
 
-# 
 # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 基本设置 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 file_name = "main"
 tex_name = "xelatex"
