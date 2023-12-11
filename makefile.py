@@ -81,7 +81,6 @@ else:
 print("\n\n" + "=" * 80+"\n"+
       "X" * 33 + " 开始目录编译 " + "X" * 33 + "\n" + 
       "=" * 80 + "\n\n")
-catalogs_print = "未插入任何索引"
 if os.path.exists(f"{file_name}.glo"):
     subprocess.run(["makeindex", "-s", f"{file_name}.ist", "-o", f"{file_name}.gls", f"{file_name}.glo"])
     catalogs_print = "glossaries 宏包生成符号说明表"
