@@ -73,7 +73,7 @@ elif re.search(r'\\bibdata', aux_content):
     bib_print = f"{bib_name} 编译参考文献"
 else:
     bib_print = "文档没有参考文献"
-
+print(bib_print)
 
 # --------------------------------------------------------------------------------
 # 开始目录编译
