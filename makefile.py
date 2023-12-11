@@ -65,12 +65,12 @@ with open(f"{file_name}.aux", 'r', encoding='utf-8') as aux_file:
 if re.search(r'\\abx@aux@refcontext', aux_content):
     bib_name = 'biber'
     subprocess.run([bib_name, file_name])
-    bib_print = f"采用 {bib_name} 编译参考文献"
+    bib_print = f"{bib_name} 编译参考文献"
 # Check if BibTeX is used
 elif re.search(r'\\bibdata', aux_content):
     bib_name = 'bibtex'
     subprocess.run([bib_name, file_name])
-    bib_print = f"采用 {bib_name} 编译参考文献"
+    bib_print = f"{bib_name} 编译参考文献"
 else:
     bib_print = "文档没有参考文献"
 
