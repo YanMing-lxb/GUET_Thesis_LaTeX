@@ -12,7 +12,8 @@ set Bib_Name=bibtex
 
 :: 计算开始时间
 set Start_Time=%time%
-:: ==========================================================================================
+
+
 echo ================================================================================
 echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 清除辅助文件 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 echo ================================================================================
@@ -21,7 +22,7 @@ echo.
 :: clear aux files
 del /q %File_Name%.pdf %File_Name%.synctex *.aux *.bbl *.blg *.log *.out *.toc *.bcf *.xml *.nlo *.nls *.bak *.ind *.idx *.ilg *.lof *.lot *.ent-x *.tmp *.ltx *.los *.lol *.loc *.listing *.gz *.synctex(busy) *.nav *.snm *.vrb *.fls *.xdv *.fdb_latexmk
 
-:: ==========================================================================================
+
 echo.
 echo.
 echo ================================================================================
