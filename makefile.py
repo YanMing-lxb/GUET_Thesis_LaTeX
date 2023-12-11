@@ -84,10 +84,10 @@ print("\n\n" + "=" * 80+"\n"+
 catalogs_print = "没有插入任何索引"
 if os.path.exists(f"{file_name}.glo"):
     subprocess.run(["makeindex", "-s", f"{file_name}.ist", "-o", f"{file_name}.gls", f"{file_name}.glo"])
-    catalogs_print = "采用 glossaries 宏包生成符号说明表"
+    catalogs_print = "glossaries 宏包生成符号说明表"
 elif os.path.exists(f"{file_name}.nlo"):
     subprocess.run(["makeindex", "-s", "nomencl.ist", "-o", f"{file_name}.nls", f"{file_name}.nlo"])
-    catalogs_print = "采用 nomencl 宏包生成符号说明表"
+    catalogs_print = "nomencl 宏包生成符号说明表"
 elif os.path.exists(f"{file_name}.xdv"):
     subprocess.run(["makeindex", f"{file_name}.xdv"])
     catalogs_print = "有目录 没符号说明表"
