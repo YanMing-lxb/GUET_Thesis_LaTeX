@@ -16,7 +16,7 @@
  -----------------------------------------------------------------------
 Author       : 焱铭
 Date         : 2023-12-11 14:02:31 +0800
-LastEditTime : 2023-12-11 15:19:49 +0800
+LastEditTime : 2023-12-11 15:28:43 +0800
 Github       : https://github.com/YanMing-lxb/
 FilePath     : /GUET_Thesis_LaTeX/makefile.py
 Description  : 
@@ -42,7 +42,7 @@ def remove_aux():
     auxiliary_files = [
         f"{file_name}{ext}" for ext in [".pdf", ".synctex", ".aux", ".bbl", ".blg", ".log", ".out", ".toc", ".bcf", ".xml", ".synctex",
                                         ".nlo", ".nls", ".bak", ".ind", ".idx", ".ilg", ".lof", ".lot", ".ent-x", ".tmp", ".ltx", ".los",
-                                        ".lol", ".loc", ".listing", ".gz", ".userbak", ".nav", ".snm", ".vrb", ".fls", ".xdv", ".fdb_latexmk"]
+                                        ".lol", ".loc", ".listing", ".gz", ".userbak", ".nav", ".snm", ".vrb", ".fls", ".xdv", ".fdb_latexmk", ".run.xml"]
     ]
     for file in auxiliary_files:
         try:
