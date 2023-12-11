@@ -46,7 +46,7 @@ remove_aux()
 # --------------------------------------------------------------------------------
 # 开始一次编译
 # --------------------------------------------------------------------------------
-print("\n" + "=" * 80+"\n"+
+print("\n\n" + "=" * 80+"\n"+
       "X" * 28 + f" 开始一次 {tex_name} 编译 " + "X" * 28 + "\n" + 
       "=" * 80 + "\n\n")
 compile_tex(False)
@@ -68,7 +68,7 @@ if re.search(r'\\abx@aux@refcontext', aux_content):
     bib_print = f"采用 {bib_name} 编译参考文献"
 # Check if BibTeX is used
 elif re.search(r'\\bibdata', aux_content):
-    bib_name = 'bibteX'
+    bib_name = 'bibtex'
     subprocess.run([bib_name, file_name])
     bib_print = f"采用 {bib_name} 编译参考文献"
 else:
