@@ -1,4 +1,4 @@
-:: 设置编码为utf-8，解决中文显示问题
+: 设置编码为utf-8，解决中文显示问题
 chcp 65001
 
 @echo off
@@ -12,7 +12,8 @@ set Bib_Name=bibtex
 
 :: 计算开始时间
 set Start_Time=%time%
-:: ==========================================================================================
+
+
 echo ================================================================================
 echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 清除辅助文件 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 echo ================================================================================
@@ -21,7 +22,6 @@ echo.
 :: clear aux files
 del /q %File_Name%.pdf %File_Name%.synctex *.aux *.bbl *.blg *.log *.out *.toc *.bcf *.xml *.nlo *.nls *.bak *.ind *.idx *.ilg *.lof *.lot *.ent-x *.tmp *.ltx *.los *.lol *.loc *.listing *.gz *.synctex(busy) *.nav *.snm *.vrb *.fls *.xdv *.fdb_latexmk
 
-:: ==========================================================================================
 echo.
 echo.
 echo ================================================================================
@@ -29,8 +29,8 @@ echo XXXXXXXXXXXXXXXXXXXXXXXXXXXX 开始一次 %TeX_Name% 编译 XXXXXXXXXXXXXXX
 echo ================================================================================
 echo.
 echo.
-:: compile the tex file batchmode nonstopmode
-%TeX_Name%.exe -shell-escape -file-line-error -halt-on-error -interaction=batchmode -no-pdf --synctex=-1 %File_Name%.tex
+:: compile the tex file nonstopmode batchmode 批处理运行模式，无日志显示，利于提速
+%TeX_Name%.exe -no-pdf -shell-escape -file-line-error -halt-on-error -interaction=batchmode --synctex=-1 %File_Name%.tex
 echo.
 echo.
 echo ================================================================================
@@ -80,7 +80,7 @@ echo ===========================================================================
 echo.
 echo.
 :: compile the tex file batchmode nonstopmode
-%TeX_Name%.exe -shell-escape -file-line-error -halt-on-error -interaction=batchmode -no-pdf --synctex=-1 %File_Name%.tex
+%TeX_Name%.exe -no-pdf -shell-escape -file-line-error -halt-on-error -interaction=batchmode --synctex=-1 %File_Name%.tex
 echo.
 echo.
 echo ================================================================================
@@ -93,7 +93,7 @@ echo.
 echo.
 echo.
 echo ================================================================================
-echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 完成所有编译 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+echo ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 完成所有编译 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 echo ================================================================================
 echo.
 echo.
@@ -113,17 +113,22 @@ echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 清除已有结果文件 XXXXXXXXXXXXXXXXXX
 echo ================================================================================
 :: 处理上次生成的结果文件
 set Build_Path="./Build/"
-:: 检查是否存在./Build/文件夹
+:: 检查 Build 文件夹是否存在
 if exist %Build_Path% (
-  :: 存在./Build/文件夹，则删除
-  rd /s /q %Build_Path%
-  echo 删除上次生成的结果文件
-  mkdir %Build_Path%
-  echo 创建 Build 文件夹
+    :: 检查 Build 文件夹中是否有文件或子文件夹
+    dir /b /a:-d %Build_Path% >nul 2>nul
+    if errorlevel 1 (
+        :: 没有文件或子文件夹，打印消息
+        echo 已存在空的 Build 文件夹。
+    ) else (
+        :: 文件或子文件夹存在，删除所有内容
+        rd /s /q %Build_Path%
+        echo 删除 Build 文件夹中的所有文件和子文件夹。
+    )
 ) else (
-  :: 不存在./Build/文件夹，则创建
-  mkdir %Build_Path%
-  echo 创建 Build 文件夹
+    :: Build 文件夹不存在，创建它
+    mkdir %Build_Path%
+    echo 创建 Build 文件夹。
 )
 echo.
 echo.
@@ -139,6 +144,12 @@ if exist "%File_Name%.pdf" (
 ) else (
     echo 未检索到生成的pdf文件
 )
+echo.
+echo.
+echo ================================================================================
+echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 目录生成情况 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+echo ================================================================================
+echo %Catalogs%
 echo.
 echo.
 :: ==========================================================================================
@@ -164,10 +175,5 @@ if 1%ms% lss 100 set ms=0%ms%
 set /a totalsecs = %hours%*3600 + %mins%*60 + %secs%
 echo 编译时长为：%hours% 小时 %mins% 分 %secs% 秒 %ms% 毫秒 (%totalsecs%.%ms%s total)
 echo.
-echo.
-echo ================================================================================
-echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 目录生成情况 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-echo ================================================================================
-echo %Catalogs%
 :: 延时关闭 5s
 @REM timeout /t 5
