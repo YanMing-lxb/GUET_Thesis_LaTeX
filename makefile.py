@@ -53,6 +53,32 @@ compile_tex(False)
 
 
 # --------------------------------------------------------------------------------
+# 开始目录编译
+# --------------------------------------------------------------------------------
+print("\n\n" + "=" * 80+"\n"+
+      "X" * 33 + " 开始目录编译 " + "X" * 33 + "\n" + 
+      "=" * 80 + "\n\n")
+      
+glo_file = f"{file_name}.glo"
+nlo_file = f"{file_name}.nlo"
+xdv_file = f"{file_name}.xdv"
+
+if os.path.isfile(glo_file):
+    subprocess.run(["makeindex", "-s", f"{file_name}.ist", "-o", f"{file_name}.gls", f"{file_name}.glo"])
+    catalogs_print = "glossaries 宏包生成符号说明表"
+elif os.path.isfile(nlo_file):
+    subprocess.run(["makeindex", "-s", "nomencl.ist", "-o", f"{file_name}.nls", f"{file_name}.nlo"])
+    catalogs_print = "nomencl 宏包生成符号说明表"
+elif os.path.isfile(xdv_file):
+    subprocess.run(["makeindex", f"{file_name}.xdv"])
+    catalogs_print = "有目录 没符号说明表"
+else:
+    catalogs_print = "没有插入任何索引"
+
+print(catalogs_print)
+
+
+# --------------------------------------------------------------------------------
 # 开始文献编译
 # --------------------------------------------------------------------------------
 print("\n\n" + "=" * 80+"\n"+
@@ -75,30 +101,6 @@ else:
     bib_print = "文档没有参考文献"
 print(bib_print)
 
-# --------------------------------------------------------------------------------
-# 开始目录编译
-# --------------------------------------------------------------------------------
-print("\n\n" + "=" * 80+"\n"+
-      "X" * 33 + " 开始目录编译 " + "X" * 33 + "\n" + 
-      "=" * 80 + "\n\n")
-
-glo_file = f"{file_name}.glo"
-nlo_file = f"{file_name}.nlo"
-xdv_file = f"{file_name}.xdv"
-
-if os.path.isfile(glo_file):
-    subprocess.run(["makeindex", "-s", f"{file_name}.ist", "-o", f"{file_name}.gls", f"{file_name}.glo"], check=True, shell=True)
-    catalogs_print = "glossaries 宏包生成符号说明表"
-elif os.path.isfile(nlo_file):
-    subprocess.run(["makeindex", "-s", "nomencl.ist", "-o", f"{file_name}.nls", f"{file_name}.nlo"], check=True, shell=True)
-    catalogs_print = "nomencl 宏包生成符号说明表"
-elif os.path.isfile(xdv_file):
-    subprocess.run(["makeindex", f"{file_name}.xdv"], check=True, shell=True)
-    catalogs_print = "有目录 没符号说明表"
-else:
-    catalogs_print = "没有插入任何索引"
-
-print(catalogs_print)
 
 # --------------------------------------------------------------------------------
 # 开始二次编译
