@@ -16,9 +16,9 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-11-28 14:35:43 +0800
+% LastEditTime : 2023-12-14 11:39:29 +0800
 % Github       : https://github.com/YanMing-lxb/
-% FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
+% FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
 %  -----------------------------------------------------------------------
 %
@@ -126,7 +126,8 @@
                   doi=false,                            % 不显示doi
                   url=false,                            % 不显示url
                   defernumbers=true,                    % 解决refsection环境中 \printbibliography 筛选和 notice* 一起使用导致的编号错乱
-                  style=gb7714-2015,                    % 引用和参考文献样式
+                  bibstyle=gb7714-2015,                % 参考文献样式
+                  citestyle=gb7714-2015,
                   gbmedium=false,                       % 载体标识符不显示OL
                   % gbpub=true,                           % 显示出版信息
                   % gbnamefmt=lowercase,                  % 姓名小写
