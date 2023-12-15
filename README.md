@@ -16,9 +16,9 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2023-11-28 15:26:10 +0800
+ * LastEditTime : 2023-12-15 18:58:49 +0800
  * Github       : https://github.com/YanMing-lxb/
- * FilePath     : \GUET_Thesis_LaTeX\README.md
+ * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : README文档
  *  -----------------------------------------------------------------------
  -->
@@ -83,6 +83,27 @@ git clone https://github.com/YanMing-lxb/GUET_Thesis_LaTeX.git
 
 2. 本地部署 $\LaTeX$ 环境请转到[YM VSCode Configurations for LaTeX](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX)项目
 
+### 本地编译（可选项）
+此处内容能够一定限度的提高编译速度，但也存在需要额外安装 `python` 、点击批处理文件或终端输入 `make` 文件等不方便的地方，因此此处内容仅作为一种可选的编译方式提供。
+
+1. `makefile.py` 文件，用于编译参考文献
+2. `makefile.bat` 文件，用于在 Windows 系统中双击快速运行 `makefile.py` 文件进行编译
+3. `makefile` 文件，用于在 Linux 系统的终端中使用 `make` 命令快速编译
+
+**<font color="#d83931">注意</font>**：
+1. 使用该方式进行编译时，需要安装 `python`
+2. 注意修改 `makefile.py` 文件中的基本设置，对于本模板无需修改
+3. 使用该方式进行编译能够一定限度的提高编译速度，但由于采用 `batchmode` 和 `-no-pdf` 模式，因此编译过程中将不显示过程信息、报错信息和产生 PDF 文件，只在最后一次编译时产生 PDF 文件。
+4. 在 VSCode 中，使用该方法进行编译时，可能会出现 PDF 文件不及时重新载入刷新的情况，可能需要手动处理。
+
+`makefile.py` 文件中的基本设置：
+```python
+# ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 基本设置 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+file_name = "main"          # 该参数应为项目的主文件
+tex_name = "xelatex"        # 该参数应为该项目所采用编译引擎（不需要修改）
+build_path = "./Build/"     # 该参数为该项目生成的 PDF 文件存放位置（自行决定）
+# ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+```
 
 ## 模板说明
 
@@ -209,7 +230,7 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
   - [X] biblatex 下实现攻读学位期间取得成果的自动编译
   - [X] biblatex 下实现攻读学位期间取得成果的盲审版本切换
   - [ ] biblatex 下实现对攻读学位期间取得成果中作者的粗体显示
-  - [ ] 实现攻读学位期间取得成果整体缩进两字符
+  - [X] 实现攻读学位期间取得成果整体缩进两字符
 - [X] 当学位论文条目存在 url 时，显示 url，而条目没有 url 参数时，则显示 In collab. with 字样，以及专利显示 "patent" 的问题：感谢 [**hushidong**](https://github.com/hushidong/biblatex-gb7714-2015/issues/178) 给出完美的解决方案
 
 *攻读学位期间取得成果中作者的粗体显示* 功能已实现，但是存在作者粗体显示后，所有参考文献的缩进错乱的问题，故暂且注释该功能的代码，留待日后解决。
