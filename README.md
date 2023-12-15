@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2023-12-15 18:58:49 +0800
+ * LastEditTime : 2023-12-15 19:01:25 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : README文档
@@ -84,7 +84,7 @@ git clone https://github.com/YanMing-lxb/GUET_Thesis_LaTeX.git
 2. 本地部署 $\LaTeX$ 环境请转到[YM VSCode Configurations for LaTeX](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX)项目
 
 ### 本地编译（可选项）
-此处内容能够一定限度的提高编译速度，但也存在需要额外安装 `python` 、点击批处理文件或终端输入 `make` 文件等不方便的地方，因此此处内容仅作为一种可选的编译方式提供。
+此处内容能够一定限度的提高编译速度，并显示编译时长，但此处内容也存在需要额外安装 `python` 、点击批处理文件或终端输入 `make` 文件等不方便的地方，因此此处内容仅作为一种可选的编译方式提供。
 
 1. `makefile.py` 文件，用于编译参考文献
 2. `makefile.bat` 文件，用于在 Windows 系统中双击快速运行 `makefile.py` 文件进行编译
