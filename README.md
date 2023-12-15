@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2023-12-15 19:01:25 +0800
+ * LastEditTime : 2023-12-15 19:04:13 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : README文档
@@ -79,11 +79,12 @@ git clone https://github.com/YanMing-lxb/GUET_Thesis_LaTeX.git
 
 ### 本地部署写作
 
+#### $\LaTeX$ 环境部署
 1. 编译该模板请使用 $Xe\LaTeX$ 引擎。
 
 2. 本地部署 $\LaTeX$ 环境请转到[YM VSCode Configurations for LaTeX](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX)项目
 
-### 本地编译（可选项）
+#### 本地编译（可选项）
 此处内容能够一定限度的提高编译速度，并显示编译时长，但此处内容也存在需要额外安装 `python` 、点击批处理文件或终端输入 `make` 文件等不方便的地方，因此此处内容仅作为一种可选的编译方式提供。
 
 1. `makefile.py` 文件，用于编译参考文献
