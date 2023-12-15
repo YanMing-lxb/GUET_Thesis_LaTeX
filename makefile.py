@@ -5,9 +5,9 @@ import shutil
 from datetime import datetime
 
 # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 基本设置 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-file_name = "main"
-tex_name = "xelatex"
-build_path = "./Build/"
+file_name = "main"       # 该参数应为项目的主文件
+tex_name = "xelatex"     # 该参数应为该项目所采用编译引擎（不需要修改）
+build_path = "./Build/"  # 该参数为该项目生成的 PDF 文件存放位置（自行决定）
 # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 
 # 计算开始时间
