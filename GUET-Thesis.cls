@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-12-14 13:13:12 +0800
+% LastEditTime : 2023-12-15 18:16:39 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -59,6 +59,12 @@
 \RequirePackage{longtable}                            % 提供了一个可分页的长表格环境，用于跨页显示表格内容
 \RequirePackage{multirow}                             % 允许在表格中合并多行
 
+% ===============盒子相关宏包=============== 
+\RequirePackage[most]{tcolorbox}                      % 加载 tcolorbox 宏包，并使用 most 库
+\RequirePackage[absolute,overlay]{textpos}            % 用于绝对定位文本框，用于排版封面
+% \RequirePackage{showframe}                          % 显示排版框架
+% \TPshowboxestrue                                    % 显示textblock 框架，方便调整位置
+
 % ===============公式相关宏包===============    
 \RequirePackage{amsmath}                              % 提供数学公式环境和命令
 \RequirePackage{amssymb}                              % 提供额外的数学符号
@@ -68,8 +74,7 @@
 % ===============目录相关宏包===============
 \RequirePackage[titles]{tocloft}                      % 用于设置目录、图表目录和表格目录的格式，titles 表示可以让 tocloft 宏包不改变章节标题的格式，而只改变目录中的格式 
 
-% ===============符号说明相关宏===============    
-\RequirePackage{framed}                               % 用于给内容添加框架效果
+% ===============符号说明相关宏=============== 
 \RequirePackage{multicol}                             % 提供多栏环境
 \RequirePackage{nomencl}                            % 用于生成符号说明
 
@@ -106,9 +111,6 @@
 \RequirePackage{ifoddpage}                            % 用于判断页码是否为奇数（用于判断打印版中空白页的添加）
 \RequirePackage{pdfpages}                             % 用于插入外部 PDF 文档的页面，已签名的独创性声明
 \RequirePackage{etoolbox}                             % 提供逻辑判断、列表循环遍历、patch、hook、计数器、布尔变量等操作
-\RequirePackage[absolute,overlay]{textpos}            % 用于绝对定位文本框，用于排版封面
-% \RequirePackage{showframe}                          % 显示排版框架
-% \TPshowboxestrue                                    % 显示textblock 框架，方便调整位置
 
 % ===============算法相关宏包===============
 \RequirePackage[
@@ -157,7 +159,6 @@
               linkcolor=black,                        % linkcolor引用颜色设置；
               urlcolor=black                          % urlcolor网址颜色；
             }
-
 
 
 
@@ -1412,12 +1413,26 @@
 }
 
 
+% ====================自定义新盒子====================
+\newtcolorbox{Achbox}{    % 自定义盒子为无边框，整体缩进2em
+  colback=white,          % 背景颜色
+  colframe=white,         % 边框颜色
+  arc=0pt,                % 圆角
+  boxsep=0pt,             % 内容和边框的距离
+  left=2em,               % 左侧页边距
+  right=0pt,              % 右侧页边距
+  top=0pt,                % 顶部页边距
+  bottom=0pt,             % 底部页边距
+  boxrule=0pt,            % 边框宽度
+  breakable,              % 允许跨页
+}
+
 % ====================取得成果设置==================== 定义攻读学位期间取得成果命令
 \newcommand{\AchResource}{\quad}                                                             % 定义cls中引用成果源命令
 \newcounter{NunAchType}                                                                      % 定义新计数器 NunAchType
 \newcommand{\ThesisAchResource}[1]{\renewcommand{\AchResource}{#1}}                          % 定义添加成果源命令
 \defbibheading{AchHeadStyle}[\bibname]{                                                      % 自定义title样式
-  \noindent                                                                                  % 无缩进
+  \hspace*{-2em}                                                                             % 向左缩进2em
   \normalsize                                                                                % 字体小四
   \stepcounter{NunAchType}                                                                   % 计数器累加
   \zhnumber{\arabic{NunAchType}}、#1                                                         % 应用计数器，显示为：汉字数字、标题
@@ -1440,30 +1455,41 @@
         \settoggle{bbx:gbtype}{false}                                                      % 局部设置不输出文献类型和载体标识符
         \settoggle{bbx:gbannote}{true}                                                     % 局部设置输出附加的annote/annotation信息
         \settoggle{bbx:gbpub}{false}                                                       % 局部设置不输出出版信息
-        \printbibliography[heading=AchHeadStyle,type=report ,title=参与项目：]
+        \begin{Achbox}
+          \printbibliography[heading=AchHeadStyle,type=report ,title=参与项目：]
+        \end{Achbox}
+        
     \end{refsection}
     \begin{refsection}[\AchResource]
         \nocite{*}
         \def\blx@maxbibnames{5}                                                            % 局部调整作者数量
         \settoggle{bbx:gbannote}{true}
-        \printbibliography[heading=AchHeadStyle,type=article,title=发表论文：]
+        \begin{Achbox}
+          \printbibliography[heading=AchHeadStyle,type=article,title=发表论文：]
+        \end{Achbox}
     \end{refsection}
     \begin{refsection}[\AchResource]
         \nocite{*}
         \def\blx@maxbibnames{5}
         \settoggle{bbx:gbannote}{true}
-        \printbibliography[heading=AchHeadStyle,type=patent,title=发明专利：]
+        \begin{Achbox}
+          \printbibliography[heading=AchHeadStyle,type=patent,title=发明专利：]
+        \end{Achbox}
     \end{refsection}
     \begin{refsection}[\AchResource]
         \nocite{*}
         \settoggle{bbx:gbannote}{true}
-        \printbibliography[heading=AchHeadStyle,type=software,title=软件著作权：]
+        \begin{Achbox}
+          \printbibliography[heading=AchHeadStyle,type=software,title=软件著作权：]
+        \end{Achbox}
     \end{refsection}
     \begin{refsection}[\AchResource]
         \nocite{*}
         \settoggle{bbx:gbtype}{false}
         \settoggle{bbx:gbannote}{true}
-        \printbibliography[heading=AchHeadStyle,type=misc,title=科研竞赛获奖：]
+        \begin{Achbox}
+          \printbibliography[heading=AchHeadStyle,type=misc,title=科研竞赛获奖：]
+        \end{Achbox}
     \end{refsection}
 }
 
