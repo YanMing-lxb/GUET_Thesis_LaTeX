@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2023-12-15 19:01:25 +0800
+ * LastEditTime : 2023-12-15 19:13:18 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : README文档
@@ -89,7 +89,7 @@ git clone https://github.com/YanMing-lxb/GUET_Thesis_LaTeX.git
 
 1. `makefile.py` 文件，用于编译参考文献
 2. `makefile.bat` 文件，用于在 Windows 系统中双击快速运行 `makefile.py` 文件进行编译
-3. `makefile` 文件，用于在 Linux 系统的终端中使用 `make` 命令快速编译
+3. `Makefile` 文件，用于在 Linux 系统的终端中使用 `make` 命令快速编译
 
 **<font color="#d83931">注意</font>**：
 1. 使用该方式进行编译时，需要安装 `python`
