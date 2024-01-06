@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2024-01-06 13:20:51 +0800
+% LastEditTime : 2024-01-06 14:22:53 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -496,13 +496,21 @@
 
   }{ % 硕博封面信息 👇
     \ifbversion{ % 盲审封面👇
-      \begin{textblock}{16}(2.4,14.8)
-        \bfseries\fontsize{16pt}{32pt}\selectfont % 设置字体为三号，2倍行距
-        题\qquad 目：\removeAmpersand{\zh@TheTitle}
-
-        专\qquad 业：\TheMajor
-
-        研究方向：   \TheResearchDirection
+      \begin{textblock}{16}(2.5,14.8)
+        \bfseries\fontsize{16bp}{16bp}\selectfont
+        \centering
+        \begin{tblr}[expand=\expanded]
+          {
+            stretch=1.9,                                                          % 单元格文本行距拉伸系数
+            colspec = {ll},                                                       % 设置列对齐方式
+            column{1} = {4.5em},                                                  % 设置第一列宽度
+            column{2} = {22em},                                                   % 设置第二列的宽度、字体大小粗细
+            leftsep=0pt,                                                          % 设置单元内容的左边距为零
+          }
+          题\qquad 目：& \expanded{\zh@TheTitle@tb{}} \\
+          专\qquad 业：& \TheMajor\\
+          研究方向：    & \TheResearchDirection
+        \end{tblr}
       \end{textblock}
     }{ % 非盲审封面👇
       \begin{textblock}{15}(2.9,16.3) %
