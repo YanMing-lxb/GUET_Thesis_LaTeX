@@ -16,9 +16,9 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2024-01-06 15:44:35 +0800
+% LastEditTime : 2024-01-06 16:53:23 +0800
 % Github       : https://github.com/YanMing-lxb/
-% FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
+% FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
 %  -----------------------------------------------------------------------
 %
@@ -583,71 +583,57 @@
     \pdfbookmark{独创性（或创新性）声明}{OriginalityDeclaration}
     \ifbachelor{ % 本科独创性声名👇
       \begin{center}
-        \fontsize{14pt}{20pt}\selectfont\bfseries 本科生毕业设计（论文）独创性声名
+        \fontsize{14pt}{21pt}\selectfont\bfseries 本科生毕业设计（论文）独创性声名
       \end{center}
 
-      \par{
-        \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt} % \noindent无缩进
-        本人声明所呈交的毕业设计（论文）是我个人在指导老师指导下进行的工作及取得的成果。
-        尽我所知，除了文中特别加以标注和致谢中所罗列的内容以外，文中不包含其他人或其它机构已经发表或撰写过的成果；
-        也不包含为获得桂林电子科技大学或其他教育机构的学位或证书而使用过的材料。
-        其他同志对本工作的启发和所做的任何贡献均已在毕业设计（论文）中做了明确的说明并表示了谢意。
-        } \\
-      \vspace{-1cm}
-      \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{19pt}
-      毕业设计（论文）若有不实之处，本人承担一切相关责任。\\
+      本人声明所呈交的毕业设计（论文）是我个人在指导老师指导下进行的工作及取得的成果。
+      尽我所知，除了文中特别加以标注和致谢中所罗列的内容以外，文中不包含其他人或其它机构已经发表或撰写过的成果；
+      也不包含为获得桂林电子科技大学或其他教育机构的学位或证书而使用过的材料。
+      其他同志对本工作的启发和所做的任何贡献均已在毕业设计（论文）中做了明确的说明并表示了谢意。
 
-      \vspace{2cm}
-      \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{27pt}本人签名：\hspace{7em}
-      日期： \\
-      \vspace{2cm}
-      \noindent
+      \vspace{0.5cm}毕业设计（论文）若有不实之处，本人承担一切相关责任。
+
+      \vspace{1.5cm}本人签名：\hspace{7em}日期：\vspace{2cm}
+
       \begin{center}
-        \fontsize{14pt}{24pt}\selectfont\bfseries 本科生毕业设计（论文）使用授权说明
+        \fontsize{14pt}{21pt}\selectfont\bfseries 本科生毕业设计（论文）使用授权说明
       \end{center}
 
-      \par{
-        \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}
         桂林电子科技大学有权保留并向国家有关部门或机构送交毕业设计说明书（论文）的复印件，允许毕业设计（论文）被查阅和借阅。
         本人授权桂林电子科技大学可以公布毕业设计（论文）的全部或部分内容，可以采用影印、缩印或其它复制手段保存、汇编毕业设计（论文）
-        } \\
 
-      \vspace{1.5cm}
-      \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}作者签名：
-      \hspace{7em}
-      日期： \\ \\
+      \vspace{1.5cm}本人签名：\hspace{7em}日期：
 
-      \fontsize{12pt}{12pt}\selectfont\noindent\null\hspace{24pt}导师签名：
-      \hspace{7em}
-      日期： \\
+      \vspace{1cm}导师签名：\hspace{7em}日期：
+      
     }{ % 硕博独创性声名👇
       \begin{center}
-        \fontsize{14pt}{20pt}\selectfont\bfseries 独创性声明
+        \fontsize{14pt}{21pt}\selectfont\bfseries 独创性声明
       \end{center}
 
       本人声明所呈交的论文是我个人在导师指导下进行的研究工作及取得的研究成果。
       尽我所知，除了文中特别加以标注和致谢中所罗列的内容以外，论文中不包含其他人已经发表或撰写过的研究成果；
       也不包含为获得桂林电子科技大学或其它教育机构的学位或证书而使用过的材料。
-      与我一同工作的同志对本研究所做的任何贡献均已在论文中做了明确的说明并表示了谢意。\\
+      与我一同工作的同志对本研究所做的任何贡献均已在论文中做了明确的说明并表示了谢意。
 
-      申请学位论文与资料若有不实之处，本人承担一切相关责任。\\
+      \vspace{0.5cm}申请学位论文与资料若有不实之处，本人承担一切相关责任。
 
-      本人签名：\hspace{7em}日期：
-      \vspace{1cm}
+      \vspace{0.5cm}本人签名：\hspace{7em}日期：
+      \vspace{1.5cm}
       
       \begin{center}
-        \fontsize{14pt}{20pt}\selectfont\bfseries 关于论文使用授权的说明
+        \fontsize{14pt}{21pt}\selectfont\bfseries 关于论文使用授权的说明
       \end{center}
 
       本人完全了解桂林电子科技大学有关保留和使用学位论文的规定，即：研究生在校攻读学位期间论文工作的知识产权单位属桂林电子科技大学。
       本人保证毕业离校后，结合学位论文研究成果完成的论文、发明专利等成果，署名单位仍然为桂林电子科技大学。
       学校有权保留送交论文的复印件，允许查阅和借阅论文；
       学校可以公布论文的全部或部分内容，可以允许采用影印、缩印或其它复制手段保存论文。
-      （保密的论文在解密后遵守此规定）\\
+      （保密的论文在解密后遵守此规定）
 
-      作者签名：\hspace{7em}日期： \\
+      \vspace{1.9cm}本人签名：\hspace{7em}日期： 
 
-      导师签名：\hspace{7em}日期：
+      \vspace{0.5cm}导师签名：\hspace{7em}日期：
     }
   \end{spacing}
   
