@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2023-12-15 18:16:39 +0800
+% LastEditTime : 2024-01-06 13:20:51 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -498,7 +498,7 @@
     \ifbversion{ % 盲审封面👇
       \begin{textblock}{16}(2.4,14.8)
         \bfseries\fontsize{16pt}{32pt}\selectfont % 设置字体为三号，2倍行距
-        题\qquad 目：\zh@TheTitle
+        题\qquad 目：\removeAmpersand{\zh@TheTitle}
 
         专\qquad 业：\TheMajor
 
