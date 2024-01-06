@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2024-01-06 15:40:55 +0800
+% LastEditTime : 2024-01-06 15:44:35 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -62,8 +62,8 @@
 % ===============盒子相关宏包=============== 
 \RequirePackage[most]{tcolorbox}                      % 加载 tcolorbox 宏包，并使用 most 库
 \RequirePackage[absolute,overlay]{textpos}            % 用于绝对定位文本框，用于排版封面
-\RequirePackage{showframe}                          % 显示排版框架
-\TPshowboxestrue                                    % 显示textblock 框架，方便调整位置
+% \RequirePackage{showframe}                          % 显示排版框架
+% \TPshowboxestrue                                    % 显示textblock 框架，方便调整位置
 
 % ===============公式相关宏包===============    
 \RequirePackage{amsmath}                              % 提供数学公式环境和命令
