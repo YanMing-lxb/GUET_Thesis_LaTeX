@@ -296,7 +296,10 @@
 \newcommand{\StudentNumber}[1]{\renewcommand{\TheStudentNumber}{#1}}          % 学号
 \newcommand{\Secrets}[1]{\renewcommand{\TheSecrets}{#1}}                      % 密级
 \newcommand{\Date}[1]{\renewcommand{\TheDate}{#1}}                            % 论文答辩日期
-
+\newcommand{\removeAmpersand}[1]{                                             % 定义新命令 \removeAmpersand 用于去掉中文题目中的 \\& 命令 
+    \expandafter\StrSubstitute\expandafter{#1}{\\&}{}[\result]%
+    \result
+}
 
 % ====================本硕博选项声明====================
 %\DeclareOption{选项}{代码}其中的选项就是选项的名称，而代码就是选项要执行的指令集。
@@ -1067,7 +1070,7 @@
 }{ % 硕博页眉文字 👇
   \newcommand{\StandardHeader}{
     \fancyhf{}
-    \fancyhead[CE]{\fontsize{10.5pt}{12.6pt}\selectfont\zh@TheTitle} % 偶数页眉内容为中文标题
+    \fancyhead[CE]{\fontsize{10.5pt}{12.6pt}\selectfont\removeAmpersand{\zh@TheTitle}} % 偶数页眉内容为中文标题
     \fancyhead[CO]{\fontsize{10.5pt}{12.6pt}\selectfont\leftmark}    % 奇数页页眉使用标题
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
   }
