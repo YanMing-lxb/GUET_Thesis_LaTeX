@@ -18,7 +18,7 @@ start_time = datetime.now()
 # --------------------------------------------------------------------------------
 def remove_aux():
     auxiliary_files = [
-        f"{file_name}{ext}" for ext in [".pdf", ".synctex", ".aux", ".bbl", ".blg", ".log", ".out", ".toc", ".bcf", ".xml", ".synctex", ".nlo", ".nls", ".bak", ".ind", ".idx", ".ilg", ".lof", ".lot", ".ent-x", ".tmp", ".ltx", ".los", ".lol", ".loc", ".listing", ".gz", ".userbak", ".nav", ".snm", ".vrb", ".fls", ".xdv", ".fdb_latexmk", ".run.xml"]
+        f"{file_name}{ext}" for ext in [".pdf", ".synctex", ".aux", ".bbl", ".blg", ".log", ".out", ".toc", ".bcf", ".xml", ".synctex.gz", ".nlo", ".nls", ".bak", ".ind", ".idx", ".ilg", ".lof", ".lot", ".ent-x", ".tmp", ".ltx", ".los", ".lol", ".loc", ".listing", ".gz", ".userbak", ".nav", ".snm", ".vrb", ".fls", ".xdv", ".fdb_latexmk", ".run.xml", "spl"]
     ]
     for file in auxiliary_files:
         try:
