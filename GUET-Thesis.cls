@@ -16,9 +16,9 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2024-01-06 16:53:23 +0800
+% LastEditTime : 2024-01-13 22:51:16 +0800
 % Github       : https://github.com/YanMing-lxb/
-% FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
+% FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
 %  -----------------------------------------------------------------------
 %
@@ -703,7 +703,6 @@
 %=========================中文关键字=========================
 \newcommand{\ChineseKeyword}[1]{
   \vspace{\baselineskip}
-  \noindent\
   \@hangfrom{\makebox[48pt][l]{\textbf{关键词：}}}#1
 }
 
@@ -749,7 +748,6 @@
 \newcommand{\EnglishKeyword}[1]
 {
   \vspace{\baselineskip}
-  \noindent
   \@hangfrom{\makebox[2.1cm][l]{\textbf{Keywords:}}}#1
 }
 
