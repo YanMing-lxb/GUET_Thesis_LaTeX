@@ -1,2 +1,2 @@
 all:
-	python3 ./makefile.py
+	python3 ./pytexmk.py

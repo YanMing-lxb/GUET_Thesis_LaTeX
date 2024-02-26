@@ -1,2 +1,2 @@
 @echo off
-  python makefile.py
+  python pytexmk.py
