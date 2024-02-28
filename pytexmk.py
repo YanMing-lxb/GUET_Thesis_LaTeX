@@ -10,7 +10,7 @@ file_name = "main"
 tex_name = "xelatex"
 build_path = "./Build/"
 # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-
+print('os.getcwd()')
 # # 获取当前目录中所有以 .tex 结尾的文件列表
 # files = [f for f in os.listdir() if f.endswith('.tex')]
 
@@ -110,7 +110,10 @@ def compile_index():
     else:
         if os.path.exists(f"{file_name}.toc"):
             index_compile_tex_times = 1 # 目录需要额外编译 1 次
-        catalogs_print = "没有符号索引或使用 glossaries 或 nomencl 插入符号索引"
+            catalogs_print = "含有图\表\章节目录"
+        else:
+            index_compile_tex_times = 0
+            catalogs_print = "没有插入任何目录"
 
     print(catalogs_print)
 
