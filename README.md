@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2023-12-15 19:16:05 +0800
+ * LastEditTime : 2024-03-22 19:12:50 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : README文档
@@ -84,28 +84,19 @@ git clone https://github.com/YanMing-lxb/GUET_Thesis_LaTeX.git
 
 2. 本地部署 $\LaTeX$ 环境请转到[YM VSCode Configurations for LaTeX](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX)项目
 
-#### 本地编译（可选项）
-此处内容能够一定限度的提高编译速度，并显示编译时长，但此处内容也存在需要额外安装 `python` 、点击批处理文件或终端输入 `make` 文件等不方便的地方，因此此处内容仅作为一种可选的编译方式提供。
+#### 本地编译 PyTeXMK（可选项）
+[PyTeXMK](https://github.com/YanMing-lxb/PyTeXMK) 是作者开发的一个基于 Python 的 $\LaTeX$ 编译工具，能够一定限度的提高编译速度，并显示编译时长统计，但此处内容需要依赖于Python环境，请确保您的电脑中已经安装了Python3.8及以上版本的Python环境。
 
-1. `makefile.py` 文件，用于编译参考文献
-2. `makefile.bat` 文件，用于在 Windows 系统中双击快速运行 `makefile.py` 文件进行编译
-3. `Makefile` 文件，用于在 Linux 系统的终端中使用 `make` 命令快速编译
-
-**<font color="#d83931">注意</font>**：
-1. 使用该方式进行编译时，需要安装 `python`
-2. 注意修改 `makefile.py` 文件中的基本设置，对于本模板无需修改
-3. 使用该方式进行编译能够一定限度的提高编译速度，但由于采用 `batchmode` 和 `-no-pdf` 模式，因此编译过程中将不显示过程信息、报错信息和产生 PDF 文件，只在最后一次编译时产生 PDF 文件。
-4. 在 VSCode 中，使用该方法进行编译时，可能会出现 PDF 文件不及时重新载入刷新的情况，可能需要手动处理。
-
-`makefile.py` 文件中的基本设置：
-```python
-# ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 基本设置 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-file_name = "main"          # 该参数应为项目的主文件
-tex_name = "xelatex"        # 该参数应为该项目所采用编译引擎（不需要修改）
-build_path = "./Build/"     # 该参数为该项目生成的 PDF 文件存放位置（自行决定）
-# ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+1. 安装方法：
 ```
-
+pip install pytexmk
+```
+2. 使用方法：
+终端项目路径下输入：
+```
+pytexmk
+```
+具体内容请看[项目主页](https://github.com/YanMing-lxb/PyTeXMK)。
 ## 模板说明
 
 ### 样式参数
