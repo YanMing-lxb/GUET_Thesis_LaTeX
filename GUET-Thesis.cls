@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2024-01-13 22:51:16 +0800
+% LastEditTime : 2024-03-22 19:46:57 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -29,7 +29,7 @@
             12pt,                                     % 字号为12pt
             a4paper,                                  % 纸张大小为A4
             openany,                                  % 允许在任意页面开始新的章节
-            twoside                                   % 设置为双面打印模式
+            oneside                                   % 设置为双面打印模式
           ]{book}                                     % 使用book文档类    
 
 \RequirePackage[
@@ -766,9 +766,28 @@
     \end{spacing}
     \renewcommand{\BachelorChapterFormat}{}           % 还原初始设置
     \label{page:tableofcontents}                      % 设置pageref获取页码数的标记
+    
+    \ifpversion{ % 打印版本切换
+      \checkoddpage
+      \ifoddpage
+        \blankpage@number
+      \else
+        \newpage
+      \fi
+    }{}
   }
 }{ % 硕博目录标题统一居中无需更改 👇
-  \newcommand{\ThesisContents}{\tableofcontents}
+  \newcommand{\ThesisContents}{
+    \tableofcontents
+    \ifpversion{ % 打印版本切换
+      \checkoddpage
+      \ifoddpage
+        \blankpage@number
+      \else
+        \newpage
+      \fi
+    }{}
+  }
 }
 
 
