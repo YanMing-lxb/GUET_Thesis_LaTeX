@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2024-03-22 19:46:57 +0800
+% LastEditTime : 2024-03-25 22:34:31 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -840,9 +840,10 @@
 }{ % 硕博目录格式 👇
   \addtolength{\cftchapnumwidth}{25pt}
 
-  \cftsetindents{section}{21pt}{22pt}
-  \cftsetindents{subsection}{44pt}{31pt}
-  \cftsetindents{subsubsection}{76pt}{41pt}
+  % 注释掉，目录中每个条目的缩进与编号和内容之间距离使用默认设置
+  % \cftsetindents{section}{21pt}{22pt}
+  % \cftsetindents{subsection}{44pt}{31pt}
+  % \cftsetindents{subsubsection}{76pt}{41pt}
 
   \renewcommand{\cfttoctitlefont}{\fontsize{15pt}{15pt}\selectfont\heiti}
   \renewcommand\cftchapfont{\heiti}
