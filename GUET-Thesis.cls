@@ -16,9 +16,9 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2024-03-25 22:34:31 +0800
+% LastEditTime : 2024-03-27 18:28:05 +0800
 % Github       : https://github.com/YanMing-lxb/
-% FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
+% FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
 %  -----------------------------------------------------------------------
 %
@@ -103,7 +103,7 @@
 \RequirePackage{geometry}                             % 用于设置页面尺寸和布局
 \RequirePackage{setspace}                             % 提供调整行距的命令和环境
 \RequirePackage{fancyvrb}                             % 提供了更灵活的抄录环境和定制选项
-\RequirePackage{fancyhdr}                             % 用于设置页眉和页脚的样式
+\RequirePackage[twoside]{fancyhdr}                             % 用于设置页眉和页脚的样式
 \RequirePackage{titlesec}                             % 用于自定义章节标题的样式
 \RequirePackage{indentfirst}                          % 用于在章节标题后自动缩进第一段落
 \RequirePackage{appendix}                             % 用于生成附录并对附录标题进行格式设置
