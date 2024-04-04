@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2024-03-27 18:28:05 +0800
+% LastEditTime : 2024-04-04 23:44:41 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -1194,6 +1194,7 @@
 \crefname{table}{表}{表}  
 \crefname{equation}{式}{式}
 \crefname{algorithm}{算法}{算法}
+\crefname{algocf}{算法}{算法}
 
 
 % ===============图表字体设置===============
