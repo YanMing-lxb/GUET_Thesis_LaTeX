@@ -16,9 +16,9 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2024-04-04 23:44:41 +0800
+% LastEditTime : 2024-04-05 09:48:45 +0800
 % Github       : https://github.com/YanMing-lxb/
-% FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
+% FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
 %  -----------------------------------------------------------------------
 %
@@ -1322,8 +1322,7 @@
 
 
 % ====================参考文献设置====================
-\newcommand{\ThesisBibResource}[1]{\addbibresource[location=local]{#1}}               % 定义 \ThesisBibResource 命令用于加载参考文献源
-\setcounter{gbrefcompress}{3}                                                         % 参考文献引用从第三篇开始压缩
+\newcommand{\ThesisBibResource}[1]{\addbibresource[location=local]{#1}}               % 定义 \ThesisBibResource 命令用于加载参考文献源 
 \renewcommand{\bibfont}{\small}                                                       % 设置参考文献字体小五
 \setlength{\bibitemsep}{0pt}                                                          % 每一条参考文献之间的间隔
 \AtEveryBibitem{\clearfield{url}}                                                     % 清除url信息 用以解决 url=false 命令在thesis中失效的Bug
@@ -1388,16 +1387,16 @@
 
 % //////////////////////////////////////// 攻读学位期间取得成果设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-% % ====================设置作者粗体标识====================
-% \renewcommand*{\mkbibnamefamily}[1]{ % 设置姓氏
-% \ifitemannotation{thesisauthor}
-% {\textcolor{red}{\textbf{#1}}}
-% {#1}}
+% ====================设置作者粗体标识====================
+\renewcommand*{\mkbibnamefamily}[1]{ % 设置姓氏
+\ifitemannotation{thesisauthor}
+{\textcolor{black}{\textbf{#1}}}
+{#1}}
 
-% \renewcommand*{\mkbibnamegiven}[1]{ % 设置名字
-% \ifitemannotation{thesisauthor}
-% {\textcolor{red}{\textbf{#1}}}
-% {#1}}
+\renewcommand*{\mkbibnamegiven}[1]{ % 设置名字
+\ifitemannotation{thesisauthor}
+{\textcolor{black}{\textbf{#1}}}
+{#1}}
 
 
 % ====================解决专利显示patent的问题====================

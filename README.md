@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2024-03-22 19:12:50 +0800
+ * LastEditTime : 2024-04-05 09:49:58 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : README文档
@@ -217,11 +217,11 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
   - [ ] 自定义长三线表环境 `lthreetab` (要求可跨页，跨页后自带 “题注(续)” )
   - [x] 自定义普通三线表环境 `threetab`
 - [ ] ~~使用文学编程重构项目~~
-- [ ] 采用 biblatex 编译参考文献，替换掉 bibtex：
+- [X] 采用 biblatex 编译参考文献，替换掉 bibtex：
   - [X] biblatex 下实现参考文献的编译
   - [X] biblatex 下实现攻读学位期间取得成果的自动编译
   - [X] biblatex 下实现攻读学位期间取得成果的盲审版本切换
-  - [ ] biblatex 下实现对攻读学位期间取得成果中作者的粗体显示
+  - [X] biblatex 下实现对攻读学位期间取得成果中作者的粗体显示
   - [X] 实现攻读学位期间取得成果整体缩进两字符
 - [X] 当学位论文条目存在 url 时，显示 url，而条目没有 url 参数时，则显示 In collab. with 字样，以及专利显示 "patent" 的问题：感谢 [**hushidong**](https://github.com/hushidong/biblatex-gb7714-2015/issues/178) 给出完美的解决方案
 
