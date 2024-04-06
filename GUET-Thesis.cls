@@ -1155,6 +1155,7 @@
 \renewcommand{\figurename}{图}                          % 使默认的图名字改为图显示
 \renewcommand{\tablename}{表}                           % 使默认的表名字改为表显示
 \renewcommand{\thesubfigure}{(\alph{subfigure})}        % 设置子图标题序号 
+\renewcommand{\thesubtable}{(\alph{subtable})}          % 设置子表标题序号 
 \counterwithin{figure}{chapter}                         % 设置figure计数器每章重置
 \counterwithin{table}{chapter}                          % 设置table计数器每章重置
 
@@ -1176,6 +1177,7 @@
 \captionsetup[subfoat]{aboveskip=2pt, belowskip=2pt}    % 设置 subfoat 环境
 \captionsetup[longtable]{aboveskip=0pt, belowskip=6pt}  % 设置 longtable 环境
 \captionsetup[subfigure]{aboveskip=2pt, belowskip=2pt}  % 设置 subfigure 环境
+\captionsetup[subtable]{aboveskip=2pt, belowskip=2pt}   % 设置 subtable 环境
                                                         % 设置标题与插图或表格之间的垂直距离，子图环境可加 width=36pt 设置子图标题的宽度 
 
 \setlength{\intextsep}{9pt} % 控制出现在页⾯中间的浮动体与上下方文本之间的垂直距离
