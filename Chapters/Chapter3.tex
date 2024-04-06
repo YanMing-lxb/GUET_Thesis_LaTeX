@@ -44,6 +44,35 @@ https://www.latex-tables.com/
     \end{threetab}
 \end{table}
 
+\section{子表排版示例}
+\begin{table}[htb]
+    \centering
+    \begin{subtable}{0.45\textwidth}
+        \centering
+        \begin{threetab}{
+            colspec = {cc}, 
+            }
+            表头1  & 表头2 \\
+            内容1  & 内容2 \\
+            内容3  & 内容4 \\
+        \end{threetab}
+        \caption{子表1标题}
+    \end{subtable}
+    \quad
+    \begin{subtable}{0.45\textwidth}
+        \centering
+        \begin{threetab}{
+            colspec = {cc}, 
+            }
+            表头1  & 表头2 \\
+            内容1  & 内容2 \\
+            内容3  & 内容4 \\
+        \end{threetab}
+        \caption{子表2标题}
+    \end{subtable}
+    \caption{主表标题}
+\end{table}
+
 \section{跨页表格示例}
 
 \begin{longtable}{@{\extracolsep{\fill}}cccccc@{}}  \\ % @{\extracolsep{\fill}}cccccc@{}命令表格整体宽度为页面宽
