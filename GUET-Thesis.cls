@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2024-04-05 16:13:14 +0800
+% LastEditTime : 2024-04-07 20:29:47 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -528,8 +528,8 @@
             研\quad 究\quad 生\quad 学\quad 号:                     & \TheStudentNumber                 \\
             研\quad 究\quad 生\quad 姓\quad 名:                     & \TheAuthor                        \\
             指导教师姓名、职称:                                      & \TheAdvisor \enspace \TheProtitle \\
-            申\enspace 请\enspace 学\quad 位\enspace 类\enspace 别: & \TheDegreeCategories              \\
-            领\hspace{7em}域:                                      & \TheMajor                         \\
+            申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \TheDegreeCategories              \\
+            学\quad 科（专\qquad 业）:                              & \TheMajor                         \\
             论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \TheDate
           \end{tblr}
         }{ % 博士、学硕、在职硕士的封面信息 👇
@@ -546,7 +546,7 @@
             研\quad 究\quad 生\quad 姓\quad 名:                    & \TheAuthor                        \\
             指导教师姓名、职称:                                     & \TheAdvisor \enspace \TheProtitle \\
             申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \TheDegreeCategories              \\
-            学\qquad 科、专\qquad 业:                               & \TheMajor                         \\
+            学\quad 科（专\qquad 业）:                              & \TheMajor                         \\
             论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \TheDate
           \end{tblr}
         }
