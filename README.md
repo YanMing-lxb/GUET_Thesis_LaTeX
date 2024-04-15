@@ -23,31 +23,6 @@
  *  -----------------------------------------------------------------------
  -->
 
-<!--
- *  =======================================================================
- *  ····Y88b···d88P················888b·····d888·d8b·······················
- *  ·····Y88b·d88P·················8888b···d8888·Y8P·······················
- *  ······Y88o88P··················88888b·d88888···························
- *  ·······Y888P··8888b···88888b···888Y88888P888·888·88888b·····d88b·······
- *  ········888······"88b·888·"88b·888·Y888P·888·888·888·"88b·d88P"88b·····
- *  ········888···d888888·888··888·888··Y8P··888·888·888··888·888··888·····
- *  ········888··888··888·888··888·888···"···888·888·888··888·Y88b·888·····
- *  ········888··"Y888888·888··888·888·······888·888·888··888··"Y88888·····
- *  ·······························································888·····
- *  ··························································Y8b·d88P·····
- *  ···························································"Y88P"······
- *  =======================================================================
- * 
- *  -----------------------------------------------------------------------
- * Author       : 焱铭
- * Date         : 2023-07-30 15:13:12 +0800
- * LastEditTime : 2024-04-05 09:49:58 +0800
- * Github       : https://github.com/YanMing-lxb/
- * FilePath     : /GUET_Thesis_LaTeX/README.md
- * Description  : README文档
- *  -----------------------------------------------------------------------
- -->
-
 # GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 <img src="https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">
 
 [![GitHub](https://img.shields.io/badge/Github-GTL-000000.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX) [![TeXPage](https://img.shields.io/badge/TeXPage-GTL-495A80.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818) [![Overleaf](https://img.shields.io/badge/Overleaf-GTL-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp) [![License](https://img.shields.io/badge/license-LPPL-aff)](https://www.latex-project.org/lppl/) ![OS](https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg) [![GitHub release](https://img.shields.io/github/release/YanMing-lxb/GUET_Thesis_LaTeX.svg?color=blueviolet&label=version&style=popout)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/releases/latest) [![Last Commit](https://img.shields.io/github/last-commit/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/zipball/master) [![Issues](https://img.shields.io/github/issues/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues) [![Github Action](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/workflows/Build%20Tests/badge.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/actions) [![Downloads](https://img.shields.io/github/downloads/YanMing-lxb/GUET_Thesis_LaTeX/total.svg?color=blue&style=popout)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/releases/latest) ![GitHub repo size](https://img.shields.io/github/repo-size/YanMing-lxb/GUET_Thesis_LaTeX)
@@ -212,6 +187,18 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 | 科研竞赛获奖 | 文档            | misc             |
 
 在 Zotero 的 `其他` 项或 bib 文件的 `annotation` 中输入附加信息，如期刊论文分区，作者排名，科研竞赛排名等。
+
+具体操作示例如下：
+
+![建议成果整理](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/e07bac11-5e58-4f6c-a9ba-8f78bb2f5279)
+![期刊论文示例|50](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/356b856d-196e-40be-bc7d-a51d549f304b)
+![专利示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/88d679ae-d665-4f86-af7c-ca530dc7a8c0)
+![软著示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/e17c0e31-6b32-417e-bd44-0eef553e01c4)
+![参与项目示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/9cd91bb5-1a72-41a3-8a7b-184de9b87737)
+![比赛获奖示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/d4874ab6-7de5-4ef0-9585-10024cc5790d)
+![导出示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/19962eb7-1a29-4e94-916f-519b2167f299)
+
+**最后导出为 `Accomplishs.bib` 文件**
 
 ## 写作工具
 
