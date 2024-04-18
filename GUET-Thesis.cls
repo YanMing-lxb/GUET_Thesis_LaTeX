@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2024-04-07 20:29:47 +0800
+% LastEditTime : 2024-04-18 19:17:50 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  : GUET-Thesis 样式文件
@@ -137,7 +137,7 @@
                   gbstrict=true,                        % 避免输出 bib 文件中多余的域信息
                   gbalign=center,                       % 标签中括号对齐
                 ]{biblatex}
-
+                \DefineBibliographyStrings{english}{in={}} % 去掉英文in，避免会议中的in:出现
 
 % ===============条件判断宏包宏包===============
 \RequirePackage{ifxetex}                              % 判断是否使用 XeLaTeX 编译，以决定后续的包和设置的使用
