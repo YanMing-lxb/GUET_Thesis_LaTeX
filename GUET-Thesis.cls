@@ -15,11 +15,11 @@
 % 
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
-% Date         : 2023-07-30 15:13:12 +0800
-% LastEditTime : 2024-04-18 19:17:50 +0800
+% Date         : 2024-04-17 20:49:49 +0800
+% LastEditTime : 2024-04-18 20:48:49 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
-% Description  : GUET-Thesis 样式文件
+% Description  : 
 %  -----------------------------------------------------------------------
 %
 
@@ -1450,7 +1450,14 @@
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\DegreeName{}学位期间取得的成果}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
     \thispagestyle{fancy}
-    
+
+    \defbibfilter{PublishPaper}{
+      type=article 
+      or type=inproceedings 
+      or type=book 
+      or type=inbook
+    }                                                                                      % 定义筛选器用于打印期刊论文、会议、专著和专著部分篇章
+  
     \renewcommand{\bibfont}{\normalsize}                                                   % 设置参考文献字体小四
     \begin{refsection}[\AchResource]
         \nocite{*}
@@ -1467,7 +1474,7 @@
         \def\blx@maxbibnames{5}                                                            % 局部调整作者数量
         \settoggle{bbx:gbannote}{true}
         \begin{Achbox}
-          \printbibliography[heading=AchHeadStyle,type=article,title=发表论文：]
+          \printbibliography[heading=AchHeadStyle,filter=PublishPaper,title=发表论文：]
         \end{Achbox}
     \end{refsection}
     \begin{refsection}[\AchResource]
