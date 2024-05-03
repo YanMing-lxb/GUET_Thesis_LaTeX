@@ -53,7 +53,7 @@
 
 整图引用示例：\cref{fig:Three-enhanced-heat-transfer-paths}。
 
-提供三种不同的Tikz绘图示例，分别为柱状图(存在问题是少一列，过几天修改)，多点折线图，少点折线图(数据均已进行扰动，有空还是要大改一下数据)。
+提供三种不同的Tikz绘图示例，分别为柱状图(第一个子图存在问题是少一列，是由于间距放不下导致的，可以参考第二张图进行对应的修改)，多点折线图，少点折线图。
 
 \begin{figure}
     \subfloat[生成证明\label{fig-2}]{
@@ -63,43 +63,43 @@
                     /pgf/number format/1000 sep=.},
                 y tick label style={
                     /pgf/number format/1000 sep=.},
-                xlabel={参与者数量},
-                ylabel={耗时 (ms)},
-                ymin=0, ymax=1100,
-                ybar=10pt,
-                bar width=20pt,
-                enlarge x limits={abs=6pt},
-                legend cell align={left},
-                enlarge y limits={value=0.1,upper},
-                ybar interval=0.7,
-                legend pos=north west,
-                xtick=data,
-                xticklabels={100, 200, 300, 400, 500},
-                ytick={0, 500, 1000},
-                legend style={font=\huge},
-                label style={font=\huge},
-                tick label style={font=\huge}
+                xlabel={参与者数量},            % x轴标题
+                ylabel={耗时 (ms)},             % y轴标题
+                ymin=0, ymax=1100,              % y轴范围
+                ybar=10pt,                      % 柱状图间距
+                bar width=20pt,                 % 柱状图宽度
+                enlarge x limits={abs=6pt},     % x轴左右空白
+                legend cell align={left},       % 图例位置
+                enlarge y limits={value=0.1,upper}, % y轴上下空白
+                ybar interval=0.7,                  % 柱状图间距
+                legend pos=north west,              % 图例位置
+                xtick=data,                         % x轴数据
+                xticklabels={100, 200, 300, 400, 500},  % x轴标签
+                ytick={0, 500, 1000},                   % y轴标签
+                legend style={font=\huge},              % 图例字体大小
+                label style={font=\huge},               % 标签字体大小
+                tick label style={font=\huge}           % 刻度字体大小    
                 ]
                 \addplot[color=orange,fill=orange!50,bar shift=-6pt] coordinates {
-                    (1,166.7)
-                    (2,334.6)
-                    (3,502.1)
-                    (4,667.2)
-                    (5,831.4)
+                    (1,216.7)
+                    (2,434.6)
+                    (3,512.1)
+                    (4,637.2)
+                    (5,751.4)
                 };
                 \addplot[color=blue,fill=blue!50,bar shift=-2pt] coordinates {
-                    (1,234.3)
-                    (2,501.5)
-                    (3,768.7)
-                    (4,1035.9)
-                    (5,1303.1)
+                    (1,314.3)
+                    (2,251.5)
+                    (3,428.7)
+                    (4,835.9)
+                    (5,1203.1)
                 };
                 \addplot[color=green,fill=green!50,bar shift=0pt] coordinates {
-                    (1,265.824)
-                    (2,533.074)
-                    (3,800.234)
+                    (1,705.824)
+                    (2,103.074)
+                    (3,270.234)
                     (4,1067.464)
-                    (5,1334.614)
+                    (5,1024.614)
                 };
                 \addplot[color=gray,fill=gray!50,bar shift=2pt] coordinates {
                     (1,130.214)
@@ -110,79 +110,61 @@
                 };
                 \addplot[color=red,fill=red!50,bar shift=6pt] coordinates {
                     (1,117.529)
-                    (2,236.439)
-                    (3,343.239)
-                    (4,470.919)
-                    (5,588.179)
-                };
-                \legend{Xu et al.\cite{xu2019verifynet},Zhang et al.\cite{zhang2020privacy},Shen et al.\cite{shen2018enabling},Han et al.\cite{han2022verifiable},本方案}
-            \end{axis}
-        \end{tikzpicture}
-    }
-    \hfill
-    \subfloat[验证证明\label{fig-3}]{
-        \begin{tikzpicture}[global scale = 0.55]
-            \begin{axis}[
-                x tick label style={
-                    /pgf/number format/1000 sep=.},
-                y tick label style={
-                    /pgf/number format/1000 sep=.},
-                xlabel={参与者数量},
-                ylabel={耗时 (ms)},
-                ymin=0, ymax=2700,
-                ybar=10pt,
-                bar width=20pt,
-                enlarge x limits={abs=6pt},
-                legend cell align={left},
-                enlarge y limits={value=0.1,upper},
-                ybar interval=0.7,
-                legend pos=north west,
-                xtick=data,
-                xticklabels={100, 200, 300, 400, 500},
-                legend style={font=\huge},
-                label style={font=\huge},
-                tick label style={font=\huge}
-                ]
-                \addplot[color=orange,fill=orange!50,bar shift=-6pt] coordinates {
-                    (1,216.316)
-                    (2,291.916)
-                    (3,362.116)
-                    (4,431.616)
-                    (5,502.716)
-                };
-                \addplot[color=blue,fill=blue!50,bar shift=-10pt] coordinates {
-                    (1,1169.397)
-                    (2,1436.597)
-                    (3,1703.797)
-                    (4,1970.997)
-                    (5,2238.197)
-                };
-                \addplot[color=green,fill=green!50,bar shift=-5pt] coordinates {
-                    (1,361.874)
-                    (2,629.074)
-                    (3,896.274)
-                    (4,1163.474)
-                    (5,1430.674)
-                };
-                \addplot[color=gray,fill=gray!50,bar shift=5pt] coordinates {
-                    (1,779.338)
-                    (2,1445.338)
-                    (3,2111.338)
-                    (4,2777.338)
-                    (5,3443.338)
-                };
-                \addplot[color=red,fill=red!50,bar shift=10pt] coordinates {
-                    (1,80.632)
-                    (2,160.932)
-                    (3,241.232)
-                    (4,321.532)
-                    (5,401.832)
+                    (2,336.439)
+                    (3,743.239)
+                    (4,870.919)
+                    (5,988.179)
                 };
                 \legend{XXX et al.\cite{Lau_2022},YYY et al.\cite{Lau_2022},ZZZ et al.\cite{Lau_2022},HHH et al.\cite{Lau_2022},本方案}
             \end{axis}
         \end{tikzpicture}
     }
-    \caption[方案一的开销比较]{比较结果 (a) 生成证明的计算开销比较 (b)验证的计算开销比较(在\cref{fig-3}中，Zhang 等人的方案中的 $d=25$~\cite{zhang2020privacy} 和 Shen 等人的方案中的 $l=10$\cite{shen2018enabling})}
+    \hfill
+    \subfloat[包括Soot的类加载持续时间在内的时间消耗比较\label{fig-3}]{
+        \begin{tikzpicture}[global scale = 0.55]
+            \begin{axis}[
+                xlabel={样本名称},
+                ylabel={时间 (毫秒)},
+                symbolic x coords={A,B,C,D,E},
+                xtick=data,             % x轴数据
+                bar width=20pt,         % 柱状图宽度
+                nodes near coords,      % 柱状图上显示数值
+                ymin=0, ymax=48000,     % y轴范围
+                ybar=10pt,              % 柱状图间距
+                width=0.65\linewidth,   % 图片宽度
+                bar width = 12pt,       % 柱状图宽度
+                enlarge x limits={abs=30pt},    % x轴左右空白
+                ylabel style={yshift=-10pt},    % y轴标题位置
+                legend cell align={left},       % 图例位置
+                enlarge y limits={value=0.1,upper}, % y轴上下空白
+                legend pos=north west,              % 图例位置
+                nodes near coords style={font=\Large}, % 柱状图上数值字体大小，不够的话自行调整
+                legend style={font=\huge},              % 图例字体大小
+                label style={font=\huge},               % 标签字体大小
+                tick label style={font=\huge}           % 刻度字体大小
+                ]
+                \addplot[color=blue,fill=blue!50,bar shift=-9pt] coordinates {
+                    (A,35248)
+                    (B,36173 )
+                    (C,14249)
+                    (D,15963)
+                    (E,12385 )
+    
+                };
+                 \addlegendentry{Soot与数据流分析}
+                \addplot[color=red,fill=red!50,bar shift=9pt] coordinates {
+    
+                    (A,2796)
+                    (B,2885)
+                    (C,1649)
+                    (D,1193)
+                    (E,537)
+                };
+                \addlegendentry{LightSim}
+            \end{axis}
+        \end{tikzpicture}
+    }
+    \caption{示例图}
     \label{fig3}
 \end{figure}
 
@@ -307,7 +289,7 @@
                     (300, 92.1530)
                     (400, 93.5713)
                     (500, 94.2747)
-                };\label{6c0}%原始
+                };\label{6c0}
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 88.4214)
@@ -315,7 +297,7 @@
                     (300, 89.5672)
                     (400, 90.6631)
                     (500, 91.2861)
-                };\label{6c1}%Xu
+                };\label{6c1}
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 86.8072)
@@ -323,7 +305,7 @@
                     (300, 88.9112)
                     (400, 89.7785)
                     (500, 90.0550)
-                };\label{6c2}%Zhang
+                };\label{6c2}
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 90.5275)
@@ -331,7 +313,7 @@
                     (300, 91.8314)
                     (400, 92.4257)
                     (500, 93.5617)
-                };\label{6c3}%Shen
+                };\label{6c3}
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 91.2241)
@@ -339,7 +321,7 @@
                     (300, 92.6760)
                     (400, 93.1523)
                     (500, 93.8426)
-                };\label{6c4}%Han
+                };\label{6c4}
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 86.4234)
@@ -347,7 +329,7 @@
                     (300, 89.5347)
                     (400, 90.2071)
                     (500, 91.8193)
-                };\label{6c5}%5%
+                };\label{6c5}
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 82.6479)
@@ -355,7 +337,7 @@
                     (300, 87.1009)
                     (400, 88.3564)
                     (500, 89.6152)
-                };\label{6c6}%10%
+                };\label{6c6}
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 73.4036)
@@ -363,7 +345,7 @@
                     (300, 77.5426)
                     (400, 78.1326)
                     (500, 78.9213)
-                };\label{6c7}%20%
+                };\label{6c7}
             \legend{本方案, XXX et al.\cite{Lau_2022}, YYY et al.\cite{Lau_2022}, ZZZ et al.\cite{Lau_2022}, HHH et al.\cite{Lau_2022}, 5\% 恶意参与者, 10\% 恶意参与者, 20\% 恶意参与者}
             \end{axis}
         \end{tikzpicture}
@@ -396,7 +378,7 @@
                     (300, 73.7160)
                     (400, 74.2513)
                     (500, 75.0248)
-                };%原始
+                };
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 70.5137)
@@ -404,7 +386,7 @@
                     (300, 71.5914)
                     (400, 72.6225)
                     (500, 73.3046)
-                };%Xu
+                };
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 70.0164)
@@ -412,7 +394,7 @@
                     (300, 72.1332)
                     (400, 72.4517)
                     (500, 73.1561)
-                };%Zhang
+                };
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 72.3538)
@@ -420,7 +402,7 @@
                     (300, 73.8918)
                     (400, 74.2905)
                     (500, 74.1621)
-                };%Shen
+                };
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 72.1013)
@@ -428,7 +410,7 @@
                     (300, 73.9425)
                     (400, 74.7297)
                     (500, 75.2756)
-                };%Han
+                };
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 68.5217)
@@ -436,7 +418,7 @@
                     (300, 71.7219)
                     (400, 72.0186)
                     (500, 72.3318)
-                };%5%
+                };
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 62.2815)
@@ -444,7 +426,7 @@
                     (300, 67.6183)
                     (400, 68.1124)
                     (500, 69.5276)
-                };%10%
+                };
                 \addplot+[mark size=3pt]
                 coordinates {
                     (100, 53.6133)
@@ -452,7 +434,7 @@
                     (300, 58.4218)
                     (400, 61.1081)
                     (500, 62.3716)
-                };%20%
+                };
                 \legend{本方案, XXX et al.\cite{Lau_2022}, YYY et al.\cite{Lau_2022}, ZZZ et al.\cite{Lau_2022}, HHH et al.\cite{Lau_2022}, 5\% 恶意参与者, 10\% 恶意参与者, 20\% 恶意参与者}
             \end{axis}
         \end{tikzpicture}
