@@ -19,7 +19,7 @@
 % LastEditTime : 2024-04-18 20:48:49 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
-% Description  : 
+% Description  :
 %  -----------------------------------------------------------------------
 %
 
@@ -52,24 +52,66 @@
 % figurewithin=none 和 tablewithin=none 取消书籍类中对图表目录所添加的 10pt 间距命令，使得图表目录中的章节编号连续
 % 需要在对应的计数器中进行每章重置以保证连续编号
 
+% ===============TiKz相关宏包===============
+\RequirePackage{tikz}                                 % 用于绘制矢量图形
+\RequirePackage{tikzscale}                            % 用于调整TiKz图形的大小
+\RequirePackage{pgfplots}                             % 用于绘制二维和三维图形
+\pgfplotsset{width=0.8\textwidth, compat=1.17}        % 设置pgfplots图形的宽度为文本宽度的0.8倍，兼容性设置为1.17
+%pgfplots
+\tikzset{global scale/.style={
+		scale=#1,
+		every node/.append style={scale=#1}
+	}
+} % 设置全局缩放样式
+% \RequirePackage{pgfplotstable}                        % 用于绘制表格
+% \RequirePackage{pgf-pie}                              % 用于绘制饼图
+% \RequirePackage{pgf-umlcd}                            % 用于绘制UML类图
+% \RequirePackage{pgf-umlsd}                            % 用于绘制UML时序图
+
 % ===============表格相关宏包===============
 \RequirePackage{array}                                % 用于增强表格的功能和格式
 \RequirePackage{tabularray}                           % 提供更灵活和功能强大的表格环境
 \RequirePackage{booktabs}                             % 用于生成漂亮的三线表格样式
 \RequirePackage{longtable}                            % 提供了一个可分页的长表格环境，用于跨页显示表格内容
 \RequirePackage{multirow}                             % 允许在表格中合并多行
+\RequirePackage{threeparttable}                       % 用于在表格中添加脚注
 
 % ===============盒子相关宏包=============== 
 \RequirePackage[most]{tcolorbox}                      % 加载 tcolorbox 宏包，并使用 most 库
 \RequirePackage[absolute,overlay]{textpos}            % 用于绝对定位文本框，用于排版封面
 % \RequirePackage{showframe}                          % 显示排版框架
 % \TPshowboxestrue                                    % 显示textblock 框架，方便调整位置
+\RequirePackage{adjustbox}                            % 用于调整盒子的大小和位置，直白的说就是将超宽表格居中放置
 
 % ===============公式相关宏包===============    
+\RequirePackage[
+n, % or lambda 
+advantage,
+operators,
+sets,
+adversary,
+landau,
+probability,
+notions,
+logic,
+ff, 
+mm,
+primitives,
+events,
+complexity,
+oracles,
+asymptotics,
+keys
+]{cryptocode}                                         % 用于排版密码学算法
+\createprocedurecommand{procedure}{}{}{}              % 解决cryptocode宏包中和原有默认center环境的\procedure命令冲突
+\createpseudocodeblock{pseudocodeblock}{}{}{}{}       % 解决cryptocode宏包中和原有默认center环境的\pseudocodeblock命令冲突
+\createprocedureblock{procedureblock}{}{}{}{}         % 解决cryptocode宏包中和原有默认center环境的\procedureblock命令冲突
 \RequirePackage{amsmath}                              % 提供数学公式环境和命令
 \RequirePackage{amssymb}                              % 提供额外的数学符号
 \RequirePackage{amsthm}                               % 用于定义和排版定理、引理等数学定理结构
 \RequirePackage{mathspec}                             % 用于在数学环境中选择自定义的字体
+\RequirePackage{stmaryrd}                             %映入符号的引入\mapsfrom, 秘密分享份额符号\llbracket,\rrbracket无法在符号说明引入
+\RequirePackage{mathrsfs}                             %引入花体\mathscr{E},可尝试\usepackage[mathscr]{euscript}，\usepackage[scr]{rsfso}，\usepackage[mtpscr]{mtpro2}
 
 % ===============目录相关宏包===============
 \RequirePackage[titles]{tocloft}                      % 用于设置目录、图表目录和表格目录的格式，titles 表示可以让 tocloft 宏包不改变章节标题的格式，而只改变目录中的格式 
@@ -85,6 +127,8 @@
 \RequirePackage{zhnumber}                             % 用于将数字转换为大写中文数字的表示
 \RequirePackage{pifont}                               % 提供了许多符号和图标的命令
 \RequirePackage{datetime}                             % 提供日期和时间格式控制功能，包括 \today 命令
+% \RequirePackage{fontspec}                             % 用于设置字体
+\RequirePackage{textcomp}                            % 提供了许多符号和图标的命令，例如copyright
 
 % ===============链接相关宏包===============    
 \RequirePackage[hyphens]{xurl}                        % 允许在长网址中断行，避免超出边界
@@ -111,13 +155,42 @@
 \RequirePackage{ifoddpage}                            % 用于判断页码是否为奇数（用于判断打印版中空白页的添加）
 \RequirePackage{pdfpages}                             % 用于插入外部 PDF 文档的页面，已签名的独创性声明
 \RequirePackage{etoolbox}                             % 提供逻辑判断、列表循环遍历、patch、hook、计数器、布尔变量等操作
+% \RequirePackage{stfloats}                            % 提供了双栏排版中的浮动体环境
+\RequirePackage{verbatim}                              % 提供了更灵活的抄录环境和定制选项，对简短的抄录，可使用\verb|文字|和\verb*|文字|命令，原样输出一些特殊字符，如\、{}、$、#、%、_、&、~、^、\和空格，或原样输出命令
+% \RequirePackage{listings}                             % 用于排版代码，支持多种编程语言
+\RequirePackage{microtype}                              % 提供了更好的微调字距、字间距和连字等功能
+% \RequirePackage{enumitem}                             % 用于定制列表环境的样式和标签
+% \RequirePackage{makecell}                             % 用于生成复杂表格的单元格
+% \RequirePackage{ulem}                                 % 提供了各种下划线、波浪线、删除线等效果
+\RequirePackage{siunitx}                                % 提供了国际单位制的数字和单位的排版
+% \RequirePackage{datetime2}                            % 提供了日期和时间格式控制功能
+
 
 % ===============算法相关宏包===============
-\RequirePackage[
-                  algochapter,                        % 将算法放在章节中，并以章节编号
-                  boxruled,                           % 给算法添加边框
-                  linesnumbered                       % 给算法添加行号
-                ]{algorithm2e}                        % 用于排版算法和伪代码
+% 下面的两套算法宏包二选一，希望作者可以保留
+% algorithmicx的风格和语法会现代很多
+% 更合适作为学术论文
+% 第一套：algorithm2e宏包
+% \RequirePackage[
+%                   algochapter,                        % 将算法放在章节中，并以章节编号
+%                   boxruled,                           % 给算法添加边框
+%                   linesnumbered                       % 给算法添加行号
+%                 ]{algorithm2e}                        % 用于排版算法和伪代码
+% 第二套：algorithmicx宏包
+\RequirePackage{algorithm}                            % 用于排版算法和伪代码
+\RequirePackage{algorithmicx}                        % 用于排版算法和伪代码，考虑到 algorithm2e 宏包的一些问题，这里使用 algorithmicx 宏包，同时考虑是否去掉此宏包
+\RequirePackage[noend]{algpseudocode}                    % 用于排版算法和伪代码，是 algorithmicx 的扩展，algpseudocode 是 algorithmicx 的一种呈现方式，其中包含algorithmicx的所有功能
+
+\RequirePackage[linewidth=1pt]{mdframed}               % 用于生成带边框的文本框
+
+% ===============算法格式相关定制===============
+\algnewcommand\algorithmicinput{\textbf{INPUT: }}      % 定义算法输入关键字
+\algnewcommand\Input{\item[\algorithmicinput]}        % 定义算法输入关键字
+\algnewcommand\algorithmicoutput{\textbf{OUTPUT: }}   % 定义算法输出关键字
+\algnewcommand\Output{\item[\algorithmicoutput]}     % 定义算法输出关键字
+
+\algrenewcommand\algorithmicwhile{\textbf{Upon}}     % 定义算法while关键字
+% ===============算法相关宏包定制结束===============
 
 % ===============列表相关宏包===============
 \RequirePackage{enumitem}                             % 用于定制列表环境的样式和标签
@@ -132,12 +205,13 @@
                   citestyle=gb7714-2015,
                   gbmedium=false,                       % 载体标识符不显示OL
                   % gbpub=true,                           % 显示出版信息
-                  gbnamefmt=lowercase,                  % 姓名小写
-                  gbpunctin=false,                      % 关闭inbook,incollection,inproceedings中析出来源文献前//符号
+                  % gbnamefmt=lowercase,                  % 姓名小写，这个在最新版本的模板中还是需要大写的，因此需要关闭
+                  % gbpunctin=false,                      % 关闭inbook,incollection,inproceedings中析出来源文献前//符号，这个在最新版本模板中还是需要的，因此需要关闭
                   gbstrict=true,                        % 避免输出 bib 文件中多余的域信息
                   gbalign=center,                       % 标签中括号对齐
+                  gbannote=true,                        % 显示annote域，使得完成对于thesisauthor和corresponding的显示
                 ]{biblatex}
-                \DefineBibliographyStrings{english}{in={}} % 去掉英文in，避免会议中的in:出现
+                % \DefineBibliographyStrings{english}{in={}} % 去掉英文in，避免会议中的in:出现，这行是不需要的，不使用gbpunctin或注释即可
 
 % ===============条件判断宏包宏包===============
 \RequirePackage{ifxetex}                              % 判断是否使用 XeLaTeX 编译，以决定后续的包和设置的使用
@@ -546,7 +620,7 @@
             研\quad 究\quad 生\quad 姓\quad 名:                    & \TheAuthor                        \\
             指导教师姓名、职称:                                     & \TheAdvisor \enspace \TheProtitle \\
             申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \TheDegreeCategories              \\
-            学\quad 科（专\qquad 业）:                              & \TheMajor                         \\
+            \makebox[9em][s]{学\hspace{\fill}科\hspace{\fill}（专\hspace{\fill}业）}:     & \TheMajor   \\  %使用box可以更好地均分空间，推荐将其他几个参数也进行合适的修改
             论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \TheDate
           \end{tblr}
         }
@@ -656,9 +730,6 @@
 \urlstyle{rm}
 \raggedbottom % 将当前页面的底部对齐方式设置为“不齐平”
 
-
-
-
 % //////////////////////////////////////// 摘要关键词设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 %=========================中文摘要环境定义=========================
@@ -750,9 +821,6 @@
   \vspace{\baselineskip}
   \@hangfrom{\makebox[2.1cm][l]{\textbf{Keywords:}}}#1
 }
-
-
-
 
 % //////////////////////////////////////// 目录设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -947,10 +1015,6 @@
 % =========================插表索引内页码宽度设置=========================
 \AddToHook {shipout/background}{\addtocontents{lot}{\protect\cftsetpnumwidth{\widthof{\thepage}-1pt}}}
 
-
-
-
-
 % //////////////////////////////////////// 符号说明设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 % ====================符号说明页面设置==================== 定义符号说明命令
@@ -1005,18 +1069,45 @@
 \setlength{\nomitemorigsep}{\nomitemsep}
 \setlength{\nomitemsep}{-1\parsep} % Baseline skip between items
 
-% 创建符号说明分组
-\renewcommand{\nomgroup}[1]
-{
-  \ifthenelse
-  {\equal{#1}{A}}
-  {\vspace{9pt} \item[\textbf{希腊字符}]}
-  {\ifthenelse
-    {\equal{#1}{B}}
-    {\vspace{9pt} \item[\textbf{下标}]}
-    {\ifthenelse{\equal{#1}{C}}{\vspace{9pt} \item[\textbf{缩略语}]}{}}
-  }
-  \itemsep\nomitemsep % 应用上面设置的术语垂直行间距
+% 创建符号说明分组，这里的修改可以考虑采用，或许会更符合实际情况
+% \renewcommand{\nomgroup}[1]{
+%     \ifthenelse
+%     {\equal{#1}{A}}
+%     {\vspace{9pt} \item[\textbf{希腊字符}]}
+%     {
+%         \ifthenelse
+%         {\equal{#1}{B}}
+%         {\vspace{9pt} \item[\textbf{下标}]}
+%         {
+%             \ifthenelse
+%             {\equal{#1}{C}}
+%             {\vspace{9pt} \item[\textbf{缩略语}]}
+%             {}
+%         }
+%     }
+%     \itemsep\nomitemsep % 应用上面设置的术语垂直行间距
+% }
+\renewcommand{\nomgroup}[1]{
+    \ifthenelse
+    {\equal{#1}{A}}
+    {\vspace{9pt} \item[\textbf{各章共用}]}
+    {
+        \ifthenelse
+        {\equal{#1}{B}}
+        {\vspace{9pt} \item[\textbf{第三章}]}
+        {
+            \ifthenelse
+            {\equal{#1}{C}}
+            {\vspace{9pt} \item[\textbf{第四章}]}
+            {
+                \ifthenelse
+                {\equal{#1}{D}}
+                {\vspace{9pt} \item[\textbf{第五章}]}
+                {}
+            }
+        }
+    }
+    \itemsep\nomitemsep % 应用上面设置的术语垂直行间距
 }
 \makenomenclature     % 应用符号表
 
@@ -1192,12 +1283,27 @@
 
 
 % ===============图表公式算法引用样式设置=============== cleveref 宏包
-\crefname{figure}{图}{图} 
-\crefname{table}{表}{表}  
+\crefname{figure}{图}{图}
+\crefname{table}{表}{表}
 \crefname{equation}{式}{式}
 \crefname{algorithm}{算法}{算法}
 \crefname{algocf}{算法}{算法}
+\crefname{subfigure}{子图}{子图}
+\crefname{subtable}{子表}{子表}
+\crefname{subequation}{子式}{子式}
+\crefname{subalgorithm}{子算法}{子算法}
 
+% ===============定义定理等引用样式设置=============== cleveref 宏包
+\crefname{theorem}{定理}{定理}
+\crefname{axiom}{公理}{公理}
+\crefname{corollary}{推论}{推论}
+\crefname{lemma}{引理}{引理}
+\crefname{definition}{定义}{定义}
+\crefname{example}{例子}{例子}
+\crefname{proposition}{命题}{命题}
+\crefname{assertion}{断言}{断言}
+\crefname{assumption}{假设}{假设}
+\crefname{agreement}{协议}{协议}
 
 % ===============图表字体设置===============
 \AtBeginEnvironment{tabular}{\small}                         % 表格字体小五
@@ -1238,12 +1344,15 @@
 % //////////////////////////////////////// 算法设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 % ====================算法栏====================
-\SetAlgorithmName{算法}{算法}{算法列表}
-\renewcommand\thealgocf{\arabic{chapter}-\arabic{algocf}}
-\SetAlgoCaptionSeparator{\null}
+% \SetAlgorithmName{算法}{算法}{算法列表}
+% \renewcommand\thealgocf{\arabic{chapter}-\arabic{algocf}}
+% \SetAlgoCaptionSeparator{\null}
+% \AtBeginEnvironment{algorithm}{\vspace{9pt}}
+% \AfterEndEnvironment{algorithm}{\vspace{9pt}}
+\renewcommand{\thealgorithm}{\arabic{chapter}-\arabic{algorithm}} % 算法编号格式设置为 x-x，满足原始模板要求
+% \SetAlgoCaptionSeparator{\null}
 \AtBeginEnvironment{algorithm}{\vspace{9pt}}
 \AfterEndEnvironment{algorithm}{\vspace{9pt}}
-
 
 
 
@@ -1260,6 +1369,10 @@
 \newtheorem{definition}[theorem]{定义}
 \newtheorem{example}[theorem]{例子}
 \newtheorem{proposition}[theorem]{命题}
+\newtheorem{assertion}[theorem]{断言}
+\newtheorem{assumption}[theorem]{假设}
+\newtheorem{agreement}[theorem]{协议}
+\newtheorem{scheme}[theorem]{方案}
 % \newtheorem{环境名} [计数器名] {标题} [排序单位]
 % 环境名 给所定义的定理类环境起的名称, 它不得与现有环境重名, 否则系统将提示出错。每定义一个环境名, 系统就会自动创建一个同名的计数器, 用于为所定义的定理类环境排序。
 % 计数器名 可选参数, 如果希望所定义的定理类环境与已定义的某个定理类环境混合排序,就可在其中填写该环境的计数器名, 也就是该定理类环境的环境名;如果省略这个可选参数, 则表示本定理类环境单独排序。
@@ -1272,6 +1385,11 @@
 \renewcommand{\thelemma}{\arabic{chapter}.\arabic{lemma}}
 \renewcommand{\thedefinition}{\arabic{chapter}.\arabic{definition}}
 \renewcommand{\theexample}{\arabic{chapter}.\arabic{example}}
+\renewcommand{\theproposition}{\arabic{chapter}.\arabic{proposition}}
+\renewcommand{\theassertion}{\arabic{chapter}.\arabic{assertion}}
+\renewcommand{\theassumption}{\arabic{chapter}.\arabic{assumption}}
+\renewcommand{\theagreement}{\arabic{chapter}.\arabic{agreement}}
+\renewcommand{\thescheme}{\arabic{chapter}.\arabic{scheme}}
 % \renewcommand{\qedsymbol}{$\blacksquare$} %结束符，\blacksquare实心方框，\square空心方框
 
 \renewcommand{\proofname}{证明}
@@ -1298,11 +1416,11 @@
 % \noindent表示proof没有缩进，\it表示proof斜体
 % \quad表示\proofname后面空四个空格，\hfill表示右对齐，\square表示方框，\par表示结尾空一段.
 
-\AtBeginDocument{
-  \setlength{\abovedisplayskip}{8pt}
-  \setlength{\belowdisplayskip}{8pt}
-  \setlength{\belowdisplayshortskip}{8pt}
-  \setlength{\abovedisplayshortskip}{8pt}
+\AtBeginDocument{ % 原始间距着实过大，这里进行调整
+  \setlength{\abovedisplayskip}{4pt} % 设置公式上方的距离
+  \setlength{\belowdisplayskip}{4pt} % 设置公式下方的距离
+  \setlength{\belowdisplayshortskip}{4pt} % 设置短公式下方的距离
+  \setlength{\abovedisplayshortskip}{4pt} % 设置短公式上方的距离
 }
 
 
@@ -1324,7 +1442,7 @@
 
 
 % ====================参考文献设置====================
-\newcommand{\ThesisBibResource}[1]{\addbibresource[location=local]{#1}}               % 定义 \ThesisBibResource 命令用于加载参考文献源 
+\newcommand{\ThesisBibResource}[1]{\addbibresource[location=local]{#1}}               % 定义 \ThesisBibResource 命令用于加载参考文献源
 \renewcommand{\bibfont}{\small}                                                       % 设置参考文献字体小五
 \setlength{\bibitemsep}{0pt}                                                          % 每一条参考文献之间的间隔
 \AtEveryBibitem{\clearfield{url}}                                                     % 清除url信息 用以解决 url=false 命令在thesis中失效的Bug
@@ -1390,15 +1508,17 @@
 % //////////////////////////////////////// 攻读学位期间取得成果设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 % % ====================设置作者粗体标识====================
-% \renewcommand*{\mkbibnamefamily}[1]{ % 设置姓氏
-% \ifitemannotation{thesisauthor}
-% {\textcolor{black}{\textbf{#1}}}
-% {#1}}
+% \newtoggle{bbx:gbtype} % 定义新开关
+\renewcommand*{\mkbibnamegiven}[1]{% 将名字设置为粗体
+\ifitemannotation{thesisauthor}
+{\textbf{#1}}%
+{#1}\ifitemannotation{corresponding}{\textsuperscript{*}}{}%
+}
 
-% \renewcommand*{\mkbibnamegiven}[1]{ % 设置名字
-% \ifitemannotation{thesisauthor}
-% {\textcolor{black}{\textbf{#1}}}
-% {#1}}
+\renewcommand*{\mkbibnamefamily}[1]{% 将姓氏设置为粗体
+\ifitemannotation{thesisauthor}
+{\textbf{#1}}
+{#1}}
 
 
 % ====================解决专利显示patent的问题====================
@@ -1450,7 +1570,7 @@
     \fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\DegreeName{}学位期间取得的成果}
     \fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
     \thispagestyle{fancy}
-
+    
     \defbibfilter{PublishPaper}{
       type=article 
       or type=inproceedings 
@@ -1460,22 +1580,38 @@
   
     \renewcommand{\bibfont}{\normalsize}                                                   % 设置参考文献字体小四
     \begin{refsection}[\AchResource]
-        \nocite{*}
-        \settoggle{bbx:gbtype}{false}                                                      % 局部设置不输出文献类型和载体标识符
-        \settoggle{bbx:gbannote}{true}                                                     % 局部设置输出附加的annote/annotation信息
-        \settoggle{bbx:gbpub}{false}                                                       % 局部设置不输出出版信息
-        \begin{Achbox}
-          \printbibliography[heading=AchHeadStyle,type=report ,title=参与项目：]
-        \end{Achbox}
-        
+      \nocite{*}
+      \settoggle{bbx:gbtype}{false}                                                      % 局部设置不输出文献类型和载体标识符
+      \settoggle{bbx:gbannote}{true}                                                     % 局部设置输出附加的annote/annotation信息
+      \settoggle{bbx:gbpub}{false}                                                       % 局部设置不输出出版信息
+      \begin{Achbox}
+        \printbibliography[heading=AchHeadStyle,type=report ,title=参与项目：]
+      \end{Achbox}  
+    \end{refsection}
+    % \begin{refsection}[\AchResource]                                                     % 使用此项请注释下面的发表会议论文和发表期刊论文
+    %   \nocite{*}
+    %   \def\blx@maxbibnames{5}                                                            % 局部调整作者数量
+    %   \settoggle{bbx:gbannote}{true}
+    %   \begin{Achbox}
+    %     \printbibliography[heading=AchHeadStyle,filter=PublishPaper,title=发表论文：]
+    %   \end{Achbox}
+    % \end{refsection}
+    \begin{refsection}[\AchResource]
+      \nocite{*}
+      \def\blx@maxbibnames{5}                                                            % 局部调整作者数量
+      \settoggle{bbx:gbannote}{true}
+      \DeclareNameAlias{sortname}{family-given}                                           % 添加此行代码
+      \begin{Achbox}
+        \printbibliography[heading=AchHeadStyle,type=inproceedings,title=发表会议论文：]
+      \end{Achbox}
     \end{refsection}
     \begin{refsection}[\AchResource]
-        \nocite{*}
-        \def\blx@maxbibnames{5}                                                            % 局部调整作者数量
-        \settoggle{bbx:gbannote}{true}
-        \begin{Achbox}
-          \printbibliography[heading=AchHeadStyle,filter=PublishPaper,title=发表论文：]
-        \end{Achbox}
+      \nocite{*}
+      \def\blx@maxbibnames{5}                                                            % 局部调整作者数量，控制显示个数
+      \settoggle{bbx:gbannote}{true}
+      \begin{Achbox}
+        \printbibliography[heading=AchHeadStyle,type=article,title=发表期刊论文：]
+      \end{Achbox}
     \end{refsection}
     \begin{refsection}[\AchResource]
         \nocite{*}
@@ -1504,14 +1640,14 @@
 
 
 % ====================隐藏参与项目、软件著作权和科研竞赛姓名====================
-\AtEveryBibitem{                                % 清除指定refsection环境中的作者姓名
-    \ifnumequal{\value{refsection}}{1}          % 判断 当前refsection序号是否是为1
+\AtEveryBibitem{                                % 清除指定refsection环境中的作者姓名或页码
+    \ifnumequal{\value{refsection}}{1}          % 判断 当前refsection序号是否是为1（项目信息），因为项目参与者过多，不显示作者信息
        {\clearname{author}}                     % 是则清除作者信息
        {}                                       % 否则不执行操作
-    \ifnumequal{\value{refsection}}{4}          % 判断 当前refsection序号是否是为4
-       {\clearname{author}}                     % 是则清除作者信息
+    \ifnumequal{\value{refsection}}{2}          % 判断 当前refsection序号是否是为2（会议论文），因为会议论文不需要页码
+       {\clearfield{pages}}                     % 是则清除页码信息
        {}                                       % 否则不执行操作
-    \ifnumequal{\value{refsection}}{5}          % 判断 当前refsection序号是否是为5
+    \ifnumequal{\value{refsection}}{5}          % 判断 当前refsection序号是否是为5（软著），可以自选，是否需要作者信息
        {\clearname{author}}                     % 是则清除作者信息
        {}                                       % 否则不执行操作
 }

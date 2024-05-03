@@ -31,24 +31,135 @@
 
 \noindent 算法示例如下：
 
-\begin{algorithm}[H]
-    \KwData{this text}
-    \KwResult{how to write algorithm with \LaTeX2e}
-    initialization\;
-    \While{not at end of this document}{
-        read current\;
-        \eIf{understand}{
-            go to next section\;
-            current section becomes this one\;
-        }{
-            go back to the beginning of current section\;
-        }
-    }
-    \caption{How to wirte an algorithm.}
-    \label{alg:my_algorithm}
+% \begin{algorithm}[H]
+%     \KwData{this text}
+%     \KwResult{how to write algorithm with \LaTeX2e}
+%     initialization\;
+%     \While{not at end of this document}{
+%         read current\;
+%         \eIf{understand}{
+%             go to next section\;
+%             current section becomes this one\;
+%         }{
+%             go back to the beginning of current section\;
+%         }
+%     }
+%     \caption{How to wirte an algorithm.}
+%     \label{alg:my_algorithm}
+% \end{algorithm}
+
+% 算法如\cref{alg:my_algorithm}
+
+\begin{figure}
+    \begin{mdframed}
+    \begin{multicols}{2}
+        \begin{algorithmic}[1] %每行显示行号
+            \scriptsize
+            \While{由 CS 使用输入 $1^\lambda$ 进行调用}
+                \While{从 CS 接收 $1^\lambda$} \textcolor{blue}{\Comment{$\mathsf{Init}$}}
+                    \State \textbf{return} $pp = (\mathbb{G}, \mathbb{Z}^{*}_{p}, p, \mathsf{g}, H, \mathcal{H}, \mathsf{PRG})$
+                \EndWhile
+                \Statex
+                
+                \While{从 CS 接收 $pp$} \textcolor{blue}{\Comment{$\mathsf{KeyGen_{par}}$}}
+                    \For{$i \gets 1 \ \mathbf{to} \ n$} \Comment{$u_i$}
+                        \State $(\mathtt{X}_{i}, \mathtt{x}_{i}) \leftarrow \mathcal{MKEM}.\mathsf{Gen}(pp)$
+                        \State $a_i \overset{\$}{\leftarrow} \mathbb{Z}^{*}_{p}, y_i \leftarrow \mathsf{g}^{a_i}$
+                        \State $pk_i \leftarrow (y_i, \mathtt{X}_{i}), sk_i \leftarrow (a_i, \mathtt{x}_{i})$
+                        \State \textbf{Send} $( u_i, \mathtt{X}_{i} )$ to CS
+                    \EndFor
+                    \If{$|u_i| = n$}  \Comment{CS}
+                        \State $\{u_i \in U\}$.sort()
+                        \State $u_i \leftarrow \{ u_i, \mathtt{X}_{i} \}_{u_i \in U}$
+                    \EndIf
+                \EndWhile
+                \Statex
+                
+                \While{从 CS 接收 $pp$} \textcolor{blue}{\Comment{$\mathsf{KeyGen_{cs}}$}}
+                    \State $(\mathtt{pk}, \mathtt{sk}) \leftarrow \mathcal{MKEM}.\mathsf{Gen}(pp)$ \Comment{CS}
+                    \State $\nu \overset{\$}{\leftarrow} \mathbb{Z}^{*}_{p},  \mu \leftarrow \mathsf{g}^{\nu}$
+                    \State $pk \leftarrow (\mathtt{pk}, \mu), sk = (\mathtt{sk}, \nu)$
+                \EndWhile
+                \Statex
+                
+                \While{从 $u_{i}$, CS 接收 $(\{pk_{i} | i \in n\}, pk)$} \textcolor{blue}{\Comment{$\mathsf{SekeyGen}$}}
+                    \For{$i \gets 1 \ \mathbf{to} \ n$} \Comment{$u_i$}
+                        \For{$j \gets 1 \ \mathbf{to} \ n, j \neq i$}
+                            \State $(KU_{i,j}, CU_{i,j}) \leftarrow \mathcal{MKEM}.\mathsf{Enc}(\mathcal{Q}_{i,j})$
+                            \State \textbf{Send} $\{(CU_{i,j}, u_i, u_j) | u_{i}, u_{j} \in U , i \neq j\}$
+                        \EndFor
+                    \EndFor
+                    \For{$i \gets 1 \ \mathbf{to} \ n$} \Comment{CS}
+                        \For{$j \gets i + 1 \ \mathbf{to} \ n$}
+                            \State $(K_{i,j}, C_{i,j}) \leftarrow \mathcal{MKEM}.\mathsf{Enc}(\mathcal{P}_{i,j})$
+                            \State \textbf{Send} $\{(C_{i,j}, u_i, u_j) | u_{i}, u_{j} \in U , i \neq j\}$
+                        \EndFor
+                    \EndFor
+                \EndWhile
+                \Statex
+                
+                \While{从 $u_{i}$, CS 接收 $(sk_{i}, sk, pk_{i}, pk)$} \textcolor{blue}{\Comment{$\mathsf{ThrNegKey}$}}
+                    \For{$i \gets 1 \ \mathbf{to} \ n$} \Comment{$u_i$}
+                        \For{$j \gets 1 \ \mathbf{to} \ n, j \neq i$}
+                            \State $KU_{j,i} \leftarrow \mathcal{MKEM}.\mathsf{Dec}(CU_{j,i}, \mathtt{x}_{i}, \mathcal{Q}_{j,i})$
+                            \State $K_{i,j} \leftarrow \mathcal{MKEM}.\mathsf{Dec}(C_{i,j}, \mathtt{x}_{i}, \mathcal{P}_{i,j})$
+                        \EndFor
+                    \EndFor
+                    \For{$i \gets 1 \ \mathbf{to} \ n$} \Comment{CS}
+                        \For{$j \gets i + 1 \ \mathbf{to} \ n$}
+                            \State $KU_{i,j} \leftarrow \mathcal{MKEM}.\mathsf{Dec}(CU_{i,j}, \mathtt{sk}, \mathcal{Q}_{i,j})$
+                            \State $KU_{j,i} \leftarrow \mathcal{MKEM}.\mathsf{Dec}(CU_{j,i}, \mathtt{sk}, \mathcal{Q}_{j,i})$
+                        \EndFor
+                    \EndFor
+                    \State $\mathbf{k}_{i,j} \leftarrow \mathsf{PRG}(KU_{j,i} \| sid) \oplus \mathsf{PRG}(KU_{i,j} \| sid) \oplus \mathsf{PRG}(K_{i,j} \| sid)$ \Comment{$u_{i}$, CS}
+                \EndWhile
+                \Statex
+                
+                \While{从 $u_{i}$ 接收 $\mathbf{k}_{i,j}, m_i$} \textcolor{blue}{\Comment{$\mathsf{MaskIn}$}}
+                    \For{$i \gets 1 \ \mathbf{to} \ n$} \Comment{$u_i$}
+                        \For{$j \gets 1 \ \mathbf{to} \ n, j \neq i$}
+                            \State $\hat{m}_i \leftarrow m_i + \sum_{u_i < u_j} \mathsf{PRG}(\mathbf{k}_{i,j}) - \sum_{u_i > u_j} \mathsf{PRG}(\mathbf{k}_{i,j})$
+                        \EndFor
+                    \EndFor
+                \EndWhile
+                \Statex
+
+                \State 后文省略...
+
+            \EndWhile
+%				\EndFunction
+        \end{algorithmic}
+    \end{multicols}
+    \end{mdframed}
+    \caption[方案一伪代码]{方案的伪代码}
+    \label{fig_algo}
+\end{figure}
+
+该方案的过程在\cref{fig_algo}中描述。这种算法常用于写方案的总览
+
+第二种算法示例如下：
+
+\begin{algorithm}[!htbp]
+    \caption{承诺批量验证与错误检测}
+    \label{algo_find_err}
+    \begin{algorithmic}[1] %每行显示行号
+        \Require $\mathsf{Com}^{\mathsf{Agg}}_{j}$，其中 $i \in [1,n]$
+        \Ensure  $(\mathsf{flag}, l)$
+        \Function {ComBatchVali 和 ErrDete}{$\mathsf{Com}^{\mathsf{Agg}}_{j},\{\mathsf{g}^{[\![ \hat{x}_{i} ]\!]_{j}}h^{[\![ \ell_{i} ]\!]_{j}}\}_{i \in [1,n]}$}
+        \If{\cref{eq_com_add} 成立}
+            \State \textbf{return} $(\mathsf{True}, \bot)$ \Comment{$\bot$ 代表空列表}
+        \EndIf
+        \State 初始化两个长度 $2n - 1$ 的数组 $T_1, T_2$ \Comment{用两个数组构建两棵树 $T_1, T_2$}
+        \For{$i \gets 1 \ \mathbf{to} \ n$}
+            \State $T_1[i + n - 1] = \mathsf{Com}^{\mathsf{Agg}}_{j}$
+            \State $T_2[i + n - 1] = \mathsf{g}^{[\![ \hat{x}_{i} ]\!]_{j}}h^{[\![ \ell_{i} ]\!]_{j}}$
+        \EndFor
+        \EndWhile
+        \EndFunction
+    \end{algorithmic}
 \end{algorithm}
 
-算法如\cref{alg:my_algorithm}
+算法的引用也是\cref{algo_find_err}的形式。
 
 \section{定理定义示例}
 
@@ -64,3 +175,41 @@
 \begin{lemma}
     XXXXXXXXXX
 \end{lemma}
+
+提供了大量额外的定理环境，如定义、注释、例子等，可以根据需要自行添加。
+\begin{verbatim}
+    \begin{theorem} % 定理
+        XXXXXXXXXX
+    \end{theorem}
+    \begin{axiom} % 公理
+        XXXXXXXXXX
+    \end{axiom}
+    \begin{corollary} % 推论
+        XXXXXXXXXX
+    \end{corollary}
+    \begin{lemma} % 引理
+        XXXXXXXXXX
+    \end{lemma}
+    \begin{definition} % 定义
+        XXXXXXXXXX
+    \end{definition}
+    \begin{example} % 例子
+        XXXXXXXXXX
+    \end{example}
+    \begin{proposition} % 命题
+        XXXXXXXXXX
+    \end{proposition}
+    \begin{assertion} % 断言
+        XXXXXXXXXX
+    \end{assertion}
+    \begin{assumption} % 假设
+        XXXXXXXXXX
+    \end{assumption}
+    \begin{agreement} % 协议
+        XXXXXXXXXX
+    \end{agreement}
+\end{verbatim}
+
+且均支持自动编号和引用，如 \verb|\cref{thm:1}、\cref{cor:1}、\cref{lem:1}、\cref{def:1}、\cref{exm:1}|
+
+

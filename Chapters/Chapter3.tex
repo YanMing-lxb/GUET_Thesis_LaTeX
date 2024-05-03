@@ -44,6 +44,25 @@ https://www.latex-tables.com/
     \end{threetab}
 \end{table}
 
+\begin{table}[!htbp]
+    \caption[表格复杂定义示例]{复杂定义示例(提供脚注)}
+    \begin{threeparttable}
+        \begin{tabular}{*{3}{p{3.3cm}<{\centering}}}
+            \hline
+            方案 & 参数1 & 参数2\\ \hline
+            xxx et al.~\cite{Lau_2022} & $2n\times$SS & — \\ 
+            YYY~\cite{Lau_2022} & $n\times$SS$+5n\times$P & $n\times$BP \\
+            ZZZ~\cite{Lau_2022} & $2n\times$SS$+n\times$P & $n\times$BP$+n\times$SS \\
+            本章方案 & $n\times$SS & $n\times$P \\ \hline
+        \end{tabular}
+        \begin{tablenotes}
+            \footnotesize
+            \item[1] 服务器发起的最后一个操作被视为聚合部分
+        \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+
 \section{子表排版示例}
 \begin{table}[htb]
     \centering
