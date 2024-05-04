@@ -170,27 +170,37 @@ keys
 % 下面的两套算法宏包二选一，希望作者可以保留
 % algorithmicx的风格和语法会现代很多
 % 更合适作为学术论文
-% 第一套：algorithm2e宏包
-% \RequirePackage[
-%                   algochapter,                        % 将算法放在章节中，并以章节编号
-%                   boxruled,                           % 给算法添加边框
-%                   linesnumbered                       % 给算法添加行号
-%                 ]{algorithm2e}                        % 用于排版算法和伪代码
-% 第二套：algorithmicx宏包
-\RequirePackage{algorithm}                            % 用于排版算法和伪代码
-\RequirePackage{algorithmicx}                        % 用于排版算法和伪代码，考虑到 algorithm2e 宏包的一些问题，这里使用 algorithmicx 宏包，同时考虑是否去掉此宏包
-\RequirePackage[noend]{algpseudocode}                    % 用于排版算法和伪代码，是 algorithmicx 的扩展，algpseudocode 是 algorithmicx 的一种呈现方式，其中包含algorithmicx的所有功能
-
-\RequirePackage[linewidth=1pt]{mdframed}               % 用于生成带边框的文本框
-
-% ===============算法格式相关定制===============
-\algnewcommand\algorithmicinput{\textbf{INPUT: }}      % 定义算法输入关键字
-\algnewcommand\Input{\item[\algorithmicinput]}        % 定义算法输入关键字
-\algnewcommand\algorithmicoutput{\textbf{OUTPUT: }}   % 定义算法输出关键字
-\algnewcommand\Output{\item[\algorithmicoutput]}     % 定义算法输出关键字
-
-\algrenewcommand\algorithmicwhile{\textbf{Upon}}     % 定义算法while关键字
-% ===============算法相关宏包定制结束===============
+\newcommand{\theAlgoSetIn}[1]{
+  \ifthenelse{\equal{#1}{algorithm2e}}
+  {
+    第一套：algorithm2e宏包
+    \RequirePackage[
+                  algochapter,                        % 将算法放在章节中，并以章节编号
+                  boxruled,                           % 给算法添加边框
+                  linesnumbered                       % 给算法添加行号
+                ]{algorithm2e}                        % 用于排版算法和伪代码
+  }
+  {
+    \ifthenelse{\equal{#1}{algorithmicx}}
+    {
+      % 第二套：algorithmicx宏包
+      \RequirePackage{algorithm}                              % 用于排版算法和伪代码
+      \RequirePackage{algorithmicx}                           % 用于排版算法和伪代码，考虑到 algorithm2e 宏包的一些问题，这里使用 algorithmicx 宏包，同时考虑是否去掉此宏包
+      \RequirePackage[noend]{algpseudocode}                   % 用于排版算法和伪代码，是 algorithmicx 的扩展，algpseudocode 是 algorithmicx 的一种呈现方式，其中包含algorithmicx的所有功能
+      \RequirePackage[linewidth=1pt]{mdframed}                % 用于生成带边框的文本框
+      % ===============算法格式相关定制===============
+      \algnewcommand\algorithmicinput{\textbf{INPUT: }}      % 定义算法输入关键字
+      \algnewcommand\Input{\item[\algorithmicinput]}        % 定义算法输入关键字
+      \algnewcommand\algorithmicoutput{\textbf{OUTPUT: }}   % 定义算法输出关键字
+      \algnewcommand\Output{\item[\algorithmicoutput]}     % 定义算法输出关键字
+      \algrenewcommand\algorithmicwhile{\textbf{Upon}}     % 定义算法while关键字
+      % ===============算法相关宏包定制结束===============
+    }
+    {
+      \typeout{无效的输入，请使用algorithm2e或algorithmicx参数。}% 如果既不是A也不是B
+    }
+  }
+}
 
 % ===============列表相关宏包===============
 \RequirePackage{enumitem}                             % 用于定制列表环境的样式和标签
@@ -1071,43 +1081,43 @@ keys
 
 % 创建符号说明分组，这里的修改可以考虑采用，或许会更符合实际情况
 % \renewcommand{\nomgroup}[1]{
-%     \ifthenelse
-%     {\equal{#1}{A}}
-%     {\vspace{9pt} \item[\textbf{希腊字符}]}
-%     {
-%         \ifthenelse
-%         {\equal{#1}{B}}
-%         {\vspace{9pt} \item[\textbf{下标}]}
-%         {
-%             \ifthenelse
-%             {\equal{#1}{C}}
-%             {\vspace{9pt} \item[\textbf{缩略语}]}
-%             {}
-%         }
-%     }
-%     \itemsep\nomitemsep % 应用上面设置的术语垂直行间距
+%   \ifthenelse
+%   {\equal{#1}{A}}
+%   {\vspace{9pt} \item[\textbf{希腊字符}]}
+%   {
+%       \ifthenelse
+%       {\equal{#1}{B}}
+%       {\vspace{9pt} \item[\textbf{下标}]}
+%       {
+%           \ifthenelse
+%           {\equal{#1}{C}}
+%           {\vspace{9pt} \item[\textbf{缩略语}]}
+%           {}
+%       }
+%   }
+%   \itemsep\nomitemsep % 应用上面设置的术语垂直行间距
 % }
 \renewcommand{\nomgroup}[1]{
-    \ifthenelse
-    {\equal{#1}{A}}
-    {\vspace{9pt} \item[\textbf{各章共用}]}
-    {
-        \ifthenelse
-        {\equal{#1}{B}}
-        {\vspace{9pt} \item[\textbf{第三章}]}
-        {
-            \ifthenelse
-            {\equal{#1}{C}}
-            {\vspace{9pt} \item[\textbf{第四章}]}
-            {
-                \ifthenelse
-                {\equal{#1}{D}}
-                {\vspace{9pt} \item[\textbf{第五章}]}
-                {}
-            }
-        }
-    }
-    \itemsep\nomitemsep % 应用上面设置的术语垂直行间距
+  \ifthenelse
+  {\equal{#1}{A}}
+  {\vspace{9pt} \item[\textbf{各章共用}]}
+  {
+      \ifthenelse
+      {\equal{#1}{B}}
+      {\vspace{9pt} \item[\textbf{第三章}]}
+      {
+          \ifthenelse
+          {\equal{#1}{C}}
+          {\vspace{9pt} \item[\textbf{第四章}]}
+          {
+              \ifthenelse
+              {\equal{#1}{D}}
+              {\vspace{9pt} \item[\textbf{第五章}]}
+              {}
+          }
+      }
+  }
+  \itemsep\nomitemsep % 应用上面设置的术语垂直行间距
 }
 \makenomenclature     % 应用符号表
 
@@ -1288,10 +1298,50 @@ keys
 \crefname{equation}{式}{式}
 \crefname{algorithm}{算法}{算法}
 \crefname{algocf}{算法}{算法}
-\crefname{subfigure}{子图}{子图}
-\crefname{subtable}{子表}{子表}
-\crefname{subequation}{子式}{子式}
-\crefname{subalgorithm}{子算法}{子算法}
+\newcommand{\subFigSet}[1]{
+  \ifthenelse{\equal{#1}{图}}
+  {\crefname{subfigure}{图}{图}
+  }
+  {\ifthenelse{\equal{#1}{子图}}
+    {\crefname{subfigure}{子图}{子图}
+    }
+    {\typeout{无效的输入，请使用图或子图参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+    }
+  }
+}
+\newcommand{\subTabSet}[1]{
+  \ifthenelse{\equal{#1}{表}}
+  {\crefname{subtable}{表}{表}
+  }
+  {\ifthenelse{\equal{#1}{子表}}
+    {\crefname{subtable}{子表}{子表}
+    }
+    {\typeout{无效的输入，请使用表或子表参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+    }
+  }
+}
+\newcommand{\subEqSet}[1]{
+  \ifthenelse{\equal{#1}{式}}
+  {\crefname{subequation}{式}{式}
+  }
+  {\ifthenelse{\equal{#1}{子式}}
+    {\crefname{subequation}{子式}{子式}
+    }
+    {\typeout{无效的输入，请使用式或子式参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+    }
+  }
+}
+\newcommand{\subAlgSet}[1]{
+  \ifthenelse{\equal{#1}{算法}}
+  {\crefname{subalgorithm}{算法}{算法}
+  }
+  {\ifthenelse{\equal{#1}{子算法}}
+    {\crefname{subalgorithm}{子算法}{子算法}
+    }
+    {\typeout{无效的输入，请使用算法或子算法参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+    }
+  }
+}
 
 % ===============定义定理等引用样式设置=============== cleveref 宏包
 \crefname{theorem}{定理}{定理}
@@ -1344,13 +1394,24 @@ keys
 % //////////////////////////////////////// 算法设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 % ====================算法栏====================
-% \SetAlgorithmName{算法}{算法}{算法列表}
-% \renewcommand\thealgocf{\arabic{chapter}-\arabic{algocf}}
-% \SetAlgoCaptionSeparator{\null}
-% \AtBeginEnvironment{algorithm}{\vspace{9pt}}
-% \AfterEndEnvironment{algorithm}{\vspace{9pt}}
-\renewcommand{\thealgorithm}{\arabic{chapter}-\arabic{algorithm}} % 算法编号格式设置为 x-x，满足原始模板要求
-% \SetAlgoCaptionSeparator{\null}
+\newcommand{\theAlgoSet}[1]{
+  \ifthenelse{\equal{#1}{algorithm2e}}
+  {
+    \theAlgoSetIn{algorithm2e}
+    \SetAlgorithmName{算法}{算法}{算法列表}
+    \renewcommand\thealgocf{\arabic{chapter}-\arabic{algocf}}
+    \SetAlgoCaptionSeparator{\null}
+  }
+  {\ifthenelse{\equal{#1}{algorithmicx}}
+    {
+      \theAlgoSetIn{algorithmicx}
+      \renewcommand{\thealgorithm}{\arabic{chapter}-\arabic{algorithm}} % 算法编号格式设置为 x-x，满足原始模板要求
+    }
+    {
+      \typeout{无效的输入，请使用algorithm2e或algorithmicx参数。}% 如果既不是A也不是B
+    }
+  }
+}
 \AtBeginEnvironment{algorithm}{\vspace{9pt}}
 \AfterEndEnvironment{algorithm}{\vspace{9pt}}
 
@@ -1640,6 +1701,7 @@ keys
 
 
 % ====================隐藏参与项目、软件著作权和科研竞赛姓名====================
+% 这里需要和AchResource的顺序设置保持一致，如果使用PublishPaper而注释掉期刊和会议论文，则需要调整全部的refsection序号，按照需求调节即可
 \AtEveryBibitem{                                % 清除指定refsection环境中的作者姓名或页码
     \ifnumequal{\value{refsection}}{1}          % 判断 当前refsection序号是否是为1（项目信息），因为项目参与者过多，不显示作者信息
        {\clearname{author}}                     % 是则清除作者信息

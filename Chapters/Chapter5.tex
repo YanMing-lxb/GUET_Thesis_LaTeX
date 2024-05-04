@@ -146,14 +146,16 @@
         \Require $\mathsf{Com}^{\mathsf{Agg}}_{j}$，其中 $i \in [1,n]$
         \Ensure  $(\mathsf{flag}, l)$
         \Function {ComBatchVali 和 ErrDete}{$\mathsf{Com}^{\mathsf{Agg}}_{j},\{\mathsf{g}^{[\![ \hat{x}_{i} ]\!]_{j}}h^{[\![ \ell_{i} ]\!]_{j}}\}_{i \in [1,n]}$}
-        \If{\cref{eq_com_add} 成立}
-            \State \textbf{return} $(\mathsf{True}, \bot)$ \Comment{$\bot$ 代表空列表}
-        \EndIf
-        \State 初始化两个长度 $2n - 1$ 的数组 $T_1, T_2$ \Comment{用两个数组构建两棵树 $T_1, T_2$}
         \For{$i \gets 1 \ \mathbf{to} \ n$}
             \State $T_1[i + n - 1] = \mathsf{Com}^{\mathsf{Agg}}_{j}$
             \State $T_2[i + n - 1] = \mathsf{g}^{[\![ \hat{x}_{i} ]\!]_{j}}h^{[\![ \ell_{i} ]\!]_{j}}$
         \EndFor
+        \While{!$q$.empty()}
+            \If{$a < n$}
+                \State $q$.push($2a$), $q$.push($2a + 1$)
+            \Else
+                \State $l$.add($a - n + 1$)
+            \EndIf
         \EndWhile
         \EndFunction
     \end{algorithmic}
