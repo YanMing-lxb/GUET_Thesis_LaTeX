@@ -16,9 +16,9 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2024-04-18 20:48:49 +0800
+% LastEditTime : 2024-05-05 19:01:42 +0800
 % Github       : https://github.com/YanMing-lxb/
-% FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
+% FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  :
 %  -----------------------------------------------------------------------
 %
@@ -173,7 +173,7 @@ keys
 \newcommand{\theAlgoSetIn}[1]{
   \ifthenelse{\equal{#1}{algorithm2e}}
   {
-    第一套：algorithm2e宏包
+    % 第一套：algorithm2e宏包
     \RequirePackage[
                   algochapter,                        % 将算法放在章节中，并以章节编号
                   boxruled,                           % 给算法添加边框
@@ -1119,6 +1119,8 @@ keys
   }
   \itemsep\nomitemsep % 应用上面设置的术语垂直行间距
 }
+
+
 \makenomenclature     % 应用符号表
 
 
@@ -1298,50 +1300,57 @@ keys
 \crefname{equation}{式}{式}
 \crefname{algorithm}{算法}{算法}
 \crefname{algocf}{算法}{算法}
-\newcommand{\subFigSet}[1]{
-  \ifthenelse{\equal{#1}{图}}
-  {\crefname{subfigure}{图}{图}
-  }
-  {\ifthenelse{\equal{#1}{子图}}
-    {\crefname{subfigure}{子图}{子图}
-    }
-    {\typeout{无效的输入，请使用图或子图参数}% 如果既不是A也不是B，则输出错误信息在log文件中
-    }
-  }
-}
-\newcommand{\subTabSet}[1]{
-  \ifthenelse{\equal{#1}{表}}
-  {\crefname{subtable}{表}{表}
-  }
-  {\ifthenelse{\equal{#1}{子表}}
-    {\crefname{subtable}{子表}{子表}
-    }
-    {\typeout{无效的输入，请使用表或子表参数}% 如果既不是A也不是B，则输出错误信息在log文件中
-    }
-  }
-}
-\newcommand{\subEqSet}[1]{
-  \ifthenelse{\equal{#1}{式}}
-  {\crefname{subequation}{式}{式}
-  }
-  {\ifthenelse{\equal{#1}{子式}}
-    {\crefname{subequation}{子式}{子式}
-    }
-    {\typeout{无效的输入，请使用式或子式参数}% 如果既不是A也不是B，则输出错误信息在log文件中
-    }
-  }
-}
-\newcommand{\subAlgSet}[1]{
-  \ifthenelse{\equal{#1}{算法}}
-  {\crefname{subalgorithm}{算法}{算法}
-  }
-  {\ifthenelse{\equal{#1}{子算法}}
-    {\crefname{subalgorithm}{子算法}{子算法}
-    }
-    {\typeout{无效的输入，请使用算法或子算法参数}% 如果既不是A也不是B，则输出错误信息在log文件中
-    }
-  }
-}
+
+\newcommand{\subSetName}{}
+\newcommand{\subCrefNameSet}{\renewcommand{\subSetName}{子}}
+\crefname{subfigure}{\subSetName 图}{\subSetName 图}
+\crefname{subtable}{\subSetName 表}{\subSetName 表}
+\crefname{subequation}{\subSetName 式}{\subSetName 式}
+\crefname{subalgorithm}{\subSetName 算法}{\subSetName 算法}
+% \newcommand{\subFigSet}[1]{
+%   \ifthenelse{\equal{#1}{图}}
+%   {\crefname{subfigure}{图}{图}
+%   }
+%   {\ifthenelse{\equal{#1}{子图}}
+%     {\crefname{subfigure}{子图}{子图}
+%     }
+%     {\typeout{无效的输入，请使用图或子图参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+%     }
+%   }
+% }
+% \newcommand{\subTabSet}[1]{
+%   \ifthenelse{\equal{#1}{表}}
+%   {\crefname{subtable}{表}{表}
+%   }
+%   {\ifthenelse{\equal{#1}{子表}}
+%     {\crefname{subtable}{子表}{子表}
+%     }
+%     {\typeout{无效的输入，请使用表或子表参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+%     }
+%   }
+% }
+% \newcommand{\subEqSet}[1]{
+%   \ifthenelse{\equal{#1}{式}}
+%   {\crefname{subequation}{式}{式}
+%   }
+%   {\ifthenelse{\equal{#1}{子式}}
+%     {\crefname{subequation}{子式}{子式}
+%     }
+%     {\typeout{无效的输入，请使用式或子式参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+%     }
+%   }
+% }
+% \newcommand{\subAlgSet}[1]{
+%   \ifthenelse{\equal{#1}{算法}}
+%   {\crefname{subalgorithm}{算法}{算法}
+%   }
+%   {\ifthenelse{\equal{#1}{子算法}}
+%     {\crefname{subalgorithm}{子算法}{子算法}
+%     }
+%     {\typeout{无效的输入，请使用算法或子算法参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+%     }
+%   }
+% }
 
 % ===============定义定理等引用样式设置=============== cleveref 宏包
 \crefname{theorem}{定理}{定理}
