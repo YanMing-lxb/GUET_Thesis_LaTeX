@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2024-05-05 19:01:42 +0800
+% LastEditTime : 2024-05-05 19:29:56 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  :
@@ -1079,33 +1079,39 @@ keys
 \setlength{\nomitemorigsep}{\nomitemsep}
 \setlength{\nomitemsep}{-1\parsep} % Baseline skip between items
 
-% 创建符号说明分组，这里的修改可以考虑采用，或许会更符合实际情况
-% \renewcommand{\nomgroup}[1]{
-%   \ifthenelse
-%   {\equal{#1}{A}}
-%   {\vspace{9pt} \item[\textbf{希腊字符}]}
-%   {
-%       \ifthenelse
-%       {\equal{#1}{B}}
-%       {\vspace{9pt} \item[\textbf{下标}]}
-%       {
-%           \ifthenelse
-%           {\equal{#1}{C}}
-%           {\vspace{9pt} \item[\textbf{缩略语}]}
-%           {}
-%       }
-%   }
-%   \itemsep\nomitemsep % 应用上面设置的术语垂直行间距
-% }
+
+% 创建符号说明分组，
+\newcommand{\SymbolGroupStyleIn}{位置分类} % 定义\SymbolGroupStyle命令，用于修改符号说明分组格式
+\newcommand{\SymbolGroupStyle}[1]{\renewcommand{\SymbolGroupStyleIn}{#1}}
 \renewcommand{\nomgroup}[1]{
-  \ifthenelse
-  {\equal{#1}{A}}
-  {\vspace{9pt} \item[\textbf{各章共用}]}
+  \ifthenelse{\equal{\SymbolGroupStyleIn}{位置分类}}
   {
+    \ifthenelse
+    {\equal{#1}{A}}
+    {\vspace{9pt} \item[\textbf{希腊字符}]}
+    {
       \ifthenelse
       {\equal{#1}{B}}
-      {\vspace{9pt} \item[\textbf{第三章}]}
+      {\vspace{9pt} \item[\textbf{下标}]}
       {
+          \ifthenelse
+          {\equal{#1}{C}}
+          {\vspace{9pt} \item[\textbf{缩略语}]}
+          {}
+      }
+    }   
+  }
+  {
+    \ifthenelse{\equal{\SymbolGroupStyleIn}{章节分类}}
+    {
+      \ifthenelse
+      {\equal{#1}{A}}
+      {\vspace{9pt} \item[\textbf{各章共用}]}
+      {
+        \ifthenelse
+        {\equal{#1}{B}}
+        {\vspace{9pt} \item[\textbf{第三章}]}
+        {
           \ifthenelse
           {\equal{#1}{C}}
           {\vspace{9pt} \item[\textbf{第四章}]}
@@ -1115,11 +1121,15 @@ keys
               {\vspace{9pt} \item[\textbf{第五章}]}
               {}
           }
+        }
       }
+    }
+    {\typeout{无效的输入，请使用使用 位置分类 或 章节分类 作为参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+    }
   }
+  
   \itemsep\nomitemsep % 应用上面设置的术语垂直行间距
 }
-
 
 \makenomenclature     % 应用符号表
 
