@@ -16,9 +16,9 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2024-05-05 19:29:56 +0800
+% LastEditTime : 2024-05-27 23:34:59 +0800
 % Github       : https://github.com/YanMing-lxb/
-% FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
+% FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  :
 %  -----------------------------------------------------------------------
 %
@@ -1399,6 +1399,10 @@ keys
   hline{1,Z} = {-}{0.9pt}, % 设置头线和尾线为1.5pt
   hline{2} = {-}{0.5pt},   % 设置中线 0.5pt
 }
+
+% =============== 自定义列表环境 ===============
+\newlist{enumerateni}{enumerate}{1} % 定义新的列表环境，名为 mylist
+\setlist[enumerateni]{label=（\arabic*）,leftmargin=0pt,itemindent=4.5em,labelsep=0pt} % 设置列表样式
 
 
 
