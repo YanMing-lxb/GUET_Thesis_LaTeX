@@ -609,12 +609,12 @@ keys
               hline{2-Z} = {2}{1.25pt},                                              % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
               belowsep = {-11pt}                                                     % 单元格底线向上偏移11pt
             }
-            研\quad 究\quad 生\quad 学\quad 号:                     & \TheStudentNumber                 \\
-            研\quad 究\quad 生\quad 姓\quad 名:                     & \TheAuthor                        \\
-            指导教师姓名、职称:                                      & \TheAdvisor \enspace \TheProtitle \\
-            申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \TheDegreeCategories              \\
-            学\quad 科（专\qquad 业）:                              & \TheMajor                         \\
-            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \TheDate
+            研\quad 究\quad 生\quad 学\quad 号:                          & \TheStudentNumber                 \\
+            研\quad 究\quad 生\quad 姓\quad 名:                          & \TheAuthor                        \\
+            指导教师姓名、职称:                                           & \TheAdvisor \enspace \TheProtitle \\
+            申\enspace 请专业学位类别\enspace :                          & \TheDegreeCategories               \\
+            专\hspace{1.5em}业\hspace{1.5em}名\hspace{1.5em}称\enspace : & \TheMajor                         \\
+            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:      & \TheDate
           \end{tblr}
         }{ % 博士、学硕、在职硕士的封面信息 👇
           \begin{tblr}
@@ -629,9 +629,9 @@ keys
             研\quad 究\quad 生\quad 学\quad 号:                    & \TheStudentNumber                 \\
             研\quad 究\quad 生\quad 姓\quad 名:                    & \TheAuthor                        \\
             指导教师姓名、职称:                                     & \TheAdvisor \enspace \TheProtitle \\
-            申\enspace 请\enspace 学\quad 位\enspace 门\enspace 类: & \TheDegreeCategories              \\
-            \makebox[9em][s]{学\hspace{\fill}科\hspace{\fill}（专\hspace{\fill}业）}:     & \TheMajor   \\  %使用box可以更好地均分空间，推荐将其他几个参数也进行合适的修改
-            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期: & \TheDate
+            申请学位学科门类\quad :                                 & \TheDegreeCategories              \\
+            学\quad 科（专\qquad 业）:                             & \TheMajor   \\  %使用box可以更好地均分空间，推荐将其他几个参数也进行合适的修改
+            论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:& \TheDate
           \end{tblr}
         }
       \end{textblock}
