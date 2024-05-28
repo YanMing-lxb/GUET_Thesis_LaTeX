@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-12-03 15:44:36 +0800
- * LastEditTime : 2024-04-05 10:32:41 +0800
+ * LastEditTime : 2024-05-28 23:25:18 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \GUET_Thesis_LaTeX\README.md
  * Description  : 
@@ -176,6 +176,8 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 ### 攻读学位期间取得成果
 攻读学位期间取得成果使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出攻读学位期间取得成果时，导出类型要选择 `biblatex`。在 `\ThesisAchResource` 命令中输入成果源文件位置。
+
+#### 攻读学位期间取得成果的整理
 建议将成果保存到 Zotero 中，关于成果在 Zotero 和 bib 文件中的类型设置如下表所示：
 
 | 成果类型     | Zotero 中的类型 | bib 文件中的类型 |
@@ -199,6 +201,63 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 ![导出示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/19962eb7-1a29-4e94-916f-519b2167f299)
 
 **最后导出为 `Accomplishs.bib` 文件**
+
+#### 攻读学位期间取得成果中突出显示作者和导师
+1. 手动在Accomplishs.bib文件的条目中添加 `AUTHOR+an` 字段，如：`AUTHOR+an = {2=thesisauthor; 4=corresponding}` ，其中 `2=thesisauthor` 表示作者为第二作者，`4=corresponding` 表示导师为第四作者。
+如：
+```bibtex
+@article{Li.Li.ea_2023,
+  title = {Here is the name of the paper},
+  author = {Li, XX and Yan, Ming and Huang, XX and Zheng, XX},
+  date = {2023-05-05},
+  journaltitle = {Applied Thermal Engineering},
+  shortjournal = {Appl. Therm. Eng.},
+  volume = {225},
+  pages = {120167},
+  issn = {1359-4311},
+  doi = {10.1016/j.applthermaleng},
+  language = {en},
+  annotation = {TOP 期刊，中科院一区，IF：6.465，共同一作},
+  AUTHOR+an = {2=thesisauthor;4=corresponding}
+}
+  ```
+
+2. 利用 `Better BibTex for Zotero` 自动在导出的bib文件中添加 `AUTHOR+an` 字段。
+
+将以下代码粘贴到 `postscript` 选项中。
+```JavaScript
+if (Translator.BetterBibTeX && this.has.title) {
+   this.add({name: 'issue_date', replace: true, value:item.date})	
+   this.add({name: 'issuingAuthority', replace: true, value:item.issuingAuthority})	
+}
+
+let authorFirstName1 = "焱";
+let authorLastName1 = "铭";
+let authorName1 = "焱铭";
+let authorFirstName2 = "Ming";
+let authorLastName2 = "Yan";
+let authorName2 = "Ming Yan";
+
+let correspondingFirstName1 = "李";
+let correspondingLastName1 = "XX";
+let correspondingName1 = "李XX";
+let correspondingFirstName2 = "XX";
+let correspondingLastName2 = "Li";
+let correspondingName2 = "XX Li";
+
+if (item.creators.find(a => (a.firstName === authorFirstName1 && a.lastName === authorLastName1) || (a.firstName === authorLastName1 && a.lastName === authorFirstName1) || a.lastName === authorName1 || a.firstName === authorName1 || (a.firstName === authorFirstName2 && a.lastName === authorLastName2) || (a.firstName === authorLastName2 && a.lastName === authorFirstName2) || a.lastName === authorName2 || a.firstName === authorName2)) {
+  let rank1 = item.creators.findIndex(a => (a.firstName === authorFirstName1 && a.lastName === authorLastName1) || (a.firstName === authorLastName1 && a.lastName === authorFirstName1) || a.lastName === authorName1 || a.firstName === authorName1 || (a.firstName === authorFirstName2 && a.lastName === authorLastName2) || (a.firstName === authorLastName2 && a.lastName === authorFirstName2) || a.lastName === authorName2 || a.firstName === authorName2) + 1;
+  if (item.creators.find(a => (a.firstName === correspondingFirstName1 && a.lastName === correspondingLastName1) || (a.firstName === correspondingLastName1 && a.lastName === correspondingFirstName1) || a.lastName === correspondingName1 || a.firstName === correspondingName1 || (a.firstName === correspondingFirstName2 && a.lastName === correspondingLastName2) || (a.firstName === correspondingLastName2 && a.lastName === correspondingFirstName2) || a.lastName === correspondingName2 || a.firstName === correspondingName2)) {
+    let rank2 = item.creators.findIndex(a => (a.firstName === correspondingFirstName1 && a.lastName === correspondingLastName1) || (a.firstName === correspondingLastName1 && a.lastName === correspondingFirstName1) || a.lastName === correspondingName1 || a.firstName === correspondingName1 || (a.firstName === correspondingFirstName2 && a.lastName === correspondingLastName2) || (a.firstName === correspondingLastName2 && a.lastName === correspondingFirstName2) || a.lastName === correspondingName2 || a.firstName === correspondingName2) + 1;
+    this.add({name: 'AUTHOR+an', replace: true, value:rank1 + '=thesisauthor;' + rank2 + '=corresponding'});
+  } else {
+    this.add({name: 'AUTHOR+an', replace: true, value:rank1 + '=thesisauthor'});
+  }
+}
+```
+**<font color="#d83931">注意</font>**：要将代码中的作者姓名和导师姓名替换成自己的姓名和导师姓名。
+
+> 这样每次导出 bib 文件时，就会自动添加 `AUTHOR+an` 字段，并根据作者和导师的排名，自动添加相应的 `thesisauthor` 和 `corresponding` 信息。
 
 ## 写作工具
 
@@ -229,11 +288,11 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
   - [ ] 自定义长三线表环境 `lthreetab` (要求可跨页，跨页后自带 “题注(续)” )
   - [x] 自定义普通三线表环境 `threetab`
 - [ ] ~~使用文学编程重构项目~~
-- [ ] 采用 biblatex 编译参考文献，替换掉 bibtex：
+- [X] 采用 biblatex 编译参考文献，替换掉 bibtex：
   - [X] biblatex 下实现参考文献的编译
   - [X] biblatex 下实现攻读学位期间取得成果的自动编译
   - [X] biblatex 下实现攻读学位期间取得成果的盲审版本切换
-  - [ ] biblatex 下实现对攻读学位期间取得成果中作者的粗体显示
+  - [X] biblatex 下实现对攻读学位期间取得成果中作者的粗体显示
   - [X] 实现攻读学位期间取得成果整体缩进两字符
 - [X] 当学位论文条目存在 url 时，显示 url，而条目没有 url 参数时，则显示 In collab. with 字样，以及专利显示 "patent" 的问题：感谢 [**hushidong**](https://github.com/hushidong/biblatex-gb7714-2015/issues/178) 给出完美的解决方案
 
