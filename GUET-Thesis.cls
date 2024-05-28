@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2024-05-27 23:34:59 +0800
+% LastEditTime : 2024-05-28 22:09:13 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  :
@@ -771,7 +771,7 @@ keys
   \ifpversion{
     \checkoddpage
     \ifoddpage
-      \blankpage@number
+      \blankpage
     \else
       \newpage
     \fi
@@ -815,7 +815,7 @@ keys
   \ifpversion{
     \checkoddpage
     \ifoddpage
-      \blankpage@number
+      \blankpage
     \else
       \newpage
     \fi
@@ -1061,7 +1061,7 @@ keys
   \ifpversion{ % 打印版本切换
     \checkoddpage
     \ifoddpage
-      \blankpage@number
+      \blankpage
     \else
       \newpage
     \fi
@@ -1500,7 +1500,7 @@ keys
 % \noindent表示proof没有缩进，\it表示proof斜体
 % \quad表示\proofname后面空四个空格，\hfill表示右对齐，\square表示方框，\par表示结尾空一段.
 
-\AtBeginDocument{ % 原始间距着实过大，这里进行调整
+\AtBeginDocument{ % 调整公式间距
   \setlength{\abovedisplayskip}{4pt} % 设置公式上方的距离
   \setlength{\belowdisplayskip}{4pt} % 设置公式下方的距离
   \setlength{\belowdisplayshortskip}{4pt} % 设置短公式下方的距离
