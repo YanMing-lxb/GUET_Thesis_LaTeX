@@ -224,7 +224,11 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 2. 利用 `Better BibTex for Zotero` 自动在导出的bib文件中添加 `AUTHOR+an` 字段。
 
-将以下代码粘贴到 `postscript` 选项中。
+将以下代码粘贴到 `Better BibTex for Zotero` 设置中的 `postscript` 选项中。
+
+![image](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/d4e2ab77-3bfe-4b8a-9b92-cd4db272b54b)
+
+`Better BibTex for Zotero` 自动添加 `AUTHOR+an` 字段代码：
 ```JavaScript
 if (Translator.BetterBibTeX && this.has.title) {
    this.add({name: 'issue_date', replace: true, value:item.date})	
@@ -257,7 +261,7 @@ if (item.creators.find(a => (a.firstName === authorFirstName1 && a.lastName === 
 ```
 **<font color="#d83931">注意</font>**：要将代码中的作者姓名和导师姓名替换成自己的姓名和导师姓名。
 
-> 这样每次导出 bib 文件时，就会自动添加 `AUTHOR+an` 字段，并根据作者和导师的排名，自动添加相应的 `thesisauthor` 和 `corresponding` 信息。
+> 这样每次导出 bib 文件时，就会为每一个作者里面有你的条目中自动添加 `AUTHOR+an` 字段，并根据你和导师的排名位置，自动添加相应的 `thesisauthor` 和 `corresponding` 信息。
 
 ## 写作工具
 
