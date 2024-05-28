@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-12-03 15:44:36 +0800
- * LastEditTime : 2024-05-28 23:25:18 +0800
+ * LastEditTime : 2024-05-28 23:33:24 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \GUET_Thesis_LaTeX\README.md
  * Description  : 
@@ -203,6 +203,8 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 **最后导出为 `Accomplishs.bib` 文件**
 
 #### 攻读学位期间取得成果中突出显示作者和导师
+**作者姓名加粗，导师姓名星标**
+
 1. 手动在Accomplishs.bib文件的条目中添加 `AUTHOR+an` 字段，如：`AUTHOR+an = {2=thesisauthor; 4=corresponding}` ，其中 `2=thesisauthor` 表示作者为第二作者，`4=corresponding` 表示导师为第四作者。
 如：
 ```bibtex
