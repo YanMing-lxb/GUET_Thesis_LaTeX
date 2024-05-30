@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2024-05-28 22:09:13 +0800
+% LastEditTime : 2024-05-30 22:24:43 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  :
@@ -1530,7 +1530,10 @@ keys
 \renewcommand{\bibfont}{\small}                                                       % 设置参考文献字体小五
 \setlength{\bibitemsep}{0pt}                                                          % 每一条参考文献之间的间隔
 \AtEveryBibitem{\clearfield{url}}                                                     % 清除url信息 用以解决 url=false 命令在thesis中失效的Bug
-\newcommand{\ThesisBibliography}{\printbibliography[heading=bibintoc,title=参考文献]}  % 自定义参考文献命令，bibintoc 目录中显示参考文献
+\newcommand{\ThesisBibliography}{
+\printbibliography[heading=bibintoc,title=参考文献]
+\fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 参考文献}
+}  % 自定义参考文献命令，bibintoc 目录中显示参考文献
 
 
 
