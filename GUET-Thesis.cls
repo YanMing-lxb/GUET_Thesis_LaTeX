@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2024-05-31 22:46:42 +0800
+% LastEditTime : 2024-05-30 22:24:43 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  :
@@ -137,7 +137,7 @@ keys
                   pdfencoding=auto,                   % 设置 PDF 编码格式
                   bookmarks=true,                     % 设置 PDF 文件是否生成书签
                   hyperfootnotes=false,               % 设置是否给脚注添加链接
-                  bookm3arksnumbered=true,             % 设置 PDF 书签是否带编号
+                  bookmarksnumbered=true,             % 设置 PDF 书签是否带编号
                   bookmarksdepth=4                    % 设置书签的深度
                 ]{hyperref}                           % 用于设置书签和超链接
 
@@ -1123,7 +1123,7 @@ keys
         }
       }
     }
-    {\typeout{无效的输入，请使用使用 位置分类 或 章节分类 作为参数}
+    {\typeout{无效的输入，请使用使用 位置分类 或 章节分类 作为参数} % 如果既不是A也不是B，则输出错误信息在log文件中
     }
   }
   
@@ -1323,7 +1323,7 @@ keys
 %   {\ifthenelse{\equal{#1}{子图}}
 %     {\crefname{subfigure}{子图}{子图}
 %     }
-%     {\typeout{无效的输入，请使用图或子图参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+%     {\typeout{无效的输入，请使用图或子图参数} % 如果既不是A也不是B，则输出错误信息在log文件中
 %     }
 %   }
 % }
@@ -1334,7 +1334,7 @@ keys
 %   {\ifthenelse{\equal{#1}{子表}}
 %     {\crefname{subtable}{子表}{子表}
 %     }
-%     {\typeout{无效的输入，请使用表或子表参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+%     {\typeout{无效的输入，请使用表或子表参数} % 如果既不是A也不是B，则输出错误信息在log文件中
 %     }
 %   }
 % }
@@ -1345,7 +1345,7 @@ keys
 %   {\ifthenelse{\equal{#1}{子式}}
 %     {\crefname{subequation}{子式}{子式}
 %     }
-%     {\typeout{无效的输入，请使用式或子式参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+%     {\typeout{无效的输入，请使用式或子式参数} % 如果既不是A也不是B，则输出错误信息在log文件中
 %     }
 %   }
 % }
@@ -1356,7 +1356,7 @@ keys
 %   {\ifthenelse{\equal{#1}{子算法}}
 %     {\crefname{subalgorithm}{子算法}{子算法}
 %     }
-%     {\typeout{无效的输入，请使用算法或子算法参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+%     {\typeout{无效的输入，请使用算法或子算法参数} % 如果既不是A也不是B，则输出错误信息在log文件中
 %     }
 %   }
 % }
@@ -1430,7 +1430,7 @@ keys
       \renewcommand{\thealgorithm}{\arabic{chapter}-\arabic{algorithm}} % 算法编号格式设置为 x-x，满足原始模板要求
     }
     {
-      \typeout{无效的输入，请使用algorithm2e或algorithmicx参数。}
+      \typeout{无效的输入，请使用algorithm2e或algorithmicx参数。} % 如果既不是A也不是B
     }
   }
 }
