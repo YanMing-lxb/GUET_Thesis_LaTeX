@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2024-05-30 22:24:43 +0800
+% LastEditTime : 2024-05-31 22:46:42 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  :
@@ -137,7 +137,7 @@ keys
                   pdfencoding=auto,                   % 设置 PDF 编码格式
                   bookmarks=true,                     % 设置 PDF 文件是否生成书签
                   hyperfootnotes=false,               % 设置是否给脚注添加链接
-                  bookmarksnumbered=true,             % 设置 PDF 书签是否带编号
+                  bookm3arksnumbered=true,             % 设置 PDF 书签是否带编号
                   bookmarksdepth=4                    % 设置书签的深度
                 ]{hyperref}                           % 用于设置书签和超链接
 
@@ -159,7 +159,6 @@ keys
 \RequirePackage{verbatim}                              % 提供了更灵活的抄录环境和定制选项，对简短的抄录，可使用\verb|文字|和\verb*|文字|命令，原样输出一些特殊字符，如\、{}、$、#、%、_、&、~、^、\和空格，或原样输出命令
 % \RequirePackage{listings}                             % 用于排版代码，支持多种编程语言
 \RequirePackage{microtype}                              % 提供了更好的微调字距、字间距和连字等功能
-% \RequirePackage{enumitem}                             % 用于定制列表环境的样式和标签
 % \RequirePackage{makecell}                             % 用于生成复杂表格的单元格
 % \RequirePackage{ulem}                                 % 提供了各种下划线、波浪线、删除线等效果
 \RequirePackage{siunitx}                                % 提供了国际单位制的数字和单位的排版
@@ -197,7 +196,7 @@ keys
       % ===============算法相关宏包定制结束===============
     }
     {
-      \typeout{无效的输入，请使用algorithm2e或algorithmicx参数。}% 如果既不是A也不是B
+      \typeout{无效的输入，请使用algorithm2e或algorithmicx参数。}
     }
   }
 }
@@ -1124,7 +1123,7 @@ keys
         }
       }
     }
-    {\typeout{无效的输入，请使用使用 位置分类 或 章节分类 作为参数}% 如果既不是A也不是B，则输出错误信息在log文件中
+    {\typeout{无效的输入，请使用使用 位置分类 或 章节分类 作为参数}
     }
   }
   
@@ -1431,7 +1430,7 @@ keys
       \renewcommand{\thealgorithm}{\arabic{chapter}-\arabic{algorithm}} % 算法编号格式设置为 x-x，满足原始模板要求
     }
     {
-      \typeout{无效的输入，请使用algorithm2e或algorithmicx参数。}% 如果既不是A也不是B
+      \typeout{无效的输入，请使用algorithm2e或algorithmicx参数。}
     }
   }
 }
