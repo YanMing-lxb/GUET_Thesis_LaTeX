@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2024-06-08 17:50:36 +0800
+% LastEditTime : 2024-06-08 18:23:24 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  :
@@ -1028,7 +1028,7 @@ keys
 
 % ====================符号说明页面设置==================== 定义符号说明命令
 \newcommand{\ThesisSymbolList}
-{
+{ \newpage
   \renewcommand{\nomname}{符号说明}                                         % 修改符号说明标题的名称。
   \addcontentsline{toc}{chapter}{\texorpdfstring{\heiti 符号说明}{符号说明}} % 设置在目录显示符号说明
 
