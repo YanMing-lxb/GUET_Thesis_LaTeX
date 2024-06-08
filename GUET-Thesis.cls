@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2024-06-08 18:23:24 +0800
+% LastEditTime : 2024-06-08 18:54:36 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  :
@@ -968,6 +968,7 @@ keys
   \addtolength{\cftfignumwidth}{12pt}                   % 设置长度命令，使命令\cftfignumwidth的长度设置为12pt，条目编号与条目内容之间占用的宽度, 例如：图 1-2 [\cftfignumwidth] 电子战飞机
   \renewcommand{\cftfigpresnum}{图}                     % 条目编号前内容  
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为0 就会在目录中显示
+  \addcontentsline{toc}{chapter}{\texorpdfstring{\heiti 插图索引}{插图索引}} % 设置在目录显示插图索引
 }{}{}
 
 
@@ -1014,6 +1015,7 @@ keys
   \addtolength{\cfttabnumwidth}{12pt}                   % 条目编号占用宽度，条目编号与条目内容之间占用的宽度, 例如：表1-1 [\cftfignumwidth] 参数设置
   \renewcommand{\cfttabpresnum}{表}                     % 条目编号前内容
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为-1，目录中只显示一级标题 0 为chapter
+  \addcontentsline{toc}{chapter}{\texorpdfstring{\heiti 插表索引}{插表索引}} % 设置在目录显示插表索引
 }{}{}
 
 
@@ -1029,6 +1031,7 @@ keys
 % ====================符号说明页面设置==================== 定义符号说明命令
 \newcommand{\ThesisSymbolList}
 { \newpage
+
   \renewcommand{\nomname}{符号说明}                                         % 修改符号说明标题的名称。
   \addcontentsline{toc}{chapter}{\texorpdfstring{\heiti 符号说明}{符号说明}} % 设置在目录显示符号说明
 
@@ -1037,7 +1040,6 @@ keys
     \setstretch{2.0}                                  % 设置二倍行距
   }{}
 
-  \newpage
   \fancyhf{}
 
   \ifbachelor{ % 本科符号说明页眉页码设置 👇
