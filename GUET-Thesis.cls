@@ -1080,10 +1080,10 @@ keys
 
 
 % 创建符号说明分组，
-\newcommand{\SymbolGroupStyleIn}{位置分类} % 定义\SymbolGroupStyle命令，用于修改符号说明分组格式
+\newcommand{\SymbolGroupStyleIn}{符号分类} % 定义\SymbolGroupStyle命令，用于修改符号说明分组格式
 \newcommand{\SymbolGroupStyle}[1]{\renewcommand{\SymbolGroupStyleIn}{#1}}
 \renewcommand{\nomgroup}[1]{
-  \ifthenelse{\equal{\SymbolGroupStyleIn}{位置分类}}
+  \ifthenelse{\equal{\SymbolGroupStyleIn}{符号分类}}
   {
     \ifthenelse
     {\equal{#1}{A}}
@@ -1123,7 +1123,7 @@ keys
         }
       }
     }
-    {\typeout{无效的输入，请使用使用 位置分类 或 章节分类 作为参数} % 如果既不是A也不是B，则输出错误信息在log文件中
+    {\typeout{无效的输入，请使用使用 符号分类 或 章节分类 作为参数} % 如果既不是A也不是B，则输出错误信息在log文件中
     }
   }
   

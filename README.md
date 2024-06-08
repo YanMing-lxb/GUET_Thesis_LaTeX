@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-12-03 15:44:36 +0800
- * LastEditTime : 2024-05-28 23:33:24 +0800
+ * LastEditTime : 2024-06-08 17:20:47 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \GUET_Thesis_LaTeX\README.md
  * Description  : 
@@ -164,10 +164,30 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 | \StudentNumber{#1}     | 密级         | 无       | 硕博     |
 | \Date{#1}              | 论文答辩日期 | 无       | 通用     |
 
+针对符号说明的一些 Bug 见：[Issues28](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues/28#issue-2277705516)
 
 ### 中英文摘要
 
 中英文摘要应包含在 `ChineseAbstract` 和 `EnglishAbstract` 环境中，对应的关键字使用 `\ChineseKeyword` 和 `\EnglishKeyword` 命令添加，并包含在相应的环境中。
+
+### 符号说明表
+`\SymbolGroupStyle{位置分类}` 命令，用于符号分组样式，可选参数为 `位置分类` 与 `章节分类` 具体说明如下：
+
+**符号分类**
+|命令|说明|
+|----|----|
+|`\nomenclature[ ]{}`|普通字符|
+|`\nomenclature[A]{}`|希腊字符|
+|`\nomenclature[B]{}`|下角标|
+|`\nomenclature[C]{}`|缩略语| 
+
+**位置分类**
+|命令|说明|
+|----|----|
+|`\nomenclature[A]{}`|各章共用的符号说明|
+|`\nomenclature[B]{}`|第三章的符号说明|
+|`\nomenclature[C]{}`|第四章的符号说明| 
+|`\nomenclature[D]{}`|第五章的符号说明| 
 
 ### 参考文献
 参考文献使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出参考文献时，导出类型要选择 `biblatex`。在 `\ThesisBibResource` 命令中输入参考文献源文件位置。

@@ -4,7 +4,7 @@
 \chapter{图片示例}\label{ch:2}
 
 \section{图片排版示例}
-\textbf{注意}：使用\textbackslash caption[]\{\}命令时，如果不需要设置缩写目录的内容，一定要删掉[]，否则插图插表索引将不会显示该图或表的目录。
+\textbf{注意}：使用 \verb|\caption[]{}| 命令时，如果不需要设置缩写目录的内容，一定要删掉[]，否则插图插表索引将不会显示该图或表的目录。
 
 \textbf{建议}：在论文写作时图片位置可以先按照写作时的习惯进行放置，待到完成所有写作内容后再进行详细调整图片位置。
 
@@ -29,7 +29,7 @@
 
 子图之间空一行表示换行。
 
-插入子图请使用\textbackslash subfloat\{\}命令。
+插入子图请使用 \verb|\subfloat{}| 命令。
 
 \begin{figure}[htb]
     \subfloat[改进前的结构]{
@@ -121,7 +121,7 @@
     }
     \hfill
     \subfloat[包括Soot的类加载持续时间在内的时间消耗比较\label{fig-3}]{
-        \begin{tikzpicture}[global scale = 0.55]
+        \begin{tikzpicture}[global scale = 0.65]
             \begin{axis}[
                 xlabel={样本名称},
                 ylabel={时间 (毫秒)},
