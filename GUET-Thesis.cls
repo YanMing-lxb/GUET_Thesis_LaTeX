@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2024-06-08 13:27:04 +0800
+% LastEditTime : 2024-06-08 17:32:30 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  :
@@ -1397,6 +1397,7 @@ keys
 \SetTblrInner[threetab]{
   hline{1,Z} = {-}{0.9pt}, % 设置头线和尾线为1.5pt
   hline{2} = {-}{0.5pt},   % 设置中线 0.5pt
+  font=\small, % 设置字体大小为 small
 }
 
 % =============== 自定义列表环境 ===============
