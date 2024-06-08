@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2024-06-08 17:32:30 +0800
+% LastEditTime : 2024-06-08 17:50:36 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  :
@@ -1401,9 +1401,8 @@ keys
 }
 
 % =============== 自定义列表环境 ===============
-\newlist{enumerateni}{enumerate}{1} % 定义新的列表环境，名为 mylist
-\setlist[enumerateni]{label=（\arabic*）,leftmargin=0pt,itemindent=4.5em,labelsep=0pt} % 设置列表样式
-
+\newlist{nienumerate}{enumerate}{1} % 定义新的列表环境，名为 nienumerate 意为 noindent enumerate
+\setlist[nienumerate]{label=（\arabic*）,leftmargin=0pt,itemindent=4.5em,labelsep=0pt} % 设置列表样式
 
 
 
