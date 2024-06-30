@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2024-06-08 18:54:36 +0800
+% LastEditTime : 2024-06-30 14:33:37 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
 % Description  :
@@ -118,7 +118,7 @@ keys
 
 % ===============符号说明相关宏=============== 
 \RequirePackage{multicol}                             % 提供多栏环境
-\RequirePackage{nomencl}                            % 用于生成符号说明
+\RequirePackage[intoc]{nomencl}                       % 用于生成符号说明 参数 intoc 表示将符号说明加入目录
 
 % ===============字体相关宏包===============    
 \RequirePackage{lmodern}                              % 使用 Latin Modern 字体，提供更好的字体支持
@@ -1033,7 +1033,6 @@ keys
 { \newpage
 
   \renewcommand{\nomname}{符号说明}                                         % 修改符号说明标题的名称。
-  \addcontentsline{toc}{chapter}{\texorpdfstring{\heiti 符号说明}{符号说明}} % 设置在目录显示符号说明
 
   \ifbachelor{ % 设置本科插表索引标题 👇
     \renewcommand{\BachelorChapterFormat}{\centering} % 设置标题居中
