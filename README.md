@@ -16,9 +16,9 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-12-03 15:44:36 +0800
- * LastEditTime : 2024-06-08 17:20:47 +0800
+ * LastEditTime : 2024-11-25 19:34:06 +0800
  * Github       : https://github.com/YanMing-lxb/
- * FilePath     : \GUET_Thesis_LaTeX\README.md
+ * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : 
  *  -----------------------------------------------------------------------
  -->
@@ -192,7 +192,10 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 ### 参考文献
 参考文献使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出参考文献时，导出类型要选择 `biblatex`。在 `\ThesisBibResource` 命令中输入参考文献源文件位置。
 
-注意：使用该模板时，`biblatex` 和 `biblatex-gb7714-2015` 宏包均要更新到最新版本，否则会报错。
+**<font color="#d83931">注意</font>**：
+1. 使用该模板时，`biblatex` 和 `biblatex-gb7714-2015` 宏包均要更新到最新版本，否则会报错。
+2. 一般直接从网页获取到的参考文献为bibtex类型，bibtex 类型的 bib 文件可通过 [pandoc](https://pandoc.org/) 转成 biblatex 类型 bib 文件，转换命令：`pandoc -f bibtex -t biblatex -o output.bib input.bib`
+
 
 ### 攻读学位期间取得成果
 攻读学位期间取得成果使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出攻读学位期间取得成果时，导出类型要选择 `biblatex`。在 `\ThesisAchResource` 命令中输入成果源文件位置。
@@ -212,13 +215,10 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 具体操作示例如下：
 
-![建议成果整理](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/e07bac11-5e58-4f6c-a9ba-8f78bb2f5279)
-![期刊论文示例|50](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/356b856d-196e-40be-bc7d-a51d549f304b)
-![专利示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/88d679ae-d665-4f86-af7c-ca530dc7a8c0)
-![软著示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/e17c0e31-6b32-417e-bd44-0eef553e01c4)
-![参与项目示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/9cd91bb5-1a72-41a3-8a7b-184de9b87737)
-![比赛获奖示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/d4874ab6-7de5-4ef0-9585-10024cc5790d)
-![导出示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/19962eb7-1a29-4e94-916f-519b2167f299)
+![建议成果整理](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/e07bac11-5e58-4f6c-a9ba-8f78bb2f5279) 
+![期刊论文示例|50](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/356b856d-196e-40be-bc7d-a51d549f304b) ![专利示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/88d679ae-d665-4f86-af7c-ca530dc7a8c0)
+![软著示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/e17c0e31-6b32-417e-bd44-0eef553e01c4) ![参与项目示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/9cd91bb5-1a72-41a3-8a7b-184de9b87737)
+![比赛获奖示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/d4874ab6-7de5-4ef0-9585-10024cc5790d) ![导出示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/19962eb7-1a29-4e94-916f-519b2167f299)
 
 **最后导出为 `Accomplishs.bib` 文件**
 
