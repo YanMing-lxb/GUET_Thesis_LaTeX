@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-12-03 15:44:36 +0800
- * LastEditTime : 2024-11-25 19:34:06 +0800
+ * LastEditTime : 2025-01-06 22:11:02 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : 
@@ -347,3 +347,7 @@ if (item.creators.find(a => (a.firstName === authorFirstName1 && a.lastName === 
 桂林电子科技大学校徽图片的版权归桂林电子科技大学所有。
 
 其他部分使用 [LPPL](https://www.latex-project.org/lppl/) 授权。
+
+### Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=YanMing-lxb/GUET_Thesis_LaTeX&type=Date)](https://star-history.com/#YanMing-lxb/GUET_Thesis_LaTeX&Date)
