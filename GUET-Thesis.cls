@@ -16,9 +16,9 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2024-06-30 14:33:37 +0800
+% LastEditTime : 2025-01-06 20:20:13 +0800
 % Github       : https://github.com/YanMing-lxb/
-% FilePath     : \GUET_Thesis_LaTeX\GUET-Thesis.cls
+% FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  :
 %  -----------------------------------------------------------------------
 %
@@ -1410,7 +1410,8 @@ keys
 % //////////////////////////////////////// enumitem环境设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 \AddEnumerateCounter*{\chinese}{\zhnumber}{\arabic} % enumitem 中文编号设置
-
+% \setlist{noitemsep} % noitemsep 会删除项目和段落之间的空格（即 itemsep=0pt 和 parsep=0pt），而 nosep 则删除所有垂直间距。
+\setlist{nosep} % 仅启用 nosep 即可，移除垂直额外间距
 
 
 
@@ -1493,9 +1494,7 @@ keys
   \popQED\endtrivlist\@endpefalse
 } % 结束部分定义
 
-% \newcommand{\citing}[1]{\textsuperscript{\cite{#1}}} %\textsuperscript{}文字上标
-\setlist{noitemsep} % 条目之间无附加的垂直距离
-\setlist{nolistsep}
+
 
 % \noindent表示proof没有缩进，\it表示proof斜体
 % \quad表示\proofname后面空四个空格，\hfill表示右对齐，\square表示方框，\par表示结尾空一段.
