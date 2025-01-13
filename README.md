@@ -23,7 +23,7 @@
  *  -----------------------------------------------------------------------
  -->
 
-# GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 <img src="https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">
+# GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 `<img src="https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">`
 
 [![GitHub](https://img.shields.io/badge/Github-GTL-000000.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX) [![TeXPage](https://img.shields.io/badge/TeXPage-GTL-495A80.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818) [![Overleaf](https://img.shields.io/badge/Overleaf-GTL-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp) [![License](https://img.shields.io/badge/license-LPPL-aff)](https://www.latex-project.org/lppl/) ![OS](https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg) [![GitHub release](https://img.shields.io/github/release/YanMing-lxb/GUET_Thesis_LaTeX.svg?color=blueviolet&label=version&style=popout)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/releases/latest) [![Last Commit](https://img.shields.io/github/last-commit/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/zipball/master) [![Issues](https://img.shields.io/github/issues/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues) [![Github Action](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/workflows/Build%20Tests/badge.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/actions) [![Downloads](https://img.shields.io/github/downloads/YanMing-lxb/GUET_Thesis_LaTeX/total.svg?color=blue&style=popout)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/releases/latest) ![GitHub repo size](https://img.shields.io/github/repo-size/YanMing-lxb/GUET_Thesis_LaTeX)
 
@@ -55,70 +55,80 @@ git clone https://github.com/YanMing-lxb/GUET_Thesis_LaTeX.git
 
 [Github项目地址](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX)
 
->模版更新频繁，且只维护最新版。如有问题，可以先尝试升级模版，而后进行反馈。
+> 模版更新频繁，且只维护最新版。如有问题，可以先尝试升级模版，而后进行反馈。
 
 ### 相关项目
+
 桂林电子科技大学 Beamer 模板：[GUET Beamer Theme](https://github.com/YanMing-lxb/GUET_Beamer)
 
-
-
 ## 使用方法
+
 有两种使用方法：一是使用在线平台，在网页中进行在线写作；二是在本地部署 $\LaTeX$ 环境, 在VSCove中进行写作。请根据自己的需求酌情选择。
+
 ### 在线写作
+
 可以直接使用我们已经上传好的TeXPage或Overleaf在线模板：
 
 [![TeXPage](https://img.shields.io/badge/TeXPage-GTL-495A80.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818) [![Overleaf](https://img.shields.io/badge/Overleaf-GTL-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp)
 
 > 点击对应徽标即可跳转到对应平台直接使用，推荐使用国产的TeXPage进行在线写作。
 
-**<font color="#d83931">注意</font>**：
+**`<font color="#d83931">`注意`</font>`**：
 
 1. 在线写作平台默认使用 $pdf\LaTeX$ 编译，您需要设置使用 $Xe\LaTeX$ 编译器。
 2. 由于上传模板需要审核周期，更新频繁时候建议 GitHub下载
 
-
 ### 本地部署写作
 
 #### $\LaTeX$ 环境部署
-1. 编译该模板请使用 $Xe\LaTeX$ 引擎。
 
+1. 编译该模板请使用 $Xe\LaTeX$ 引擎。
 2. 本地部署 $\LaTeX$ 环境请转到[YM VSCode Configurations for LaTeX](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX)项目
 
 #### 本地编译 PyTeXMK（可选项）
+
 [PyTeXMK](https://github.com/YanMing-lxb/PyTeXMK) 是作者开发的一个基于 Python 的 $\LaTeX$ 编译工具，能够一定限度的提高编译速度，并显示编译时长统计，但此处内容需要依赖于Python环境，请确保您的电脑中已经安装了Python3.8及以上版本的Python环境。
 
 1. 安装方法：
+
 ```
 pip install pytexmk
 ```
+
 2. 使用方法：
-终端项目路径下输入：
+   终端项目路径下输入：
+
 ```
 pytexmk
 ```
+
 具体内容请看[项目主页](https://github.com/YanMing-lxb/PyTeXMK)。
+
 ## 模板说明
+
+### 字体说明
+
+Linux 英文字体采用 STIX 字体，与 `Times New Roman` 稍有细微差别，应该不影响使用。
 
 ### 样式参数
 
-|   命令    |   功能   |
+|   命令   |   功能   |
 | :-------: | :------: |
-| pversion  |  打印版  |
-| bversion  |  盲审版  |
-| bachelor  |   本科   |
-|  master   |   学硕   |
+| pversion |  打印版  |
+| bversion |  盲审版  |
+| bachelor |   本科   |
+|  master  |   学硕   |
 | promaster |   专硕   |
-|  doctor   |   博士   |
-| ojmaster  | 在职硕士 |
+|  doctor  |   博士   |
+| ojmaster | 在职硕士 |
 | ptomaster | 非全专硕 |
 
-
 > 根据学校要求打印版硕士学位论文封面桂电 logo 为黑色(其他的硕博的打印版桂电 logo 也都顺便设置成黑色的)，对与其他几种封面的相关要求可以在[**issues**](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues)中提出并补充。
->启用盲审样式时，封面自动替换为对应的盲审封面、致谢命令失效、攻读学位期间取得成果自动替换为 Accomplish-bversion.tex 文件中的内容
+> 启用盲审样式时，封面自动替换为对应的盲审封面、致谢命令失效、攻读学位期间取得成果自动替换为 Accomplish-bversion.tex 文件中的内容
 
 ### 注意事项
 
-- 标题中`\texorpdfstring` 命令包装数学公式，并提供一个无公式的备选项，如：`\section{\texorpdfstring{$E=mc^2$}{E=mc2}} ` 否则会有警告；
+- 标题中 `\texorpdfstring` 命令包装数学公式，并提供一个无公式的备选项，如：`\section{\texorpdfstring{$E=mc^2$}{E=mc2}} ` 否则会有警告；
 - 在具有多个子图的情况时，子图与子图之间要留有一定的空间，不要占满，否则会发生自动换行；
 - 子图请用 `\subfloat[<子题注>]{\includegraphics[width=0.45\linewidth]{<图片文件名>}}}` 命令加入；
 - 使用 `\caption[]{}` 命令时，如果不需要设置缩写目录的内容，一定要删掉 `[]`，否则插图插表索引将不会显示该图\表的目录；
@@ -171,51 +181,57 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 中英文摘要应包含在 `ChineseAbstract` 和 `EnglishAbstract` 环境中，对应的关键字使用 `\ChineseKeyword` 和 `\EnglishKeyword` 命令添加，并包含在相应的环境中。
 
 ### 符号说明表
+
 `\SymbolGroupStyle{位置分类}` 命令，用于符号分组样式，可选参数为 `位置分类` 与 `章节分类` 具体说明如下：
 
 **符号分类**
-|命令|说明|
-|----|----|
-|`\nomenclature[ ]{}`|普通字符|
-|`\nomenclature[A]{}`|希腊字符|
-|`\nomenclature[B]{}`|下角标|
-|`\nomenclature[C]{}`|缩略语| 
+
+| 命令                   | 说明     |
+| ---------------------- | -------- |
+| `\nomenclature[ ]{}` | 普通字符 |
+| `\nomenclature[A]{}` | 希腊字符 |
+| `\nomenclature[B]{}` | 下角标   |
+| `\nomenclature[C]{}` | 缩略语   |
 
 **位置分类**
-|命令|说明|
-|----|----|
-|`\nomenclature[A]{}`|各章共用的符号说明|
-|`\nomenclature[B]{}`|第三章的符号说明|
-|`\nomenclature[C]{}`|第四章的符号说明| 
-|`\nomenclature[D]{}`|第五章的符号说明| 
+
+| 命令                   | 说明               |
+| ---------------------- | ------------------ |
+| `\nomenclature[A]{}` | 各章共用的符号说明 |
+| `\nomenclature[B]{}` | 第三章的符号说明   |
+| `\nomenclature[C]{}` | 第四章的符号说明   |
+| `\nomenclature[D]{}` | 第五章的符号说明   |
 
 ### 参考文献
+
 参考文献使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出参考文献时，导出类型要选择 `biblatex`。在 `\ThesisBibResource` 命令中输入参考文献源文件位置。
 
-**<font color="#d83931">注意</font>**：
+**`<font color="#d83931">`注意`</font>`**：
+
 1. 使用该模板时，`biblatex` 和 `biblatex-gb7714-2015` 宏包均要更新到最新版本，否则会报错。
 2. 一般直接从网页获取到的参考文献为bibtex类型，bibtex 类型的 bib 文件可通过 [pandoc](https://pandoc.org/) 转成 biblatex 类型 bib 文件，转换命令：`pandoc -f bibtex -t biblatex -o output.bib input.bib`
 
-
 ### 攻读学位期间取得成果
+
 攻读学位期间取得成果使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出攻读学位期间取得成果时，导出类型要选择 `biblatex`。在 `\ThesisAchResource` 命令中输入成果源文件位置。
 
 #### 攻读学位期间取得成果的整理
+
 建议将成果保存到 Zotero 中，关于成果在 Zotero 和 bib 文件中的类型设置如下表所示：
 
 | 成果类型     | Zotero 中的类型 | bib 文件中的类型 |
 | :----------- | :-------------: | :--------------: |
-| 参与项目     | 报告            | report           |
-| 发表论文     | 期刊文章        | article          |
-| 发明专利     | 专利            | patent           |
-| 软件著作权   | 软件            | software         |
-| 科研竞赛获奖 | 文档            | misc             |
+| 参与项目     |      报告      |      report      |
+| 发表论文     |    期刊文章    |     article     |
+| 发明专利     |      专利      |      patent      |
+| 软件著作权   |      软件      |     software     |
+| 科研竞赛获奖 |      文档      |       misc       |
 
 在 Zotero 的 `其他` 项或 bib 文件的 `annotation` 中输入附加信息，如期刊论文分区，作者排名，科研竞赛排名等。
 
 具体操作示例如下：
 
-![建议成果整理](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/e07bac11-5e58-4f6c-a9ba-8f78bb2f5279) 
+![建议成果整理](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/e07bac11-5e58-4f6c-a9ba-8f78bb2f5279)
 ![期刊论文示例|50](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/356b856d-196e-40be-bc7d-a51d549f304b) ![专利示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/88d679ae-d665-4f86-af7c-ca530dc7a8c0)
 ![软著示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/e17c0e31-6b32-417e-bd44-0eef553e01c4) ![参与项目示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/9cd91bb5-1a72-41a3-8a7b-184de9b87737)
 ![比赛获奖示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/d4874ab6-7de5-4ef0-9585-10024cc5790d) ![导出示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/19962eb7-1a29-4e94-916f-519b2167f299)
@@ -223,10 +239,12 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 **最后导出为 `Accomplishs.bib` 文件**
 
 #### 攻读学位期间取得成果中突出显示作者和导师
+
 **作者姓名加粗，导师姓名星标**
 
 1. 手动在Accomplishs.bib文件的条目中添加 `AUTHOR+an` 字段，如：`AUTHOR+an = {2=thesisauthor; 4=corresponding}` ，其中 `2=thesisauthor` 表示作者为第二作者，`4=corresponding` 表示导师为第四作者。
-如：
+   如：
+
 ```bibtex
 @article{Li.Li.ea_2023,
   title = {Here is the name of the paper},
@@ -242,7 +260,7 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
   annotation = {TOP 期刊，中科院一区，IF：6.465，共同一作},
   AUTHOR+an = {2=thesisauthor;4=corresponding}
 }
-  ```
+```
 
 2. 利用 `Better BibTex for Zotero` 自动在导出的bib文件中添加 `AUTHOR+an` 字段。
 
@@ -251,10 +269,11 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 ![image](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/d4e2ab77-3bfe-4b8a-9b92-cd4db272b54b)
 
 `Better BibTex for Zotero` 自动添加 `AUTHOR+an` 字段代码：
+
 ```JavaScript
 if (Translator.BetterBibTeX && this.has.title) {
-   this.add({name: 'issue_date', replace: true, value:item.date})	
-   this.add({name: 'issuingAuthority', replace: true, value:item.issuingAuthority})	
+   this.add({name: 'issue_date', replace: true, value:item.date})
+   this.add({name: 'issuingAuthority', replace: true, value:item.issuingAuthority})
 }
 
 let authorFirstName1 = "焱";
@@ -281,7 +300,8 @@ if (item.creators.find(a => (a.firstName === authorFirstName1 && a.lastName === 
   }
 }
 ```
-**<font color="#d83931">注意</font>**：要将代码中的作者姓名和导师姓名替换成自己的姓名和导师姓名。
+
+**`<font color="#d83931">`注意`</font>`**：要将代码中的作者姓名和导师姓名替换成自己的姓名和导师姓名。
 
 > 这样每次导出 bib 文件时，就会为每一个作者里面有你的条目中自动添加 `AUTHOR+an` 字段，并根据你和导师的排名位置，自动添加相应的 `thesisauthor` 和 `corresponding` 信息。
 
@@ -298,7 +318,6 @@ if (item.creators.find(a => (a.firstName === authorFirstName1 && a.lastName === 
 - [Tabularray 中文文档](https://gitee.com/nwafu_nan/tabularray-doc-zh-cn)
 - [一个 $\LaTeX$ 入门讲义](https://gitee.com/fpeng1985_admin/latexlecture)
 
-
 ## 当前状态
 
 **本科毕业论文格式大部分功能已调整完，但细节有待完善，欢迎各位同学使用并提出建议！**
@@ -306,13 +325,14 @@ if (item.creators.find(a => (a.firstName === authorFirstName1 && a.lastName === 
 > PS：目前已调整 cls 样式文件的代码，可以使用 `\ifbachelor{}{}` 命令修改本科样式。
 
 ## 未来工作方向
-- [x] 封面目录的单双行切换（使用 Tabularray 宏包解决，但在标题中需要添加 `\\&` 命令进行换行）；
-- [x] 盲审版本切换：
-  - [x] 盲审封面制作及版本切换
-  - [x] 攻读学位期间取得成果的盲审版本切换
+
+- [X] 封面目录的单双行切换（使用 Tabularray 宏包解决，但在标题中需要添加 `\\&` 命令进行换行）；
+- [X] 盲审版本切换：
+  - [X] 盲审封面制作及版本切换
+  - [X] 攻读学位期间取得成果的盲审版本切换
 - [ ] 去除所有其他表格宏包，完全使用 Tabularray 宏包制表
   - [ ] 自定义长三线表环境 `lthreetab` (要求可跨页，跨页后自带 “题注(续)” )
-  - [x] 自定义普通三线表环境 `threetab`
+  - [X] 自定义普通三线表环境 `threetab`
 - [ ] ~~使用文学编程重构项目~~
 - [X] 采用 biblatex 编译参考文献，替换掉 bibtex：
   - [X] biblatex 下实现参考文献的编译
@@ -326,14 +346,15 @@ if (item.creators.find(a => (a.firstName === authorFirstName1 && a.lastName === 
 
 ## 反馈与贡献
 
-
 ### 反馈问题
+
 如果在使用上有任何问题，建议通过以下方式进行反馈（按推荐顺序排序）：
 
 - 如遇不会使用、编译错误等问题，请至 [**在 GitHub 项目讨论区提问**](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/discussions) (推荐)
 - 如遇模版 BUG，或有新的需求，请至  [**在 GitHub 项目中提issues**](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues)
 
 ### 成为贡献者
+
 这个仓库是面向用户的示例模版，如果你有很好的排版示例，可以提交到此仓库与大家分享。
 
 除了提交 Pull Request 之外，还有以下方式可以进行贡献：
@@ -344,6 +365,7 @@ if (item.creators.find(a => (a.firstName === authorFirstName1 && a.lastName === 
 - 在我们的讨论组中分享你的使用体验，以及吐槽。如果你也想成为项目的长期维护者，也可以通过讨论组告诉我们。:-)
 
 ## 软件许可证
+
 桂林电子科技大学校徽图片的版权归桂林电子科技大学所有。
 
 其他部分使用 [LPPL](https://www.latex-project.org/lppl/) 授权。
