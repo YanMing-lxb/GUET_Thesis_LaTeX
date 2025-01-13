@@ -313,7 +313,7 @@
     \newCJKfontfamily{\heiti}[AutoFakeBold = 2.5,AutoFakeSlant = true,Path =./Fonts/]{方正黑体简体.ttf}% 设置黑体字体为fzhei.ttf
 }{%
     \IfFileExists{./Fonts/FangZhengHeiTi.ttf}{%
-        \newCJKfontfamily{\heiti}[AutoFakeBold = 2.5,AutoFakeSlant = true,Path =./Fonts/]{FangZhengHeiTi.ttf}% 设置黑体字体为fzhei.ttf
+        \newCJKfontfamily{\heiti}[AutoFakeBold = 2.5,AutoFakeSlant = true,Path =./Fonts/]{FangZhengHeiTi.ttf}% 设置黑体字体为FangZhengHeiTi.ttf
     }{%
         \ClassError{请下载 方正黑体简体.ttf或者FangZhengHeiTi.ttf并放置在./Fonts/ 目录下 (下载链接在Fonts文件夹下的Fonts link.md文件中)}
     }
