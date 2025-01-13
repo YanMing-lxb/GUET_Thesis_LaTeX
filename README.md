@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-12-03 15:44:36 +0800
- * LastEditTime : 2025-01-06 22:11:02 +0800
+ * LastEditTime : 2025-01-13 22:25:25 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : 
@@ -56,6 +56,12 @@ git clone https://github.com/YanMing-lxb/GUET_Thesis_LaTeX.git
 [Github项目地址](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX)
 
 > 模版更新频繁，且只维护最新版。如有问题，可以先尝试升级模版，而后进行反馈。
+
+### 字体说明
+
+Linux 英文字体采用 STIX 字体，与 `Times New Roman` 稍有细微差别，对比见 [&lt;字体效果对比&gt;](http://www.identifont.com/differences?first=Nimbus+Roman&second=Times+New+Roman&q=Go)，应该不影响使用。
+
+Linux 中文字体，请下载 [&lt;中文简体字体&gt;](.\Fonts\Fonts link.md)  并将下载后的字体文件放到 `Fonts` 文件夹下!
 
 ### 相关项目
 
@@ -105,10 +111,6 @@ pytexmk
 具体内容请看[项目主页](https://github.com/YanMing-lxb/PyTeXMK)。
 
 ## 模板说明
-
-### 字体说明
-
-Linux 英文字体采用 STIX 字体，与 `Times New Roman` 稍有细微差别，对比见 [&lt;字体效果对比&gt;](http://www.identifont.com/differences?first=Nimbus+Roman&second=Times+New+Roman&q=Go)，应该不影响使用。
 
 ### 样式参数
 
