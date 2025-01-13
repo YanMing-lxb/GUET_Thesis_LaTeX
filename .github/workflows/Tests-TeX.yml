@@ -10,10 +10,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Download Fonts
         run: |
-          mkdir -p Fonts
-          wget -O Fonts/FangZhengHeiTi.ttf https://cdn.jsdelivr.net/gh/jaywcjlove/free-font@main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E9%BB%91%E4%BD%93%E7%AE%80%E4%BD%93.ttf
-          wget -O Fonts/FangZhengKaiTi.ttf https://cdn.jsdelivr.net/gh/jaywcjlove/free-font@main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E6%A5%B7%E4%BD%93%E7%AE%80%E4%BD%93.ttf
-          wget -O Fonts/FangZhengShuSong.ttf https://cdn.jsdelivr.net/gh/jaywcjlove/free-font@main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E4%B9%A6%E5%AE%8B%E7%AE%80%E4%BD%93.ttf
+          wget -O ${{ github.workspace }}/Fonts/FangZhengHeiTi.ttf https://cdn.jsdelivr.net/gh/jaywcjlove/free-font@main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E9%BB%91%E4%BD%93%E7%AE%80%E4%BD%93.ttf
+          wget -O ${{ github.workspace }}/Fonts/FangZhengKaiTi.ttf https://cdn.jsdelivr.net/gh/jaywcjlove/free-font@main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E6%A5%B7%E4%BD%93%E7%AE%80%E4%BD%93.ttf
+          wget -O ${{ github.workspace }}/Fonts/FangZhengShuSong.ttf https://cdn.jsdelivr.net/gh/jaywcjlove/free-font@main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E4%B9%A6%E5%AE%8B%E7%AE%80%E4%BD%93.ttf
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
