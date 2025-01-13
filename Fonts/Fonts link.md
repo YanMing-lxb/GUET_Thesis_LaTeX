@@ -18,15 +18,13 @@
  * 
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
- * Date         : 2025-01-13 21:36:38 +0800
- * LastEditTime : 2025-01-13 21:45:07 +0800
+ * Date         : 2025-01-13 22:46:40 +0800
+ * LastEditTime : 2025-01-13 22:47:10 +0800
  * Github       : https://github.com/YanMing-lxb/
- * FilePath     : /GUET_Thesis_LaTeX/Fonts/fonts download.md
+ * FilePath     : /GUET_Thesis_LaTeX/Fonts/fonts link.md
  * Description  : 
  *  -----------------------------------------------------------------------
  -->
-
-
 
 ## 下载Linux所需字体
 
