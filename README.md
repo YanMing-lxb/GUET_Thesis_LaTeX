@@ -73,7 +73,7 @@ git clone https://github.com/YanMing-lxb/GUET_Thesis_LaTeX.git
 
 > 点击对应徽标即可跳转到对应平台直接使用，推荐使用国产的TeXPage进行在线写作。
 
-**`<font color="#d83931">`注意`</font>`**：
+**`<font color="#d83931">`注意 `</font>`**：
 
 1. 在线写作平台默认使用 $pdf\LaTeX$ 编译，您需要设置使用 $Xe\LaTeX$ 编译器。
 2. 由于上传模板需要审核周期，更新频繁时候建议 GitHub下载
@@ -108,7 +108,7 @@ pytexmk
 
 ### 字体说明
 
-Linux 英文字体采用 STIX 字体，与 `Times New Roman` 稍有细微差别，应该不影响使用。
+Linux 英文字体采用 STIX 字体，与 `Times New Roman` 稍有细微差别，对比见 [&lt;字体效果对比&gt;](http://www.identifont.com/differences?first=Nimbus+Roman&second=Times+New+Roman&q=Go)，应该不影响使用。
 
 ### 样式参数
 
@@ -206,7 +206,7 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 参考文献使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出参考文献时，导出类型要选择 `biblatex`。在 `\ThesisBibResource` 命令中输入参考文献源文件位置。
 
-**`<font color="#d83931">`注意`</font>`**：
+**`<font color="#d83931">`注意 `</font>`**：
 
 1. 使用该模板时，`biblatex` 和 `biblatex-gb7714-2015` 宏包均要更新到最新版本，否则会报错。
 2. 一般直接从网页获取到的参考文献为bibtex类型，bibtex 类型的 bib 文件可通过 [pandoc](https://pandoc.org/) 转成 biblatex 类型 bib 文件，转换命令：`pandoc -f bibtex -t biblatex -o output.bib input.bib`
@@ -301,7 +301,7 @@ if (item.creators.find(a => (a.firstName === authorFirstName1 && a.lastName === 
 }
 ```
 
-**`<font color="#d83931">`注意`</font>`**：要将代码中的作者姓名和导师姓名替换成自己的姓名和导师姓名。
+**`<font color="#d83931">`注意 `</font>`**：要将代码中的作者姓名和导师姓名替换成自己的姓名和导师姓名。
 
 > 这样每次导出 bib 文件时，就会为每一个作者里面有你的条目中自动添加 `AUTHOR+an` 字段，并根据你和导师的排名位置，自动添加相应的 `thesisauthor` 和 `corresponding` 信息。
 
