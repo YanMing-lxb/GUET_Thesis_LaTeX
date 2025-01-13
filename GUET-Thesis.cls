@@ -294,28 +294,28 @@
  \IfFileExists{./Fonts/方正书宋简体.ttf}{%
     \setCJKmainfont[AutoFakeBold = 2.5,AutoFakeSlant = true,Path =./Fonts/]{方正书宋简体.ttf}% 设置中文字体为fzsong.ttf
 }{%
-    \IfFileExists{./Fonts/fangzhengshusongjianti.ttf}{%
-        \setCJKmainfont[AutoFakeBold = 2.5,AutoFakeSlant = true,Path =./Fonts/]{FangZhengShuSongJianTi.ttf}% 设置中文字体为fzsong.ttf
+    \IfFileExists{./Fonts/FangZhengShuSong.ttf}{%
+        \setCJKmainfont[AutoFakeBold = 2.5,AutoFakeSlant = true,Path =./Fonts/]{FangZhengShuSong.ttf}% 设置中文字体为fzsong.ttf
     }{%
-        \ClassError{请下载 方正书宋简体.ttf 或者 FangZhengShuSongJianTi.ttf 并放置在./Fonts/ 目录下 (下载链接在Fonts文件夹下的Fonts link.md文件中)}
+        \ClassError{请下载 方正书宋简体.ttf 或者 FangZhengShuSong.ttf 并放置在./Fonts/ 目录下 (下载链接在Fonts文件夹下的Fonts link.md文件中)}
     }
 }
 \IfFileExists{./Fonts/方正楷体简体.ttf}{%
     \newCJKfontfamily{\kaiti}[AutoFakeBold = 2.5,Path =./Fonts/]{方正楷体简体.ttf}% 设置楷体字体为fzkaiti.ttf
 }{%
-    \IfFileExists{./Fonts/fangzhengkaitijianti.ttf}{%
-        \newCJKfontfamily{\kaiti}[AutoFakeBold = 2.5,Path =./Fonts/]{FangZhengKaiTiJianTi.ttf}% 设置楷体字体为fzkaiti.ttf
+    \IfFileExists{./Fonts/FangZhengKaiTi.ttf}{%
+        \newCJKfontfamily{\kaiti}[AutoFakeBold = 2.5,Path =./Fonts/]{FangZhengKaiTi.ttf}% 设置楷体字体为fzkaiti.ttf
     }{%
-        \ClassError{请下载 方正楷体简体.ttf或者FangZhengKaiTiJianTi.ttf并放置在./Fonts/ 目录下 (下载链接在Fonts文件夹下的Fonts link.md文件中)}
+        \ClassError{请下载 方正楷体简体.ttf或者FangZhengKaiTi.ttf并放置在./Fonts/ 目录下 (下载链接在Fonts文件夹下的Fonts link.md文件中)}
     }
 }
 \IfFileExists{./Fonts/方正黑体简体.ttf}{%
     \newCJKfontfamily{\heiti}[AutoFakeBold = 2.5,AutoFakeSlant = true,Path =./Fonts/]{方正黑体简体.ttf}% 设置黑体字体为fzhei.ttf
 }{%
-    \IfFileExists{./Fonts/fangzhengheitijianti.ttf}{%
-        \newCJKfontfamily{\heiti}[AutoFakeBold = 2.5,AutoFakeSlant = true,Path =./Fonts/]{FangZhengHeiTiJianTi.ttf}% 设置黑体字体为fzhei.ttf
+    \IfFileExists{./Fonts/FangZhengHeiTi.ttf}{%
+        \newCJKfontfamily{\heiti}[AutoFakeBold = 2.5,AutoFakeSlant = true,Path =./Fonts/]{FangZhengHeiTi.ttf}% 设置黑体字体为fzhei.ttf
     }{%
-        \ClassError{请下载 方正黑体简体.ttf或者FangZhengHeiTiJianTi.ttf并放置在./Fonts/ 目录下 (下载链接在Fonts文件夹下的Fonts link.md文件中)}
+        \ClassError{请下载 方正黑体简体.ttf或者FangZhengHeiTi.ttf并放置在./Fonts/ 目录下 (下载链接在Fonts文件夹下的Fonts link.md文件中)}
     }
 }
                                                                                                                               % 英文字体使用 stix2 的字体
