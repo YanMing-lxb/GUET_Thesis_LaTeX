@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2025-01-06 20:20:13 +0800
+% LastEditTime : 2025-01-13 19:26:35 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  :
@@ -85,24 +85,24 @@
 
 % ===============公式相关宏包===============    
 \RequirePackage[
-n, % or lambda 
-advantage,
-operators,
-sets,
-adversary,
-landau,
-probability,
-notions,
-logic,
-ff, 
-mm,
-primitives,
-events,
-complexity,
-oracles,
-asymptotics,
-keys
-]{cryptocode}                                         % 用于排版密码学算法
+                n,                                    % 或 lambda 
+                advantage,                            % 优势
+                operators,                            % 操作符
+                sets,                                 % 集合
+                adversary,                            % 对手
+                landau,                               % 朗道符号
+                probability,                          % 概率
+                notions,                              % 概念
+                logic,                                % 逻辑
+                ff,                                   % 函数
+                mm,                                   % 矩阵
+                primitives,                           % 原语
+                events,                               % 事件
+                complexity,                           % 复杂度
+                oracles,                              % 预言机
+                asymptotics,                          % 渐近分析
+                keys                                  % 密钥
+                ]{cryptocode}                         % 用于排版密码学算法
 \createprocedurecommand{procedure}{}{}{}              % 解决cryptocode宏包中和原有默认center环境的\procedure命令冲突
 \createpseudocodeblock{pseudocodeblock}{}{}{}{}       % 解决cryptocode宏包中和原有默认center环境的\pseudocodeblock命令冲突
 \createprocedureblock{procedureblock}{}{}{}{}         % 解决cryptocode宏包中和原有默认center环境的\procedureblock命令冲突
@@ -121,14 +121,13 @@ keys
 \RequirePackage[intoc]{nomencl}                       % 用于生成符号说明 参数 intoc 表示将符号说明加入目录
 
 % ===============字体相关宏包===============    
-\RequirePackage{lmodern}                              % 使用 Latin Modern 字体，提供更好的字体支持
 \RequirePackage{xeCJK}                                % 用于设置全局的中日韩文字体
 \RequirePackage{xeCJKfntef}                           % 用于提供更多的字体效果设置选项，兼容ulem宏包
 \RequirePackage{zhnumber}                             % 用于将数字转换为大写中文数字的表示
 \RequirePackage{pifont}                               % 提供了许多符号和图标的命令
 \RequirePackage{datetime}                             % 提供日期和时间格式控制功能，包括 \today 命令
-% \RequirePackage{fontspec}                             % 用于设置字体
-\RequirePackage{textcomp}                            % 提供了许多符号和图标的命令，例如copyright
+% \RequirePackage{fontspec}                           % 用于设置字体
+\RequirePackage{textcomp}                             % 提供了许多符号和图标的命令，例如copyright
 
 % ===============链接相关宏包===============    
 \RequirePackage[hyphens]{xurl}                        % 允许在长网址中断行，避免超出边界
@@ -155,14 +154,14 @@ keys
 \RequirePackage{ifoddpage}                            % 用于判断页码是否为奇数（用于判断打印版中空白页的添加）
 \RequirePackage{pdfpages}                             % 用于插入外部 PDF 文档的页面，已签名的独创性声明
 \RequirePackage{etoolbox}                             % 提供逻辑判断、列表循环遍历、patch、hook、计数器、布尔变量等操作
-% \RequirePackage{stfloats}                            % 提供了双栏排版中的浮动体环境
-\RequirePackage{verbatim}                              % 提供了更灵活的抄录环境和定制选项，对简短的抄录，可使用\verb|文字|和\verb*|文字|命令，原样输出一些特殊字符，如\、{}、$、#、%、_、&、~、^、\和空格，或原样输出命令
-% \RequirePackage{listings}                             % 用于排版代码，支持多种编程语言
-\RequirePackage{microtype}                              % 提供了更好的微调字距、字间距和连字等功能
-% \RequirePackage{makecell}                             % 用于生成复杂表格的单元格
-% \RequirePackage{ulem}                                 % 提供了各种下划线、波浪线、删除线等效果
-\RequirePackage{siunitx}                                % 提供了国际单位制的数字和单位的排版
-% \RequirePackage{datetime2}                            % 提供了日期和时间格式控制功能
+% \RequirePackage{stfloats}                           % 提供了双栏排版中的浮动体环境
+\RequirePackage{verbatim}                             % 提供了更灵活的抄录环境和定制选项，对简短的抄录，可使用\verb|文字|和\verb*|文字|命令，原样输出一些特殊字符，如\、{}、$、#、%、_、&、~、^、\和空格，或原样输出命令
+% \RequirePackage{listings}                           % 用于排版代码，支持多种编程语言
+\RequirePackage{microtype}                            % 提供了更好的微调字距、字间距和连字等功能
+% \RequirePackage{makecell}                           % 用于生成复杂表格的单元格
+% \RequirePackage{ulem}                               % 提供了各种下划线、波浪线、删除线等效果
+\RequirePackage{siunitx}                              % 提供了国际单位制的数字和单位的排版
+% \RequirePackage{datetime2}                          % 提供了日期和时间格式控制功能
 
 
 % ===============算法相关宏包===============
