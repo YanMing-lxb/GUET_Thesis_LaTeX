@@ -291,21 +291,33 @@
     \newfontfamily{\heiti@letter}{STHeiti}                                                                      % 设置字母的黑体字体为STHeiti
     \setmainfont{Times New Roman}                                                                               % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
     \else
-    \IfFileExists{./Fonts/方正书宋简体.ttf}{%
-                    \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true,Path = ./Fonts/]{方正书宋简体.ttf}                     % 设置中文字体为fzsong.ttf
-                  }{%
-                    \ClassError{请下载 方正书宋简体.ttf 并放置在 ./Fonts/ 目录下 (下载链接在 Fonts 文件夹下的 Fonts link.md 文件中)}
-                  }
-    \IfFileExists{./Fonts/方正楷体简体.ttf}{%
-                    \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5,Path=./Fonts/]{方正楷体简体.ttf}                                 % 设置楷体字体为fzkaiti.ttf
-                  }{%
-                    \ClassError{请下载 方正楷体简体.ttf 并放置在 ./Fonts/ 目录下 (下载链接在 Fonts 文件夹下的 Fonts link.md 文件中)}
-                  }
-    \IfFileExists{./Fonts/方正黑体简体.ttf}{%
-                    \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true,Path = ./Fonts/]{方正黑体简体.ttf}           % 设置黑体字体为fzhei.ttf
-                  }{%
-                    \ClassError{请下载 方正黑体简体.ttf 并放置在 ./Fonts/ 目录下 (下载链接在 Fonts 文件夹下的 Fonts link.md 文件中)}
-                  }
+ \IfFileExists{./Fonts/方正书宋简体.ttf}{%
+    \setCJKmainfont[AutoFakeBold = 2.5,AutoFakeSlant = true,Path =./Fonts/]{方正书宋简体.ttf}% 设置中文字体为fzsong.ttf
+}{%
+    \IfFileExists{./Fonts/fangzhengshusongjianti.ttf}{%
+        \setCJKmainfont[AutoFakeBold = 2.5,AutoFakeSlant = true,Path =./Fonts/]{FangZhengShuSongJianTi.ttf}% 设置中文字体为fzsong.ttf
+    }{%
+        \ClassError{请下载 方正书宋简体.ttf 或者 FangZhengShuSongJianTi.ttf 并放置在./Fonts/ 目录下 (下载链接在Fonts文件夹下的Fonts link.md文件中)}
+    }
+}
+\IfFileExists{./Fonts/方正楷体简体.ttf}{%
+    \newCJKfontfamily{\kaiti}[AutoFakeBold = 2.5,Path =./Fonts/]{方正楷体简体.ttf}% 设置楷体字体为fzkaiti.ttf
+}{%
+    \IfFileExists{./Fonts/fangzhengkaitijianti.ttf}{%
+        \newCJKfontfamily{\kaiti}[AutoFakeBold = 2.5,Path =./Fonts/]{FangZhengKaiTiJianTi.ttf}% 设置楷体字体为fzkaiti.ttf
+    }{%
+        \ClassError{请下载 方正楷体简体.ttf或者FangZhengKaiTiJianTi.ttf并放置在./Fonts/ 目录下 (下载链接在Fonts文件夹下的Fonts link.md文件中)}
+    }
+}
+\IfFileExists{./Fonts/方正黑体简体.ttf}{%
+    \newCJKfontfamily{\heiti}[AutoFakeBold = 2.5,AutoFakeSlant = true,Path =./Fonts/]{方正黑体简体.ttf}% 设置黑体字体为fzhei.ttf
+}{%
+    \IfFileExists{./Fonts/fangzhengheitijianti.ttf}{%
+        \newCJKfontfamily{\heiti}[AutoFakeBold = 2.5,AutoFakeSlant = true,Path =./Fonts/]{FangZhengHeiTiJianTi.ttf}% 设置黑体字体为fzhei.ttf
+    }{%
+        \ClassError{请下载 方正黑体简体.ttf或者FangZhengHeiTiJianTi.ttf并放置在./Fonts/ 目录下 (下载链接在Fonts文件夹下的Fonts link.md文件中)}
+    }
+}
                                                                                                                               % 英文字体使用 stix2 的字体
   \fi
 \fi
