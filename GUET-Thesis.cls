@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2025-01-13 19:26:35 +0800
+% LastEditTime : 2025-01-13 20:50:53 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  :
@@ -58,11 +58,9 @@
 \RequirePackage{pgfplots}                             % 用于绘制二维和三维图形
 \pgfplotsset{width=0.8\textwidth, compat=1.17}        % 设置pgfplots图形的宽度为文本宽度的0.8倍，兼容性设置为1.17
 %pgfplots
-\tikzset{global scale/.style={
-		scale=#1,
-		every node/.append style={scale=#1}
-	}
-} % 设置全局缩放样式
+\tikzset{
+        global scale/.style={scale=#1,every node/.append style={scale=#1}}
+        }                                             % 设置全局缩放样式
 % \RequirePackage{pgfplotstable}                        % 用于绘制表格
 % \RequirePackage{pgf-pie}                              % 用于绘制饼图
 % \RequirePackage{pgf-umlcd}                            % 用于绘制UML类图
@@ -120,26 +118,24 @@
 \RequirePackage{multicol}                             % 提供多栏环境
 \RequirePackage[intoc]{nomencl}                       % 用于生成符号说明 参数 intoc 表示将符号说明加入目录
 
-% ===============字体相关宏包===============    
+% ===============字体相关宏包===============
+\RequirePackage{stix2}                                % 正文和公式应用 stixfonts 字体 (Times New Roman 风格)
 \RequirePackage{xeCJK}                                % 用于设置全局的中日韩文字体
 \RequirePackage{xeCJKfntef}                           % 用于提供更多的字体效果设置选项，兼容ulem宏包
 \RequirePackage{zhnumber}                             % 用于将数字转换为大写中文数字的表示
 \RequirePackage{pifont}                               % 提供了许多符号和图标的命令
-\RequirePackage{datetime}                             % 提供日期和时间格式控制功能，包括 \today 命令
-% \RequirePackage{fontspec}                           % 用于设置字体
-\RequirePackage{textcomp}                             % 提供了许多符号和图标的命令，例如copyright
+\RequirePackage{datetime2}                            % 提供了日期和时间格式控制功能，包括 \today 命令
 
 % ===============链接相关宏包===============    
 \RequirePackage[hyphens]{xurl}                        % 允许在长网址中断行，避免超出边界
 \RequirePackage[
-                  unicode,                            % 设置是否使用 Unicode 字符集
-                  pdfencoding=auto,                   % 设置 PDF 编码格式
-                  bookmarks=true,                     % 设置 PDF 文件是否生成书签
-                  hyperfootnotes=false,               % 设置是否给脚注添加链接
-                  bookmarksnumbered=true,             % 设置 PDF 书签是否带编号
-                  bookmarksdepth=4                    % 设置书签的深度
+                unicode,                              % 设置是否使用 Unicode 字符集
+                pdfencoding=auto,                     % 设置 PDF 编码格式
+                bookmarks=true,                       % 设置 PDF 文件是否生成书签
+                hyperfootnotes=false,                 % 设置是否给脚注添加链接
+                bookmarksnumbered=true,               % 设置 PDF 书签是否带编号
+                bookmarksdepth=4                      % 设置书签的深度
                 ]{hyperref}                           % 用于设置书签和超链接
-
 \RequirePackage{cleveref}                             % 用于引用和交叉引用的格式设置（需要放在hyperref后面）
 
 % ===============排版相关宏包===============
@@ -161,7 +157,6 @@
 % \RequirePackage{makecell}                           % 用于生成复杂表格的单元格
 % \RequirePackage{ulem}                               % 提供了各种下划线、波浪线、删除线等效果
 \RequirePackage{siunitx}                              % 提供了国际单位制的数字和单位的排版
-% \RequirePackage{datetime2}                          % 提供了日期和时间格式控制功能
 
 
 % ===============算法相关宏包===============
@@ -173,23 +168,23 @@
   {
     % 第一套：algorithm2e宏包
     \RequirePackage[
-                  algochapter,                        % 将算法放在章节中，并以章节编号
-                  boxruled,                           % 给算法添加边框
-                  linesnumbered                       % 给算法添加行号
-                ]{algorithm2e}                        % 用于排版算法和伪代码
+                    algochapter,                      % 将算法放在章节中，并以章节编号
+                    boxruled,                         % 给算法添加边框
+                    linesnumbered                     % 给算法添加行号
+                  ]{algorithm2e}                      % 用于排版算法和伪代码
   }
   {
     \ifthenelse{\equal{#1}{algorithmicx}}
     {
       % 第二套：algorithmicx宏包
-      \RequirePackage{algorithm}                              % 用于排版算法和伪代码
-      \RequirePackage{algorithmicx}                           % 用于排版算法和伪代码，考虑到 algorithm2e 宏包的一些问题，这里使用 algorithmicx 宏包，同时考虑是否去掉此宏包
-      \RequirePackage[noend]{algpseudocode}                   % 用于排版算法和伪代码，是 algorithmicx 的扩展，algpseudocode 是 algorithmicx 的一种呈现方式，其中包含algorithmicx的所有功能
-      \RequirePackage[linewidth=1pt]{mdframed}                % 用于生成带边框的文本框
+      \RequirePackage{algorithm}                      % 用于排版算法和伪代码
+      \RequirePackage{algorithmicx}                   % 用于排版算法和伪代码，考虑到 algorithm2e 宏包的一些问题，这里使用 algorithmicx 宏包，同时考虑是否去掉此宏包
+      \RequirePackage[noend]{algpseudocode}           % 用于排版算法和伪代码，是 algorithmicx 的扩展，algpseudocode 是 algorithmicx 的一种呈现方式，其中包含algorithmicx的所有功能
+      \RequirePackage[linewidth=1pt]{mdframed}        % 用于生成带边框的文本框
       % ===============算法格式相关定制===============
-      \algnewcommand\algorithmicinput{\textbf{INPUT: }}      % 定义算法输入关键字
-      \algnewcommand\Input{\item[\algorithmicinput]}        % 定义算法输入关键字
-      \algnewcommand\algorithmicoutput{\textbf{OUTPUT: }}   % 定义算法输出关键字
+      \algnewcommand\algorithmicinput{\textbf{INPUT: }}    % 定义算法输入关键字
+      \algnewcommand\Input{\item[\algorithmicinput]}       % 定义算法输入关键字
+      \algnewcommand\algorithmicoutput{\textbf{OUTPUT: }}  % 定义算法输出关键字
       \algnewcommand\Output{\item[\algorithmicoutput]}     % 定义算法输出关键字
       \algrenewcommand\algorithmicwhile{\textbf{Upon}}     % 定义算法while关键字
       % ===============算法相关宏包定制结束===============
@@ -205,21 +200,21 @@
 
 % ===============参考文献相关宏包===============
 \RequirePackage[
-                  backend=biber,                        % 设置后端程序为biber
-                  doi=false,                            % 不显示doi
-                  url=false,                            % 不显示url
-                  defernumbers=true,                    % 解决refsection环境中 \printbibliography 筛选和 notice* 一起使用导致的编号错乱
-                  bibstyle=gb7714-2015,                % 参考文献样式
+                  backend=biber,                      % 设置后端程序为biber
+                  doi=false,                          % 不显示doi
+                  url=false,                          % 不显示url
+                  defernumbers=true,                  % 解决refsection环境中 \printbibliography 筛选和 notice* 一起使用导致的编号错乱
+                  bibstyle=gb7714-2015,               % 参考文献样式
                   citestyle=gb7714-2015,
-                  gbmedium=false,                       % 载体标识符不显示OL
-                  % gbpub=true,                           % 显示出版信息
-                  % gbnamefmt=lowercase,                  % 姓名小写，这个在最新版本的模板中还是需要大写的，因此需要关闭
-                  % gbpunctin=false,                      % 关闭inbook,incollection,inproceedings中析出来源文献前//符号，这个在最新版本模板中还是需要的，因此需要关闭
-                  gbstrict=true,                        % 避免输出 bib 文件中多余的域信息
-                  gbalign=center,                       % 标签中括号对齐
-                  gbannote=true,                        % 显示annote域，使得完成对于thesisauthor和corresponding的显示
+                  gbmedium=false,                     % 载体标识符不显示OL
+                  % gbpub=true,                         % 显示出版信息
+                  % gbnamefmt=lowercase,                % 姓名小写，这个在最新版本的模板中还是需要大写的，因此需要关闭
+                  % gbpunctin=false,                    % 关闭inbook,incollection,inproceedings中析出来源文献前//符号，这个在最新版本模板中还是需要的，因此需要关闭
+                  gbstrict=true,                      % 避免输出 bib 文件中多余的域信息
+                  gbalign=center,                     % 标签中括号对齐
+                  gbannote=true,                      % 显示annote域，使得完成对于thesisauthor和corresponding的显示
                 ]{biblatex}
-                % \DefineBibliographyStrings{english}{in={}} % 去掉英文in，避免会议中的in:出现，这行是不需要的，不使用gbpunctin或注释即可
+% \DefineBibliographyStrings{english}{in={}} % 去掉英文in，避免会议中的in:出现，这行是不需要的，不使用gbpunctin或注释即可
 
 % ===============条件判断宏包宏包===============
 \RequirePackage{ifxetex}                              % 判断是否使用 XeLaTeX 编译，以决定后续的包和设置的使用
@@ -264,8 +259,8 @@
 
 
 % ===============定义空白页命令=============== 
-\newcommand{\blankpage@number}{\newpage\null\newpage}               % 带页眉页脚
-\newcommand{\blankpage}{\newpage\thispagestyle{empty}\null\newpage} % 没有页眉页脚
+\newcommand{\blankpage@number}{\newpage\null\newpage}                  % 带页眉页脚
+\newcommand{\blankpage}{\newpage\thispagestyle{empty}\null\newpage}    % 没有页眉页脚
 
 
 
@@ -287,57 +282,25 @@
   \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                              % 设置楷体字体为KaiTi 
   \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimHei}                         % 设置黑体字体为SimHei
   \newfontfamily{\heiti@letter}{SimHei}                                                           % 设置字母的黑体字体为SimHei
-  \setallmainfonts{Times New Roman}                                                               % 设置英文字体为Times New Roman
+  \setmainfont{Times New Roman}                                                                   % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
 \else
   \ifmacosx
     \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}                              % 在macOS平台上设置中文字体为Songti SC
     \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                            % 设置楷体字体为KaiTi
     \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{STHeiti}                      % 设置黑体字体为STHeiti
     \newfontfamily{\heiti@letter}{STHeiti}                                                        % 设置字母的黑体字体为STHeiti
-    \setallmainfonts{Times New Roman}                                                             % 设置英文字体为Times New Roman
+    \setmainfont{Times New Roman}                                                                 % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
   \else
     \setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true,Path = ./Fonts/]{fzsong.ttf}             % 在其他平台上设置中文字体为fzsong.ttf，并指定字体文件路径为./Fonts/
     \newCJKfontfamily{\kaiti}[AutoFakeBold=2.5,Path=./Fonts/]{fzkaiti.ttf}                        % 设置楷体字体为fzkaiti.ttf，并指定字体文件路径为./Fonts/
     \newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true,Path = ./Fonts/]{fzhei.ttf}    % 设置黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
-    \newfontfamily{\heiti@letter}{fzhei.ttf}[Path = ./Fonts/]                                     % 设置字母的黑体字体为fzhei.ttf，并指定字体文件路径为./Fonts/
-    \setallmainfonts[                                                                             % 英文字体设置
-                      BoldFont=timesbd.ttf,                                                       % 粗体字体为timesbd.ttf
-                      ItalicFont=timesi.ttf,                                                      % 斜体字体为timesi.ttf
-                      BoldItalicFont=timesbi.ttf,                                                 % 粗斜体字体为timesbi.ttf
-                      Path=./Fonts/                                                               % 指定字体文件路径为./Fonts/
-                    ]{times.ttf}                                                                  % 设置英文字体为times.ttf
+                                                                                                  % 英文字体使用 stix2 的字体
   \fi
 \fi
 
 
 % ================定义高亮命令设置===============
 \newcommand{\hl}{\CJKsout*[thickness=2.5ex,format=\color{yellow}]} % 新定义高亮命令\gl 用来高亮显示中文
-
-
-% ================定义数学字体设置===============
-% 定义数学字体 \mathbf
-\DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
-
-% 参数解释：
-% - \eu@enc: 字体编码，可以是任意有效的字体编码
-% - \eu@mathrm: 字母字体，通常为欧拉字体
-% - \bfdefault: 字体系列，通常为默认粗体系列
-% - it: 字体形状，通常为斜体形状
-
-% 定义数学字体 \mathbd
-\DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
-
-% 参数解释：
-% - \eu@enc: 字体编码，可以是任意有效的字体编码
-% - \eu@mathrm: 字母字体，通常为欧拉字体
-% - \bfdefault: 字体系列，通常为默认粗体系列
-% - n: 字体形状，通常为正常字形状
-
-% 定义数学命令 \bm，其效果为使用 \mathbf 字体
-\newcommand{\bm}{\mathbf}
-
-% \bm: 数学命令，用于使用 \mathbf 字体
-% 注：\bm 可以替代 \mathbf 使用，提供更简洁的输入方式。
 
 
 
@@ -1031,7 +994,7 @@
 \newcommand{\ThesisSymbolList}
 { \newpage
 
-  \renewcommand{\nomname}{符号说明}                                         % 修改符号说明标题的名称。
+  \renewcommand{\nomname}{符号说明}                     % 修改符号说明标题的名称。
 
   \ifbachelor{ % 设置本科插表索引标题 👇
     \renewcommand{\BachelorChapterFormat}{\centering} % 设置标题居中
@@ -1731,23 +1694,23 @@
 % 这里需要和AchResource的顺序设置保持一致，如果使用PublishPaper而注释掉期刊和会议论文，则需要调整全部的refsection序号，按照需求调节即可
 \AtEveryBibitem{                                % 清除指定refsection环境中的作者姓名或页码
     \ifnumequal{\value{refsection}}{1}          % 判断 当前refsection序号是否是为1（项目信息），因为项目参与者过多，不显示作者信息
-       {\clearname{author}}                     % 是则清除作者信息
-       {}                                       % 否则不执行操作
+      {\clearname{author}}                      % 是则清除作者信息
+      {}                                        % 否则不执行操作
     \ifnumequal{\value{refsection}}{2}          % 判断 当前refsection序号是否是为2（会议论文），因为会议论文不需要页码
-       {\clearfield{pages}}                     % 是则清除页码信息
-       {}                                       % 否则不执行操作
+      {\clearfield{pages}}                      % 是则清除页码信息
+      {}                                        % 否则不执行操作
     \ifnumequal{\value{refsection}}{5}          % 判断 当前refsection序号是否是为5（软著），可以自选，是否需要作者信息
-       {\clearname{author}}                     % 是则清除作者信息
-       {}                                       % 否则不执行操作
+      {\clearname{author}}                      % 是则清除作者信息
+      {}                                        % 否则不执行操作
 }
 
 
 % ====================盲审版去作者信息设置==================== 
 \ifbversion{ % 盲审版则去掉取得成果的作者信息
     \AtEveryBibitem{                            % 清除指定refsection环境中的作者姓名
-        \ifnumgreater{\value{refsection}}{1}    % 判断 当前refsection序号是否大于1
-           {\clearname{author}}                 % 是则清除作者信息
-           {}                                   % 否则不执行操作
+      \ifnumgreater{\value{refsection}}{1}      % 判断 当前refsection序号是否大于1
+          {\clearname{author}}                  % 是则清除作者信息
+          {}                                    % 否则不执行操作
     }
 }{}
 
