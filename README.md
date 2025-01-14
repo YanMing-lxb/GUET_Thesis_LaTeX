@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-12-03 15:44:36 +0800
- * LastEditTime : 2025-01-13 22:42:44 +0800
+ * LastEditTime : 2025-01-14 13:44:40 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : 
@@ -322,9 +322,7 @@ if (item.creators.find(a => (a.firstName === authorFirstName1 && a.lastName === 
 
 ## 当前状态
 
-**本科毕业论文格式大部分功能已调整完，但细节有待完善，欢迎各位同学使用并提出建议！**
-
-> PS：目前已调整 cls 样式文件的代码，可以使用 `\ifbachelor{}{}` 命令修改本科样式。
+可以使用 `\ifbachelor{}{}` 命令修改本科样式。
 
 ## 未来工作方向
 
