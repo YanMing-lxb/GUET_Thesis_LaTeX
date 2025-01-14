@@ -19,7 +19,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2025-01-13 22:46:40 +0800
- * LastEditTime : 2025-01-14 13:56:11 +0800
+ * LastEditTime : 2025-01-14 20:20:12 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/Fonts/Fonts link.md
  * Description  : 
@@ -27,12 +27,29 @@
  -->
 
 ## 下载Linux所需字体
+
 以下两种方法选一个即可
 
 ### 脚本自动下载
-可以直接运行 `download_fonts.sh` 脚本来自动下载字体
 
-### 手动下载字体
+可以直接运行 `download_fonts.sh` 脚本来自动下载字体
+脚本需要使用 wget 工具下载，如果没有安装请在终端输入以下命令安装：
+
+```
+bash
+sudo apt install wget
+```
+
+运行 `download_fonts.sh` 脚本，请执行以下命令（注意终端路径为项目路径）：
+
+```
+bash
+chmod +x ./Fonts/download_fonts.sh
+./Fonts/download_fonts.sh
+```
+运行结束即可完成字体的下载。
+
+### 中文字体手动下载
 
 [黑体简体](https://github.com/jaywcjlove/free-font/raw/refs/heads/main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E4%B9%A6%E5%AE%8B%E7%AE%80%E4%BD%93.ttf)
 
@@ -40,6 +57,15 @@
 
 [书宋简体](https://github.com/jaywcjlove/free-font/raw/refs/heads/main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E6%A5%B7%E4%BD%93%E7%AE%80%E4%BD%93.ttf)
 
-也可以去 [字体](https://github.com/jaywcjlove/free-font/tree/main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97) 下载对应的字体
+也可以去 [中文字体](https://github.com/jaywcjlove/free-font/tree/main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97) 下载对应的字体
+
+### 英文字体手动下载
+
+[STIXTwoText-Regular](https://github.com/stipub/stixfonts/raw/refs/heads/master/fonts/static_ttf/STIXTwoText-Regular.ttf)
+[STIXTwoText-Bold](https://github.com/stipub/stixfonts/raw/refs/heads/master/fonts/static_ttf/STIXTwoText-Bold.ttf)
+[STIXTwoText-Italic](https://github.com/stipub/stixfonts/raw/refs/heads/master/fonts/static_ttf/STIXTwoText-Italic.ttf)
+[STIXTwoText-BoldItalic](https://github.com/stipub/stixfonts/raw/refs/heads/master/fonts/static_ttf/STIXTwoText-BoldItalic.ttf)
+
+也可以去 [STIXFonts](https://github.com/stipub/stixfonts/tree/master/fonts/static_ttf) 下载对应的字体
 
 **字体下载完成后请放在 Fonts 文件夹下**
