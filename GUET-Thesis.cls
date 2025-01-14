@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2025-01-14 13:31:38 +0800
+% LastEditTime : 2025-01-14 13:45:26 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  :
@@ -278,18 +278,18 @@
 
 % //////////////////////////////////////// 字体设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ifwindows
-	\setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}                                                 % 在Windows平台上设置中文字体为SimSun
-	\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                            % 设置楷体字体为KaiTi 
-	\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimHei}                                       % 设置黑体字体为SimHei
-	\newfontfamily{\heiti@letter}{SimHei}                                                                         % 设置字母的黑体字体为SimHei
-	\setmainfont{Times New Roman}                                                                                 % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
-\else
-	\ifmacosx
-		\setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}                                          % 在macOS平台上设置中文字体为Songti SC
-		\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                        % 设置楷体字体为KaiTi
-		\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{STHeiti}                                  % 设置黑体字体为STHeiti
-		\newfontfamily{\heiti@letter}{STHeiti}                                                                    % 设置字母的黑体字体为STHeiti
-		\setmainfont{Times New Roman}                                                                             % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
+	\setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}                                            % 在Windows平台上设置中文字体为SimSun
+	\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                       % 设置楷体字体为KaiTi 
+	\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimHei}                                  % 设置黑体字体为SimHei
+	\newfontfamily{\heiti@letter}{SimHei}                                                                    % 设置字母的黑体字体为SimHei
+	\setmainfont{Times New Roman}                                                                            % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
+
+	\ifm
+		\setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}                                     % 在macOS平台上设置中文字体为Songti SC
+		\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                   % 设置楷体字体为KaiTi
+		\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{STHeiti}                             % 设置黑体字体为STHeiti
+		\newfontfamily{\heiti@letter}{STHeiti}                                                               % 设置字母的黑体字体为STHeiti
+		\setmainfont{Times New Roman}                                                                        % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
 	\else
         % 在其他平台设置中文和英文字体
 		\newcommand{\setFont}[3]{%
@@ -304,7 +304,7 @@
 			}
 		}
 
-        \setFont{\CJKmainfont}{方正书宋简体.ttf}{FZ-ShuSong.ttf}  											% 设置中文主字体
+        \setFont{\CJKmainfont}{方正书宋简体.ttf}{FZ-ShuSong.ttf}  												% 设置中文主字体
         \setFont{\kaiti}{方正楷体简体.ttf}{FZ-KaiTi.ttf}														% 设置楷体
         \setFont{\heiti}{方正黑体简体.ttf}{FZ-HeiTi.ttf}														% 设置黑体
 
