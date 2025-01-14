@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2025-01-14 13:45:26 +0800
+% LastEditTime : 2025-01-14 13:51:29 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  :
@@ -284,7 +284,7 @@
 	\newfontfamily{\heiti@letter}{SimHei}                                                                    % 设置字母的黑体字体为SimHei
 	\setmainfont{Times New Roman}                                                                            % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
 
-	\ifm
+	\ifmacosx
 		\setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}                                     % 在macOS平台上设置中文字体为Songti SC
 		\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                   % 设置楷体字体为KaiTi
 		\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{STHeiti}                             % 设置黑体字体为STHeiti
@@ -311,7 +311,6 @@
         % 英文字体使用 stix2 的字体
     \fi
 \fi
-
 
 
 % ================定义高亮命令设置===============
