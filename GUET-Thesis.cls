@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2025-01-14 12:54:01 +0800
+% LastEditTime : 2025-01-14 13:31:38 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  :
@@ -305,8 +305,8 @@
 		}
 
         \setFont{\CJKmainfont}{方正书宋简体.ttf}{FZ-ShuSong.ttf}  											% 设置中文主字体
-        \setFont{\kaiti}{方正楷体简体.ttf}{FZ-huSong.ttf}														% 设置楷体
-        \setFont{\heiti}{方正黑体简体.ttf}{FZ-huSong.ttf}														% 设置黑体
+        \setFont{\kaiti}{方正楷体简体.ttf}{FZ-KaiTi.ttf}														% 设置楷体
+        \setFont{\heiti}{方正黑体简体.ttf}{FZ-HeiTi.ttf}														% 设置黑体
 
         % 英文字体使用 stix2 的字体
     \fi
