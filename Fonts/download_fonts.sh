@@ -11,3 +11,6 @@ curl -o "$SCRIPT_DIR/FZ-KaiTi.ttf" "https://cdn.jsdelivr.net/gh/jaywcjlove/free-
 
 # 下载方正书宋简体到脚本所在目录
 curl -o "$SCRIPT_DIR/FZ-HeiTi.ttf" "https://cdn.jsdelivr.net/gh/jaywcjlove/free-font@main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E4%B9%A6%E5%AE%8B%E7%AE%80%E4%BD%93.ttf"
+
+
+# sed -i 's/\r$//' Fonts/download_fonts.sh # 去掉Windows换行符
