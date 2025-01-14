@@ -26,31 +26,8 @@ $preview_mode = 0; # 0不开启，1开启，由于使用latex workshop因此选�
 $view = "pdf";
 
 
-
 # 设置 latexmk 编译的文件，和不需要编译的文件，可以时多个
 # @default_files = ("main.tex");
 # @default_excluded_files = ();
 
 #$"latexmk -c" # 由于使用latex workshop进行后清理，因此注销该命令
-
-$bibtex = "bibtex %O %S";
-$biber = "biber %O %S";
-
-$xdvipdfmx = "dvipdfmx -V 2.0 %O %S";
-
-# 编译索引
-$makeindex = "makeindex -s gind.ist %O -o %D %S";
-
-# 用glossaries做索引，所需要的额外编译
-add_cus_dep('glo', 'gls', 0, 'glo2gls');
-sub glo2gls {
-    system("makeindex -s gglo.ist -o \"$_[0].gls\" \"$_[0].glo\"");
-}
-push @generated_exts, "glo", "gls";
-
-# 用nomencl做索引，所需要的额外编译
-add_cus_dep('nlo', 'nls', 0, 'nlo2nls');
-sub nlo2nls {
-    system("makeindex -s nomencl.ist -o \"$_[0].nls\" \"$_[0].nlo\"");
-}
-push @generated_exts, "nlo", "nls";
