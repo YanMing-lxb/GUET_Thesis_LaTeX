@@ -9,14 +9,8 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v4
       - name: Download Fonts
-
-      - name: Give execute permission to download_fonts.sh
-        run: chmod +x ${{ github.workspace }}/Fonts/download_fonts.sh
-
-      - name: Run download_fonts.sh
-        run: ${{ github.workspace }}/Fonts/download_fonts.sh
-
         run: |
+          chmod +x ${{ github.workspace }}/Fonts/download_fonts.sh
           ${{ github.workspace }}/Fonts/download_fonts.sh
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
