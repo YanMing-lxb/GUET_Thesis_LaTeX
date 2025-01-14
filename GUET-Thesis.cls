@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2025-01-14 14:26:37 +0800
+% LastEditTime : 2025-01-14 20:07:07 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  :
@@ -82,28 +82,28 @@
 \RequirePackage{adjustbox}                           	% 用于调整盒子的大小和位置，直白的说就是将超宽表格居中放置
 
 % ===============公式相关宏包===============    
-\RequirePackage[
-	n,          									  	% 或 lambda 
-	advantage,  									  	% 优势
-	operators,  									  	% 操作符
-	sets,       									  	% 集合
-	adversary,  									  	% 对手
-	landau,     									  	% 朗道符号
-	probability,									  	% 概率
-	notions,    									  	% 概念
-	logic,      									  	% 逻辑
-	ff,         									  	% 函数
-	mm,         									  	% 矩阵
-	primitives, 									  	% 原语
-	events,     									  	% 事件
-	complexity, 									  	% 复杂度
-	oracles,    									  	% 预言机
-	asymptotics,									  	% 渐近分析
-	keys        									  	% 密钥
-]{cryptocode}   									  	% 用于排版密码学算法
-\createprocedurecommand{procedure}{}{}{}              	% 解决cryptocode宏包中和原有默认center环境的\procedure命令冲突
-\createpseudocodeblock{pseudocodeblock}{}{}{}{}       	% 解决cryptocode宏包中和原有默认center环境的\pseudocodeblock命令冲突
-\createprocedureblock{procedureblock}{}{}{}{}         	% 解决cryptocode宏包中和原有默认center环境的\procedureblock命令冲突
+% \RequirePackage[
+% 	n,          									  	% 或 lambda 
+% 	advantage,  									  	% 优势
+% 	operators,  									  	% 操作符
+% 	sets,       									  	% 集合
+% 	adversary,  									  	% 对手
+% 	landau,     									  	% 朗道符号
+% 	probability,									  	% 概率
+% 	notions,    									  	% 概念
+% 	logic,      									  	% 逻辑
+% 	ff,         									  	% 函数
+% 	mm,         									  	% 矩阵
+% 	primitives, 									  	% 原语
+% 	events,     									  	% 事件
+% 	complexity, 									  	% 复杂度
+% 	oracles,    									  	% 预言机
+% 	asymptotics,									  	% 渐近分析
+% 	keys        									  	% 密钥
+% ]{cryptocode}   									  	% 用于排版密码学算法
+% \createprocedurecommand{procedure}{}{}{}				% 解决cryptocode宏包中和原有默认center环境的\procedure命令冲突
+% \createpseudocodeblock{pseudocodeblock}{}{}{}{}		% 解决cryptocode宏包中和原有默认center环境的\pseudocodeblock命令冲突
+% \createprocedureblock{procedureblock}{}{}{}{}			% 解决cryptocode宏包中和原有默认center环境的\procedureblock命令冲突
 \RequirePackage{amsmath}                              	% 提供数学公式环境和命令
 \RequirePackage{amssymb}                              	% 提供额外的数学符号
 \RequirePackage{amsthm}                               	% 用于定义和排版定理、引理等数学定理结构
@@ -119,7 +119,6 @@
 \RequirePackage[intoc]{nomencl}                       	% 用于生成符号说明 参数 intoc 表示将符号说明加入目录
 
 % ===============字体相关宏包===============
-\RequirePackage{stix2}                                	% 正文和公式应用 stixfonts 字体 (Times New Roman 风格)
 \RequirePackage{xeCJK}                                	% 用于设置全局的中日韩文字体
 \RequirePackage{xeCJKfntef}                           	% 用于提供更多的字体效果设置选项，兼容ulem宏包
 \RequirePackage{zhnumber}                             	% 用于将数字转换为大写中文数字的表示
@@ -279,17 +278,19 @@
 % //////////////////////////////////////// 字体设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ifwindows
 	\setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}                                                 % 在Windows平台上设置中文字体为SimSun
+	\setCJKmonofont[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}												  % 使用宋体作为等宽字体
 	\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                            % 设置楷体字体为KaiTi 
 	\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimHei}                                       % 设置黑体字体为SimHei
 	\newfontfamily{\heiti@letter}{SimHei}                                                                         % 设置字母的黑体字体为SimHei
-	\setmainfont{Times New Roman}                                                                                 % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
+	\setallmainfonts{Times New Roman}                                                                                 % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
 \else
 	\ifmacosx
 		\setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}                                          % 在macOS平台上设置中文字体为Songti SC
+		\setCJKmonofont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}										  % 使用宋体作为等宽字体
 		\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                        % 设置楷体字体为KaiTi
 		\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{STHeiti}                                  % 设置黑体字体为STHeiti
 		\newfontfamily{\heiti@letter}{STHeiti}                                                                    % 设置字母的黑体字体为STHeiti
-		\setmainfont{Times New Roman}                                                                             % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
+		\setallmainfonts{Times New Roman}                                                                             % 设置英文字体为Times New Roman
 	\else
         % 在其他平台设置中文和英文字体
 		\newcommand{\setFont}[3]{%
@@ -304,13 +305,45 @@
 			}
 		}
 
-        \setFont{\setCJKmainfont}{方正书宋简体.ttf}{FZ-ShuSong.ttf}  													% 设置中文主字体
-        \setFont{\newCJKfontfamily{\kaiti}}{方正楷体简体.ttf}{FZ-KaiTi.ttf}															% 设置楷体
-        \setFont{\newCJKfontfamily{\heiti}}{方正黑体简体.ttf}{FZ-HeiTi.ttf}															% 设置黑体
-
-        % 英文字体使用 stix2 的字体
+        \setFont{\setCJKmainfont}{方正书宋简体.ttf}{FZ-ShuSong.ttf}  												% 设置中文主字体
+		\setFont{\setCJKmonofont}{方正书宋简体.ttf}{FZ-ShuSong.ttf}  												% 使用宋体作为等宽字体
+        \setFont{\newCJKfontfamily{\kaiti}}{方正楷体简体.ttf}{FZ-KaiTi.ttf}											% 设置楷体
+        \setFont{\newCJKfontfamily{\heiti}}{方正黑体简体.ttf}{FZ-HeiTi.ttf}											% 设置黑体
+		\setallmainfonts[                                                                                         % 英文字体应用 stixfonts 字体 (Times New Roman 风格)
+						BoldFont=STIXTwoText-Bold.ttf,                                                            % 粗体字体
+						ItalicFont=STIXTwoText-Italic.ttf,                                                        % 斜体字体
+						BoldItalicFont=STIXTwoText-BoldItalic.ttf,                                                % 粗斜体字体
+						Path=./Fonts/                                                               			  % 指定字体文件路径为./Fonts/
+						]{STIXTwoText-Regular.ttf} 
     \fi
 \fi
+
+
+% ================定义数学字体设置===============
+% 定义数学字体 \mathbf
+\DeclareMathAlphabet{\mathbf}{\eu@enc}{\eu@mathrm}{\bfdefault}{it}
+
+% 参数解释：
+% - \eu@enc: 字体编码，可以是任意有效的字体编码
+% - \eu@mathrm: 字母字体，通常为欧拉字体
+% - \bfdefault: 字体系列，通常为默认粗体系列
+% - it: 字体形状，通常为斜体形状
+
+% 定义数学字体 \mathbd
+\DeclareMathAlphabet{\mathbd}{\eu@enc}{\eu@mathrm}{\bfdefault}{n}
+
+% 参数解释：
+% - \eu@enc: 字体编码，可以是任意有效的字体编码
+% - \eu@mathrm: 字母字体，通常为欧拉字体
+% - \bfdefault: 字体系列，通常为默认粗体系列
+% - n: 字体形状，通常为正常字形状
+
+% 定义数学命令 \bm，其效果为使用 \mathbf 字体
+\newcommand{\bm}{\mathbf}
+
+% \bm: 数学命令，用于使用 \mathbf 字体
+% 注：\bm 可以替代 \mathbf 使用，提供更简洁的输入方式。
+
 
 
 
