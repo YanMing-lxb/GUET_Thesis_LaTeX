@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2025-01-14 11:10:35 +0800
+% LastEditTime : 2025-01-14 12:54:01 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  :
@@ -299,14 +299,14 @@
 				\IfFileExists{./Fonts/#3}{%
 					\newCJKfontfamily{#1}[AutoFakeBold=2.5, AutoFakeSlant=true, Path=./Fonts/]{#3}%
 				}{%
-					\ClassError{请下载 #2 或者 #3 并放置在./Fonts/ 目录下 (下载链接在Fonts文件夹下的Fonts link.md文件中)}
+					\ClassError{请下载 #2 或者 #3 并放置在./Fonts/ 目录下 (运行 ./Fonts/download_fonts.sh 脚本下载)}
 				}
 			}
 		}
 
-        \setFont{\CJKmainfont}{方正书宋简体.ttf}{FangZhengShuSong.ttf}  											% 设置中文主字体
-        \setFont{\kaiti}{方正楷体简体.ttf}{FangZhengKaiTi.ttf}														% 设置楷体
-        \setFont{\heiti}{方正黑体简体.ttf}{FangZhengHeiTi.ttf}														% 设置黑体
+        \setFont{\CJKmainfont}{方正书宋简体.ttf}{FZ-ShuSong.ttf}  											% 设置中文主字体
+        \setFont{\kaiti}{方正楷体简体.ttf}{FZ-huSong.ttf}														% 设置楷体
+        \setFont{\heiti}{方正黑体简体.ttf}{FZ-huSong.ttf}														% 设置黑体
 
         % 英文字体使用 stix2 的字体
     \fi

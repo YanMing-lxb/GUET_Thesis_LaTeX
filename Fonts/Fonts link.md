@@ -19,14 +19,16 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2025-01-13 22:46:40 +0800
- * LastEditTime : 2025-01-13 22:47:10 +0800
+ * LastEditTime : 2025-01-14 13:19:55 +0800
  * Github       : https://github.com/YanMing-lxb/
- * FilePath     : /GUET_Thesis_LaTeX/Fonts/fonts link.md
+ * FilePath     : /GUET_Thesis_LaTeX/Fonts/Fonts link.md
  * Description  : 
  *  -----------------------------------------------------------------------
  -->
 
 ## 下载Linux所需字体
+
+也可以直接运行 download_fonts.sh 脚本来下载字体
 
 [方正黑体简体](https://cdn.jsdelivr.net/gh/jaywcjlove/free-font@main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E9%BB%91%E4%BD%93%E7%AE%80%E4%BD%93.ttf)
 
