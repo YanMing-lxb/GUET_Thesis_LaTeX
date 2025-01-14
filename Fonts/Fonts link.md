@@ -35,15 +35,13 @@
 可以直接运行 `download_fonts.sh` 脚本来自动下载字体
 脚本需要使用 wget 工具下载，如果没有安装请在终端输入以下命令安装：
 
-```
-bash
+```bash
 sudo apt install wget
 ```
 
 运行 `download_fonts.sh` 脚本，请执行以下命令（注意终端路径为项目路径）：
 
-```
-bash
+```bash
 chmod +x ./Fonts/download_fonts.sh
 ./Fonts/download_fonts.sh
 ```
