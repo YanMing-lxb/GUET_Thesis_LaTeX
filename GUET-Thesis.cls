@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2025-01-14 13:51:29 +0800
+% LastEditTime : 2025-01-14 14:26:37 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  :
@@ -278,39 +278,40 @@
 
 % //////////////////////////////////////// 字体设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ifwindows
-	\setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}                                            % 在Windows平台上设置中文字体为SimSun
-	\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                       % 设置楷体字体为KaiTi 
-	\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimHei}                                  % 设置黑体字体为SimHei
-	\newfontfamily{\heiti@letter}{SimHei}                                                                    % 设置字母的黑体字体为SimHei
-	\setmainfont{Times New Roman}                                                                            % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
-
+	\setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}                                                 % 在Windows平台上设置中文字体为SimSun
+	\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                            % 设置楷体字体为KaiTi 
+	\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimHei}                                       % 设置黑体字体为SimHei
+	\newfontfamily{\heiti@letter}{SimHei}                                                                         % 设置字母的黑体字体为SimHei
+	\setmainfont{Times New Roman}                                                                                 % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
+\else
 	\ifmacosx
-		\setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}                                     % 在macOS平台上设置中文字体为Songti SC
-		\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                   % 设置楷体字体为KaiTi
-		\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{STHeiti}                             % 设置黑体字体为STHeiti
-		\newfontfamily{\heiti@letter}{STHeiti}                                                               % 设置字母的黑体字体为STHeiti
-		\setmainfont{Times New Roman}                                                                        % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
+		\setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}                                          % 在macOS平台上设置中文字体为Songti SC
+		\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                        % 设置楷体字体为KaiTi
+		\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{STHeiti}                                  % 设置黑体字体为STHeiti
+		\newfontfamily{\heiti@letter}{STHeiti}                                                                    % 设置字母的黑体字体为STHeiti
+		\setmainfont{Times New Roman}                                                                             % 设置英文字体为Times New Roman (覆盖掉 stix2 设置的正文字体)
 	\else
         % 在其他平台设置中文和英文字体
 		\newcommand{\setFont}[3]{%
 			\IfFileExists{./Fonts/#2}{%
-				\newCJKfontfamily{#1}[AutoFakeBold=2.5, AutoFakeSlant=true, Path=./Fonts/]{#2}%
+				#1[AutoFakeBold=2.5, AutoFakeSlant=true, Path=./Fonts/]{#2}%
 			}{%
 				\IfFileExists{./Fonts/#3}{%
-					\newCJKfontfamily{#1}[AutoFakeBold=2.5, AutoFakeSlant=true, Path=./Fonts/]{#3}%
+					#1[AutoFakeBold=2.5, AutoFakeSlant=true, Path=./Fonts/]{#3}%
 				}{%
 					\ClassError{请下载 #2 或者 #3 并放置在./Fonts/ 目录下 (运行 ./Fonts/download_fonts.sh 脚本下载)}
 				}
 			}
 		}
 
-        \setFont{\CJKmainfont}{方正书宋简体.ttf}{FZ-ShuSong.ttf}  												% 设置中文主字体
-        \setFont{\kaiti}{方正楷体简体.ttf}{FZ-KaiTi.ttf}														% 设置楷体
-        \setFont{\heiti}{方正黑体简体.ttf}{FZ-HeiTi.ttf}														% 设置黑体
+        \setFont{\setCJKmainfont}{方正书宋简体.ttf}{FZ-ShuSong.ttf}  													% 设置中文主字体
+        \setFont{\newCJKfontfamily{\kaiti}}{方正楷体简体.ttf}{FZ-KaiTi.ttf}															% 设置楷体
+        \setFont{\newCJKfontfamily{\heiti}}{方正黑体简体.ttf}{FZ-HeiTi.ttf}															% 设置黑体
 
         % 英文字体使用 stix2 的字体
     \fi
 \fi
+
 
 
 % ================定义高亮命令设置===============
