@@ -60,8 +60,11 @@ chmod +x ./Fonts/download_fonts.sh
 ### 英文字体手动下载
 
 [STIXTwoText-Regular](https://github.com/stipub/stixfonts/raw/refs/heads/master/fonts/static_ttf/STIXTwoText-Regular.ttf)
+
 [STIXTwoText-Bold](https://github.com/stipub/stixfonts/raw/refs/heads/master/fonts/static_ttf/STIXTwoText-Bold.ttf)
+
 [STIXTwoText-Italic](https://github.com/stipub/stixfonts/raw/refs/heads/master/fonts/static_ttf/STIXTwoText-Italic.ttf)
+
 [STIXTwoText-BoldItalic](https://github.com/stipub/stixfonts/raw/refs/heads/master/fonts/static_ttf/STIXTwoText-BoldItalic.ttf)
 
 也可以去 [STIXFonts](https://github.com/stipub/stixfonts/tree/master/fonts/static_ttf) 下载对应的字体
