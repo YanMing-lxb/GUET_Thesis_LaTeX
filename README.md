@@ -53,8 +53,10 @@ git clone https://github.com/YanMing-lxb/GUET_Thesis_LaTeX.git
 
 [Gitee项目地址](https://gitee.com/metaljack666/GUET_Thesis_LaTeX)
 
-[Github项目地址](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX)
+[Github项目地址 (优先更新)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX)
 
+> [!NOTE]
+>
 > 模版更新频繁，且只维护最新版。如有问题，可以先尝试升级模版，而后进行反馈。
 
 ### 相关项目
@@ -88,6 +90,7 @@ Linux 中英字体，请下载 [&lt;中英字体&gt;](Fonts/Fonts%20link.md) 并
 > 点击对应徽标即可跳转到对应平台直接使用，推荐使用国产的TeXPage进行在线写作。
 
 > [!WARNING]
+>
 > 1. 在线写作平台默认使用 $pdf\LaTeX$ 编译，您需要设置使用 $Xe\LaTeX$ 编译器。
 > 2. 由于上传模板需要审核周期，更新频繁时候建议 GitHub 下载
 
@@ -140,7 +143,9 @@ Linux 中英字体，请下载 [&lt;中英字体&gt;](Fonts/Fonts%20link.md) 并
 \end{table}
 ```
 
-Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_nan/tabularray-doc-zh-cn](https://gitee.com/nwafu_nan/tabularray-doc-zh-cn)
+> [!TIP]
+>
+> Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_nan/tabularray-doc-zh-cn](https://gitee.com/nwafu_nan/tabularray-doc-zh-cn)
 
 ### 论文封面
 
@@ -163,7 +168,9 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 | \StudentNumber{#1}     | 密级         | 无       | 硕博     |
 | \Date{#1}              | 论文答辩日期 | 无       | 通用     |
 
-针对符号说明的一些 Bug 见：[Issues28](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues/28#issue-2277705516)
+> [!TIP]
+>
+> 针对符号说明的一些 Bug 见：[Issues28](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues/28#issue-2277705516)
 
 ### 中英文摘要
 
@@ -198,6 +205,7 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 在 `\ThesisBibResource` 命令中输入参考文献源文件位置。
 
 > [!IMPORTANT]
+>
 > 1. 使用该模板时，`biblatex` 和 `biblatex-gb7714-2015` 宏包均要更新到最新版本，否则会报错。
 > 2. 一般直接从网页获取到的参考文献为bibtex类型，bibtex 类型的 bib 文件可通过 [pandoc](https://pandoc.org/) 转成 biblatex 类型 bib 文件，转换命令：`pandoc -f bibtex -t biblatex -o output.bib input.bib`
 
@@ -269,9 +277,7 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 ## 软件许可证
 
-桂林电子科技大学校徽图片的版权归桂林电子科技大学所有。
-
-其他部分使用 [LPPL](https://www.latex-project.org/lppl/) 授权。
+桂林电子科技大学校徽图片的版权归桂林电子科技大学所有。其他部分使用 [LPPL](https://www.latex-project.org/lppl/) 授权。
 
 ### Star History
 
