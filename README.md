@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-12-03 15:44:36 +0800
- * LastEditTime : 2025-01-23 18:53:31 +0800
+ * LastEditTime : 2025-01-23 20:10:44 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : 
@@ -71,6 +71,7 @@ Linux 英文字体采用 STIX 字体，与 `Times New Roman` 稍有细微差别�
 
 Linux 中英字体，请下载 [&lt;中英字体&gt;](Fonts/Fonts%20link.md) 并将下载后的字体文件放到 `Fonts` 文件夹下!
 
+> [!TIP]
 > 一般在线写作平台的 $\LaTeX$ 编译均是放在 Linux 系统中进行编译，因此需要按照上述说明配置好字体
 
 ### 编译说明
@@ -83,12 +84,12 @@ Linux 中英字体，请下载 [&lt;中英字体&gt;](Fonts/Fonts%20link.md) 并
 
 [![TeXPage](https://img.shields.io/badge/TeXPage-GTL-495A80.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818) [![Overleaf](https://img.shields.io/badge/Overleaf-GTL-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp)
 
+> [!NOTE]
 > 点击对应徽标即可跳转到对应平台直接使用，推荐使用国产的TeXPage进行在线写作。
 
-** `<font color="#d83931">` 注意 `</font>`**：
-
-1. 在线写作平台默认使用 $pdf\LaTeX$ 编译，您需要设置使用 $Xe\LaTeX$ 编译器。
-2. 由于上传模板需要审核周期，更新频繁时候建议 GitHub下载
+> [!WARNING]
+> 1. 在线写作平台默认使用 $pdf\LaTeX$ 编译，您需要设置使用 $Xe\LaTeX$ 编译器。
+> 2. 由于上传模板需要审核周期，更新频繁时候建议 GitHub 下载
 
 ### 本地部署写作
 
@@ -110,6 +111,7 @@ Linux 中英字体，请下载 [&lt;中英字体&gt;](Fonts/Fonts%20link.md) 并
 | ojmaster | 在职硕士 |
 | ptomaster | 非全专硕 |
 
+> [!TIP]
 > 根据学校要求打印版硕士学位论文封面桂电 logo 为黑色(其他的硕博的打印版桂电 logo 也都顺便设置成黑色的)，对与其他几种封面的相关要求可以在[**issues**](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues)中提出并补充。
 > 启用盲审样式时，封面自动替换为对应的盲审封面、致谢命令失效、攻读学位期间取得成果自动替换为 Accomplish-bversion.tex 文件中的内容
 
@@ -191,18 +193,22 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 ### 参考文献
 
-参考文献使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出参考文献时，导出类型要选择 `biblatex`。在 `\ThesisBibResource` 命令中输入参考文献源文件位置。
+参考文献使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出参考文献时，导出类型要选择 `biblatex`。
 
-** `<font color="#d83931">` 注意 `</font>` **：
+在 `\ThesisBibResource` 命令中输入参考文献源文件位置。
 
-1. 使用该模板时，`biblatex` 和 `biblatex-gb7714-2015` 宏包均要更新到最新版本，否则会报错。
-2. 一般直接从网页获取到的参考文献为bibtex类型，bibtex 类型的 bib 文件可通过 [pandoc](https://pandoc.org/) 转成 biblatex 类型 bib 文件，转换命令：`pandoc -f bibtex -t biblatex -o output.bib input.bib`
+> [!IMPORTANT]
+> 1. 使用该模板时，`biblatex` 和 `biblatex-gb7714-2015` 宏包均要更新到最新版本，否则会报错。
+> 2. 一般直接从网页获取到的参考文献为bibtex类型，bibtex 类型的 bib 文件可通过 [pandoc](https://pandoc.org/) 转成 biblatex 类型 bib 文件，转换命令：`pandoc -f bibtex -t biblatex -o output.bib input.bib`
 
 ### 攻读学位期间取得成果
 
-攻读学位期间取得成果使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出攻读学位期间取得成果时，导出类型要选择 `biblatex`。在 `\ThesisAchResource` 命令中输入成果源文件位置。
+攻读学位期间取得成果使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出攻读学位期间取得成果时，导出类型要选择 `biblatex`。
 
-[攻读学位期间取得成果使用教程](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/wiki/%E6%94%BB%E8%AF%BB%E5%AD%A6%E4%BD%8D%E6%9C%9F%E9%97%B4%E5%8F%96%E5%BE%97%E6%88%90%E6%9E%9C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B)
+在 `\ThesisAchResource` 命令中输入成果源文件位置。
+
+> [!IMPORTANT]
+> [攻读学位期间取得成果部分的说明](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/wiki/%E6%94%BB%E8%AF%BB%E5%AD%A6%E4%BD%8D%E6%9C%9F%E9%97%B4%E5%8F%96%E5%BE%97%E6%88%90%E6%9E%9C%E9%83%A8%E5%88%86%E7%9A%84%E8%AF%B4%E6%98%8E)
 
 ## 写作工具
 
