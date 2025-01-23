@@ -23,7 +23,7 @@
  *  -----------------------------------------------------------------------
  -->
 
-# GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 <img src="https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">
+# GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 `<img src="https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">`
 
 [![GitHub](https://img.shields.io/badge/Github-GTL-000000.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX) [![TeXPage](https://img.shields.io/badge/TeXPage-GTL-495A80.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818) [![Overleaf](https://img.shields.io/badge/Overleaf-GTL-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp) [![License](https://img.shields.io/badge/license-LPPL-aff)](https://www.latex-project.org/lppl/) ![OS](https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg) [![GitHub release](https://img.shields.io/github/release/YanMing-lxb/GUET_Thesis_LaTeX.svg?color=blueviolet&label=version&style=popout)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/releases/latest) [![Last Commit](https://img.shields.io/github/last-commit/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/zipball/master) [![Issues](https://img.shields.io/github/issues/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues) [![Github Action](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/workflows/Build%20Tests/badge.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/actions) [![Downloads](https://img.shields.io/github/downloads/YanMing-lxb/GUET_Thesis_LaTeX/total.svg?color=blue&style=popout)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/releases/latest) ![GitHub repo size](https://img.shields.io/github/repo-size/YanMing-lxb/GUET_Thesis_LaTeX)
 
@@ -57,12 +57,6 @@ git clone https://github.com/YanMing-lxb/GUET_Thesis_LaTeX.git
 
 > 模版更新频繁，且只维护最新版。如有问题，可以先尝试升级模版，而后进行反馈。
 
-### 字体说明
-
-Linux 英文字体采用 STIX 字体，与 `Times New Roman` 稍有细微差别，对比见 [&lt;字体效果对比&gt;](http://www.identifont.com/differences?first=Nimbus+Roman&second=Times+New+Roman&q=Go)，应该不影响使用。
-
-Linux 中英字体，请下载 [&lt;中英字体&gt;](Fonts/Fonts%20link.md) 并将下载后的字体文件放到 `Fonts` 文件夹下!
-
 ### 相关项目
 
 桂林电子科技大学 Beamer 模板：[GUET Beamer Theme](https://github.com/YanMing-lxb/GUET_Beamer)
@@ -70,6 +64,18 @@ Linux 中英字体，请下载 [&lt;中英字体&gt;](Fonts/Fonts%20link.md) 并
 ## 使用方法
 
 有两种使用方法：一是使用在线平台，在网页中进行在线写作；二是在本地部署 $\LaTeX$ 环境, 在VSCove中进行写作。请根据自己的需求酌情选择。
+
+### 字体说明
+
+Linux 英文字体采用 STIX 字体，与 `Times New Roman` 稍有细微差别，对比见 [&lt;字体效果对比&gt;](http://www.identifont.com/differences?first=Nimbus+Roman&second=Times+New+Roman&q=Go)，应该不影响使用。
+
+Linux 中英字体，请下载 [&lt;中英字体&gt;](Fonts/Fonts%20link.md) 并将下载后的字体文件放到 `Fonts` 文件夹下!
+
+> 一般在线写作平台的 $\LaTeX$ 编译均是放在 Linux 系统中进行编译，因此需要按照上述说明配置好字体
+
+### 编译说明
+
+如果不熟悉 $\LaTeX$ 编译相关内容，请同学仔细阅读 [LaTeX 编译相关的说明](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/wiki/LaTeX-%E7%BC%96%E8%AF%91%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AF%B4%E6%98%8E)
 
 ### 在线写作
 
@@ -79,36 +85,15 @@ Linux 中英字体，请下载 [&lt;中英字体&gt;](Fonts/Fonts%20link.md) 并
 
 > 点击对应徽标即可跳转到对应平台直接使用，推荐使用国产的TeXPage进行在线写作。
 
-** <font color="#d83931"> 注意 </font>**：
+** `<font color="#d83931">` 注意 `</font>`**：
 
 1. 在线写作平台默认使用 $pdf\LaTeX$ 编译，您需要设置使用 $Xe\LaTeX$ 编译器。
 2. 由于上传模板需要审核周期，更新频繁时候建议 GitHub下载
 
 ### 本地部署写作
 
-#### $\LaTeX$ 环境部署
-
 1. 编译该模板请使用 $Xe\LaTeX$ 引擎。
-2. 本地部署 $\LaTeX$ 环境请转到[YM VSCode Configurations for LaTeX](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX)项目
-
-#### 本地编译 PyTeXMK（可选项）
-
-[PyTeXMK](https://github.com/YanMing-lxb/PyTeXMK) 是作者开发的一个基于 Python 的 $\LaTeX$ 编译工具，能够一定限度的提高编译速度，并显示编译时长统计，但此处内容需要依赖于Python环境，请确保您的电脑中已经安装了Python3.8及以上版本的Python环境。
-
-1. 安装方法：
-
-```
-pip install pytexmk
-```
-
-2. 使用方法：
-   终端项目路径下输入：
-
-```
-pytexmk
-```
-
-具体内容请看[项目主页](https://github.com/YanMing-lxb/PyTeXMK)。
+2. 本地部署 $\LaTeX$ 环境请转到 [YM VSCode Configurations for LaTeX](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX) 项目
 
 ## 模板说明
 
@@ -208,7 +193,7 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 参考文献使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出参考文献时，导出类型要选择 `biblatex`。在 `\ThesisBibResource` 命令中输入参考文献源文件位置。
 
-** <font color="#d83931"> 注意 </font> **：
+** `<font color="#d83931">` 注意 `</font>` **：
 
 1. 使用该模板时，`biblatex` 和 `biblatex-gb7714-2015` 宏包均要更新到最新版本，否则会报错。
 2. 一般直接从网页获取到的参考文献为bibtex类型，bibtex 类型的 bib 文件可通过 [pandoc](https://pandoc.org/) 转成 biblatex 类型 bib 文件，转换命令：`pandoc -f bibtex -t biblatex -o output.bib input.bib`
@@ -217,7 +202,7 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 攻读学位期间取得成果使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出攻读学位期间取得成果时，导出类型要选择 `biblatex`。在 `\ThesisAchResource` 命令中输入成果源文件位置。
 
-[详细教程](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/wiki/%E6%94%BB%E8%AF%BB%E5%AD%A6%E4%BD%8D%E6%9C%9F%E9%97%B4%E5%8F%96%E5%BE%97%E6%88%90%E6%9E%9C%E7%9A%84%E6%95%B4%E7%90%86)
+[攻读学位期间取得成果使用教程](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/wiki/%E6%94%BB%E8%AF%BB%E5%AD%A6%E4%BD%8D%E6%9C%9F%E9%97%B4%E5%8F%96%E5%BE%97%E6%88%90%E6%9E%9C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B)
 
 ## 写作工具
 
