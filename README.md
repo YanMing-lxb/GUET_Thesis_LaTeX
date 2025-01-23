@@ -39,7 +39,7 @@
 
 > [!NOTE]
 >
-> 因为作者已完成学业，如学校学位论文要求发生变化 (包括本科，研究生)，请及时提交 [ISSUE](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues) 向作者反馈。
+> 因为作者已完成学业离校，如学校学位论文要求发生变化 (包括本科，研究生)，请及时提交 [ISSUE](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues) 向作者反馈。
 
 ## 获取模板
 
