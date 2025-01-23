@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-12-03 15:44:36 +0800
- * LastEditTime : 2025-01-14 20:48:09 +0800
+ * LastEditTime : 2025-01-23 18:53:31 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : 
@@ -217,95 +217,7 @@ Tabularray表格排版宏包使用手册中文翻译: [https://gitee.com/nwafu_n
 
 攻读学位期间取得成果使用 `biblatex` 进行处理，因此在用 Zotero 等工具导出攻读学位期间取得成果时，导出类型要选择 `biblatex`。在 `\ThesisAchResource` 命令中输入成果源文件位置。
 
-#### 攻读学位期间取得成果的整理
-
-建议将成果保存到 Zotero 中，关于成果在 Zotero 和 bib 文件中的类型设置如下表所示：
-
-| 成果类型     | Zotero 中的类型 | bib 文件中的类型 |
-| :----------- | :-------------: | :--------------: |
-| 参与项目     |      报告      |      report      |
-| 发表论文     |    期刊文章    |     article     |
-| 发明专利     |      专利      |      patent      |
-| 软件著作权   |      软件      |     software     |
-| 科研竞赛获奖 |      文档      |       misc       |
-
-在 Zotero 的 `其他` 项或 bib 文件的 `annotation` 中输入附加信息，如期刊论文分区，作者排名，科研竞赛排名等。
-
-具体操作示例如下：
-
-![建议成果整理](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/e07bac11-5e58-4f6c-a9ba-8f78bb2f5279)
-![期刊论文示例|50](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/356b856d-196e-40be-bc7d-a51d549f304b) ![专利示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/88d679ae-d665-4f86-af7c-ca530dc7a8c0)
-![软著示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/e17c0e31-6b32-417e-bd44-0eef553e01c4) ![参与项目示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/9cd91bb5-1a72-41a3-8a7b-184de9b87737)
-![比赛获奖示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/d4874ab6-7de5-4ef0-9585-10024cc5790d) ![导出示例](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/19962eb7-1a29-4e94-916f-519b2167f299)
-
-**最后导出为 `Accomplishs.bib` 文件**
-
-#### 攻读学位期间取得成果中突出显示作者和导师
-
-**作者姓名加粗，导师姓名星标**
-
-1. 手动在Accomplishs.bib文件的条目中添加 `AUTHOR+an` 字段，如：`AUTHOR+an = {2=thesisauthor; 4=corresponding}` ，其中 `2=thesisauthor` 表示作者为第二作者，`4=corresponding` 表示导师为第四作者。
-   如：
-
-```bibtex
-@article{Li.Li.ea_2023,
-  title = {Here is the name of the paper},
-  author = {Li, XX and Yan, Ming and Huang, XX and Zheng, XX},
-  date = {2023-05-05},
-  journaltitle = {Applied Thermal Engineering},
-  shortjournal = {Appl. Therm. Eng.},
-  volume = {225},
-  pages = {120167},
-  issn = {1359-4311},
-  doi = {10.1016/j.applthermaleng},
-  language = {en},
-  annotation = {TOP 期刊，中科院一区，IF：6.465，共同一作},
-  AUTHOR+an = {2=thesisauthor;4=corresponding}
-}
-```
-
-2. 利用 `Better BibTex for Zotero` 自动在导出的bib文件中添加 `AUTHOR+an` 字段。
-
-将以下代码粘贴到 `Better BibTex for Zotero` 设置中的 `postscript` 选项中。
-
-![image](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/d4e2ab77-3bfe-4b8a-9b92-cd4db272b54b)
-
-`Better BibTex for Zotero` 自动添加 `AUTHOR+an` 字段代码：
-
-```JavaScript
-if (Translator.BetterBibTeX && this.has.title) {
-   this.add({name: 'issue_date', replace: true, value:item.date})
-   this.add({name: 'issuingAuthority', replace: true, value:item.issuingAuthority})
-}
-
-let authorFirstName1 = "焱";
-let authorLastName1 = "铭";
-let authorName1 = "焱铭";
-let authorFirstName2 = "Ming";
-let authorLastName2 = "Yan";
-let authorName2 = "Ming Yan";
-
-let correspondingFirstName1 = "李";
-let correspondingLastName1 = "XX";
-let correspondingName1 = "李XX";
-let correspondingFirstName2 = "XX";
-let correspondingLastName2 = "Li";
-let correspondingName2 = "XX Li";
-
-if (item.creators.find(a => (a.firstName === authorFirstName1 && a.lastName === authorLastName1) || (a.firstName === authorLastName1 && a.lastName === authorFirstName1) || a.lastName === authorName1 || a.firstName === authorName1 || (a.firstName === authorFirstName2 && a.lastName === authorLastName2) || (a.firstName === authorLastName2 && a.lastName === authorFirstName2) || a.lastName === authorName2 || a.firstName === authorName2)) {
-  let rank1 = item.creators.findIndex(a => (a.firstName === authorFirstName1 && a.lastName === authorLastName1) || (a.firstName === authorLastName1 && a.lastName === authorFirstName1) || a.lastName === authorName1 || a.firstName === authorName1 || (a.firstName === authorFirstName2 && a.lastName === authorLastName2) || (a.firstName === authorLastName2 && a.lastName === authorFirstName2) || a.lastName === authorName2 || a.firstName === authorName2) + 1;
-  if (item.creators.find(a => (a.firstName === correspondingFirstName1 && a.lastName === correspondingLastName1) || (a.firstName === correspondingLastName1 && a.lastName === correspondingFirstName1) || a.lastName === correspondingName1 || a.firstName === correspondingName1 || (a.firstName === correspondingFirstName2 && a.lastName === correspondingLastName2) || (a.firstName === correspondingLastName2 && a.lastName === correspondingFirstName2) || a.lastName === correspondingName2 || a.firstName === correspondingName2)) {
-    let rank2 = item.creators.findIndex(a => (a.firstName === correspondingFirstName1 && a.lastName === correspondingLastName1) || (a.firstName === correspondingLastName1 && a.lastName === correspondingFirstName1) || a.lastName === correspondingName1 || a.firstName === correspondingName1 || (a.firstName === correspondingFirstName2 && a.lastName === correspondingLastName2) || (a.firstName === correspondingLastName2 && a.lastName === correspondingFirstName2) || a.lastName === correspondingName2 || a.firstName === correspondingName2) + 1;
-    this.add({name: 'AUTHOR+an', replace: true, value:rank1 + '=thesisauthor;' + rank2 + '=corresponding'});
-  } else {
-    this.add({name: 'AUTHOR+an', replace: true, value:rank1 + '=thesisauthor'});
-  }
-}
-```
-
-** <font color="#d83931"> 注意 </font> **：要将代码中的作者姓名和导师姓名替换成自己的姓名和导师姓名。
-
-> 这样每次导出 bib 文件时，就会为每一个作者里面有你的条目中自动添加 `AUTHOR+an` 字段，并根据你和导师的排名位置，自动添加相应的 `thesisauthor` 和 `corresponding` 信息。
+[详细教程](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/wiki/%E6%94%BB%E8%AF%BB%E5%AD%A6%E4%BD%8D%E6%9C%9F%E9%97%B4%E5%8F%96%E5%BE%97%E6%88%90%E6%9E%9C%E7%9A%84%E6%95%B4%E7%90%86)
 
 ## 写作工具
 
