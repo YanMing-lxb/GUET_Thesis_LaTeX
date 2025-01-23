@@ -42,9 +42,11 @@ sudo apt install wget
 运行 `download_fonts.sh` 脚本，请执行以下命令（注意终端路径为项目路径）：
 
 ```bash
+sed -i 's/\r$//' ./Fonts/download_fonts.sh
 chmod +x ./Fonts/download_fonts.sh
 ./Fonts/download_fonts.sh
 ```
+
 运行结束即可完成字体的下载。
 
 ### 中文字体手动下载
