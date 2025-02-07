@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-12-03 15:44:36 +0800
- * LastEditTime : 2025-01-23 20:45:47 +0800
+ * LastEditTime : 2025-02-07 21:04:55 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : 
@@ -75,7 +75,7 @@ git clone https://github.com/YanMing-lxb/GUET_Thesis_LaTeX.git
 
 Linux 英文字体采用 STIX 字体，与 `Times New Roman` 稍有细微差别，对比见 [&lt;字体效果对比&gt;](http://www.identifont.com/differences?first=Nimbus+Roman&second=Times+New+Roman&q=Go)，应该不影响使用。
 
-Linux 中英字体，请下载 [&lt;中英字体&gt;](Fonts/Fonts%20link.md) 并将下载后的字体文件放到 `Fonts` 文件夹下!
+Linux 中文字体，请下载 [&lt;中文字体&gt;](Fonts/Fonts%20link.md) 并将下载后的字体文件放到 `Fonts` 文件夹下!
 
 > [!TIP]
 > 一般在线写作平台的 $\LaTeX$ 编译均是放在 Linux 系统中进行编译，因此需要按照上述说明配置好字体

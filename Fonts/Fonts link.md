@@ -19,7 +19,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2025-01-13 22:46:40 +0800
- * LastEditTime : 2025-01-14 20:20:12 +0800
+ * LastEditTime : 2025-02-07 20:58:21 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/Fonts/Fonts link.md
  * Description  : 
@@ -42,11 +42,9 @@ sudo apt install wget
 运行 `download_fonts.sh` 脚本，请执行以下命令（注意终端路径为项目路径）：
 
 ```bash
-sed -i 's/\r$//' ./Fonts/download_fonts.sh
 chmod +x ./Fonts/download_fonts.sh
 ./Fonts/download_fonts.sh
 ```
-
 运行结束即可完成字体的下载。
 
 ### 中文字体手动下载
@@ -58,17 +56,5 @@ chmod +x ./Fonts/download_fonts.sh
 [书宋简体](https://github.com/jaywcjlove/free-font/raw/refs/heads/main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E6%A5%B7%E4%BD%93%E7%AE%80%E4%BD%93.ttf)
 
 也可以去 [中文字体](https://github.com/jaywcjlove/free-font/tree/main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97) 下载对应的字体
-
-### 英文字体手动下载
-
-[STIXTwoText-Regular](https://github.com/stipub/stixfonts/raw/refs/heads/master/fonts/static_ttf/STIXTwoText-Regular.ttf)
-
-[STIXTwoText-Bold](https://github.com/stipub/stixfonts/raw/refs/heads/master/fonts/static_ttf/STIXTwoText-Bold.ttf)
-
-[STIXTwoText-Italic](https://github.com/stipub/stixfonts/raw/refs/heads/master/fonts/static_ttf/STIXTwoText-Italic.ttf)
-
-[STIXTwoText-BoldItalic](https://github.com/stipub/stixfonts/raw/refs/heads/master/fonts/static_ttf/STIXTwoText-BoldItalic.ttf)
-
-也可以去 [STIXFonts](https://github.com/stipub/stixfonts/tree/master/fonts/static_ttf) 下载对应的字体
 
 **字体下载完成后请放在 Fonts 文件夹下**
