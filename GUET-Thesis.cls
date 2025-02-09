@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2025-02-07 20:56:59 +0800
+% LastEditTime : 2025-02-09 21:48:40 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  :
@@ -104,9 +104,8 @@
 % \createprocedurecommand{procedure}{}{}{}				% 解决cryptocode宏包中和原有默认center环境的\procedure命令冲突
 % \createpseudocodeblock{pseudocodeblock}{}{}{}{}		% 解决cryptocode宏包中和原有默认center环境的\pseudocodeblock命令冲突
 % \createprocedureblock{procedureblock}{}{}{}{}			% 解决cryptocode宏包中和原有默认center环境的\procedureblock命令冲突
-\RequirePackage{stix2}									% 数学字体和英文字体采用stix2字体（类Times字体）
+\RequirePackage{stix2}									% 数学字体和英文字体采用stix2字体（类Times字体）已包含 amssymb 宏包, 并且需要同时加载mathspec，否则部分符号会出现错误
 \RequirePackage{amsmath}                              	% 提供数学公式环境和命令
-\RequirePackage{amssymb}                              	% 提供额外的数学符号
 \RequirePackage{amsthm}                               	% 用于定义和排版定理、引理等数学定理结构
 \RequirePackage{mathspec}                             	% 用于在数学环境中选择自定义的字体
 \RequirePackage{stmaryrd}                             	% 映入符号的引入\mapsfrom, 秘密分享份额符号\llbracket,\rrbracket无法在符号说明引入
