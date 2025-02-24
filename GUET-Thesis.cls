@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2025-02-17 13:40:54 +0800
+% LastEditTime : 2025-02-24 22:57:35 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  :
@@ -120,6 +120,10 @@
 
 % ===============字体相关宏包===============
 \RequirePackage{xeCJK}                                	% 用于设置全局的中日韩文字体
+\xeCJKsetup{
+  CJKglue = {\hskip 0.08em plus 0.02em minus 0.02em},   % 中文字间距调整
+  CJKecglue = {\hskip 0.08em plus 0.02em minus 0.02em}  % 中英文间间距调整
+}
 \RequirePackage{xeCJKfntef}                           	% 用于提供更多的字体效果设置选项，兼容ulem宏包
 \RequirePackage{zhnumber}                             	% 用于将数字转换为大写中文数字的表示
 \RequirePackage{pifont}                               	% 提供了许多符号和图标的命令
