@@ -19,7 +19,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-03-02 16:25:50 +0800
+% LastEditTime : 2025-03-02 19:52:13 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : 
@@ -1388,6 +1388,7 @@
 \crefname{agreement}{协议}{协议}
 
 % ===============图表字体设置===============
+\AtBeginEnvironment{table}{\small}  						 % 表格字体小五
 \AtBeginEnvironment{tabular}{\small}                         % 表格字体小五
 \AtBeginEnvironment{tabular*}{\small}                        % 表格字体小五
 \AtBeginEnvironment{longtable}{\small}                       % 跨页表格字体小五
@@ -1409,9 +1410,10 @@
 % =============== 自定义三线表格式 ===============
 \NewTblrEnviron{threetab}  % 自定义三线表环境 threetab
 \SetTblrInner[threetab]{
-hline{1,Z} = {-}{0.9pt}, % 设置头线和尾线为1.5pt
+		hline{1,Z} = {-}{0.9pt}, % 设置头线和尾线为1.5pt
 		hline{2} = {-}{0.5pt},   % 设置中线 0.5pt
-		font=\small, % 设置字体大小为 small
+		font=\small\selectfont,  % 设置表中所有文字大小为 \small，\selectfont显式声明字体切换
+		row{1} = {font=\small\bfseries} % 表头加粗
 	}
 
 % =============== 自定义列表环境 ===============
