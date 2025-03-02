@@ -16,14 +16,14 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-12-03 15:44:36 +0800
- * LastEditTime : 2025-02-07 21:04:55 +0800
+ * LastEditTime : 2025-03-02 16:59:02 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/README.md
  * Description  : 
  *  -----------------------------------------------------------------------
  -->
 
-# GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 `<img src="https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">`
+# GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 <img src="https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">
 
 [![GitHub](https://img.shields.io/badge/Github-GTL-000000.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX) [![TeXPage](https://img.shields.io/badge/TeXPage-GTL-495A80.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818) [![Overleaf](https://img.shields.io/badge/Overleaf-GTL-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp) [![License](https://img.shields.io/badge/license-LPPL-aff)](https://www.latex-project.org/lppl/) ![OS](https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg) [![GitHub release](https://img.shields.io/github/release/YanMing-lxb/GUET_Thesis_LaTeX.svg?color=blueviolet&label=version&style=popout)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/releases/latest) [![Last Commit](https://img.shields.io/github/last-commit/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/zipball/master) [![Issues](https://img.shields.io/github/issues/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues) [![Github Action](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/workflows/Build%20Tests/badge.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/actions) ![GitHub repo size](https://img.shields.io/github/repo-size/YanMing-lxb/GUET_Thesis_LaTeX)
 
