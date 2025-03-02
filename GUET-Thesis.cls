@@ -19,7 +19,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-03-02 15:22:11 +0800
+% LastEditTime : 2025-03-02 16:25:50 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : 
@@ -123,10 +123,10 @@
 
 % ===============字体相关宏包===============
 \RequirePackage{xeCJK}                                	% 用于设置全局的中日韩文字体
-\xeCJKsetup{
-  CJKglue = {\hskip 0.08em plus 0.02em minus 0.02em},   % 中文字间距调整
-  CJKecglue = {\hskip 0.08em plus 0.02em minus 0.02em}  % 中英文间间距调整
-}
+% \xeCJKsetup{ % 影响封面字体对齐，如果启用该命令 \quad 将不能代表两个汉字间距
+%   CJKglue = {\hskip 0.08em plus 0.02em minus 0.02em},   % 中文字间距调整
+%   CJKecglue = {\hskip 0.08em plus 0.02em minus 0.02em}  % 中英文间间距调整
+% }
 \RequirePackage{xeCJKfntef}                           	% 用于提供更多的字体效果设置选项，兼容ulem宏包
 \RequirePackage{zhnumber}                             	% 用于将数字转换为大写中文数字的表示
 \RequirePackage{pifont}                               	% 提供了许多符号和图标的命令
@@ -500,15 +500,15 @@
 		\centering
 		\ifpromaster{ % 专硕👇
 			\fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\BookTitle} \\
-			\fontsize{20pt}{26pt}\selectfont{\bfseries（全日制专业学位硕士）}\\
+			\fontsize{18pt}{26pt}\selectfont{\bfseries（全日制专业学位硕士）}\\
 		}
 		\ifojmaster{ % 在职学硕👇
 			\fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\BookTitle} \\
-			\fontsize{20pt}{26pt}\selectfont{\bfseries（在职研究生）}\\
+			\fontsize{18pt}{26pt}\selectfont{\bfseries（在职研究生）}\\
 		}
 		\ifptmaster{ % 非全专硕👇
 			\fontsize{26pt}{26pt}\selectfont{\heiti\bfseries\BookTitle} \\
-			\fontsize{20pt}{26pt}\selectfont{\bfseries（非全日制专业学位硕士）}\\
+			\fontsize{18pt}{26pt}\selectfont{\bfseries（非全日制专业学位硕士）}\\
 		}
 
 		\ifmaster{ % 学硕👇
@@ -606,7 +606,7 @@
 					}
 					题\qquad 目： & \expanded{\zh@TheTitle@tb{}} \\
 					专\qquad 业： & \TheMajor                    \\
-					研究方向：      & \TheResearchDirection
+					研究方向：     & \TheResearchDirection
 				\end{tblr}
 			\end{textblock}
 		}{ % 非盲审封面👇
@@ -622,12 +622,12 @@
 							hline{2-Z} = {2}{1.25pt},                                              % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
 							belowsep = {-11pt}                                                     % 单元格底线向上偏移11pt
 						}
-						研\quad 究\quad 生\quad 学\quad 号:                           & \TheStudentNumber                 \\
+						研\quad 究\quad 生\quad 学\quad 号:                          & \TheStudentNumber                 \\
 						研\quad 究\quad 生\quad 姓\quad 名:                           & \TheAuthor                        \\
-						指导教师姓名、职称:                                               & \TheAdvisor \enspace \TheProtitle \\
-						申\enspace 请专业学位类别\enspace :                              & \TheDegreeCategories              \\
+						指导教师姓名、职称:                                            & \TheAdvisor \enspace \TheProtitle \\
+						申\enspace 请专业学位类别\enspace :                            & \TheDegreeCategories              \\
 						专\hspace{1.5em}业\hspace{1.5em}名\hspace{1.5em}称\enspace : & \TheMajor                         \\
-						论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:        & \TheDate
+						论\enspace 文\enspace 答\quad 辩\enspace 日\enspace 期:       & \TheDate
 					\end{tblr}
 				}{ % 博士、学硕、在职硕士的封面信息 👇
 					\begin{tblr}
@@ -1842,8 +1842,8 @@ hline{1,Z} = {-}{0.9pt}, % 设置头线和尾线为1.5pt
 
 
 	\chapter*{附\quad 录}
-	\addcontentsline{toc}{chapter}{附录}
-	\markboth{附录}{附录}
+	\addcontentsline{toc}{chapter}{附\quad 录}
+	\markboth{附\quad 录}{附\quad 录}
 
 	\fancyhf{}
 	\fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 附\quad 录}
