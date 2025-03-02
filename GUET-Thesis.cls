@@ -1,5 +1,7 @@
 %
 %  =======================================================================
+%  ·······································································
+%  ·······································································
 %  ····Y88b···d88P················888b·····d888·d8b·······················
 %  ·····Y88b·d88P·················8888b···d8888·Y8P·······················
 %  ······Y88o88P··················88888b·d88888···························
@@ -11,15 +13,16 @@
 %  ·······························································888·····
 %  ··························································Y8b·d88P·····
 %  ···························································"Y88P"······
+%  ·······································································
 %  =======================================================================
 % 
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
-% Date         : 2024-04-17 20:49:49 +0800
-% LastEditTime : 2025-02-24 22:57:35 +0800
+% Date         : 2025-02-24 22:56:46 +0800
+% LastEditTime : 2025-03-02 15:22:11 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
-% Description  :
+% Description  : 
 %  -----------------------------------------------------------------------
 %
 
@@ -670,68 +673,71 @@
 % //////////////////////////////////////// 独创性（或创新性）声明设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 \newcommand{\OriginalityDeclaration}{
-	\newpage
-	\thispagestyle{empty} %没有页眉页脚，空白页
+	\ifbversion{ % 盲审不显示授权声明👇
+	}{ % 非盲审显示独创性声明👇
+		\newpage
+		\thispagestyle{empty} %没有页眉页脚，空白页
 
-	\begin{spacing}{1.5}
-		\pdfbookmark{独创性（或创新性）声明}{OriginalityDeclaration}
-		\ifbachelor{ % 本科独创性声名👇
-			\begin{center}
-				\fontsize{14pt}{21pt}\selectfont\bfseries 本科生毕业设计（论文）独创性声名
-			\end{center}
+		\begin{spacing}{1.5}
+			\pdfbookmark{独创性（或创新性）声明}{OriginalityDeclaration}
+			\ifbachelor{ % 本科独创性声名👇
+				\begin{center}
+					\fontsize{14pt}{21pt}\selectfont\bfseries 本科生毕业设计（论文）独创性声名
+				\end{center}
 
-			本人声明所呈交的毕业设计（论文）是我个人在指导老师指导下进行的工作及取得的成果。
-			尽我所知，除了文中特别加以标注和致谢中所罗列的内容以外，文中不包含其他人或其它机构已经发表或撰写过的成果；
-			也不包含为获得桂林电子科技大学或其他教育机构的学位或证书而使用过的材料。
-			其他同志对本工作的启发和所做的任何贡献均已在毕业设计（论文）中做了明确的说明并表示了谢意。
+				本人声明所呈交的毕业设计（论文）是我个人在指导老师指导下进行的工作及取得的成果。
+				尽我所知，除了文中特别加以标注和致谢中所罗列的内容以外，文中不包含其他人或其它机构已经发表或撰写过的成果；
+				也不包含为获得桂林电子科技大学或其他教育机构的学位或证书而使用过的材料。
+				其他同志对本工作的启发和所做的任何贡献均已在毕业设计（论文）中做了明确的说明并表示了谢意。
 
-			\vspace{0.5cm}毕业设计（论文）若有不实之处，本人承担一切相关责任。
+				\vspace{0.5cm}毕业设计（论文）若有不实之处，本人承担一切相关责任。
 
-			\vspace{1.5cm}本人签名：\hspace{7em}日期：\vspace{2cm}
+				\vspace{1.5cm}本人签名：\hspace{7em}日期：\vspace{2cm}
 
-			\begin{center}
-				\fontsize{14pt}{21pt}\selectfont\bfseries 本科生毕业设计（论文）使用授权说明
-			\end{center}
+				\begin{center}
+					\fontsize{14pt}{21pt}\selectfont\bfseries 本科生毕业设计（论文）使用授权说明
+				\end{center}
 
-			桂林电子科技大学有权保留并向国家有关部门或机构送交毕业设计说明书（论文）的复印件，允许毕业设计（论文）被查阅和借阅。
-			本人授权桂林电子科技大学可以公布毕业设计（论文）的全部或部分内容，可以采用影印、缩印或其它复制手段保存、汇编毕业设计（论文）
+				桂林电子科技大学有权保留并向国家有关部门或机构送交毕业设计说明书（论文）的复印件，允许毕业设计（论文）被查阅和借阅。
+				本人授权桂林电子科技大学可以公布毕业设计（论文）的全部或部分内容，可以采用影印、缩印或其它复制手段保存、汇编毕业设计（论文）
 
-			\vspace{1.5cm}本人签名：\hspace{7em}日期：
+				\vspace{1.5cm}本人签名：\hspace{7em}日期：
 
-			\vspace{1cm}导师签名：\hspace{7em}日期：
+				\vspace{1cm}导师签名：\hspace{7em}日期：
 
-		}{ % 硕博独创性声名👇
-			\begin{center}
-				\fontsize{14pt}{21pt}\selectfont\bfseries 独创性声明
-			\end{center}
+			}{ % 硕博独创性声名👇
+				\begin{center}
+					\fontsize{14pt}{21pt}\selectfont\bfseries 独创性声明
+				\end{center}
 
-			本人声明所呈交的论文是我个人在导师指导下进行的研究工作及取得的研究成果。
-			尽我所知，除了文中特别加以标注和致谢中所罗列的内容以外，论文中不包含其他人已经发表或撰写过的研究成果；
-			也不包含为获得桂林电子科技大学或其它教育机构的学位或证书而使用过的材料。
-			与我一同工作的同志对本研究所做的任何贡献均已在论文中做了明确的说明并表示了谢意。
+				本人声明所呈交的论文是我个人在导师指导下进行的研究工作及取得的研究成果。
+				尽我所知，除了文中特别加以标注和致谢中所罗列的内容以外，论文中不包含其他人已经发表或撰写过的研究成果；
+				也不包含为获得桂林电子科技大学或其它教育机构的学位或证书而使用过的材料。
+				与我一同工作的同志对本研究所做的任何贡献均已在论文中做了明确的说明并表示了谢意。
 
-			\vspace{0.5cm}申请学位论文与资料若有不实之处，本人承担一切相关责任。
+				\vspace{0.5cm}申请学位论文与资料若有不实之处，本人承担一切相关责任。
 
-			\vspace{0.5cm}本人签名：\hspace{7em}日期：
-			\vspace{1.5cm}
+				\vspace{0.5cm}本人签名：\hspace{7em}日期：
+				\vspace{1.5cm}
 
-			\begin{center}
-				\fontsize{14pt}{21pt}\selectfont\bfseries 关于论文使用授权的说明
-			\end{center}
+				\begin{center}
+					\fontsize{14pt}{21pt}\selectfont\bfseries 关于论文使用授权的说明
+				\end{center}
 
-			本人完全了解桂林电子科技大学有关保留和使用学位论文的规定，即：研究生在校攻读学位期间论文工作的知识产权单位属桂林电子科技大学。
-			本人保证毕业离校后，结合学位论文研究成果完成的论文、发明专利等成果，署名单位仍然为桂林电子科技大学。
-			学校有权保留送交论文的复印件，允许查阅和借阅论文；
-			学校可以公布论文的全部或部分内容，可以允许采用影印、缩印或其它复制手段保存论文。
-			（保密的论文在解密后遵守此规定）
+				本人完全了解桂林电子科技大学有关保留和使用学位论文的规定，即：研究生在校攻读学位期间论文工作的知识产权单位属桂林电子科技大学。
+				本人保证毕业离校后，结合学位论文研究成果完成的论文、发明专利等成果，署名单位仍然为桂林电子科技大学。
+				学校有权保留送交论文的复印件，允许查阅和借阅论文；
+				学校可以公布论文的全部或部分内容，可以允许采用影印、缩印或其它复制手段保存论文。
+				（保密的论文在解密后遵守此规定）
 
-			\vspace{1.9cm}本人签名：\hspace{7em}日期：
+				\vspace{1.9cm}本人签名：\hspace{7em}日期：
 
-			\vspace{0.5cm}导师签名：\hspace{7em}日期：
-		}
-	\end{spacing}
+				\vspace{0.5cm}导师签名：\hspace{7em}日期：
+			}
+		\end{spacing}
 
-	\ifpversion{\blankpage}{}
+		\ifpversion{\blankpage}{}
+	}
 }
 
 
@@ -1656,110 +1662,6 @@ hline{1,Z} = {-}{0.9pt}, % 设置头线和尾线为1.5pt
 	\zhnumber{\arabic{NunAchType}}、#1                                                     % 应用计数器，显示为：汉字数字、标题
 }
 
-\newcommand{\ThesisAchievement}{
-	\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}                                  % 只显示一级标题
-	\setcounter{section}{0}                                                                % section计数器清零 
-
-	\chapter*{攻读\DegreeName{}学位期间取得的成果}
-	\addcontentsline{toc}{chapter}{攻读\DegreeName{}学位期间取得的成果}
-	\fancyhf{}
-	\fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\DegreeName{}学位期间取得的成果}
-	\fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
-	\thispagestyle{fancy}
-
-	\defbibfilter{PublishPaper}{
-		type=article
-		or type=inproceedings
-		or type=book
-		or type=inbook
-	}                                                                                      % 定义筛选器用于打印期刊论文、会议、专著和专著部分篇章
-
-	\renewcommand{\bibfont}{\normalsize}                                                   % 设置参考文献字体小四
-	\begin{refsection}[\AchResource]
-		\nocite{*}
-		\settoggle{bbx:gbtype}{false}                                                      % 局部设置不输出文献类型和载体标识符
-		\settoggle{bbx:gbannote}{true}                                                     % 局部设置输出附加的annote/annotation信息
-		\settoggle{bbx:gbpub}{false}                                                       % 局部设置不输出出版信息
-		\begin{Achbox}
-			\printbibliography[heading=AchHeadStyle,type=report ,title=参与项目：]
-		\end{Achbox}
-	\end{refsection}
-	% \begin{refsection}[\AchResource]                                                     % 使用此项请注释下面的发表会议论文和发表期刊论文
-	%   \nocite{*}
-	%   \def\blx@maxbibnames{5}                                                            % 局部调整作者数量
-	%   \settoggle{bbx:gbannote}{true}
-	%   \begin{Achbox}
-	%     \printbibliography[heading=AchHeadStyle,filter=PublishPaper,title=发表论文：]
-	%   \end{Achbox}
-	% \end{refsection}
-	\begin{refsection}[\AchResource]
-		\nocite{*}
-		\def\blx@maxbibnames{5}                                                            % 局部调整作者数量
-		\settoggle{bbx:gbannote}{true}
-		\DeclareNameAlias{sortname}{family-given}                                          % 添加此行代码
-		\begin{Achbox}
-			\printbibliography[heading=AchHeadStyle,type=inproceedings,title=发表会议论文：]
-		\end{Achbox}
-	\end{refsection}
-	\begin{refsection}[\AchResource]
-		\nocite{*}
-		\def\blx@maxbibnames{5}                                                            % 局部调整作者数量，控制显示个数
-		\settoggle{bbx:gbannote}{true}
-		\begin{Achbox}
-			\printbibliography[heading=AchHeadStyle,type=article,title=发表期刊论文：]
-		\end{Achbox}
-	\end{refsection}
-	\begin{refsection}[\AchResource]
-		\nocite{*}
-		\def\blx@maxbibnames{5}
-		\settoggle{bbx:gbannote}{true}
-		\begin{Achbox}
-			\printbibliography[heading=AchHeadStyle,type=patent,title=发明专利：]
-		\end{Achbox}
-	\end{refsection}
-	\begin{refsection}[\AchResource]
-		\nocite{*}
-		\settoggle{bbx:gbannote}{true}
-		\begin{Achbox}
-			\printbibliography[heading=AchHeadStyle,type=software,title=软件著作权：]
-		\end{Achbox}
-	\end{refsection}
-	\begin{refsection}[\AchResource]
-		\nocite{*}
-		\settoggle{bbx:gbtype}{false}
-		\settoggle{bbx:gbannote}{true}
-		\begin{Achbox}
-			\printbibliography[heading=AchHeadStyle,type=misc,title=科研竞赛获奖：]
-		\end{Achbox}
-	\end{refsection}
-}
-
-
-% ====================隐藏参与项目、软件著作权和科研竞赛姓名====================
-% 这里需要和AchResource的顺序设置保持一致，如果使用PublishPaper而注释掉期刊和会议论文，则需要调整全部的refsection序号，按照需求调节即可
-\AtEveryBibitem{                              % 清除指定refsection环境中的作者姓名或页码
-	\ifnumequal{\value{refsection}}{1}        % 判断 当前refsection序号是否是为1（项目信息），因为项目参与者过多，不显示作者信息
-	{\clearname{author}}                      % 是则清除作者信息
-	{}                                        % 否则不执行操作
-	\ifnumequal{\value{refsection}}{2}        % 判断 当前refsection序号是否是为2（会议论文），因为会议论文不需要页码
-	{\clearfield{pages}}                      % 是则清除页码信息
-	{}                                        % 否则不执行操作
-	\ifnumequal{\value{refsection}}{5}        % 判断 当前refsection序号是否是为5（软著），可以自选，是否需要作者信息
-	{\clearname{author}}                      % 是则清除作者信息
-	{}                                        % 否则不执行操作
-}
-
-
-% ====================盲审版去作者信息设置==================== 
-\ifbversion{ % 盲审版则去掉取得成果的作者信息
-	\AtEveryBibitem{                          % 清除指定refsection环境中的作者姓名
-		\ifnumgreater{\value{refsection}}{1}  % 判断 当前refsection序号是否大于1
-		{\clearname{author}}                  % 是则清除作者信息
-		{}                                    % 否则不执行操作
-	}
-}{}
-
-
 % \newcommand{\ThesisAchievement}{
 %   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
 %   \setcounter{section}{0} % section计数器清零 
@@ -1778,6 +1680,106 @@ hline{1,Z} = {-}{0.9pt}, % 设置头线和尾线为1.5pt
 %   }
 
 % }
+
+\newcommand{\ThesisAchievement}{
+	\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}                                  % 只显示一级标题
+	\setcounter{section}{0}                                                                % section计数器清零 
+
+	\chapter*{攻读\DegreeName{}学位期间取得的成果}
+	\addcontentsline{toc}{chapter}{攻读\DegreeName{}学位期间取得的成果}
+	\fancyhf{}
+	\fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\DegreeName{}学位期间取得的成果}
+	\fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+	\thispagestyle{fancy}
+
+	\ifbversion{ % 盲审版学术成果👇
+		\normalsize  % 设置字体为小四
+		\input{Chapters/Accomplish-bversion.tex} % 学术成果文档位置
+	}{ % 非盲审版学术成果👇
+		
+		\defbibfilter{PublishPaper}{
+			type=article
+			or type=inproceedings
+			or type=book
+			or type=inbook
+		}                                                                                      % 定义筛选器用于打印期刊论文、会议、专著和专著部分篇章
+
+		\renewcommand{\bibfont}{\normalsize}                                                   % 设置参考文献字体小四
+		\begin{refsection}[\AchResource]
+			\nocite{*}
+			\settoggle{bbx:gbtype}{false}                                                      % 局部设置不输出文献类型和载体标识符
+			\settoggle{bbx:gbannote}{true}                                                     % 局部设置输出附加的annote/annotation信息
+			\settoggle{bbx:gbpub}{false}                                                       % 局部设置不输出出版信息
+			\begin{Achbox}
+				\printbibliography[heading=AchHeadStyle,type=report ,title=参与项目：]
+			\end{Achbox}
+		\end{refsection}
+		% \begin{refsection}[\AchResource]                                                     % 使用此项请注释下面的发表会议论文和发表期刊论文
+		%   \nocite{*}
+		%   \def\blx@maxbibnames{5}                                                            % 局部调整作者数量
+		%   \settoggle{bbx:gbannote}{true}
+		%   \begin{Achbox}
+		%     \printbibliography[heading=AchHeadStyle,filter=PublishPaper,title=发表论文：]
+		%   \end{Achbox}
+		% \end{refsection}
+		\begin{refsection}[\AchResource]
+			\nocite{*}
+			\def\blx@maxbibnames{5}                                                            % 局部调整作者数量
+			\settoggle{bbx:gbannote}{true}
+			\DeclareNameAlias{sortname}{family-given}                                          % 添加此行代码
+			\begin{Achbox}
+				\printbibliography[heading=AchHeadStyle,type=inproceedings,title=发表会议论文：]
+			\end{Achbox}
+		\end{refsection}
+		\begin{refsection}[\AchResource]
+			\nocite{*}
+			\def\blx@maxbibnames{5}                                                            % 局部调整作者数量，控制显示个数
+			\settoggle{bbx:gbannote}{true}
+			\begin{Achbox}
+				\printbibliography[heading=AchHeadStyle,type=article,title=发表期刊论文：]
+			\end{Achbox}
+		\end{refsection}
+		\begin{refsection}[\AchResource]
+			\nocite{*}
+			\def\blx@maxbibnames{5}
+			\settoggle{bbx:gbannote}{true}
+			\begin{Achbox}
+				\printbibliography[heading=AchHeadStyle,type=patent,title=发明专利：]
+			\end{Achbox}
+		\end{refsection}
+		\begin{refsection}[\AchResource]
+			\nocite{*}
+			\settoggle{bbx:gbannote}{true}
+			\begin{Achbox}
+				\printbibliography[heading=AchHeadStyle,type=software,title=软件著作权：]
+			\end{Achbox}
+		\end{refsection}
+		\begin{refsection}[\AchResource]
+			\nocite{*}
+			\settoggle{bbx:gbtype}{false}
+			\settoggle{bbx:gbannote}{true}
+			\begin{Achbox}
+				\printbibliography[heading=AchHeadStyle,type=misc,title=科研竞赛获奖：]
+			\end{Achbox}
+		\end{refsection}
+	}
+}
+
+
+
+% ====================隐藏参与项目、软件著作权和科研竞赛姓名====================
+% 这里需要和AchResource的顺序设置保持一致，如果使用PublishPaper而注释掉期刊和会议论文，则需要调整全部的refsection序号，按照需求调节即可
+\AtEveryBibitem{                              % 清除指定refsection环境中的作者姓名或页码
+	\ifnumequal{\value{refsection}}{1}        % 判断 当前refsection序号是否是为1（项目信息），因为项目参与者过多，不显示作者信息
+	{\clearname{author}}                      % 是则清除作者信息
+	{}                                        % 否则不执行操作
+	\ifnumequal{\value{refsection}}{2}        % 判断 当前refsection序号是否是为2（会议论文），因为会议论文不需要页码
+	{\clearfield{pages}}                      % 是则清除页码信息
+	{}                                        % 否则不执行操作
+	\ifnumequal{\value{refsection}}{5}        % 判断 当前refsection序号是否是为5（软著），可以自选，是否需要作者信息
+	{\clearname{author}}                      % 是则清除作者信息
+	{}                                        % 否则不执行操作
+}
 
 
 
@@ -1806,6 +1808,12 @@ hline{1,Z} = {-}{0.9pt}, % 设置头线和尾线为1.5pt
 	\renewcommand{\thelemma}{\alph{chapter}.\arabic{lemma}}
 	\renewcommand{\thedefinition}{\alph{chapter}.\arabic{definition}}
 	\renewcommand{\theexample}{\alph{chapter}.\arabic{example}}
+
+	\fancyhf{}
+	\fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 附\quad 录}
+	\fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+	\thispagestyle{fancy}
+	\normalsize                                             % 设置字体为小四
 }
 
 \newcommand{\ThesisSingleAppendix}
@@ -1836,6 +1844,12 @@ hline{1,Z} = {-}{0.9pt}, % 设置头线和尾线为1.5pt
 	\chapter*{附\quad 录}
 	\addcontentsline{toc}{chapter}{附录}
 	\markboth{附录}{附录}
+
+	\fancyhf{}
+	\fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 附\quad 录}
+	\fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
+	\thispagestyle{fancy}
+	\normalsize                                             % 设置字体为小四
 
 }
 
