@@ -23,7 +23,7 @@
  *  -----------------------------------------------------------------------
  -->
 
-# GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 <img src="https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">
+# GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 `<img src="https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">`
 
 [![GitHub](https://img.shields.io/badge/Github-GTL-000000.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX) [![TeXPage](https://img.shields.io/badge/TeXPage-GTL-495A80.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818) [![Overleaf](https://img.shields.io/badge/Overleaf-GTL-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp) [![License](https://img.shields.io/badge/license-LPPL-aff)](https://www.latex-project.org/lppl/) ![OS](https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg) [![GitHub release](https://img.shields.io/github/release/YanMing-lxb/GUET_Thesis_LaTeX.svg?color=blueviolet&label=version&style=popout)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/releases/latest) [![Last Commit](https://img.shields.io/github/last-commit/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/zipball/master) [![Issues](https://img.shields.io/github/issues/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues) [![Github Action](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/workflows/Build%20Tests/badge.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/actions) ![GitHub repo size](https://img.shields.io/github/repo-size/YanMing-lxb/GUET_Thesis_LaTeX)
 
@@ -220,7 +220,7 @@ Linux 中文字体，请下载 [&lt;中文字体&gt;](Fonts/Fonts%20link.md) 并
 在 `\ThesisAchResource` 命令中输入成果源文件位置。
 
 > [!IMPORTANT]
-> [攻读学位期间取得成果部分的说明](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/wiki/%E6%94%BB%E8%AF%BB%E5%AD%A6%E4%BD%8D%E6%9C%9F%E9%97%B4%E5%8F%96%E5%BE%97%E6%88%90%E6%9E%9C%E9%83%A8%E5%88%86%E7%9A%84%E8%AF%B4%E6%98%8E)
+> [攻读学位期间取得成果部分的说明(包括盲审版)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/wiki/%E6%94%BB%E8%AF%BB%E5%AD%A6%E4%BD%8D%E6%9C%9F%E9%97%B4%E5%8F%96%E5%BE%97%E6%88%90%E6%9E%9C%E9%83%A8%E5%88%86%E7%9A%84%E8%AF%B4%E6%98%8E(%E5%8C%85%E6%8B%AC%E7%9B%B2%E5%AE%A1%E7%89%88))
 
 ## 写作工具
 
