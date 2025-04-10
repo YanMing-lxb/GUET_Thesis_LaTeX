@@ -19,7 +19,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-04-10 20:35:58 +0800
+% LastEditTime : 2025-04-10 21:03:55 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : 
@@ -1209,10 +1209,10 @@
 
 % ===============标题段落设置=============== 
 \setcounter{secnumdepth}{3} % 设置章节深度 
-\titlespacing{\chapter}{0pt}{0pt}{18pt}
-\titlespacing{\section}{0pt}{18pt}{6pt}
-\titlespacing{\subsection}{0pt}{12pt}{6pt}
-\titlespacing{\subsubsection}{0pt}{12pt}{6pt}
+\titlespacing{\chapter}{0pt}{3pt}{28pt}
+\titlespacing{\section}{0pt}{20pt}{20pt}
+\titlespacing{\subsection}{0pt}{19pt}{19pt}
+\titlespacing{\subsubsection}{0pt}{13pt}{13pt}
 % 标题周距设置，\titlespacing*{标题命令}{左间距}{上间距}{下间距} [右间距]，用它可以设置每种层次标题与四周之间的距离。
 
 
