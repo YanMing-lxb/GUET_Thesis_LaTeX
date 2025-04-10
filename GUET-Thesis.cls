@@ -19,7 +19,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-04-10 21:03:55 +0800
+% LastEditTime : 2025-04-10 22:37:27 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : 
@@ -767,11 +767,11 @@
 	% 设置目录和标题内容
 	\ifbachelor{ % 本科摘要格式设置 👇
 		\renewcommand{\BachelorChapterFormat}{\centering}                 % 标题临时居中，因本科摘要标题要求居中
-		\chapter*{\texorpdfstring{\textbf{摘\quad 要}}{摘 要}}             % 本科摘要标题加粗
-		\renewcommand{\BachelorChapterFormat}{}                           % 标题恢复全局设置
+		\chapter*{\texorpdfstring{\textbf{摘\quad 要}}{摘要}}             % 本科摘要标题加粗
+		\renewcommand{\BachelorChapterFormat}{}                          % 标题恢复全局设置
 	}{ % 硕博摘要格式设置 👇
-		\chapter*{\texorpdfstring{\heiti 摘\quad 要}{摘 要}}               % 硕博摘要标题黑体
-		\addcontentsline{toc}{chapter}{\texorpdfstring{摘\quad 要}{摘 要}} % 设置在目录显示摘要
+		\chapter*{\texorpdfstring{\heiti 摘\quad 要}{摘要}}               % 硕博摘要标题黑体
+		\addcontentsline{toc}{chapter}{\texorpdfstring{摘\quad 要}{摘要}} % 设置在目录显示摘要
 	}
 
 	% 设置页眉页脚
@@ -973,7 +973,8 @@
 	% =========================插图索引页眉页脚设置=========================
 	\pretocmd{\listoffigures}
 	{  % 图目录是存放在.lof目录的文件下
-		\newpage     % 新建一页
+		\clearpage % 确保独立页
+		\phantomsection % 用于建立正确的PDF锚点！
 		\fancyhf{}   % 初始化页码页脚布局
 
 		\ifbachelor{ % 本科插图索引页眉页码设置 👇
@@ -1017,7 +1018,8 @@
 	% =========================插表索引页眉页脚设置=========================
 	\pretocmd{\listoftables}
 	{ % 表目录是存放在.lot目录的文件下
-		\newpage
+		\clearpage % 确保独立页
+		\phantomsection % 用于建立正确的PDF锚点！
 		\fancyhf{}
 
 		\ifbachelor{ % 本科插表索引页眉页码设置 👇
@@ -1592,8 +1594,8 @@
 
 \newcommand{\ThesisContent}
 {
-	\newpage
-	\clearpage{\thispagestyle{empty}\cleardoublepage}
+	\cleardoublepage
+	\thispagestyle{empty}
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 	\StandardHeader
 	\pagenumbering{arabic}
