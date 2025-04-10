@@ -19,7 +19,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-04-10 22:37:27 +0800
+% LastEditTime : 2025-04-11 00:01:08 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : 
@@ -574,19 +574,19 @@
 			\centering
 			\begin{tblr}
 				{
-					stretch=1.9,                                                         % 单元格文本行距拉伸系数
-					colspec = {c c},                                                     % 设置列对齐方式
-					column{1} = {4cm, font = \bfseries\fontsize{15pt}{15pt}\selectfont}, % 设置第一列宽度
-					column{2} = {9.6cm, font = \fontsize{14bp}{26bp}\selectfont},        % 设置第二列的宽度、字体大小粗细
-					hline{2-Z} = {2}{1pt},                                               % 从第二行到最后一行（Z）存在横线（hline{2-Z}），第二列横线宽1.5pt（{2}{1.5pt}）
-					belowsep = {-7pt}                                                    % 单元格底线向上偏移7pt
+					stretch=1.9,
+					colspec = {c c}, % 第一列分散对齐，第二列居中对齐
+					column{1} = {4cm, font=\bfseries\fontsize{15pt}{15pt}\selectfont}, % 关键点：添加 halign=j
+					column{2} = {9.6cm, font=\fontsize{15pt}{15pt}\selectfont},
+					hline{2-Z} = {2}{1pt},
+					belowsep = {-7pt}
 				}
-				学\hspace{0.36cm} \qquad \qquad 号:                                                  & \TheStudentNumber \\
-				姓\hspace{0.36cm} \qquad \qquad 名:                                                  & \TheAuthor        \\
-				学\hspace{0.36cm} \qquad \qquad 院:                                                  & \TheSchool        \\
-				专\quad \hspace{0.36cm} \qquad \quad 业:                                             & \TheMajor         \\
-				指\hspace{0.38cm} 导\hspace{0.38cm} 教\hspace{0.38cm} 师:                              & \TheAdvisor       \\
-				指\hspace{0.1pt} 导\hspace{0.1pt} 教\hspace{0.1pt} 师\hspace{0.1pt} 职\hspace{0.1pt} 称: & \TheProtitle
+				学\hfill 号:        & \TheStudentNumber \\
+				姓\hfill 名:        & \TheAuthor        \\
+				学\hfill 院:        & \TheSchool        \\
+				专\hfill 业:        & \TheMajor         \\
+				指\hfill 导\hfill 教\hfill 师:    & \TheAdvisor       \\
+				指\hfill 导\hfill 教\hfill 师\hfill 职\hfill 称:& \TheProtitle
 			\end{tblr}
 		\end{textblock}
 
@@ -926,21 +926,16 @@
 
 % =========================目录缩进设置=========================
 \ifbachelor{ % 本科目录格式 👇
-	\cftsetindents{chapter}{0pt}{20pt} % 一个中文空格约为5磅
-	\cftsetindents{section}{0pt}{25pt}
-	\cftsetindents{subsection}{0pt}{30pt}
+	\cftsetindents{chapter}{0pt}{20pt}
+	\cftsetindents{section}{2em}{25pt}
+	\cftsetindents{subsection}{4em}{30pt}
 	\cftsetindents{subsubsection}{0pt}{41pt}
 	% 本科目录字体大小
 	\renewcommand\cftchapfont{\fontsize{15pt}{15pt}\selectfont\heiti}
-	\renewcommand\cftsecfont{\fontsize{14pt}{14pt}\selectfont\heiti}
+	\renewcommand\cftsecfont{\fontsize{14pt}{14pt}\selectfont\songti}
 	\renewcommand\cftsubsecfont{\fontsize{14pt}{15pt}\selectfont\kaiti}
 }{ % 硕博目录格式 👇
 	\addtolength{\cftchapnumwidth}{25pt}
-
-	% 注释掉，目录中每个条目的缩进与编号和内容之间距离使用默认设置
-	% \cftsetindents{section}{21pt}{22pt}
-	% \cftsetindents{subsection}{44pt}{31pt}
-	% \cftsetindents{subsubsection}{76pt}{41pt}
 
 	\renewcommand{\cfttoctitlefont}{\fontsize{15pt}{15pt}\selectfont\heiti}
 	\renewcommand\cftchapfont{\songti}
@@ -1224,11 +1219,11 @@
 
 	\titleformat{\chapter}[block]
 	{\BachelorChapterFormat\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}} % 本科chapter格式
-	{\thechapter}{20pt}{}
+	{\thechapter}{1em}{}
 
 	\titleformat{\section}[block]
 	{\fontsize{14pt}{14pt}\selectfont\heiti} % \heiti 设置为粗体
-	{\thesection}{10pt}{}
+	{\thesection}{0.5em}{}
 
 	\titleformat{\subsection}[block]
 	{\fontsize{14pt}{14pt}\selectfont\kaiti}
@@ -1236,8 +1231,8 @@
 
 	\titleformat{\subsubsection}[block]
 	{\fontsize{12pt}{12pt}\selectfont}
-	{\thesubsubsection}{6pt}{}
-	\renewcommand{\thesubsubsection}{\arabic{subsubsection}.} % 四级标题格式设置为 1.
+	{\thesubsubsection}{0pt}{}
+	\renewcommand{\thesubsubsection}{（\arabic{subsubsection}）}
 }{ % 硕博标题格式设置 👇
 	\titleformat{\chapter}[block]
 	{\centering\fontsize{16pt}{16pt}\selectfont\heiti\thispagestyle{fancy}}
