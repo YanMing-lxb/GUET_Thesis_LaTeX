@@ -19,7 +19,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-04-10 20:12:07 +0800
+% LastEditTime : 2025-04-10 20:35:58 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : 
@@ -316,7 +316,7 @@
 		\setFont{\setCJKmonofont}{方正书宋简体.ttf}{FZ-ShuSong.ttf}  												% 使用宋体作为等宽字体
         \setFont{\newCJKfontfamily{\kaiti}}{方正楷体简体.ttf}{FZ-KaiTi.ttf}											% 设置楷体
         \setFont{\newCJKfontfamily{\heiti}}{方正黑体简体.ttf}{FZ-HeiTi.ttf}	
-		\setFont{\newCJKfontfamily{\heiti}}{方正黑体简体.ttf}{FZ-ShuSong.ttf}
+		\setFont{\newCJKfontfamily{\songti}}{方正书宋简体.ttf}{FZ-ShuSong.ttf}
 		\setmainfont[                                                                                         % 英文字体应用 stixfonts 字体 (Times New Roman 风格)
 					BoldFont=STIXTwoText-Bold.otf,                                                            % 粗体字体
 					ItalicFont=STIXTwoText-Italic.otf,                                                        % 斜体字体
