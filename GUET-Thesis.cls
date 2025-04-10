@@ -19,7 +19,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-03-26 22:49:46 +0800
+% LastEditTime : 2025-04-10 20:12:07 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : 
@@ -288,6 +288,7 @@
 	\setCJKmonofont[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}												  % 使用宋体作为等宽字体
 	\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                            % 设置楷体字体为KaiTi 
 	\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimHei}                                       % 设置黑体字体为SimHei
+	\newCJKfontfamily{\songti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}
 	\setmainfont{Times New Roman}                                                                             % 设置英文字体为Times New Roman
 \else
 	\ifmacosx
@@ -295,6 +296,7 @@
 		\setCJKmonofont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}										  % 使用宋体作为等宽字体
 		\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                        % 设置楷体字体为KaiTi
 		\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{STHeiti}                                  % 设置黑体字体为STHeiti
+		\newCJKfontfamily{\songti}[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}
 		\setmainfont{Times New Roman}                                                                         % 设置英文字体为Times New Roman
 	\else
         % 在其他平台设置中文和英文字体
@@ -314,6 +316,7 @@
 		\setFont{\setCJKmonofont}{方正书宋简体.ttf}{FZ-ShuSong.ttf}  												% 使用宋体作为等宽字体
         \setFont{\newCJKfontfamily{\kaiti}}{方正楷体简体.ttf}{FZ-KaiTi.ttf}											% 设置楷体
         \setFont{\newCJKfontfamily{\heiti}}{方正黑体简体.ttf}{FZ-HeiTi.ttf}	
+		\setFont{\newCJKfontfamily{\heiti}}{方正黑体简体.ttf}{FZ-ShuSong.ttf}
 		\setmainfont[                                                                                         % 英文字体应用 stixfonts 字体 (Times New Roman 风格)
 					BoldFont=STIXTwoText-Bold.otf,                                                            % 粗体字体
 					ItalicFont=STIXTwoText-Italic.otf,                                                        % 斜体字体
@@ -813,8 +816,8 @@
 		\chapter*{\bfseries\selectfont\heiti Abstract} % 本科英文摘要标题首字母大写
 		\renewcommand{\BachelorChapterFormat}{}
 	}{ % 硕博英文摘要格式设置 👇
-		\chapter*{\bfseries ABSTRACT}
-		\addcontentsline{toc}{chapter}{\bfseries ABSTRACT} % 设置在目录显示
+		\chapter*{ABSTRACT}
+		\addcontentsline{toc}{chapter}{ABSTRACT} % 设置在目录显示
 	}
 
 	\fancyhf{}
@@ -940,7 +943,7 @@
 	% \cftsetindents{subsubsection}{76pt}{41pt}
 
 	\renewcommand{\cfttoctitlefont}{\fontsize{15pt}{15pt}\selectfont\heiti}
-	\renewcommand\cftchapfont{\heiti}
+	\renewcommand\cftchapfont{\songti}
 }
 
 
@@ -983,7 +986,7 @@
 		\addtolength{\cftfignumwidth}{12pt}                   % 设置长度命令，使命令\cftfignumwidth的长度设置为12pt，条目编号与条目内容之间占用的宽度, 例如：图 1-2 [\cftfignumwidth] 电子战飞机
 		\renewcommand{\cftfigpresnum}{图}                     % 条目编号前内容  
 		\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为0 就会在目录中显示
-		\addcontentsline{toc}{chapter}{\texorpdfstring{\heiti 插图索引}{插图索引}} % 设置在目录显示插图索引
+		\addcontentsline{toc}{chapter}{插图索引} % 设置在目录显示插图索引
 	}{}{}
 
 	% ====================插图索引标题内容设置====================
@@ -1027,7 +1030,7 @@
 		\addtolength{\cfttabnumwidth}{12pt}                   % 条目编号占用宽度，条目编号与条目内容之间占用的宽度, 例如：表1-1 [\cftfignumwidth] 参数设置
 		\renewcommand{\cfttabpresnum}{表}                     % 条目编号前内容
 		\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为-1，目录中只显示一级标题 0 为chapter
-		\addcontentsline{toc}{chapter}{\texorpdfstring{\heiti 插表索引}{插表索引}} % 设置在目录显示插表索引
+		\addcontentsline{toc}{chapter}{插表索引} % 设置在目录显示插表索引
 	}{}{}
 	
 	% ====================插表索引标题内容设置====================
