@@ -19,7 +19,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-04-12 10:59:36 +0800
+% LastEditTime : 2025-04-12 11:12:16 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : 
@@ -284,11 +284,7 @@
 
 % //////////////////////////////////////// 字体设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \newcommand{ \AutoFakeCJKOptions } { AutoFakeBold=2.5, AutoFakeSlant=true }
-\newcommand{ \SetCJKfont } [2] { 
-	\ifFileExists { ./Fonts/#2 } 
-		{ #1 [ \AutoFakeCJKOptions, Path=./Fonts/ ] { #2 } }
-		{ \ClassError { 字体缺失 } { 请下载 #2 并放置于 ./Fonts/ 目录，或运行脚本下载 } }
-}
+
 \ifwindows
 	\setCJKmainfont[\AutoFakeCJKOptions]{SimSun}                    % 在Windows平台上设置中文字体为SimSun
 	\setCJKmonofont[\AutoFakeCJKOptions]{SimSun}					% 使用宋体作为等宽字体
@@ -306,6 +302,11 @@
 		\setmainfont{Times New Roman}                               % 设置英文字体为Times New Roman
 	\else
         % 在其他平台设置中文和英文字体
+		\newcommand{ \SetCJKfont } [2] {
+			\IfFileExists { ./Fonts/#2 } 
+				{ #1 [ \AutoFakeCJKOptions, Path=./Fonts/ ] { #2 } }
+				{ \ClassError { 字体缺失 } { 请下载 #2 并放置于 ./Fonts/ 目录，或运行脚本下载 } }
+		}
         \SetCJKfont{\setCJKmainfont}{FZ-ShuSong.ttf}  				% 设置中文主字体
 		\SetCJKfont{\setCJKmonofont}{FZ-ShuSong.ttf}  				% 使用宋体作为等宽字体
         \SetCJKfont{\newCJKfontfamily{\kaiti}}{FZ-KaiTi.ttf}		% 设置楷体
