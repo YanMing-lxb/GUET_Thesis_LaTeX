@@ -19,7 +19,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-04-11 00:01:08 +0800
+% LastEditTime : 2025-04-12 10:59:36 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : 
@@ -283,44 +283,38 @@
 
 
 % //////////////////////////////////////// 字体设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\newcommand{ \AutoFakeCJKOptions } { AutoFakeBold=2.5, AutoFakeSlant=true }
+\newcommand{ \SetCJKfont } [2] { 
+	\ifFileExists { ./Fonts/#2 } 
+		{ #1 [ \AutoFakeCJKOptions, Path=./Fonts/ ] { #2 } }
+		{ \ClassError { 字体缺失 } { 请下载 #2 并放置于 ./Fonts/ 目录，或运行脚本下载 } }
+}
 \ifwindows
-	\setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}                                                 % 在Windows平台上设置中文字体为SimSun
-	\setCJKmonofont[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}												  % 使用宋体作为等宽字体
-	\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                            % 设置楷体字体为KaiTi 
-	\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimHei}                                       % 设置黑体字体为SimHei
-	\newCJKfontfamily{\songti}[AutoFakeBold=2.5,AutoFakeSlant =true]{SimSun}
-	\setmainfont{Times New Roman}                                                                             % 设置英文字体为Times New Roman
+	\setCJKmainfont[\AutoFakeCJKOptions]{SimSun}                    % 在Windows平台上设置中文字体为SimSun
+	\setCJKmonofont[\AutoFakeCJKOptions]{SimSun}					% 使用宋体作为等宽字体
+	\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}              % 设置楷体字体为KaiTi 
+	\newCJKfontfamily{\heiti}[\AutoFakeCJKOptions]{SimHei}          % 设置黑体字体为SimHei
+	\newCJKfontfamily{\songti}[\AutoFakeCJKOptions]{SimSun}
+	\setmainfont{Times New Roman}                                   % 设置英文字体为Times New Roman
 \else
 	\ifmacosx
-		\setCJKmainfont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}                                          % 在macOS平台上设置中文字体为Songti SC
-		\setCJKmonofont[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}										  % 使用宋体作为等宽字体
-		\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}                                                        % 设置楷体字体为KaiTi
-		\newCJKfontfamily{\heiti}[AutoFakeBold=2.5,AutoFakeSlant =true]{STHeiti}                                  % 设置黑体字体为STHeiti
-		\newCJKfontfamily{\songti}[AutoFakeBold=2.5,AutoFakeSlant =true]{Songti SC}
-		\setmainfont{Times New Roman}                                                                         % 设置英文字体为Times New Roman
+		\setCJKmainfont[\AutoFakeCJKOptions]{Songti SC}             % 在macOS平台上设置中文字体为Songti SC
+		\setCJKmonofont[\AutoFakeCJKOptions]{Songti SC}				% 使用宋体作为等宽字体
+		\newCJKfontfamily{\kaiti}[AutoFakeBold=2.5]{KaiTi}          % 设置楷体字体为KaiTi
+		\newCJKfontfamily{\heiti}[\AutoFakeCJKOptions]{STHeiti}     % 设置黑体字体为STHeiti
+		\newCJKfontfamily{\songti}[\AutoFakeCJKOptions]{Songti SC}
+		\setmainfont{Times New Roman}                               % 设置英文字体为Times New Roman
 	\else
         % 在其他平台设置中文和英文字体
-		\newcommand{\setFont}[3]{%
-			\IfFileExists{./Fonts/#2}{%
-				#1[AutoFakeBold=2.5, AutoFakeSlant=true, Path=./Fonts/]{#2}%
-			}{%
-				\IfFileExists{./Fonts/#3}{%
-					#1[AutoFakeBold=2.5, AutoFakeSlant=true, Path=./Fonts/]{#3}%
-				}{%
-					\ClassError{请下载 #2 或者 #3 并放置在./Fonts/ 目录下 (运行 ./Fonts/download_fonts.sh 脚本下载)}
-				}
-			}
-		}
-
-        \setFont{\setCJKmainfont}{方正书宋简体.ttf}{FZ-ShuSong.ttf}  												% 设置中文主字体
-		\setFont{\setCJKmonofont}{方正书宋简体.ttf}{FZ-ShuSong.ttf}  												% 使用宋体作为等宽字体
-        \setFont{\newCJKfontfamily{\kaiti}}{方正楷体简体.ttf}{FZ-KaiTi.ttf}											% 设置楷体
-        \setFont{\newCJKfontfamily{\heiti}}{方正黑体简体.ttf}{FZ-HeiTi.ttf}	
-		\setFont{\newCJKfontfamily{\songti}}{方正书宋简体.ttf}{FZ-ShuSong.ttf}
-		\setmainfont[                                                                                         % 英文字体应用 stixfonts 字体 (Times New Roman 风格)
-					BoldFont=STIXTwoText-Bold.otf,                                                            % 粗体字体
-					ItalicFont=STIXTwoText-Italic.otf,                                                        % 斜体字体
-					BoldItalicFont=STIXTwoText-BoldItalic.otf,                                                          			  % 指定字体文件路径为./Fonts/
+        \SetCJKfont{\setCJKmainfont}{FZ-ShuSong.ttf}  				% 设置中文主字体
+		\SetCJKfont{\setCJKmonofont}{FZ-ShuSong.ttf}  				% 使用宋体作为等宽字体
+        \SetCJKfont{\newCJKfontfamily{\kaiti}}{FZ-KaiTi.ttf}		% 设置楷体
+        \SetCJKfont{\newCJKfontfamily{\heiti}}{FZ-HeiTi.ttf}	
+		\SetCJKfont{\newCJKfontfamily{\songti}}{FZ-ShuSong.ttf}
+		\setmainfont[                                               % 英文字体应用 stixfonts 字体 (Times New Roman 风格)
+					BoldFont=STIXTwoText-Bold.otf,                  % 粗体字体
+					ItalicFont=STIXTwoText-Italic.otf,              % 斜体字体
+					BoldItalicFont=STIXTwoText-BoldItalic.otf,      % 指定字体文件路径为./Fonts/
 					]{STIXTwoText-Regular.otf}
     \fi
 \fi

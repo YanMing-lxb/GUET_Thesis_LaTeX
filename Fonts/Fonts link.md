@@ -49,11 +49,13 @@ chmod +x ./Fonts/download_fonts.sh
 
 ### 中文字体手动下载
 
-[黑体简体](https://github.com/jaywcjlove/free-font/raw/refs/heads/main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E4%B9%A6%E5%AE%8B%E7%AE%80%E4%BD%93.ttf)
+下载完成后请分别重命名为：`FZ-HeiTi.ttf` `FZ-KaiTi.ttf` `FZ-ShuSong.ttf`
 
-[楷体简体](https://github.com/jaywcjlove/free-font/raw/refs/heads/main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E6%A5%B7%E4%BD%93%E7%AE%80%E4%BD%93.ttf)
+[黑体简体](https://wangchujiang.com/free-font/preview.html?p=fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E9%BB%91%E4%BD%93%E7%AE%80%E4%BD%93.ttf&s=3.19%20MB&t=%E6%96%B9%E6%AD%A3%E9%BB%91%E4%BD%93%E7%AE%80%E4%BD%93&v=&l=%E5%95%86%E5%85%8D)
 
-[书宋简体](https://github.com/jaywcjlove/free-font/raw/refs/heads/main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E6%A5%B7%E4%BD%93%E7%AE%80%E4%BD%93.ttf)
+[楷体简体](https://wangchujiang.com/free-font/preview.html?p=fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E6%A5%B7%E4%BD%93%E7%AE%80%E4%BD%93.ttf&s=3.93%20MB&t=%E6%96%B9%E6%AD%A3%E6%A5%B7%E4%BD%93%E7%AE%80%E4%BD%93&v=&l=%E9%9C%80%E8%A6%81%E6%8E%88%E6%9D%83)
+
+[书宋简体](https://wangchujiang.com/free-font/preview.html?p=fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%96%B9%E6%AD%A3%E4%B9%A6%E5%AE%8B%E7%AE%80%E4%BD%93.ttf&s=3.08%20MB&t=%E6%96%B9%E6%AD%A3%E4%B9%A6%E5%AE%8B%E7%AE%80%E4%BD%93&v=&l=%E5%95%86%E5%85%8D)
 
 也可以去 [中文字体](https://github.com/jaywcjlove/free-font/tree/main/docs/fonts/%E6%96%B9%E6%AD%A3%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97) 下载对应的字体
 
