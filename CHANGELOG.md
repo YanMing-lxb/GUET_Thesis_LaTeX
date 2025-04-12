@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2025-04-10 20:19:04 +0800
- * LastEditTime : 2025-04-11 00:07:12 +0800
+ * LastEditTime : 2025-04-12 11:02:19 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : /GUET_Thesis_LaTeX/CHANGELOG.md
  * Description  : 
@@ -42,7 +42,9 @@
 - 新增 CHANGELOG.md 文件，用于记录版本更新日志。
  -->
 
-调整标题段前段后间距与word模板一致
+## v2.12.0
+### 🚀 改进
+- 更新字体设置相关内容
 
 ## v2.11.9
 
