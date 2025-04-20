@@ -16,7 +16,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-18 08:50:38 +0800
-% LastEditTime : 2025-04-10 21:51:46 +0800
+% LastEditTime : 2025-04-20 22:11:20 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/main.tex
 % Description  : Version 2.11.9 更新请关注 https://github.com/YanMing-lxb/GUET_Thesis_LaTeX
@@ -83,7 +83,7 @@
     \MakeCover                                                             % 封面
     \OriginalityDeclaration                                                % 独创性声明
     % \SignatureDeclaration{./Chapters/独创性声明(示例).pdf}                % 可使用已签字的独创性声明PDF文件
-
+    \frontmatter % 前言部分
     \input{Chapters/Abstract}                                              % 摘要
 
 % ------------------------------------------------------------------------------------------ 
@@ -94,7 +94,7 @@
     \ThesisContents                                                        % 目录
 
 % ------------------------------------------------------------------------------------------
-
+    \mainmatter % 正文部分
     \input{Chapters/Symbol}                                                % 符号定义文件
 
     \input{Chapters/Chapter1}
@@ -106,7 +106,7 @@
     \input{Chapters/Conclusion}                                            % 总结与展望
     
 % ------------------------------------------------------------------------------------------
-
+    \backmatter % 后记部分
     \ThesisBibliography                                                    % 参考文献
     \ThesisAcknowledgement                                                 % 致谢
     \ThesisAchievement                                                     % 攻读专业硕士学位期间取得的成果

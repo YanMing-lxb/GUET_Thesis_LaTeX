@@ -19,7 +19,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-04-12 11:12:16 +0800
+% LastEditTime : 2025-04-20 22:25:05 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : 
@@ -650,7 +650,6 @@
 	}
 	~\\ % 在当前位置插入一个不可断行的空格，并开始新的一行
 
-	\setcounter{page}{1}
 	\setlength{\extrarowheight}{2pt}
 
 	%判断是否为打印
@@ -743,7 +742,6 @@
 \newcommand{\SignatureDeclaration}[1]
 {
 	\includepdf[pages=-]{#1}
-	\newpage\setcounter{page}{0}
 	\ifpversion{\blankpage}{}
 }
 
@@ -762,17 +760,16 @@
 	% 设置目录和标题内容
 	\ifbachelor{ % 本科摘要格式设置 👇
 		\renewcommand{\BachelorChapterFormat}{\centering}                 % 标题临时居中，因本科摘要标题要求居中
-		\chapter*{\texorpdfstring{\textbf{摘\quad 要}}{摘要}}             % 本科摘要标题加粗
+		\chapter*{\texorpdfstring{摘\quad 要}{摘要}}             % 本科摘要标题加粗
 		\renewcommand{\BachelorChapterFormat}{}                          % 标题恢复全局设置
 	}{ % 硕博摘要格式设置 👇
-		\chapter*{\texorpdfstring{\heiti 摘\quad 要}{摘要}}               % 硕博摘要标题黑体
-		\addcontentsline{toc}{chapter}{\texorpdfstring{摘\quad 要}{摘要}} % 设置在目录显示摘要
+		\chapter*{\texorpdfstring{摘\quad 要}{摘要}}               % 硕博摘要标题黑体
 	}
+	\addcontentsline{toc}{chapter}{\texorpdfstring{摘\quad 要}{摘要}} % 设置在目录显示
 
 	% 设置页眉页脚
 	\fancyhf{}                                                          % 初始化页码页脚布局
-	\setcounter{page}{1}                                                % 定义为第一页
-	\pagenumbering{Roman}                                               % 设置页码显示为罗马数字
+	\setcounter{page}{1} 
 
 	\ifbachelor{ % 本科摘要页眉页码设置 👇
 		\fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 桂林电子科技大学毕业设计（论文）}                                    % 设置页眉
@@ -808,13 +805,12 @@
 	% 设置目录和标题内容
 	\ifbachelor{ % 本科英文摘要格式设置 👇
 		\renewcommand{\BachelorChapterFormat}{\centering}
-		\chapter*{\bfseries\selectfont\heiti Abstract} % 本科英文摘要标题首字母大写
+		\chapter*{Abstract} % 本科英文摘要标题首字母大写
 		\renewcommand{\BachelorChapterFormat}{}
 	}{ % 硕博英文摘要格式设置 👇
 		\chapter*{ABSTRACT}
-		\addcontentsline{toc}{chapter}{ABSTRACT} % 设置在目录显示
 	}
-
+	\addcontentsline{toc}{chapter}{ABSTRACT} % 设置在目录显示	
 	\fancyhf{}
 
 	\ifbachelor{ % 本科英文摘要页眉页码设置 👇
@@ -931,7 +927,6 @@
 	\renewcommand\cftsubsecfont{\fontsize{14pt}{15pt}\selectfont\kaiti}
 }{ % 硕博目录格式 👇
 	\addtolength{\cftchapnumwidth}{25pt}
-
 	\renewcommand{\cfttoctitlefont}{\fontsize{15pt}{15pt}\selectfont\heiti}
 	\renewcommand\cftchapfont{\songti}
 }
@@ -1021,7 +1016,7 @@
 		}
 		\addtolength{\cfttabnumwidth}{12pt}                   % 条目编号占用宽度，条目编号与条目内容之间占用的宽度, 例如：表1-1 [\cftfignumwidth] 参数设置
 		\renewcommand{\cfttabpresnum}{表}                     % 条目编号前内容
-		\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为-1，目录中只显示一级标题 0 为chapter
+		\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置0，目录中只显示一级标题 0 为chapter
 		\addcontentsline{toc}{chapter}{插表索引} % 设置在目录显示插表索引
 	}{}{}
 	
@@ -1145,7 +1140,9 @@
 
 
 % //////////////////////////////////////// 正文段落设置 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
+\renewcommand{\frontmatter}{   
+	\pagenumbering{Roman} % 设置为大写罗马页码 
+	}
 % ===============设置全局段落格式===============
 \setlength{\headheight}{17pt} % 高17pt
 \pagestyle{fancy}             % 设置风格为fancy
@@ -1555,15 +1552,9 @@
 	}{ % 非盲审则存在致谢
 		\ifbachelor{ % 本科致谢设置 👇
 			\renewcommand{\BachelorChapterFormat}{\centering}     % 通过修改\BachelorChapterFormat命令让致谢居中
-			\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
-			\setcounter{section}{0}                               % section计数器清零 
-			\chapter*{\texorpdfstring{谢\quad 辞}{谢 辞}}
-			\addcontentsline{toc}{chapter}{\texorpdfstring{谢\quad 辞}{谢 辞}}
+			\chapter{\texorpdfstring{谢\quad 辞}{谢 辞}}
 		}{ % 硕博致谢设置 👇
-			\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 只显示一级标题
-			\setcounter{section}{0}                               % section计数器清零 
-			\chapter*{\texorpdfstring{致\quad 谢}{致 谢}}
-			\addcontentsline{toc}{chapter}{\texorpdfstring{致\quad 谢}{致 谢}}
+			\chapter{\texorpdfstring{致\quad 谢}{致 谢}}
 		}
 
 		\fancyhf{}
@@ -1584,7 +1575,6 @@
 	\thispagestyle{empty}
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 	\StandardHeader
-	\pagenumbering{arabic}
 }
 
 \pretocmd{\@chapter}
@@ -1674,12 +1664,9 @@
 
 % }
 
-\newcommand{\ThesisAchievement}{
-	\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}                                  % 只显示一级标题
-	\setcounter{section}{0}                                                                % section计数器清零 
+\newcommand{\ThesisAchievement}{                                                        % section计数器清零 
 
-	\chapter*{攻读\DegreeName{}学位期间取得的成果}
-	\addcontentsline{toc}{chapter}{攻读\DegreeName{}学位期间取得的成果}
+	\chapter{攻读\DegreeName{}学位期间取得的成果}
 	\fancyhf{}
 	\fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont 攻读\DegreeName{}学位期间取得的成果}
 	\fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
@@ -1834,8 +1821,7 @@
 	\renewcommand{\theexample}{a.\arabic{example}}
 
 
-	\chapter*{附\quad 录}
-	\addcontentsline{toc}{chapter}{附\quad 录}
+	\chapter{附\quad 录}
 	\markboth{附\quad 录}{附\quad 录}
 
 	\fancyhf{}
