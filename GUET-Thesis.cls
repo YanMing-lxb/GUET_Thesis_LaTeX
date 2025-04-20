@@ -19,14 +19,14 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-04-20 22:32:02 +0800
+% LastEditTime : 2025-04-20 23:42:31 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
-% Description  : 
+% Description  : 桂林电子科技大学学位论文模板
 %  -----------------------------------------------------------------------
 %
 
-\ProvidesClass{GUET-Thesis}
+\ProvidesClass{GUET-Thesis}[2025/04/20 v2.12.0 桂林电子科技大学学位论文模板 --焱铭]
 
 \LoadClass[												% 加载文档类并设置选项
 	12pt,                                   		    % 字号为12pt
@@ -1773,7 +1773,6 @@
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 	\titleformat{\chapter}[block]
 	{\centering\fontsize{15pt}{15pt}\selectfont\heiti\thispagestyle{fancy}}{\thechapter}{7.5pt}{}
-
 	\renewcommand{\thechapter}{附录\Alph{chapter}}
 	\renewcommand{\appendixname}{附录}
 
@@ -1819,9 +1818,9 @@
 	\renewcommand{\thelemma}{a.\arabic{lemma}}
 	\renewcommand{\thedefinition}{a.\arabic{definition}}
 	\renewcommand{\theexample}{a.\arabic{example}}
+	
 
-
-	\chapter{附\quad 录}
+	\chapter{\texorpdfstring{附\quad 录}{附录}}
 	\markboth{附\quad 录}{附\quad 录}
 
 	\fancyhf{}
