@@ -1159,17 +1159,13 @@
 
 % ===============页眉线设置===============
 \ifbachelor{ % 本科页眉单线 👇
-	\newdimen\singlelineskip
-	\setlength\singlelineskip{2pt}
 	\renewcommand\headrule{
 		\hrule height\headrulewidth width\headwidth%
-		\vskip 1.2\singlelineskip}
+		\vskip 2.4pt}
 }{ % 硕博页眉双线 👇
-	\newdimen\doublelineskip           % 两横线间的距离
-	\setlength\doublelineskip{1pt}
 	\renewcommand\headrule{
 		\hrule height\headrulewidth width\headwidth
-		\vskip 1.2\doublelineskip
+		\vskip 1.2pt % 设置两页眉线间距
 		\hrule height\headrulewidth width\headwidth
 	}
 	\renewcommand{\headrulewidth}{1pt} % 设置页眉线宽度
