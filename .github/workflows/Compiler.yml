@@ -1,8 +1,10 @@
 name: Compiler
 on:
     push:
-      - 'GUET-Thesis.cls'
-    branches: [ main ]
+      branches: 
+        - main    # 指定分支
+      paths: # 仅当指定文件变更时触发
+        - 'GUET-Thesis.cls'
 jobs:
   build_latex:
     runs-on: ubuntu-latest
