@@ -16,16 +16,16 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2023-07-18 08:50:38 +0800
-% LastEditTime : 2025-04-20 23:08:23 +0800
+% LastEditTime : 2025-04-21 09:50:01 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/main.tex
-% Description  : Version 2.11.9 更新请关注 https://github.com/YanMing-lxb/GUET_Thesis_LaTeX
+% Description  : 更新请关注 https://github.com/YanMing-lxb/GUET_Thesis_LaTeX
 %  -----------------------------------------------------------------------
 %
 
-% \special{dvipdfmx:config z 0}                                                % XeLaTeX取消PDF压缩，加快编译速度，但会增加PDF体积
-% \pdfcompresslevel=0                                                          % PdfLaTeX取消PDF压缩，加快编译速度，但会增加PDF体积
-% \pdfobjcompresslevel=0                                                       % LuaLaTeX取消PDF压缩，加快编译速度，但会增加PDF体积
+% \special{dvipdfmx:config z 0}                % XeLaTeX取消PDF压缩，加快编译速度，但会增加PDF体积
+% \pdfcompresslevel=0                          % PdfLaTeX取消PDF压缩，加快编译速度，但会增加PDF体积
+% \pdfobjcompresslevel=0                       % LuaLaTeX取消PDF压缩，加快编译速度，但会增加PDF体积
 
 % ------------------------------------------------------------------------------------------
 %     前言区域
@@ -49,77 +49,79 @@
         {./Pictures/Chapter3/},
         {./Pictures/Chapter4/},
         {./Pictures/Chapter5/}
-}                                                                           % 图片所在位置，根据需求进行修改
-\ThesisBibResource{./References/References.bib}                              % 参考文献数据源加载
-\ThesisAchResource{./References/Accomplishs.bib}                             % 攻读学位期间取得成果数据源加载
+}                                                % 图片所在位置，根据需求进行修改
+\ThesisBibResource{./References/References.bib}  % 参考文献数据源加载
+\ThesisAchResource{./References/Accomplishs.bib} % 攻读学位期间取得成果数据源加载
 
 % ------------------------------------------------------------------------------------------
 %     封面信息
 % ------------------------------------------------------------------------------------------
 
-\Title{                                                                     % 题目{中文}{英文}  
+\Title{                                          % 题目{中文}{英文}  
     基于嵌入式散热模块的微通道散热技术研究
 }{
     Research on microchannel heat dissipation technology \\& based on embedded heat dissipation module
-    }                                                                       % 标题中插入“\\&”命令进行换行
-\Author{焱铭}                                                               % 作者姓名
-\Advisor{XXX}                                                             % 导师姓名
-\Protitle{教授}                                                              % 导师职称
-\School{机电工程学院}                                                        % 所在学院
-\Major{机械工程}                                                             % 学科专业或领域
-\ResearchDirection{电子器件散热}                                             % 研究领域（盲审用）
-\DegreeCategories{工学硕士}                                                  % 申请学位门类或类别
-\StudentNumber{2020XXXXX}                                                     % 学号
-\Secrets{}                                                                  % 密级，不涉密请空着
-\Date{\today}                                                               % 可更换为具体日期如：\date{2023年5月28日}
-% \subCrefNameSet                                                             % 子图、表、算法等引用名称格式设置为 子图 2-1(a) 的样式
-\SymbolGroupStyle{符号分类}                                                  % 符号分组样式，可选参数为“符号分类”或“章节分类”
-\theAlgoSet{algorithmicx}                                                   % 设置算法环境，默认为 algorithmicx，可选参数为 algorithm2e 或 algorithmicx ，注意启用不同宏包时需要适用对应算法命令
+    }                                            % 标题中插入“\\&”命令进行换行
+\Author{焱铭}                                     % 作者姓名
+\Advisor{XXX}                                    % 导师姓名
+\Protitle{教授}                                   % 导师职称
+\School{机电工程学院}                              % 所在学院
+\Major{机械工程}                                  % 学科专业或领域
+\ResearchDirection{电子器件散热}                   % 研究领域（盲审用）
+\DegreeCategories{工学硕士}                       % 申请学位门类或类别
+\StudentNumber{2020XXXXX}                        % 学号
+\Secrets{}                                       % 密级，不涉密请空着
+\Date{\today}                                    % 可更换为具体日期如：\date{2023年5月28日}
+% \subCrefNameSet                                  % 子图、表、算法等引用名称格式设置为 子图 2-1(a) 的样式
+\SymbolGroupStyle{符号分类}                       % 符号分组样式，可选参数为“符号分类”或“章节分类”
+\theAlgoSet{algorithmicx}                        % 设置算法环境，默认为 algorithmicx，可选参数为 algorithm2e 或 algorithmicx ，注意启用不同宏包时需要适用对应算法命令
 % ------------------------------------------------------------------------------------------
 %     正文
 % ------------------------------------------------------------------------------------------
 
 \begin{document}
-    \frontmatter % 前言部分
-    \MakeCover                                                             % 封面
-    \OriginalityDeclaration                                                % 独创性声明
-    % \SignatureDeclaration{./Chapters/独创性声明(示例).pdf}                % 可使用已签字的独创性声明PDF文件
+    \frontmatter                                 % 前言部分
+    \MakeCover                                   % 封面
+    \OriginalityDeclaration                      % 独创性声明
+    % \SignatureDeclaration{./Chapters/独创性声明(示例).pdf} % 可使用已签字的独创性声明PDF文件
     
-    \input{Chapters/Abstract}                                              % 摘要
+    \input{Chapters/Abstract}                    % 摘要
 
 % ------------------------------------------------------------------------------------------ 
 
-    \ThesisFigureList                                                      % 插图目录
-    \ThesisTableList                                                       % 插表目录
-    \ThesisSymbolList                                                      % 符号说明表
-    \ThesisContents                                                        % 目录
+    \ThesisFigureList                            % 插图目录
+    \ThesisTableList                             % 插表目录
+    \ThesisSymbolList                            % 符号说明表
+    \ThesisContents                              % 目录
 
 % ------------------------------------------------------------------------------------------
-    \mainmatter % 正文部分
+    \mainmatter                                  % 正文部分
 
     % 对于需要引言并且不需要章节编号且要放在正文中的情况可以使用以下命令
-    % \thispagestyle{empty}                                                  % 保留原有空白页设置
-    % \StandardHeader                                                        % 手动应用标准页眉
+    % \thispagestyle{empty}                      % 保留原有空白页设置
+    % \StandardHeader                            % 手动应用标准页眉
     % \chapter*{\texorpdfstring{引\quad 言}{引言}}
-    % \addcontentsline{toc}{chapter}{\texorpdfstring{引\quad 言}{引言}}        % 添加到目录中
+    % \addcontentsline{toc}{chapter}{
+    %     \texorpdfstring{引\quad 言}{引言}
+    % }
     
-    \input{Chapters/Symbol}                                                % 符号定义文件
+    \input{Chapters/Symbol}                      % 符号定义文件
 
     \input{Chapters/Chapter1}
     \input{Chapters/Chapter2}
     \input{Chapters/Chapter3}
     \input{Chapters/Chapter4}
-    \input{Chapters/Chapter5}                                              % 可根据需求自行添加章节数
+    \input{Chapters/Chapter5}                    % 可根据需求自行添加章节数
 
-    \input{Chapters/Conclusion}                                            % 总结与展望
+    \input{Chapters/Conclusion}                  % 总结与展望
     
 % ------------------------------------------------------------------------------------------
-    \backmatter % 后记部分
-    \ThesisBibliography                                                    % 参考文献
-    \ThesisAcknowledgement                                                 % 致谢
-    \ThesisAchievement                                                     % 攻读专业硕士学位期间取得的成果
+    \backmatter                                  % 后记部分
+    \ThesisBibliography                          % 参考文献
+    \ThesisAcknowledgement                       % 致谢
+    \ThesisAchievement                           % 攻读专业硕士学位期间取得的成果
 
-    \input{Chapters/Appendix.tex}                                          % 附录
+    \input{Chapters/Appendix.tex}                % 附录
     
 % ------------------------------------------------------------------------------------------    
 \end{document} 
