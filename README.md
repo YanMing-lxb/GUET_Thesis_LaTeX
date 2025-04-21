@@ -23,7 +23,7 @@
  *  -----------------------------------------------------------------------
  -->
 
-# GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 <img src="https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">
+# GUET_Thesis_LaTeX(GTL) 桂林电子科技大学毕业论文模板 `<img src="https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/assets/113030089/ae350b84-8731-4bb9-be30-0f40a4e56bec" width="90" height="90" align="right">`
 
 [![GitHub](https://img.shields.io/badge/Github-GTL-000000.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX) [![TeXPage](https://img.shields.io/badge/TeXPage-GTL-495A80.svg)](https://www.texpage.com/template/2f15a24f-20f7-4c04-8a4c-d0aacee0c818) [![Overleaf](https://img.shields.io/badge/Overleaf-GTL-green.svg)](https://www.overleaf.com/latex/templates/gui-lin-dian-zi-ke-ji-da-xue-ben-shuo-bo-fei-quan-zai-zhi-bi-ye-lun-wen-she-ji-latexmo-ban-v0-dot-7/vjvvkwmdnjhp) [![License](https://img.shields.io/badge/license-LPPL-aff)](https://www.latex-project.org/lppl/) ![OS](https://img.shields.io/badge/OS-Linux%2C%20Win%2C%20Mac-pink.svg) [![GitHub release](https://img.shields.io/github/release/YanMing-lxb/GUET_Thesis_LaTeX.svg?color=blueviolet&label=version&style=popout)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/releases/latest) [![Last Commit](https://img.shields.io/github/last-commit/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/zipball/master) [![Issues](https://img.shields.io/github/issues/YanMing-lxb/GUET_Thesis_LaTeX)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/issues) [![Github Action](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/workflows/Build%20Tests/badge.svg)](https://github.com/YanMing-lxb/GUET_Thesis_LaTeX/actions) ![GitHub repo size](https://img.shields.io/github/repo-size/YanMing-lxb/GUET_Thesis_LaTeX)
 
@@ -243,19 +243,24 @@ Linux 中文字体，请下载 [&lt;中文字体&gt;](Fonts/Fonts%20link.md) 并
 
 - [X] 封面目录的单双行切换（使用 Tabularray 宏包解决，但在标题中需要添加 `\\&` 命令进行换行）；
 - [X] 盲审版本切换：
+
   - [X] 盲审封面制作及版本切换
   - [X] 攻读学位期间取得成果的盲审版本切换
 - [ ] 去除所有其他表格宏包，完全使用 Tabularray 宏包制表
+
   - [ ] 自定义长三线表环境 `lthreetab` (要求可跨页，跨页后自带 “题注(续)” )
   - [X] 自定义普通三线表环境 `threetab`
-- [ ] ~~使用文学编程重构项目~~
+- [ ] ~~使用文学编程重构项目~~ -- 这个得看日后有没有时间学习🤔
 - [X] 采用 biblatex 编译参考文献，替换掉 bibtex：
+
   - [X] biblatex 下实现参考文献的编译
   - [X] biblatex 下实现攻读学位期间取得成果的自动编译
   - [X] biblatex 下实现攻读学位期间取得成果的盲审版本切换
   - [X] biblatex 下实现对攻读学位期间取得成果中作者的粗体显示
   - [X] 实现攻读学位期间取得成果整体缩进两字符
 - [X] 当学位论文条目存在 url 时，显示 url，而条目没有 url 参数时，则显示 In collab. with 字样，以及专利显示 "patent" 的问题：感谢 [**hushidong**](https://github.com/hushidong/biblatex-gb7714-2015/issues/178) 给出完美的解决方案
+- [ ] 完善示例文档，参考优秀模板和教程添加一些说明和教程 -- 要是有小伙伴帮忙就好了😮‍💨
+- [ ] 重构项目 -- 可能要很久以后😭
 
 *攻读学位期间取得成果中作者的粗体显示* 功能已实现，但是存在作者粗体显示后，所有参考文献的缩进错乱的问题，故暂且注释该功能的代码，留待日后解决。
 
