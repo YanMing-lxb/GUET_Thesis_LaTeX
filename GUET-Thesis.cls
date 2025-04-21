@@ -19,7 +19,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-04-20 23:42:31 +0800
+% LastEditTime : 2025-04-21 12:21:48 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : 桂林电子科技大学学位论文模板
@@ -953,14 +953,14 @@
 		\renewcommand{\BachelorChapterFormat}{}           % 还原初始设置：左对齐
 	}
 }{ % 定义硕博插图索引命令 👇
-	\newcommand{\ThesisFigureList}{\listoffigures}      % 自定义调用\listoffigures的命令
+	\newcommand{\ThesisFigureList}{\listoffigures}        % 自定义调用\listoffigures的命令
 }
 	% =========================插图索引页眉页脚设置=========================
 \pretocmd{\listoffigures}
-{  % 图目录是存放在.lof目录的文件下
-	\clearpage % 确保独立页
-	\phantomsection % 用于建立正确的PDF锚点！
-	\fancyhf{}   % 初始化页码页脚布局
+{  														  % 图目录是存放在.lof目录的文件下
+	\clearpage 											  % 确保独立页
+	\phantomsection 									  % 用于建立正确的PDF锚点！
+	\fancyhf{}   										  % 初始化页码页脚布局
 
 	\ifbachelor{ % 本科插图索引页眉页码设置 👇
 		\fancyhead[C]{\fontsize{10.5pt}{12.6pt}\selectfont{桂林电子科技大学毕业设计（论文）}}
@@ -970,9 +970,9 @@
 		\fancyfoot[CE,CO]{\fontsize{9pt}{10.8pt}\selectfont\thepage}
 	}
 	\addtolength{\cftfignumwidth}{12pt}                   % 设置长度命令，使命令\cftfignumwidth的长度设置为12pt，条目编号与条目内容之间占用的宽度, 例如：图 1-2 [\cftfignumwidth] 电子战飞机
-	\renewcommand{\cftfigpresnum}{图}                     % 条目编号前内容  
+	\renewcommand{\cftfigpresnum}{图}                      % 条目编号前内容  
 	\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % 将目录深度设置为0 就会在目录中显示
-	\addcontentsline{toc}{chapter}{插图索引} % 设置在目录显示插图索引
+	\addcontentsline{toc}{chapter}{插图索引} 			    % 设置在目录显示插图索引
 }{}{}
 
 % ====================插图索引标题内容设置====================
