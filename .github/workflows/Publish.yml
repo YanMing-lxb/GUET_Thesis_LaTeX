@@ -1,0 +1,48 @@
+
+name: Publish GTL  # 定义工作流的名称，当推送匹配的标签时发布
+on:
+  push:
+    tags:
+      - "v*.*.*"  # 当推送以v开头的标签时触发此工作流
+jobs:
+  publish-to-github-release:
+    name: Publish GTL to GitHub Release  # 定义发布到GitHub Release作业的名称
+    if: startsWith(github.ref, 'refs/tags/')  # 只有在推送标签时才执行此作业
+    runs-on: ubuntu-latest  # 指定运行此作业的操作系统
+
+    steps:
+    - name: Checkout source  # 检出源代码的步骤
+      uses: actions/checkout@v4  # 使用actions/checkout动作来检出代码
+
+    - name: Extract tag name  # 提取标签名称的步骤
+      id: extract_tag
+      run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+      
+    - name: Generate Changelog
+      run: |
+        # 读取CHANGELOG.md文件内容
+        changelog=$(cat ${{ github.workspace }}/CHANGELOG.md)
+        
+        # 获取tag_name
+        tag_name=${{ env.TAG_NAME }}
+        
+        # 查找与tag_name匹配的版本号，并提取该版本号下的所有内容
+        version_header="## $tag_name"
+        if [[ $changelog == *"$version_header"* ]]; then
+          version_content=$(echo "$changelog" | awk -v version_header="$version_header" '
+            /^## / { if (p) exit; p=0 } 
+            $0 ~ version_header { p=1; next } 
+            p')
+          echo "$version_content"
+        else
+          echo "Version $tag_name not found in CHANGELOG.md"
+        fi
+        # 将匹配的内容写入新的CHANGELOG.md文件
+        echo "$version_content" > ${{ github.workspace }}-CHANGELOG.txt
+
+    - name: Publish to GitHub Release # 发布到GitHub Release的步骤
+      uses: softprops/action-gh-release@v2 # 使用softprops/action-gh-release动作来发布到GitHub Release
+      with:
+        body_path: ${{ github.workspace }}-CHANGELOG.txt
+        token: ${{ secrets.PUBLISH_GTL }}  # 替换为实际的GitHub Token
+        name: GUET Thesis LaTeX ${{ github.ref_name }} # 
