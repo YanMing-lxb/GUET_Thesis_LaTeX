@@ -1,7 +1,8 @@
-name: Build Tests
+name: Compiler
 on:
     push:
-      branches: [ main ]
+      - 'GUET-Thesis.cls'
+    branches: [ main ]
 jobs:
   build_latex:
     runs-on: ubuntu-latest
