@@ -19,7 +19,7 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-04-21 12:21:48 +0800
+% LastEditTime : 2025-05-15 15:26:10 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : 桂林电子科技大学学位论文模板
@@ -220,6 +220,7 @@
 	gbalign=center,                     		% 标签中括号对齐
 	gbannote=true,                      		% 显示annote域，使得完成对于thesisauthor和corresponding的显示
 ]{biblatex}
+\setcounter{gbrefcompress}{3}					% 设置参考文献压缩的阈值，修改从三篇文献开始压缩
 % \DefineBibliographyStrings{english}{in={}} % 去掉英文in，避免会议中的in:出现，这行是不需要的，不使用gbpunctin或注释即可
 
 % ===============条件判断宏包宏包===============
