@@ -19,14 +19,14 @@
 %  -----------------------------------------------------------------------
 % Author       : 焱铭
 % Date         : 2025-02-24 22:56:46 +0800
-% LastEditTime : 2025-05-15 15:26:10 +0800
+% LastEditTime : 2025-10-26 17:50:13 +0800
 % Github       : https://github.com/YanMing-lxb/
 % FilePath     : /GUET_Thesis_LaTeX/GUET-Thesis.cls
 % Description  : 桂林电子科技大学学位论文模板
 %  -----------------------------------------------------------------------
 %
 
-\ProvidesClass{GUET-Thesis}[2025/04/20 v2.12.0 桂林电子科技大学学位论文模板 --焱铭]
+\ProvidesClass{GUET-Thesis}[2025/10/26 v2.12.3 桂林电子科技大学学位论文模板 --焱铭]
 
 \LoadClass[												% 加载文档类并设置选项
 	12pt,                                   		    % 字号为12pt
@@ -207,21 +207,22 @@
 % ===============参考文献相关宏包===============
 \RequirePackage[
 	backend=biber,       						% 设置后端程序为biber
-	doi=false,           						% 不显示doi
-	url=false,           						% 不显示url
-	defernumbers=true,   						% 解决refsection环境中 \printbibliography 筛选和 notice* 一起使用导致的编号错乱
+	doi=false,           						% 不显示 doi
+	url=false,           						% 不显示 url
+	defernumbers=true,   						% 解决 refsection 环境中 \printbibliography 筛选和 notice* 一起使用导致的编号错乱
 	bibstyle=gb7714-2015,						% 参考文献样式
 	citestyle=gb7714-2015,
-	gbmedium=false,                     		% 载体标识符不显示OL
+	gbmedium=true,                     		    % 载体标识符不显示OL
+	gbtitlelink=true,
 	% gbpub=true,                       		  % 显示出版信息
 	% gbnamefmt=lowercase,              		  % 姓名小写，这个在最新版本的模板中还是需要大写的，因此需要关闭
-	% gbpunctin=false,                  		  % 关闭inbook,incollection,inproceedings中析出来源文献前//符号，这个在最新版本模板中还是需要的，因此需要关闭
+	% gbpunctin=false,                  		  % 关闭 inbook, incollection, inproceedings 中析出来源文献前//符号，这个在最新版本模板中还是需要的，因此需要关闭
 	gbstrict=true,                      		% 避免输出 bib 文件中多余的域信息
 	gbalign=center,                     		% 标签中括号对齐
-	gbannote=true,                      		% 显示annote域，使得完成对于thesisauthor和corresponding的显示
+	gbannote=true,                      		% 显示 annote 域，使得完成对于 thesisauthor 和 corresponding 的显示
 ]{biblatex}
 \setcounter{gbrefcompress}{3}					% 设置参考文献压缩的阈值，修改从三篇文献开始压缩
-% \DefineBibliographyStrings{english}{in={}} % 去掉英文in，避免会议中的in:出现，这行是不需要的，不使用gbpunctin或注释即可
+% \DefineBibliographyStrings{english}{in={}} % 去掉英文in，避免会议中的in:出现，这行是不需要的，不使用 gbpunctin 或注释即可
 
 % ===============条件判断宏包宏包===============
 \RequirePackage{ifxetex}   						% 判断是否使用 XeLaTeX 编译，以决定后续的包和设置的使用
@@ -1532,7 +1533,7 @@
 \newcommand{\ThesisBibResource}[1]{\addbibresource[location=local]{#1}}               % 定义 \ThesisBibResource 命令用于加载参考文献源
 \renewcommand{\bibfont}{\small}                                                       % 设置参考文献字体小五
 \setlength{\bibitemsep}{0pt}                                                          % 每一条参考文献之间的间隔
-\AtEveryBibitem{\clearfield{url}}                                                     % 清除url信息 用以解决 url=false 命令在thesis中失效的Bug
+% \AtEveryBibitem{\clearfield{url}}                                                     % 清除url信息 用以解决 url=false 命令在 thesis 中失效的 Bug，但是会导致 @online 类型文献的 url 显示失败
 \newcommand{\ThesisBibliography}{
 	\newpage
 	\fancyhf{}
